@@ -1,0 +1,50 @@
+Date : 2020-10-02 23:11:53
+Directory : f:\Kepler\Kepler
+Total : 14 files,  1444 codes, 12 comments, 38 blanks, all 1494 lines
+
+Languages
++------------+------------+------------+------------+------------+------------+
+| language   | files      | code       | comment    | blank      | total      |
++------------+------------+------------+------------+------------+------------+
+| C# (Unity) |          1 |        792 |          0 |          1 |        793 |
+| JSON       |          2 |        373 |          0 |          2 |        375 |
+| XML        |          7 |        161 |          0 |          0 |        161 |
+| C#         |          3 |        117 |         12 |         33 |        162 |
+| Markdown   |          1 |          1 |          0 |          2 |          3 |
++------------+------------+------------+------------+------------+------------+
+
+Directories
++----------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                 | files      | code       | comment    | blank      | total      |
++----------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                    |         14 |      1,444 |         12 |         38 |      1,494 |
+| .idea                                                                |          7 |        161 |          0 |          0 |        161 |
+| .idea\.idea.Kepler                                                   |          7 |        161 |          0 |          0 |        161 |
+| .idea\.idea.Kepler\.idea                                             |          6 |        154 |          0 |          0 |        154 |
+| Assets                                                               |          4 |        909 |         12 |         34 |        955 |
+| Assets\Scenes                                                        |          1 |        792 |          0 |          1 |        793 |
+| Assets\Scripts                                                       |          3 |        117 |         12 |         33 |        162 |
+| Assets\Scripts\Physic                                                |          3 |        117 |         12 |         33 |        162 |
+| Packages                                                             |          2 |        373 |          0 |          2 |        375 |
++----------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++----------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| filename                                                             | language   | code       | comment    | blank      | total      |
++----------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| f:\Kepler\Kepler\.idea\.idea.Kepler\.idea\contentModel.xml           | XML        |         23 |          0 |          0 |         23 |
+| f:\Kepler\Kepler\.idea\.idea.Kepler\.idea\encodings.xml              | XML        |          4 |          0 |          0 |          4 |
+| f:\Kepler\Kepler\.idea\.idea.Kepler\.idea\indexLayout.xml            | XML        |         26 |          0 |          0 |         26 |
+| f:\Kepler\Kepler\.idea\.idea.Kepler\.idea\modules.xml                | XML        |          8 |          0 |          0 |          8 |
+| f:\Kepler\Kepler\.idea\.idea.Kepler\.idea\projectSettingsUpdater.xml | XML        |          6 |          0 |          0 |          6 |
+| f:\Kepler\Kepler\.idea\.idea.Kepler\.idea\workspace.xml              | XML        |         87 |          0 |          0 |         87 |
+| f:\Kepler\Kepler\.idea\.idea.Kepler\riderModule.iml                  | XML        |          7 |          0 |          0 |          7 |
+| f:\Kepler\Kepler\Assets\Scenes\SampleScene.unity                     | C# (Unity) |        792 |          0 |          1 |        793 |
+| f:\Kepler\Kepler\Assets\Scripts\Physic\ITrackCalculator.cs           | C#         |         11 |          0 |          3 |         14 |
+| f:\Kepler\Kepler\Assets\Scripts\Physic\Planet.cs                     | C#         |         63 |          4 |         18 |         85 |
+| f:\Kepler\Kepler\Assets\Scripts\Physic\Satellite.cs                  | C#         |         43 |          8 |         12 |         63 |
+| f:\Kepler\Kepler\Packages\manifest.json                              | JSON       |         43 |          0 |          1 |         44 |
+| f:\Kepler\Kepler\Packages\packages-lock.json                         | JSON       |        330 |          0 |          1 |        331 |
+| f:\Kepler\Kepler\README.md                                           | Markdown   |          1 |          0 |          2 |          3 |
+| Total                                                                |            |      1,444 |         12 |         38 |      1,494 |
++----------------------------------------------------------------------+------------+------------+------------+------------+------------+

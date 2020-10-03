@@ -1,0 +1,16 @@
+"filename", "language", "JSON", "XML", "C# (Unity)", "C#", "Markdown", "comment", "blank", "total"
+"f:\Kepler\Kepler\.idea\.idea.Kepler\.idea\contentModel.xml", "XML", 0, 23, 0, 0, 0, 0, 0, 23
+"f:\Kepler\Kepler\.idea\.idea.Kepler\.idea\encodings.xml", "XML", 0, 4, 0, 0, 0, 0, 0, 4
+"f:\Kepler\Kepler\.idea\.idea.Kepler\.idea\indexLayout.xml", "XML", 0, 26, 0, 0, 0, 0, 0, 26
+"f:\Kepler\Kepler\.idea\.idea.Kepler\.idea\modules.xml", "XML", 0, 8, 0, 0, 0, 0, 0, 8
+"f:\Kepler\Kepler\.idea\.idea.Kepler\.idea\projectSettingsUpdater.xml", "XML", 0, 6, 0, 0, 0, 0, 0, 6
+"f:\Kepler\Kepler\.idea\.idea.Kepler\.idea\workspace.xml", "XML", 0, 87, 0, 0, 0, 0, 0, 87
+"f:\Kepler\Kepler\.idea\.idea.Kepler\riderModule.iml", "XML", 0, 7, 0, 0, 0, 0, 0, 7
+"f:\Kepler\Kepler\Assets\Scenes\SampleScene.unity", "C# (Unity)", 0, 0, 792, 0, 0, 0, 1, 793
+"f:\Kepler\Kepler\Assets\Scripts\Physic\ITrackCalculator.cs", "C#", 0, 0, 0, 11, 0, 0, 3, 14
+"f:\Kepler\Kepler\Assets\Scripts\Physic\Planet.cs", "C#", 0, 0, 0, 63, 0, 4, 18, 85
+"f:\Kepler\Kepler\Assets\Scripts\Physic\Satellite.cs", "C#", 0, 0, 0, 43, 0, 8, 12, 63
+"f:\Kepler\Kepler\Packages\manifest.json", "JSON", 43, 0, 0, 0, 0, 0, 1, 44
+"f:\Kepler\Kepler\Packages\packages-lock.json", "JSON", 330, 0, 0, 0, 0, 0, 1, 331
+"f:\Kepler\Kepler\README.md", "Markdown", 0, 0, 0, 0, 1, 0, 2, 3
+"Total", "-", 373, 161, 792, 117, 1, 12, 38, 1494

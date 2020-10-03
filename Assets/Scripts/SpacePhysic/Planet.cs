@@ -1,15 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-namespace Physic
+namespace SpacePhysic
 {
-    public class PhysicBase
-    {
-        public static float G = 6.67f;
-        public static float GetG() => PhysicBase.G * Mathf.Pow(10, -11);
-    }
-    public class Planet : MonoBehaviour, ITrackCalculator
+
+    public class Planet : MonoBehaviour, IOrbitCalculator
     {
         
         public float radius;
@@ -38,6 +35,14 @@ namespace Physic
             }
         }
 
+        #region 开普勒定律
+
+        //计算开普勒常数K
+        public float GetPlanetK() => PhysicBase.GetG() * this.Mass / (4 * Mathf.PI * Mathf.PI);
+        public float GetPlanetMiu() => PhysicBase.GetG() * this.Mass;
+        #endregion
+
+        #region 牛顿万有引力
 
         //计算目标到本星球的引力
         private float CalculateGravityModulus(float targetMass, float distance) =>
@@ -49,7 +54,8 @@ namespace Physic
             Vector3 normalizedDirection = (this.transform.position - rigidbody.position).normalized;
             return CalculateGravityModulus(rigidbody.mass, distance) * normalizedDirection;
         }
-
+        
+        //计算线速度向量
         public Vector3 CalculateLinearVelocity()
         {
             List<Vector3> gravities = new List<Vector3>();
@@ -68,18 +74,25 @@ namespace Physic
 
             return velocity;
         }
+        
 
-        public List<Vector3> TrackPoints { get; } = new List<Vector3>();
+        #endregion
+        
+        #region ITrackCalculator
+
+        public List<Vector3> OrbitPoints { get; } = new List<Vector3>();
 
         
-        public Vector3 CalculateTrack(int t, int totalNumber)
+        public Vector3 CalculateOrbit(int t, int totalNumber)
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
 
-        public void ShowTrack(LineRenderer lineRenderer, int totalNumber)
+        public void DrawOrbit(LineRenderer lineRenderer, int totalNumber)
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
+
+        #endregion
     }
 }
