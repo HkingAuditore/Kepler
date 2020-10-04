@@ -93,6 +93,11 @@ namespace SpacePhysic
             throw new NotImplementedException();
         }
 
+        public void GenerateOrbit()
+        {
+            throw new NotImplementedException();
+        }
+
         #endregion
     }
 }
