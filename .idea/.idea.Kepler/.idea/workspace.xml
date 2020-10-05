@@ -22,9 +22,6 @@
     <list default="true" id="1afa9dc1-adab-467c-afda-52b72c3d10f3" name="默认的" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Kepler/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Kepler/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Kepler/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Kepler/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SpacePhysic/IOrbitCalculator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SpacePhysic/IOrbitCalculator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SpacePhysic/Planet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SpacePhysic/Planet.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/SpacePhysic/Satellite.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SpacePhysic/Satellite.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -66,6 +63,7 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
@@ -98,6 +96,7 @@
       <workItem from="1601643493743" duration="5735000" />
       <workItem from="1601708170900" duration="9383000" />
       <workItem from="1601726884116" duration="2207000" />
+      <workItem from="1601885992940" duration="6235000" />
     </task>
     <servers />
   </component>
@@ -122,6 +121,14 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="2012" y="82" width="1736" height="856" key="VCS.FileHistoryDialog" timestamp="1601889280097">
+      <screen x="1920" y="-10" width="1920" height="1040" />
+    </state>
+    <state x="2012" y="82" width="1736" height="856" key="VCS.FileHistoryDialog/0.0.1920.1040/1920.-10.1920.1040@1920.-10.1920.1040" timestamp="1601889280097" />
+    <state x="2536" y="235" key="run.anything.popup" timestamp="1601887838107">
+      <screen x="1920" y="-10" width="1920" height="1040" />
+    </state>
+    <state x="2536" y="235" key="run.anything.popup/0.0.1920.1040/1920.-10.1920.1040@1920.-10.1920.1040" timestamp="1601887838107" />
     <state x="2543" y="215" width="672" height="678" key="search.everywhere.popup" timestamp="1601644401522">
       <screen x="1920" y="-10" width="1920" height="1040" />
     </state>
