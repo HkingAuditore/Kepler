@@ -20,9 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1afa9dc1-adab-467c-afda-52b72c3d10f3" name="默认的" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Kepler/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Kepler/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Kepler/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Kepler/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Kepler/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Kepler/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SpacePhysic/Satellite.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SpacePhysic/Satellite.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/DynamicsManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/DynamicsManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +45,7 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/SpacePhysic/IOrbitCalculator.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SpacePhysic/Planet.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SpacePhysic/Satellite.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SpacePhysic/AstralBody.cs" />
       </list>
     </option>
   </component>
@@ -96,7 +98,9 @@
       <workItem from="1601643493743" duration="5735000" />
       <workItem from="1601708170900" duration="9383000" />
       <workItem from="1601726884116" duration="2207000" />
-      <workItem from="1601885992940" duration="6235000" />
+      <workItem from="1601885992940" duration="7569000" />
+      <workItem from="1602001293770" duration="1992000" />
+      <workItem from="1602080538294" duration="1195000" />
     </task>
     <servers />
   </component>

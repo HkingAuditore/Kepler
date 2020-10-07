@@ -8,6 +8,7 @@
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
           <e p="SpacePhysic" t="Include">
+            <e p="AstralBody.cs" t="Include" />
             <e p="IOrbitCalculator.cs" t="Include" />
             <e p="Planet.cs" t="Include" />
             <e p="Satellite.cs" t="Include" />
