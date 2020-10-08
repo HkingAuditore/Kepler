@@ -66,6 +66,7 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.completion" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
@@ -103,6 +104,8 @@
       <workItem from="1602001293770" duration="1992000" />
       <workItem from="1602080538294" duration="1662000" />
       <workItem from="1602144783286" duration="3740000" />
+      <workItem from="1602152613762" duration="809000" />
+      <workItem from="1602153481487" duration="5397000" />
     </task>
     <servers />
   </component>
@@ -127,6 +130,10 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="186" y="80" key="SettingsEditor" timestamp="1602154051053">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state x="186" y="80" key="SettingsEditor/0.0.1368.872@0.0.1368.872" timestamp="1602154051053" />
     <state x="2012" y="82" width="1736" height="856" key="VCS.FileHistoryDialog" timestamp="1601889280097">
       <screen x="1920" y="-10" width="1920" height="1040" />
     </state>
