@@ -328,7 +328,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sample: 300
-  timeScale: 1
+  timeScale: 3
 --- !u!4 &1009603420
 Transform:
   m_ObjectHideFlags: 0

@@ -90,7 +90,7 @@ public class GravityTracing : MonoBehaviour
                  */
                 Vector3 acceleration = CalculateForce(astralBody) / astralBody.Mass;
                 astralBodyVelocities[astralBody] += acceleration * _deltaTime;
-                _orbitPoints[astralBody].Add(_orbitPoints[astralBody][_orbitPoints[astralBody].Count - 1] +
+                _orbitPoints[astralBody].Add(_orbitPoints[astralBody].Last()+
                                              astralBodyVelocities[astralBody] * _deltaTime +
                                              .5f * acceleration * _deltaTime * _deltaTime);
             }
@@ -103,7 +103,7 @@ public class GravityTracing : MonoBehaviour
         _orbitRenderers[astralBody].SetPositions(_orbitPoints[astralBody].ToArray());
     }
 
-    public void DrawOrbits()
+    private void DrawOrbits()
     {
         TraceGravity();
         foreach (AstralBody astralBody in _astralBodies)
