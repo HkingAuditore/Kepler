@@ -53,7 +53,7 @@ public class GravityTracing : MonoBehaviour
     {
         Vector3 result = new Vector3(0,0,0);
         //求合力
-        foreach (AstralBody body in astralBody.affectedPlanets)
+        foreach (AstralBody body in astralBody.AffectedPlanets)
         {
             if(body == astralBody) continue;
             result += GetGravityVector3(astralBody,body,sampleTime);

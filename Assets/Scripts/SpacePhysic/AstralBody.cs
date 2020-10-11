@@ -11,7 +11,7 @@ public class AstralBody : MonoBehaviour
     public Vector3 oriVelocity;
     public float radius;
     private Rigidbody _rigidbody;
-    public List<AstralBody> affectedPlanets = new List<AstralBody>();
+    public List<AstralBody> AffectedPlanets { get; } = new List<AstralBody>();
     private LineRenderer _lineRenderer;    
     
     private void Start()
@@ -39,7 +39,7 @@ public class AstralBody : MonoBehaviour
        var astral =  other.GetComponent<AstralBody>();
        if (astral != null)
        {
-           astral.affectedPlanets.Add(this);
+           astral.AffectedPlanets.Add(this);
        }
     }
 
@@ -63,7 +63,7 @@ public class AstralBody : MonoBehaviour
         Vector3 forceResult = new Vector3(0,0,0);
             
         //计算引力向量集
-        foreach (AstralBody astralBody in affectedPlanets)
+        foreach (AstralBody astralBody in AffectedPlanets)
         {
             //float distance = Vector3.Distance(this.transform.position, astralBody.gameObject.transform.position);
             forceResult+=astralBody.GetGravityVector3(this._rigidbody);

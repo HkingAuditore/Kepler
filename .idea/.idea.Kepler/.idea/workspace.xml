@@ -44,8 +44,10 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/SpacePhysic/IOrbitCalculator.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SpacePhysic/Planet.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SpacePhysic/Satellite.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/SpacePhysic/AstralBody.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SpacePhysic/GravityTracing.cs" />
+        <option value="$PROJECT_DIR$/Assets/Shaders/OrbitLine.shader" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SpacePhysic/AstralBody.cs" />
+        <option value="$PROJECT_DIR$/Assets/Arts/Shaders/OrbitLine.shader" />
       </list>
     </option>
   </component>
@@ -108,6 +110,8 @@
       <workItem from="1602235852816" duration="240000" />
       <workItem from="1602236183825" duration="543000" />
       <workItem from="1602240037385" duration="2965000" />
+      <workItem from="1602292691690" duration="1990000" />
+      <workItem from="1602384264795" duration="2673000" />
     </task>
     <servers />
   </component>
