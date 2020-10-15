@@ -10,18 +10,18 @@ public class AstralBody : MonoBehaviour
     public float Mass { get; private set; }
     public Vector3 oriVelocity;
     public float radius;
-    private Rigidbody _rigidbody;
+    protected Rigidbody Rigidbody;
     public List<AstralBody> AffectedPlanets { get; } = new List<AstralBody>();
     private LineRenderer _lineRenderer;    
     
     private void Start()
     {
         _lineRenderer = GetComponent<LineRenderer>();
-        _rigidbody = GetComponent<Rigidbody>();
+        Rigidbody = GetComponent<Rigidbody>();
         this.GetComponents<SphereCollider>()[1].radius = radius;
-        Mass = _rigidbody.mass;
+        Mass = Rigidbody.mass;
 
-        _rigidbody.velocity = oriVelocity;
+        Rigidbody.velocity = oriVelocity;
 
     }
 
@@ -30,7 +30,7 @@ public class AstralBody : MonoBehaviour
         var force = CalculateForce();
         //Debug.Log(this.name + " force: " + force);
 
-        this._rigidbody.AddForce(force);
+        this.Rigidbody.AddForce(force);
     }
 
 
@@ -66,7 +66,7 @@ public class AstralBody : MonoBehaviour
         foreach (AstralBody astralBody in AffectedPlanets)
         {
             //float distance = Vector3.Distance(this.transform.position, astralBody.gameObject.transform.position);
-            forceResult+=astralBody.GetGravityVector3(this._rigidbody);
+            forceResult+=astralBody.GetGravityVector3(this.Rigidbody);
             //gravities.Add(astralBody.GetGravityVector3(this._rigidbody));
         }
 
