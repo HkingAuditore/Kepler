@@ -5,24 +5,41 @@ using System.Linq;
 using SpacePhysic;
 using UnityEngine;
 
-public class AstralBody : MonoBehaviour
+public class AstralBody : MonoBehaviour,ITraceable
 {
-    public float Mass { get; private set; }
+    [Header("Basic Property")]
+    public float mass;
+    public float density;
+    public float originalSize = 1;
+    public float curSize;
+    public Rigidbody AstralBodyRigidbody { get; set; }
+    public SphereCollider triggerCollider;
+    public SphereCollider defaultCollider;
+    [Header("Movement Property")]
     public Vector3 oriVelocity;
-    public float radius;
-    protected Rigidbody Rigidbody;
+    public Vector3 angularVelocity;
+    [Header("Gravity Property")]
+    public bool enableAffect = true;
+    public float affectRadius;
+    public bool enableTracing = false;
+
+   
     public List<AstralBody> AffectedPlanets { get; } = new List<AstralBody>();
     private LineRenderer _lineRenderer;    
     
-    private void Start()
+    protected virtual void Start()
     {
         _lineRenderer = GetComponent<LineRenderer>();
-        Rigidbody = GetComponent<Rigidbody>();
-        this.GetComponents<SphereCollider>()[1].radius = radius;
-        Mass = Rigidbody.mass;
+        AstralBodyRigidbody = GetComponent<Rigidbody>();
+        SetMass();
+        ChangeSize(originalSize);
+        
 
-        Rigidbody.velocity = oriVelocity;
+        
+        
+        this.AstralBodyRigidbody.angularVelocity = this.angularVelocity;
 
+        ChangeVelocity(oriVelocity);
     }
 
     private void FixedUpdate()
@@ -30,24 +47,72 @@ public class AstralBody : MonoBehaviour
         var force = CalculateForce();
         //Debug.Log(this.name + " force: " + force);
 
-        this.Rigidbody.AddForce(force);
+        this.AstralBodyRigidbody.AddForce(force);
     }
 
 
     private void OnTriggerEnter(Collider other)
     {
        var astral =  other.GetComponent<AstralBody>();
-       if (astral != null)
+       if (astral != null && !other.isTrigger && this.enableAffect && !astral.AffectedPlanets.Contains(astral))
        {
            astral.AffectedPlanets.Add(this);
+           // Debug.Log(this.gameObject.name + " In Eff :" + astral.gameObject.name);
        }
     }
+
+    private void OnTriggerExit(Collider other)
+    {
+        var astral =  other.GetComponent<AstralBody>();
+        if (astral != null && this.enableAffect && astral.AffectedPlanets.Contains(astral))
+        {
+            astral.AffectedPlanets.Remove(this);
+        }
+    }
+    
+  
+    
+    #region 开放修改参数
+
+    //调整星球体积
+    public void ChangeSize(float size)
+    {
+        this.transform.localScale = new Vector3(size, size, size);
+        // defaultCollider.radius *= size;
+        // if(enableAffect)
+        //     triggerCollider.radius = affectRadius * size;
+        curSize = size;
+    }
+    //调整星球密度
+
+    public void ChangeVelocity(Vector3 velocity)
+    {
+        AstralBodyRigidbody.velocity = velocity;
+    }
+
+    public virtual void SetMass()
+    {
+        // AstralBodyRigidbody.mass = Mathf.PI * (4/3)*Mathf.Pow(curSize,3) * this.density;
+        AstralBodyRigidbody.mass = this.mass;
+    }
+
+    public void ChangeMass(float curMass)
+    {
+        this.mass = curMass;
+        SetMass();
+    }
+    public void ChangeDensity(float curDensity)
+    {
+        this.density = curDensity;
+    }
+    #endregion 开放修改参数
+
 
     #region 牛顿万有引力
 
     //计算目标到本星球的引力
     private float CalculateGravityModulus(float targetMass, float distance) =>
-        PhysicBase.GetG() * (Mass * targetMass / (distance * distance));
+        PhysicBase.GetG() * (this.GetMass() * targetMass / (distance * distance));
 
     public Vector3 GetGravityVector3(Rigidbody rigidbody)
     {
@@ -66,7 +131,7 @@ public class AstralBody : MonoBehaviour
         foreach (AstralBody astralBody in AffectedPlanets)
         {
             //float distance = Vector3.Distance(this.transform.position, astralBody.gameObject.transform.position);
-            forceResult+=astralBody.GetGravityVector3(this.Rigidbody);
+            forceResult+=astralBody.GetGravityVector3(this.AstralBodyRigidbody);
             //gravities.Add(astralBody.GetGravityVector3(this._rigidbody));
         }
 
@@ -75,7 +140,7 @@ public class AstralBody : MonoBehaviour
 
         return forceResult;
     }
-        
+
 
     #endregion
 
@@ -84,4 +149,22 @@ public class AstralBody : MonoBehaviour
     
 
     #endregion
+
+    public Transform GetTransform() => this.transform;
+
+
+    public GameObject GetGameObject() => this.gameObject;
+
+
+    public bool GetEnableTracing() => this.enableTracing;
+
+
+    public virtual float GetMass() => this.AstralBodyRigidbody.mass;
+
+
+    public Rigidbody GetRigidbody() => this.AstralBodyRigidbody;
+
+
+    public List<AstralBody> GetAffectedPlanets() => this.AffectedPlanets;
+
 }
