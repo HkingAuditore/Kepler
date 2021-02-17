@@ -1,0 +1,100 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7f59e54f2bfd184b9dd451a678d089b, type: 3}
+  m_Name: CM vcam1 Noise Profile
+  m_EditorClassIdentifier: 
+  PositionNoise:
+  - X:
+      Frequency: 0.34
+      Amplitude: 0.61
+      Constant: 0
+    Y:
+      Frequency: 0.52
+      Amplitude: 0.75
+      Constant: 0
+    Z:
+      Frequency: 0.37
+      Amplitude: 0.3
+      Constant: 0
+  - X:
+      Frequency: 0.54
+      Amplitude: 0.36
+      Constant: 0
+    Y:
+      Frequency: 0.24
+      Amplitude: 0.76
+      Constant: 0
+    Z:
+      Frequency: 0.18
+      Amplitude: 0.3
+      Constant: 0
+  - X:
+      Frequency: 0.57
+      Amplitude: 0.51
+      Constant: 0
+    Y:
+      Frequency: 0.34
+      Amplitude: 0.51
+      Constant: 0
+    Z:
+      Frequency: 0.33
+      Amplitude: 0.21
+      Constant: 0
+  OrientationNoise:
+  - X:
+      Frequency: 0
+      Amplitude: 0
+      Constant: 0
+    Y:
+      Frequency: 0
+      Amplitude: 0
+      Constant: 0
+    Z:
+      Frequency: 0
+      Amplitude: 0
+      Constant: 0
+  - X:
+      Frequency: 0
+      Amplitude: 0
+      Constant: 0
+    Y:
+      Frequency: 0
+      Amplitude: 0
+      Constant: 0
+    Z:
+      Frequency: 0
+      Amplitude: 0
+      Constant: 0
+  - X:
+      Frequency: 0
+      Amplitude: 0
+      Constant: 0
+    Y:
+      Frequency: 0
+      Amplitude: 0
+      Constant: 0
+    Z:
+      Frequency: 0
+      Amplitude: 0
+      Constant: 0
+  - X:
+      Frequency: 0
+      Amplitude: 0
+      Constant: 0
+    Y:
+      Frequency: 0
+      Amplitude: 0
+      Constant: 0
+    Z:
+      Frequency: 0
+      Amplitude: 0
+      Constant: 0

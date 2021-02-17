@@ -7,8 +7,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     private static GameManager _gameManager;
-    private Camera _mainCamera;
-    public float newMass;
+    public CameraController mainCameraController;
 
     public static GameManager GetGameManager{
         get{
@@ -18,18 +17,13 @@ public class GameManager : MonoBehaviour
     
     void Awake () {
         _gameManager = this;
-        _mainCamera = Camera.main;
+        
     }
     
 
-    public void ResetScene(float mass)
-    {
-        Application.LoadLevel(Application.loadedLevelName);
-        newMass = mass;
-    }
 
-    public Camera GetMainCamera()
+    public CameraController GetMainCameraController()
     {
-        return _mainCamera;
+        return mainCameraController;
     }
 }

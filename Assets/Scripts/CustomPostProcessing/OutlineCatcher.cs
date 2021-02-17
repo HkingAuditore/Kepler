@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace CustomPostProcessing
@@ -55,6 +56,11 @@ namespace CustomPostProcessing
         private void OnEnable()
         {
             outlineCamera.depthTextureMode = DepthTextureMode.Depth;
+        }
+
+        private void Update()
+        {
+            outlineCamera.orthographicSize = mainCamera.orthographicSize;
         }
 
         [ImageEffectOpaque]

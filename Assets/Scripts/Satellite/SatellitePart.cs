@@ -26,7 +26,7 @@ namespace Satellite
 
         public override void SetMass()
         {
-            AstralBodyRigidbody.mass = this.mass;
+            AstralBodyRigidbody.mass = this.Mass;
         }
 
         public void Push(Vector3 dir)

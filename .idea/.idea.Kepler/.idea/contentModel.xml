@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ContentModelStore">
     <e p="C:\Users\17885\AppData\Local\JetBrains\Rider2020.3\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\17885\AppData\Local\JetBrains\Rider2020.3\resharper-host\Local\Transient\Rider\v203\SolutionCaches\_Kepler.1828133119.00" t="ExcludeRecursive" />
-    <e p="F:\Kepler\Kepler" t="IncludeRecursive">
+    <e p="C:\Users\17885\AppData\Local\JetBrains\Rider2020.3\resharper-host\Local\Transient\Rider\v203\SolutionCaches\_Kepler.-1505220160.00" t="ExcludeRecursive" />
+    <e p="G:\Kepler\Kepler" t="IncludeRecursive">
       <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
@@ -25,6 +25,9 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
+          <e p="Camera" t="Include">
+            <e p="CameraController.cs" t="Include" />
+          </e>
           <e p="CustomPostProcessing" t="Include">
             <e p="CameraMixer.cs" t="Include" />
             <e p="CustomPostProcessingBase.cs" t="Include" />
@@ -47,7 +50,9 @@
             <e p="IOrbitCalculator.cs" t="Include" />
           </e>
           <e p="UI" t="Include">
+            <e p="AstralBodyEditorUI.cs" t="Include" />
             <e p="AstralBodyPlacementUI.cs" t="Include" />
+            <e p="PositionEditorUI.cs" t="Include" />
             <e p="SelectorUI.cs" t="Include" />
             <e p="UIManager.cs" t="Include" />
           </e>

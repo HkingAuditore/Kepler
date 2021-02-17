@@ -9,6 +9,16 @@ public class AstralBody : MonoBehaviour,ITraceable
 {
     [Header("Basic Property")]
     public float mass;
+    public float Mass
+    {
+        get => mass;
+        set
+        {
+            mass = value;
+            SetMass();
+        }
+    }
+
     public float density;
     public float originalSize = 1;
     public float curSize;
@@ -23,13 +33,15 @@ public class AstralBody : MonoBehaviour,ITraceable
     public float affectRadius;
     public bool enableTracing = false;
 
-   
+    public Vector3 Force { get; private set; }
+
+
     public List<AstralBody> AffectedPlanets { get; } = new List<AstralBody>();
-    private LineRenderer _lineRenderer;    
-    
+
+
+
     protected virtual void Start()
     {
-        _lineRenderer = GetComponent<LineRenderer>();
         AstralBodyRigidbody = GetComponent<Rigidbody>();
         SetMass();
         ChangeSize(originalSize);
@@ -46,7 +58,7 @@ public class AstralBody : MonoBehaviour,ITraceable
     {
         var force = CalculateForce();
         //Debug.Log(this.name + " force: " + force);
-
+        // Debug.DrawLine(transform.position,transform.position + force,Color.green);
         this.AstralBodyRigidbody.AddForce(force);
     }
 
@@ -93,12 +105,12 @@ public class AstralBody : MonoBehaviour,ITraceable
     public virtual void SetMass()
     {
         // AstralBodyRigidbody.mass = Mathf.PI * (4/3)*Mathf.Pow(curSize,3) * this.density;
-        AstralBodyRigidbody.mass = this.mass;
+        AstralBodyRigidbody.mass = this.Mass;
     }
 
     public void ChangeMass(float curMass)
     {
-        this.mass = curMass;
+        this.Mass = curMass;
         SetMass();
     }
     public void ChangeDensity(float curDensity)
@@ -137,7 +149,7 @@ public class AstralBody : MonoBehaviour,ITraceable
 
         //计算合力
         //Vector3 forceResult = gravities.Aggregate((r, v) => r + v);
-
+        Force = forceResult;
         return forceResult;
     }
 
