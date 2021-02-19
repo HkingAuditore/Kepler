@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     private static GameManager _gameManager;
-    public CameraController mainCameraController;
+    [SerializeField] private CameraController _mainCameraController;
 
     public static GameManager GetGameManager{
         get{
@@ -24,6 +24,6 @@ public class GameManager : MonoBehaviour
 
     public CameraController GetMainCameraController()
     {
-        return mainCameraController;
+        return _mainCameraController;
     }
 }

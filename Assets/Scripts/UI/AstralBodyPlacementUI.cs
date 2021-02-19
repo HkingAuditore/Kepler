@@ -7,6 +7,7 @@ namespace UI
     {
         public AstralBody placePrefab;
         public GravityTracing orbits;
+        public AstralBodyAddUI root;
 
         public Vector3 Target { get; set; }
 
@@ -40,7 +41,11 @@ namespace UI
                 AstralBody newAstralBody = GameObject.Instantiate(placePrefab, new Vector3(mousePosInWorld.x, 0,mousePosInWorld.z),
                     Quaternion.LookRotation(new Vector3(0,0,0)), orbits.transform);
                 orbits.AddTracingTarget(newAstralBody);
+                _inPlacing = false;
+                root.Switch2Normal();
             }
         }
+
+        public void SetPlacing() => _inPlacing = true;
     }
 }

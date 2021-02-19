@@ -9,39 +9,39 @@ public class AstralBodyEditorUI : MonoBehaviour
     public AstralBody astralBody;
 
     public Slider massSlider;
-    public LineRenderer forceArrow;
     public PositionEditorUI positionEditorUI;
+    public VelocityEditorUI velocityEditorUI;
+    public GameObject normalPanel;
+    public ForceUI forceUI;
 
-    private void Start()
-    {
-        forceArrow.positionCount = 2;
-    }
 
-    private void FixedUpdate()
-    {
-        forceArrow.SetPosition(0,astralBody.transform.position);
-        forceArrow.SetPosition(1,astralBody.transform.position + astralBody.Force * 0.5f);
-    }
 
     private void OnEnable()
     {
-        forceArrow.positionCount = 2;
-        forceArrow.gameObject.SetActive(true);
+        forceUI.astralBody = this.astralBody;
+        forceUI.gameObject.SetActive(true);
         positionEditorUI.editingTarget = this.astralBody.transform;
         positionEditorUI.gameObject.SetActive(true);
+        normalPanel.SetActive(false);
     }
 
     private void OnDisable()
     {
-        forceArrow.gameObject.SetActive(false);
+        forceUI.gameObject.SetActive(false);
         positionEditorUI.gameObject.SetActive(false);
         positionEditorUI.editingTarget = null;
-        forceArrow.positionCount = 0;
+        normalPanel.SetActive(true);
     }
 
     public void EditMass()
     {
         astralBody.Mass = massSlider.value;
+    }
+
+    public void EditVelocity()
+    {
+        velocityEditorUI.editingTarget = this.astralBody;
+        velocityEditorUI.gameObject.SetActive(true);
     }
     
 }

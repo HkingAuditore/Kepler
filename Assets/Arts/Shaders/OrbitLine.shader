@@ -1,4 +1,4 @@
-﻿Shader "Custom/OrbitLine"
+﻿Shader "Line/OrbitLine"
 {
     Properties
     {
