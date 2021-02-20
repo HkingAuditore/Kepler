@@ -24,6 +24,7 @@ public class CameraController : MonoBehaviour
     public float mainSpeed;
     public float scaleSize;
     public float orthoZoomSpeed;
+
     
     private float _orthoSize;
     private float OrthoSize

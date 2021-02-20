@@ -23,7 +23,9 @@ public class ForceUI : MonoBehaviour
         forceArrow.SetPosition(0,astralBody.transform.position);
         forceArrow.SetPosition(1,astralBody.transform.position + astralBody.Force * 0.5f);
         forceText.text = "合力:" + (astralBody.Force.magnitude * 0.5f).ToString("f2") + " N";
-        forceText.fontSize = (int)((_camera.orthographicSize / 185) * 12);
+        int fontSize = (int)((_camera.orthographicSize / 185) * 12);
+        forceText.fontSize = fontSize > 8 ? fontSize : 8;
+
     }
 
     private void OnEnable()

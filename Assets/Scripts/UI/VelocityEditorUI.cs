@@ -37,7 +37,8 @@ public class VelocityEditorUI : MonoBehaviour
     private void Update()
     {
         this.transform.position = editingTarget.transform.position;
-        speedUI.fontSize = (int)((_camera.orthographicSize / 185) * 12);
+        int fontSize = (int)((_camera.orthographicSize / 185) * 12);
+        speedUI.fontSize = fontSize > 8 ? fontSize : 8;
         EditVelocity();
         SetVelocity();
         if (Input.GetMouseButton(1))
@@ -49,6 +50,7 @@ public class VelocityEditorUI : MonoBehaviour
 
     private void EditVelocity()
     {
+        Time.timeScale = 0;
         _mousePos = _camera.ScreenToWorldPoint(Input.mousePosition);
         velocityLine.SetPosition(0, editingTarget.transform.position);
         velocityLine.SetPosition(1, new Vector3(_mousePos.x,editingTarget.transform.position.y,_mousePos.z));
@@ -63,6 +65,7 @@ public class VelocityEditorUI : MonoBehaviour
             _velocity = _mousePos - editingTarget.transform.position;
             editingTarget.ChangeVelocity(new Vector3(_velocity.x,0,_velocity.z) * speedText);
             this.gameObject.SetActive(false);
+            Time.timeScale = 1;
         }
     }
 }

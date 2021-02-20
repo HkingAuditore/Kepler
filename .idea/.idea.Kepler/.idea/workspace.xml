@@ -75,16 +75,16 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/CustomPostProcessing/OutlineCatcher.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/SpacePhysic/AstralBody.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/SelectorUI.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/UI/PositionEditorUI.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Camera/CameraController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/AstralBodyAddUI.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/AstralBodyPlacementUI.cs" />
       <option value="$PROJECT_DIR$/Assets/Arts/Shaders/OrbitLine.shader" />
       <option value="$PROJECT_DIR$/Assets/Arts/Shaders/UiLine.shader" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/AstralBodyEditorUI.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/GameManager/GameManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/UI/VelocityEditorUI.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/ForceUI.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Camera/CameraController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/PositionEditorUI.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/VelocityEditorUI.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1iK5Y9kUuPbAZPnJQwHlUY16sq8" />
@@ -165,6 +165,7 @@
       <workItem from="1613574743920" duration="648000" />
       <workItem from="1613576289160" duration="42000" />
       <workItem from="1613740699336" duration="7885000" />
+      <workItem from="1613827381399" duration="1136000" />
     </task>
     <servers />
   </component>

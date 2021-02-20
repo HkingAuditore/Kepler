@@ -26,40 +26,31 @@ public class PositionEditorUI : MonoBehaviour
         this.transform.position = new Vector3(editingTarget.transform.position.x,this.transform.position.y,editingTarget.transform.position.z);
         this.transform.localScale = (_camera.orthographicSize / 185) * new Vector3(1,1,1);
     }
-
-    private float timer;
-
+    
 
 
+    private Vector3 oriMousePos;
     public void OnBeginDrag()
     {
-        timer = 0f;
+        GameManager.GetGameManager.GetMainCameraController().IsFollowing = false;
+        oriMousePos = _camera.ScreenToWorldPoint(Input.mousePosition);
     }
 
     public void MoveAxis(bool isXAxis)
     {
-        var deltaValue = new Vector2(Input.GetAxis("Mouse X"),Input.GetAxis("Mouse Y"));
-
-        timer += Time.deltaTime;
-        if (timer > 0.5f)
-        { 
-            timer = 0.0f;
-        }
-
-        editingTarget.transform.position += new Vector3(deltaValue.x * (isXAxis ? 1 : 0), 0, deltaValue.y * (isXAxis ? 0 : 1)) * moveSpeed * timer;
+        Vector3 mousePos = _camera.ScreenToWorldPoint(Input.mousePosition);
+        var deltaValue = mousePos - oriMousePos;
+        oriMousePos = mousePos;
+        editingTarget.transform.position += new Vector3(deltaValue.x * (isXAxis ? 1 : 0), 0, deltaValue.z * (isXAxis ? 0 : 1)) ;
     }
     
     public void MoveCenter()
     {
-        var deltaValue = new Vector2(Input.GetAxis("Mouse X"),Input.GetAxis("Mouse Y"));
+        Vector3 mousePos = _camera.ScreenToWorldPoint(Input.mousePosition);
+        var deltaValue = mousePos - oriMousePos;
+        oriMousePos = mousePos;
+        editingTarget.transform.position += new Vector3(deltaValue.x, 0, deltaValue.z) ;
 
-        timer += Time.deltaTime;
-        if (timer > 0.5f)
-        { 
-            timer = 0.0f;
-        }
-
-        editingTarget.transform.position += new Vector3(deltaValue.x, 0, deltaValue.y) * moveSpeed * timer;
     }
 
 
@@ -67,7 +58,7 @@ public class PositionEditorUI : MonoBehaviour
 
     public void OnEndDrag()
     {
-        timer = 0f;
+        GameManager.GetGameManager.GetMainCameraController().IsFollowing = true;
     }
 
 }
