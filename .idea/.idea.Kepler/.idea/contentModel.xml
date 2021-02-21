@@ -13,6 +13,7 @@
             <e p="Mix.shader" t="Include" />
             <e p="OrbitLine.shader" t="Include" />
             <e p="Outline.shader" t="Include" />
+            <e p="Space.shader" t="Include" />
             <e p="UiLine.shader" t="Include" />
           </e>
         </e>
@@ -54,10 +55,10 @@
             <e p="AstralBodyAddUI.cs" t="Include" />
             <e p="AstralBodyEditorUI.cs" t="Include" />
             <e p="AstralBodyPlacementUI.cs" t="Include" />
-            <e p="ForceUI.cs" t="Include" />
             <e p="PositionEditorUI.cs" t="Include" />
             <e p="SelectorUI.cs" t="Include" />
             <e p="UIManager.cs" t="Include" />
+            <e p="VectorUI.cs" t="Include" />
             <e p="VelocityEditorUI.cs" t="Include" />
           </e>
         </e>
