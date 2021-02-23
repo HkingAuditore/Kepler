@@ -5,10 +5,11 @@ namespace Satellite
     public class SatelliteCore : SatelliteEngine
     {
         public Satellite satellite;
+
         protected override void Awake()
         {
-            this.PartType = SatelliteType.Core;
-            this.PartRigidbody = GetComponent<Rigidbody>();
+            PartType = SatelliteType.Core;
+            PartRigidbody = GetComponent<Rigidbody>();
         }
 
         public override float GetMass()

@@ -3,56 +3,54 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    private Transform _cameraBase;
-    
-    private Camera _camera;
-
-    private bool _isFollowing = false;
-    public bool IsFollowing
-    {
-        get => _isFollowing;
-        set => _isFollowing = value;
-    }
-
-
-    public Camera GetMainCamera() => _camera;
-    
     public CinemachineVirtualCamera virtualCamera;
-    private CinemachineBrain _cameraBrain;
-    
+
     public float correctiveSpeed;
     public float mainSpeed;
     public float scaleSize;
     public float orthoZoomSpeed;
 
-    
+    private Camera _camera;
+    private Transform _cameraBase;
+    private CinemachineBrain _cameraBrain;
+
+
+    private Transform _followingTarget;
+    private CinemachineFramingTransposer _framingTransposer;
+
+
     private float _orthoSize;
+
+    public bool IsFollowing { get; set; } = false;
+
     private float OrthoSize
     {
         get => _orthoSize;
-        set => _orthoSize = Mathf.Clamp(value,20,300);
+        set => _orthoSize = Mathf.Clamp(value, 20, 300);
     }
-
-    
-    private Transform _followingTarget;
-    private CinemachineFramingTransposer _framingTransposer;
 
     private void Awake()
     {
         _cameraBase = transform.parent;
-        _camera = this.GetComponent<Camera>();
-        _cameraBrain = this.GetComponent<CinemachineBrain>();
+        _camera = GetComponent<Camera>();
+        _cameraBrain = GetComponent<CinemachineBrain>();
         OrthoSize = virtualCamera.m_Lens.OrthographicSize;
         _framingTransposer = virtualCamera.GetCinemachineComponent<CinemachineFramingTransposer>();
     }
 
     private void Update()
     {
-        if(!Input.GetKey(KeyCode.LeftAlt))
+        if (!Input.GetKey(KeyCode.LeftAlt))
             CameraMover();
         CameraScaler();
-        if(IsFollowing)
+        if (IsFollowing)
             Follow();
+    }
+
+
+    public Camera GetMainCamera()
+    {
+        return _camera;
     }
 
     private void CameraMover()
@@ -68,7 +66,7 @@ public class CameraController : MonoBehaviour
                                 new Vector3(Input.GetAxis("Mouse X"), 0, Input.GetAxis("Mouse Y")) *
                                 (correctiveSpeed * Time.deltaTime);
     }
-    
+
     private void CameraScaler()
     {
         OrthoSize += Input.GetAxis("Mouse ScrollWheel") * scaleSize;
@@ -91,6 +89,7 @@ public class CameraController : MonoBehaviour
 
     public void Follow()
     {
-        _cameraBase.transform.position = new Vector3(_followingTarget.position.x,_cameraBase.transform.position.y,_followingTarget.position.z);
+        _cameraBase.transform.position = new Vector3(_followingTarget.position.x, _cameraBase.transform.position.y,
+                                                     _followingTarget.position.z);
     }
 }

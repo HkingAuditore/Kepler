@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
@@ -9,7 +8,7 @@ namespace Satellite
     {
         public List<SatellitePart> satelliteParts = new List<SatellitePart>();
         public SatelliteCore satelliteCore;
-        
+
         private void Start()
         {
             GenerateJoints();
@@ -17,16 +16,17 @@ namespace Satellite
 
         public float GetMass()
         {
-            return satelliteParts.Sum((part => part.GetMass()));
-        }
-        public Transform GetTransform() => satelliteCore.transform;
-        private void GenerateJoints()
-        {
-            foreach (SatellitePart part in satelliteParts)
-            {
-                part.GenerateJoint();
-            }
+            return satelliteParts.Sum(part => part.GetMass());
         }
 
+        public Transform GetTransform()
+        {
+            return satelliteCore.transform;
+        }
+
+        private void GenerateJoints()
+        {
+            foreach (var part in satelliteParts) part.GenerateJoint();
+        }
     }
 }

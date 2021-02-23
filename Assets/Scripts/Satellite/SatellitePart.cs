@@ -13,11 +13,13 @@ namespace Satellite
     public class SatellitePart : AstralBody
     {
         public string satelliteName;
+        public List<SatellitePart> connectedPartList = new List<SatellitePart>();
+
+        private readonly Dictionary<string, FixedJoint> _connectedJoints = new Dictionary<string, FixedJoint>();
+
         // public float mass;
         public SatelliteType PartType { get; set; }
-        public List<SatellitePart> connectedPartList = new List<SatellitePart>();
         public Rigidbody PartRigidbody { get; protected set; }
-        private readonly Dictionary<string, FixedJoint> _connectedJoints = new Dictionary<string, FixedJoint>();
 
         protected virtual void Awake()
         {
@@ -26,7 +28,7 @@ namespace Satellite
 
         public override void SetMass()
         {
-            AstralBodyRigidbody.mass = this.Mass;
+            AstralBodyRigidbody.mass = Mass;
         }
 
         public void Push(Vector3 dir)
@@ -65,15 +67,13 @@ namespace Satellite
         {
             if (separateAll)
             {
-                connectedPartList.ForEach((part => Separate(part.name)));
+                connectedPartList.ForEach(part => Separate(part.name));
             }
             else
             {
                 if (connectedPartList.Count > 0)
                     Separate(connectedPartList[0].name);
-
             }
         }
-
     }
 }

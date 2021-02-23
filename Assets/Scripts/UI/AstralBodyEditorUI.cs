@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using Dreamteck.Splines;
-using SpacePhysic;
+﻿using SpacePhysic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -20,7 +16,7 @@ public class AstralBodyEditorUI : MonoBehaviour
     public LengthUI lengthUI;
     public OrbitPanelUI orbitPanelUI;
     private Text _massText;
-    
+
 
     private void Awake()
     {
@@ -29,16 +25,15 @@ public class AstralBodyEditorUI : MonoBehaviour
 
     private void OnEnable()
     {
-        
-        forceUI.astralBody = this.astralBody;
+        forceUI.astralBody = astralBody;
         forceUI.gameObject.SetActive(true);
-        velocityUI.astralBody = this.astralBody;
+        velocityUI.astralBody = astralBody;
         velocityUI.gameObject.SetActive(true);
-        positionEditorUI.editingTarget = this.astralBody.transform;
+        positionEditorUI.editingTarget = astralBody.transform;
         positionEditorUI.gameObject.SetActive(true);
         normalPanel.SetActive(false);
         InitMassEditor();
-        lengthUI.astralBody = this.astralBody;
+        lengthUI.astralBody = astralBody;
         lengthUI.gameObject.SetActive(true);
     }
 
@@ -50,7 +45,6 @@ public class AstralBodyEditorUI : MonoBehaviour
         positionEditorUI.editingTarget = null;
         normalPanel.SetActive(true);
         lengthUI.gameObject.SetActive(false);
-
     }
 
     private void InitMassEditor()
@@ -61,9 +55,10 @@ public class AstralBodyEditorUI : MonoBehaviour
         massSlider.minValue = (int) (tmpMass / 10);
         massSlider.maxValue = (int) (tmpMass * 10);
         massSlider.value = tmpMass;
-        
+
         _massText.text = astralBody.Mass + " kg";
     }
+
     public void EditMass()
     {
         astralBody.Mass = massSlider.value;
@@ -72,16 +67,16 @@ public class AstralBodyEditorUI : MonoBehaviour
 
     public void EditVelocity()
     {
-        velocityEditorUI.editingTarget = this.astralBody;
+        velocityEditorUI.editingTarget = astralBody;
         velocityEditorUI.gameObject.SetActive(true);
     }
 
     public void GetConicSection()
     {
-        var result = gravityTracing.GetConicSection(this.astralBody,100);
+        var result = gravityTracing.GetConicSection(astralBody, 100);
         orbitPanelUI.orbit = result;
         orbitPanelUI.astralBody = astralBody;
-        Debug.Log("曲线为：" + result.ToString());
+        Debug.Log("曲线为：" + result);
         Debug.Log("长轴为：" + result.semiMajorAxis);
         Debug.Log("短轴为：" + result.semiMinorAxis);
         Debug.Log("几何中心为：" + result.geoCenter);
@@ -97,8 +92,7 @@ public class AstralBodyEditorUI : MonoBehaviour
         //               Color.magenta,
         //               1000f
         //               );
-        
-        gravityTracing.DrawMathOrbit(result,20);
-    }
 
+        gravityTracing.DrawMathOrbit(result, 20);
+    }
 }

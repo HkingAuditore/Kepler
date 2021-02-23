@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UI;
+﻿using UI;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,12 +13,10 @@ public class AstralBodyAddUI : MonoBehaviour
         astralBodyPlacementUI.SetPlacing();
         astralBodyPlacementUI.gameObject.SetActive(true);
     }
-    
+
     public void Switch2Normal()
     {
         button.gameObject.SetActive(true);
         astralBodyPlacementUI.gameObject.SetActive(false);
-
     }
-
 }

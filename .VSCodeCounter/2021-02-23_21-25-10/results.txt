@@ -1,0 +1,57 @@
+Date : 2021-02-23 21:25:10
+Directory : g:\Kepler\Kepler\Assets\Scripts
+Total : 26 files,  1554 codes, 136 comments, 317 blanks, all 2007 lines
+
+Languages
++----------+------------+------------+------------+------------+------------+
+| language | files      | code       | comment    | blank      | total      |
++----------+------------+------------+------------+------------+------------+
+| C#       |         26 |      1,554 |        136 |        317 |      2,007 |
++----------+------------+------------+------------+------------+------------+
+
+Directories
++----------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                             | files      | code       | comment    | blank      | total      |
++----------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                |         26 |      1,554 |        136 |        317 |      2,007 |
+| Camera                                                                           |          1 |         73 |          1 |         21 |         95 |
+| CustomPostProcessing                                                             |          3 |        139 |          5 |         32 |        176 |
+| GameManager                                                                      |          1 |         14 |          0 |          5 |         19 |
+| MathPlus                                                                         |          1 |        215 |         34 |         30 |        279 |
+| Satellite                                                                        |          6 |        206 |          9 |         39 |        254 |
+| SpacePhysic                                                                      |          3 |        274 |         43 |         87 |        404 |
+| UI                                                                               |         11 |        633 |         44 |        103 |        780 |
++----------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++----------------------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| filename                                                                         | language | code       | comment    | blank      | total      |
++----------------------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| g:\Kepler\Kepler\Assets\Scripts\Camera\CameraController.cs                       | C#       |         73 |          1 |         21 |         95 |
+| g:\Kepler\Kepler\Assets\Scripts\CustomPostProcessing\CameraMixer.cs              | C#       |         38 |          4 |          7 |         49 |
+| g:\Kepler\Kepler\Assets\Scripts\CustomPostProcessing\CustomPostProcessingBase.cs | C#       |         28 |          0 |          5 |         33 |
+| g:\Kepler\Kepler\Assets\Scripts\CustomPostProcessing\OutlineCatcher.cs           | C#       |         73 |          1 |         20 |         94 |
+| g:\Kepler\Kepler\Assets\Scripts\GameManager\GameManager.cs                       | C#       |         14 |          0 |          5 |         19 |
+| g:\Kepler\Kepler\Assets\Scripts\MathPlus\MathPlus.cs                             | C#       |        215 |         34 |         30 |        279 |
+| g:\Kepler\Kepler\Assets\Scripts\Satellite\Satellite.cs                           | C#       |         27 |          0 |          5 |         32 |
+| g:\Kepler\Kepler\Assets\Scripts\Satellite\SatelliteController.cs                 | C#       |         74 |          7 |         18 |         99 |
+| g:\Kepler\Kepler\Assets\Scripts\Satellite\SatelliteCore.cs                       | C#       |         17 |          0 |          3 |         20 |
+| g:\Kepler\Kepler\Assets\Scripts\Satellite\SatelliteEngine.cs                     | C#       |         12 |          0 |          1 |         13 |
+| g:\Kepler\Kepler\Assets\Scripts\Satellite\SatelliteParachute.cs                  | C#       |         11 |          0 |          0 |         11 |
+| g:\Kepler\Kepler\Assets\Scripts\Satellite\SatellitePart.cs                       | C#       |         65 |          2 |         12 |         79 |
+| g:\Kepler\Kepler\Assets\Scripts\SpacePhysic\AstralBody.cs                        | C#       |        124 |         17 |         49 |        190 |
+| g:\Kepler\Kepler\Assets\Scripts\SpacePhysic\GravityTracing.cs                    | C#       |        130 |         26 |         35 |        191 |
+| g:\Kepler\Kepler\Assets\Scripts\SpacePhysic\IOrbitCalculator.cs                  | C#       |         20 |          0 |          3 |         23 |
+| g:\Kepler\Kepler\Assets\Scripts\UI\AstralBodyAddUI.cs                            | C#       |         19 |          0 |          3 |         22 |
+| g:\Kepler\Kepler\Assets\Scripts\UI\AstralBodyEditorUI.cs                         | C#       |         78 |          8 |         12 |         98 |
+| g:\Kepler\Kepler\Assets\Scripts\UI\AstralBodyPlacementUI.cs                      | C#       |         67 |          0 |          8 |         75 |
+| g:\Kepler\Kepler\Assets\Scripts\UI\LengthUI.cs                                   | C#       |         51 |          0 |          8 |         59 |
+| g:\Kepler\Kepler\Assets\Scripts\UI\OrbitGraphUI.cs                               | C#       |        139 |         27 |         24 |        190 |
+| g:\Kepler\Kepler\Assets\Scripts\UI\OrbitPanelUI.cs                               | C#       |         31 |          0 |          3 |         34 |
+| g:\Kepler\Kepler\Assets\Scripts\UI\PositionEditorUI.cs                           | C#       |         45 |          0 |         12 |         57 |
+| g:\Kepler\Kepler\Assets\Scripts\UI\SelectorUI.cs                                 | C#       |         72 |          2 |          7 |         81 |
+| g:\Kepler\Kepler\Assets\Scripts\UI\UIManager.cs                                  | C#       |          7 |          0 |          1 |          8 |
+| g:\Kepler\Kepler\Assets\Scripts\UI\VectorUI.cs                                   | C#       |         64 |          3 |         12 |         79 |
+| g:\Kepler\Kepler\Assets\Scripts\UI\VelocityEditorUI.cs                           | C#       |         60 |          4 |         13 |         77 |
+| Total                                                                            |          |      1,554 |        136 |        317 |      2,007 |
++----------------------------------------------------------------------------------+----------+------------+------------+------------+------------+

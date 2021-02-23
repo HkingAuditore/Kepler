@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -18,11 +16,10 @@ public class VectorUI : MonoBehaviour
     public vectorType thisType;
     public string header;
     public string unit;
-    public float showSize =.5f;
-    
+    public float showSize = .5f;
+
     private Camera _camera;
     private Vector3 _targetVector;
-
 
 
     private void Start()
@@ -50,20 +47,19 @@ public class VectorUI : MonoBehaviour
             vectorText.text = "";
             return;
         }
-            
-        
-        this.transform.position = astralBody.transform.position;
-        vectorArrow.SetPosition(0,astralBody.transform.position);
-        vectorArrow.SetPosition(1,astralBody.transform.position + _targetVector * showSize);
+
+
+        transform.position = astralBody.transform.position;
+        vectorArrow.SetPosition(0, astralBody.transform.position);
+        vectorArrow.SetPosition(1, astralBody.transform.position + _targetVector * showSize);
         var tmpScreenPos = _camera.WorldToScreenPoint(astralBody.transform.position + showSize * _targetVector);
         // Debug.Log(this.gameObject.name + " : " + tmpScreenPos);
-        transform.position = new Vector3(Mathf.Clamp(tmpScreenPos.x, 60,Screen.width-60),
-                                        Mathf.Clamp(tmpScreenPos.y, 20, Screen.height-20),
-                                        0);
-        vectorText.text = header + ":" + (_targetVector.magnitude * showSize).ToString("f2") + " "+unit;
+        transform.position = new Vector3(Mathf.Clamp(tmpScreenPos.x, 60, Screen.width - 60),
+                                         Mathf.Clamp(tmpScreenPos.y, 20, Screen.height - 20),
+                                         0);
+        vectorText.text = header + ":" + (_targetVector.magnitude * showSize).ToString("f2") + " " + unit;
         // int fontSize = (int)((_camera.orthographicSize / 185) * 12);
         // vectorText.fontSize = fontSize > 8 ? fontSize : 8;
-
     }
 
     private void OnEnable()

@@ -8,10 +8,10 @@ public class VelocityEditorUI : MonoBehaviour
     public Text speedUI;
     public float showSize = .1f;
     public VectorUI velocityUI;
-
-    private Vector3 _velocity;
     private Camera _camera;
     private Vector3 _mousePos;
+
+    private Vector3 _velocity;
 
     private protected float Speed
     {
@@ -34,7 +34,6 @@ public class VelocityEditorUI : MonoBehaviour
 
     private void Update()
     {
-        
         // var fontSize = (int) (_camera.orthographicSize / 185 * 12);
 
         EditVelocity();
@@ -57,12 +56,12 @@ public class VelocityEditorUI : MonoBehaviour
         velocityLine.SetPosition(0, editingTarget.transform.position);
         velocityLine.SetPosition(1, new Vector3(_mousePos.x, editingTarget.transform.position.y, _mousePos.z));
 
-         // Vector3 tmpScreenPos = Input.mousePosition;
+        // Vector3 tmpScreenPos = Input.mousePosition;
         // Debug.Log(tmpScreenPos);
         // Debug.Log(this.gameObject.name + " : " + tmpScreenPos);
-        transform.position = new Vector3(Mathf.Clamp(Input.mousePosition.x, 60,Screen.width-60),
-            Mathf.Clamp(Input.mousePosition.y, 20, Screen.height-20),
-            0);
+        transform.position = new Vector3(Mathf.Clamp(Input.mousePosition.x, 60, Screen.width - 60),
+                                         Mathf.Clamp(Input.mousePosition.y, 20, Screen.height - 20),
+                                         0);
 
         speedUI.text = "速度：" + Speed.ToString("f2") + " m/s";
     }

@@ -20,18 +20,18 @@ namespace MathPlus
     public class ConicSection
     {
         public float a; //x^2
+        public float angle;
         public float b; //xy
         public float c; //y^2
         public float d; //x
         public float e; //y
+        public float eccentricity; //离心率
         public float f; //f
-        public bool isEllipse;
+        public float focalLength;
         public Vector2 geoCenter; //几何中心
+        public bool isEllipse;
         public float semiMajorAxis; //长半轴
         public float semiMinorAxis; //短半轴
-        public float eccentricity; //离心率
-        public float angle;
-        public float focalLength;
 
         public ConicSection(float a, float b, float c, float d, float e, float f)
         {
@@ -122,7 +122,7 @@ namespace MathPlus
 
         private float GetEccentricity()
         {
-            return Mathf.Sqrt(1 - ((semiMinorAxis * semiMinorAxis) / (semiMajorAxis * semiMajorAxis)));
+            return Mathf.Sqrt(1 - semiMinorAxis * semiMinorAxis / (semiMajorAxis * semiMajorAxis));
         }
 
         private float GetAngle()
@@ -155,8 +155,9 @@ namespace MathPlus
 
         public float GetT(float m)
         {
-            return 2 * Mathf.PI * Mathf.Sqrt((semiMajorAxis * semiMajorAxis * semiMajorAxis) / (PhysicBase.GetG() * m));
+            return 2 * Mathf.PI * Mathf.Sqrt(semiMajorAxis * semiMajorAxis * semiMajorAxis / (PhysicBase.GetG() * m));
         }
+
         public override string ToString()
         {
             return a + "x^2+" + b + "xy+" + c + "y^2+" + d + "x+" + e + "y+" + f + " ";

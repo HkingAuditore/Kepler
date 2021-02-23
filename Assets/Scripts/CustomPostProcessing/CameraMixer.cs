@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace CustomPostProcessing
 {
@@ -10,24 +8,24 @@ namespace CustomPostProcessing
         public OutlineCatcher renderTexOuter;
         public RenderTexture renderTexture;
         public Shader mixShader;
+
+        [Header("Material Setting")] public Color edgeColor = Color.white;
+
         private Material _mixMaterial;
-        
-        [Header("Material Setting")]
-        public Color edgeColor = Color.white;
 
 
         public Material MixMaterial
         {
             get
             {
-                _mixMaterial = GenerateMaterial(mixShader,ref _mixMaterial);
+                _mixMaterial = GenerateMaterial(mixShader, ref _mixMaterial);
                 return _mixMaterial;
             }
         }
 
         private void Start()
         {
-            MixMaterial.SetTexture("MixTex",renderTexOuter.GetRenderResult());
+            MixMaterial.SetTexture("MixTex", renderTexOuter.GetRenderResult());
             // MixMaterial.SetTexture("MixTex", renderTexture);
         }
 
@@ -37,7 +35,7 @@ namespace CustomPostProcessing
             if (MixMaterial != null)
             {
                 // Debug.Log(renderTexOuter.GetRenderResult());
-                MixMaterial.SetTexture("_MixTex",renderTexOuter.GetRenderResult());
+                MixMaterial.SetTexture("_MixTex", renderTexOuter.GetRenderResult());
                 MixMaterial.SetColor("_EdgeColor", edgeColor);
                 // MixMaterial.SetTexture("MixTex", renderTexture);
                 Graphics.Blit(src, dest, MixMaterial);
@@ -45,9 +43,7 @@ namespace CustomPostProcessing
             else
             {
                 Graphics.Blit(src, dest);
-
             }
         }
-
     }
 }

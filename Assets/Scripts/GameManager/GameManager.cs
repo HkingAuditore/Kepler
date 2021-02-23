@@ -1,25 +1,15 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.SceneManagement;
+﻿using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    private static GameManager _gameManager;
     [SerializeField] private CameraController _mainCameraController;
 
-    public static GameManager GetGameManager{
-        get{
-            return _gameManager;
-        }
+    public static GameManager GetGameManager { get; private set; }
+
+    private void Awake()
+    {
+        GetGameManager = this;
     }
-    
-    void Awake () {
-        _gameManager = this;
-        
-    }
-    
 
 
     public CameraController GetMainCameraController()

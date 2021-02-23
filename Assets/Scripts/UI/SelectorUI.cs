@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using CustomPostProcessing;
 using UnityEngine;
 
@@ -9,10 +8,10 @@ namespace UI
     {
         public OutlineCatcher outlineCatcher;
         public AstralBodyEditorUI astralBodyEditorUI;
-        
-        private List<GameObject> selectedGameObjects = new List<GameObject>();
         private CameraController _cameraController;
-        private bool _isLocked = false;
+        private bool _isLocked;
+
+        private readonly List<GameObject> selectedGameObjects = new List<GameObject>();
 
         private void Start()
         {
@@ -30,19 +29,18 @@ namespace UI
             {
                 CancelFocus();
             }
-            
         }
 
         private void HighlightSelect()
         {
-            Ray ray = _cameraController.GetMainCamera().ScreenPointToRay(Input.mousePosition);
+            var ray = _cameraController.GetMainCamera().ScreenPointToRay(Input.mousePosition);
             RaycastHit hitInfo;
             // Debug.DrawRay(ray.origin,ray.direction,Color.green);
             if (Physics.Raycast(ray, out hitInfo, 500))
             {
                 // Debug.Log("Hit!");
                 if (!selectedGameObjects.Contains(hitInfo.collider.gameObject) &&
-                    (hitInfo.collider.gameObject.CompareTag("AstralBody")))
+                    hitInfo.collider.gameObject.CompareTag("AstralBody"))
                 {
                     outlineCatcher.AddTarget(hitInfo.collider.gameObject);
                     selectedGameObjects.Add(hitInfo.collider.gameObject);
@@ -50,7 +48,7 @@ namespace UI
             }
             else
             {
-                selectedGameObjects.ForEach((o => outlineCatcher.RemoveTarget(o)));
+                selectedGameObjects.ForEach(o => outlineCatcher.RemoveTarget(o));
                 selectedGameObjects.Clear();
             }
         }
@@ -65,8 +63,6 @@ namespace UI
                 astralBodyEditorUI.astralBody = selectedGameObjects[0].GetComponent<AstralBody>();
                 astralBodyEditorUI.gameObject.SetActive(true);
                 astralBodyEditorUI.enabled = true;
-                
-                
             }
         }
 
@@ -79,7 +75,6 @@ namespace UI
                 _cameraController.IsFollowing = false;
                 astralBodyEditorUI.enabled = false;
                 astralBodyEditorUI.gameObject.SetActive(false);
-                
             }
         }
     }

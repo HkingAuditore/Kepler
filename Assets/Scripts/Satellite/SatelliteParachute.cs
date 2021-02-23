@@ -4,7 +4,7 @@
     {
         protected override void Awake()
         {
-            this.PartType = SatelliteType.Parachute;
+            PartType = SatelliteType.Parachute;
             base.Awake();
         }
     }
