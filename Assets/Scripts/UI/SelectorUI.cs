@@ -75,9 +75,11 @@ namespace UI
             if (Input.GetMouseButtonDown(1))
             {
                 _isLocked = false;
+                _cameraController.ExitFocus();
                 _cameraController.IsFollowing = false;
                 astralBodyEditorUI.enabled = false;
                 astralBodyEditorUI.gameObject.SetActive(false);
+                
             }
         }
     }

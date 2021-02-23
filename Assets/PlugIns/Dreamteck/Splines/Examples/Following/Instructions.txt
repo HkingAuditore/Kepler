@@ -1,0 +1,10 @@
+1. Test
+Simply play the scene to test.
+
+2. Setup
+A Spline Follower component is attached to the Main Camera object and is set to follow the scene's spline.
+Inside the Spline Follower's inspector, under Rotation Modifiers, two modifiers are defined that make the camera look away from the path. The first modifier is set up in the region of the lake and makes the camera look directly at the "Look Pivot" object inside the scene. The second modifier simply makes the camera look down as it "jumps" off the wooden catwalk.
+A "Camera Smooth Rotation" component is also added to the camera - its purpose is to smooth the rotation from the spline. It can be disabled by setting "Damp" to 0.
+
+3. The assets in this scene are created by EMACEART:
+https://assetstore.unity.com/publishers/37608

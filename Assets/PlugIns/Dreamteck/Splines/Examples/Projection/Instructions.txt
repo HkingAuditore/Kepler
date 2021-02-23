@@ -1,0 +1,6 @@
+1. Test
+Play the scene and press Space to add force to the ball along the path. The ball will roll and use physics while in the same time being constrained to the spline path
+
+2. Setup
+The sphere object has a SplineProjector component attached to it. The Spline Projector is set to project the Sphere along the spline. It is set to apply the result to the sphere's rigidbody instead of the sphere's transform and it is set to work in Fixed Update (inside the Settings foldout). For applying the motion, the Y position has been disabled - the ball is only constrained along X and Z. The ball's rotation is not controlled by the Spline Projector.
+A lap counting behavior is implemented by creating a trigger inside the Spline (triggers foldout). When the projector passes that trigger along the spline, it sends a message to the lap counter

@@ -37,16 +37,20 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Camera/CameraController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.postprocessing@2.3.0/PostProcessing/Runtime/PostProcessLayer.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/VectorUI.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/OrbitGraphUI.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Satellite/SatellitePart.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/SelectorUI.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CustomPostProcessing/CustomPostProcessingBase.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/AstralBodyAddUI.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/AstralBodyEditorUI.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/LengthUI.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/OrbitPanelUI.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Camera/CameraController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/VectorUI.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/SelectorUI.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CustomPostProcessing/OutlineCatcher.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Satellite/SatelliteEngine.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/AstralBodyEditorUI.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/MathPlus/MathPlus.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameManager/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/VelocityEditorUI.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -62,7 +66,6 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/TestSlider.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/AstralPlacement.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/AstralBodyPlacement.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/SpacePhysic/GravityTracing.cs" />
       <option value="$PROJECT_DIR$/Assets/Arts/Shaders/StrechOcclusion.shader" />
       <option value="$PROJECT_DIR$/Assets/Arts/Shaders/Depth.shader" />
       <option value="$PROJECT_DIR$/Assets/Arts/Shaders/Outline.shader" />
@@ -74,20 +77,28 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/UIManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/CustomPostProcessing/OutlineCatcher.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/SpacePhysic/AstralBody.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/UI/SelectorUI.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/AstralBodyAddUI.cs" />
       <option value="$PROJECT_DIR$/Assets/Arts/Shaders/OrbitLine.shader" />
-      <option value="$PROJECT_DIR$/Assets/Arts/Shaders/UiLine.shader" />
       <option value="$PROJECT_DIR$/Assets/Scripts/GameManager/GameManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/ForceUI.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/PositionEditorUI.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/VectorI.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/UI/AstralBodyEditorUI.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/AstralBodyPlacementUI.cs" />
+      <option value="$PROJECT_DIR$/Assets/Arts/Shaders/Space.shader" />
+      <option value="$PROJECT_DIR$/Assets/Arts/Shaders/UIBlur.shader" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/VectorUI.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/VelocityEditorUI.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/UI/AstralBodyPlacementUI.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/MathPlus/Matrix.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/MathPlus/CustomMatrix.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/SpacePhysic/GravityTracing.cs" />
+      <option value="$PROJECT_DIR$/Assets/Arts/Shaders/UiLine.shader" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/LengthUI.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/AstralBodyEditorUI.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/MathPlus/MathPlus.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/SelectorUI.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Camera/CameraController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Arts/Shaders/Space.shader" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/OrbitPanelUI.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/OrbitGraphUI.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1iK5Y9kUuPbAZPnJQwHlUY16sq8" />
@@ -107,7 +118,7 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
@@ -178,7 +189,9 @@
       <workItem from="1613740699336" duration="7885000" />
       <workItem from="1613827381399" duration="1136000" />
       <workItem from="1613880422694" duration="345000" />
-      <workItem from="1613895946672" duration="5973000" />
+      <workItem from="1613895946672" duration="16329000" />
+      <workItem from="1613965527023" duration="27569000" />
+      <workItem from="1614055407267" duration="16156000" />
     </task>
     <servers />
   </component>

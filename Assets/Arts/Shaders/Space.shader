@@ -9,14 +9,16 @@
         _Exponent1 ("Exponent Factor for Top Half", Float) = 1.0
         _Exponent2 ("Exponent Factor for Bottom Half", Float) = 1.0
         _Intensity ("Intensity Amplifier", Float) = 1.0
-        
+
         [Header(Rotation)]
         _Rotation ("Rotation", Range(0, 360)) = 0
         _RotationAxis("Rotation axis", Vector) = (0, 1, 0)
         _RotationSpeed("Rotation vector", Vector) = (0, 1, 0)
-        
+
         [Header(Star Setting)]
-        [HDR]_StarColor ("Star Color", Color) = (1,1,1,0)
+        [HDR]_StarColor0 ("Star Color 0", Color) = (1,1,1,0)
+        [HDR]_StarColor1 ("Star Color 1", Color) = (1,1,1,0)
+        [HDR]_StarColor2 ("Star Color 2", Color) = (1,1,1,0)
         _StarIntensity("Star Intensity", Range(0,1)) = 0.5
         _StarSpeed("Star Speed", Range(0,1)) = 0.5
 
@@ -26,10 +28,11 @@
         _CloudSpeed("CloudSpeed", Range(0,1)) = 0.5
 
         [Header(Aurora Setting)]
-        [HDR]_AuroraColor ("Aurora Color", Color) = (1,1,1,0)
+        [HDR]_AuroraColor0 ("Aurora Color 0", Color) = (1,1,1,0)
+        [HDR]_AuroraColor1 ("Aurora Color 1", Color) = (1,1,1,0)
         _AuroraIntensity("Aurora Intensity", Range(0,1)) = 0.5
         _AuroraSpeed("AuroraSpeed", Range(0,1)) = 0.5
-        _SurAuroraColFactor("Sur Aurora Color Factor", Range(0,1)) = 0.5
+
 
     }
 
@@ -53,8 +56,8 @@
     //旋转
     float _Rotation;
     float3 _RotationAxis;
-    float3  _RotationSpeed;
-    
+    float3 _RotationSpeed;
+
     // 环境背景颜色
     half4 _Color1;
     half4 _Color2;
@@ -65,7 +68,9 @@
 
 
     //星星 
-    half4 _StarColor;
+    half4 _StarColor0;
+    half4 _StarColor1;
+    half4 _StarColor2;
     half _StarIntensity;
     half _StarSpeed;
 
@@ -75,10 +80,10 @@
     half _CloudSpeed;
 
     // 极光
-    half4 _AuroraColor;
+    half4 _AuroraColor0;
+    half4 _AuroraColor1;
     half _AuroraIntensity;
     half _AuroraSpeed;
-    half _SurAuroraColFactor;
 
 
     float4x4 rotationMatrix(float3 axis, float angle)
@@ -100,8 +105,10 @@
     v2f vert(appdata v)
     {
         v2f o;
-        _RotationAxis += _Time.y *  _RotationSpeed;
-        float3 rotated = mul(rotationMatrix(normalize(_RotationAxis.xyz), _Rotation * UNITY_PI / 180.0), v.position).xyz;
+        _RotationAxis += _Time.y * _RotationSpeed;
+        _Rotation += _Time.y;
+        float3 rotated = mul(rotationMatrix(normalize(_RotationAxis.xyz), (_Rotation+ _Time.y*_RotationSpeed) * UNITY_PI / 180.0),
+                             v.position).xyz;
         o.position = UnityObjectToClipPos(rotated);
 
         o.texcoord = v.texcoord;
@@ -295,32 +302,41 @@
         // 星星
         float star = StarNoise(fixed3(i.texcoord.x, i.texcoord.y * reflection, i.texcoord.z) * 64);
         float4 starOriCol = float4(
-            _StarColor.r + 3.25 * sin(i.texcoord.x) + 1.45 * (sin(_Time.y * _StarSpeed) + 1) * 0.5,
-            _StarColor.g + 3.85 * sin(i.texcoord.y) + 1.25 * (sin(_Time.y * _StarSpeed) + 1) * 0.5,
-            _StarColor.b + 3.45 * sin(i.texcoord.z) + 2.45 * (sin(_Time.y * _StarSpeed) + 1) * 0.5,
-            _StarColor.a + 3.85 * star);
+            _StarColor0.r * 1.25 * sin(frac(i.texcoord.x)) + _StarColor1.r * 1.25 * sin(frac(i.texcoord.x)) +
+            _StarColor2.r * 1.25 * sin(frac(i.texcoord.x)) + 1.45 * (sin(_Time.y * _StarSpeed) + 1) * 0.5,
+            _StarColor0.g * 1.85 * sin(frac(i.texcoord.y)) + _StarColor1.g * 1.85 * sin(frac(i.texcoord.y)) +
+            _StarColor2.g * 1.85 * sin(frac(i.texcoord.y)) + 1.45 * (sin(_Time.y * _StarSpeed) + 1) * 0.5,
+            _StarColor0.b * 1.45 * sin(frac(i.texcoord.z)) + _StarColor1.b * 1.45 * sin(frac(i.texcoord.z)) +
+            _StarColor2.b * 1.45 * sin(frac(i.texcoord.z)) + 1.45 * (sin(_Time.y * _StarSpeed) + 1) * 0.5,
+            _StarColor0.a + 3.85 * star);
         star = star > 0.8 ? star : smoothstep(0.81, 0.98, star);
 
         float4 starCol = fixed4((starOriCol * star).rgb, star);
 
 
         //极光
+        fixed3 auroraColTmp = _AuroraColor0.rgb * sin(_Time.y* _AuroraSpeed) + _AuroraColor1.rgb * (1-sin(_Time.y* _AuroraSpeed));
         float3 aurora = float3(
-            _AuroraColor.rgb * GetAurora(float3(i.texcoord.xy * float2(1.2, 1.0), _Time.y * _AuroraSpeed * 0.22)) * 0.9
+            auroraColTmp * GetAurora(
+                float3(i.texcoord.xy * float2(1.2, 1.0), _Time.y * _AuroraSpeed * 0.22)) * 0.9
             +
-            _AuroraColor.rgb * GetAurora(float3(i.texcoord.xy * float2(1.0, 0.7), _Time.y * _AuroraSpeed * 0.27)) * 0.9
+            auroraColTmp * GetAurora(
+                float3(i.texcoord.xy * float2(1.0, 0.7), _Time.y * _AuroraSpeed * 0.27)) * 0.9
             +
-            _AuroraColor.rgb * GetAurora(float3(i.texcoord.xy * float2(0.8, 0.6), _Time.y * _AuroraSpeed * 0.29)) * 0.5
+            auroraColTmp * GetAurora(
+                float3(i.texcoord.xy * float2(0.8, 0.6), _Time.y * _AuroraSpeed * 0.29)) * 0.5
             +
-            _AuroraColor.rgb * GetAurora(float3(i.texcoord.xy * float2(0.9, 0.5), _Time.y * _AuroraSpeed * 0.20)) *
+            auroraColTmp * GetAurora(
+                float3(i.texcoord.xy * float2(0.9, 0.5), _Time.y * _AuroraSpeed * 0.20)) *
             0.57);
         float4 auroraCol = float4(aurora, 0.1354);
 
 
         //混合
         float4 skyCol = (_Color1 * p1 + _Color2 * p2 + _Color3 * p3) * _Intensity;
-        starCol = reflection == 1 ? starCol : starCol * 0.5;
+        // starCol = reflection == 1 ? starCol : starCol * 0.5;
         skyCol = skyCol * (1 - starCol.a) + starCol * starCol.a;
+        skyCol = skyCol * (1 - auroraCol.a) + auroraCol * auroraCol.a;
         skyCol = skyCol * (1 - cloudCol.a) + cloudCol * cloudCol.a;
 
 

@@ -1,0 +1,185 @@
+﻿using System;
+using MathPlus;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class OrbitGraphUI : MonoBehaviour
+{
+    public AstralBody astralBody;
+    public ConicSection orbit;
+    public float conHeight;
+    public Text angularVelocity;
+    public Text distance;
+    public Image ellipseImage;
+    public Image oriImage;
+    public Image targetImage;
+
+
+    private GraphOrbit _graphOrbit;
+    private RectTransform _ellipseImageRect;
+    private RectTransform _oriImageRect;
+    private RectTransform _targetImageRect;
+
+    private class GraphOrbit
+    {
+        public readonly float a;
+        public readonly float b;
+        public readonly float c;
+        public readonly float e;
+
+        public GraphOrbit(ConicSection conicSection, float height)
+        {
+            var adb = conicSection.semiMajorAxis / conicSection.semiMinorAxis;
+            b = height / 2;
+            a = height / 2 * adb;
+            if (a > 404f)
+            {
+                a = 404f;
+                b = a / adb;
+            }
+
+            c = conicSection.eccentricity * a;
+            e = c / a;
+        }
+
+        public float GetR(float ag)
+        {
+            return (b / Mathf.Sqrt(1 - e * e * Mathf.Cos(ag) * Mathf.Cos(ag)));
+        }
+        public Vector2 GetPolarPos(float ag)
+        {
+            // var r = b / Mathf.Sqrt(1 - e * e * Mathf.Cos(ag * Mathf.Deg2Rad) *
+            //                        Mathf.Cos(ag * Mathf.Deg2Rad));
+            // Debug.Log("r: " + r);
+            // var sumAngle = ag;
+            // var pos = new Vector2(r * Mathf.Cos(sumAngle * Mathf.Deg2Rad),
+            //                       r * Mathf.Sin(sumAngle * Mathf.Deg2Rad));
+            var pos = new Vector2(a * Mathf.Cos(ag * Mathf.Deg2Rad),
+                                  b * Mathf.Sin(ag * Mathf.Deg2Rad));
+            // Debug.Log(geoCenter + pos);
+            // Debug.Log("pos" + pos);
+            return new Vector2(0, 0) + pos;
+        }
+    }
+
+
+    private void Awake()
+    {
+        _ellipseImageRect = ellipseImage.gameObject.GetComponent<RectTransform>();
+        _oriImageRect = oriImage.gameObject.GetComponent<RectTransform>();
+        _targetImageRect = targetImage.gameObject.GetComponent<RectTransform>();
+    }
+    
+    private void OnEnable()
+    {
+        
+    }
+
+    public void Init()
+    {
+        _graphOrbit = new GraphOrbit(orbit, conHeight);
+        PosOri();
+        _lastAngle = _curAngle;
+        _ellipseImageRect.sizeDelta = new Vector2(2 * _graphOrbit.a, 2 * _graphOrbit.b);
+
+        // PosOri();
+        PosTar();
+    }
+
+    private void FixedUpdate()
+    {
+        PosOri();
+        CalculateAngularVelocity();
+        ShowAngularVelocity();
+        ShowDistance();
+    }
+
+    private float _curAngle;
+    private float GetOriAngle()
+    {
+        var tar2Ori = astralBody.transform.position - astralBody.AffectedPlanets[0].transform.position;
+        var axis = astralBody.AffectedPlanets[0].transform.position + new Vector3(
+                                                                                  1 * Mathf.Cos(orbit.angle *
+                                                                                                Mathf.Deg2Rad),
+                                                                                  0,
+                                                                                  1 * Mathf.Sin(orbit.angle *
+                                                                                                Mathf
+                                                                                                   .Deg2Rad));
+        // Debug.DrawLine(astralBody.AffectedPlanets[0].transform.position,
+        //                astralBody.AffectedPlanets[0].transform.position + tar2Ori,
+        //                Color.magenta,
+        //                1000f
+        //               );
+        // Debug.DrawLine(astralBody.AffectedPlanets[0].transform.position,
+        //                astralBody.AffectedPlanets[0].transform.position + new Vector3(
+        //                                                                               1 * Mathf.Cos(orbit.angle *
+        //                                                                                             Mathf.Deg2Rad),
+        //                                                                               0,
+        //                                                                               1 * Mathf.Sin(orbit.angle *
+        //                                                                                             Mathf
+        //                                                                                                .Deg2Rad)) * 2000,
+        //                Color.cyan,
+        //                1000f
+        //               );
+
+        var angle = Vector3.Angle(axis, tar2Ori); //求出两向量之间的夹角
+        var normal = Vector3.Cross(axis, tar2Ori); //叉乘求出法线向量
+        angle *= Mathf.Sign(Vector3.Dot(normal, new Vector3(0, 1, 0))); //求法线向量与物体上方向向量点乘，结果为1或-1，修正旋转方向
+        _curAngle = angle;
+        // Debug.Log(angle);
+        return angle;
+    }
+
+
+    private void PosOri()
+    {
+        _oriImageRect.anchoredPosition = _graphOrbit.GetPolarPos(GetOriAngle());
+        // Debug.Log(oriImage.rectTransform.anchoredPosition);
+    }
+
+    private void PosTar()
+    {
+        Vector3 lSizePos = new Vector3(orbit.geoCenter.x, 0, orbit.geoCenter.y) + new Vector3(
+                                                                                              1 * Mathf
+                                                                                                 .Cos(orbit.angle *
+                                                                                                      Mathf.Deg2Rad),
+                                                                                              0,
+                                                                                              1 * Mathf
+                                                                                                 .Sin(orbit.angle *
+                                                                                                      Mathf
+                                                                                                         .Deg2Rad)) * orbit.semiMajorAxis;
+        Vector3 rSizePos = new Vector3(orbit.geoCenter.x, 0, orbit.geoCenter.y) - new Vector3(
+                                                                                              1 * Mathf
+                                                                                                 .Cos(orbit.angle *
+                                                                                                      Mathf.Deg2Rad),
+                                                                                              0,
+                                                                                              1 * Mathf
+                                                                                                 .Sin(orbit.angle *
+                                                                                                      Mathf
+                                                                                                         .Deg2Rad)) * orbit.semiMajorAxis;
+        float orientation = -Mathf.Sign(
+                                       Vector3.Distance(astralBody.AffectedPlanets[0].transform.position, lSizePos)
+                                      -
+                                       Vector3.Distance(astralBody.AffectedPlanets[0].transform.position, rSizePos)
+                                       );
+        _targetImageRect.anchoredPosition = new Vector2(_graphOrbit.c * orientation, 0);
+    }
+
+    private float _angularVelocity;
+    private float _lastAngle;
+    private void CalculateAngularVelocity()
+    {
+        _angularVelocity = Mathf.Abs(_curAngle - _lastAngle) / Time.fixedDeltaTime;
+        _lastAngle = _curAngle;
+    }
+
+    private void ShowAngularVelocity()
+    {
+        angularVelocity.text = "角速度:" + _angularVelocity.ToString("f2") + " degree/s";
+    }
+
+    private void ShowDistance()
+    {
+        distance.text ="距离:"+ Vector3.Distance(this.astralBody.transform.position,this.astralBody.AffectedPlanets[0].transform.position).ToString("f2") + " m";
+    }
+}

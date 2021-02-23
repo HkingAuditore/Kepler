@@ -35,7 +35,7 @@ public class CameraController : MonoBehaviour
 
     
     private Transform _followingTarget;
-    
+    private CinemachineFramingTransposer _framingTransposer;
 
     private void Awake()
     {
@@ -43,6 +43,7 @@ public class CameraController : MonoBehaviour
         _camera = this.GetComponent<Camera>();
         _cameraBrain = this.GetComponent<CinemachineBrain>();
         OrthoSize = virtualCamera.m_Lens.OrthographicSize;
+        _framingTransposer = virtualCamera.GetCinemachineComponent<CinemachineFramingTransposer>();
     }
 
     private void Update()
@@ -57,9 +58,9 @@ public class CameraController : MonoBehaviour
     private void CameraMover()
     {
         var xSpeed = 2 * ((Input.mousePosition.x - Screen.width / 2) / Screen.width);
-        xSpeed = Mathf.Abs(xSpeed) > 0.7 ? xSpeed : 0;
+        xSpeed = Mathf.Abs(xSpeed) > 0.95 ? xSpeed : 0;
         var ySpeed = 2 * ((Input.mousePosition.y - Screen.height / 2) / Screen.height);
-        ySpeed = Mathf.Abs(ySpeed) > 0.7 ? ySpeed : 0;
+        ySpeed = Mathf.Abs(ySpeed) > 0.95 ? ySpeed : 0;
 
         // Debug.Log("Mouse [x:" + xSpeed + ", y:" + ySpeed + "]");
 
@@ -67,7 +68,7 @@ public class CameraController : MonoBehaviour
                                 new Vector3(Input.GetAxis("Mouse X"), 0, Input.GetAxis("Mouse Y")) *
                                 (correctiveSpeed * Time.deltaTime);
     }
-
+    
     private void CameraScaler()
     {
         OrthoSize += Input.GetAxis("Mouse ScrollWheel") * scaleSize;
@@ -75,11 +76,17 @@ public class CameraController : MonoBehaviour
             Mathf.Lerp(virtualCamera.m_Lens.OrthographicSize, OrthoSize, orthoZoomSpeed);
     }
 
+
     public void FocusOn(Transform target)
     {
         virtualCamera.m_LookAt = target;
+        _framingTransposer.m_ScreenX = 0.33f;
         _followingTarget = target;
-        
+    }
+
+    public void ExitFocus()
+    {
+        _framingTransposer.m_ScreenX = 0.5f;
     }
 
     public void Follow()

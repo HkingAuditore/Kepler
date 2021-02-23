@@ -20,24 +20,29 @@ Material:
     serializedVersion: 3
     m_TexEnvs: []
     m_Floats:
-    - _AuroraIntensity: 0.5
-    - _AuroraSpeed: 0.5
+    - _AuroraIntensity: 0.465
+    - _AuroraSpeed: 0.744
     - _CloudIntensity: 0.5
     - _CloudSpeed: 0.5
     - _Exponent1: 1
     - _Exponent2: 1
     - _Intensity: 1
-    - _Rotation: 231
-    - _StarIntensity: 0.345
-    - _StarSpeed: 0.504
-    - _SurAuroraColFactor: 0.5
+    - _Rotation: 164
+    - _StarIntensity: 0.363
+    - _StarSpeed: 0.58
+    - _SurAuroraColFactor: 0.39
     m_Colors:
-    - _AuroraColor: {r: 0.26415092, g: 0.095941596, b: 0.095941596, a: 0}
-    - _CloudColor: {r: 0.17644179, g: 0.6132076, b: 0.51283985, a: 1}
+    - _AuroraColor: {r: 1, g: 0.4764151, b: 0.9659425, a: 0}
+    - _AuroraColor0: {r: 0.36900428, g: 0.9339623, b: 0.2775454, a: 1}
+    - _AuroraColor1: {r: 0.50426686, g: 0.4000979, b: 0.764151, a: 1}
+    - _CloudColor: {r: 0.17647058, g: 0.5355776, b: 0.6117647, a: 1}
     - _Color1: {r: 0, g: 0, b: 0, a: 0}
     - _Color2: {r: 0.11694552, g: 0.20386186, b: 0.33962262, a: 0}
     - _Color3: {r: 0, g: 0, b: 0, a: 1}
     - _RotationAxis: {r: -4.67, g: 3.97, b: -2.16, a: 1}
-    - _RotationSpeed: {r: -4.96, g: -0.98, b: -0.45, a: 1}
-    - _StarColor: {r: 0.25987896, g: 0.634263, b: 0.754717, a: 1}
+    - _RotationSpeed: {r: 1.04, g: 2.49, b: 0.54, a: 1}
+    - _StarColor: {r: 0, g: 0.4454025, b: 3.3261406, a: 1}
+    - _StarColor0: {r: 0.745283, g: 0.116011046, b: 0.116011046, a: 1}
+    - _StarColor1: {r: 0.2756764, g: 0.990566, b: 0.9514134, a: 1}
+    - _StarColor2: {r: 1, g: 0.40558988, b: 0, a: 1}
   m_BuildTextureStacks: []

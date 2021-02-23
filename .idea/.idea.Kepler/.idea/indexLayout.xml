@@ -24,6 +24,7 @@
       <Path>.VSCodeCounter</Path>
       <Path>.git</Path>
       <Path>.idea</Path>
+      <Path>.vs</Path>
       <Path>Library</Path>
       <Path>Logs</Path>
       <Path>Temp</Path>

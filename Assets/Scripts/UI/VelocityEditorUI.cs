@@ -6,7 +6,7 @@ public class VelocityEditorUI : MonoBehaviour
     public LineRenderer velocityLine;
     public AstralBody editingTarget;
     public Text speedUI;
-    public float speedText = .1f;
+    public float showSize = .1f;
     public VectorUI velocityUI;
 
     private Vector3 _velocity;
@@ -22,7 +22,7 @@ public class VelocityEditorUI : MonoBehaviour
             var oriScreenPos = _camera.WorldToScreenPoint(oriPos);
             var tarScreenPos = _camera.WorldToScreenPoint(tarPos);
 
-            return Vector3.Magnitude((tarScreenPos - oriScreenPos) * speedText);
+            return Vector3.Magnitude((tarScreenPos - oriScreenPos) * showSize);
         }
     }
 
@@ -35,8 +35,8 @@ public class VelocityEditorUI : MonoBehaviour
     private void Update()
     {
         
-        var fontSize = (int) (_camera.orthographicSize / 185 * 12);
-        speedUI.fontSize = fontSize > 8 ? fontSize : 8;
+        // var fontSize = (int) (_camera.orthographicSize / 185 * 12);
+
         EditVelocity();
 
         if (Input.GetMouseButton(1))
@@ -56,14 +56,21 @@ public class VelocityEditorUI : MonoBehaviour
         _mousePos = _camera.ScreenToWorldPoint(Input.mousePosition);
         velocityLine.SetPosition(0, editingTarget.transform.position);
         velocityLine.SetPosition(1, new Vector3(_mousePos.x, editingTarget.transform.position.y, _mousePos.z));
-        transform.position = velocityLine.GetPosition(1);
+
+         // Vector3 tmpScreenPos = Input.mousePosition;
+        // Debug.Log(tmpScreenPos);
+        // Debug.Log(this.gameObject.name + " : " + tmpScreenPos);
+        transform.position = new Vector3(Mathf.Clamp(Input.mousePosition.x, 60,Screen.width-60),
+            Mathf.Clamp(Input.mousePosition.y, 20, Screen.height-20),
+            0);
+
         speedUI.text = "速度：" + Speed.ToString("f2") + " m/s";
     }
 
     private void SetVelocity()
     {
         _velocity = _mousePos - editingTarget.transform.position;
-        editingTarget.ChangeVelocity(new Vector3(_velocity.x, 0, _velocity.z) * speedText);
+        editingTarget.ChangeVelocity(new Vector3(_velocity.x, 0, _velocity.z) * showSize);
         gameObject.SetActive(false);
         Time.timeScale = 1;
         velocityUI.gameObject.SetActive(true);

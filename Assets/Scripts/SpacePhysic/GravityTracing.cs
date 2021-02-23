@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Dreamteck.Splines;
+using MathPlus;
 using UnityEngine;
 
 namespace SpacePhysic
@@ -17,6 +19,8 @@ namespace SpacePhysic
     {
         public int sample = 20;
         public float timeScale = 100;
+        // public LineRenderer mathOrbitDrawer;
+        public SplineComputer splineComputer;
         private float _deltaTime;
     
         private List<ITraceable> _astralBodies = new List<ITraceable>();
@@ -121,7 +125,7 @@ namespace SpacePhysic
             }
         }
 
-        public void DrawOrbit(ITraceable astralBody)
+        private void DrawOrbit(ITraceable astralBody)
         {
             _orbitRenderers[astralBody].positionCount = sample;
             _orbitRenderers[astralBody].SetPositions(_orbitPoints[astralBody].ToArray());
@@ -134,6 +138,51 @@ namespace SpacePhysic
             {
                 DrawOrbit(astralBody);
             }
+        }
+
+        #endregion
+
+        #region 求解圆锥曲线
+
+        private Vector2 ConvertV3ToV2(Vector3 vector3) => new Vector2(vector3.x, vector3.z);
+        private Vector3 ConvertV2ToV3(Vector2 vector2) => new Vector3(vector2.x, 0,vector2.y);
+
+        public ConicSection GetConicSection(ITraceable astralBody,int sampleCount)
+        {
+            int sampleStep = sample / sampleCount;
+            
+            // Debug.Log("[0]:"+ConvertV3ToV2(_orbitPoints[astralBody][0]));
+            // Debug.Log("[1]:"+ConvertV3ToV2(_orbitPoints[astralBody][sampleStep]));
+            // Debug.Log("[2]:"+ConvertV3ToV2(_orbitPoints[astralBody][2 * sampleStep]));
+            // Debug.Log("[3]:"+ConvertV3ToV2(_orbitPoints[astralBody][3 * sampleStep]));
+            // Debug.Log("[4]:"+ConvertV3ToV2(_orbitPoints[astralBody][4 * sampleStep]));
+            // Debug.Log("[5]:"+ConvertV3ToV2(_orbitPoints[astralBody][5 * sampleStep]));
+            List<Vector2> points = new List<Vector2>();
+            for (int i = 0; i < sampleCount; i++)
+            {
+                points.Add(ConvertV3ToV2(_orbitPoints[astralBody][i * sampleStep]));
+            }
+            
+            ConicSection conicSection =
+                MathPlus.CustomSolver.FitConicSection(points);
+            return conicSection;
+        }
+
+        public void DrawMathOrbit(ConicSection conicSection,int sam)
+        {
+            List<SplinePoint> points = new List<SplinePoint>();
+            float step = 360f / sam;
+            for (int i = 0; i < sam; i++)
+            {
+                points.Add(new SplinePoint(ConvertV2ToV3(conicSection.GetPolarPos(i * step))));
+            }
+            points.Add(new SplinePoint(ConvertV2ToV3(conicSection.GetPolarPos(360))));
+
+            splineComputer.SetPoints(points.ToArray());
+            splineComputer.Close();
+            
+            // mathOrbitDrawer.positionCount = sam + 1;
+            // mathOrbitDrawer.SetPositions(points.ToArray());
         }
 
         #endregion

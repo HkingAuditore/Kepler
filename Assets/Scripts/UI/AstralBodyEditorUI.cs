@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Dreamteck.Splines;
+using SpacePhysic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class AstralBodyEditorUI : MonoBehaviour
 {
     public AstralBody astralBody;
+    public GravityTracing gravityTracing;
 
     public Slider massSlider;
     public PositionEditorUI positionEditorUI;
@@ -14,8 +17,10 @@ public class AstralBodyEditorUI : MonoBehaviour
     public GameObject normalPanel;
     public VectorUI forceUI;
     public VectorUI velocityUI;
-
+    public LengthUI lengthUI;
+    public OrbitPanelUI orbitPanelUI;
     private Text _massText;
+    
 
     private void Awake()
     {
@@ -33,6 +38,8 @@ public class AstralBodyEditorUI : MonoBehaviour
         positionEditorUI.gameObject.SetActive(true);
         normalPanel.SetActive(false);
         InitMassEditor();
+        lengthUI.astralBody = this.astralBody;
+        lengthUI.gameObject.SetActive(true);
     }
 
     private void OnDisable()
@@ -42,6 +49,8 @@ public class AstralBodyEditorUI : MonoBehaviour
         positionEditorUI.gameObject.SetActive(false);
         positionEditorUI.editingTarget = null;
         normalPanel.SetActive(true);
+        lengthUI.gameObject.SetActive(false);
+
     }
 
     private void InitMassEditor()
@@ -66,5 +75,30 @@ public class AstralBodyEditorUI : MonoBehaviour
         velocityEditorUI.editingTarget = this.astralBody;
         velocityEditorUI.gameObject.SetActive(true);
     }
-    
+
+    public void GetConicSection()
+    {
+        var result = gravityTracing.GetConicSection(this.astralBody,100);
+        orbitPanelUI.orbit = result;
+        orbitPanelUI.astralBody = astralBody;
+        Debug.Log("曲线为：" + result.ToString());
+        Debug.Log("长轴为：" + result.semiMajorAxis);
+        Debug.Log("短轴为：" + result.semiMinorAxis);
+        Debug.Log("几何中心为：" + result.geoCenter);
+        Debug.Log("离心率为：" + result.eccentricity);
+        Debug.Log("焦距为：" + result.focalLength);
+        orbitPanelUI.gameObject.SetActive(true);
+        orbitPanelUI.Init();
+        // Debug.DrawLine(this.astralBody.AffectedPlanets[0].transform.position,
+        //                this.astralBody.AffectedPlanets[0].transform.position + new Vector3(
+        //                                                                                 1 * Mathf.Cos(result.angle* Mathf.Deg2Rad),
+        //                                                                                 0,
+        //                                                                                 1 * Mathf.Sin(result.angle* Mathf.Deg2Rad)) * 1000f,
+        //               Color.magenta,
+        //               1000f
+        //               );
+        
+        gravityTracing.DrawMathOrbit(result,20);
+    }
+
 }

@@ -53,7 +53,7 @@
 
         void surf(Input IN, inout SurfaceOutput o)
         {
-            fixed2 uv = IN.uv_MainTex + float2((IN.uv_MainTex.x - _Time.y * _Speed * _Density)+1,0);
+            fixed2 uv = float2(IN.uv_MainTex.x  * _Density ,IN.uv_MainTex.y) + float2((IN.uv_MainTex.x- _Time.y * _Speed )+1,0);
             half4 c = tex2D(_MainTex, frac(uv));
             o.Alpha = IN.vertColor.a * c.a;
             // o.Alpha =1;

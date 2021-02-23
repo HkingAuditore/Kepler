@@ -4,6 +4,7 @@
     <e p="C:\Users\17885\AppData\Local\JetBrains\Rider2020.3\extResources" t="IncludeRecursive" />
     <e p="C:\Users\17885\AppData\Local\JetBrains\Rider2020.3\resharper-host\Local\Transient\Rider\v203\SolutionCaches\_Kepler.-1505220160.00" t="ExcludeRecursive" />
     <e p="G:\Kepler\Kepler" t="IncludeRecursive">
+      <e p="Assembly-CSharp-Editor-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
@@ -14,10 +15,236 @@
             <e p="OrbitLine.shader" t="Include" />
             <e p="Outline.shader" t="Include" />
             <e p="Space.shader" t="Include" />
+            <e p="UIBlur.shader" t="Include" />
             <e p="UiLine.shader" t="Include" />
           </e>
         </e>
         <e p="PlugIns" t="Include">
+          <e p="BaseInfolibrary" t="Include">
+            <e p="MathNet.Numerics.xml" t="Include" />
+            <e p="MathNet.Spatial.xml" t="Include" />
+          </e>
+          <e p="Dreamteck" t="Include">
+            <e p="Splines" t="Include">
+              <e p="Components" t="Include">
+                <e p="BlankUser.cs" t="Include" />
+                <e p="EdgeColliderGenerator.cs" t="Include" />
+                <e p="Editor" t="Include">
+                  <e p="BakeMeshWindow.cs" t="Include" />
+                  <e p="LengthCalculatorEditor.cs" t="Include" />
+                  <e p="MeshGenEditor.cs" t="Include" />
+                  <e p="NodeEditor.cs" t="Include" />
+                  <e p="ObjectBenderEditor.cs" t="Include" />
+                  <e p="ObjectControllerEditor.cs" t="Include" />
+                  <e p="ParticleControllerEditor.cs" t="Include" />
+                  <e p="PathGeneratorEditor.cs" t="Include" />
+                  <e p="PolygonColliderGenEditor.cs" t="Include" />
+                  <e p="SetDistanceWindow.cs" t="Include" />
+                  <e p="SplineFollowerEditor.cs" t="Include" />
+                  <e p="SplineMeshEditor.cs" t="Include" />
+                  <e p="SplineMorphEditor.cs" t="Include" />
+                  <e p="SplinePositionerEditor.cs" t="Include" />
+                  <e p="SplineProjectorEditor.cs" t="Include" />
+                  <e p="SplineRendererEditor.cs" t="Include" />
+                  <e p="SplineTracerEditor.cs" t="Include" />
+                  <e p="SplineUserEditor.cs" t="Include" />
+                  <e p="SplineUserSubEditor.cs" t="Include" />
+                  <e p="SurfaceGeneratorEditor.cs" t="Include" />
+                  <e p="TubeGeneratorEditor.cs" t="Include" />
+                  <e p="WaveformGeneratorEditor.cs" t="Include" />
+                </e>
+                <e p="LengthCalculator.cs" t="Include" />
+                <e p="MeshGenerator.cs" t="Include" />
+                <e p="Node.cs" t="Include" />
+                <e p="ObjectBender.cs" t="Include" />
+                <e p="ObjectController.cs" t="Include" />
+                <e p="ParticleController.cs" t="Include" />
+                <e p="PathGenerator.cs" t="Include" />
+                <e p="PolygonColliderGenerator.cs" t="Include" />
+                <e p="Sample Modifiers" t="Include">
+                  <e p="ColorModifier.cs" t="Include" />
+                  <e p="Editor" t="Include">
+                    <e p="ColorModifierEditor.cs" t="Include" />
+                    <e p="FollowerSpeedModifierEditor.cs" t="Include" />
+                    <e p="MeshScaleModifierEditor.cs" t="Include" />
+                    <e p="OffsetModifierEditor.cs" t="Include" />
+                    <e p="RotationModifierEditor.cs" t="Include" />
+                    <e p="SizeModifierEditor.cs" t="Include" />
+                    <e p="SplineSampleModifierEditor.cs" t="Include" />
+                  </e>
+                  <e p="FollowerSpeedModifier.cs" t="Include" />
+                  <e p="MeshScaleModifier.cs" t="Include" />
+                  <e p="OffsetModifier.cs" t="Include" />
+                  <e p="RotationModifier.cs" t="Include" />
+                  <e p="SizeModifier.cs" t="Include" />
+                  <e p="SplineSampleModifier.cs" t="Include" />
+                </e>
+                <e p="SplineComputer.cs" t="Include" />
+                <e p="SplineFollower.cs" t="Include" />
+                <e p="SplineMesh.cs" t="Include" />
+                <e p="SplineMorph.cs" t="Include" />
+                <e p="SplinePositioner.cs" t="Include" />
+                <e p="SplineProjector.cs" t="Include" />
+                <e p="SplineRenderer.cs" t="Include" />
+                <e p="SplineTracer.cs" t="Include" />
+                <e p="SplineUser.cs" t="Include" />
+                <e p="SurfaceGenerator.cs" t="Include" />
+                <e p="TubeGenerator.cs" t="Include" />
+                <e p="WaveformGenerator.cs" t="Include" />
+              </e>
+              <e p="Core" t="Include">
+                <e p="IO" t="Include">
+                  <e p="CSV.cs" t="Include" />
+                  <e p="SplineParser.cs" t="Include" />
+                  <e p="SVG.cs" t="Include" />
+                </e>
+                <e p="ObjectSequence.cs" t="Include" />
+                <e p="Primitives" t="Include">
+                  <e p="Capsule.cs" t="Include" />
+                  <e p="Ellipse.cs" t="Include" />
+                  <e p="Line.cs" t="Include" />
+                  <e p="Ngon.cs" t="Include" />
+                  <e p="Rectangle.cs" t="Include" />
+                  <e p="RoundedRectangle.cs" t="Include" />
+                  <e p="Spiral.cs" t="Include" />
+                  <e p="SplinePrimitive.cs" t="Include" />
+                  <e p="Star.cs" t="Include" />
+                </e>
+                <e p="SampleCollection.cs" t="Include" />
+                <e p="Spline.cs" t="Include" />
+                <e p="SplinePoint.cs" t="Include" />
+                <e p="SplinePrefs.cs" t="Include" />
+                <e p="SplineSample.cs" t="Include" />
+                <e p="SplineThreading.cs" t="Include" />
+                <e p="SplineTrigger.cs" t="Include" />
+                <e p="TransformModule.cs" t="Include" />
+              </e>
+              <e p="Editor" t="Include">
+                <e p="changelog.txt" t="Include" />
+                <e p="ComputerSplitModule.cs" t="Include" />
+                <e p="DSSplineDrawer.cs" t="Include" />
+                <e p="Primitives" t="Include">
+                  <e p="CapsuleEditor.cs" t="Include" />
+                  <e p="EllipseEditor.cs" t="Include" />
+                  <e p="LineEditor.cs" t="Include" />
+                  <e p="NgonEditor.cs" t="Include" />
+                  <e p="PrimitiveEditor.cs" t="Include" />
+                  <e p="RectangleEditor.cs" t="Include" />
+                  <e p="RoundedRectangleEditor.cs" t="Include" />
+                  <e p="SpiralEditor.cs" t="Include" />
+                  <e p="StarEditor.cs" t="Include" />
+                </e>
+                <e p="SplineComputerEditor.cs" t="Include" />
+                <e p="SplineComputerEditorHandles.cs" t="Include" />
+                <e p="SplineDrawer.cs" t="Include" />
+                <e p="SplineEditor" t="Include">
+                  <e p="DS Editor" t="Include">
+                    <e p="ComputerEditor.cs" t="Include" />
+                    <e p="ComputerEditorModule.cs" t="Include" />
+                    <e p="ComputerMergeModule.cs" t="Include" />
+                    <e p="DreamteckSplinesEditor.cs" t="Include" />
+                    <e p="DSCreatePointModule.cs" t="Include" />
+                    <e p="PrimitivesModule.cs" t="Include" />
+                    <e p="SplineDebugEditor.cs" t="Include" />
+                    <e p="SplineTriggersEditor.cs" t="Include" />
+                  </e>
+                  <e p="EditorModule.cs" t="Include" />
+                  <e p="Point Modules" t="Include">
+                    <e p="CreatePointModule.cs" t="Include" />
+                    <e p="DeletePointModule.cs" t="Include" />
+                    <e p="MainPointModule.cs" t="Include" />
+                    <e p="PointMirrorModule.cs" t="Include" />
+                    <e p="PointModule.cs" t="Include" />
+                    <e p="PointMoveModule.cs" t="Include" />
+                    <e p="PointNormalModule.cs" t="Include" />
+                    <e p="PointRotateModule.cs" t="Include" />
+                    <e p="PointScaleModule.cs" t="Include" />
+                    <e p="PointTransformModule.cs" t="Include" />
+                  </e>
+                  <e p="SplineEditor.cs" t="Include" />
+                  <e p="SplineEditorBase.cs" t="Include" />
+                </e>
+                <e p="SplineEditorGUI.cs" t="Include" />
+                <e p="SplineEditorHandles.cs" t="Include" />
+                <e p="SplineEditorWindow.cs" t="Include" />
+                <e p="SplinePreset.cs" t="Include" />
+                <e p="Tools" t="Include">
+                  <e p="BakeTool.cs" t="Include" />
+                  <e p="Explorer.cs" t="Include" />
+                  <e p="ImportTool.cs" t="Include" />
+                  <e p="LevelTerrainTool.cs" t="Include" />
+                  <e p="ObjectSpawnTool.cs" t="Include" />
+                  <e p="SplineTool.cs" t="Include" />
+                  <e p="SplineToolsWindow.cs" t="Include" />
+                  <e p="UpdateTool.cs" t="Include" />
+                </e>
+                <e p="TransformModuleEditor.cs" t="Include" />
+                <e p="WelcomeScreen.cs" t="Include" />
+              </e>
+              <e p="Examples" t="Include">
+                <e p="AudioVisualization" t="Include">
+                  <e p="SpectrumVisualizer.cs" t="Include" />
+                </e>
+                <e p="Following" t="Include">
+                  <e p="Instructions.txt" t="Include" />
+                  <e p="Scripts" t="Include">
+                    <e p="CameraSmoothRotation.cs" t="Include" />
+                    <e p="URLButton.cs" t="Include" />
+                  </e>
+                </e>
+                <e p="Junctions" t="Include">
+                  <e p="Instructions.txt" t="Include" />
+                  <e p="Scripts" t="Include">
+                    <e p="JunctionSwitch.cs" t="Include" />
+                    <e p="TrainCamera.cs" t="Include" />
+                    <e p="TrainEngine.cs" t="Include" />
+                    <e p="Wagon.cs" t="Include" />
+                  </e>
+                </e>
+                <e p="LengthEvents" t="Include">
+                  <e p="SetMaterialColor.cs" t="Include" />
+                </e>
+                <e p="Projection" t="Include">
+                  <e p="Instructions.txt" t="Include" />
+                  <e p="Scripts" t="Include">
+                    <e p="AddForceAlongPath.cs" t="Include" />
+                    <e p="BallCamera.cs" t="Include" />
+                    <e p="LapCounter.cs" t="Include" />
+                  </e>
+                </e>
+                <e p="RollerCoaster" t="Include">
+                  <e p="Scripts" t="Include">
+                    <e p="CameraLook.cs" t="Include" />
+                    <e p="RollerCoaster.cs" t="Include" />
+                  </e>
+                </e>
+              </e>
+            </e>
+            <e p="Utilities" t="Include">
+              <e p="ArrayUtility.cs" t="Include" />
+              <e p="ColorUtility.cs" t="Include" />
+              <e p="DMath.cs" t="Include" />
+              <e p="DuplicateUtility.cs" t="Include" />
+              <e p="Editor" t="Include">
+                <e p="DreamteckEditorGUI.cs" t="Include" />
+                <e p="EditorGUIEvents.cs" t="Include" />
+                <e p="FindDerivedClasses.cs" t="Include" />
+                <e p="ResourceUtility.cs" t="Include" />
+                <e p="Toolbar.cs" t="Include" />
+                <e p="WelcomeWindow.cs" t="Include" />
+              </e>
+              <e p="LinearAlgebraUtility.cs" t="Include" />
+              <e p="MeshUtility.cs" t="Include" />
+              <e p="SceneUtility.cs" t="Include" />
+              <e p="ScriptableObjectUtility.cs" t="Include" />
+              <e p="Singleton.cs" t="Include" />
+              <e p="TransformUtility.cs" t="Include" />
+              <e p="TS_Bounds.cs" t="Include" />
+              <e p="TS_Mesh.cs" t="Include" />
+              <e p="TS_Transform.cs" t="Include" />
+              <e p="Utilities.cs" t="Include" />
+            </e>
+          </e>
           <e p="Starfield Skybox" t="Include">
             <e p="Demo" t="Include">
               <e p="Script" t="Include">
@@ -38,6 +265,9 @@
           <e p="GameManager" t="Include">
             <e p="GameManager.cs" t="Include" />
           </e>
+          <e p="MathPlus" t="Include">
+            <e p="MathPlus.cs" t="Include" />
+          </e>
           <e p="Satellite" t="Include">
             <e p="Satellite.cs" t="Include" />
             <e p="SatelliteController.cs" t="Include" />
@@ -55,6 +285,9 @@
             <e p="AstralBodyAddUI.cs" t="Include" />
             <e p="AstralBodyEditorUI.cs" t="Include" />
             <e p="AstralBodyPlacementUI.cs" t="Include" />
+            <e p="LengthUI.cs" t="Include" />
+            <e p="OrbitGraphUI.cs" t="Include" />
+            <e p="OrbitPanelUI.cs" t="Include" />
             <e p="PositionEditorUI.cs" t="Include" />
             <e p="SelectorUI.cs" t="Include" />
             <e p="UIManager.cs" t="Include" />

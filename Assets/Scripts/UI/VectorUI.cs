@@ -55,10 +55,14 @@ public class VectorUI : MonoBehaviour
         this.transform.position = astralBody.transform.position;
         vectorArrow.SetPosition(0,astralBody.transform.position);
         vectorArrow.SetPosition(1,astralBody.transform.position + _targetVector * showSize);
-        this.transform.position = astralBody.transform.position + showSize * _targetVector;
+        var tmpScreenPos = _camera.WorldToScreenPoint(astralBody.transform.position + showSize * _targetVector);
+        // Debug.Log(this.gameObject.name + " : " + tmpScreenPos);
+        transform.position = new Vector3(Mathf.Clamp(tmpScreenPos.x, 60,Screen.width-60),
+                                        Mathf.Clamp(tmpScreenPos.y, 20, Screen.height-20),
+                                        0);
         vectorText.text = header + ":" + (_targetVector.magnitude * showSize).ToString("f2") + " "+unit;
-        int fontSize = (int)((_camera.orthographicSize / 185) * 12);
-        vectorText.fontSize = fontSize > 8 ? fontSize : 8;
+        // int fontSize = (int)((_camera.orthographicSize / 185) * 12);
+        // vectorText.fontSize = fontSize > 8 ? fontSize : 8;
 
     }
 

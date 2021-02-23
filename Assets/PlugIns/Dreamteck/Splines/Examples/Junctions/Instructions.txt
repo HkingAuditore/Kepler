@@ -1,0 +1,41 @@
+This train example shows the usage of Junctions inside Dreamteck Splines. The idea is to provide a working solution for a railroad system which can be used directly inside any project or used as a base.
+
+-------------------------
+
+1. Train setup.
+The train consists of one Engine object and several Wagon objects. Each of the train objects (including the engine object) contains a Wagon component and the Engine object also has a TrainEngine component.
+The Engine object has a SplineFollower component which traverses the splines. The Wagon objects have a SplinePositioner component as they are not following the spline independently but are rather positioned after the SplineFollower. Each Wagon component, with the exception of the last Wagon, holds a reference to the wagon component of the Wagon that comes after it as well as an offset. The offset defines how much the wagon is offset from the object that comes before. 
+To remove wagons, simply delete the last wagon object(s). 
+To add more wagons, duplicate a wagon object and then reference it inside the previously last Wagon.
+
+2. Railway setup
+The railway consists of a couple of splines, connected with Nodes.Each Node object also has a JunctionSwitch component. This component is read by the TrainEngine compoenent and points out which spline should be traversed upon entering the junction. The JunctionSwitch component holds an array called "Bridges". Each bridge entry defines how two splines are connected. 
+For example, if a Node contains two connections:
+- Main Loop at Point 3 (index: 0)
+- Reverse 1 at point 0 (index: 1)
+There would be a bridge entry for those two connections - A - 0 and B - 1. Along with that, there are two other properties: A Direction and B Direction. These directions defines the direction of the Spline Follower along the other spline that the follower needs to be going in, in order for the junction to work.
+Here is an example bridge definition using the connections above:
+[A = 0, ADirection = Backward, B = 1, BDirection = Forward]
+This means that if the train is going along spline "Main Loop" (0 or A), it needs to be going in the Forward direction in order to be able to switch to spline B which is "Reverse 1".
+When more than two splines are connected inside a Node, there need to be more Bridge elements, defining the connection between each two splines. 
+
+3. Testing the junctions
+Select one of the junction objects (one of the Node objects) and inside its JunctionSwitch component, change its bridge element(s). This will change how the junction behaves once when the train engine reaches the point of connection.
+
+4. Using junctions in runtime
+To change junctions in runtime, change the Bridge elements via script. For example:
+
+public JunctionSwitch mySwitch;
+public bool active = false;
+
+void Start(){
+foreach(JunctionSwitch.Bridge bridge in mySwitch.bridges){
+bridge.active = active;
+}
+}
+
+This is a simple script to enable/disable the junction entirely. 
+
+5. Note, that if you disable the exit junction on a spline that is not closed (looping), the train will teleport to the beginning of that same spline upon reaching the end. You can change that behavior by setting the Wrap Mode of the train's Spline Follower component to "Default". However, this will prevent it from looping inside closed splines too.
+
+ 
