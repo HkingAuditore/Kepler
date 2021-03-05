@@ -31,7 +31,7 @@ public class LengthUI : MonoBehaviour
         nodeOri.transformNormals = false;
         nodeOri.transformSize = false;
         nodeOri.transformTangents = false;
-        var nodeTarget = astralBody.AffectedPlanets[0].gameObject.AddComponent<Node>();
+        var nodeTarget = astralBody.affectedPlanets[0].gameObject.AddComponent<Node>();
         nodeTarget.transformNormals = false;
         nodeTarget.transformSize = false;
         nodeTarget.transformTangents = false;
@@ -49,7 +49,7 @@ public class LengthUI : MonoBehaviour
     {
         lengthSpline.SetPoints(new SplinePoint[] { });
         Destroy(astralBody.gameObject.GetComponent<Node>());
-        Destroy(astralBody.AffectedPlanets[0].gameObject.GetComponent<Node>());
+        Destroy(astralBody.affectedPlanets[0].gameObject.GetComponent<Node>());
     }
 
     public void ShowLength()

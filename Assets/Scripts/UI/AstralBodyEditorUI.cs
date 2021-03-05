@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class AstralBodyEditorUI : MonoBehaviour
 {
+    public bool isEnableEdit = true;
     public AstralBody astralBody;
     public GravityTracing gravityTracing;
 
@@ -29,22 +30,30 @@ public class AstralBodyEditorUI : MonoBehaviour
         forceUI.gameObject.SetActive(true);
         velocityUI.astralBody = astralBody;
         velocityUI.gameObject.SetActive(true);
-        positionEditorUI.editingTarget = astralBody.transform;
-        positionEditorUI.gameObject.SetActive(true);
-        normalPanel.SetActive(false);
-        InitMassEditor();
-        lengthUI.astralBody = astralBody;
-        lengthUI.gameObject.SetActive(true);
+        if (isEnableEdit)
+        {
+            positionEditorUI.editingTarget = astralBody.transform;
+            positionEditorUI.gameObject.SetActive(true);
+            normalPanel.SetActive(false);
+            InitMassEditor();
+            lengthUI.astralBody = astralBody;
+            lengthUI.gameObject.SetActive(true);
+        }
     }
 
     private void OnDisable()
     {
         forceUI.gameObject.SetActive(false);
         velocityUI.gameObject.SetActive(false);
-        positionEditorUI.gameObject.SetActive(false);
-        positionEditorUI.editingTarget = null;
-        normalPanel.SetActive(true);
-        lengthUI.gameObject.SetActive(false);
+        if (isEnableEdit)
+        {
+            positionEditorUI.gameObject.SetActive(false);
+            positionEditorUI.editingTarget = null;
+            normalPanel.SetActive(true);
+            lengthUI.gameObject.SetActive(false);
+
+        }
+
     }
 
     private void InitMassEditor()
@@ -73,7 +82,7 @@ public class AstralBodyEditorUI : MonoBehaviour
 
     public void GetConicSection()
     {
-        var result = gravityTracing.GetConicSection(astralBody, 100);
+        var result = gravityTracing.GetConicSection(astralBody, 500);
         orbitPanelUI.orbit = result;
         orbitPanelUI.astralBody = astralBody;
         Debug.Log("曲线为：" + result);

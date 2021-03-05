@@ -24,11 +24,18 @@ public class VectorUI : MonoBehaviour
 
     private void Start()
     {
-        Init();
         _camera = GameManager.GetGameManager.GetMainCameraController().GetMainCamera();
+        Init();
     }
 
     private void FixedUpdate()
+    {
+        ShowVector();
+        // int fontSize = (int)((_camera.orthographicSize / 185) * 12);
+        // vectorText.fontSize = fontSize > 8 ? fontSize : 8;
+    }
+
+    private void ShowVector()
     {
         switch (thisType)
         {
@@ -36,7 +43,7 @@ public class VectorUI : MonoBehaviour
                 _targetVector = astralBody.Force;
                 break;
             case vectorType.Velocity:
-                _targetVector = astralBody.GetRigidbody().velocity;
+                _targetVector = astralBody.GetVelocity();
                 break;
             default:
                 throw new ArgumentOutOfRangeException();
@@ -58,8 +65,6 @@ public class VectorUI : MonoBehaviour
                                          Mathf.Clamp(tmpScreenPos.y, 20, Screen.height - 20),
                                          0);
         vectorText.text = header + ":" + (_targetVector.magnitude * showSize).ToString("f2") + " " + unit;
-        // int fontSize = (int)((_camera.orthographicSize / 185) * 12);
-        // vectorText.fontSize = fontSize > 8 ? fontSize : 8;
     }
 
     private void OnEnable()
@@ -75,5 +80,6 @@ public class VectorUI : MonoBehaviour
     public void Init()
     {
         vectorArrow.positionCount = 2;
+        ShowVector();
     }
 }

@@ -34,9 +34,8 @@ public class AstralBody : MonoBehaviour, ITraceable
     public Rigidbody AstralBodyRigidbody { get; set; }
 
     public Vector3 Force { get; private set; }
-
-
-    public List<AstralBody> AffectedPlanets { get; } = new List<AstralBody>();
+    
+    public List<AstralBody> affectedPlanets = new List<AstralBody>();
 
 
     protected virtual void Start()
@@ -47,13 +46,14 @@ public class AstralBody : MonoBehaviour, ITraceable
 
 
         AstralBodyRigidbody.angularVelocity = angularVelocity;
-
+        _lastVelocity = oriVelocity;
         ChangeVelocity(oriVelocity);
     }
 
     private void FixedUpdate()
     {
         var force = CalculateForce();
+        if (!AstralBodyRigidbody.isKinematic) _lastVelocity = AstralBodyRigidbody.velocity;
         //Debug.Log(this.name + " force: " + force);
         // Debug.DrawLine(transform.position,transform.position + force,Color.green);
         AstralBodyRigidbody.AddForce(force);
@@ -62,17 +62,21 @@ public class AstralBody : MonoBehaviour, ITraceable
 
     private void OnTriggerEnter(Collider other)
     {
+
         var astral = other.GetComponent<AstralBody>();
-        if (astral != null && !other.isTrigger && enableAffect && !astral.AffectedPlanets.Contains(astral))
-            astral.AffectedPlanets.Add(this);
-        // Debug.Log(this.gameObject.name + " In Eff :" + astral.gameObject.name);
+        if (astral != null && !other.isTrigger && enableAffect && !astral.affectedPlanets.Contains(this))
+        {
+            
+            astral.affectedPlanets.Add(this);
+
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
         var astral = other.GetComponent<AstralBody>();
-        if (astral != null && enableAffect && astral.AffectedPlanets.Contains(astral))
-            astral.AffectedPlanets.Remove(this);
+        if (astral != null && enableAffect && astral.affectedPlanets.Contains(astral))
+            astral.affectedPlanets.Remove(this);
     }
 
     public Transform GetTransform()
@@ -95,19 +99,30 @@ public class AstralBody : MonoBehaviour, ITraceable
 
     public virtual float GetMass()
     {
-        return AstralBodyRigidbody.mass;
+        return this.GetRigidbody().mass;
     }
 
 
     public Rigidbody GetRigidbody()
     {
+        if (AstralBodyRigidbody == null)
+        {
+            AstralBodyRigidbody = GetComponent<Rigidbody>();
+        }
         return AstralBodyRigidbody;
+    }
+
+    private Vector3 _lastVelocity;
+    public Vector3 GetVelocity()
+    {
+
+            return this._lastVelocity;
     }
 
 
     public List<AstralBody> GetAffectedPlanets()
     {
-        return AffectedPlanets;
+        return affectedPlanets;
     }
 
 
@@ -171,7 +186,7 @@ public class AstralBody : MonoBehaviour, ITraceable
         var forceResult = new Vector3(0, 0, 0);
 
         //计算引力向量集
-        foreach (var astralBody in AffectedPlanets)
+        foreach (var astralBody in affectedPlanets)
             //float distance = Vector3.Distance(this.transform.position, astralBody.gameObject.transform.position);
             forceResult += astralBody.GetGravityVector3(AstralBodyRigidbody);
         //gravities.Add(astralBody.GetGravityVector3(this._rigidbody));

@@ -268,6 +268,9 @@
           <e p="MathPlus" t="Include">
             <e p="MathPlus.cs" t="Include" />
           </e>
+          <e p="Quiz" t="Include">
+            <e p="QuizBase.cs" t="Include" />
+          </e>
           <e p="Satellite" t="Include">
             <e p="Satellite.cs" t="Include" />
             <e p="SatelliteController.cs" t="Include" />
@@ -289,6 +292,7 @@
             <e p="OrbitGraphUI.cs" t="Include" />
             <e p="OrbitPanelUI.cs" t="Include" />
             <e p="PositionEditorUI.cs" t="Include" />
+            <e p="QuizUI.cs" t="Include" />
             <e p="SelectorUI.cs" t="Include" />
             <e p="UIManager.cs" t="Include" />
             <e p="VectorUI.cs" t="Include" />

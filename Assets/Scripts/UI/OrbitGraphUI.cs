@@ -57,8 +57,8 @@ public class OrbitGraphUI : MonoBehaviour
 
     private float GetOriAngle()
     {
-        var tar2Ori = astralBody.transform.position - astralBody.AffectedPlanets[0].transform.position;
-        var axis = astralBody.AffectedPlanets[0].transform.position + new Vector3(
+        var tar2Ori = astralBody.transform.position - astralBody.affectedPlanets[0].transform.position;
+        var axis = astralBody.affectedPlanets[0].transform.position + new Vector3(
                                                                                   1 * Mathf.Cos(orbit.angle *
                                                                                                 Mathf.Deg2Rad),
                                                                                   0,
@@ -120,9 +120,9 @@ public class OrbitGraphUI : MonoBehaviour
                                                                                                      .Deg2Rad)) *
             orbit.semiMajorAxis;
         var orientation = -Mathf.Sign(
-                                      Vector3.Distance(astralBody.AffectedPlanets[0].transform.position, lSizePos)
+                                      Vector3.Distance(astralBody.affectedPlanets[0].transform.position, lSizePos)
                                      -
-                                      Vector3.Distance(astralBody.AffectedPlanets[0].transform.position, rSizePos)
+                                      Vector3.Distance(astralBody.affectedPlanets[0].transform.position, rSizePos)
                                      );
         _targetImageRect.anchoredPosition = new Vector2(_graphOrbit.c * orientation, 0);
     }
@@ -142,7 +142,7 @@ public class OrbitGraphUI : MonoBehaviour
     {
         distance.text = "距离:" +
                         Vector3.Distance(astralBody.transform.position,
-                                         astralBody.AffectedPlanets[0].transform.position).ToString("f2") + " m";
+                                         astralBody.affectedPlanets[0].transform.position).ToString("f2") + " m";
     }
 
     private class GraphOrbit

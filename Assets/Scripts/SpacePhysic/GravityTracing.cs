@@ -13,6 +13,7 @@ namespace SpacePhysic
         bool GetEnableTracing();
         float GetMass();
         Rigidbody GetRigidbody();
+        Vector3 GetVelocity();
         List<AstralBody> GetAffectedPlanets();
     }
 
@@ -36,7 +37,7 @@ namespace SpacePhysic
             new Dictionary<ITraceable, LineRenderer>();
 
 
-        private void Start()
+        public void Awake()
         {
             _deltaTime = 100f / sample * Time.fixedDeltaTime * timeScale;
             foreach (ITraceable traceable in GetComponentsInChildren<AstralBody>()) AddTracingTarget(traceable);
@@ -85,7 +86,7 @@ namespace SpacePhysic
                 result += GetGravityVector3(astralBody, body, sampleTime);
             }
 
-            //Debug.Log(astralBody.name + " force: " + result);
+            // Debug.Log(astralBody.GetMass() + " force: " + result);
             return result;
         }
 
@@ -100,7 +101,9 @@ namespace SpacePhysic
             foreach (var astralBody in _astralBodies)
             {
                 //起始速度
-                astralBodyVelocities[astralBody] = astralBody.GetRigidbody().velocity;
+                // Debug.Log(astralBody.GetRigidbody().velocity);
+
+                astralBodyVelocities[astralBody] = astralBody.GetVelocity();
                 //起始点改为当前位置
                 if (_orbitPoints.ContainsKey(astralBody)) _orbitPoints[astralBody].Clear();
                 _orbitPoints[astralBody].Add(astralBody.GetTransform().position);
@@ -118,6 +121,7 @@ namespace SpacePhysic
                  * s = vt + 0.5a(t^2)
                  */
                     var acceleration = CalculateForce(astralBody, i) / astralBody.GetMass();
+                    // Debug.Log("deltatime: " + _deltaTime);
                     _orbitPoints[astralBody].Add(_orbitPoints[astralBody].Last() +
                                                  astralBodyVelocities[astralBody] * _deltaTime +
                                                  .5f * acceleration * Mathf.Pow(_deltaTime, 2));
@@ -133,10 +137,13 @@ namespace SpacePhysic
             _orbitRenderers[astralBody].SetPositions(_orbitPoints[astralBody].ToArray());
         }
 
-        private void DrawOrbits()
+        public void DrawOrbits()
         {
             TraceGravity();
-            foreach (var astralBody in _astralBodies) DrawOrbit(astralBody);
+            foreach (var astralBody in _astralBodies)
+            {
+                DrawOrbit(astralBody);
+            }
         }
 
         #endregion
@@ -187,5 +194,23 @@ namespace SpacePhysic
         }
 
         #endregion
+
+        public void Freeze(bool isFreezing)
+        {
+            _astralBodies.ForEach(astral =>
+                                  {
+                                      if (isFreezing)
+                                      {
+                                          astral.GetRigidbody().isKinematic = true;
+                                      }
+                                      else
+                                      {
+                                          var tmpV = astral.GetVelocity();
+                                          astral.GetRigidbody().velocity = tmpV;
+                                          astral.GetRigidbody().isKinematic = false;
+
+                                      }
+                                  });
+        }
     }
 }
