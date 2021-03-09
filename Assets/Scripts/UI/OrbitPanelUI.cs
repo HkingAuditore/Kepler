@@ -4,13 +4,13 @@ using UnityEngine.UI;
 
 public class OrbitPanelUI : MonoBehaviour
 {
-    public AstralBody astralBody;
-    public Text majorAxis;
-    public Text minorAxis;
-    public Text geoCenter;
-    public Text eccentricity;
-    public Text focalLength;
-    public Text period;
+    public AstralBody   astralBody;
+    public Text         majorAxis;
+    public Text         minorAxis;
+    public Text         geoCenter;
+    public Text         eccentricity;
+    public Text         focalLength;
+    public Text         period;
     public OrbitGraphUI orbitGraphUI;
     public ConicSection orbit;
 

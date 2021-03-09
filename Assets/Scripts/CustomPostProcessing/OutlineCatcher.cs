@@ -14,10 +14,10 @@ namespace CustomPostProcessing
 
         [Range(0.3f, 1)] public float edgeSize = 0.5f;
 
-        public Color edgeColor = Color.black;
+        public Color edgeColor       = Color.black;
         public Color backgroundColor = Color.white;
 
-        private Material _outlineMaterial;
+        private Material      _outlineMaterial;
         private RenderTexture _outlineTexture;
 
         private RenderTexture _renderResultRT;
@@ -54,7 +54,7 @@ namespace CustomPostProcessing
             {
                 OutlineMaterial.SetFloat("_EdgeOnly", edgeOnly);
                 OutlineMaterial.SetFloat("_EdgeSize", edgeSize);
-                OutlineMaterial.SetColor("_EdgeColor", edgeColor);
+                OutlineMaterial.SetColor("_EdgeColor",       edgeColor);
                 OutlineMaterial.SetColor("_BackgroundColor", backgroundColor);
                 Graphics.Blit(src, dest, OutlineMaterial);
                 if (_renderResultRT == null) _renderResultRT = RenderTexture.GetTemporary(dest.width, dest.height);

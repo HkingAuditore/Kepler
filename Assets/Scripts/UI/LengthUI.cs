@@ -4,10 +4,10 @@ using UnityEngine.UI;
 
 public class LengthUI : MonoBehaviour
 {
-    public SplineComputer lengthSpline;
+    public SplineComputer   lengthSpline;
     public LengthCalculator lengthCalculator;
-    public Text lengthText;
-    public AstralBody astralBody;
+    public Text             lengthText;
+    public AstralBody       astralBody;
 
     private void Update()
     {
@@ -28,12 +28,12 @@ public class LengthUI : MonoBehaviour
     private void InitLength()
     {
         var nodeOri = astralBody.gameObject.AddComponent<Node>();
-        nodeOri.transformNormals = false;
-        nodeOri.transformSize = false;
+        nodeOri.transformNormals  = false;
+        nodeOri.transformSize     = false;
         nodeOri.transformTangents = false;
         var nodeTarget = astralBody.affectedPlanets[0].gameObject.AddComponent<Node>();
-        nodeTarget.transformNormals = false;
-        nodeTarget.transformSize = false;
+        nodeTarget.transformNormals  = false;
+        nodeTarget.transformSize     = false;
         nodeTarget.transformTangents = false;
         lengthSpline.SetPoints(new[]
                                {

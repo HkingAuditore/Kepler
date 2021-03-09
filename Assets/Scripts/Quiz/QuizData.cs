@@ -19,30 +19,32 @@ namespace Quiz
             this.isTarget   = isTarget;
         }
     }
-    
+
     public struct AstralBodyStructDict
     {
         public Vector3 position;
         public float   mass;
         public float   density;
         public float   originalSize;
+        public float   affectRadius;
         public Vector3 oriVelocity;
         public bool    enableAffect;
         public bool    enableTracing;
         public bool    isTarget;
         public bool    isCore;
 
-        public AstralBodyStructDict(Transform transform, AstralBody astralBody, bool isTarget,bool isCore)
+        public AstralBodyStructDict(Transform transform, AstralBody astralBody, bool isTarget, bool isCore)
         {
             position      = transform.position;
             mass          = astralBody.mass;
             density       = astralBody.density;
             originalSize  = astralBody.originalSize;
+            affectRadius  = astralBody.affectRadius;
             oriVelocity   = astralBody.oriVelocity;
             enableAffect  = astralBody.enableAffect;
             enableTracing = astralBody.enableTracing;
-            this.isTarget      = isTarget;
-            this.isCore        = isCore;
+            this.isTarget = isTarget;
+            this.isCore   = isCore;
         }
     }
 
@@ -56,14 +58,13 @@ namespace Quiz
 
     public class QuizData
     {
-        public string quizName;
         public List<AstralBodyDict> astralBodies;
+        public string               quizName;
     }
-    
+
     [Serializable]
     public class QuizSaverException : Exception
     {
-
         public QuizSaverException()
         {
         }
@@ -78,7 +79,7 @@ namespace Quiz
 
         protected QuizSaverException(
             SerializationInfo info,
-            StreamingContext context) : base(info, context)
+            StreamingContext  context) : base(info, context)
         {
         }
     }

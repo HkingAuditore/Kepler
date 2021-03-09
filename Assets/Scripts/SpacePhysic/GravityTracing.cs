@@ -8,12 +8,12 @@ namespace SpacePhysic
 {
     public interface ITraceable
     {
-        Transform GetTransform();
-        GameObject GetGameObject();
-        bool GetEnableTracing();
-        float GetMass();
-        Rigidbody GetRigidbody();
-        Vector3 GetVelocity();
+        Transform        GetTransform();
+        GameObject       GetGameObject();
+        bool             GetEnableTracing();
+        float            GetMass();
+        Rigidbody        GetRigidbody();
+        Vector3          GetVelocity();
         List<AstralBody> GetAffectedPlanets();
 
         AstralBody GetAstralBody();
@@ -29,7 +29,6 @@ namespace SpacePhysic
         public SplineComputer splineComputer;
 
         private readonly List<ITraceable> _astralBodies = new List<ITraceable>();
-        private float _deltaTime;
 
         //坐标点
         private readonly Dictionary<ITraceable, List<Vector3>> _orbitPoints =
@@ -37,6 +36,10 @@ namespace SpacePhysic
 
         private readonly Dictionary<ITraceable, LineRenderer> _orbitRenderers =
             new Dictionary<ITraceable, LineRenderer>();
+
+        private float _deltaTime;
+
+        private bool _isFreezing;
 
 
         public void Awake()
@@ -53,15 +56,16 @@ namespace SpacePhysic
         public void AddTracingTarget(ITraceable traceable)
         {
             if (_isFreezing)
-            { traceable.GetRigidbody().isKinematic = true;
+            {
+                traceable.GetRigidbody().isKinematic = true;
             }
             else
             {
                 var tmpV = traceable.GetVelocity();
-                traceable.GetRigidbody().velocity = tmpV;
+                traceable.GetRigidbody().velocity    = tmpV;
                 traceable.GetRigidbody().isKinematic = false;
-
             }
+
             if (traceable.GetEnableTracing())
             {
                 _astralBodies.Add(traceable);
@@ -69,6 +73,31 @@ namespace SpacePhysic
                 _orbitRenderers[traceable] =
                     traceable.GetTransform().Find("Line").gameObject.GetComponent<LineRenderer>();
             }
+        }
+
+        public void Freeze(bool isFreezing)
+        {
+            _isFreezing = isFreezing;
+            _astralBodies.ForEach(astral =>
+                                  {
+                                      if (isFreezing)
+                                      {
+                                          astral.GetRigidbody().isKinematic = true;
+                                      }
+                                      else
+                                      {
+                                          var tmpV = astral.GetVelocity();
+                                          astral.GetRigidbody().velocity    = tmpV;
+                                          astral.GetRigidbody().isKinematic = false;
+                                      }
+                                  });
+        }
+
+        public List<AstralBody> GetAstralBodyList()
+        {
+            var list = (from traceable in _astralBodies
+                        select traceable.GetAstralBody()).ToList();
+            return list;
         }
 
         #region 引力步进
@@ -83,7 +112,7 @@ namespace SpacePhysic
 
         private Vector3 GetGravityVector3(ITraceable a0, ITraceable a1, int sampleTime)
         {
-            var distance = Vector3.Distance(_orbitPoints[a0][sampleTime], _orbitPoints[a1][sampleTime]);
+            var distance            = Vector3.Distance(_orbitPoints[a0][sampleTime], _orbitPoints[a1][sampleTime]);
             var normalizedDirection = (_orbitPoints[a1][sampleTime] - _orbitPoints[a0][sampleTime]).normalized;
             return CalculateGravityModulus(a0.GetMass(), a1.GetMass(), distance) * normalizedDirection;
         }
@@ -152,10 +181,7 @@ namespace SpacePhysic
         public void DrawOrbits()
         {
             TraceGravity();
-            foreach (var astralBody in _astralBodies)
-            {
-                DrawOrbit(astralBody);
-            }
+            foreach (var astralBody in _astralBodies) DrawOrbit(astralBody);
         }
 
         #endregion
@@ -193,7 +219,7 @@ namespace SpacePhysic
         public void DrawMathOrbit(ConicSection conicSection, int sam)
         {
             var points = new List<SplinePoint>();
-            var step = 360f / sam;
+            var step   = 360f / sam;
             for (var i = 0; i < sam; i++)
                 points.Add(new SplinePoint(ConvertV2ToV3(conicSection.GetPolarPos(i * step))));
             points.Add(new SplinePoint(ConvertV2ToV3(conicSection.GetPolarPos(360))));
@@ -206,32 +232,5 @@ namespace SpacePhysic
         }
 
         #endregion
-
-        private bool _isFreezing = false;
-        public void Freeze(bool isFreezing)
-        {
-            _isFreezing = isFreezing;
-            _astralBodies.ForEach(astral =>
-                                  {
-                                      if (isFreezing)
-                                      {
-                                          astral.GetRigidbody().isKinematic = true;
-                                      }
-                                      else
-                                      {
-                                          var tmpV = astral.GetVelocity();
-                                          astral.GetRigidbody().velocity = tmpV;
-                                          astral.GetRigidbody().isKinematic = false;
-
-                                      }
-                                  });
-        }
-
-        public List<AstralBody> GetAstralBodyList()
-        {
-             List<AstralBody> list = (from traceable in _astralBodies
-                                      select traceable.GetAstralBody()).ToList();
-             return list;
-        }
     }
 }

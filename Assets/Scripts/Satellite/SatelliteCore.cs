@@ -8,7 +8,7 @@ namespace Satellite
 
         protected override void Awake()
         {
-            PartType = SatelliteType.Core;
+            PartType      = SatelliteType.Core;
             PartRigidbody = GetComponent<Rigidbody>();
         }
 

@@ -3,7 +3,7 @@
     <Transform>
       <Position>(0.4, 0.0, 0.0)</Position>
     </Transform>
-    <AstralBody>
+    <AstralBody IsCore="True">
       <Mass>5000</Mass>
       <Density>1000</Density>
       <Size>16.6156</Size>
@@ -16,7 +16,7 @@
     <Transform>
       <Position>(-106.3, 0.0, 0.0)</Position>
     </Transform>
-    <AstralBody>
+    <AstralBody IsCore="False">
       <Mass>100</Mass>
       <Density>1000</Density>
       <Size>2.144284</Size>
@@ -27,9 +27,9 @@
   </AstralBodyDict>
   <AstralBodyDict IsTarget="False">
     <Transform>
-      <Position>(156.5, 0.0, -83.4)</Position>
+      <Position>(152.9, 0.0, -81.7)</Position>
     </Transform>
-    <AstralBody>
+    <AstralBody IsCore="False">
       <Mass>100</Mass>
       <Density>1000</Density>
       <Size>2.144284</Size>
@@ -40,35 +40,9 @@
   </AstralBodyDict>
   <AstralBodyDict IsTarget="False">
     <Transform>
-      <Position>(-130.1, 0.0, -109.0)</Position>
+      <Position>(-175.9, 0.0, -223.2)</Position>
     </Transform>
-    <AstralBody>
-      <Mass>100</Mass>
-      <Density>1000</Density>
-      <Size>2.144284</Size>
-      <Velocity>(0.0, 0.0, 16.0)</Velocity>
-      <EnableAffect>True</EnableAffect>
-      <EnableTracing>True</EnableTracing>
-    </AstralBody>
-  </AstralBodyDict>
-  <AstralBodyDict IsTarget="False">
-    <Transform>
-      <Position>(311.0, 0.0, -47.0)</Position>
-    </Transform>
-    <AstralBody>
-      <Mass>100</Mass>
-      <Density>1000</Density>
-      <Size>2.144284</Size>
-      <Velocity>(0.0, 0.0, 16.0)</Velocity>
-      <EnableAffect>True</EnableAffect>
-      <EnableTracing>True</EnableTracing>
-    </AstralBody>
-  </AstralBodyDict>
-  <AstralBodyDict IsTarget="False">
-    <Transform>
-      <Position>(-227.5, 0.0, -84.6)</Position>
-    </Transform>
-    <AstralBody>
+    <AstralBody IsCore="False">
       <Mass>100</Mass>
       <Density>1000</Density>
       <Size>2.144284</Size>

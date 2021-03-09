@@ -19,19 +19,19 @@ namespace MathPlus
 
     public class ConicSection
     {
-        public float a; //x^2
-        public float angle;
-        public float b; //xy
-        public float c; //y^2
-        public float d; //x
-        public float e; //y
-        public float eccentricity; //离心率
-        public float f; //f
-        public float focalLength;
+        public float   a; //x^2
+        public float   angle;
+        public float   b;            //xy
+        public float   c;            //y^2
+        public float   d;            //x
+        public float   e;            //y
+        public float   eccentricity; //离心率
+        public float   f;            //f
+        public float   focalLength;
         public Vector2 geoCenter; //几何中心
-        public bool isEllipse;
-        public float semiMajorAxis; //长半轴
-        public float semiMinorAxis; //短半轴
+        public bool    isEllipse;
+        public float   semiMajorAxis; //长半轴
+        public float   semiMinorAxis; //短半轴
 
         public ConicSection(float a, float b, float c, float d, float e, float f)
         {
@@ -47,17 +47,17 @@ namespace MathPlus
             var axis = GetSemiAxis();
             semiMajorAxis = axis[0];
             semiMinorAxis = axis[1];
-            focalLength = Mathf.Sqrt(semiMajorAxis * semiMajorAxis - semiMinorAxis * semiMinorAxis);
-            eccentricity = GetEccentricity();
-            angle = GetAngle() + 90;
+            focalLength   = Mathf.Sqrt(semiMajorAxis * semiMajorAxis - semiMinorAxis * semiMinorAxis);
+            eccentricity  = GetEccentricity();
+            angle         = GetAngle() + 90;
         }
 
         public float[] GetY(float x)
         {
-            var eqA = c;
-            var eqB = b * x + e;
-            var eqC = a * x * x + d * x + f;
-            var delta = eqB * eqB - 4 * eqA * eqC;
+            var eqA   = c;
+            var eqB   = b   * x     + e;
+            var eqC   = a   * x * x + d * x + f;
+            var delta = eqB * eqB   - 4 * eqA * eqC;
             if (delta < 0)
                 return null;
             return new[]
@@ -69,10 +69,10 @@ namespace MathPlus
 
         public float[] GetX(float y)
         {
-            var eqA = a;
-            var eqB = b * y + d;
-            var eqC = c * y * y + e * y + f;
-            var delta = eqB * eqB - 4 * eqA * eqC;
+            var eqA   = a;
+            var eqB   = b   * y     + d;
+            var eqC   = c   * y * y + e * y + f;
+            var delta = eqB * eqB   - 4 * eqA * eqC;
             if (delta < 0)
                 return null;
             return new[]
@@ -84,7 +84,7 @@ namespace MathPlus
 
         private bool IsEllipse()
         {
-            var flag = b * b - 4 * a * c;
+            var flag  = b * b                                   - 4         * a             * c;
             var delta = (a * c - b * b / 4) * f + b * e * d / 4 - c * d * d / 4 - a * e * e / f;
             return c * delta < 0;
         }
@@ -105,14 +105,14 @@ namespace MathPlus
                                                        (a - c) * (a - c) + b * b)
                                    )
                                   )
-                      / (b * b - 4 * a * c);
+                        / (b * b - 4 * a * c);
             var axis1 = Mathf.Sqrt(
                                    2 * (a * e * e + c * d * d - b * d * e + (b * b - 4 * a * c) * f) *
                                    (a + c - Mathf.Sqrt(
                                                        (a - c) * (a - c) + b * b)
                                    )
                                   )
-                      / (b * b - 4 * a * c);
+                        / (b * b - 4 * a * c);
             return new[]
                    {
                        Mathf.Max(Mathf.Abs(axis0), Mathf.Abs(axis1)),
@@ -144,7 +144,7 @@ namespace MathPlus
         public Vector2 GetPolarPos(float ag)
         {
             var r = semiMinorAxis / Mathf.Sqrt(1 - eccentricity * eccentricity * Mathf.Cos(ag * Mathf.Deg2Rad) *
-                                               Mathf.Cos(ag * Mathf.Deg2Rad));
+                                               Mathf.Cos(ag                                   * Mathf.Deg2Rad));
             // Debug.Log("r: " + r);
             var sumAngle = ag + angle;
             var pos = new Vector2(r * Mathf.Cos(sumAngle * Mathf.Deg2Rad),
@@ -214,7 +214,7 @@ namespace MathPlus
             // Debug.Log(d1);
             // Debug.Log(d2);
 
-            var s = d.Transpose() * d;
+            var s  = d.Transpose()  * d;
             var s1 = d1.Transpose() * d1;
             var s2 = d1.Transpose() * d2;
             var s3 = d2.Transpose() * d2;
@@ -240,7 +240,7 @@ namespace MathPlus
             // var m = c1.Inverse() * (s1 - s2 * s3.Inverse() * s2.Transpose());
 
             var svd = sc.Svd();
-            var a = svd.U.Column(0);
+            var a   = svd.U.Column(0);
 
             // Evd<float> eigen = m.Evd();
             // var eigenVectors = eigen.EigenVectors;

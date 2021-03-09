@@ -8,10 +8,10 @@ namespace Satellite
         public float speed;
         public float angularSpeed;
 
-        public Satellite satellite;
+        public           Satellite               satellite;
         private readonly List<SatelliteEngine>[] _satelliteEngineStageLists = new List<SatelliteEngine>[5];
-        private int curEngineStage;
-        private int engineStages;
+        private          int                     curEngineStage;
+        private          int                     engineStages;
 
 
         private void Start()

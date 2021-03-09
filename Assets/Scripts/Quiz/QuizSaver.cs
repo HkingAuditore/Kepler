@@ -16,10 +16,10 @@ namespace Quiz
 
     public class QuizSaver : MonoBehaviour
     {
+        private static readonly XmlDocument _xmlDoc = new XmlDocument();
         public                  QuizType    quizType;
         public                  GameObject  cloner;
         private                 string      _xmlPath;
-        private static readonly XmlDocument _xmlDoc = new XmlDocument();
 
         private void Awake()
         {
@@ -57,6 +57,9 @@ namespace Quiz
             var isTracing = _xmlDoc.CreateElement("EnableTracing");
             isTracing.InnerText = astralBodyDict.astralBody.enableTracing.ToString();
             astAstralBody.AppendChild(isTracing);
+            var affectRadius = _xmlDoc.CreateElement("AffectRadius");
+            affectRadius.InnerText = astralBodyDict.astralBody.affectRadius.ToString(CultureInfo.InvariantCulture);
+            astAstralBody.AppendChild(affectRadius);
             astAstralBody.SetAttribute("IsCore", (astralBodyDict.astralBody.GetGameObject().name == "Core").ToString());
 
             dict.SetAttribute("IsTarget", astralBodyDict.isTarget.ToString());
@@ -120,14 +123,15 @@ namespace Quiz
                     ConvertString2Vector3(astralBodyElement.GetElementsByTagName("Transform")[0].InnerText);
 
                 //AstralBody
-                XmlNode astralBodyXmlNode = astralBodyElement.GetElementsByTagName("AstralBody")[0];
+                var astralBodyXmlNode = astralBodyElement.GetElementsByTagName("AstralBody")[0];
                 astStruct.mass          = int.Parse(astralBodyXmlNode.ChildNodes[0].InnerText);
                 astStruct.density       = int.Parse(astralBodyXmlNode.ChildNodes[1].InnerText);
                 astStruct.originalSize  = float.Parse(astralBodyXmlNode.ChildNodes[2].InnerText);
                 astStruct.oriVelocity   = ConvertString2Vector3(astralBodyXmlNode.ChildNodes[3].InnerText);
                 astStruct.enableAffect  = bool.Parse(astralBodyXmlNode.ChildNodes[4].InnerText);
                 astStruct.enableTracing = bool.Parse(astralBodyXmlNode.ChildNodes[5].InnerText);
-                // astStruct.isCore        = bool.Parse(astralBodyXmlNode.Attributes["IsTarget"].Value);
+                astStruct.affectRadius  = float.Parse(astralBodyXmlNode.ChildNodes[6].InnerText);
+                astStruct.isCore        = bool.Parse(astralBodyXmlNode.Attributes["IsCore"].Value);
                 astStruct.isTarget      = bool.Parse(astralBodyElement.GetAttribute("IsTarget"));
 
                 list.Add(astStruct);

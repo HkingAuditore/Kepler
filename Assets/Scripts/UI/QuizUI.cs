@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using Quiz;
 using UnityEngine;
 using UnityEngine.UI;
@@ -9,13 +7,17 @@ using Random = UnityEngine.Random;
 public class QuizUI : MonoBehaviour
 {
     public QuizBase quizBase;
-    public Slider quizSlider;
-    public Text title;
+    public Slider   quizSlider;
+    public Text     title;
     public QuizType quizType;
-    public Text ansText;
-    public Button confirm;
+    public Text     ansText;
+    public Button   confirm;
 
     public AstralBody target;
+
+    [SerializeField] private int _ansPos;
+
+    [SerializeField] private int _gap;
 
     private void Start()
     {
@@ -40,11 +42,11 @@ public class QuizUI : MonoBehaviour
             default:
                 throw new ArgumentOutOfRangeException();
         }
-        
     }
+
     public void Confirm()
     {
-        float tmpAns = ConvertSliderValue2Ans(quizSlider.value);
+        var tmpAns = ConvertSliderValue2Ans(quizSlider.value);
         switch (quizType)
         {
             case QuizType.Mass:
@@ -62,22 +64,20 @@ public class QuizUI : MonoBehaviour
             default:
                 throw new ArgumentOutOfRangeException();
         }
-        this.gameObject.SetActive(false);
+
+        gameObject.SetActive(false);
     }
-    [SerializeField]
-    private int _ansPos;
-    [SerializeField]
-    private int _gap;
+
     private void GenerateAns()
     {
-        _gap = (int)Random.Range(0, quizBase.answer);
-        _gap = Mathf.Clamp(_gap, 10, 1000);
-        _ansPos = (int)Random.Range(0, (int) (quizBase.answer / _gap));
-        
+        _gap    = (int) Random.Range(0, quizBase.answer);
+        _gap    = Mathf.Clamp(_gap, 10, 1000);
+        _ansPos = Random.Range(0, (int) (quizBase.answer / _gap));
     }
+
     private float ConvertSliderValue2Ans(float quizSliderValue)
     {
         //TODO:干扰项设计没做
-        return quizBase.answer  + (quizSliderValue - _ansPos) * _gap;
+        return quizBase.answer + (quizSliderValue - _ansPos) * _gap;
     }
 }

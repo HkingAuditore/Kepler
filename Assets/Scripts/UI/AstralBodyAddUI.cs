@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using SpacePhysic;
 using UI;
 using UnityEngine;
@@ -8,10 +7,10 @@ using UnityEngine.UI;
 public class AstralBodyAddUI : MonoBehaviour
 {
     public AstralBodyPlacementUI astralBodyPlacementUI;
-    public AstralBody placePrefab;
-    public GravityTracing orbits;
-    public bool isQuizEditMode;
-    public Button button;
+    public AstralBody            placePrefab;
+    public GravityTracing        orbits;
+    public bool                  isQuizEditMode;
+    public Button                button;
 
     public Transform OrbitCore { get; set; }
 
@@ -26,9 +25,8 @@ public class AstralBodyAddUI : MonoBehaviour
             Debug.Log("To Wait");
             StartCoroutine(WaitForLoad());
         }
-
     }
-    
+
     public IEnumerator WaitForLoad()
     {
         // Debug.Log("Wait");

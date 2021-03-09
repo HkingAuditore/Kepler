@@ -12,14 +12,14 @@ namespace Satellite
 
     public class SatellitePart : AstralBody
     {
-        public string satelliteName;
+        public string              satelliteName;
         public List<SatellitePart> connectedPartList = new List<SatellitePart>();
 
         private readonly Dictionary<string, FixedJoint> _connectedJoints = new Dictionary<string, FixedJoint>();
 
         // public float mass;
-        public SatelliteType PartType { get; set; }
-        public Rigidbody PartRigidbody { get; protected set; }
+        public SatelliteType PartType      { get; set; }
+        public Rigidbody     PartRigidbody { get; protected set; }
 
         protected virtual void Awake()
         {

@@ -10,12 +10,12 @@ public class CameraController : MonoBehaviour
     public float scaleSize;
     public float orthoZoomSpeed;
 
-    private Camera _camera;
-    private Transform _cameraBase;
+    private Camera           _camera;
+    private Transform        _cameraBase;
     private CinemachineBrain _cameraBrain;
 
 
-    private Transform _followingTarget;
+    private Transform                    _followingTarget;
     private CinemachineFramingTransposer _framingTransposer;
 
 
@@ -31,10 +31,10 @@ public class CameraController : MonoBehaviour
 
     private void Awake()
     {
-        _cameraBase = transform.parent;
-        _camera = GetComponent<Camera>();
-        _cameraBrain = GetComponent<CinemachineBrain>();
-        OrthoSize = virtualCamera.m_Lens.OrthographicSize;
+        _cameraBase        = transform.parent;
+        _camera            = GetComponent<Camera>();
+        _cameraBrain       = GetComponent<CinemachineBrain>();
+        OrthoSize          = virtualCamera.m_Lens.OrthographicSize;
         _framingTransposer = virtualCamera.GetCinemachineComponent<CinemachineFramingTransposer>();
     }
 
@@ -77,9 +77,9 @@ public class CameraController : MonoBehaviour
 
     public void FocusOn(Transform target)
     {
-        virtualCamera.m_LookAt = target;
+        virtualCamera.m_LookAt       = target;
         _framingTransposer.m_ScreenX = 0.33f;
-        _followingTarget = target;
+        _followingTarget             = target;
     }
 
     public void ExitFocus()

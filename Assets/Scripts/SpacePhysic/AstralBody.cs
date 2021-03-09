@@ -6,9 +6,9 @@ public class AstralBody : MonoBehaviour, ITraceable
 {
     [Header("Basic Property")] public float mass;
 
-    public float density;
-    public float originalSize = 1;
-    public float curSize;
+    public float          density;
+    public float          originalSize = 1;
+    public float          curSize;
     public SphereCollider triggerCollider;
     public SphereCollider defaultCollider;
 
@@ -19,7 +19,11 @@ public class AstralBody : MonoBehaviour, ITraceable
     [Header("Gravity Property")] public bool enableAffect = true;
 
     public float affectRadius;
-    public bool enableTracing;
+    public bool  enableTracing;
+
+    public List<AstralBody> affectedPlanets = new List<AstralBody>();
+
+    private Vector3 _lastVelocity;
 
     public float Mass
     {
@@ -34,25 +38,24 @@ public class AstralBody : MonoBehaviour, ITraceable
     public Rigidbody AstralBodyRigidbody { get; set; }
 
     public Vector3 Force { get; private set; }
-    
-    public List<AstralBody> affectedPlanets = new List<AstralBody>();
 
 
     protected virtual void Start()
     {
-        AstralBodyRigidbody = GetComponent<Rigidbody>();
+        AstralBodyRigidbody    = GetComponent<Rigidbody>();
+        triggerCollider.radius = affectRadius;
         SetMass();
         ChangeSize(originalSize);
 
 
         AstralBodyRigidbody.angularVelocity = angularVelocity;
-        _lastVelocity = oriVelocity;
+        _lastVelocity                       = oriVelocity;
         ChangeVelocity(oriVelocity);
     }
 
     private void FixedUpdate()
     {
-        var force = CalculateForce();
+        var force                                           = CalculateForce();
         if (!AstralBodyRigidbody.isKinematic) _lastVelocity = AstralBodyRigidbody.velocity;
         //Debug.Log(this.name + " force: " + force);
         // Debug.DrawLine(transform.position,transform.position + force,Color.green);
@@ -62,14 +65,9 @@ public class AstralBody : MonoBehaviour, ITraceable
 
     private void OnTriggerEnter(Collider other)
     {
-
         var astral = other.GetComponent<AstralBody>();
         if (astral != null && !other.isTrigger && enableAffect && !astral.affectedPlanets.Contains(this))
-        {
-            
             astral.affectedPlanets.Add(this);
-
-        }
     }
 
     private void OnTriggerExit(Collider other)
@@ -99,24 +97,19 @@ public class AstralBody : MonoBehaviour, ITraceable
 
     public virtual float GetMass()
     {
-        return this.GetRigidbody().mass;
+        return GetRigidbody().mass;
     }
 
 
     public Rigidbody GetRigidbody()
     {
-        if (AstralBodyRigidbody == null)
-        {
-            AstralBodyRigidbody = GetComponent<Rigidbody>();
-        }
+        if (AstralBodyRigidbody == null) AstralBodyRigidbody = GetComponent<Rigidbody>();
         return AstralBodyRigidbody;
     }
 
-    private Vector3 _lastVelocity;
     public Vector3 GetVelocity()
     {
-
-            return this._lastVelocity;
+        return _lastVelocity;
     }
 
 
@@ -179,7 +172,7 @@ public class AstralBody : MonoBehaviour, ITraceable
 
     public Vector3 GetGravityVector3(Rigidbody rigidbody)
     {
-        var distance = Vector3.Distance(transform.position, rigidbody.position);
+        var distance            = Vector3.Distance(transform.position, rigidbody.position);
         var normalizedDirection = (transform.position - rigidbody.position).normalized;
         return CalculateGravityModulus(rigidbody.mass, distance) * normalizedDirection;
     }

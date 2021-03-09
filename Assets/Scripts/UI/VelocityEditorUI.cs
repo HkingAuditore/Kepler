@@ -3,13 +3,13 @@ using UnityEngine.UI;
 
 public class VelocityEditorUI : MonoBehaviour
 {
-    public LineRenderer velocityLine;
-    public AstralBody editingTarget;
-    public Text speedUI;
-    public float showSize = .1f;
-    public VectorUI velocityUI;
-    private Camera _camera;
-    private Vector3 _mousePos;
+    public  LineRenderer velocityLine;
+    public  AstralBody   editingTarget;
+    public  Text         speedUI;
+    public  float        showSize = .1f;
+    public  VectorUI     velocityUI;
+    private Camera       _camera;
+    private Vector3      _mousePos;
 
     private Vector3 _velocity;
 
@@ -17,8 +17,8 @@ public class VelocityEditorUI : MonoBehaviour
     {
         get
         {
-            var oriPos = new Vector3(velocityLine.GetPosition(0).x, 0, velocityLine.GetPosition(0).z);
-            var tarPos = new Vector3(velocityLine.GetPosition(1).x, 0, velocityLine.GetPosition(1).z);
+            var oriPos       = new Vector3(velocityLine.GetPosition(0).x, 0, velocityLine.GetPosition(0).z);
+            var tarPos       = new Vector3(velocityLine.GetPosition(1).x, 0, velocityLine.GetPosition(1).z);
             var oriScreenPos = _camera.WorldToScreenPoint(oriPos);
             var tarScreenPos = _camera.WorldToScreenPoint(tarPos);
 
@@ -52,14 +52,14 @@ public class VelocityEditorUI : MonoBehaviour
     {
         velocityUI.gameObject.SetActive(false);
         Time.timeScale = 0;
-        _mousePos = _camera.ScreenToWorldPoint(Input.mousePosition);
+        _mousePos      = _camera.ScreenToWorldPoint(Input.mousePosition);
         velocityLine.SetPosition(0, editingTarget.transform.position);
         velocityLine.SetPosition(1, new Vector3(_mousePos.x, editingTarget.transform.position.y, _mousePos.z));
 
         // Vector3 tmpScreenPos = Input.mousePosition;
         // Debug.Log(tmpScreenPos);
         // Debug.Log(this.gameObject.name + " : " + tmpScreenPos);
-        transform.position = new Vector3(Mathf.Clamp(Input.mousePosition.x, 60, Screen.width - 60),
+        transform.position = new Vector3(Mathf.Clamp(Input.mousePosition.x, 60, Screen.width  - 60),
                                          Mathf.Clamp(Input.mousePosition.y, 20, Screen.height - 20),
                                          0);
 

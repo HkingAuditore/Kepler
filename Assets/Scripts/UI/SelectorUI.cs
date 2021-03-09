@@ -6,12 +6,12 @@ namespace UI
 {
     public class SelectorUI : MonoBehaviour
     {
-        public OutlineCatcher outlineCatcher;
+        public OutlineCatcher     outlineCatcher;
         public AstralBodyEditorUI astralBodyEditorUI;
-        private CameraController _cameraController;
-        private bool _isLocked;
 
         private readonly List<GameObject> selectedGameObjects = new List<GameObject>();
+        private          CameraController _cameraController;
+        private          bool             _isLocked;
 
         private void Start()
         {
@@ -33,7 +33,7 @@ namespace UI
 
         private void HighlightSelect()
         {
-            var ray = _cameraController.GetMainCamera().ScreenPointToRay(Input.mousePosition);
+            var        ray = _cameraController.GetMainCamera().ScreenPointToRay(Input.mousePosition);
             RaycastHit hitInfo;
             // Debug.DrawRay(ray.origin,ray.direction,Color.green);
             if (Physics.Raycast(ray, out hitInfo, 500))
@@ -58,7 +58,7 @@ namespace UI
             if (Input.GetMouseButtonDown(0) && selectedGameObjects.Count > 0)
             {
                 _cameraController.FocusOn(selectedGameObjects[0].transform);
-                _isLocked = true;
+                _isLocked                     = true;
                 _cameraController.IsFollowing = true;
                 astralBodyEditorUI.astralBody = selectedGameObjects[0].GetComponent<AstralBody>();
                 astralBodyEditorUI.gameObject.SetActive(true);
@@ -73,7 +73,7 @@ namespace UI
                 _isLocked = false;
                 _cameraController.ExitFocus();
                 _cameraController.IsFollowing = false;
-                astralBodyEditorUI.enabled = false;
+                astralBodyEditorUI.enabled    = false;
                 astralBodyEditorUI.gameObject.SetActive(false);
             }
         }

@@ -6,8 +6,8 @@ namespace CustomPostProcessing
     {
         // public List<IRenderTexOuter> renderTexOuters = new List<IRenderTexOuter>();
         public OutlineCatcher renderTexOuter;
-        public RenderTexture renderTexture;
-        public Shader mixShader;
+        public RenderTexture  renderTexture;
+        public Shader         mixShader;
 
         [Header("Material Setting")] public Color edgeColor = Color.white;
 

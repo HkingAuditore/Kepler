@@ -3,10 +3,10 @@ using UnityEngine.UI;
 
 public class PositionEditorUI : MonoBehaviour
 {
-    public Button xAxis;
-    public Button zAxis;
+    public Button    xAxis;
+    public Button    zAxis;
     public Transform editingTarget;
-    public float moveSpeed;
+    public float     moveSpeed;
 
     private Camera _camera;
 
@@ -34,7 +34,7 @@ public class PositionEditorUI : MonoBehaviour
 
     public void MoveAxis(bool isXAxis)
     {
-        var mousePos = _camera.ScreenToWorldPoint(Input.mousePosition);
+        var mousePos   = _camera.ScreenToWorldPoint(Input.mousePosition);
         var deltaValue = mousePos - oriMousePos;
         oriMousePos = mousePos;
         editingTarget.transform.position +=
@@ -43,9 +43,9 @@ public class PositionEditorUI : MonoBehaviour
 
     public void MoveCenter()
     {
-        var mousePos = _camera.ScreenToWorldPoint(Input.mousePosition);
+        var mousePos   = _camera.ScreenToWorldPoint(Input.mousePosition);
         var deltaValue = mousePos - oriMousePos;
-        oriMousePos = mousePos;
+        oriMousePos                      =  mousePos;
         editingTarget.transform.position += new Vector3(deltaValue.x, 0, deltaValue.z);
     }
 

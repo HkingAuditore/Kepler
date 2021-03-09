@@ -7,7 +7,7 @@ namespace Satellite
     public class Satellite : MonoBehaviour
     {
         public List<SatellitePart> satelliteParts = new List<SatellitePart>();
-        public SatelliteCore satelliteCore;
+        public SatelliteCore       satelliteCore;
 
         private void Start()
         {
