@@ -15,6 +15,8 @@ namespace SpacePhysic
         Rigidbody GetRigidbody();
         Vector3 GetVelocity();
         List<AstralBody> GetAffectedPlanets();
+
+        AstralBody GetAstralBody();
     }
 
     public class GravityTracing : MonoBehaviour
@@ -50,6 +52,16 @@ namespace SpacePhysic
 
         public void AddTracingTarget(ITraceable traceable)
         {
+            if (_isFreezing)
+            { traceable.GetRigidbody().isKinematic = true;
+            }
+            else
+            {
+                var tmpV = traceable.GetVelocity();
+                traceable.GetRigidbody().velocity = tmpV;
+                traceable.GetRigidbody().isKinematic = false;
+
+            }
             if (traceable.GetEnableTracing())
             {
                 _astralBodies.Add(traceable);
@@ -195,8 +207,10 @@ namespace SpacePhysic
 
         #endregion
 
+        private bool _isFreezing = false;
         public void Freeze(bool isFreezing)
         {
+            _isFreezing = isFreezing;
             _astralBodies.ForEach(astral =>
                                   {
                                       if (isFreezing)
@@ -211,6 +225,13 @@ namespace SpacePhysic
 
                                       }
                                   });
+        }
+
+        public List<AstralBody> GetAstralBodyList()
+        {
+             List<AstralBody> list = (from traceable in _astralBodies
+                                      select traceable.GetAstralBody()).ToList();
+             return list;
         }
     }
 }

@@ -253,6 +253,9 @@
             </e>
           </e>
         </e>
+        <e p="Quiz" t="Include">
+          <e p="21-03-08.xml" t="Include" />
+        </e>
         <e p="Scripts" t="Include">
           <e p="Camera" t="Include">
             <e p="CameraController.cs" t="Include" />
@@ -270,6 +273,8 @@
           </e>
           <e p="Quiz" t="Include">
             <e p="QuizBase.cs" t="Include" />
+            <e p="QuizData.cs" t="Include" />
+            <e p="QuizSaver.cs" t="Include" />
           </e>
           <e p="Satellite" t="Include">
             <e p="Satellite.cs" t="Include" />

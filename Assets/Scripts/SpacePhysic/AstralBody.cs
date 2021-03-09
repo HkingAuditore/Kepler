@@ -125,6 +125,11 @@ public class AstralBody : MonoBehaviour, ITraceable
         return affectedPlanets;
     }
 
+    public AstralBody GetAstralBody()
+    {
+        return this;
+    }
+
 
     #region 开放修改参数
 

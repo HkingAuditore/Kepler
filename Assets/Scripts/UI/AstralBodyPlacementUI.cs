@@ -1,4 +1,5 @@
-﻿using SpacePhysic;
+﻿using System.Collections;
+using SpacePhysic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -6,8 +7,8 @@ namespace UI
 {
     public class AstralBodyPlacementUI : MonoBehaviour
     {
-        public AstralBody placePrefab;
-        public GravityTracing orbits;
+        private AstralBody _placePrefab;
+        private GravityTracing _orbits;
         public AstralBodyAddUI root;
         private Camera _camera;
         private RectTransform _horizontalLine;
@@ -21,15 +22,21 @@ namespace UI
 
         public Vector3 Target { get; set; }
 
-        private void Awake()
+        private void Start()
         {
+            _placePrefab = root.placePrefab;
+            _orbits = root.orbits;
             _verticalLine = transform.Find("Vertical").GetComponent<RectTransform>();
             _horizontalLine = transform.Find("Horizontal").GetComponent<RectTransform>();
             _rangeText = transform.Find("RangeText").GetComponent<Text>();
             _lineRenderer = GetComponent<LineRenderer>();
             _camera = GameManager.GetGameManager.GetMainCameraController().GetMainCamera();
-            _orbitCore = orbits.transform.Find("Core");
+            _orbitCore = root.OrbitCore;
         }
+
+        
+        
+        
 
         private void Update()
         {
@@ -50,11 +57,14 @@ namespace UI
             if (Input.GetMouseButtonDown(0))
             {
                 var mousePosInWorld = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                Debug.Log("Mouse X: " + mousePosInWorld.x);
-                Debug.Log("Mouse Y: " + mousePosInWorld.y);
-                var newAstralBody = Instantiate(placePrefab, new Vector3(mousePosInWorld.x, 0, mousePosInWorld.z),
-                                                Quaternion.LookRotation(new Vector3(0, 0, 0)), orbits.transform);
-                orbits.AddTracingTarget(newAstralBody);
+                // Debug.Log("Mouse X: " + mousePosInWorld.x);
+                // Debug.Log("Mouse Y: " + mousePosInWorld.y);
+                var newAstralBody = Instantiate(_placePrefab, new Vector3(mousePosInWorld.x, 0, mousePosInWorld.z),
+                                                Quaternion.LookRotation(new Vector3(0, 0, 0)), _orbits.transform);
+                
+                GameManager.GetGameManager.quizBase.AddAstralBody(newAstralBody);
+                _orbits.AddTracingTarget(newAstralBody);
+                
                 _inPlacing = false;
                 root.Switch2Normal();
                 Time.timeScale = 1;
