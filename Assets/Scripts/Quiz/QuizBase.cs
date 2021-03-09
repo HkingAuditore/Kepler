@@ -6,55 +6,9 @@ using Object = System.Object;
 
 namespace Quiz
 {
-    [Serializable]
-    public struct AstralBodyDict
-    {
-        public Transform transform;
-        public AstralBody astralBody;
-        public bool isTarget;
-
-        public AstralBodyDict(Transform transform, AstralBody astralBody, bool isTarget)
-        {
-            this.transform = transform;
-            this.astralBody = astralBody;
-            this.isTarget = isTarget;
-        }
-    }
-    
-    public struct AstralBodyStructDict
-    {
-        public Vector3 position;
-        public float mass;
-        public float density;
-        public float originalSize;
-        public Vector3 oriVelocity;
-        public bool enableAffect;
-        public bool enableTracing;
-        public bool isTarget;
-
-        public AstralBodyStructDict(Transform transform, AstralBody astralBody, bool isTarget)
-        {
-            position = transform.position;
-            mass = astralBody.mass;
-            density = astralBody.density;
-            originalSize = astralBody.originalSize;
-            oriVelocity = astralBody.oriVelocity;
-            enableAffect = astralBody.enableAffect;
-            enableTracing = astralBody.enableTracing;
-            this.isTarget = isTarget;
-        }
-    }
-
-    public enum QuizType
-    {
-        Mass,
-        Density,
-        Gravity,
-        Radius
-    }
     public class QuizBase : MonoBehaviour
     {
-
+        public bool isLoadByPrefab;
         public List<AstralBodyDict> astralBodiesDict;
         private List<AstralBodyStructDict> _astralBodyStructDictList;
         public AstralBody astralBodyPrefab;
@@ -97,8 +51,10 @@ namespace Quiz
             this.LoadQuiz("21-03-08");
             // List<AstralBody> astralBodies = new List<AstralBody>();
             // 放置星球
-            GenerateAstralBodiesWithPrefab();
-            
+            if(isLoadByPrefab)
+                GenerateAstralBodiesWithPrefab();
+            else
+                GenerateAstralBodiesWithoutPrefab();
             orbitBase.DrawOrbits();
             orbitBase.Freeze(true);
             IsLoadDone = true;
@@ -133,6 +89,8 @@ namespace Quiz
                     GameObject.Instantiate(astralBodyPrefab, pair.position, Quaternion.Euler(0,0,0), quizRoot);
                 orbitBase.AddTracingTarget(target);
                 target.gameObject.name = target.gameObject.name.Replace("(Clone)", "");
+                if (pair.isCore)
+                    target.gameObject.name = "Core";
                 if (pair.isTarget)
                 {
                     quizUI.target = target;
@@ -163,7 +121,7 @@ namespace Quiz
         public void LoadQuiz(string fileName)
         {
             QuizBaseStruct result = saver.ConvertXml2QuizBase(saver.LoadXml(fileName));
-            this.astralBodiesDict = result.astralBodyDictList;
+            this._astralBodyStructDictList = result.astralBodyStructList;
             this.quizType = result.quizType;
         }
 

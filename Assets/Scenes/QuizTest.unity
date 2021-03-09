@@ -2337,7 +2337,7 @@ MonoBehaviour:
   autoOrient: 1
   updateFrameInterval: 0
   _slices: 1
-  vertexDirection: {x: -0.047175847, y: 0.48555747, z: -0.87293094}
+  vertexDirection: {x: -0, y: 0.9995054, z: 0.03144574}
 --- !u!23 &554862197
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7320,6 +7320,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53233f2d148d3c04399707248eee4fa7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isLoadByPrefab: 1
   astralBodiesDict:
   - transform: {fileID: 1402849843700354182, guid: c684119cf75037c4bb2c731a4644f1f6, type: 3}
     astralBody: {fileID: 1402849843700354234, guid: c684119cf75037c4bb2c731a4644f1f6, type: 3}
@@ -7327,7 +7328,7 @@ MonoBehaviour:
   - transform: {fileID: 1575909808793090419, guid: a53bd22a0f94ee54dac82f858b3747c3, type: 3}
     astralBody: {fileID: 1575909808793090415, guid: a53bd22a0f94ee54dac82f858b3747c3, type: 3}
     isTarget: 0
-  astralBodyPrefab: {fileID: 0}
+  astralBodyPrefab: {fileID: 1575909808793090415, guid: a53bd22a0f94ee54dac82f858b3747c3, type: 3}
   quizRoot: {fileID: 1009603420}
   orbitBase: {fileID: 1009603419}
   quizType: 0
