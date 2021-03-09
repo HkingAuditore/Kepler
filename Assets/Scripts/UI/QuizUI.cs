@@ -6,7 +6,7 @@ using Random = UnityEngine.Random;
 
 public class QuizUI : MonoBehaviour
 {
-    public QuizBase quizBase;
+    public QuizSolver quizSolver;
     public Slider   quizSlider;
     public Text     title;
     public QuizType quizType;
@@ -50,7 +50,7 @@ public class QuizUI : MonoBehaviour
         switch (quizType)
         {
             case QuizType.Mass:
-                quizBase.TmpAnswer = tmpAns;
+                quizSolver.TmpAnswer = tmpAns;
                 break;
             case QuizType.Density:
                 throw new ArgumentOutOfRangeException();
@@ -70,14 +70,14 @@ public class QuizUI : MonoBehaviour
 
     private void GenerateAns()
     {
-        _gap    = (int) Random.Range(0, quizBase.answer);
+        _gap    = (int) Random.Range(0, quizSolver.answer);
         _gap    = Mathf.Clamp(_gap, 10, 1000);
-        _ansPos = Random.Range(0, (int) (quizBase.answer / _gap));
+        _ansPos = Random.Range(0, (int) (quizSolver.answer / _gap));
     }
 
     private float ConvertSliderValue2Ans(float quizSliderValue)
     {
         //TODO:干扰项设计没做
-        return quizBase.answer + (quizSliderValue - _ansPos) * _gap;
+        return quizSolver.answer + (quizSliderValue - _ansPos) * _gap;
     }
 }

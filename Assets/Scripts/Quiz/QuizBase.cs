@@ -8,30 +8,20 @@ namespace Quiz
     public class QuizBase : MonoBehaviour
     {
         public bool                 isLoadByPrefab;
+        public string               loadTarget;
         public List<AstralBodyDict> astralBodiesDict;
         public AstralBody           astralBodyPrefab;
         public Transform            quizRoot;
         public GravityTracing       orbitBase;
         public QuizType             quizType;
-        public QuizUI               quizUI;
-        public QuizSaver            saver;
+        public AstralBody           target;
 
         public  float                      answer;
         private List<AstralBodyStructDict> _astralBodyStructDictList;
-        private float                      _tmpAnswer;
+
 
         public bool IsLoadDone { private set; get; }
 
-        public float TmpAnswer
-        {
-            get => _tmpAnswer;
-            set
-            {
-                orbitBase.Freeze(false);
-                _tmpAnswer = value;
-                FinishQuiz(_tmpAnswer.Equals(answer));
-            }
-        }
 
         private void Start()
         {
@@ -43,7 +33,7 @@ namespace Quiz
             }
             else
             {
-                LoadQuiz("21-03-09");
+                LoadQuiz(loadTarget);
                 GenerateAstralBodiesWithoutPrefab();
             }
 
@@ -52,11 +42,6 @@ namespace Quiz
             IsLoadDone = true;
         }
 
-        private void FinishQuiz(bool isRight)
-        {
-            if (isRight)
-                return;
-        }
 
         private void GenerateAstralBodiesWithPrefab()
         {
@@ -66,7 +51,7 @@ namespace Quiz
                     Instantiate(pair.astralBody, pair.transform.position, pair.transform.rotation, quizRoot);
                 orbitBase.AddTracingTarget(target);
                 target.gameObject.name = target.gameObject.name.Replace("(Clone)", "");
-                if (pair.isTarget) quizUI.target = target;
+                if (pair.isTarget) this.target = target;
             }
         }
 
@@ -87,30 +72,16 @@ namespace Quiz
                 target.gameObject.name = target.gameObject.name.Replace("(Clone)", "");
                 if (pair.isCore)
                     target.gameObject.name = "Core";
-                if (pair.isTarget) quizUI.target = target;
+                if (pair.isTarget) this.target = target;
             }
         }
 
+        
 
-        public void AddAstralBody(AstralBody astralBody, bool isTarget = false)
-        {
-            astralBodiesDict.Add(new AstralBodyDict(astralBody.transform, astralBody, isTarget));
-        }
-
-        public void SetTarget(AstralBody target)
-        {
-            astralBodiesDict.ForEach(ast => { ast.isTarget = ReferenceEquals(ast.astralBody, target); });
-        }
-
-        public void SaveQuiz()
-        {
-            var xmlDoc = saver.ConvertOrbit2Xml(astralBodiesDict, quizType);
-            saver.SaveXml(xmlDoc, DateTime.Now.ToString("yy-MM-dd"));
-        }
 
         public void LoadQuiz(string fileName)
         {
-            var result = saver.ConvertXml2QuizBase(saver.LoadXml(fileName));
+            var result = QuizSaver.ConvertXml2QuizBase(QuizSaver.LoadXml(fileName));
             _astralBodyStructDictList = result.astralBodyStructList;
             quizType                  = result.quizType;
         }

@@ -58,7 +58,7 @@ namespace UI
                 var newAstralBody = Instantiate(_placePrefab, new Vector3(mousePosInWorld.x, 0, mousePosInWorld.z),
                                                 Quaternion.LookRotation(new Vector3(0, 0, 0)), _orbits.transform);
 
-                GameManager.GetGameManager.quizBase.AddAstralBody(newAstralBody);
+                GameManager.GetGameManager.quizEditor.AddAstralBody(newAstralBody);
                 _orbits.AddTracingTarget(newAstralBody);
 
                 _inPlacing = false;

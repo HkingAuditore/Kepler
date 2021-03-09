@@ -29,11 +29,11 @@ public class AstralBodyAddUI : MonoBehaviour
 
     public IEnumerator WaitForLoad()
     {
-        // Debug.Log("Wait");
+        Debug.Log("Wait 4 Core");
         // Debug.Log(GameManager.GetGameManager.quizBase.IsLoadDone);
-        yield return new WaitUntil(() => GameManager.GetGameManager.quizBase.IsLoadDone);
+        yield return new WaitUntil(() => GameManager.GetGameManager.quizEditor.IsLoadDone);
         OrbitCore = orbits.transform.Find("Core");
-        // Debug.Log(OrbitCore );
+        Debug.Log(OrbitCore );
     }
 
 

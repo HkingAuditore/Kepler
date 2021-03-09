@@ -19,7 +19,7 @@ namespace Quiz
         private static readonly XmlDocument _xmlDoc = new XmlDocument();
         public                  QuizType    quizType;
         public                  GameObject  cloner;
-        private                 string      _xmlPath;
+        private                 static  string      _xmlPath;
 
         private void Awake()
         {
@@ -84,11 +84,14 @@ namespace Quiz
             if (!File.Exists(path))
                 doc.Save(path);
             else
-                throw new QuizSaverException("文件已存在");
+            {
+                doc.Save(path);
+                throw new QuizSaverException("文件已存在，进行覆盖！");
+            }            
             AssetDatabase.Refresh();
         }
 
-        public XmlDocument LoadXml(string fileName)
+        public static XmlDocument LoadXml(string fileName)
         {
             var path = _xmlPath + fileName + ".xml";
             if (File.Exists(path))
@@ -103,13 +106,13 @@ namespace Quiz
             throw new QuizSaverException(path + "文件不存在");
         }
 
-        private Vector3 ConvertString2Vector3(string str)
+        private static Vector3 ConvertString2Vector3(string str)
         {
             var vec = str.Trim(' ').Trim('(').Trim(')').Split(',');
             return new Vector3(float.Parse(vec[0]), float.Parse(vec[1]), float.Parse(vec[2]));
         }
 
-        public QuizBaseStruct ConvertXml2QuizBase(XmlDocument xmlDoc)
+        public static QuizBaseStruct ConvertXml2QuizBase(XmlDocument xmlDoc)
         {
             var quizBaseStruct = new QuizBaseStruct();
             var list           = new List<AstralBodyStructDict>();
