@@ -6653,7 +6653,6 @@ GameObject:
   - component: {fileID: 1901827054}
   - component: {fileID: 1901827053}
   - component: {fileID: 1901827056}
-  - component: {fileID: 1901827055}
   - component: {fileID: 1901827057}
   m_Layer: 0
   m_Name: GameManager
@@ -6691,33 +6690,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1901827055
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1901827052}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53233f2d148d3c04399707248eee4fa7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isLoadByPrefab: 0
-  loadTarget: 
-  astralBodiesDict:
-  - transform: {fileID: 1402849843700354182, guid: c684119cf75037c4bb2c731a4644f1f6, type: 3}
-    astralBody: {fileID: 1402849843700354234, guid: c684119cf75037c4bb2c731a4644f1f6, type: 3}
-    isTarget: 1
-  - transform: {fileID: 1575909808793090419, guid: a53bd22a0f94ee54dac82f858b3747c3, type: 3}
-    astralBody: {fileID: 1575909808793090415, guid: a53bd22a0f94ee54dac82f858b3747c3, type: 3}
-    isTarget: 0
-  astralBodyPrefab: {fileID: 1575909808793090415, guid: a53bd22a0f94ee54dac82f858b3747c3, type: 3}
-  quizRoot: {fileID: 1009603420}
-  orbitBase: {fileID: 1009603419}
-  quizType: 0
-  target: {fileID: 0}
-  answer: 5000
 --- !u!114 &1901827056
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6752,8 +6724,8 @@ MonoBehaviour:
   orbitBase: {fileID: 1009603419}
   quizType: 0
   target: {fileID: 0}
-  answer: 0
-  quizUI: {fileID: 0}
+  answer: 5000
+  quizUI: {fileID: 1203036401}
 --- !u!1 &1924732251
 GameObject:
   m_ObjectHideFlags: 0

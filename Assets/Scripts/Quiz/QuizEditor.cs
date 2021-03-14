@@ -22,6 +22,11 @@ namespace Quiz
             astralBodiesDict.ForEach(ast => { ast.isTarget = ReferenceEquals(ast.astralBody, target); });
         }
 
+        public void SetType(QuizType t)
+        {
+            quizType = t;
+        }
+
 
     }
 }
