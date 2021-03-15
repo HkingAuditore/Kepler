@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using Quiz;
 using UnityEngine;
 using UnityEngine.UI;
@@ -34,6 +34,8 @@ public class QuizUI : MonoBehaviour
                 target.ChangeMass(ConvertSliderValue2Ans(quizSlider.value));
                 break;
             case QuizType.Density:
+                ansText.text = ConvertSliderValue2Ans(quizSlider.value).ToString("f2") + " kg/m3";
+                target.ChangeMass(ConvertSliderValue2Ans(quizSlider.value) * Mathf.PI * Mathf.Pow(target.curSize,3)*4/3);
                 break;
             case QuizType.Gravity:
                 break;
@@ -54,6 +56,7 @@ public class QuizUI : MonoBehaviour
                 break;
             case QuizType.Density:
                 throw new ArgumentOutOfRangeException();
+                quizSolver.TmpAnswer = tmpAns;
                 break;
             case QuizType.Gravity:
                 throw new ArgumentOutOfRangeException();

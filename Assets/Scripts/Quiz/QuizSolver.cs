@@ -1,4 +1,4 @@
-﻿namespace Quiz
+namespace Quiz
 {
     public class QuizSolver : QuizBase
     {
