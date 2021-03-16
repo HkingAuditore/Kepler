@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using SpacePhysic;
 using UnityEngine;
 
@@ -199,5 +200,15 @@ public class AstralBody : MonoBehaviour, ITraceable
 
     #region 引力步进计算轨道
 
+    #endregion
+    
+    #region 优化属性设置
+
+    public void SetCircleVelocity()
+    {
+        //查找引力核心
+        AstralBody core = affectedPlanets.OrderByDescending(a => this.GetGravityVector3(a.GetRigidbody())).FirstOrDefault();
+        this.ChangeVelocity(MathPlus.CustomSolver.GetCircleOrbitVelocity(this.transform.position,core.GetTransform().position,core.mass));
+    }
     #endregion
 }

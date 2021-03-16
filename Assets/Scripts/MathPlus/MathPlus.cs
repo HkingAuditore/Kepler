@@ -275,5 +275,13 @@ namespace MathPlus
                                     a[5]
                                    );
         }
+
+        public static Vector3 GetCircleOrbitVelocity(Vector3 targetPos, Vector3 centerPos,float centerMass)
+        {
+            float   r     = Vector3.Distance(targetPos, centerPos);
+            float   speed = Mathf.Sqrt(PhysicBase.GetG() * centerMass / r);
+            Vector3 dir   = (Quaternion.AngleAxis(90, Vector3.up) * (centerPos - targetPos)).normalized;
+            return dir * speed;
+        }
     }
 }

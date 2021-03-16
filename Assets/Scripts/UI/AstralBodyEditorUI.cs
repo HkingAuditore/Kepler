@@ -102,4 +102,9 @@ public class AstralBodyEditorUI : MonoBehaviour
 
         gravityTracing.DrawMathOrbit(result, 20);
     }
+
+    public void SetVelocityInCircle()
+    {
+        this.astralBody.SetCircleVelocity();
+    }
 }
