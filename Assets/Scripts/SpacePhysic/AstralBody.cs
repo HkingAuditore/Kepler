@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using SpacePhysic;
 using UnityEngine;
@@ -7,11 +8,12 @@ public class AstralBody : MonoBehaviour, ITraceable
 {
     [Header("Basic Property")] public float mass;
 
-    public float          density;
-    public float          originalSize = 1;
-    public float          curSize;
-    public SphereCollider triggerCollider;
-    public SphereCollider defaultCollider;
+    public  float          density;
+    public  float          originalSize = 1;
+    public  float          curSize;
+    private int            _meshNum;
+    public  SphereCollider triggerCollider;
+    public  SphereCollider defaultCollider;
 
     [Header("Movement Property")] public Vector3 oriVelocity;
 
@@ -40,6 +42,20 @@ public class AstralBody : MonoBehaviour, ITraceable
 
     public Vector3 Force { get; private set; }
 
+    private MeshFilter _mesh;
+    private Renderer   _renderer;
+    public int meshNum
+    {
+        get => _meshNum;
+        set
+        {
+            _meshNum  = value;
+            List<Material> materials = new List<Material>();
+            this._mesh.sharedMesh = GameManager.GetGameManager.GetMeshAndMaterialsFromList(_meshNum,ref materials);
+            this._renderer.sharedMaterials = materials.ToArray();
+        }
+    }
+
 
     protected virtual void Start()
     {
@@ -47,7 +63,8 @@ public class AstralBody : MonoBehaviour, ITraceable
         triggerCollider.radius = affectRadius;
         SetMass();
         ChangeSize(originalSize);
-
+        _mesh     = this.GetComponent<MeshFilter>();
+        _renderer = this.GetComponent<Renderer>();
 
         AstralBodyRigidbody.angularVelocity = angularVelocity;
         _lastVelocity                       = oriVelocity;

@@ -13,6 +13,12 @@ namespace UI
         private          CameraController _cameraController;
         private          bool             _isLocked;
 
+        public bool isLocked
+        {
+            get => _isLocked;
+            set => _isLocked = value;
+        }
+
         private void Start()
         {
             _cameraController = GameManager.GetGameManager.GetMainCameraController();
@@ -20,7 +26,7 @@ namespace UI
 
         public void Update()
         {
-            if (!_isLocked)
+            if (!isLocked)
             {
                 HighlightSelect();
                 FocusOn();
@@ -60,7 +66,7 @@ namespace UI
             if (Input.GetMouseButtonDown(0) && selectedGameObjects.Count > 0)
             {
                 _cameraController.FocusOn(selectedGameObjects[0].transform);
-                _isLocked                     = true;
+                isLocked                     = true;
                 _cameraController.IsFollowing = true;
                 astralBodyEditorUI.astralBody = selectedGameObjects[0].GetComponent<AstralBody>();
                 astralBodyEditorUI.gameObject.SetActive(true);
@@ -72,7 +78,7 @@ namespace UI
         {
             if (Input.GetMouseButtonDown(1))
             {
-                _isLocked = false;
+                isLocked = false;
                 _cameraController.ExitFocus();
                 _cameraController.IsFollowing = false;
                 astralBodyEditorUI.enabled    = false;

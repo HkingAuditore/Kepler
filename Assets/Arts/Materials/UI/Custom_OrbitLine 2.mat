@@ -27,5 +27,5 @@ Material:
     - _Density: 0.5
     - _Speed: 0.382
     m_Colors:
-    - _Color: {r: 0.25449625, g: 3.1737175, b: 0.39798638, a: 0}
+    - _Color: {r: 0.041396327, g: 0.49416864, b: 0.062094487, a: 0}
   m_BuildTextureStacks: []

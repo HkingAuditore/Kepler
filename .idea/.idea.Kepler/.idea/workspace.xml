@@ -21,28 +21,45 @@
   <component name="ChangeListManager">
     <list default="true" id="1afa9dc1-adab-467c-afda-52b72c3d10f3" name="默认的" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Kepler/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Kepler/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Kepler/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Kepler/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Kepler/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Kepler/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Arts/Materials/Planet.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Arts/Materials/Planet.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animator/Astronauts.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animator/Astronauts.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Arts/Materials/Astronauts.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Arts/Materials/Astronauts.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Arts/Materials/Planet 1.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Arts/Materials/Planet 1.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Arts/Materials/Planet 2.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Arts/Materials/Planet 2.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Arts/Materials/Planet 3.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Arts/Materials/Planet 3.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Arts/Materials/Planet 4.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Arts/Materials/Planet 4.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Arts/Materials/Planet 5.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Arts/Materials/Planet 5.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Arts/Materials/Planet.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Arts/Materials/Planet.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Arts/Materials/UI/Custom_OrbitLine 2.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Arts/Materials/UI/Custom_OrbitLine 2.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Arts/Materials/UI/Custom_OrbitLine.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Arts/Materials/UI/Custom_OrbitLine.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Arts/Materials/UI/Line_UILine 1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Arts/Materials/UI/Line_UILine 1.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Arts/Materials/UI/Line_UILine.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Arts/Materials/UI/Line_UILine.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Arts/Models/planet.blend" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Arts/Models/planet.blend" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Arts/Shaders/Mix.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Arts/Shaders/Mix.shader" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Sphere.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Sphere.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Test/Sphere.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Test/Sphere.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Arts/Models/Astronauts.blend.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Arts/Models/Astronauts.blend.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Arts/Models/Sketchfab_2016_01_02_20_11_57.blend.blend" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Arts/Models/Sketchfab_2016_01_02_20_11_57.blend.blend.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Arts/Models/crash_planet.blend" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Arts/Models/crash_planet.blend.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Arts/Models/planet.blend" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Arts/Models/planet.blend.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Arts/Models/planet2.blend" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Arts/Models/planet2.blend.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Arts/Texture/Ambient Occlusion Map from Mesh Astronaut_mat.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Arts/Texture/Ambient Occlusion Map from Mesh Astronaut_mat.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Arts/Texture/Ambient Occlusion Map from Mesh scene.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Arts/Texture/Ambient Occlusion Map from Mesh scene.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Arts/Texture/texture.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Arts/Texture/texture.png.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/PhysicScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/PhysicScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Space.lighting" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Space.lighting" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomPostProcessing/CameraMixer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomPostProcessing/CameraMixer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomPostProcessing/CustomPostProcessingBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomPostProcessing/CustomPostProcessingBase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomPostProcessing/OutlineCatcher.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomPostProcessing/OutlineCatcher.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/PhysicScene_Profiles/Main Camera Profile 1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/PhysicScene_Profiles/Main Camera Profile 1.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager/GameManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/SpacePhysic/AstralBody.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SpacePhysic/AstralBody.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/SelectorUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/SelectorUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,6 +87,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Quiz/QuizData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/AstralBodyEditorUI.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/LengthUI.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/MeshEditor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/OrbitPanelUI.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Camera/CameraController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/VectorUI.cs" root0="FORCE_HIGHLIGHTING" />
@@ -88,15 +106,11 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/MathPlus/MathPlus.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/AstralBodyEditorUI.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/AstralBodyPlacementUI.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/SpacePhysic/AstralBody.cs" />
-      <option value="$PROJECT_DIR$/Assets/Minimalist/Shaders/BRP/Minimalist Standard (GlobalSpace).shader" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Camera/ForwardCamera.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/CustomPostProcessing/OutlineCatcher.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/GameManager/GameManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/CustomPostProcessing/CustomPostProcessingBase.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Camera/LayerCamera.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/CustomPostProcessing/CameraMixer.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/UI/SelectorUI.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Camera/CameraLayerMixer.cs" />
       <option value="$PROJECT_DIR$/Assets/Arts/Shaders/MixLayers.shader" />
       <option value="$PROJECT_DIR$/Assets/Arts/Shaders/Mix.shader" />
@@ -106,6 +120,12 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/CustomPostProcessing/DepthOfFieldEffect.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/DepthOfFieldEffect.cs" />
       <option value="$PROJECT_DIR$/Assets/Shaders/DepthOfFieldShader.shader" />
+      <option value="$PROJECT_DIR$/Assets/Minimalist/Shaders/BRP/Minimalist Standard (GlobalSpace).shader" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/SelectorUI.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Animation/AstronautsAnimation.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/GameManager/GameManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/SpacePhysic/AstralBody.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/MeshEditor.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1iK5Y9kUuPbAZPnJQwHlUY16sq8" />
@@ -218,6 +238,8 @@
       <workItem from="1615904174085" duration="3398000" />
       <workItem from="1615971471568" duration="785000" />
       <workItem from="1616057022817" duration="16886000" />
+      <workItem from="1616117184886" duration="655000" />
+      <workItem from="1616148978356" duration="12874000" />
     </task>
     <servers />
   </component>

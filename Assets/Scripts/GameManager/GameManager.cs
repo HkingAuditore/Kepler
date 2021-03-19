@@ -1,4 +1,6 @@
-﻿using Quiz;
+﻿using System.Collections.Generic;
+using System.Linq;
+using Quiz;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -7,6 +9,7 @@ public class GameManager : MonoBehaviour
     public                   QuizEditor       quizEditor;
     public                   bool             isQuizEditMode;
     public                   Camera           mainCamera;
+    public                   List<GameObject>       meshList;
 
     public static GameManager GetGameManager { get; private set; }
 
@@ -20,4 +23,11 @@ public class GameManager : MonoBehaviour
     {
         return _mainCameraController;
     }
+
+    public Mesh GetMeshAndMaterialsFromList(int index,ref List<Material> materials)
+    {
+        materials = meshList[index].GetComponent<Renderer>().sharedMaterials.ToList();
+        return meshList[index].GetComponent<MeshFilter>().sharedMesh;
+    }
+
 }

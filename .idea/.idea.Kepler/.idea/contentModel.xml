@@ -341,6 +341,9 @@
           <e p="21-03-091.xml" t="Include" />
         </e>
         <e p="Scripts" t="Include">
+          <e p="Animation" t="Include">
+            <e p="AstronautsAnimation.cs" t="Include" />
+          </e>
           <e p="BloomEffect.cs" t="Include" />
           <e p="Camera" t="Include">
             <e p="CameraController.cs" t="Include" />
@@ -391,6 +394,7 @@
             <e p="AstralBodyEditorUI.cs" t="Include" />
             <e p="AstralBodyPlacementUI.cs" t="Include" />
             <e p="LengthUI.cs" t="Include" />
+            <e p="MeshEditor.cs" t="Include" />
             <e p="OrbitGraphUI.cs" t="Include" />
             <e p="OrbitPanelUI.cs" t="Include" />
             <e p="PositionEditorUI.cs" t="Include" />
