@@ -5,18 +5,101 @@
     <e p="C:\Users\17885\AppData\Local\JetBrains\Rider2020.3\resharper-host\Local\Transient\Rider\v203\SolutionCaches\_Kepler.-1505220160.00" t="ExcludeRecursive" />
     <e p="G:\Kepler\Kepler" t="IncludeRecursive">
       <e p="Assembly-CSharp-Editor-firstpass.csproj" t="IncludeRecursive" />
+      <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Arts" t="Include">
           <e p="Shaders" t="Include">
             <e p="AuroraSky.shader" t="Include" />
+            <e p="Blur.shader" t="Include" />
             <e p="Mix.shader" t="Include" />
+            <e p="MixLayers.shader" t="Include" />
             <e p="OrbitLine.shader" t="Include" />
             <e p="Outline.shader" t="Include" />
             <e p="Space.shader" t="Include" />
             <e p="UIBlur.shader" t="Include" />
             <e p="UiLine.shader" t="Include" />
+          </e>
+        </e>
+        <e p="FlatKit" t="Include">
+          <e p="Demos" t="Include">
+            <e p="Common" t="Include">
+              <e p="Scripts" t="Include">
+                <e p="Motion" t="Include">
+                  <e p="CameraMouseOrbit.cs" t="Include" />
+                  <e p="Editor" t="Include">
+                    <e p="LinearMotionEditor.cs" t="Include" />
+                  </e>
+                  <e p="LinearMotion.cs" t="Include" />
+                </e>
+              </e>
+            </e>
+          </e>
+          <e p="Scripts" t="Include">
+            <e p="UvScroller.cs" t="Include" />
+          </e>
+          <e p="Shaders" t="Include">
+            <e p="GradientSkybox" t="Include">
+              <e p="Editor" t="Include">
+                <e p="GradientSkyboxEditor.cs" t="Include" />
+              </e>
+              <e p="GradientSkybox.shader" t="Include" />
+            </e>
+            <e p="ImageEffects" t="Include">
+              <e p="Resources" t="Include">
+                <e p="FogPlus.shader" t="Include" />
+                <e p="OutlinePlus.shader" t="Include" />
+              </e>
+              <e p="Scripts" t="Include">
+                <e p="FogImageEffect.cs" t="Include" />
+                <e p="OutlineImageEffect.cs" t="Include" />
+              </e>
+            </e>
+            <e p="LightPlane.shader" t="Include" />
+            <e p="StylizedSurface" t="Include">
+              <e p="DustyroomStylizedLighting.cginc" t="Include" />
+              <e p="DustyroomTerrainSplatmapCommon.cginc" t="Include" />
+              <e p="Editor" t="Include">
+                <e p="StylizedSurfaceEditor.cs" t="Include" />
+              </e>
+              <e p="StylizedSurface.shader" t="Include" />
+              <e p="StylizedSurfaceCutout.shader" t="Include" />
+              <e p="StylizedSurfaceOutline.shader" t="Include" />
+              <e p="Terrain.shader" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Minimalist" t="Include">
+          <e p="Editor" t="Include">
+            <e p="EditorGUILayoutExtended.cs" t="Include" />
+            <e p="MinimalistClipboard.cs" t="Include" />
+            <e p="MinimalistEditorHelper.cs" t="Include" />
+            <e p="MinimalistSkyEditor.cs" t="Include" />
+            <e p="MinimalistStandardEditor.cs" t="Include" />
+          </e>
+          <e p="Minimalist V2.6.0 (Readme).txt" t="Include" />
+          <e p="Shaders" t="Include">
+            <e p="BRP" t="Include">
+              <e p="Minimalist Standard (GlobalSpace).shader" t="Include" />
+              <e p="Minimalist Standard (LocalSpace).shader" t="Include" />
+              <e p="Minimalist.cginc" t="Include" />
+            </e>
+            <e p="Common" t="Include">
+              <e p="Minimalist Sky.shader" t="Include" />
+            </e>
+            <e p="URP" t="Include">
+              <e p="Minimalist Standard LocalSpace.shader" t="Include" />
+              <e p="Minimalist Standard SRP Batched LocalSpace.shader" t="Include" />
+              <e p="Minimalist Standard SRP Batched.shader" t="Include" />
+              <e p="Minimalist Standard.shader" t="Include" />
+              <e p="Minimalist.hlsl" t="Include" />
+              <e p="MinimalistDepthOnlyPass.hlsl" t="Include" />
+              <e p="MinimalistInput.hlsl" t="Include" />
+              <e p="MinimalistInputSrpBatched.hlsl" t="Include" />
+              <e p="MinimalistMetaPass.hlsl" t="Include" />
+              <e p="MinimalistShadowCasterPass.hlsl" t="Include" />
+            </e>
           </e>
         </e>
         <e p="PlugIns" t="Include">
@@ -258,17 +341,27 @@
           <e p="21-03-091.xml" t="Include" />
         </e>
         <e p="Scripts" t="Include">
+          <e p="BloomEffect.cs" t="Include" />
           <e p="Camera" t="Include">
             <e p="CameraController.cs" t="Include" />
+            <e p="CameraLayerMixer.cs" t="Include" />
+            <e p="LayerCamera.cs" t="Include" />
           </e>
           <e p="CustomPostProcessing" t="Include">
             <e p="CameraMixer.cs" t="Include" />
             <e p="CustomPostProcessingBase.cs" t="Include" />
             <e p="OutlineCatcher.cs" t="Include" />
           </e>
+          <e p="DeferredFogEffect.cs" t="Include" />
+          <e p="DepthOfFieldEffect.cs" t="Include" />
+          <e p="Editor" t="Include">
+            <e p="MyLightingShaderGUI.cs" t="Include" />
+          </e>
+          <e p="EmissiveOscillator.cs" t="Include" />
           <e p="GameManager" t="Include">
             <e p="GameManager.cs" t="Include" />
           </e>
+          <e p="GPUInstancingTest.cs" t="Include" />
           <e p="MathPlus" t="Include">
             <e p="MathPlus.cs" t="Include" />
           </e>
@@ -292,6 +385,7 @@
             <e p="GravityTracing.cs" t="Include" />
             <e p="IOrbitCalculator.cs" t="Include" />
           </e>
+          <e p="TangentSpaceVisualizer.cs" t="Include" />
           <e p="UI" t="Include">
             <e p="AstralBodyAddUI.cs" t="Include" />
             <e p="AstralBodyEditorUI.cs" t="Include" />
@@ -306,6 +400,25 @@
             <e p="VectorUI.cs" t="Include" />
             <e p="VelocityEditorUI.cs" t="Include" />
           </e>
+        </e>
+        <e p="Shaders" t="Include">
+          <e p="Bloom.shader" t="Include" />
+          <e p="DeferredFog.shader" t="Include" />
+          <e p="DeferredShading.shader" t="Include" />
+          <e p="DepthOfFieldShader.shader" t="Include" />
+          <e p="Flat Wireframe Shader.shader" t="Include" />
+          <e p="My First Lighting Shader.shader" t="Include" />
+          <e p="My First Shader.shader" t="Include" />
+          <e p="My Lighting Input.cginc" t="Include" />
+          <e p="My Lighting.cginc" t="Include" />
+          <e p="My Lightmapping.cginc" t="Include" />
+          <e p="My Shadows.cginc" t="Include" />
+          <e p="MyDeferredShading.cginc" t="Include" />
+          <e p="MyFlatWireframe.cginc" t="Include" />
+          <e p="MyTessellation.cginc" t="Include" />
+          <e p="Tessellation Shader.shader" t="Include" />
+          <e p="Texture Splatting.shader" t="Include" />
+          <e p="Textured With Detail.shader" t="Include" />
         </e>
         <e p="TextMesh Pro" t="Include">
           <e p="Examples &amp; Extras" t="Include">

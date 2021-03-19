@@ -1,0 +1,16 @@
+Minimalist v2.6.0 - ChangeLog
+
+Improvements
+- SRP Batcher Support for Unity 2019.3 and above [Experimental]
+
+
+Minimalist V2.5.0 - ChangeLog
+
+Bug Fixes
+- Rim Light does not work on oddly oriented meshes in Build-In Render Pipeline
+- Height Fog and Unity Fog can not be used simultaneously  
+- Gradient Editor's Scene View Gizmo throws warning
+
+Improvements
+- Uses shader_feature_local instead of shader_feature
+- Improvements in realtime shadow quality

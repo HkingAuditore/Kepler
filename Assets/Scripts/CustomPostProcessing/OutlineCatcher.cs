@@ -17,6 +17,7 @@ namespace CustomPostProcessing
         public Color edgeColor       = Color.black;
         public Color backgroundColor = Color.white;
 
+
         private Material      _outlineMaterial;
         private RenderTexture _outlineTexture;
 

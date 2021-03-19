@@ -12,9 +12,9 @@ namespace CustomPostProcessing
     {
         protected Camera mainCamera;
 
-        private void Awake()
+        private void Start()
         {
-            mainCamera = Camera.main;
+            mainCamera = GameManager.GetGameManager.mainCamera;
         }
 
         protected Material GenerateMaterial(Shader shader, ref Material targetMaterial)

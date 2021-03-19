@@ -1,0 +1,317 @@
+fileFormatVersion: 2
+guid: 35ce4b7bab2dec74d8e64ab1905b5876
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Camera
+    100002: Cube
+    100004: Cube.000
+    100006: Cube.001
+    100008: Cube.002
+    100010: Cube.003
+    100012: Cube.005
+    100014: Cube.006
+    100016: Cube.007
+    100018: Cube.008
+    100020: Cube.009
+    100022: Cube.010
+    100024: Cube.011
+    100026: Cube.012
+    100028: Cube.013
+    100030: Cube.014
+    100032: Cube.016
+    100034: Cube.028
+    100036: Cube.041
+    100038: Cube.048
+    100040: Cube.060
+    100042: Cube.065
+    100044: Cube.083
+    100046: Cube.085
+    100048: Cube.090
+    100050: Cube.106
+    100052: Cube.123
+    100054: Cube.124
+    100056: Cube.125
+    100058: //RootNode
+    100060: Plane.001
+    100062: Plane.002
+    400000: Camera
+    400002: Cube
+    400004: Cube.000
+    400006: Cube.001
+    400008: Cube.002
+    400010: Cube.003
+    400012: Cube.005
+    400014: Cube.006
+    400016: Cube.007
+    400018: Cube.008
+    400020: Cube.009
+    400022: Cube.010
+    400024: Cube.011
+    400026: Cube.012
+    400028: Cube.013
+    400030: Cube.014
+    400032: Cube.016
+    400034: Cube.028
+    400036: Cube.041
+    400038: Cube.048
+    400040: Cube.060
+    400042: Cube.065
+    400044: Cube.083
+    400046: Cube.085
+    400048: Cube.090
+    400050: Cube.106
+    400052: Cube.123
+    400054: Cube.124
+    400056: Cube.125
+    400058: //RootNode
+    400060: Plane.001
+    400062: Plane.002
+    2000000: Camera
+    2300000: Cube
+    2300002: Cube.000
+    2300004: Cube.001
+    2300006: Cube.002
+    2300008: Cube.003
+    2300010: Cube.005
+    2300012: Cube.006
+    2300014: Cube.007
+    2300016: Cube.008
+    2300018: Cube.009
+    2300020: Cube.010
+    2300022: Cube.011
+    2300024: Cube.012
+    2300026: Cube.013
+    2300028: Cube.014
+    2300030: Cube.016
+    2300032: Cube.028
+    2300034: Cube.041
+    2300036: Cube.048
+    2300038: Cube.060
+    2300040: Cube.065
+    2300042: Cube.083
+    2300044: Cube.085
+    2300046: Cube.090
+    2300048: Cube.106
+    2300050: Cube.123
+    2300052: Cube.124
+    2300054: Cube.125
+    2300056: Plane.001
+    2300058: Plane.002
+    3300000: Cube
+    3300002: Cube.000
+    3300004: Cube.001
+    3300006: Cube.002
+    3300008: Cube.003
+    3300010: Cube.005
+    3300012: Cube.006
+    3300014: Cube.007
+    3300016: Cube.008
+    3300018: Cube.009
+    3300020: Cube.010
+    3300022: Cube.011
+    3300024: Cube.012
+    3300026: Cube.013
+    3300028: Cube.014
+    3300030: Cube.016
+    3300032: Cube.028
+    3300034: Cube.041
+    3300036: Cube.048
+    3300038: Cube.060
+    3300040: Cube.065
+    3300042: Cube.083
+    3300044: Cube.085
+    3300046: Cube.090
+    3300048: Cube.106
+    3300050: Cube.123
+    3300052: Cube.124
+    3300054: Cube.125
+    3300056: Plane.001
+    3300058: Plane.002
+    4300000: Cube.014
+    4300002: Cube.013
+    4300004: Cube.011
+    4300006: Cube.010
+    4300008: Cube.008
+    4300010: Cube.007
+    4300012: Cube.006
+    4300014: Cube.003
+    4300016: Cube.002
+    4300018: Cube.001
+    4300020: Cube.125
+    4300022: Cube.124
+    4300024: Cube.123
+    4300026: Cube.016
+    4300028: Cube.106
+    4300030: Plane.002
+    4300032: Cube.090
+    4300034: Cube.085
+    4300036: Cube.083
+    4300038: Cube
+    4300040: Cube.060
+    4300042: Cube.048
+    4300044: Cube.041
+    4300046: Cube.028
+    4300048: Plane.001
+    4300050: Cube.005
+    4300052: Cube.009
+    4300054: Cube.065
+    4300056: Cube.000
+    4300058: Cube.012
+    2186277476908879412: ImportLogs
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Building
+    second: {fileID: 2100000, guid: 561e5efe5327efa4eaa4e07a9b681b3b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CaveRock
+    second: {fileID: 2100000, guid: 011abf0afe845b64f85adcbb8adad017, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Flag
+    second: {fileID: 2100000, guid: dd36f9e5302017242ab747dd5894444d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FloatingRock
+    second: {fileID: 2100000, guid: c9457a8f22c563040863071680079cb0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Grassy
+    second: {fileID: 2100000, guid: 076a37ee95903dd498acc0632062c73f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: IslandRock1
+    second: {fileID: 2100000, guid: b3a0249ecf8bbf345a64e86ebc5b4ddd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: IslandRock2
+    second: {fileID: 2100000, guid: 77d815903d561a644af90e27296bb10c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: IslandRock3
+    second: {fileID: 2100000, guid: 9dbf56760bb2b95479ed3d6525c1e52d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: IslandRock3.001
+    second: {fileID: 2100000, guid: 90735da9991fbfc4c913cb72ce4a56f6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MountainRock1
+    second: {fileID: 2100000, guid: 53458d10f60c5094e9ad37b1b6c1ce54, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MountainRock2
+    second: {fileID: 2100000, guid: 7b3dd90acdbf8ef42a79eaa31a45fa00, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MountainRock3
+    second: {fileID: 2100000, guid: 0a9fa88290552004a9551c2f80ac8f7b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: RockyPathway
+    second: {fileID: 2100000, guid: b4aae41c388aa2d4c8d3dc4b8ee5606f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tomb
+    second: {fileID: 2100000, guid: 90cc5a78625c6f84d8e83d2a7498f69c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Water
+    second: {fileID: 2100000, guid: cc207e67358479e438938cbaa898d815, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

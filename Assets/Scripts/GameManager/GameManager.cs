@@ -4,8 +4,9 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private CameraController _mainCameraController;
-    public                   QuizEditor         quizEditor;
+    public                   QuizEditor       quizEditor;
     public                   bool             isQuizEditMode;
+    public                   Camera           mainCamera;
 
     public static GameManager GetGameManager { get; private set; }
 

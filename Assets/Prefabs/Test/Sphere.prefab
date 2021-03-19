@@ -44,7 +44,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1575909808793090412}
-  m_Mesh: {fileID: -2447776121362496397, guid: abefe8b5ac0a69f47a6a3de839a1cc2b, type: 3}
+  m_Mesh: {fileID: 7836155707338945327, guid: abefe8b5ac0a69f47a6a3de839a1cc2b, type: 3}
 --- !u!23 &1575909808793090417
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -64,7 +64,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: eda13b2ac8054af45bb2da83ea646d1c, type: 2}
+  - {fileID: 2100000, guid: 3357da506fa17fc45bade5e86298f587, type: 2}
+  - {fileID: 2100000, guid: 605c3ee309fdfef42beb23d9805b87e5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -122,6 +123,7 @@ MonoBehaviour:
   enableAffect: 1
   affectRadius: 8
   enableTracing: 1
+  affectedPlanets: []
 --- !u!54 &1575909808793090414
 Rigidbody:
   m_ObjectHideFlags: 0

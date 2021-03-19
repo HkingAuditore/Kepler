@@ -3,7 +3,9 @@
     Properties
     {
         _MainTex ("Main Texture", 2D) = "white" {}
-        _MixTex("Mix Texture", 2D) = "white" {}
+        _MixTex0("Mix Texture0", 2D) = "white" {}
+        _MixTex1("Mix Texture1", 2D) = "white" {}
+        _MixTex2("Mix Texture2", 2D) = "white" {}
         _EdgeColor("Edge Color",Color) = (0,0,0,0)
     }
     SubShader
@@ -40,16 +42,18 @@
             }
 
             sampler2D _MainTex;
-            sampler2D _MixTex;
+            sampler2D _MixTex0;
             fixed4 _EdgeColor;
 
             fixed4 frag (v2f i) : SV_Target
             {
                 fixed4 col = tex2D(_MainTex, i.uv);
-                fixed4 outline = tex2D(_MixTex, i.uv) * _EdgeColor;
-
-                fixed4 result = col * (1-outline.a) + outline*(outline.a);
+                fixed4 result = col;
                 
+                fixed4 outline = tex2D(_MixTex0, i.uv) * _EdgeColor;
+                result = col * (1-outline.a) + outline*(outline.a);
+
+                                
                 return result;
             }
             ENDCG

@@ -207,7 +207,7 @@ public class AstralBody : MonoBehaviour, ITraceable
     public void SetCircleVelocity()
     {
         //查找引力核心
-        AstralBody core = affectedPlanets.OrderByDescending(a => this.GetGravityVector3(a.GetRigidbody())).FirstOrDefault();
+        AstralBody core = affectedPlanets.OrderByDescending(a => this.GetGravityVector3(a.GetRigidbody()).magnitude).FirstOrDefault();
         this.ChangeVelocity(MathPlus.CustomSolver.GetCircleOrbitVelocity(this.transform.position,core.GetTransform().position,core.mass));
     }
     #endregion
