@@ -98,7 +98,7 @@ shader "Minimalist/BRP/Standard"
         _ShowColorCorrection ("Color Correction", Float) = 0
         _ColorCorrectionEnable ("Enable", Float) = 0
         _TintColor ("Tint Color", Color) = (1, 1, 1, 1)
-        _Saturation ("Saturation", Range(0, 1)) = 1
+        _Saturation ("Saturation", Range(0, 2)) = 1
         _Brightness ("Brightness", Range(-5, 5)) = 0
         //OtherSettings
         _OtherSettings ("OtherSettings", Float) = 0

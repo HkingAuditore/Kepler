@@ -1,5 +1,33 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8221671406816075892
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: DepthOfField
+  m_EditorClassIdentifier: Assembly-CSharp:CustomPostProcessing:DepthOfField
+  active: 1
+  enabled:
+    overrideState: 1
+    value: 1
+  focusDistance:
+    overrideState: 1
+    value: 1.59
+  aperture:
+    overrideState: 1
+    value: 0.1
+  focalLength:
+    overrideState: 1
+    value: 15
+  kernelSize:
+    overrideState: 0
+    value: 0
 --- !u!114 &-3706210284062935685
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -64,14 +92,14 @@ MonoBehaviour:
     overrideState: 1
     value: 1
   mode:
-    overrideState: 0
+    overrideState: 1
     value: 1
   intensity:
     overrideState: 1
-    value: 3.22
+    value: 4
   color:
-    overrideState: 0
-    value: {r: 0, g: 0, b: 0, a: 1}
+    overrideState: 1
+    value: {r: 0.06341225, g: 0.093199395, b: 0.23584908, a: 1}
   ambientOnly:
     overrideState: 0
     value: 1
@@ -85,17 +113,17 @@ MonoBehaviour:
     overrideState: 0
     value: -12
   thicknessModifier:
-    overrideState: 0
-    value: 1
+    overrideState: 1
+    value: 1.78
   directLightingStrength:
     overrideState: 0
     value: 0
   radius:
-    overrideState: 0
-    value: 0.25
+    overrideState: 1
+    value: 0.28
   quality:
-    overrideState: 0
-    value: 2
+    overrideState: 1
+    value: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -111,3 +139,4 @@ MonoBehaviour:
   settings:
   - {fileID: -3706210284062935685}
   - {fileID: -3301452303509592731}
+  - {fileID: -8221671406816075892}

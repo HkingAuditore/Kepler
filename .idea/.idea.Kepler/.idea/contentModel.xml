@@ -13,6 +13,30 @@
           <e p="Shaders" t="Include">
             <e p="AuroraSky.shader" t="Include" />
             <e p="Blur.shader" t="Include" />
+            <e p="CustomPostProcessing" t="Include">
+              <e p="ACES.hlsl" t="Include" />
+              <e p="API" t="Include">
+                <e p="D3D11.hlsl" t="Include" />
+                <e p="D3D12.hlsl" t="Include" />
+                <e p="D3D9.hlsl" t="Include" />
+                <e p="Metal.hlsl" t="Include" />
+                <e p="OpenGL.hlsl" t="Include" />
+                <e p="PSP2.hlsl" t="Include" />
+                <e p="PSSL.hlsl" t="Include" />
+                <e p="Switch.hlsl" t="Include" />
+                <e p="Vulkan.hlsl" t="Include" />
+                <e p="XboxOne.hlsl" t="Include" />
+              </e>
+              <e p="Colors.hlsl" t="Include" />
+              <e p="DepthOfField.hlsl" t="Include" />
+              <e p="DepthOfField.shader" t="Include" />
+              <e p="DiskKernels.hlsl" t="Include" />
+              <e p="Sampling.hlsl" t="Include" />
+              <e p="ShaderIds.cs" t="Include" />
+              <e p="StdLib.hlsl" t="Include" />
+              <e p="TextureFormatUtilities.cs" t="Include" />
+              <e p="xRLib.hlsl" t="Include" />
+            </e>
             <e p="Mix.shader" t="Include" />
             <e p="MixLayers.shader" t="Include" />
             <e p="OrbitLine.shader" t="Include" />
@@ -352,6 +376,7 @@
           </e>
           <e p="CustomPostProcessing" t="Include">
             <e p="CameraMixer.cs" t="Include" />
+            <e p="CustomDepthOfField.cs" t="Include" />
             <e p="CustomPostProcessingBase.cs" t="Include" />
             <e p="OutlineCatcher.cs" t="Include" />
           </e>

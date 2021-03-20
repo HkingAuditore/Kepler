@@ -9,9 +9,11 @@ namespace UI
         public OutlineCatcher     outlineCatcher;
         public AstralBodyEditorUI astralBodyEditorUI;
 
-        private readonly List<GameObject> selectedGameObjects = new List<GameObject>();
-        private          CameraController _cameraController;
-        private          bool             _isLocked;
+        // public  List<GameObject> selectedGameObjects = new List<GameObject>();
+        public  GameObject       selectedGameObject = null;
+        private CameraController _cameraController;
+        private Camera           _mainCamera;
+        private bool             _isLocked;
 
         public bool isLocked
         {
@@ -21,6 +23,7 @@ namespace UI
 
         private void Start()
         {
+            _mainCamera       = GameManager.GetGameManager.mainCamera;
             _cameraController = GameManager.GetGameManager.GetMainCameraController();
         }
 
@@ -39,36 +42,44 @@ namespace UI
 
         private void HighlightSelect()
         {
-            var        ray = _cameraController.GetMainCamera().ScreenPointToRay(Input.mousePosition);
+            var        ray = _mainCamera .ScreenPointToRay(Input.mousePosition);
             RaycastHit hitInfo;
             
             // Debug.DrawRay(ray.origin,ray.direction,Color.green);
-            if (Physics.Raycast(ray, out hitInfo, 500))
+            if (Physics.Raycast(ray, out hitInfo, 1000, 1 <<20 |1 <<23))
             {
                 // Debug.Log("Hit!");
-                Debug.DrawLine(ray.origin, hitInfo.point);
-                if (!selectedGameObjects.Contains(hitInfo.collider.gameObject) &&
-                    hitInfo.collider.gameObject.CompareTag("AstralBody"))
-                {
-                    outlineCatcher.AddTarget(hitInfo.collider.gameObject);
-                    selectedGameObjects.Add(hitInfo.collider.gameObject);
-                }
+                // Debug.DrawLine(ray.origin, hitInfo.point);
+                // if (hitInfo.collider.gameObject.CompareTag("AstralBody"))
+                // {
+                    // outlineCatcher.AddTarget(hitInfo.collider.gameObject);
+                    // selectedGameObjects.Add(hitInfo.collider.gameObject);
+                selectedGameObject = hitInfo.collider.gameObject;
+                outlineCatcher.AddTarget(selectedGameObject);
+                // }
             }
             else
             {
-                selectedGameObjects.ForEach(o => outlineCatcher.RemoveTarget(o));
-                selectedGameObjects.Clear();
+                if(selectedGameObject!=null)
+                {
+                    outlineCatcher.RemoveTarget(selectedGameObject);
+                    selectedGameObject = null;
+                }
+                // selectedGameObjects.ForEach(o => outlineCatcher.RemoveTarget(o));
+                // selectedGameObjects.Clear();
             }
+
+            // Debug.DrawLine(ray.origin, hitInfo.point);
         }
 
         public void FocusOn()
         {
-            if (Input.GetMouseButtonDown(0) && selectedGameObjects.Count > 0)
+            if (Input.GetMouseButtonDown(0) && selectedGameObject!=null)
             {
-                _cameraController.FocusOn(selectedGameObjects[0].transform);
-                isLocked                     = true;
+                _cameraController.FocusOn(selectedGameObject.transform);
+                isLocked                      = true;
                 _cameraController.IsFollowing = true;
-                astralBodyEditorUI.astralBody = selectedGameObjects[0].GetComponent<AstralBody>();
+                astralBodyEditorUI.astralBody = selectedGameObject.GetComponent<AstralBody>();
                 astralBodyEditorUI.gameObject.SetActive(true);
                 astralBodyEditorUI.enabled = true;
             }

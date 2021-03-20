@@ -83,7 +83,7 @@ namespace CustomPostProcessing
 
         public void RemoveTarget(GameObject target)
         {
-            target.layer = LayerMask.NameToLayer("Default");
+            target.layer = 23;
         }
 
         public void SetOutline()

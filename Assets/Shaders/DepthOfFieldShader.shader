@@ -42,7 +42,7 @@
 
 				half FragmentProgram (Interpolators i) : SV_Target {
 					float depth = SAMPLE_DEPTH_TEXTURE(_CameraDepthTexture, i.uv);
-					float isNull = depth <= 0.005 ? 0 : 1;
+					float isNull = depth <= 0.0005 ? 0 : 1;
 					depth = LinearEyeDepth(depth);
 					
 					float coc = (depth - _FocusDistance) / _FocusRange;

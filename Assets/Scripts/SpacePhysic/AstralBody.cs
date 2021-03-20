@@ -25,6 +25,7 @@ public class AstralBody : MonoBehaviour, ITraceable
     public bool  enableTracing;
 
     public List<AstralBody> affectedPlanets = new List<AstralBody>();
+    public List<AstralBody> banAffectedPlanets = new List<AstralBody>();
 
     private Vector3 _lastVelocity;
 
@@ -61,6 +62,7 @@ public class AstralBody : MonoBehaviour, ITraceable
     {
         AstralBodyRigidbody    = GetComponent<Rigidbody>();
         triggerCollider.radius = affectRadius;
+        defaultCollider.radius *= 1.2f;
         SetMass();
         ChangeSize(originalSize);
         _mesh     = this.GetComponent<MeshFilter>();
@@ -84,7 +86,7 @@ public class AstralBody : MonoBehaviour, ITraceable
     private void OnTriggerEnter(Collider other)
     {
         var astral = other.GetComponent<AstralBody>();
-        if (astral != null && !other.isTrigger && enableAffect && !astral.affectedPlanets.Contains(this))
+        if (astral != null && !other.isTrigger && enableAffect && !astral.banAffectedPlanets.Contains(this) && !astral.affectedPlanets.Contains(this))
             astral.affectedPlanets.Add(this);
     }
 
@@ -220,12 +222,18 @@ public class AstralBody : MonoBehaviour, ITraceable
     #endregion
     
     #region 优化属性设置
-
     public void SetCircleVelocity()
     {
         //查找引力核心
         AstralBody core = affectedPlanets.OrderByDescending(a => this.GetGravityVector3(a.GetRigidbody()).magnitude).FirstOrDefault();
         this.ChangeVelocity(MathPlus.CustomSolver.GetCircleOrbitVelocity(this.transform.position,core.GetTransform().position,core.mass));
+    }
+[ContextMenu("To Circle Velocity")]
+    public void SetCircleVelocityMenu()
+    {
+        //查找引力核心
+        AstralBody core = affectedPlanets.OrderByDescending(a => this.GetGravityVector3(a.GetRigidbody()).magnitude).FirstOrDefault();
+        this.oriVelocity = (MathPlus.CustomSolver.GetCircleOrbitVelocity(this.transform.position,core.GetTransform().position,core.mass));
     }
     #endregion
 }
