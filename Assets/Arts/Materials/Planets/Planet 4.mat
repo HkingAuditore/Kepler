@@ -9,8 +9,8 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: Planet 4
   m_Shader: {fileID: 4800000, guid: f276502ebf8b1431192125b7316d5d67, type: 3}
-  m_ShaderKeywords: AO_ON BACKSOLID BOTTOMSOLID FRONTSOLID LEFTSOLID LIGHTMAP_AO
-    RIGHTSOLID SHADOW_ON TOPSOLID
+  m_ShaderKeywords: AO_ON AO_ON_UV0 COLORCORRECTION_ON LEFTGRADIENT RIGHTGRADIENT
+    SHADOW_ON TOPGRADIENT
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 1

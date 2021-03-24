@@ -28,6 +28,34 @@ MonoBehaviour:
   kernelSize:
     overrideState: 0
     value: 0
+--- !u!114 &-4856975801805039456
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: DepthOfField
+  m_EditorClassIdentifier: Assembly-CSharp:CustomPostProcessing:DepthOfField
+  active: 1
+  enabled:
+    overrideState: 1
+    value: 1
+  focusDistance:
+    overrideState: 1
+    value: 1.78
+  aperture:
+    overrideState: 1
+    value: 6.3
+  focalLength:
+    overrideState: 1
+    value: 80
+  kernelSize:
+    overrideState: 0
+    value: 1
 --- !u!114 &-3706210284062935685
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -139,4 +167,32 @@ MonoBehaviour:
   settings:
   - {fileID: -3706210284062935685}
   - {fileID: -3301452303509592731}
-  - {fileID: -8221671406816075892}
+  - {fileID: -4856975801805039456}
+--- !u!114 &808861415327006270
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: DepthOfField
+  m_EditorClassIdentifier: Assembly-CSharp:CustomPostProcessing:DepthOfField
+  active: 1
+  enabled:
+    overrideState: 1
+    value: 1
+  focusDistance:
+    overrideState: 1
+    value: 1.84
+  aperture:
+    overrideState: 1
+    value: 4.2
+  focalLength:
+    overrideState: 1
+    value: 70
+  kernelSize:
+    overrideState: 0
+    value: 1

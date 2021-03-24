@@ -22,7 +22,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _AOTexture:
-        m_Texture: {fileID: 2800000, guid: 3fdc49a4e632aff47b5d49f3686503da, type: 3}
+        m_Texture: {fileID: 2800000, guid: c1b1815333625554f847cb39126a2dc7, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
@@ -67,7 +67,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _AOEnable: 1
-    - _AOPower: 0.98
+    - _AOPower: 0.57
     - _AOuv: 0
     - _AmbientPower: 0
     - _Brightness: 2.67
@@ -125,8 +125,8 @@ Material:
     - _Shading_L: 2
     - _Shading_R: 2
     - _Shading_T: 2
-    - _ShadowBlend: 0.73
-    - _ShadowInfluence: 1.57
+    - _ShadowBlend: 0.894
+    - _ShadowInfluence: 1.685
     - _ShowAO: 1
     - _ShowAmbientSettings: 0
     - _ShowBack: 1
@@ -181,6 +181,6 @@ Material:
     - _GradientYStartPos_R: {r: 0, g: 0, b: 0, a: 0}
     - _LMColor: {r: 1, g: 1, b: 1, a: 1}
     - _RimColor: {r: 0.03244037, g: 0.1812467, b: 0.254717, a: 1}
-    - _ShadowColor: {r: 0.008649325, g: 0.004449978, b: 0.03773582, a: 1}
-    - _TintColor: {r: 1, g: 0.79275537, b: 0.5330188, a: 1}
+    - _ShadowColor: {r: 0.022042697, g: 0.003070489, b: 0.028301895, a: 1}
+    - _TintColor: {r: 0.9433962, g: 0.7630411, b: 0.53844786, a: 1}
   m_BuildTextureStacks: []

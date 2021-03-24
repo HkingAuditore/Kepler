@@ -302,13 +302,11 @@
         // 星星
         float star = StarNoise(fixed3(i.texcoord.x, i.texcoord.y * reflection, i.texcoord.z) * 64);
         float4 starOriCol = float4(
-            _StarColor0.r * 1.25 * sin(frac(i.texcoord.x)) + _StarColor1.r * 1.25 * sin(frac(i.texcoord.x)) +
-            _StarColor2.r * 1.25 * sin(frac(i.texcoord.x)) + 1.45 * (sin(_Time.y * _StarSpeed) + 1) * 0.5,
-            _StarColor0.g * 1.85 * sin(frac(i.texcoord.y)) + _StarColor1.g * 1.85 * sin(frac(i.texcoord.y)) +
-            _StarColor2.g * 1.85 * sin(frac(i.texcoord.y)) + 1.45 * (sin(_Time.y * _StarSpeed) + 1) * 0.5,
-            _StarColor0.b * 1.45 * sin(frac(i.texcoord.z)) + _StarColor1.b * 1.45 * sin(frac(i.texcoord.z)) +
-            _StarColor2.b * 1.45 * sin(frac(i.texcoord.z)) + 1.45 * (sin(_Time.y * _StarSpeed) + 1) * 0.5,
+           lerp( _StarColor0.r,_StarColor1.r, sin(frac(i.texcoord.x) * _Time.y)),
+           lerp( _StarColor0.g,_StarColor1.g, sin(frac(i.texcoord.x) * _Time.y)),
+           lerp( _StarColor0.b,_StarColor1.b, sin(frac(i.texcoord.x) * _Time.y)),
             _StarColor0.a + 3.85 * star);
+        
         star = star > 0.8 ? star : smoothstep(0.81, 0.98, star);
 
         float4 starCol = fixed4((starOriCol * star).rgb, star);

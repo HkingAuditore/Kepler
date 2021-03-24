@@ -3185,7 +3185,6 @@ GameObject:
   - component: {fileID: 767370947}
   - component: {fileID: 767370949}
   - component: {fileID: 767370948}
-  - component: {fileID: 767370954}
   - component: {fileID: 767370951}
   - component: {fileID: 767370950}
   m_Layer: 21
@@ -3295,14 +3294,14 @@ MonoBehaviour:
     m_Bits: 2097152
   stopNaNPropagation: 1
   finalBlitToCameraTarget: 0
-  antialiasingMode: 2
+  antialiasingMode: 3
   temporalAntialiasing:
     jitterSpread: 0.75
     sharpness: 0.25
     stationaryBlending: 0.95
     motionBlending: 0.85
   subpixelMorphologicalAntialiasing:
-    quality: 0
+    quality: 1
   fastApproximateAntialiasing:
     fastMode: 0
     keepAlpha: 0
@@ -3339,22 +3338,6 @@ MonoBehaviour:
   m_AfterStackBundles:
   - assemblyQualifiedName: CustomPostProcessing.DepthOfField, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &767370954
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 767370946}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f0e75e9ee3d745b2904eaf835639851, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  focusDistance: 1.6
-  focusRange: 1.15
-  bokehRadius: 5.06
-  dofShader: {fileID: 4800000, guid: bd8440d6914d749a58271b1a79edc668, type: 3}
 --- !u!1 &791609493
 GameObject:
   m_ObjectHideFlags: 0

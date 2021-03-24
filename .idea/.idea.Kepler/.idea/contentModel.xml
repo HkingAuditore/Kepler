@@ -419,6 +419,7 @@
             <e p="AstralBodyEditorUI.cs" t="Include" />
             <e p="AstralBodyPlacementUI.cs" t="Include" />
             <e p="LengthUI.cs" t="Include" />
+            <e p="MainUI.cs" t="Include" />
             <e p="MeshEditor.cs" t="Include" />
             <e p="OrbitGraphUI.cs" t="Include" />
             <e p="OrbitPanelUI.cs" t="Include" />
