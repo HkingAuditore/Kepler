@@ -2098,7 +2098,7 @@ MonoBehaviour:
   autoOrient: 1
   updateFrameInterval: 0
   _slices: 1
-  vertexDirection: {x: -0, y: 0.9995054, z: 0.03144574}
+  vertexDirection: {x: -0, y: -0, z: -1}
 --- !u!23 &554862197
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2520,6 +2520,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   outlineCatcher: {fileID: 1780162743}
   astralBodyEditorUI: {fileID: 236484340}
+  selectedGameObject: {fileID: 0}
 --- !u!1 &806630893
 GameObject:
   m_ObjectHideFlags: 3
@@ -2879,7 +2880,9 @@ MonoBehaviour:
   breakBeforeColorGrading: 0
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
-  m_AfterStackBundles: []
+  m_AfterStackBundles:
+  - assemblyQualifiedName: PostProcessing.DepthOfFieldCustom, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!81 &894007022
 AudioListener:
   m_ObjectHideFlags: 0
@@ -2900,10 +2903,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84f0900330435144bac667077c69554a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainCamera: {fileID: 0}
   renderTexOuter: {fileID: 1780162743}
   renderTexture: {fileID: 8400000, guid: 9051336c0a1f00e4f959253de161c1b6, type: 2}
   mixShader: {fileID: 4800000, guid: 9d1e5ad067a5aee43bfa8e7f97782862, type: 3}
   edgeColor: {r: 1, g: 0.9424448, b: 0, a: 1}
+  _mixMaterial: {fileID: 1460878252}
+  _renderResultRT: {fileID: 0}
 --- !u!114 &894007024
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5085,6 +5091,45 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!21 &1460878252
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: CustomPostProcessing/Mix
+  m_Shader: {fileID: 4800000, guid: 9d1e5ad067a5aee43bfa8e7f97782862, type: 3}
+  m_ShaderKeywords: MIXTEX0
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MixTex0:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MixTex1:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MixTex2:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats: []
+    m_Colors:
+    - _EdgeColor: {r: 1, g: 0.9424448, b: 0, a: 1}
+  m_BuildTextureStacks: []
 --- !u!1 &1466582875
 GameObject:
   m_ObjectHideFlags: 0
@@ -6309,6 +6354,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e01f5a1b3f80b3e409fb3504f24cef3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainCamera: {fileID: 894007019}
   outlineCamera: {fileID: 1780162747}
   outlineShader: {fileID: 4800000, guid: 9a4fbdeca491d6645968a83d68e3f9e2, type: 3}
   edgeOnly: 1
@@ -6676,6 +6722,8 @@ MonoBehaviour:
   _mainCameraController: {fileID: 894007024}
   quizEditor: {fileID: 0}
   isQuizEditMode: 1
+  mainCamera: {fileID: 0}
+  meshList: []
 --- !u!4 &1901827054
 Transform:
   m_ObjectHideFlags: 0

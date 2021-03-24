@@ -1,0 +1,185 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Astronauts 1
+  m_Shader: {fileID: 4800000, guid: f276502ebf8b1431192125b7316d5d67, type: 3}
+  m_ShaderKeywords: AO_ON AO_ON_UV0 BACKSOLID COLORCORRECTION_ON SHADOW_ON TEXTUREMODULE_ON
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 1
+  m_DoubleSidedGI: 1
+  m_CustomRenderQueue: 2000
+  stringTagMap:
+    RenderType: Opaque
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _AOTexture:
+        m_Texture: {fileID: 2800000, guid: 935ebea55e165b24cbcd6aac9af3d226, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailAlbedoMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailNormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTexture:
+        m_Texture: {fileID: 2800000, guid: 6146fac398d0a3441bc002781e063993, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ParallaxMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _AOEnable: 1
+    - _AOPower: 1.1
+    - _AOuv: 0
+    - _AmbientPower: 0
+    - _Brightness: 0.32
+    - _BumpScale: 1
+    - _ColorCorrectionEnable: 1
+    - _Cull: 2
+    - _Cutoff: 0.5
+    - _DetailNormalMapScale: 1
+    - _DontMix: 0
+    - _DstBlend: 0
+    - _Fade: 1
+    - _FogHeight: 10
+    - _FogYStartPos: 0
+    - _GlossMapScale: 1
+    - _Glossiness: 0.117
+    - _GlossyReflections: 1
+    - _GradSettings_B: 0
+    - _GradSettings_D: 0
+    - _GradSettings_F: 0
+    - _GradSettings_L: 0
+    - _GradSettings_R: 0
+    - _GradSettings_T: 0
+    - _GradientHeight_B: 1
+    - _GradientHeight_D: 1
+    - _GradientHeight_F: 1
+    - _GradientHeight_G: 1
+    - _GradientHeight_L: 1
+    - _GradientHeight_R: 1
+    - _GradientHeight_T: 1
+    - _GradientSpace: 0
+    - _HFogEnable: 0
+    - _LMPower: 0.07
+    - _LmapBlendingMode: 2
+    - _LmapEnable: 0
+    - _MainTexturePower: -0.061
+    - _Metallic: 0.095
+    - _Mode: 0
+    - _OcclusionStrength: 1
+    - _OtherSettings: 1
+    - _Parallax: 0.02
+    - _RealtimeShadow: 1
+    - _RimEnable: 0
+    - _RimPower: 3.75
+    - _Rotation_B: 0
+    - _Rotation_D: 0
+    - _Rotation_F: 0
+    - _Rotation_G: 0
+    - _Rotation_L: 0
+    - _Rotation_R: 0
+    - _Rotation_T: 0
+    - _Saturation: 0.633
+    - _Shading_B: 1
+    - _Shading_D: 0
+    - _Shading_F: 0
+    - _Shading_L: 0
+    - _Shading_R: 0
+    - _Shading_T: 0
+    - _ShadowBlend: 0.211
+    - _ShadowInfluence: 0.667
+    - _ShowAO: 1
+    - _ShowAmbientSettings: 0
+    - _ShowBack: 1
+    - _ShowBottom: 1
+    - _ShowColorCorrection: 1
+    - _ShowCustomShading: 1
+    - _ShowFog: 0
+    - _ShowFront: 1
+    - _ShowGlobalGradientSettings: 0
+    - _ShowLMap: 1
+    - _ShowLeft: 1
+    - _ShowRight: 1
+    - _ShowTexture: 1
+    - _ShowTop: 1
+    - _SmoothnessTextureChannel: 0
+    - _SpecularHighlights: 1
+    - _SrcBlend: 1
+    - _UVSec: 0
+    - _UnityFogEnable: 0
+    - _ZWrite: 1
+    - _ZWriteOverride: 0
+    m_Colors:
+    - _AOColor: {r: 0.7075472, g: 0.21026166, b: 0.21026166, a: 1}
+    - _AmbientColor: {r: 0, g: 0, b: 0, a: 0}
+    - _Color: {r: 0.6132076, g: 0.37649384, b: 0.3037113, a: 1}
+    - _Color1_B: {r: 0.45768067, g: 0.41077787, b: 0.4811321, a: 1}
+    - _Color1_D: {r: 0.6373055, g: 2.3703294, b: 0.93540734, a: 1}
+    - _Color1_F: {r: 0, g: 1, b: 0.81047535, a: 1}
+    - _Color1_L: {r: 0.5795486, g: 7.4927354, b: 7.9066987, a: 1}
+    - _Color1_R: {r: 0.027450992, g: 0.4627451, b: 0.11410664, a: 1}
+    - _Color1_T: {r: 1.0621638, g: 3.6886053, b: 2.6843777, a: 1}
+    - _Color2_B: {r: 1, g: 1, b: 1, a: 1}
+    - _Color2_D: {r: 1, g: 1, b: 1, a: 1}
+    - _Color2_F: {r: 1, g: 1, b: 1, a: 1}
+    - _Color2_L: {r: 1, g: 1, b: 1, a: 1}
+    - _Color2_R: {r: 1, g: 1, b: 1, a: 1}
+    - _Color2_T: {r: 1, g: 1, b: 1, a: 1}
+    - _Color_Fog: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _GizmoPosition_B: {r: 0, g: 0, b: 10, a: 10}
+    - _GizmoPosition_D: {r: 0, g: 0, b: 10, a: 10}
+    - _GizmoPosition_F: {r: 0, g: 0, b: 10, a: 10}
+    - _GizmoPosition_L: {r: 0, g: 0, b: 10, a: 10}
+    - _GizmoPosition_R: {r: 0, g: 0, b: 10, a: 10}
+    - _GizmoPosition_T: {r: 0, g: 0, b: 10, a: 10}
+    - _GradientXStartPos_D: {r: 0, g: 0, b: 0, a: 0}
+    - _GradientXStartPos_T: {r: 0, g: 0, b: 0, a: 0}
+    - _GradientYStartPos_B: {r: 0, g: 0, b: 0, a: 0}
+    - _GradientYStartPos_F: {r: 0, g: 0, b: 0, a: 0}
+    - _GradientYStartPos_G: {r: 0, g: 0, b: 0, a: 0}
+    - _GradientYStartPos_L: {r: 0, g: 0, b: 0, a: 0}
+    - _GradientYStartPos_R: {r: 0, g: 0, b: 0, a: 0}
+    - _LMColor: {r: 0.26415092, g: 0.061053753, b: 0.09462792, a: 1}
+    - _RimColor: {r: 0.0292809, g: 0.7750296, b: 0.8867924, a: 1}
+    - _ShadowColor: {r: 0.18142578, g: 0.20474571, b: 0.254717, a: 1}
+    - _TintColor: {r: 1, g: 0.9309159, b: 0.9103774, a: 1}
+  m_BuildTextureStacks: []

@@ -708,7 +708,7 @@ RectTransform:
   - {fileID: 2002277176}
   - {fileID: 1980459837}
   m_Father: {fileID: 236484337}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.04739775, y: 0.2907073}
   m_AnchorMax: {x: 0.94860226, y: 0.82780504}
@@ -882,6 +882,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 424537408}
   - {fileID: 292640716}
   - {fileID: 1130694550}
   - {fileID: 1694894595}
@@ -908,7 +909,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 2100000, guid: ba801d4ce06843e4790ea1fd83d2a3ed, type: 2}
+  m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0.392}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -1277,7 +1278,7 @@ RectTransform:
   - {fileID: 427274835}
   - {fileID: 1476301113}
   m_Father: {fileID: 236484337}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -1615,6 +1616,86 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 150.52, y: -101.59, z: -0.002}
+--- !u!1 &424537407
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 424537408}
+  - component: {fileID: 424537410}
+  - component: {fileID: 424537409}
+  m_Layer: 5
+  m_Name: Translucent Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &424537408
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 424537407}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 236484337}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 3, y: 9.398071}
+  m_SizeDelta: {x: 529.18, y: 1092.7}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &424537409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 424537407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 196bb08d6c2d3c9499c04e1281fd4ad3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 2100000, guid: 96c5704d0681e35408630c488fc0c234, type: 2}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+  source: {fileID: 767370952}
+  vibrancy: 0.62
+  brightness: 0.042
+  flatten: 0.229
+  spriteBlending: 0
+--- !u!222 &424537410
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 424537407}
+  m_CullTransparentMesh: 0
 --- !u!1 &427274834
 GameObject:
   m_ObjectHideFlags: 0
@@ -2433,7 +2514,7 @@ MonoBehaviour:
   autoOrient: 1
   updateFrameInterval: 0
   _slices: 1
-  vertexDirection: {x: -0, y: 0.9995054, z: 0.03144574}
+  vertexDirection: {x: 11.235092, y: 14.313323, z: -28.603256}
 --- !u!23 &554862197
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2652,7 +2733,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -3187,6 +3268,7 @@ GameObject:
   - component: {fileID: 767370948}
   - component: {fileID: 767370951}
   - component: {fileID: 767370950}
+  - component: {fileID: 767370952}
   m_Layer: 21
   m_Name: ForwardCamera
   m_TagString: Untagged
@@ -3271,7 +3353,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sharedProfile: {fileID: 11400000, guid: 3d688c846d74f414ebd06cd759bd093a, type: 2}
+  sharedProfile: {fileID: 11400000, guid: 57f1e8e9017de2d469d55550bd0bc755, type: 2}
   isGlobal: 1
   blendDistance: 0
   weight: 1
@@ -3336,8 +3418,31 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles:
-  - assemblyQualifiedName: CustomPostProcessing.DepthOfField, Assembly-CSharp, Version=0.0.0.0,
+  - assemblyQualifiedName: PostProcessing.Dof, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &767370952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 767370946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ee01e66702087b4798e633ca34c7956, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxUpdateRate: Infinity
+  preview: 0
+  blurAlgorithmSelection: 0
+  blurConfig: {fileID: 11400000, guid: 0c82ddef68a9d294a8b543db61f717dc, type: 2}
+  downsample: 1
+  blurRegion:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
 --- !u!1 &791609493
 GameObject:
   m_ObjectHideFlags: 0
@@ -3772,7 +3877,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sharedProfile: {fileID: 11400000, guid: 47a52486761e1fd40b0344266a2aa65a, type: 2}
+  sharedProfile: {fileID: 0}
   isGlobal: 1
   blendDistance: 0
   weight: 1
@@ -3896,7 +4001,7 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles:
-  - assemblyQualifiedName: CustomPostProcessing.DepthOfField, Assembly-CSharp, Version=0.0.0.0,
+  - assemblyQualifiedName: PostProcessing.Dof, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!81 &894007022
 AudioListener:
@@ -3918,6 +4023,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84f0900330435144bac667077c69554a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainCamera: {fileID: 0}
   renderTexOuter: {fileID: 1780162743}
   renderTexture: {fileID: 8400000, guid: 9051336c0a1f00e4f959253de161c1b6, type: 2}
   mixShader: {fileID: 4800000, guid: 9d1e5ad067a5aee43bfa8e7f97782862, type: 3}
@@ -4502,7 +4608,7 @@ RectTransform:
   m_Children:
   - {fileID: 23464476}
   m_Father: {fileID: 236484337}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -6876,7 +6982,7 @@ RectTransform:
   m_Children:
   - {fileID: 11483099}
   m_Father: {fileID: 236484337}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -7327,7 +7433,7 @@ RectTransform:
   - {fileID: 887499494}
   - {fileID: 1034486580}
   m_Father: {fileID: 236484337}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -7428,6 +7534,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e01f5a1b3f80b3e409fb3504f24cef3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainCamera: {fileID: 894007019}
   outlineCamera: {fileID: 1780162747}
   outlineShader: {fileID: 4800000, guid: 9a4fbdeca491d6645968a83d68e3f9e2, type: 3}
   edgeOnly: 1
@@ -7666,7 +7773,7 @@ RectTransform:
   m_Children:
   - {fileID: 1736743721}
   m_Father: {fileID: 236484337}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}

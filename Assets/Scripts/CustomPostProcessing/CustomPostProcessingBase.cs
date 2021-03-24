@@ -10,12 +10,12 @@ namespace CustomPostProcessing
     [ExecuteInEditMode]
     public class CustomPostProcessingBase : MonoBehaviour
     {
-        protected Camera mainCamera;
+        public Camera mainCamera;
 
-        private void Start()
-        {
-            mainCamera = GameManager.GetGameManager.mainCamera;
-        }
+        // private void Start()
+        // {
+        //     mainCamera = GameManager.GetGameManager.mainCamera;
+        // }
 
         protected Material GenerateMaterial(Shader shader, ref Material targetMaterial)
         {

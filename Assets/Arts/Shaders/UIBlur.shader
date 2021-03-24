@@ -1,194 +1,139 @@
 ﻿Shader "UI/Blur"
 {
-	Properties {
-		_Size("Blur", Range(0, 30)) = 3
-		[PerRendererData] _MainTex("Masking Texture", 2D) = "white" {}
-		_AdditiveColor("Additive Tint color", Color) = (0, 0, 0, 0)
-		_MultiplyColor("Multiply Tint color", Color) = (1, 1, 1, 1)
-		[Toggle(MAKE_DESATURATED)] _MakeDesaturated ("Desaturate", Float) = 0
-	}
 
-	Category {
+    Properties
+    {
+        [Toggle(IS_BLUR_ALPHA_MASKED)] _IsAlphaMasked("Image Alpha Masks Blur", Float) = 1
+        [Toggle(IS_SPRITE_VISIBLE)] _IsSpriteVisible("Show Image", Float) = 1
 
-		// We must be transparent, so other objects are drawn before this one.
-		Tags { "Queue" = "Transparent" "IgnoreProjector" = "True" "RenderType" = "Opaque" }
+        // Internally enforced by MAX_RADIUS
+        _Radius("Blur Radius", Range(0, 64)) = 1
+        _OverlayColor("Blurred Overlay/Opacity", Color) = (0.5, 0.5, 0.5, 1)
 
-		SubShader
-		{
-			// Horizontal blur
-			GrabPass
-			{
-				"_HBlur"
-			}
-			/*
-			ZTest Off
-			Blend SrcAlpha OneMinusSrcAlpha
-			*/
+        // see Stencil in UI/Default
+        [HideInInspector][PerRendererData] _MainTex ("Sprite Texture", 2D) = "white" {}
+        [HideInInspector]_StencilComp ("Stencil Comparison", Float) = 8
+        [HideInInspector]_Stencil ("Stencil ID", Float) = 0
+        [HideInInspector]_StencilOp ("Stencil Operation", Float) = 0
+        [HideInInspector]_StencilWriteMask ("Stencil Write Mask", Float) = 255
+        [HideInInspector]_StencilReadMask ("Stencil Read Mask", Float) = 255
+        [HideInInspector]_ColorMask ("Color Mask", Float) = 15
+        [HideInInspector]_UseUIAlphaClip ("Use Alpha Clip", Float) = 0
+    }
 
-			Cull Off
-			Lighting Off
-			ZWrite Off
-			ZTest[unity_GUIZTestMode]
-			Blend SrcAlpha OneMinusSrcAlpha
+    Category
+    {
+        Tags
+        {
+            "Queue" = "Transparent"
+            "IgnoreProjector" = "True"
+            "RenderType" = "Transparent"
+            "PreviewType" = "Plane"
+            "CanUseSpriteAtlas" = "True"
+        }
 
-			Pass
-			{
-				CGPROGRAM
-				#pragma vertex vert
-				#pragma fragment frag
-				#pragma fragmentoption ARB_precision_hint_fastest
-				#include "UnityCG.cginc"
+        Stencil
+        {
+            Ref [_Stencil]
+            Comp [_StencilComp]
+            Pass [_StencilOp]
+            ReadMask [_StencilReadMask]
+            WriteMask [_StencilWriteMask]
+        }
 
-				struct appdata_t {
-					float4 vertex : POSITION;
-					float2 texcoord : TEXCOORD0;
-				};
+        Cull Off
+        Lighting Off
+        ZWrite Off
+        ZTest [unity_GUIZTestMode]
+        Blend SrcAlpha OneMinusSrcAlpha
+        ColorMask [_ColorMask]
 
-				struct v2f {
-					float4 vertex : POSITION;
-					float4 uvgrab : TEXCOORD0;
-					float2 uvmain : TEXCOORD1;
-				};
+        SubShader
+        {
 
-				sampler2D _MainTex;
-				float4 _MainTex_ST;
+            GrabPass
+            {
+                Tags
+                { 
+                    "LightMode" = "Always"
+                    "Queue" = "Background"  
+                }
+            }
 
-				v2f vert(appdata_t v)
-				{
-					v2f o;
-					o.vertex = UnityObjectToClipPos(v.vertex);
+            Pass
+            {
+                Name "UIBlur_Y"
+                Tags{ "LightMode" = "Always" }
 
-					#if UNITY_UV_STARTS_AT_TOP
-					float scale = -1.0;
-					#else
-					float scale = 1.0;
-					#endif
+            CGPROGRAM
+                #pragma vertex vert
+                #pragma fragment frag
+                #pragma fragmentoption ARB_precision_hint_fastest
+                #pragma multi_compile __ IS_BLUR_ALPHA_MASKED
+                #pragma multi_compile __ IS_SPRITE_VISIBLE
+                #pragma multi_compile __ UNITY_UI_ALPHACLIP
 
-					o.uvgrab.xy = (float2(o.vertex.x, o.vertex.y * scale) + o.vertex.w) * 0.5;
-					o.uvgrab.zw = o.vertex.zw;
+                #include "UIBlur_Shared.cginc"
 
-					o.uvmain = TRANSFORM_TEX(v.texcoord, _MainTex);
-					return o;
-				}
+                sampler2D _GrabTexture;
+                float4 _GrabTexture_TexelSize;
 
-				sampler2D _HBlur;
-				float4 _HBlur_TexelSize;
-				float _Size;
-				float4 _AdditiveColor;
-				float4 _MultiplyColor;
+                half4 frag(v2f IN) : COLOR
+                {
+                    half4 pixel_raw = tex2D(_MainTex, IN.uvmain);
+                    return GetBlurInDir(IN, pixel_raw, _GrabTexture, _GrabTexture_TexelSize, 0, 1);
+                }
+            ENDCG
+            }
 
-				half4 frag(v2f i) : COLOR
-				{
-					half4 sum = half4(0,0,0,0);
-
-					#define GRABPIXEL(weight,kernelx) tex2Dproj( _HBlur, UNITY_PROJ_COORD(float4(i.uvgrab.x + _HBlur_TexelSize.x * kernelx * _Size, i.uvgrab.y, i.uvgrab.z, i.uvgrab.w))) * weight
-
-					sum += GRABPIXEL(0.05, -4.0);
-					sum += GRABPIXEL(0.09, -3.0);
-					sum += GRABPIXEL(0.12, -2.0);
-					sum += GRABPIXEL(0.15, -1.0);
-					sum += GRABPIXEL(0.18,  0.0);
-					sum += GRABPIXEL(0.15, +1.0);
-					sum += GRABPIXEL(0.12, +2.0);
-					sum += GRABPIXEL(0.09, +3.0);
-					sum += GRABPIXEL(0.05, +4.0);
-
-					half4 result = half4(sum.r * _MultiplyColor.r + _AdditiveColor.r,
-										sum.g * _MultiplyColor.g + _AdditiveColor.g,
-										sum.b * _MultiplyColor.b + _AdditiveColor.b,
-										tex2D(_MainTex, i.uvmain).a);
-					return result;
-				}
-				ENDCG
-			}
-
-			// Vertical blur
-			GrabPass
-			{
-				"_VBlur"
-			}
-
-			Pass
-			{
-				CGPROGRAM
-				#pragma vertex vert
-				#pragma fragment frag
-				#pragma fragmentoption ARB_precision_hint_fastest
-
-				#pragma shader_feature MAKE_DESATURATED
-
-				#include "UnityCG.cginc"
-
-				struct appdata_t {
-					float4 vertex : POSITION;
-					float2 texcoord: TEXCOORD0;
-				};
-
-				struct v2f {
-					float4 vertex : POSITION;
-					float4 uvgrab : TEXCOORD0;
-					float2 uvmain : TEXCOORD1;
-				};
-
-				sampler2D _MainTex;
-				float4 _MainTex_ST;
-
-				v2f vert(appdata_t v) {
-					v2f o;
-					o.vertex = UnityObjectToClipPos(v.vertex);
-
-					#if UNITY_UV_STARTS_AT_TOP
-					float scale = -1.0;
-					#else
-					float scale = 1.0;
-					#endif
-
-					o.uvgrab.xy = (float2(o.vertex.x, o.vertex.y * scale) + o.vertex.w) * 0.5;
-					o.uvgrab.zw = o.vertex.zw;
-
-					o.uvmain = TRANSFORM_TEX(v.texcoord, _MainTex);
-
-					return o;
-				}
-
-				sampler2D _VBlur;
-				float4 _VBlur_TexelSize;
-				float _Size;
-				float4 _AdditiveColor;
-				float4 _MultiplyColor;
-
-				half4 frag(v2f i) : COLOR
-				{
-					half4 sum = half4(0,0,0,0);
-
-					#define GRABPIXEL(weight,kernely) tex2Dproj( _VBlur, UNITY_PROJ_COORD(float4(i.uvgrab.x, i.uvgrab.y + _VBlur_TexelSize.y * kernely * _Size, i.uvgrab.z, i.uvgrab.w))) * weight
-
-					sum += GRABPIXEL(0.05, -4.0);
-					sum += GRABPIXEL(0.09, -3.0);
-					sum += GRABPIXEL(0.12, -2.0);
-					sum += GRABPIXEL(0.15, -1.0);
-					sum += GRABPIXEL(0.18,  0.0);
-					sum += GRABPIXEL(0.15, +1.0);
-					sum += GRABPIXEL(0.12, +2.0);
-					sum += GRABPIXEL(0.09, +3.0);
-					sum += GRABPIXEL(0.05, +4.0);
+            
+            GrabPass
+            {
+                Tags
+                { 
+                    "LightMode" = "Always"
+                    "Queue" = "Background"  
+                }
+            }
+            Pass
+            {
+                Name "UIBlur_X"
+                Tags{ "LightMode" = "Always" }
 
 
-#ifdef MAKE_DESATURATED
-					half4 result = half4((sum.r* 0.3 + sum.g* 0.59 + sum.b* 0.11) * _MultiplyColor.r + _AdditiveColor.r,
-						(sum.r* 0.3 + sum.g* 0.59 + sum.b* 0.11) * _MultiplyColor.g + _AdditiveColor.g,
-						(sum.r* 0.3 + sum.g* 0.59 + sum.b* 0.11) * _MultiplyColor.b + _AdditiveColor.b,
-										tex2D(_MainTex, i.uvmain).a);
+            CGPROGRAM
+                #pragma vertex vert
+                #pragma fragment frag
+                #pragma fragmentoption ARB_precision_hint_fastest
+                #pragma multi_compile __ IS_BLUR_ALPHA_MASKED
+                #pragma multi_compile __ IS_SPRITE_VISIBLE
+                #pragma multi_compile __ UNITY_UI_ALPHACLIP
+
+                #include "UIBlur_Shared.cginc"
+
+
+                sampler2D _GrabTexture;
+                float4 _GrabTexture_TexelSize;
+
+                half4 frag(v2f IN) : COLOR
+                {
+                    half4 pixel_raw = tex2D(_MainTex, IN.uvmain);
+
+#if IS_SPRITE_VISIBLE
+                    return layerBlend(
+                            // Layer 0 : The blurred background
+                            GetBlurInDir(IN, pixel_raw, _GrabTexture, _GrabTexture_TexelSize, 1, 0), 
+                            // Layer 1 : The sprite itself
+                            pixel_raw * IN.color
+                        );
 #else
-					half4 result = half4(sum.r * _MultiplyColor.r + _AdditiveColor.r,
-										sum.g * _MultiplyColor.g + _AdditiveColor.g,
-										sum.b * _MultiplyColor.b + _AdditiveColor.b,
-										tex2D(_MainTex, i.uvmain).a);
+                    return GetBlurInDir(IN, pixel_raw, _GrabTexture, _GrabTexture_TexelSize, 1, 0);
 #endif
-					return result;
-				}
-				ENDCG
-			}
-		}
-	}
+                }
+            ENDCG
+            }
+
+        }
+    }
+    Fallback "UI/Default"
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.PostProcessing;
 
-namespace CustomPostProcessing
+namespace PostProcessing
 {
     /// <summary>
     /// Convolution kernel size for the Depth of Field effect.
@@ -42,10 +42,10 @@ namespace CustomPostProcessing
     /// This class holds settings for the Depth of Field effect.
     /// </summary>
     [Serializable]
-    [PostProcess(typeof(DepthOfFieldRenderer), PostProcessEvent.AfterStack,
-                 "Custom/DepthOfField")]
+    [PostProcess(typeof(DofRenderer), PostProcessEvent.AfterStack,
+                 "Custom/Dof Custom")]
 
-    public sealed class DepthOfField : PostProcessEffectSettings
+    public sealed class Dof : PostProcessEffectSettings
     {
         /// <summary>
         /// The distance to the point of focus.
@@ -89,7 +89,7 @@ namespace CustomPostProcessing
 
     [UnityEngine.Scripting.Preserve]
     // TODO: Doesn't play nice with alpha propagation, see if it can be fixed without killing performances
-    internal sealed class DepthOfFieldRenderer : PostProcessEffectRenderer<DepthOfField>
+    internal sealed class DofRenderer : PostProcessEffectRenderer<Dof>
     {
         enum Pass
         {
@@ -116,7 +116,7 @@ namespace CustomPostProcessing
         // TODO: Should be set by a physical camera
         const float k_FilmHeight = 0.024f;
 
-        public DepthOfFieldRenderer()
+        public DofRenderer()
         {
             for (int eye = 0; eye < k_NumEyes; eye++)
             {

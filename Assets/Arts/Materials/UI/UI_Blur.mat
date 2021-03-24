@@ -9,7 +9,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: UI_Blur
   m_Shader: {fileID: 4800000, guid: 1f6d703582a553647b29cfb1b2f6c183, type: 3}
-  m_ShaderKeywords: UNITY_UI_ALPHACLIP
+  m_ShaderKeywords: IS_BLUR_ALPHA_MASKED UNITY_UI_ALPHACLIP
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -27,11 +27,17 @@ Material:
         m_Texture: {fileID: 2800000, guid: 423a22c06adb1384fba1aa14108cce7f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _SuperBlurTexture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Floats:
     - _BumpAmt: 10
     - _ColorMask: 15
+    - _IsAlphaMasked: 1
+    - _IsSpriteVisible: 0
     - _MakeDesaturated: 0
-    - _Radius: 62
+    - _Radius: 49.3
     - _Size: 4.7
     - _Stencil: 0
     - _StencilComp: 8
@@ -43,4 +49,5 @@ Material:
     - _AdditiveColor: {r: 0.0754717, g: 0.0754717, b: 0.0754717, a: 0}
     - _Color: {r: 0.9716981, g: 0.82961017, b: 0.82961017, a: 0.34117648}
     - _MultiplyColor: {r: 1, g: 1, b: 1, a: 1}
+    - _OverlayColor: {r: 1, g: 1, b: 1, a: 0.03529412}
   m_BuildTextureStacks: []
