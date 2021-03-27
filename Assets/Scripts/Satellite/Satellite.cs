@@ -16,7 +16,7 @@ namespace Satellite
 
         public float GetMass()
         {
-            return satelliteParts.Sum(part => part.GetMass());
+            return satelliteParts.Sum(part => part.mass);
         }
 
         public Transform GetTransform()
@@ -28,5 +28,7 @@ namespace Satellite
         {
             foreach (var part in satelliteParts) part.GenerateJoint();
         }
+
+        public Vector3 GetVelocity() => satelliteCore.GetVelocity();
     }
 }

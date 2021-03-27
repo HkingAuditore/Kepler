@@ -19,12 +19,8 @@ namespace Satellite
 
         // public float mass;
         public SatelliteType PartType      { get; set; }
-        public Rigidbody     PartRigidbody { get; protected set; }
 
-        protected virtual void Awake()
-        {
-            PartRigidbody = GetComponent<Rigidbody>();
-        }
+
 
         public override void SetMass()
         {
@@ -47,7 +43,7 @@ namespace Satellite
             {
                 var jointComponent = gameObject.AddComponent<FixedJoint>();
                 _connectedJoints.Add(part.name, jointComponent);
-                jointComponent.connectedBody = part.PartRigidbody;
+                jointComponent.connectedBody = part.AstralBodyRigidbody;
             }
         }
 

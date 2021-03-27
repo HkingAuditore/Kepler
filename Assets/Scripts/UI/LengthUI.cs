@@ -8,6 +8,9 @@ public class LengthUI : MonoBehaviour
     public LengthCalculator lengthCalculator;
     public Text             lengthText;
     public AstralBody       astralBody;
+    public AstralBody       targetAstralBody;
+
+    private Camera _camera;
 
     private void Update()
     {
@@ -27,11 +30,14 @@ public class LengthUI : MonoBehaviour
 
     private void InitLength()
     {
-        var nodeOri = astralBody.gameObject.AddComponent<Node>();
+        _camera = GameManager.GetGameManager.mainCamera;
+        Node nodeOri = astralBody.gameObject.GetComponent<Node>();
+        if (nodeOri == null)
+         nodeOri = astralBody.gameObject.AddComponent<Node>();
         nodeOri.transformNormals  = false;
         nodeOri.transformSize     = false;
         nodeOri.transformTangents = false;
-        var nodeTarget = astralBody.affectedPlanets[0].gameObject.AddComponent<Node>();
+        var nodeTarget = targetAstralBody.gameObject.AddComponent<Node>();
         nodeTarget.transformNormals  = false;
         nodeTarget.transformSize     = false;
         nodeTarget.transformTangents = false;
@@ -41,19 +47,26 @@ public class LengthUI : MonoBehaviour
                                    new SplinePoint(new Vector3(0, 0, 0))
                                });
         nodeOri.AddConnection(lengthSpline, 0);
-        Debug.Log(nodeOri.HasConnection(lengthSpline, 0));
+        // Debug.Log(nodeOri.HasConnection(lengthSpline, 0));
         nodeTarget.AddConnection(lengthSpline, 1);
+        lengthSpline.Rebuild();
     }
 
     private void RemoveLength()
     {
         lengthSpline.SetPoints(new SplinePoint[] { });
         Destroy(astralBody.gameObject.GetComponent<Node>());
-        Destroy(astralBody.affectedPlanets[0].gameObject.GetComponent<Node>());
+        Destroy(targetAstralBody.gameObject.GetComponent<Node>());
     }
 
     public void ShowLength()
     {
+        var tmpScreenPos = _camera.WorldToScreenPoint((astralBody.transform.position + targetAstralBody.transform.position) * .5f);
+        // Debug.Log(this.gameObject.name + " : " + tmpScreenPos);
+
+        lengthText.transform.position = new Vector3(Mathf.Clamp(tmpScreenPos.x, 60, Screen.width  - 60),
+                                                    Mathf.Clamp(tmpScreenPos.y, 20, Screen.height - 20),
+                                                    0);
         lengthText.text = "距离:" + lengthCalculator.length.ToString("f2") + " m";
     }
 }

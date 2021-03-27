@@ -159,7 +159,17 @@ public class AstralBody : MonoBehaviour, ITraceable
 
     public void ChangeVelocity(Vector3 velocity)
     {
-        AstralBodyRigidbody.velocity = velocity;
+        if (!AstralBodyRigidbody.isKinematic)
+        {
+            AstralBodyRigidbody.velocity = velocity;
+        }
+        else
+        {
+            this._lastVelocity                   = velocity;
+            this.AstralBodyRigidbody.isKinematic = false;
+            AstralBodyRigidbody.velocity         = velocity;
+            this.AstralBodyRigidbody.isKinematic = true;
+        }
     }
 
     public virtual void SetMass()
@@ -219,12 +229,12 @@ public class AstralBody : MonoBehaviour, ITraceable
 
     #region 引力步进计算轨道
 
-    #endregion
+    #endregion             
     
     #region 优化属性设置
     public void SetCircleVelocity()
     {
-        //查找引力核心
+        //查找引力核心 
         AstralBody core = affectedPlanets.OrderByDescending(a => this.GetGravityVector3(a.GetRigidbody()).magnitude).FirstOrDefault();
         this.ChangeVelocity(MathPlus.CustomSolver.GetCircleOrbitVelocity(this.transform.position,core.GetTransform().position,core.mass));
     }

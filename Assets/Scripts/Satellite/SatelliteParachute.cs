@@ -2,10 +2,9 @@
 {
     public class SatelliteParachute : SatellitePart
     {
-        protected override void Awake()
+        protected void Awake()
         {
             PartType = SatelliteType.Parachute;
-            base.Awake();
         }
     }
 }

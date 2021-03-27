@@ -1,10 +1,12 @@
-﻿using SpacePhysic;
+﻿using System.Collections.Generic;
+using SpacePhysic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class AstralBodyEditorUI : MonoBehaviour
 {
-    public bool           isEnableEdit = true;
+    public bool           isEnableEdit        = true;
+    public bool           isEnableEditorPanel = true;
     public AstralBody     astralBody;
     public GravityTracing gravityTracing;
 
@@ -14,8 +16,9 @@ public class AstralBodyEditorUI : MonoBehaviour
     public  GameObject       normalPanel;
     public  VectorUI         forceUI;
     public  VectorUI         velocityUI;
-    public  LengthUI         lengthUI;
+    public  List<LengthUI>   lengthUIList;
     public  OrbitPanelUI     orbitPanelUI;
+    public  GameObject       editorPanel;
     private Text             _massText;
 
 
@@ -32,12 +35,20 @@ public class AstralBodyEditorUI : MonoBehaviour
         velocityUI.gameObject.SetActive(true);
         if (isEnableEdit)
         {
-            positionEditorUI.editingTarget = astralBody.transform;
-            positionEditorUI.gameObject.SetActive(true);
             normalPanel.SetActive(false);
             InitMassEditor();
-            lengthUI.astralBody = astralBody;
-            lengthUI.gameObject.SetActive(true);
+            lengthUIList.ForEach(l =>
+                                 {
+                                     l.astralBody = astralBody;
+                                 });
+            lengthUIList[0]?.transform.parent.gameObject.SetActive(true);
+            if (isEnableEditorPanel)
+            {
+                positionEditorUI.editingTarget = astralBody.transform;
+                positionEditorUI.gameObject.SetActive(true);
+
+                editorPanel.SetActive(true);
+            }
         }
     }
 
@@ -50,7 +61,7 @@ public class AstralBodyEditorUI : MonoBehaviour
             positionEditorUI.gameObject.SetActive(false);
             positionEditorUI.editingTarget = null;
             normalPanel.SetActive(true);
-            lengthUI.gameObject.SetActive(false);
+            lengthUIList[0]?.transform.parent.gameObject.SetActive(false);
         }
     }
 

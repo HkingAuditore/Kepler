@@ -24,8 +24,8 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _Density: 2.44
+    - _Density: 0.32
     - _Speed: 0.207
     m_Colors:
-    - _Color: {r: 0.52963686, g: 0.37712362, b: 0.06655122, a: 0}
+    - _Color: {r: 1.1486983, g: 0.779313, b: 0, a: 0.46666667}
   m_BuildTextureStacks: []

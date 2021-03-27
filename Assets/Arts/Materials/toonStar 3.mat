@@ -8,17 +8,22 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: toonStar 3
-  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: _CELPRIMARYMODE_SINGLE _UNITYSHADOWMODE_COLOR
+  m_Shader: {fileID: 4800000, guid: f276502ebf8b1431192125b7316d5d67, type: 3}
+  m_ShaderKeywords: SHADOW_ON TEXTUREMODULE_ON _CELPRIMARYMODE_SINGLE _UNITYSHADOWMODE_COLOR
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
+  m_CustomRenderQueue: 2000
+  stringTagMap:
+    RenderType: Opaque
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _AOTexture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _BumpMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -51,6 +56,10 @@ Material:
         m_Texture: {fileID: 2800000, guid: 6a32cd067c064764c8140f3010ffe664, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _MainTexture:
+        m_Texture: {fileID: 2800000, guid: 6a32cd067c064764c8140f3010ffe664, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -64,13 +73,22 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - _AOEnable: 0
+    - _AOPower: 0
+    - _AOuv: 0
+    - _AmbientPower: 0
+    - _Brightness: 0
     - _BumpScale: 1
     - _CelExtraEnabled: 0
     - _CelNumSteps: 3
     - _CelPrimaryMode: 1
+    - _ColorCorrectionEnable: 0
+    - _Cull: 2
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
+    - _DontMix: 0
     - _DstBlend: 0
+    - _Fade: 1
     - _FlatRimEdgeSmoothness: 0
     - _FlatRimLightAlign: 0
     - _FlatRimSize: 0.156
@@ -78,47 +96,136 @@ Material:
     - _FlatSpecularSize: 0.463
     - _Flatness: 0.322
     - _FlatnessExtra: 1
+    - _FogHeight: 10
+    - _FogYStartPos: 0
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
+    - _GradSettings_B: 0
+    - _GradSettings_D: 0
+    - _GradSettings_F: 0
+    - _GradSettings_L: 0
+    - _GradSettings_R: 0
+    - _GradSettings_T: 0
     - _GradientAngle: 31
     - _GradientCenterX: 1.01
     - _GradientCenterY: 6.66
     - _GradientEnabled: 0
+    - _GradientHeight_B: 1
+    - _GradientHeight_D: 1
+    - _GradientHeight_F: 1
+    - _GradientHeight_G: 1
+    - _GradientHeight_L: 1
+    - _GradientHeight_R: 1
+    - _GradientHeight_T: 1
     - _GradientSize: 10
+    - _GradientSpace: 0
+    - _HFogEnable: 0
+    - _LMPower: 0
     - _LightContribution: 0
+    - _LmapBlendingMode: 0
+    - _LmapEnable: 0
+    - _MainTexturePower: 0
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
+    - _OtherSettings: 1
     - _OutlineDepthOffset: 0
     - _OutlineWidth: 2.31
     - _Parallax: 0.02
+    - _RealtimeShadow: 1
+    - _RimEnable: 0
     - _RimEnabled: 0
+    - _RimPower: 1
+    - _Rotation_B: 0
+    - _Rotation_D: 0
+    - _Rotation_F: 0
+    - _Rotation_G: 0
+    - _Rotation_L: 0
+    - _Rotation_R: 0
+    - _Rotation_T: 0
+    - _Saturation: 1
     - _SelfShadingSize: 0.192
     - _SelfShadingSizeExtra: 0.6
+    - _Shading_B: 0
+    - _Shading_D: 0
+    - _Shading_F: 0
+    - _Shading_L: 0
+    - _Shading_R: 0
+    - _Shading_T: 0
+    - _ShadowBlend: 0.918
     - _ShadowEdgeSize: 0
     - _ShadowEdgeSizeExtra: 0.05
+    - _ShadowInfluence: 0.766
+    - _ShowAO: 0
+    - _ShowAmbientSettings: 0
+    - _ShowBack: 0
+    - _ShowBottom: 0
+    - _ShowColorCorrection: 0
+    - _ShowCustomShading: 0
+    - _ShowFog: 0
+    - _ShowFront: 0
+    - _ShowGlobalGradientSettings: 0
+    - _ShowLMap: 0
+    - _ShowLeft: 0
+    - _ShowRight: 0
+    - _ShowTexture: 1
+    - _ShowTop: 0
     - _SmoothnessTextureChannel: 0
     - _SpecularEnabled: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _TextureImpact: 1
     - _UVSec: 0
+    - _UnityFogEnable: 0
     - _UnityShadowMode: 2
     - _UnityShadowPower: 0.326
     - _UnityShadowSharpness: 5.28
     - _VertexColorsEnabled: 0
     - _ZWrite: 1
+    - _ZWriteOverride: 0
     m_Colors:
+    - _AOColor: {r: 1, g: 1, b: 1, a: 1}
+    - _AmbientColor: {r: 0, g: 0, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color1_B: {r: 1, g: 1, b: 1, a: 1}
+    - _Color1_D: {r: 1, g: 1, b: 1, a: 1}
+    - _Color1_F: {r: 1, g: 1, b: 1, a: 1}
+    - _Color1_L: {r: 1, g: 1, b: 1, a: 1}
+    - _Color1_R: {r: 1, g: 1, b: 1, a: 1}
+    - _Color1_T: {r: 1, g: 1, b: 1, a: 1}
+    - _Color2_B: {r: 1, g: 1, b: 1, a: 1}
+    - _Color2_D: {r: 1, g: 1, b: 1, a: 1}
+    - _Color2_F: {r: 1, g: 1, b: 1, a: 1}
+    - _Color2_L: {r: 1, g: 1, b: 1, a: 1}
+    - _Color2_R: {r: 1, g: 1, b: 1, a: 1}
+    - _Color2_T: {r: 1, g: 1, b: 1, a: 1}
     - _ColorDim: {r: 0.05139729, g: 0.15751913, b: 0.31132078, a: 1}
     - _ColorDimCurve: {r: 0.85023, g: 0.85034, b: 0.85045, a: 0.85056}
     - _ColorDimExtra: {r: 0.85023, g: 0.85034, b: 0.85045, a: 0.85056}
     - _ColorDimSteps: {r: 0.85023, g: 0.85034, b: 0.85045, a: 0.85056}
     - _ColorGradient: {r: 0.4575472, g: 0.75818366, b: 1, a: 1}
+    - _Color_Fog: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _FlatRimColor: {r: 0.24420612, g: 0.22312212, b: 0.4339623, a: 1}
     - _FlatSpecularColor: {r: 0.7783019, g: 0.9723928, b: 1, a: 1}
+    - _GizmoPosition_B: {r: 0, g: 0, b: 10, a: 10}
+    - _GizmoPosition_D: {r: 0, g: 0, b: 10, a: 10}
+    - _GizmoPosition_F: {r: 0, g: 0, b: 10, a: 10}
+    - _GizmoPosition_L: {r: 0, g: 0, b: 10, a: 10}
+    - _GizmoPosition_R: {r: 0, g: 0, b: 10, a: 10}
+    - _GizmoPosition_T: {r: 0, g: 0, b: 10, a: 10}
+    - _GradientXStartPos_D: {r: 0, g: 0, b: 0, a: 0}
+    - _GradientXStartPos_T: {r: 0, g: 0, b: 0, a: 0}
+    - _GradientYStartPos_B: {r: 0, g: 0, b: 0, a: 0}
+    - _GradientYStartPos_F: {r: 0, g: 0, b: 0, a: 0}
+    - _GradientYStartPos_G: {r: 0, g: 0, b: 0, a: 0}
+    - _GradientYStartPos_L: {r: 0, g: 0, b: 0, a: 0}
+    - _GradientYStartPos_R: {r: 0, g: 0, b: 0, a: 0}
+    - _LMColor: {r: 1, g: 1, b: 1, a: 1}
     - _OutlineColor: {r: 0.4339623, g: 0.2795918, b: 0.2272161, a: 1}
+    - _RimColor: {r: 1, g: 1, b: 1, a: 1}
+    - _ShadowColor: {r: 0.1, g: 0.1, b: 0.1, a: 1}
+    - _TintColor: {r: 1, g: 1, b: 1, a: 1}
     - _UnityShadowColor: {r: 0.103773594, g: 0.09643112, b: 0.09643112, a: 1}
   m_BuildTextureStacks: []

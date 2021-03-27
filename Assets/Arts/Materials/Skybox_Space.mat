@@ -28,7 +28,7 @@ Material:
     - _Exponent2: 1
     - _Intensity: 1
     - _Rotation: 164
-    - _StarIntensity: 0.63
+    - _StarIntensity: 0.415
     - _StarSpeed: 0.58
     - _SurAuroraColFactor: 0.39
     m_Colors:
@@ -42,7 +42,7 @@ Material:
     - _RotationAxis: {r: -4.67, g: 3.97, b: -2.16, a: 1}
     - _RotationSpeed: {r: 1.04, g: 2.49, b: 0.54, a: 1}
     - _StarColor: {r: 0, g: 0.4454025, b: 3.3261406, a: 1}
-    - _StarColor0: {r: 0.9339623, g: 0.8783837, b: 0.5683072, a: 1}
-    - _StarColor1: {r: 0.2756764, g: 0.990566, b: 0.9514134, a: 1}
-    - _StarColor2: {r: 0.4745232, g: 0.9528302, b: 0.30113026, a: 1}
+    - _StarColor0: {r: 4.926163, g: 4.636389, b: 3.0012338, a: 1}
+    - _StarColor1: {r: 0.95589864, g: 3.4548907, b: 3.3183336, a: 1}
+    - _StarColor2: {r: 2.5044777, g: 5.029654, b: 1.5937587, a: 1}
   m_BuildTextureStacks: []

@@ -66,7 +66,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _AOEnable: 1
-    - _AOPower: 1.1
+    - _AOPower: 1.74
     - _AOuv: 0
     - _AmbientPower: 0
     - _Brightness: 0.32

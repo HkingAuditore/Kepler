@@ -6,10 +6,9 @@ namespace Satellite
     {
         public Satellite satellite;
 
-        protected override void Awake()
+        protected void Awake()
         {
             PartType      = SatelliteType.Core;
-            PartRigidbody = GetComponent<Rigidbody>();
         }
 
         public override float GetMass()

@@ -8,7 +8,10 @@ public class CameraController : MonoBehaviour
     public float correctiveSpeed;
     public float mainSpeed;
     public float scaleSize;
+    public float scaleMin = 20;
+    public float scaleMax = 300;
     public float orthoZoomSpeed;
+    public float focusOffset = 0.33f;
 
     private Camera           _camera;
     private Transform        _cameraBase;
@@ -21,12 +24,13 @@ public class CameraController : MonoBehaviour
 
     private float _orthoSize;
 
-    public bool IsFollowing { get; set; } = false;
+    public  bool  IsFollowing { get; set; } = false;
+    private float _oriOrthoSize;
 
     private float OrthoSize
     {
         get => _orthoSize;
-        set => _orthoSize = Mathf.Clamp(value, 20, 300);
+        set => _orthoSize = Mathf.Clamp(value, scaleMin, scaleMax );
     }
 
     private void Awake()
@@ -35,6 +39,7 @@ public class CameraController : MonoBehaviour
         _camera            = GetComponent<Camera>();
         _cameraBrain       = GetComponent<CinemachineBrain>();
         OrthoSize          = virtualCamera.m_Lens.OrthographicSize;
+        _oriOrthoSize      = OrthoSize;
         _framingTransposer = virtualCamera.GetCinemachineComponent<CinemachineFramingTransposer>();
     }
 
@@ -62,9 +67,9 @@ public class CameraController : MonoBehaviour
 
         // Debug.Log("Mouse [x:" + xSpeed + ", y:" + ySpeed + "]");
 
-        _cameraBase.position += new Vector3(xSpeed, 0, ySpeed) * (mainSpeed * Time.deltaTime) * (IsFollowing ? 0 : 1) +
+        _cameraBase.position += new Vector3(xSpeed, 0, ySpeed) * ((mainSpeed * Mathf.Pow(OrthoSize / _oriOrthoSize,0.9f)) * Time.deltaTime * (IsFollowing ? 0 : 1)) +
                                 new Vector3(Input.GetAxis("Mouse X"), 0, Input.GetAxis("Mouse Y")) *
-                                (correctiveSpeed * Time.deltaTime);
+                                (correctiveSpeed * Mathf.Pow(OrthoSize / _oriOrthoSize, 1.3f) * Time.deltaTime);
     }
 
     private void CameraScaler()
@@ -78,7 +83,7 @@ public class CameraController : MonoBehaviour
     public void FocusOn(Transform target)
     {
         virtualCamera.m_LookAt       = target;
-        _framingTransposer.m_ScreenX = 0.33f;
+        _framingTransposer.m_ScreenX = focusOffset;
         _followingTarget             = target;
     }
 

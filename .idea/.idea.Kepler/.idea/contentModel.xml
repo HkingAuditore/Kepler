@@ -43,6 +43,8 @@
             <e p="Outline.shader" t="Include" />
             <e p="Space.shader" t="Include" />
             <e p="UIBlur.shader" t="Include" />
+            <e p="UIBlur_Shared.cginc" t="Include" />
+            <e p="UIBlurPostEffect.shader" t="Include" />
             <e p="UiLine.shader" t="Include" />
           </e>
         </e>
@@ -92,6 +94,72 @@
               <e p="StylizedSurfaceOutline.shader" t="Include" />
               <e p="Terrain.shader" t="Include" />
             </e>
+          </e>
+        </e>
+        <e p="Le Tai's Asset" t="Include">
+          <e p="TranslucentImage" t="Include">
+            <e p="changelog.txt" t="Include" />
+            <e p="Demo" t="Include">
+              <e p="Fonts" t="Include">
+                <e p="FONT LICENSE.txt" t="Include" />
+              </e>
+              <e p="Scripts" t="Include">
+                <e p="AutoMoveAndRotate.cs" t="Include" />
+                <e p="ChangeBlurConfig.cs" t="Include" />
+                <e p="ColorSchemeManager.cs" t="Include" />
+                <e p="ControlCenter.cs" t="Include" />
+                <e p="FPSCounter.cs" t="Include" />
+                <e p="LeTai.TranslucentImage.Demo.asmdef" t="Include" />
+                <e p="PlatformPreset.cs" t="Include" />
+                <e p="SetText.cs" t="Include" />
+                <e p="SimpleCameraController.cs" t="Include" />
+                <e p="SliderChangeOnStart.cs" t="Include" />
+                <e p="ToggleSecondBlurLayer.cs" t="Include" />
+                <e p="UnrestrictFramerate.cs" t="Include" />
+                <e p="WorldSpaceSetup.cs" t="Include" />
+              </e>
+              <e p="Shader" t="Include">
+                <e p="MobileVertexLitColor.shader" t="Include" />
+              </e>
+              <e p="Textures" t="Include">
+                <e p="Example Photo" t="Include">
+                  <e p="PHOTO LICENSE.txt" t="Include" />
+                </e>
+              </e>
+            </e>
+            <e p="LeTai.TranslucentImage.asmdef" t="Include" />
+            <e p="Online Documentation (recommended).txt" t="Include" />
+            <e p="Resources" t="Include">
+              <e p="EfficientBlur.shader" t="Include" />
+              <e p="FillCrop.shader" t="Include" />
+              <e p="TranslucentImage.shader" t="Include" />
+            </e>
+            <e p="Script" t="Include">
+              <e p="BlurAlgorithm" t="Include">
+                <e p="BlurConfig.cs" t="Include" />
+                <e p="IBlurAlgorithm.cs" t="Include" />
+                <e p="ScalableBlur.cs" t="Include" />
+                <e p="ScalableBlurConfig.cs" t="Include" />
+              </e>
+              <e p="Editor" t="Include">
+                <e p="LeTai.TranslucentImage.Editor.asmdef" t="Include" />
+                <e p="MenuIntegration.cs" t="Include" />
+                <e p="ScalableBlurConfigEditor.cs" t="Include" />
+                <e p="ScenceGizmoAutoDisable.cs" t="Include" />
+                <e p="TranslucentImageEditor.cs" t="Include" />
+                <e p="TranslucentImageSourceEditor.cs" t="Include" />
+              </e>
+              <e p="TranslucentImage.cs" t="Include" />
+              <e p="TranslucentImageEditorEnhancement.cs" t="Include" />
+              <e p="TranslucentImageMeshEffect.cs" t="Include" />
+              <e p="TranslucentImageSource.cs" t="Include" />
+              <e p="Utilities" t="Include">
+                <e p="Extensions.cs" t="Include" />
+                <e p="ResizableScreenRect.cs" t="Include" />
+                <e p="ShaderId.cs" t="Include" />
+              </e>
+            </e>
+            <e p="UniversalRP README.txt" t="Include" />
           </e>
         </e>
         <e p="Minimalist" t="Include">
@@ -376,8 +444,8 @@
           </e>
           <e p="CustomPostProcessing" t="Include">
             <e p="CameraMixer.cs" t="Include" />
-            <e p="CustomDepthOfField.cs" t="Include" />
             <e p="CustomPostProcessingBase.cs" t="Include" />
+            <e p="Dof.cs" t="Include" />
             <e p="OutlineCatcher.cs" t="Include" />
           </e>
           <e p="DeferredFogEffect.cs" t="Include" />
@@ -425,6 +493,7 @@
             <e p="OrbitPanelUI.cs" t="Include" />
             <e p="PositionEditorUI.cs" t="Include" />
             <e p="QuizUI.cs" t="Include" />
+            <e p="SatelliteControllerUI.cs" t="Include" />
             <e p="SelectorUI.cs" t="Include" />
             <e p="UIManager.cs" t="Include" />
             <e p="VectorUI.cs" t="Include" />
@@ -526,6 +595,9 @@
         </e>
       </e>
       <e p="Kepler.sln" t="IncludeFlat" />
+      <e p="LeTai.TranslucentImage.csproj" t="IncludeRecursive" />
+      <e p="LeTai.TranslucentImage.Demo.csproj" t="IncludeRecursive" />
+      <e p="LeTai.TranslucentImage.Editor.csproj" t="IncludeRecursive" />
       <e p="obj" t="ExcludeRecursive" />
       <e p="Packages" t="ExcludeRecursive" />
       <e p="Temp\bin" t="ExcludeRecursive" />

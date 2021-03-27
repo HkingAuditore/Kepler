@@ -1,13 +1,21 @@
-﻿namespace Satellite
+﻿using UnityEngine;
+
+namespace Satellite
 {
     public class SatelliteEngine : SatellitePart
     {
         public int engineStage;
 
-        protected override void Awake()
+        protected void Awake()
         {
             PartType = SatelliteType.Engine;
-            base.Awake();
+        }
+
+        public void SetCurDirVelocity(float speed)
+        {
+            Debug.Log(this.gameObject.name + " Changing Speed!");
+            Debug.DrawLine(this.transform.position, this.transform.position+this.AstralBodyRigidbody.velocity.normalized*speed,Color.green);
+            this.ChangeVelocity(this.GetVelocity().normalized * speed);
         }
     }
 }

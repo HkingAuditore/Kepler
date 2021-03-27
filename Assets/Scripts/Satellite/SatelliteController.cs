@@ -21,10 +21,14 @@ namespace Satellite
 
         private void FixedUpdate()
         {
-            Rotate();
-            Push();
+            // Rotate();
+            // Push();
         }
 
+        public void SetCurDirVelocity(float newSpeed)
+        {
+            _satelliteEngineStageLists[curEngineStage].ForEach(engine => engine.SetCurDirVelocity(newSpeed));
+        }
 
         private void GenerateEngineStageList()
         {
