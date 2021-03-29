@@ -23,7 +23,7 @@ namespace Quiz
         public bool IsLoadDone { private set; get; }
 
 
-        private void Start()
+        public virtual void Start()
         {
             // List<AstralBody> astralBodies = new List<AstralBody>();
             // 放置星球

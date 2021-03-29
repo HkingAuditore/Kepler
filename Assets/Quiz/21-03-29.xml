@@ -1,0 +1,44 @@
+<AstralBodyList QuizType="Mass">
+  <AstralBodyDict IsTarget="True">
+    <Transform>
+      <Position>(0.4, 0.0, 0.0)</Position>
+    </Transform>
+    <AstralBody IsCore="True">
+      <Mass>5000</Mass>
+      <Density>1000</Density>
+      <Size>16.6156</Size>
+      <Velocity>(0.0, 0.0, 0.0)</Velocity>
+      <EnableAffect>True</EnableAffect>
+      <EnableTracing>True</EnableTracing>
+      <AffectRadius>10</AffectRadius>
+    </AstralBody>
+  </AstralBodyDict>
+  <AstralBodyDict IsTarget="False">
+    <Transform>
+      <Position>(-106.3, 0.0, 0.0)</Position>
+    </Transform>
+    <AstralBody IsCore="False">
+      <Mass>100</Mass>
+      <Density>1000</Density>
+      <Size>2.144284</Size>
+      <Velocity>(0.0, 0.0, 16.0)</Velocity>
+      <EnableAffect>True</EnableAffect>
+      <EnableTracing>True</EnableTracing>
+      <AffectRadius>8</AffectRadius>
+    </AstralBody>
+  </AstralBodyDict>
+  <AstralBodyDict IsTarget="False">
+    <Transform>
+      <Position>(-119.2, 0.0, -75.1)</Position>
+    </Transform>
+    <AstralBody IsCore="False">
+      <Mass>100</Mass>
+      <Density>1000</Density>
+      <Size>2.144284</Size>
+      <Velocity>(0.0, 0.0, 16.0)</Velocity>
+      <EnableAffect>True</EnableAffect>
+      <EnableTracing>True</EnableTracing>
+      <AffectRadius>8</AffectRadius>
+    </AstralBody>
+  </AstralBodyDict>
+</AstralBodyList>

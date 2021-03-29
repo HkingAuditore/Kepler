@@ -13,7 +13,7 @@ namespace UI
         public  GameObject       selectedGameObject = null;
         private CameraController _cameraController;
         private Camera           _mainCamera;
-        private bool             _isLocked;
+        public  bool             _isLocked;
 
         public bool isLocked
         {

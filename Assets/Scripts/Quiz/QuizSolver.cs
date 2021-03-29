@@ -21,5 +21,11 @@ namespace Quiz
             if (isRight)
                 return;
         }
+
+        public override void Start()
+        {
+            base.Start();
+            this.quizUI.target = this.target;
+        }
     }
 }

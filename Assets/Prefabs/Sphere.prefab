@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3607051221231995094}
   - component: {fileID: 3607051221231995095}
   - component: {fileID: 3607051221231995092}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: Sphere
   m_TagString: AstralBody
   m_Icon: {fileID: 0}
@@ -124,6 +124,7 @@ MonoBehaviour:
   affectRadius: 8
   enableTracing: 1
   affectedPlanets: []
+  banAffectedPlanets: []
 --- !u!54 &3607051221231995095
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -163,7 +164,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3607051222412130643}
   - component: {fileID: 3607051222412130642}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: Line
   m_TagString: Untagged
   m_Icon: {fileID: 0}

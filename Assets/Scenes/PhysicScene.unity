@@ -948,6 +948,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isEnableEdit: 1
+  isEnableEditorPanel: 1
   astralBody: {fileID: 0}
   gravityTracing: {fileID: 1009603419}
   massSlider: {fileID: 1160543727}
@@ -956,8 +957,9 @@ MonoBehaviour:
   normalPanel: {fileID: 1771801768}
   forceUI: {fileID: 1248854065}
   velocityUI: {fileID: 1514731290}
-  lengthUI: {fileID: 1931849635}
+  lengthUIList: []
   orbitPanelUI: {fileID: 216456885}
+  editorPanel: {fileID: 0}
 --- !u!1 &284363323
 GameObject:
   m_ObjectHideFlags: 0
@@ -3461,7 +3463,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &791609494
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4049,6 +4051,7 @@ MonoBehaviour:
   scaleMin: 20
   scaleMax: 300
   orthoZoomSpeed: 0.025
+  focusOffset: 0.33
 --- !u!114 &894007025
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7263,7 +7266,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1749464134}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 13.999998, z: -0.000030517578}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 806630894}
@@ -8496,6 +8499,7 @@ MonoBehaviour:
   lengthCalculator: {fileID: 284363326}
   lengthText: {fileID: 231007073}
   astralBody: {fileID: 0}
+  targetAstralBody: {fileID: 0}
 --- !u!43 &1944631731
 Mesh:
   m_ObjectHideFlags: 0

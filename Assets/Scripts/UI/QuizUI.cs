@@ -21,6 +21,7 @@ public class QuizUI : MonoBehaviour
 
     private void Start()
     {
+        
         title.text = Enum.GetName(quizType.GetType(), quizType) + ":";
         GenerateAns();
     }

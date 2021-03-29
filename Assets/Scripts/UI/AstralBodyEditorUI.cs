@@ -37,11 +37,6 @@ public class AstralBodyEditorUI : MonoBehaviour
         {
             normalPanel.SetActive(false);
             InitMassEditor();
-            lengthUIList.ForEach(l =>
-                                 {
-                                     l.astralBody = astralBody;
-                                 });
-            lengthUIList[0]?.transform.parent.gameObject.SetActive(true);
             if (isEnableEditorPanel)
             {
                 positionEditorUI.editingTarget = astralBody.transform;
@@ -49,6 +44,12 @@ public class AstralBodyEditorUI : MonoBehaviour
 
                 editorPanel.SetActive(true);
             }
+
+            lengthUIList.ForEach(l =>
+                                 {
+                                     l.astralBody = astralBody;
+                                 });
+            lengthUIList[0]?.transform.parent.gameObject.SetActive(true);
         }
     }
 
