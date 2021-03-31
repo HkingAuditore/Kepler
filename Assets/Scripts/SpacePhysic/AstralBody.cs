@@ -18,6 +18,7 @@ public class AstralBody : MonoBehaviour, ITraceable
     [Header("Movement Property")] public Vector3 oriVelocity;
 
     public Vector3 angularVelocity;
+    
 
     [Header("Gravity Property")] public bool enableAffect = true;
 
@@ -45,6 +46,7 @@ public class AstralBody : MonoBehaviour, ITraceable
 
     private MeshFilter _mesh;
     private Renderer   _renderer;
+
     public int meshNum
     {
         get => _meshNum;
@@ -142,6 +144,8 @@ public class AstralBody : MonoBehaviour, ITraceable
     {
         return this;
     }
+    
+
 
 
     #region 开放修改参数

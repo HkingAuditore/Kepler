@@ -11,49 +11,32 @@
       <EnableAffect>True</EnableAffect>
       <EnableTracing>True</EnableTracing>
       <AffectRadius>8</AffectRadius>
-      <Period IsPublic="False">0.007148171</Period>
+      <Period IsPublic="False">0</Period>
+      <AngularVelocity IsPublic="False">0</AngularVelocity>
       <Radius IsPublic="False">0</Radius>
       <AnglePerT IsPublic="False">0</AnglePerT>
       <DistancePerT IsPublic="False">0</DistancePerT>
-      <T IsPublic="False">1</T>
+      <T IsPublic="False">0</T>
     </AstralBody>
   </AstralBodyDict>
   <AstralBodyDict IsTarget="False">
     <Transform>
-      <Position>(-92.6, 0.0, 0.0)</Position>
+      <Position>(17.4, 0.0, -136.0)</Position>
     </Transform>
     <AstralBody IsCore="False">
       <Mass IsPublic="False">1</Mass>
       <Density>1000</Density>
       <Size>2.144</Size>
-      <Velocity IsPublic="False">(0.0, 0.0, -8.5)</Velocity>
+      <Velocity IsPublic="True">(6.9, 0.0, 0.8)</Velocity>
       <EnableAffect>True</EnableAffect>
       <EnableTracing>True</EnableTracing>
       <AffectRadius>8</AffectRadius>
-      <Period IsPublic="False">68.58189</Period>
-      <Radius IsPublic="False">92.59923</Radius>
-      <AnglePerT IsPublic="False">0</AnglePerT>
-      <DistancePerT IsPublic="False">8.487099</DistancePerT>
-      <T IsPublic="False">1</T>
-    </AstralBody>
-  </AstralBodyDict>
-  <AstralBodyDict IsTarget="False">
-    <Transform>
-      <Position>(-171.6, 0.0, -103.9)</Position>
-    </Transform>
-    <AstralBody IsCore="False">
-      <Mass IsPublic="False">100</Mass>
-      <Density>1000</Density>
-      <Size>2.144</Size>
-      <Velocity IsPublic="False">(3.0, 0.0, -4.9)</Velocity>
-      <EnableAffect>True</EnableAffect>
-      <EnableTracing>True</EnableTracing>
-      <AffectRadius>8</AffectRadius>
-      <Period IsPublic="False">145.6042</Period>
-      <Radius IsPublic="False">200.618</Radius>
-      <AnglePerT IsPublic="False">0</AnglePerT>
-      <DistancePerT IsPublic="False">5.766045</DistancePerT>
-      <T IsPublic="False">1</T>
+      <Period IsPublic="True">122.1517</Period>
+      <AngularVelocity IsPublic="True">0.3393103</AngularVelocity>
+      <Radius IsPublic="True">137.0868</Radius>
+      <AnglePerT IsPublic="True">0.1696551</AnglePerT>
+      <DistancePerT IsPublic="True">13.98689</DistancePerT>
+      <T IsPublic="True">2</T>
     </AstralBody>
   </AstralBodyDict>
 </AstralBodyList>

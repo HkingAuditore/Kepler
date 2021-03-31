@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using UnityEngine;
 
 namespace Quiz
 {
@@ -8,9 +10,18 @@ namespace Quiz
         
         public void SaveQuiz()
         {
+            orbitBase.Freeze(false);
+            StartCoroutine(WaitForCalculate());
+        }
+        
+        IEnumerator WaitForCalculate() {
+            yield return new WaitForSeconds(2);
+            
             var xmlDoc = saver.ConvertOrbit2Xml(astralBodiesDict, quizType);
             saver.SaveXml(xmlDoc, DateTime.Now.ToString("yy-MM-dd"));
+
         }
+
         
         public void AddAstralBody(QuizAstralBody astralBody, bool isTarget = false)
         {

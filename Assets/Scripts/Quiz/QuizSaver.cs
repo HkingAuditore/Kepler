@@ -49,10 +49,12 @@ namespace Quiz
             var size = _xmlDoc.CreateElement("Size");
             size.InnerText = astralBodyDict.astralBody.originalSize.ToString(CultureInfo.InvariantCulture);
             astAstralBody.AppendChild(size);
+            
             var velocity = _xmlDoc.CreateElement("Velocity");
             velocity.InnerText = astralBodyDict.astralBody.GetVelocity().ToString();
             velocity.SetAttribute("IsPublic", astralBodyDict.astralBody.isVelocityPublic.ToString());
             astAstralBody.AppendChild(velocity);
+            
             var isAffect = _xmlDoc.CreateElement("EnableAffect");
             isAffect.InnerText = astralBodyDict.astralBody.enableAffect.ToString();
             astAstralBody.AppendChild(isAffect);
@@ -69,6 +71,11 @@ namespace Quiz
             period.InnerText = astralBodyDict.astralBody.period.ToString(CultureInfo.InvariantCulture);
             astAstralBody.AppendChild(period);
             
+            var angularVelocity = _xmlDoc.CreateElement("AngularVelocity");
+            angularVelocity.SetAttribute("IsPublic", astralBodyDict.astralBody.isAngularVelocityPublic.ToString());
+            angularVelocity.InnerText = astralBodyDict.astralBody.globalAngularVelocity.ToString();
+            astAstralBody.AppendChild(angularVelocity);
+            
             var radius = _xmlDoc.CreateElement("Radius");
             radius.SetAttribute("IsPublic", astralBodyDict.astralBody.isRadiusPublic.ToString());
             radius.InnerText = astralBodyDict.astralBody.radius.ToString(CultureInfo.InvariantCulture);
@@ -81,7 +88,7 @@ namespace Quiz
 
             
             var distancePerT = _xmlDoc.CreateElement("DistancePerT");
-            distancePerT.SetAttribute("IsPublic", astralBodyDict.astralBody.isDistancePublic.ToString());
+            distancePerT.SetAttribute("IsPublic", astralBodyDict.astralBody.isDistancePerTPublic.ToString());
             distancePerT.InnerText = astralBodyDict.astralBody.distancePerT.ToString(CultureInfo.InvariantCulture);
             astAstralBody.AppendChild(distancePerT);
             
@@ -156,13 +163,29 @@ namespace Quiz
 
                 //AstralBody
                 var astralBodyXmlNode = astralBodyElement.GetElementsByTagName("AstralBody")[0];
-                astStruct.mass          = int.Parse(astralBodyXmlNode.ChildNodes[0].InnerText);
-                astStruct.density       = int.Parse(astralBodyXmlNode.ChildNodes[1].InnerText);
-                astStruct.originalSize  = float.Parse(astralBodyXmlNode.ChildNodes[2].InnerText);
-                astStruct.oriVelocity   = ConvertString2Vector3(astralBodyXmlNode.ChildNodes[3].InnerText);
+                astStruct.mass         = int.Parse(astralBodyXmlNode.ChildNodes[0].InnerText);
+                astStruct.isMassPublic = Boolean.Parse(astralBodyXmlNode.ChildNodes[0].Attributes["IsPublic"].Value);
+                astStruct.density      = int.Parse(astralBodyXmlNode.ChildNodes[1].InnerText);
+                astStruct.originalSize = float.Parse(astralBodyXmlNode.ChildNodes[2].InnerText);
+                astStruct.oriVelocity  = ConvertString2Vector3(astralBodyXmlNode.ChildNodes[3].InnerText);
+                astStruct.isVelocityPublic = Boolean.Parse(astralBodyXmlNode.ChildNodes[3].Attributes["IsPublic"].Value);
                 astStruct.enableAffect  = bool.Parse(astralBodyXmlNode.ChildNodes[4].InnerText);
                 astStruct.enableTracing = bool.Parse(astralBodyXmlNode.ChildNodes[5].InnerText);
                 astStruct.affectRadius  = float.Parse(astralBodyXmlNode.ChildNodes[6].InnerText);
+                astStruct.period = float.Parse(astralBodyXmlNode.ChildNodes[7].InnerText);
+                astStruct.isPeriodPublic = Boolean.Parse(astralBodyXmlNode.ChildNodes[7].Attributes["IsPublic"].Value);
+                astStruct.angularVelocity= float.Parse(astralBodyXmlNode.ChildNodes[8].InnerText);
+                astStruct.isAngularVelocityPublic = Boolean.Parse(astralBodyXmlNode.ChildNodes[8].Attributes["IsPublic"].Value);
+                astStruct.radius = float.Parse(astralBodyXmlNode.ChildNodes[9].InnerText);
+                astStruct.isRadiusPublic = Boolean.Parse(astralBodyXmlNode.ChildNodes[9].Attributes["IsPublic"].Value);
+                astStruct.AnglePerT = float.Parse(astralBodyXmlNode.ChildNodes[10].InnerText);
+                astStruct.isAnglePerTPublic = Boolean.Parse(astralBodyXmlNode.ChildNodes[10].Attributes["IsPublic"].Value);
+                astStruct.distancePerT= float.Parse(astralBodyXmlNode.ChildNodes[11].InnerText);
+                astStruct.isDistancePerTPublic = Boolean.Parse(astralBodyXmlNode.ChildNodes[11].Attributes["IsPublic"].Value);
+                astStruct.t= float.Parse(astralBodyXmlNode.ChildNodes[12].InnerText);
+                astStruct.isTPublic = Boolean.Parse(astralBodyXmlNode.ChildNodes[12].Attributes["IsPublic"].Value);
+
+
                 astStruct.isCore        = bool.Parse(astralBodyXmlNode.Attributes["IsCore"].Value);
                 astStruct.isTarget      = bool.Parse(astralBodyElement.GetAttribute("IsTarget"));
 

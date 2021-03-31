@@ -1,38 +1,40 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Text;
 using MathPlus;
 using Quiz;
 using UnityEngine;
 
 public class QuizAstralBody : AstralBody
 {
-    public bool isMassPublic;
-    public bool isVelocityPublic;
-    public bool isAngularVelocityPublic;
+    public bool  isMassPublic;
+    public bool  isVelocityPublic;
+    public bool  isAngularVelocityPublic;
+    public float globalAngularVelocity;
 
     private float _oriRadius;
     private float _curRadius;
 
 
-    private float _period;
+    public float _period;
     public float period
     {
         get => _period;
-        private set => _period = value;
+        set => _period = value;
     }
     public  bool  isPeriodPublic;
-    
-    private float _radius;
+
+    public float _radius;
     public float radius
     {
         get => _radius;
-        private set => _radius = value;
+        set => _radius = value;
     }
     public  bool  isRadiusPublic;
-    
 
-    private float _anglePerT;
+
+    public float _anglePerT;
     public float anglePerT
     {
         get => _anglePerT;
@@ -40,15 +42,15 @@ public class QuizAstralBody : AstralBody
     }
     public  bool  isAnglePerTPublic;
 
-    private float _distancePerT;
+    public float _distancePerT;
     public float distancePerT
     {
         get => _distancePerT;
         set => _distancePerT = value;
     }
-    public  bool  isDistancePublic;
+    public  bool  isDistancePerTPublic;
 
-    private float _t;
+    public float _t;
     public float t
     {
         get => _t;
@@ -65,13 +67,27 @@ public class QuizAstralBody : AstralBody
 
     public void UpdateQuizAstralBody()
     {
-        this.radius = Vector3.Distance(this.transform.position, GameManager.GetGameManager.quizBase.target.transform.position);
-        ConicSection conicSection  = GameManager.GetGameManager.quizBase.orbitBase.GetConicSection(this, 1000);
-        this.period = conicSection.GetT(GameManager.GetGameManager.quizBase.target.GetMass());
-        //TODO t
-        this.t            = 1;
-        this.anglePerT    = this.angularVelocity.magnitude / t;
-        this.distancePerT = this.GetVelocity().magnitude   * t;
+        if (GameManager.GetGameManager.quizBase.target != this)
+        {
+            this.radius = Vector3.Distance(this.transform.position, GameManager.GetGameManager.quizBase.target.transform.position);
+            ConicSection conicSection = GameManager.GetGameManager.quizBase.orbitBase.GetConicSection(this, 1000);
+            this.period = conicSection.GetT(GameManager.GetGameManager.quizBase.target.GetMass());
+            //TODO t
+            this.t                     = 2;
+            this.globalAngularVelocity = this.period                    / 360f;
+            this.anglePerT             = this.globalAngularVelocity / t;
+            this.distancePerT          = this.GetVelocity().magnitude   * t;
+
+        }
+        else
+        {
+            this.radius       = 0;
+            this.period       = 0;
+            this.t            = 0;
+            this.anglePerT    = 0;
+            this.distancePerT = 0;
+            this.globalAngularVelocity = 0;
+        }
     }
 
     protected override void Start()
@@ -82,6 +98,7 @@ public class QuizAstralBody : AstralBody
     protected override void FixedUpdate()
     {
         base.FixedUpdate();
+        if (GameManager.GetGameManager.isQuizEditMode) return;
         if (!GameManager.GetGameManager.quizBase.orbitBase.isFreezing && ((QuizSolver) (GameManager.GetGameManager.quizBase)).isRight)
         {
             _curRadius =  Vector3.Distance(this.transform.position, GameManager.GetGameManager.quizBase.target.transform.position);
@@ -89,8 +106,8 @@ public class QuizAstralBody : AstralBody
                 (((QuizSolver) (GameManager.GetGameManager.quizBase)).radiusOffset * oriRadius))
             {
                 ((QuizSolver) (GameManager.GetGameManager.quizBase)).isRight = false;
-                Debug.Log("Test Result: Not Circle!");
-                Debug.Log("Test Result Cur Radius:" + _curRadius);
+                // Debug.Log("Test Result: Not Circle!");
+                // Debug.Log("Test Result Cur Radius:" + _curRadius);
 
             }
         }
@@ -101,7 +118,53 @@ public class QuizAstralBody : AstralBody
         if (ReferenceEquals(this, GameManager.GetGameManager.quizBase.target))
         {
             ((QuizSolver) (GameManager.GetGameManager.quizBase)).isRight = false;
-            Debug.Log("Test Result: Hit!");
+            // Debug.Log("Test Result: Hit!");
         }
+    }
+
+    public String GetQuizConditionString()
+    {
+        StringBuilder stringBuilder = new StringBuilder("");
+        if(isMassPublic){
+            stringBuilder.Append("质量是" + this.mass.ToString("f2") + "kg，");
+        }
+        if(isRadiusPublic){
+            stringBuilder.Append("轨道半径是" + this.radius.ToString("f2") + "m，");
+        }
+        if(isVelocityPublic){
+            stringBuilder.Append("速度是" + this.oriVelocity.magnitude.ToString("f2") + "m/s，");
+        }
+
+        if(isAngularVelocityPublic){
+            stringBuilder.Append("角速度是" + (this.globalAngularVelocity * Mathf.Deg2Rad).ToString("f2") + "rad/s，");
+        }
+        if(isPeriodPublic){
+            stringBuilder.Append("周期是" + this.period.ToString("f2") + "s，");
+        }
+
+        if(isTPublic){
+            stringBuilder.Append("在" + this.t.ToString("f2") + "s内,其可");
+        }
+
+        if(isAnglePerTPublic){
+            stringBuilder.Append("绕轨道圆心旋转" + this.anglePerT.ToString("f2") + "度，");
+        }
+        if(isDistancePerTPublic){
+            stringBuilder.Append("沿着轨道运行" + this.distancePerT.ToString("f2")+"m，");
+        }
+
+        stringBuilder.Remove(stringBuilder.Length - 1, 1);
+        return stringBuilder.ToString();
+    }
+
+    public bool CheckPublicity()
+    {
+        // if (!isRadiusPublic) return false;
+        int a = isAngularVelocityPublic ? 1 : 0;
+        int b = isPeriodPublic ? 1 : 0;
+        int c = isRadiusPublic ? 1 : 0;
+        int d = isVelocityPublic ? 1 : 0;
+        if (a + b + c + d > 1) return true;
+        return false;
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Quiz;
+using SpacePhysic;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -11,6 +12,7 @@ public class GameManager : MonoBehaviour
     public                                       bool             isQuizEditMode;
     public                                       Camera           mainCamera;
     public                                       List<GameObject> meshList;
+    public                                       GravityTracing   orbit;
 
     public static GameManager GetGameManager { get; private set; }
 

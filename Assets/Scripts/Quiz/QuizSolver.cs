@@ -1,4 +1,6 @@
+using System;
 using System.Collections;
+using System.Text;
 using UnityEngine;
 
 namespace Quiz
@@ -55,7 +57,46 @@ namespace Quiz
         public override void Start()
         {
             base.Start();
-            this.quizUI.target = this.target;
+            quizUI.Generate();
         }
+
+        public String GetQuizSentence()
+        {
+            StringBuilder stringBuilder = new StringBuilder();
+
+            int i = 1;
+            foreach (AstralBodyDict dict in astralBodiesDict)
+            {
+                if(dict.isTarget)continue;
+                stringBuilder.Append("绕转星体" + i + "的" + dict.astralBody.GetQuizConditionString() + "；");
+            }
+            stringBuilder.Remove(stringBuilder.Length - 1, 1);
+            stringBuilder.Append("。请求出");
+            switch (quizType)
+            {
+                case QuizType.Mass:
+                    stringBuilder.Append("中心天体的质量。");
+                    break;
+                case QuizType.Density:
+                    stringBuilder.Append("中心天体的密度。");
+
+                    break;
+                case QuizType.Gravity:
+                    stringBuilder.Append("中心天体的重力加速度。");
+
+                    break;
+                case QuizType.Radius:
+                    stringBuilder.Append("轨道半径。");
+
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
+
+            return stringBuilder.ToString();
+        }
+        
+        
+
     }
 }

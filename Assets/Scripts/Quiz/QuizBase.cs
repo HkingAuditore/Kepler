@@ -72,15 +72,42 @@ namespace Quiz
         private void GenerateAstralBodiesWithoutPrefab()
         {
             List<AstralBodyDict> astralBodyDicts = new List<AstralBodyDict>();
-            foreach (var pair in _astralBodyStructDictList)
+            foreach (AstralBodyStructDict pair in _astralBodyStructDictList)
             {
-                astralBodyPrefab.mass          = pair.mass;
-                astralBodyPrefab.density       = pair.density;
-                astralBodyPrefab.originalSize  = pair.originalSize;
-                astralBodyPrefab.oriVelocity   = pair.oriVelocity;
-                astralBodyPrefab.affectRadius  = pair.affectRadius;
-                astralBodyPrefab.enableAffect  = pair.enableAffect;
-                astralBodyPrefab.enableTracing = pair.enableTracing;
+                astralBodyPrefab.mass         = pair.mass;
+                astralBodyPrefab.isMassPublic = pair.isMassPublic;
+                
+                astralBodyPrefab.density      = pair.density;
+                astralBodyPrefab.originalSize = pair.originalSize;
+                
+                astralBodyPrefab.oriVelocity      = pair.oriVelocity;
+                astralBodyPrefab.isVelocityPublic = pair.isVelocityPublic;
+                
+                astralBodyPrefab.affectRadius     = pair.affectRadius;
+                astralBodyPrefab.enableAffect     = pair.enableAffect;
+                astralBodyPrefab.enableTracing    = pair.enableTracing;
+                
+                
+                 astralBodyPrefab.globalAngularVelocity = pair.angularVelocity;
+                astralBodyPrefab.isAngularVelocityPublic = pair.isAngularVelocityPublic;
+                astralBodyPrefab.isPeriodPublic          = pair.isPeriodPublic;
+                
+                
+                astralBodyPrefab.radius                  = pair.radius;
+                astralBodyPrefab.isRadiusPublic          = pair.isRadiusPublic;
+                
+                astralBodyPrefab.period       = pair.period;
+                
+                astralBodyPrefab.isTPublic             = pair.isTPublic;
+                astralBodyPrefab.t                     = pair.t;
+                astralBodyPrefab.anglePerT             = pair.AnglePerT;
+                astralBodyPrefab.isAnglePerTPublic     = pair.isAnglePerTPublic;
+               
+                
+                astralBodyPrefab.distancePerT     = pair.distancePerT;
+                astralBodyPrefab.isDistancePerTPublic = pair.isDistancePerTPublic;
+                
+                
                 QuizAstralBody target =
                     Instantiate(astralBodyPrefab, pair.position, Quaternion.Euler(0, 0, 0), quizRoot);
                 orbitBase.AddTracingTarget(target);
@@ -94,7 +121,7 @@ namespace Quiz
                     
                 }
 
-                Debug.Log("add HashCode:" + target.GetHashCode());
+                // Debug.Log("add HashCode:" + target.GetHashCode());
                 astralBodyDicts.Add(new AstralBodyDict(target.transform,target,pair.isTarget));
                 target.gameObject.name = target.gameObject.name.Replace("(Clone)", "");
                 if (pair.isCore)

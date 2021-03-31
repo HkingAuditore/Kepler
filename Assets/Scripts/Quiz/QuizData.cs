@@ -8,9 +8,9 @@ namespace Quiz
     [Serializable]
     public struct AstralBodyDict
     {
-        public Transform  transform;
+        public Transform      transform;
         public QuizAstralBody astralBody;
-        public bool       isTarget;
+        public bool           isTarget;
 
         public AstralBodyDict(Transform transform, QuizAstralBody astralBody, bool isTarget)
         {
@@ -24,10 +24,24 @@ namespace Quiz
     {
         public Vector3 position;
         public float   mass;
+        public bool    isMassPublic;
         public float   density;
         public float   originalSize;
         public float   affectRadius;
         public Vector3 oriVelocity;
+        public bool    isVelocityPublic;
+        public float angularVelocity;
+        public bool    isAngularVelocityPublic;
+        public float   period;
+        public bool    isPeriodPublic;
+        public float   radius;
+        public bool    isRadiusPublic;
+        public float   AnglePerT;
+        public bool    isAnglePerTPublic;
+        public float   distancePerT;
+        public bool    isDistancePerTPublic;
+        public float   t;
+        public bool    isTPublic;
         public bool    enableAffect;
         public bool    enableTracing;
         public bool    isTarget;
@@ -45,6 +59,21 @@ namespace Quiz
             enableTracing = astralBody.enableTracing;
             this.isTarget = isTarget;
             this.isCore   = isCore;
+
+            isMassPublic            = false;
+            angularVelocity         = default;
+            isAngularVelocityPublic = false;
+            period                  = 0;
+            isPeriodPublic          = false;
+            radius                  = 0;
+            isRadiusPublic          = false;
+            AnglePerT               = 0;
+            isAnglePerTPublic       = false;
+            distancePerT            = 0;
+            isDistancePerTPublic    = false;
+            t                       = 0;
+            isTPublic               = false;
+            isVelocityPublic        = false;
         }
     }
 

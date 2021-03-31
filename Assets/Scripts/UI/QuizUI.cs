@@ -7,11 +7,12 @@ using Random = UnityEngine.Random;
 public class QuizUI : MonoBehaviour
 {
     public QuizSolver quizSolver;
-    public Slider   quizSlider;
-    public Text     title;
-    public QuizType quizType;
-    public Text     ansText;
-    public Button   confirm;
+    public Slider     quizSlider;
+    public Text       title;
+    public QuizType   quizType;
+    public Text       ansText;
+    public Button     confirm;
+    public Text       quizCondition;
 
     public AstralBody target;
 
@@ -22,7 +23,13 @@ public class QuizUI : MonoBehaviour
     private void Start()
     {
         
-        title.text = Enum.GetName(quizType.GetType(), quizType) + ":";
+    }
+
+    public void Generate()
+    {
+        this.target        = quizSolver.target;
+        title.text         = Enum.GetName(quizType.GetType(), quizType) + ":";
+        quizCondition.text = quizSolver.GetQuizSentence();
         GenerateAns();
     }
 
@@ -84,4 +91,5 @@ public class QuizUI : MonoBehaviour
         //TODO:干扰项设计没做
         return quizSolver.answer + (quizSliderValue - _ansPos) * _gap;
     }
+    
 }
