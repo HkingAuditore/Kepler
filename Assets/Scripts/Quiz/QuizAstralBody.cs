@@ -50,5 +50,8 @@ public class QuizAstralBody : AstralBody
     }
     public  bool  isTPublic;
 
-    
+    public void UpdateQuizAstralBody()
+    {
+        this.radius = Vector3.Distance(this.transform.position, GameManager.GetGameManager.quizEditor.target.transform.position);
+    }
 }
