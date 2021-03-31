@@ -1,5 +1,7 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using Quiz;
 using UnityEngine;
 
 public class QuizAstralBody : AstralBody
@@ -7,6 +9,8 @@ public class QuizAstralBody : AstralBody
     public bool isMassPublic;
     public bool isVelocityPublic;
     public bool isAngularVelocityPublic;
+
+    private float _oriRadius;
 
 
     private float _period;
@@ -52,6 +56,26 @@ public class QuizAstralBody : AstralBody
 
     public void UpdateQuizAstralBody()
     {
-        this.radius = Vector3.Distance(this.transform.position, GameManager.GetGameManager.quizEditor.target.transform.position);
+        this.radius = Vector3.Distance(this.transform.position, GameManager.GetGameManager.quizBase.target.transform.position);
+    }
+
+    protected override void Start()
+    {
+        base.Start();
+        _oriRadius = Vector3.Distance(this.transform.position, GameManager.GetGameManager.quizBase.target.transform.position);
+    }
+
+    protected override void FixedUpdate()
+    {
+        base.FixedUpdate();
+        
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (ReferenceEquals(this, GameManager.GetGameManager.quizBase.target))
+        {
+            ((QuizSolver) (GameManager.GetGameManager.quizBase)).isRight = false;
+        }
     }
 }

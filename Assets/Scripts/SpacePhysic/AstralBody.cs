@@ -73,7 +73,7 @@ public class AstralBody : MonoBehaviour, ITraceable
         ChangeVelocity(oriVelocity);
     }
 
-    private void FixedUpdate()
+    protected virtual void FixedUpdate()
     {
         var force                                           = CalculateForce();
         if (!AstralBodyRigidbody.isKinematic) _lastVelocity = AstralBodyRigidbody.velocity;

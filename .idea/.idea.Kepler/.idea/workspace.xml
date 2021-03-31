@@ -20,11 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1afa9dc1-adab-467c-afda-52b72c3d10f3" name="默认的" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Kepler/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Kepler/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Kepler/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Kepler/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizSaver.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizSaver.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizAstralBody.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizAstralBody.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizSolver.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizSolver.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SpacePhysic/AstralBody.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SpacePhysic/AstralBody.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/AstralBodyAddUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/AstralBodyAddUI.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/AstralBodyPlacementUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/AstralBodyPlacementUI.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -76,9 +77,12 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/TutorialUI.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizData.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizEditor.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizAstralBody.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/AstralBodyPlacementUI.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizSaver.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameManager/GameManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/AstralBodyPlacementUI.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizSolver.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SpacePhysic/AstralBody.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizAstralBody.cs" />
       </list>
     </option>
   </component>
@@ -203,7 +207,8 @@
       <workItem from="1617156958999" duration="30000" />
       <workItem from="1617157013619" duration="38000" />
       <workItem from="1617157075584" duration="45000" />
-      <workItem from="1617157154938" duration="2242000" />
+      <workItem from="1617157154938" duration="2538000" />
+      <workItem from="1617160031000" duration="1265000" />
     </task>
     <servers />
   </component>

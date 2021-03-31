@@ -1,9 +1,20 @@
+using System.Collections;
+using UnityEngine;
+
 namespace Quiz
 {
     public class QuizSolver : QuizBase
     {
         public  QuizUI quizUI;
+        public  float  waitTime;
         private float  _tmpAnswer;
+
+        public bool _isRight;
+        public bool isRight
+        {
+            get => _isRight;
+            set => _isRight = value;
+        }
 
         public float TmpAnswer
         {
@@ -16,10 +27,16 @@ namespace Quiz
             }
         }
 
+
         private void FinishQuiz(bool isRight)
         {
-            if (isRight)
-                return;
+            WaitForAnswer(waitTime);
+        }
+        
+        IEnumerator WaitForAnswer(float time) {
+           
+            yield return new WaitForSeconds(time);
+            
         }
 
         public override void Start()

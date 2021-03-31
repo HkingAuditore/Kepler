@@ -1,4 +1,5 @@
-﻿using SpacePhysic;
+﻿using Quiz;
+using SpacePhysic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -59,7 +60,7 @@ namespace UI
                                                 Quaternion.LookRotation(new Vector3(0, 0, 0)), _orbits.transform);
 
                 if(GameManager.GetGameManager.isQuizEditMode)
-                    GameManager.GetGameManager.quizEditor.AddAstralBody(newAstralBody as QuizAstralBody);
+                    (GameManager.GetGameManager.quizBase as QuizEditor)?.AddAstralBody(newAstralBody as QuizAstralBody);
                 _orbits.AddTracingTarget(newAstralBody);
 
                 _inPlacing = false;

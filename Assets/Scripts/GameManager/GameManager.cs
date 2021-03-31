@@ -2,14 +2,15 @@
 using System.Linq;
 using Quiz;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] private CameraController _mainCameraController;
-    public                   QuizEditor       quizEditor;
-    public                   bool             isQuizEditMode;
-    public                   Camera           mainCamera;
-    public                   List<GameObject>       meshList;
+    [SerializeField]                     private CameraController _mainCameraController;
+    [FormerlySerializedAs("quizEditor")] public  QuizBase         quizBase;
+    public                                       bool             isQuizEditMode;
+    public                                       Camera           mainCamera;
+    public                                       List<GameObject> meshList;
 
     public static GameManager GetGameManager { get; private set; }
 
