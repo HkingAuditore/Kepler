@@ -48,152 +48,6 @@
             <e p="UiLine.shader" t="Include" />
           </e>
         </e>
-        <e p="FlatKit" t="Include">
-          <e p="Demos" t="Include">
-            <e p="Common" t="Include">
-              <e p="Scripts" t="Include">
-                <e p="Motion" t="Include">
-                  <e p="CameraMouseOrbit.cs" t="Include" />
-                  <e p="Editor" t="Include">
-                    <e p="LinearMotionEditor.cs" t="Include" />
-                  </e>
-                  <e p="LinearMotion.cs" t="Include" />
-                </e>
-              </e>
-            </e>
-          </e>
-          <e p="Scripts" t="Include">
-            <e p="UvScroller.cs" t="Include" />
-          </e>
-          <e p="Shaders" t="Include">
-            <e p="GradientSkybox" t="Include">
-              <e p="Editor" t="Include">
-                <e p="GradientSkyboxEditor.cs" t="Include" />
-              </e>
-              <e p="GradientSkybox.shader" t="Include" />
-            </e>
-            <e p="ImageEffects" t="Include">
-              <e p="Resources" t="Include">
-                <e p="FogPlus.shader" t="Include" />
-                <e p="OutlinePlus.shader" t="Include" />
-              </e>
-              <e p="Scripts" t="Include">
-                <e p="FogImageEffect.cs" t="Include" />
-                <e p="OutlineImageEffect.cs" t="Include" />
-              </e>
-            </e>
-            <e p="LightPlane.shader" t="Include" />
-            <e p="StylizedSurface" t="Include">
-              <e p="DustyroomStylizedLighting.cginc" t="Include" />
-              <e p="DustyroomTerrainSplatmapCommon.cginc" t="Include" />
-              <e p="Editor" t="Include">
-                <e p="StylizedSurfaceEditor.cs" t="Include" />
-              </e>
-              <e p="StylizedSurface.shader" t="Include" />
-              <e p="StylizedSurfaceCutout.shader" t="Include" />
-              <e p="StylizedSurfaceOutline.shader" t="Include" />
-              <e p="Terrain.shader" t="Include" />
-            </e>
-          </e>
-        </e>
-        <e p="Le Tai's Asset" t="Include">
-          <e p="TranslucentImage" t="Include">
-            <e p="changelog.txt" t="Include" />
-            <e p="Demo" t="Include">
-              <e p="Fonts" t="Include">
-                <e p="FONT LICENSE.txt" t="Include" />
-              </e>
-              <e p="Scripts" t="Include">
-                <e p="AutoMoveAndRotate.cs" t="Include" />
-                <e p="ChangeBlurConfig.cs" t="Include" />
-                <e p="ColorSchemeManager.cs" t="Include" />
-                <e p="ControlCenter.cs" t="Include" />
-                <e p="FPSCounter.cs" t="Include" />
-                <e p="LeTai.TranslucentImage.Demo.asmdef" t="Include" />
-                <e p="PlatformPreset.cs" t="Include" />
-                <e p="SetText.cs" t="Include" />
-                <e p="SimpleCameraController.cs" t="Include" />
-                <e p="SliderChangeOnStart.cs" t="Include" />
-                <e p="ToggleSecondBlurLayer.cs" t="Include" />
-                <e p="UnrestrictFramerate.cs" t="Include" />
-                <e p="WorldSpaceSetup.cs" t="Include" />
-              </e>
-              <e p="Shader" t="Include">
-                <e p="MobileVertexLitColor.shader" t="Include" />
-              </e>
-              <e p="Textures" t="Include">
-                <e p="Example Photo" t="Include">
-                  <e p="PHOTO LICENSE.txt" t="Include" />
-                </e>
-              </e>
-            </e>
-            <e p="LeTai.TranslucentImage.asmdef" t="Include" />
-            <e p="Online Documentation (recommended).txt" t="Include" />
-            <e p="Resources" t="Include">
-              <e p="EfficientBlur.shader" t="Include" />
-              <e p="FillCrop.shader" t="Include" />
-              <e p="TranslucentImage.shader" t="Include" />
-            </e>
-            <e p="Script" t="Include">
-              <e p="BlurAlgorithm" t="Include">
-                <e p="BlurConfig.cs" t="Include" />
-                <e p="IBlurAlgorithm.cs" t="Include" />
-                <e p="ScalableBlur.cs" t="Include" />
-                <e p="ScalableBlurConfig.cs" t="Include" />
-              </e>
-              <e p="Editor" t="Include">
-                <e p="LeTai.TranslucentImage.Editor.asmdef" t="Include" />
-                <e p="MenuIntegration.cs" t="Include" />
-                <e p="ScalableBlurConfigEditor.cs" t="Include" />
-                <e p="ScenceGizmoAutoDisable.cs" t="Include" />
-                <e p="TranslucentImageEditor.cs" t="Include" />
-                <e p="TranslucentImageSourceEditor.cs" t="Include" />
-              </e>
-              <e p="TranslucentImage.cs" t="Include" />
-              <e p="TranslucentImageEditorEnhancement.cs" t="Include" />
-              <e p="TranslucentImageMeshEffect.cs" t="Include" />
-              <e p="TranslucentImageSource.cs" t="Include" />
-              <e p="Utilities" t="Include">
-                <e p="Extensions.cs" t="Include" />
-                <e p="ResizableScreenRect.cs" t="Include" />
-                <e p="ShaderId.cs" t="Include" />
-              </e>
-            </e>
-            <e p="UniversalRP README.txt" t="Include" />
-          </e>
-        </e>
-        <e p="Minimalist" t="Include">
-          <e p="Editor" t="Include">
-            <e p="EditorGUILayoutExtended.cs" t="Include" />
-            <e p="MinimalistClipboard.cs" t="Include" />
-            <e p="MinimalistEditorHelper.cs" t="Include" />
-            <e p="MinimalistSkyEditor.cs" t="Include" />
-            <e p="MinimalistStandardEditor.cs" t="Include" />
-          </e>
-          <e p="Minimalist V2.6.0 (Readme).txt" t="Include" />
-          <e p="Shaders" t="Include">
-            <e p="BRP" t="Include">
-              <e p="Minimalist Standard (GlobalSpace).shader" t="Include" />
-              <e p="Minimalist Standard (LocalSpace).shader" t="Include" />
-              <e p="Minimalist.cginc" t="Include" />
-            </e>
-            <e p="Common" t="Include">
-              <e p="Minimalist Sky.shader" t="Include" />
-            </e>
-            <e p="URP" t="Include">
-              <e p="Minimalist Standard LocalSpace.shader" t="Include" />
-              <e p="Minimalist Standard SRP Batched LocalSpace.shader" t="Include" />
-              <e p="Minimalist Standard SRP Batched.shader" t="Include" />
-              <e p="Minimalist Standard.shader" t="Include" />
-              <e p="Minimalist.hlsl" t="Include" />
-              <e p="MinimalistDepthOnlyPass.hlsl" t="Include" />
-              <e p="MinimalistInput.hlsl" t="Include" />
-              <e p="MinimalistInputSrpBatched.hlsl" t="Include" />
-              <e p="MinimalistMetaPass.hlsl" t="Include" />
-              <e p="MinimalistShadowCasterPass.hlsl" t="Include" />
-            </e>
-          </e>
-        </e>
         <e p="PlugIns" t="Include">
           <e p="BaseInfolibrary" t="Include">
             <e p="MathNet.Numerics.xml" t="Include" />
@@ -420,6 +274,152 @@
               <e p="Utilities.cs" t="Include" />
             </e>
           </e>
+          <e p="FlatKit" t="Include">
+            <e p="Demos" t="Include">
+              <e p="Common" t="Include">
+                <e p="Scripts" t="Include">
+                  <e p="Motion" t="Include">
+                    <e p="CameraMouseOrbit.cs" t="Include" />
+                    <e p="Editor" t="Include">
+                      <e p="LinearMotionEditor.cs" t="Include" />
+                    </e>
+                    <e p="LinearMotion.cs" t="Include" />
+                  </e>
+                </e>
+              </e>
+            </e>
+            <e p="Scripts" t="Include">
+              <e p="UvScroller.cs" t="Include" />
+            </e>
+            <e p="Shaders" t="Include">
+              <e p="GradientSkybox" t="Include">
+                <e p="Editor" t="Include">
+                  <e p="GradientSkyboxEditor.cs" t="Include" />
+                </e>
+                <e p="GradientSkybox.shader" t="Include" />
+              </e>
+              <e p="ImageEffects" t="Include">
+                <e p="Resources" t="Include">
+                  <e p="FogPlus.shader" t="Include" />
+                  <e p="OutlinePlus.shader" t="Include" />
+                </e>
+                <e p="Scripts" t="Include">
+                  <e p="FogImageEffect.cs" t="Include" />
+                  <e p="OutlineImageEffect.cs" t="Include" />
+                </e>
+              </e>
+              <e p="LightPlane.shader" t="Include" />
+              <e p="StylizedSurface" t="Include">
+                <e p="DustyroomStylizedLighting.cginc" t="Include" />
+                <e p="DustyroomTerrainSplatmapCommon.cginc" t="Include" />
+                <e p="Editor" t="Include">
+                  <e p="StylizedSurfaceEditor.cs" t="Include" />
+                </e>
+                <e p="StylizedSurface.shader" t="Include" />
+                <e p="StylizedSurfaceCutout.shader" t="Include" />
+                <e p="StylizedSurfaceOutline.shader" t="Include" />
+                <e p="Terrain.shader" t="Include" />
+              </e>
+            </e>
+          </e>
+          <e p="Le Tai's Asset" t="Include">
+            <e p="TranslucentImage" t="Include">
+              <e p="changelog.txt" t="Include" />
+              <e p="Demo" t="Include">
+                <e p="Fonts" t="Include">
+                  <e p="FONT LICENSE.txt" t="Include" />
+                </e>
+                <e p="Scripts" t="Include">
+                  <e p="AutoMoveAndRotate.cs" t="Include" />
+                  <e p="ChangeBlurConfig.cs" t="Include" />
+                  <e p="ColorSchemeManager.cs" t="Include" />
+                  <e p="ControlCenter.cs" t="Include" />
+                  <e p="FPSCounter.cs" t="Include" />
+                  <e p="LeTai.TranslucentImage.Demo.asmdef" t="Include" />
+                  <e p="PlatformPreset.cs" t="Include" />
+                  <e p="SetText.cs" t="Include" />
+                  <e p="SimpleCameraController.cs" t="Include" />
+                  <e p="SliderChangeOnStart.cs" t="Include" />
+                  <e p="ToggleSecondBlurLayer.cs" t="Include" />
+                  <e p="UnrestrictFramerate.cs" t="Include" />
+                  <e p="WorldSpaceSetup.cs" t="Include" />
+                </e>
+                <e p="Shader" t="Include">
+                  <e p="MobileVertexLitColor.shader" t="Include" />
+                </e>
+                <e p="Textures" t="Include">
+                  <e p="Example Photo" t="Include">
+                    <e p="PHOTO LICENSE.txt" t="Include" />
+                  </e>
+                </e>
+              </e>
+              <e p="LeTai.TranslucentImage.asmdef" t="Include" />
+              <e p="Online Documentation (recommended).txt" t="Include" />
+              <e p="Resources" t="Include">
+                <e p="EfficientBlur.shader" t="Include" />
+                <e p="FillCrop.shader" t="Include" />
+                <e p="TranslucentImage.shader" t="Include" />
+              </e>
+              <e p="Script" t="Include">
+                <e p="BlurAlgorithm" t="Include">
+                  <e p="BlurConfig.cs" t="Include" />
+                  <e p="IBlurAlgorithm.cs" t="Include" />
+                  <e p="ScalableBlur.cs" t="Include" />
+                  <e p="ScalableBlurConfig.cs" t="Include" />
+                </e>
+                <e p="Editor" t="Include">
+                  <e p="LeTai.TranslucentImage.Editor.asmdef" t="Include" />
+                  <e p="MenuIntegration.cs" t="Include" />
+                  <e p="ScalableBlurConfigEditor.cs" t="Include" />
+                  <e p="ScenceGizmoAutoDisable.cs" t="Include" />
+                  <e p="TranslucentImageEditor.cs" t="Include" />
+                  <e p="TranslucentImageSourceEditor.cs" t="Include" />
+                </e>
+                <e p="TranslucentImage.cs" t="Include" />
+                <e p="TranslucentImageEditorEnhancement.cs" t="Include" />
+                <e p="TranslucentImageMeshEffect.cs" t="Include" />
+                <e p="TranslucentImageSource.cs" t="Include" />
+                <e p="Utilities" t="Include">
+                  <e p="Extensions.cs" t="Include" />
+                  <e p="ResizableScreenRect.cs" t="Include" />
+                  <e p="ShaderId.cs" t="Include" />
+                </e>
+              </e>
+              <e p="UniversalRP README.txt" t="Include" />
+            </e>
+          </e>
+          <e p="Minimalist" t="Include">
+            <e p="Editor" t="Include">
+              <e p="EditorGUILayoutExtended.cs" t="Include" />
+              <e p="MinimalistClipboard.cs" t="Include" />
+              <e p="MinimalistEditorHelper.cs" t="Include" />
+              <e p="MinimalistSkyEditor.cs" t="Include" />
+              <e p="MinimalistStandardEditor.cs" t="Include" />
+            </e>
+            <e p="Minimalist V2.6.0 (Readme).txt" t="Include" />
+            <e p="Shaders" t="Include">
+              <e p="BRP" t="Include">
+                <e p="Minimalist Standard (GlobalSpace).shader" t="Include" />
+                <e p="Minimalist Standard (LocalSpace).shader" t="Include" />
+                <e p="Minimalist.cginc" t="Include" />
+              </e>
+              <e p="Common" t="Include">
+                <e p="Minimalist Sky.shader" t="Include" />
+              </e>
+              <e p="URP" t="Include">
+                <e p="Minimalist Standard LocalSpace.shader" t="Include" />
+                <e p="Minimalist Standard SRP Batched LocalSpace.shader" t="Include" />
+                <e p="Minimalist Standard SRP Batched.shader" t="Include" />
+                <e p="Minimalist Standard.shader" t="Include" />
+                <e p="Minimalist.hlsl" t="Include" />
+                <e p="MinimalistDepthOnlyPass.hlsl" t="Include" />
+                <e p="MinimalistInput.hlsl" t="Include" />
+                <e p="MinimalistInputSrpBatched.hlsl" t="Include" />
+                <e p="MinimalistMetaPass.hlsl" t="Include" />
+                <e p="MinimalistShadowCasterPass.hlsl" t="Include" />
+              </e>
+            </e>
+          </e>
           <e p="Starfield Skybox" t="Include">
             <e p="Demo" t="Include">
               <e p="Script" t="Include">
@@ -463,6 +463,7 @@
             <e p="MathPlus.cs" t="Include" />
           </e>
           <e p="Quiz" t="Include">
+            <e p="QuizAstralBody.cs" t="Include" />
             <e p="QuizBase.cs" t="Include" />
             <e p="QuizData.cs" t="Include" />
             <e p="QuizEditor.cs" t="Include" />

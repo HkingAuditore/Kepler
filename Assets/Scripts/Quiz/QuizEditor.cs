@@ -12,7 +12,7 @@ namespace Quiz
             saver.SaveXml(xmlDoc, DateTime.Now.ToString("yy-MM-dd"));
         }
         
-        public void AddAstralBody(AstralBody astralBody, bool isTarget = false)
+        public void AddAstralBody(QuizAstralBody astralBody, bool isTarget = false)
         {
             astralBodiesDict.Add(new AstralBodyDict(astralBody.transform, astralBody, isTarget));
         }

@@ -9,10 +9,10 @@ namespace Quiz
     public struct AstralBodyDict
     {
         public Transform  transform;
-        public AstralBody astralBody;
+        public QuizAstralBody astralBody;
         public bool       isTarget;
 
-        public AstralBodyDict(Transform transform, AstralBody astralBody, bool isTarget)
+        public AstralBodyDict(Transform transform, QuizAstralBody astralBody, bool isTarget)
         {
             this.transform  = transform;
             this.astralBody = astralBody;

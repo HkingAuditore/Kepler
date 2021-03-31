@@ -21,17 +21,11 @@
   <component name="ChangeListManager">
     <list default="true" id="1afa9dc1-adab-467c-afda-52b72c3d10f3" name="默认的" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Kepler/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Kepler/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Kepler/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Kepler/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Kepler/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Kepler/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Le Tai's Asset/TranslucentImage/LWRP support (deprecated).unitypackage.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Le Tai's Asset/TranslucentImage/Material/Default-Translucent.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Le Tai's Asset/TranslucentImage/Material/Default-Translucent.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Le Tai's Asset/TranslucentImage/Material/MyBlur.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Le Tai's Asset/TranslucentImage/Material/MyBlur.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Le Tai's Asset/TranslucentImage/UniversalRP support.unitypackage.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Examples.unitypackage.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/PlaymakerActions.unitypackage.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/PhysicScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/PhysicScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/PhysicScene_Profiles/Main Camera Profile 2.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/PhysicScene_Profiles/Main Camera Profile 2.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizEditor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizSaver.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizSaver.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/AstralBodyPlacementUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/AstralBodyPlacementUI.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,6 +74,11 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/TutorialUI.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizData.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizEditor.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizAstralBody.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/AstralBodyPlacementUI.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizSaver.cs" />
       </list>
     </option>
   </component>
@@ -200,6 +199,11 @@
       <workItem from="1616814065506" duration="14449000" />
       <workItem from="1616994445983" duration="912000" />
       <workItem from="1617070142153" duration="1773000" />
+      <workItem from="1617156849059" duration="75000" />
+      <workItem from="1617156958999" duration="30000" />
+      <workItem from="1617157013619" duration="38000" />
+      <workItem from="1617157075584" duration="45000" />
+      <workItem from="1617157154938" duration="2242000" />
     </task>
     <servers />
   </component>
@@ -228,5 +232,13 @@
       <screen x="0" y="0" width="1368" height="872" />
     </state>
     <state x="365" y="171" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1368.872@0.0.1368.872" timestamp="1617070175523" />
+    <state x="186" y="80" key="SettingsEditor" timestamp="1617157335580">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state x="186" y="80" key="SettingsEditor/0.0.1368.872@0.0.1368.872" timestamp="1617157335580" />
+    <state x="678" y="0" width="695" height="877" key="dock-window-1" timestamp="1617158947966">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state x="678" y="0" width="695" height="877" key="dock-window-1/0.0.1368.872@0.0.1368.872" timestamp="1617158947966" />
   </component>
 </project>
