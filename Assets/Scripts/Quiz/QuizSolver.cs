@@ -7,9 +7,10 @@ namespace Quiz
     {
         public  QuizUI quizUI;
         public  float  waitTime;
+        public  float  radiusOffset = .2f;
         private float  _tmpAnswer;
 
-        public bool _isRight;
+        private bool _isRight = true;
         public bool isRight
         {
             get => _isRight;
@@ -21,7 +22,6 @@ namespace Quiz
             get => _tmpAnswer;
             set
             {
-                orbitBase.Freeze(false);
                 _tmpAnswer = value;
                 FinishQuiz(_tmpAnswer.Equals(answer));
             }
@@ -30,13 +30,26 @@ namespace Quiz
 
         private void FinishQuiz(bool isRight)
         {
-            WaitForAnswer(waitTime);
+
+            astralBodiesDict.ForEach(pair =>
+                                     {
+                                         pair.astralBody.oriRadius = Vector3.Distance(pair.astralBody.transform.position, this.target.transform.position);
+                                         Debug.Log("Test Result Ori Radius:" + pair.astralBody.oriRadius);
+
+                                     });
+            orbitBase.Freeze(false);
+
+            StartCoroutine(WaitForAnswer(waitTime));
         }
         
         IEnumerator WaitForAnswer(float time) {
-           
             yield return new WaitForSeconds(time);
-            
+            Debug.Log("Test Result:Time out");
+            if (this.isRight)
+            {
+                Debug.Log("Test Result: Right!");
+                
+            }
         }
 
         public override void Start()

@@ -41,6 +41,11 @@ namespace SpacePhysic
 
         private bool _isFreezing;
 
+        public bool isFreezing
+        {
+            get { return _isFreezing; }
+        }
+
 
         public void Awake()
         {
@@ -55,7 +60,9 @@ namespace SpacePhysic
 
         public void AddTracingTarget(ITraceable traceable)
         {
-            if (_isFreezing)
+            // Debug.Log("Add HashCode:" + traceable.GetHashCode());
+            //
+            if (isFreezing)
             {
                 traceable.GetRigidbody().isKinematic = true;
             }
@@ -208,6 +215,7 @@ namespace SpacePhysic
             // Debug.Log("[3]:"+ConvertV3ToV2(_orbitPoints[astralBody][3 * sampleStep]));
             // Debug.Log("[4]:"+ConvertV3ToV2(_orbitPoints[astralBody][4 * sampleStep]));
             // Debug.Log("[5]:"+ConvertV3ToV2(_orbitPoints[astralBody][5 * sampleStep]));
+            Debug.Log("Now HashCode:" + astralBody.GetHashCode());
             var points = new List<Vector2>();
             for (var i = 0; i < sampleCount; i++) points.Add(ConvertV3ToV2(_orbitPoints[astralBody][i * sampleStep]));
 

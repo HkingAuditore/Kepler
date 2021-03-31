@@ -1,0 +1,59 @@
+<AstralBodyList QuizType="Mass">
+  <AstralBodyDict IsTarget="True">
+    <Transform>
+      <Position>(0.0, 0.0, 0.0)</Position>
+    </Transform>
+    <AstralBody IsCore="True">
+      <Mass IsPublic="False">1000</Mass>
+      <Density>1000</Density>
+      <Size>10</Size>
+      <Velocity IsPublic="False">(0.0, 0.0, 0.0)</Velocity>
+      <EnableAffect>True</EnableAffect>
+      <EnableTracing>True</EnableTracing>
+      <AffectRadius>8</AffectRadius>
+      <Period IsPublic="False">0.007148171</Period>
+      <Radius IsPublic="False">0</Radius>
+      <AnglePerT IsPublic="False">0</AnglePerT>
+      <DistancePerT IsPublic="False">0</DistancePerT>
+      <T IsPublic="False">1</T>
+    </AstralBody>
+  </AstralBodyDict>
+  <AstralBodyDict IsTarget="False">
+    <Transform>
+      <Position>(-92.6, 0.0, 0.0)</Position>
+    </Transform>
+    <AstralBody IsCore="False">
+      <Mass IsPublic="False">1</Mass>
+      <Density>1000</Density>
+      <Size>2.144</Size>
+      <Velocity IsPublic="False">(0.0, 0.0, -8.5)</Velocity>
+      <EnableAffect>True</EnableAffect>
+      <EnableTracing>True</EnableTracing>
+      <AffectRadius>8</AffectRadius>
+      <Period IsPublic="False">68.58189</Period>
+      <Radius IsPublic="False">92.59923</Radius>
+      <AnglePerT IsPublic="False">0</AnglePerT>
+      <DistancePerT IsPublic="False">8.487099</DistancePerT>
+      <T IsPublic="False">1</T>
+    </AstralBody>
+  </AstralBodyDict>
+  <AstralBodyDict IsTarget="False">
+    <Transform>
+      <Position>(-171.6, 0.0, -103.9)</Position>
+    </Transform>
+    <AstralBody IsCore="False">
+      <Mass IsPublic="False">100</Mass>
+      <Density>1000</Density>
+      <Size>2.144</Size>
+      <Velocity IsPublic="False">(3.0, 0.0, -4.9)</Velocity>
+      <EnableAffect>True</EnableAffect>
+      <EnableTracing>True</EnableTracing>
+      <AffectRadius>8</AffectRadius>
+      <Period IsPublic="False">145.6042</Period>
+      <Radius IsPublic="False">200.618</Radius>
+      <AnglePerT IsPublic="False">0</AnglePerT>
+      <DistancePerT IsPublic="False">5.766045</DistancePerT>
+      <T IsPublic="False">1</T>
+    </AstralBody>
+  </AstralBodyDict>
+</AstralBodyList>

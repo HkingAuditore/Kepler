@@ -31,7 +31,7 @@ namespace Quiz
         {
             var dict         = _xmlDoc.CreateElement("AstralBodyDict");
             var astTransform = _xmlDoc.CreateElement("Transform");
-
+            astralBodyDict.astralBody.UpdateQuizAstralBody();
             //写入坐标
             var pos = _xmlDoc.CreateElement("Position");
             pos.InnerText = astralBodyDict.transform.position.ToString();
@@ -50,7 +50,7 @@ namespace Quiz
             size.InnerText = astralBodyDict.astralBody.originalSize.ToString(CultureInfo.InvariantCulture);
             astAstralBody.AppendChild(size);
             var velocity = _xmlDoc.CreateElement("Velocity");
-            velocity.InnerText = astralBodyDict.astralBody.oriVelocity.ToString();
+            velocity.InnerText = astralBodyDict.astralBody.GetVelocity().ToString();
             velocity.SetAttribute("IsPublic", astralBodyDict.astralBody.isVelocityPublic.ToString());
             astAstralBody.AppendChild(velocity);
             var isAffect = _xmlDoc.CreateElement("EnableAffect");
@@ -67,22 +67,28 @@ namespace Quiz
             var period = _xmlDoc.CreateElement("Period");
             period.SetAttribute("IsPublic", astralBodyDict.astralBody.isPeriodPublic.ToString());
             period.InnerText = astralBodyDict.astralBody.period.ToString(CultureInfo.InvariantCulture);
-
+            astAstralBody.AppendChild(period);
+            
             var radius = _xmlDoc.CreateElement("Radius");
             radius.SetAttribute("IsPublic", astralBodyDict.astralBody.isRadiusPublic.ToString());
             radius.InnerText = astralBodyDict.astralBody.radius.ToString(CultureInfo.InvariantCulture);
-            
+            astAstralBody.AppendChild(radius);
+
             var anglePerT = _xmlDoc.CreateElement("AnglePerT");
             anglePerT.SetAttribute("IsPublic", astralBodyDict.astralBody.isAnglePerTPublic.ToString());
             anglePerT.InnerText = astralBodyDict.astralBody.anglePerT.ToString(CultureInfo.InvariantCulture);
+            astAstralBody.AppendChild(anglePerT);
 
+            
             var distancePerT = _xmlDoc.CreateElement("DistancePerT");
             distancePerT.SetAttribute("IsPublic", astralBodyDict.astralBody.isDistancePublic.ToString());
             distancePerT.InnerText = astralBodyDict.astralBody.distancePerT.ToString(CultureInfo.InvariantCulture);
+            astAstralBody.AppendChild(distancePerT);
             
             var t = _xmlDoc.CreateElement("T");
             t.SetAttribute("IsPublic", astralBodyDict.astralBody.isTPublic.ToString());
             t.InnerText = astralBodyDict.astralBody.t.ToString(CultureInfo.InvariantCulture);
+            astAstralBody.AppendChild(t);
 
             
             dict.SetAttribute("IsTarget", astralBodyDict.isTarget.ToString());

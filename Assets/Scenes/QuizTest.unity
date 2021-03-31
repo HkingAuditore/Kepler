@@ -2926,8 +2926,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   virtualCamera: {fileID: 1749464136}
-  correctiveSpeed: 100
-  mainSpeed: 150
+  correctiveSpeed: 30
+  mainSpeed: 30
   scaleSize: 100
   scaleMin: 20
   scaleMax: 300
@@ -6726,7 +6726,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mainCameraController: {fileID: 894007024}
-  quizEditor: {fileID: 0}
+  quizBase: {fileID: 1901827057}
   isQuizEditMode: 0
   mainCamera: {fileID: 894007019}
   meshList: []
@@ -6757,7 +6757,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   quizType: 0
-  cloner: {fileID: 1575909808793090412, guid: a53bd22a0f94ee54dac82f858b3747c3, type: 3}
+  cloner: {fileID: 1575909808793090412, guid: 1e13c1220f795504abff0bafb4776125, type: 3}
 --- !u!114 &1901827057
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6771,15 +6771,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLoadByPrefab: 0
-  loadTarget: 21-03-09
+  loadTarget: 21-03-31
   astralBodiesDict: []
-  astralBodyPrefab: {fileID: 1575909808793090415, guid: a53bd22a0f94ee54dac82f858b3747c3, type: 3}
+  astralBodyPrefab: {fileID: 3597075151426224686, guid: 1e13c1220f795504abff0bafb4776125, type: 3}
   quizRoot: {fileID: 1009603420}
   orbitBase: {fileID: 1009603419}
   quizType: 0
   target: {fileID: 0}
-  answer: 5000
+  answer: 1000
   quizUI: {fileID: 1203036401}
+  waitTime: 10
+  radiusOffset: 0.2
 --- !u!1 &1924732251
 GameObject:
   m_ObjectHideFlags: 0

@@ -60,9 +60,11 @@ namespace UI
                                                 Quaternion.LookRotation(new Vector3(0, 0, 0)), _orbits.transform);
 
                 if(GameManager.GetGameManager.isQuizEditMode)
-                    (GameManager.GetGameManager.quizBase as QuizEditor)?.AddAstralBody(newAstralBody as QuizAstralBody);
+                {
+                    (GameManager.GetGameManager.quizBase as QuizEditor)?.AddAstralBody((QuizAstralBody) newAstralBody);
+                    newAstralBody.affectedPlanets.Add(GameManager.GetGameManager.quizBase.target);
+                }
                 _orbits.AddTracingTarget(newAstralBody);
-
                 _inPlacing = false;
                 root.Switch2Normal();
                 Time.timeScale = 1;
