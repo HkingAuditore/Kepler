@@ -215,12 +215,13 @@ namespace SpacePhysic
             // Debug.Log("[3]:"+ConvertV3ToV2(_orbitPoints[astralBody][3 * sampleStep]));
             // Debug.Log("[4]:"+ConvertV3ToV2(_orbitPoints[astralBody][4 * sampleStep]));
             // Debug.Log("[5]:"+ConvertV3ToV2(_orbitPoints[astralBody][5 * sampleStep]));
-            Debug.Log("Now HashCode:" + astralBody.GetHashCode());
+            // Debug.Log("Now HashCode:" + astralBody.GetHashCode());
             var points = new List<Vector2>();
             for (var i = 0; i < sampleCount; i++) points.Add(ConvertV3ToV2(_orbitPoints[astralBody][i * sampleStep]));
 
             var conicSection =
                 CustomSolver.FitConicSection(points);
+            
             return conicSection;
         }
 

@@ -6248,7 +6248,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb3674e87af051d449b490a5744fbeb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isLoadByPrefab: 0
+  isLoadByPrefab: 1
   loadTarget: 21-03-31
   astralBodiesDict:
   - transform: {fileID: 4797125532670865209, guid: d76d5f20be1313f44bfa4b176c854193, type: 3}

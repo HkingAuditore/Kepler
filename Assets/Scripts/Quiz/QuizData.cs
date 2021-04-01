@@ -30,16 +30,20 @@ namespace Quiz
         public float   affectRadius;
         public Vector3 oriVelocity;
         public bool    isVelocityPublic;
-        public float angularVelocity;
+        // public float angularVelocity;
         public bool    isAngularVelocityPublic;
         public float   period;
         public bool    isPeriodPublic;
         public float   radius;
         public bool    isRadiusPublic;
-        public float   AnglePerT;
-        public bool    isAnglePerTPublic;
-        public float   distancePerT;
-        public bool    isDistancePerTPublic;
+
+        public bool isGravityPublic;
+
+        public bool isSizePublic;
+        // public float   AnglePerT;
+        // public bool    isAnglePerTPublic;
+        // public float   distancePerT;
+        // public bool    isDistancePerTPublic;
         public float   t;
         public bool    isTPublic;
         public bool    enableAffect;
@@ -61,19 +65,21 @@ namespace Quiz
             this.isCore   = isCore;
 
             isMassPublic            = false;
-            angularVelocity         = default;
+            // angularVelocity         = default;
             isAngularVelocityPublic = false;
             period                  = 0;
             isPeriodPublic          = false;
             radius                  = 0;
             isRadiusPublic          = false;
-            AnglePerT               = 0;
-            isAnglePerTPublic       = false;
-            distancePerT            = 0;
-            isDistancePerTPublic    = false;
-            t                       = 0;
-            isTPublic               = false;
-            isVelocityPublic        = false;
+            // AnglePerT               = 0;
+            // isAnglePerTPublic       = false;
+            // distancePerT            = 0;
+            // isDistancePerTPublic    = false;
+            t                = 0;
+            isTPublic        = false;
+            isVelocityPublic = false;
+            isGravityPublic  = false;
+            isSizePublic     = false;
         }
     }
 

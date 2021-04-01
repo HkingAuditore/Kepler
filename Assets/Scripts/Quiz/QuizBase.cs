@@ -15,7 +15,7 @@ namespace Quiz
         public Transform            quizRoot;
         public GravityTracing       orbitBase;
         public QuizType             quizType;
-        public AstralBody           target;
+        public QuizAstralBody           target;
 
         public  float                      answer;
         private List<AstralBodyStructDict> _astralBodyStructDictList;
@@ -88,24 +88,27 @@ namespace Quiz
                 astralBodyPrefab.enableTracing    = pair.enableTracing;
                 
                 
-                 astralBodyPrefab.globalAngularVelocity = pair.angularVelocity;
+                //  astralBodyPrefab.globalAngularVelocity = pair.angularVelocity;
                 astralBodyPrefab.isAngularVelocityPublic = pair.isAngularVelocityPublic;
-                astralBodyPrefab.isPeriodPublic          = pair.isPeriodPublic;
-                
-                
+                //
+                //
                 astralBodyPrefab.radius                  = pair.radius;
                 astralBodyPrefab.isRadiusPublic          = pair.isRadiusPublic;
                 
                 astralBodyPrefab.period       = pair.period;
+                astralBodyPrefab.isPeriodPublic          = pair.isPeriodPublic;
+
                 
-                astralBodyPrefab.isTPublic             = pair.isTPublic;
-                astralBodyPrefab.t                     = pair.t;
-                astralBodyPrefab.anglePerT             = pair.AnglePerT;
-                astralBodyPrefab.isAnglePerTPublic     = pair.isAnglePerTPublic;
+                astralBodyPrefab.isTPublic       = pair.isTPublic;
+                astralBodyPrefab.t               = pair.t;
+                astralBodyPrefab.isGravityPublic = pair.isGravityPublic;
+                astralBodyPrefab.isSizePublic    = pair.isSizePublic;
+                // astralBodyPrefab.anglePerT             = pair.AnglePerT;
+                // astralBodyPrefab.isAnglePerTPublic     = pair.isAnglePerTPublic;
                
                 
-                astralBodyPrefab.distancePerT     = pair.distancePerT;
-                astralBodyPrefab.isDistancePerTPublic = pair.isDistancePerTPublic;
+                // astralBodyPrefab.distancePerT     = pair.distancePerT;
+                // astralBodyPrefab.isDistancePerTPublic = pair.isDistancePerTPublic;
                 
                 
                 QuizAstralBody target =
@@ -123,10 +126,18 @@ namespace Quiz
 
                 // Debug.Log("add HashCode:" + target.GetHashCode());
                 astralBodyDicts.Add(new AstralBodyDict(target.transform,target,pair.isTarget));
+                
                 target.gameObject.name = target.gameObject.name.Replace("(Clone)", "");
                 if (pair.isCore)
+                {
                     target.gameObject.name = "Core";
-                if (pair.isTarget) this.target = target;
+                }
+                if (pair.isTarget)
+                {
+                    this.target = target;
+                }
+                target.UpdateQuizAstralBodyPer();
+                
             }
 
             this.astralBodiesDict = astralBodyDicts;

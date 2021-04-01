@@ -146,7 +146,7 @@ MonoBehaviour:
   _size: 2.144
   triggerCollider: {fileID: 1575909808793090413}
   defaultCollider: {fileID: 1575909808793090416}
-  oriVelocity: {x: 6.9, y: 0, z: 0.8}
+  oriVelocity: {x: 7.2, y: 0, z: -0.6}
   angularVelocity: {x: 0, y: 0, z: 0}
   enableAffect: 1
   affectRadius: 8
@@ -154,19 +154,21 @@ MonoBehaviour:
   affectedPlanets: []
   banAffectedPlanets: []
   isMassPublic: 0
-  isVelocityPublic: 1
-  isAngularVelocityPublic: 1
+  isVelocityPublic: 0
+  isAngularVelocityPublic: 0
+  isGravityPublic: 0
+  isSizePublic: 0
   globalAngularVelocity: 0.3393103
-  _period: 122.1517
+  _period: 111.558
   isPeriodPublic: 1
-  _radius: 137.0868
+  _radius: 127.5316
   isRadiusPublic: 1
   _anglePerT: 0.1696551
-  isAnglePerTPublic: 1
+  isAnglePerTPublic: 0
   _distancePerT: 13.98689
-  isDistancePerTPublic: 1
+  isDistancePerTPublic: 0
   _t: 2
-  isTPublic: 1
+  isTPublic: 0
 --- !u!1 &1575909809772103913
 GameObject:
   m_ObjectHideFlags: 0

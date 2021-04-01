@@ -11,6 +11,8 @@ public class QuizAstralBody : AstralBody
     public bool  isMassPublic;
     public bool  isVelocityPublic;
     public bool  isAngularVelocityPublic;
+    public bool  isGravityPublic;
+    public bool  isSizePublic;
     public float globalAngularVelocity;
 
     private float _oriRadius;
@@ -71,7 +73,7 @@ public class QuizAstralBody : AstralBody
         if (GameManager.GetGameManager.quizBase.target != this)
         {
             this.radius = Vector3.Distance(this.transform.position, GameManager.GetGameManager.quizBase.target.transform.position);
-            ConicSection conicSection = GameManager.GetGameManager.quizBase.orbitBase.GetConicSection(this, 1000);
+            ConicSection conicSection = GameManager.GetGameManager.orbit.GetConicSection(this, 1000);
             this.period = conicSection.GetT(GameManager.GetGameManager.quizBase.target.GetMass());
             //TODO t
             this.t                     = 2;
@@ -89,6 +91,14 @@ public class QuizAstralBody : AstralBody
             this.distancePerT = 0;
             this.globalAngularVelocity = 0;
         }
+    }
+
+    public void UpdateQuizAstralBodyPer()
+    {
+        this.globalAngularVelocity = this.period                  / 360f;
+        this.anglePerT             = this.globalAngularVelocity   / t;
+        this.distancePerT          = this.oriVelocity.magnitude * t;
+
     }
 
     protected override void Start()
@@ -142,17 +152,24 @@ public class QuizAstralBody : AstralBody
         if(isPeriodPublic){
             stringBuilder.Append("周期是" + this.period.ToString("f2") + "s，");
         }
+        if(isGravityPublic){
+            stringBuilder.Append("表面重力加速度是" + this.gravity.ToString("f2") + "m/s²，");
+        }
+        if(isSizePublic){
+            stringBuilder.Append("星球半径是" + this.size.ToString("f2") + "m，");
+        }
 
         if(isTPublic){
             stringBuilder.Append("在" + this.t.ToString("f2") + "s内,其可");
+            if(isAnglePerTPublic){
+                stringBuilder.Append("绕轨道圆心旋转" + this.anglePerT.ToString("f2") + "度，");
+            }
+            if(isDistancePerTPublic){
+                stringBuilder.Append("沿着轨道运行" + this.distancePerT.ToString("f2") +"m，");
+            }
+
         }
 
-        if(isAnglePerTPublic){
-            stringBuilder.Append("绕轨道圆心旋转" + this.anglePerT.ToString("f2") + "度，");
-        }
-        if(isDistancePerTPublic){
-            stringBuilder.Append("沿着轨道运行" + this.distancePerT.ToString("f2")+"m，");
-        }
 
         stringBuilder.Remove(stringBuilder.Length - 1, 1);
         return stringBuilder.ToString();

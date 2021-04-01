@@ -63,7 +63,7 @@ namespace Quiz
         public String GetQuizSentence()
         {
             StringBuilder stringBuilder = new StringBuilder();
-
+            stringBuilder.Append("中心星体的" + this.target.GetQuizConditionString() + "；");
             int i = 1;
             foreach (AstralBodyDict dict in astralBodiesDict)
             {
