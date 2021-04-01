@@ -65,6 +65,7 @@ public class QuizAstralBody : AstralBody
 
     public  bool  isTPublic;
 
+    //TODO 二级运算不存储，开放尺寸和中立加速度作为条件
     public void UpdateQuizAstralBody()
     {
         if (GameManager.GetGameManager.quizBase.target != this)

@@ -78,7 +78,7 @@ namespace Quiz
                 astralBodyPrefab.isMassPublic = pair.isMassPublic;
                 
                 astralBodyPrefab.density      = pair.density;
-                astralBodyPrefab.originalSize = pair.originalSize;
+                astralBodyPrefab.size = pair.originalSize;
                 
                 astralBodyPrefab.oriVelocity      = pair.oriVelocity;
                 astralBodyPrefab.isVelocityPublic = pair.isVelocityPublic;

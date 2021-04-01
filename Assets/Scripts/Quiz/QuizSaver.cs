@@ -47,7 +47,7 @@ namespace Quiz
             density.InnerText = astralBodyDict.astralBody.density.ToString(CultureInfo.InvariantCulture);
             astAstralBody.AppendChild(density);
             var size = _xmlDoc.CreateElement("Size");
-            size.InnerText = astralBodyDict.astralBody.originalSize.ToString(CultureInfo.InvariantCulture);
+            size.InnerText = astralBodyDict.astralBody.size.ToString(CultureInfo.InvariantCulture);
             astAstralBody.AppendChild(size);
             
             var velocity = _xmlDoc.CreateElement("Velocity");

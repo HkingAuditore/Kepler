@@ -52,7 +52,7 @@ namespace Quiz
             position      = transform.position;
             mass          = astralBody.mass;
             density       = astralBody.density;
-            originalSize  = astralBody.originalSize;
+            originalSize  = astralBody.size;
             affectRadius  = astralBody.affectRadius;
             oriVelocity   = astralBody.oriVelocity;
             enableAffect  = astralBody.enableAffect;

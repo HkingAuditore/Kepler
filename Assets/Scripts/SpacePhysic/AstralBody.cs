@@ -3,17 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using SpacePhysic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class AstralBody : MonoBehaviour, ITraceable
 {
     [Header("Basic Property")] public float mass;
 
-    public  float          density;
-    public  float          originalSize = 1;
-    public  float          curSize;
-    private int            _meshNum;
-    public  SphereCollider triggerCollider;
-    public  SphereCollider defaultCollider;
+    public                                        float          density;
+    [FormerlySerializedAs("originalSize")] public float          _size = 1;
+    private                                       int            _meshNum;
+    public                                        SphereCollider triggerCollider;
+    public                                        SphereCollider defaultCollider;
 
     [Header("Movement Property")] public Vector3 oriVelocity;
 
@@ -43,10 +43,15 @@ public class AstralBody : MonoBehaviour, ITraceable
     public Rigidbody AstralBodyRigidbody { get; set; }
 
     public Vector3 Force { get; private set; }
+    
+    public float gravity
+    {
+        get => (SpacePhysic.PhysicBase.GetG() * this.Mass) / (this.size * this.size);
+    }
 
     private MeshFilter _mesh;
     private Renderer   _renderer;
-
+    
     public int meshNum
     {
         get => _meshNum;
@@ -59,6 +64,16 @@ public class AstralBody : MonoBehaviour, ITraceable
         }
     }
 
+    public float size
+    {
+        get => _size;
+        set
+        {
+            _size = value;
+            ChangeSize();
+        }
+    }
+
 
     protected virtual void Start()
     {
@@ -66,7 +81,7 @@ public class AstralBody : MonoBehaviour, ITraceable
         triggerCollider.radius = affectRadius;
         defaultCollider.radius *= 1.2f;
         SetMass();
-        ChangeSize(originalSize);
+        ChangeSize();
         _mesh     = this.GetComponent<MeshFilter>();
         _renderer = this.GetComponent<Renderer>();
 
@@ -151,13 +166,13 @@ public class AstralBody : MonoBehaviour, ITraceable
     #region 开放修改参数
 
     //调整星球体积
-    public void ChangeSize(float size)
+    private void ChangeSize()
     {
         transform.localScale = new Vector3(size, size, size);
         // defaultCollider.radius *= size;
         // if(enableAffect)
         //     triggerCollider.radius = affectRadius * size;
-        curSize = size;
+        // size = curSize;
     }
     //调整星球密度
 
