@@ -1,12 +1,16 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class PositionEditorUI : MonoBehaviour
 {
     public Button    xAxis;
     public Button    zAxis;
-    public Transform editingTarget;
+    public AstralBody editingTarget;
     public float     moveSpeed;
+    public bool      isQuizEditor;
+
+    private AstralBody _astralBody;
 
     private Camera _camera;
 
@@ -17,7 +21,7 @@ public class PositionEditorUI : MonoBehaviour
     {
         _camera = GameManager.GetGameManager.GetMainCameraController().GetMainCamera();
     }
-
+    
 
     private void Update()
     {
@@ -53,5 +57,11 @@ public class PositionEditorUI : MonoBehaviour
     public void OnEndDrag()
     {
         GameManager.GetGameManager.GetMainCameraController().IsFollowing = true;
+        if (isQuizEditor)
+        {
+            ((QuizAstralBody) this.editingTarget).UpdateHighCost();
+        }
     }
+
+
 }

@@ -31,7 +31,14 @@ namespace Quiz
         {
             var dict         = _xmlDoc.CreateElement("AstralBodyDict");
             var astTransform = _xmlDoc.CreateElement("Transform");
-            astralBodyDict.astralBody.UpdateQuizAstralBody();
+            try
+            {
+                astralBodyDict.astralBody.UpdateQuizAstralBody();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
             //写入坐标
             var pos = _xmlDoc.CreateElement("Position");
             pos.InnerText = astralBodyDict.transform.position.ToString();
@@ -66,7 +73,6 @@ namespace Quiz
             var affectRadius = _xmlDoc.CreateElement("AffectRadius");
             affectRadius.InnerText = astralBodyDict.astralBody.affectRadius.ToString(CultureInfo.InvariantCulture);
             astAstralBody.AppendChild(affectRadius);
-            astAstralBody.SetAttribute("IsCore", (astralBodyDict.astralBody.GetGameObject().name == "Core").ToString());
 
             var period = _xmlDoc.CreateElement("Period");
             period.SetAttribute("IsPublic", astralBodyDict.astralBody.isPeriodPublic.ToString());
@@ -103,8 +109,11 @@ namespace Quiz
             gravity.SetAttribute("IsPublic", astralBodyDict.astralBody.isGravityPublic.ToString());
             gravity.InnerText = astralBodyDict.astralBody.gravity.ToString(CultureInfo.InvariantCulture);
             astAstralBody.AppendChild(gravity);
-
             
+
+            astAstralBody.SetAttribute("IsCore", (astralBodyDict.astralBody.GetGameObject().name == "Core").ToString());
+            astAstralBody.SetAttribute("Style", (astralBodyDict.astralBody.meshNum).ToString());
+
             dict.SetAttribute("IsTarget", astralBodyDict.isTarget.ToString());
             dict.AppendChild(astTransform);
             dict.AppendChild(astAstralBody);
@@ -199,6 +208,7 @@ namespace Quiz
 
 
                 astStruct.isCore        = bool.Parse(astralBodyXmlNode.Attributes["IsCore"].Value);
+                astStruct.meshNum        = int.Parse(astralBodyXmlNode.Attributes["Style"].Value);
                 astStruct.isTarget      = bool.Parse(astralBodyElement.GetAttribute("IsTarget"));
 
                 list.Add(astStruct);

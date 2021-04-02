@@ -93,6 +93,24 @@ public class QuizAstralBody : AstralBody
         }
     }
 
+    public void UpdateHighCost()
+    {
+        ConicSection conicSection = GameManager.GetGameManager.orbit.GetConicSection(this, 1000);
+        this.period = conicSection.GetT(GameManager.GetGameManager.quizBase.target.GetMass());
+        //TODO t
+        this.t                     = 2;
+        this.globalAngularVelocity = this.period                  / 360f;
+        this.anglePerT             = this.globalAngularVelocity   / t;
+        this.distancePerT          = this.GetVelocity().magnitude * t;
+
+    }
+
+    public void UpdateLowCost()
+    {
+        this.radius = Vector3.Distance(this.transform.position, GameManager.GetGameManager.quizBase.target.transform.position);
+
+    }
+
     public void UpdateQuizAstralBodyPer()
     {
         this.globalAngularVelocity = this.period                  / 360f;
@@ -109,6 +127,7 @@ public class QuizAstralBody : AstralBody
     protected override void FixedUpdate()
     {
         base.FixedUpdate();
+        UpdateLowCost();
         if (GameManager.GetGameManager.isQuizEditMode) return;
         if (!GameManager.GetGameManager.quizBase.orbitBase.isFreezing && ((QuizSolver) (GameManager.GetGameManager.quizBase)).isRight)
         {
@@ -185,4 +204,6 @@ public class QuizAstralBody : AstralBody
         if (a + b + c + d > 1) return true;
         return false;
     }
+    
+    
 }

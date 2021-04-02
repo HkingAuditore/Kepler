@@ -7,18 +7,24 @@ namespace Quiz
 {
     public class QuizBase : MonoBehaviour
     {
-        public bool                 isLoadByPrefab;
-        public string               loadTarget;
-        [SerializeField]
-        public List<AstralBodyDict> astralBodiesDict;
-        public QuizAstralBody       astralBodyPrefab;
-        public Transform            quizRoot;
-        public GravityTracing       orbitBase;
-        public QuizType             quizType;
-        public QuizAstralBody           target;
+        public                     bool                 isLoadByPrefab;
+        public                     string               loadTarget;
+        [SerializeField] protected List<AstralBodyDict> astralBodiesDict;
+        public                     QuizAstralBody       astralBodyPrefab;
+        public                     Transform            quizRoot;
+        public                     GravityTracing       orbitBase;
+        public                     QuizType             quizType;
+
+        public QuizAstralBody target
+        {
+            get => _target;
+            protected set => _target = value;
+        }
 
         public  float                      answer;
         private List<AstralBodyStructDict> _astralBodyStructDictList;
+        [SerializeField]
+        private QuizAstralBody             _target;
 
 
         public bool IsLoadDone { private set; get; }
@@ -103,6 +109,7 @@ namespace Quiz
                 astralBodyPrefab.t               = pair.t;
                 astralBodyPrefab.isGravityPublic = pair.isGravityPublic;
                 astralBodyPrefab.isSizePublic    = pair.isSizePublic;
+                
                 // astralBodyPrefab.anglePerT             = pair.AnglePerT;
                 // astralBodyPrefab.isAnglePerTPublic     = pair.isAnglePerTPublic;
                
@@ -113,6 +120,7 @@ namespace Quiz
                 
                 QuizAstralBody target =
                     Instantiate(astralBodyPrefab, pair.position, Quaternion.Euler(0, 0, 0), quizRoot);
+                target.meshNum = pair.meshNum;
                 orbitBase.AddTracingTarget(target);
                 try
                 {
@@ -121,7 +129,7 @@ namespace Quiz
                 }
                 catch (Exception e)
                 {
-                    
+                    // ignored
                 }
 
                 // Debug.Log("add HashCode:" + target.GetHashCode());

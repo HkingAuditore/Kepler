@@ -227,7 +227,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.63
+  m_Radius: 0.64
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &4797125532670865188
 Rigidbody:
@@ -272,8 +272,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mass: 1000
   density: 1000
-  originalSize: 10
-  curSize: 0
+  _size: 10
   triggerCollider: {fileID: 4797125532670865191}
   defaultCollider: {fileID: 4797125532670865210}
   oriVelocity: {x: 0, y: 0, z: 0}
@@ -286,8 +285,16 @@ MonoBehaviour:
   isMassPublic: 0
   isVelocityPublic: 0
   isAngularVelocityPublic: 0
+  isGravityPublic: 0
+  isSizePublic: 0
+  globalAngularVelocity: 0
+  _period: 0
   isPeriodPublic: 0
+  _radius: 0
   isRadiusPublic: 0
+  _anglePerT: 0
   isAnglePerTPublic: 0
-  isDistancePublic: 0
+  _distancePerT: 0
+  isDistancePerTPublic: 0
+  _t: 0
   isTPublic: 0

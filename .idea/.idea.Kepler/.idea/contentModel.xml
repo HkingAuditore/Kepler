@@ -434,6 +434,9 @@
           <e p="21-03-29.xml" t="Include" />
           <e p="21-03-31.xml" t="Include" />
           <e p="21-04-01.xml" t="Include" />
+          <e p="21-04-02.xml" t="Include" />
+          <e p="21-04-03.xml" t="Include" />
+          <e p="地月.xml" t="Include" />
         </e>
         <e p="Scripts" t="Include">
           <e p="Animation" t="Include">
@@ -496,9 +499,15 @@
             <e p="OrbitGraphUI.cs" t="Include" />
             <e p="OrbitPanelUI.cs" t="Include" />
             <e p="PositionEditorUI.cs" t="Include" />
-            <e p="QuizUI.cs" t="Include" />
+            <e p="Quiz" t="Include">
+              <e p="AstralBodyEditorQuizUI.cs" t="Include" />
+              <e p="QuizEditorUI.cs" t="Include" />
+              <e p="QuizUI.cs" t="Include" />
+              <e p="VarLineUI.cs" t="Include" />
+            </e>
             <e p="SatelliteControllerUI.cs" t="Include" />
             <e p="SelectorUI.cs" t="Include" />
+            <e p="StarStyleSettingUI.cs" t="Include" />
             <e p="TutorialUI.cs" t="Include" />
             <e p="UIManager.cs" t="Include" />
             <e p="VectorUI.cs" t="Include" />

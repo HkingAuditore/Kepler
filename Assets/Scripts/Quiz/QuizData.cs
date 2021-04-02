@@ -8,11 +8,28 @@ namespace Quiz
     [Serializable]
     public struct AstralBodyDict
     {
-        public Transform      transform;
-        public QuizAstralBody astralBody;
-        public bool           isTarget;
+        public  Transform      transform;
+        public  QuizAstralBody astralBody;
+        [SerializeField]
+        private bool           _isTarget;
 
-        public AstralBodyDict(Transform transform, QuizAstralBody astralBody, bool isTarget)
+        public bool isTarget
+        {
+            get
+            {
+                Debug.Log(astralBody.gameObject.name + " is target? : " + _isTarget);
+
+                return _isTarget;
+            }
+            set
+            {
+                _isTarget = value;
+                Debug.Log(astralBody.gameObject.name + " set to " + _isTarget);
+
+            }
+        }
+
+        public AstralBodyDict(Transform transform, QuizAstralBody astralBody, bool isTarget) : this()
         {
             this.transform  = transform;
             this.astralBody = astralBody;
@@ -31,11 +48,12 @@ namespace Quiz
         public Vector3 oriVelocity;
         public bool    isVelocityPublic;
         // public float angularVelocity;
-        public bool    isAngularVelocityPublic;
-        public float   period;
-        public bool    isPeriodPublic;
-        public float   radius;
-        public bool    isRadiusPublic;
+        public bool  isAngularVelocityPublic;
+        public float period;
+        public bool  isPeriodPublic;
+        public float radius;
+        public bool  isRadiusPublic;
+        public int   meshNum;
 
         public bool isGravityPublic;
 
@@ -61,6 +79,7 @@ namespace Quiz
             oriVelocity   = astralBody.oriVelocity;
             enableAffect  = astralBody.enableAffect;
             enableTracing = astralBody.enableTracing;
+            this.meshNum  = astralBody.meshNum;
             this.isTarget = isTarget;
             this.isCore   = isCore;
 
@@ -80,6 +99,7 @@ namespace Quiz
             isVelocityPublic = false;
             isGravityPublic  = false;
             isSizePublic     = false;
+            
         }
     }
 

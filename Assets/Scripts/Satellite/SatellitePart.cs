@@ -21,8 +21,7 @@ namespace Satellite
         public SatelliteType PartType      { get; set; }
 
 
-
-        public override void SetMass()
+        private protected override void SetMass()
         {
             AstralBodyRigidbody.mass = Mass;
         }

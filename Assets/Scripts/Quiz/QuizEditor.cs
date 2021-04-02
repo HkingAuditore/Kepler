@@ -8,17 +8,17 @@ namespace Quiz
     {
         public QuizSaver saver;
         
-        public void SaveQuiz()
+        public void SaveQuiz(string quizName)
         {
             orbitBase.Freeze(false);
-            StartCoroutine(WaitForCalculate());
+            StartCoroutine(WaitForCalculate(quizName));
         }
         
-        IEnumerator WaitForCalculate() {
+        IEnumerator WaitForCalculate(string quizName) {
             yield return new WaitForSeconds(2);
             
             var xmlDoc = saver.ConvertOrbit2Xml(astralBodiesDict, quizType);
-            saver.SaveXml(xmlDoc, DateTime.Now.ToString("yy-MM-dd"));
+            saver.SaveXml(xmlDoc, quizName);
 
         }
 
@@ -28,9 +28,23 @@ namespace Quiz
             astralBodiesDict.Add(new AstralBodyDict(astralBody.transform, astralBody, isTarget));
         }
 
-        public void SetTarget(AstralBody target)
+        public void SetTarget(QuizAstralBody target)
         {
-            astralBodiesDict.ForEach(ast => { ast.isTarget = ReferenceEquals(ast.astralBody, target); });
+            var oriTarget = this.target;
+            this.target = (QuizAstralBody) target;
+            astralBodiesDict.ForEach(ast =>
+                                     {
+                                         // Debug.Log(ast.astralBody.GetHashCode() + " <==> " + target.GetHashCode());
+                                         ast.isTarget = (ast.astralBody == target);
+                                         ast.astralBody.affectedPlanets.Remove(oriTarget);
+                                         if(!ast.isTarget)
+                                         {
+                                             ast.astralBody.affectedPlanets.Remove(target);
+                                             ast.astralBody.affectedPlanets.Add(target);
+                                         }
+                                         // Debug.Log(ast.astralBody.gameObject.name + " is target ? : " + ast.isTarget);
+                                         // ast.isTarget = true;
+                                     });
         }
 
         public void SetType(QuizType t)

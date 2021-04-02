@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using SpacePhysic;
 using UI;
 using UnityEngine;
@@ -10,7 +11,8 @@ public class AstralBodyAddUI : MonoBehaviour
     public AstralBody            placePrefab;
     public GravityTracing        orbits;
     public bool                  isQuizEditMode;
-    public Button                button;
+    public List<GameObject>      setActiveList;
+
 
     public Transform OrbitCore { get; set; }
 
@@ -29,7 +31,7 @@ public class AstralBodyAddUI : MonoBehaviour
 
     public IEnumerator WaitForLoad()
     {
-        Debug.Log("Wait 4 Core");
+        // Debug.Log("Wait 4 Core");
         // Debug.Log(GameManager.GetGameManager.quizBase.IsLoadDone);
         yield return new WaitUntil(() => GameManager.GetGameManager.quizBase.IsLoadDone);
         OrbitCore = orbits.transform.Find("Core");
@@ -39,14 +41,14 @@ public class AstralBodyAddUI : MonoBehaviour
 
     public void Switch2Placement()
     {
-        button.gameObject.SetActive(false);
+        setActiveList.ForEach(o => o.SetActive(false));
         astralBodyPlacementUI.SetPlacing();
         astralBodyPlacementUI.gameObject.SetActive(true);
     }
 
     public void Switch2Normal()
     {
-        button.gameObject.SetActive(true);
+        setActiveList.ForEach(o => o.SetActive(true));
         astralBodyPlacementUI.gameObject.SetActive(false);
     }
 }

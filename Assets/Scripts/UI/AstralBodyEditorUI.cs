@@ -7,7 +7,22 @@ public class AstralBodyEditorUI : MonoBehaviour
 {
     public bool           isEnableEdit        = true;
     public bool           isEnableEditorPanel = true;
-    public AstralBody     astralBody;
+
+    public AstralBody astralBody
+    {
+        get => _astralBody;
+        set
+        {
+            _astralBody = value;
+            OnAstralBodySet();
+        }
+    }
+
+    public virtual void OnAstralBodySet()
+    {
+        
+    }
+
     public GravityTracing gravityTracing;
 
     public  Slider           massSlider;
@@ -19,15 +34,19 @@ public class AstralBodyEditorUI : MonoBehaviour
     public  List<LengthUI>   lengthUIList;
     public  OrbitPanelUI     orbitPanelUI;
     public  GameObject       editorPanel;
-    private Text             _massText;
+
+    public  GameObject         mainPanel;
+    public  StarStyleSettingUI styleSheetPanel;
+    private Text               _massText;
+    private AstralBody         _astralBody;
 
 
-    private void Awake()
+    protected virtual void Awake()
     {
         _massText = massSlider.transform.parent.Find("MassText").GetComponent<Text>();
     }
 
-    private void OnEnable()
+    protected virtual void OnEnable()
     {
         forceUI.astralBody = astralBody;
         forceUI.gameObject.SetActive(true);
@@ -36,14 +55,14 @@ public class AstralBodyEditorUI : MonoBehaviour
         if (isEnableEdit)
         {
             normalPanel.SetActive(false);
-            InitMassEditor();
             if (isEnableEditorPanel)
             {
-                positionEditorUI.editingTarget = astralBody.transform;
+                positionEditorUI.editingTarget = astralBody;
                 positionEditorUI.gameObject.SetActive(true);
 
                 editorPanel.SetActive(true);
             }
+            InitMassEditor();
 
             lengthUIList.ForEach(l =>
                                  {
@@ -95,12 +114,12 @@ public class AstralBodyEditorUI : MonoBehaviour
         var result = gravityTracing.GetConicSection(astralBody, 500);
         orbitPanelUI.orbit      = result;
         orbitPanelUI.astralBody = astralBody;
-        Debug.Log("曲线为："   + result);
-        Debug.Log("长轴为："   + result.semiMajorAxis);
-        Debug.Log("短轴为："   + result.semiMinorAxis);
-        Debug.Log("几何中心为：" + result.geoCenter);
-        Debug.Log("离心率为："  + result.eccentricity);
-        Debug.Log("焦距为："   + result.focalLength);
+        // Debug.Log("曲线为："   + result);
+        // Debug.Log("长轴为："   + result.semiMajorAxis);
+        // Debug.Log("短轴为："   + result.semiMinorAxis);
+        // Debug.Log("几何中心为：" + result.geoCenter);
+        // Debug.Log("离心率为："  + result.eccentricity);
+        // Debug.Log("焦距为："   + result.focalLength);
         orbitPanelUI.gameObject.SetActive(true);
         orbitPanelUI.Init();
         // Debug.DrawLine(this.astralBody.AffectedPlanets[0].transform.position,
@@ -115,8 +134,27 @@ public class AstralBodyEditorUI : MonoBehaviour
         gravityTracing.DrawMathOrbit(result, 20);
     }
 
-    public void SetVelocityInCircle()
+    public virtual void SetVelocityInCircle()
     {
         this.astralBody.SetCircleVelocity();
+    }
+    
+    public void ClosePanel()
+    {
+        this.gameObject.SetActive(false);
+        GameManager.GetGameManager.GetMainCameraController().ExitFocus();
+    }
+
+    public void MainToStyleSheet()
+    {
+        mainPanel.SetActive(false);
+        styleSheetPanel.astralBody = this.astralBody;
+        styleSheetPanel.gameObject.SetActive(true);
+    }
+    
+    public void StyleSheetToMain()
+    {
+        styleSheetPanel.gameObject.SetActive(false);
+        mainPanel.SetActive(true);
     }
 }

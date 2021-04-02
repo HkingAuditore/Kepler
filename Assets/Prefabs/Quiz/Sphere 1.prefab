@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 1575909808793090412}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -106.3, y: 0, z: 0}
-  m_LocalScale: {x: 2.144, y: 2.144, z: 2.144}
+  m_LocalScale: {x: 8, y: 8, z: 8}
   m_Children:
   - {fileID: 1575909809772103914}
   m_Father: {fileID: 0}
@@ -98,7 +98,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.63
+  m_Radius: 0.62
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &1575909808793090414
 Rigidbody:
@@ -125,7 +125,7 @@ SphereCollider:
   m_GameObject: {fileID: 1575909808793090412}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 8
   m_Center: {x: 0, y: 0, z: 0}
@@ -143,25 +143,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mass: 1
   density: 1000
-  _size: 2.144
+  _size: 8
   triggerCollider: {fileID: 1575909808793090413}
   defaultCollider: {fileID: 1575909808793090416}
-  oriVelocity: {x: 7.2, y: 0, z: -0.6}
+  oriVelocity: {x: 1.4, y: 0, z: -6.8}
   angularVelocity: {x: 0, y: 0, z: 0}
   enableAffect: 1
   affectRadius: 8
   enableTracing: 1
   affectedPlanets: []
   banAffectedPlanets: []
+  velocityChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
   isMassPublic: 0
-  isVelocityPublic: 0
-  isAngularVelocityPublic: 0
+  isVelocityPublic: 1
+  isAngularVelocityPublic: 1
   isGravityPublic: 0
   isSizePublic: 0
   globalAngularVelocity: 0.3393103
-  _period: 111.558
+  _period: 129.4644
   isPeriodPublic: 1
-  _radius: 127.5316
+  _radius: 139.5527
   isRadiusPublic: 1
   _anglePerT: 0.1696551
   isAnglePerTPublic: 0

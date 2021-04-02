@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using SpacePhysic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Serialization;
 
 public class AstralBody : MonoBehaviour, ITraceable
@@ -49,9 +50,10 @@ public class AstralBody : MonoBehaviour, ITraceable
         get => (SpacePhysic.PhysicBase.GetG() * this.Mass) / (this.size * this.size);
     }
 
-    private MeshFilter _mesh;
-    private Renderer   _renderer;
-    
+    private MeshFilter            _mesh;
+    private Renderer              _renderer;
+    public  UnityEvent<Vector3> velocityChangedEvent;
+
     public int meshNum
     {
         get => _meshNum;
@@ -74,16 +76,21 @@ public class AstralBody : MonoBehaviour, ITraceable
         }
     }
 
+    private void Awake()
+    {
+        _mesh               = this.GetComponent<MeshFilter>();
+        _renderer           = this.GetComponent<Renderer>();
+        AstralBodyRigidbody = GetComponent<Rigidbody>();
+
+    }
 
     protected virtual void Start()
     {
-        AstralBodyRigidbody    = GetComponent<Rigidbody>();
-        triggerCollider.radius = affectRadius;
+        
+        triggerCollider.radius =  affectRadius;
         defaultCollider.radius *= 1.2f;
         SetMass();
         ChangeSize();
-        _mesh     = this.GetComponent<MeshFilter>();
-        _renderer = this.GetComponent<Renderer>();
 
         AstralBodyRigidbody.angularVelocity = angularVelocity;
         _lastVelocity                       = oriVelocity;
@@ -189,9 +196,26 @@ public class AstralBody : MonoBehaviour, ITraceable
             AstralBodyRigidbody.velocity         = velocity;
             this.AstralBodyRigidbody.isKinematic = true;
         }
+
+        velocityChangedEvent.Invoke(velocity);
+    }
+    
+    public void ChangeVelocity(float speed)
+    {
+        if (!AstralBodyRigidbody.isKinematic)
+        {
+            AstralBodyRigidbody.velocity = AstralBodyRigidbody.velocity.normalized * speed;
+        }
+        else
+        {
+            this._lastVelocity                   = this._lastVelocity.normalized * speed;
+            this.AstralBodyRigidbody.isKinematic = false;
+            AstralBodyRigidbody.velocity         = this._lastVelocity;
+            this.AstralBodyRigidbody.isKinematic = true;
+        }
     }
 
-    public virtual void SetMass()
+    private protected virtual void SetMass()
     {
         // AstralBodyRigidbody.mass = Mathf.PI * (4/3)*Mathf.Pow(curSize,3) * this.density;
         AstralBodyRigidbody.mass = Mass;

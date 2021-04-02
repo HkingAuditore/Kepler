@@ -817,7 +817,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isEnableEdit: 0
   isEnableEditorPanel: 1
-  astralBody: {fileID: 0}
   gravityTracing: {fileID: 1009603419}
   massSlider: {fileID: 1160543727}
   positionEditorUI: {fileID: 1842356812}
@@ -828,6 +827,8 @@ MonoBehaviour:
   lengthUIList: []
   orbitPanelUI: {fileID: 216456885}
   editorPanel: {fileID: 0}
+  mainPanel: {fileID: 0}
+  styleSheetPanel: {fileID: 0}
 --- !u!1 &282541653
 GameObject:
   m_ObjectHideFlags: 0
@@ -6697,6 +6698,7 @@ MonoBehaviour:
   zAxis: {fileID: 536275563}
   editingTarget: {fileID: 0}
   moveSpeed: 20
+  isQuizEditor: 0
 --- !u!1 &1862959933
 GameObject:
   m_ObjectHideFlags: 0
@@ -6886,7 +6888,17 @@ MonoBehaviour:
   quizBase: {fileID: 1901827057}
   isQuizEditMode: 0
   mainCamera: {fileID: 894007019}
-  meshList: []
+  meshList:
+  - {fileID: 4466750129858649191, guid: b628c2ad1ffb1c940a6529262f32d422, type: 3}
+  - {fileID: 3004606916121283970, guid: 3a072af3482a0824a9019de894bcb898, type: 3}
+  - {fileID: 1866530193286672185, guid: 136f1401e662747439c164fcd68e9f71, type: 3}
+  - {fileID: 1342138967438411701, guid: ba4ccd564088a9247b9c90e23d51081c, type: 3}
+  - {fileID: 4187291897908471642, guid: 930dd3a4a6da9764f93bbea81540c41d, type: 3}
+  - {fileID: 2396627440855739368, guid: 8846308c1e68b6a429883a31f1c7d629, type: 3}
+  - {fileID: 7660210638911855748, guid: 9226e5d3b3c3af849bde82c64c085dba, type: 3}
+  - {fileID: 2409649615308437762, guid: ebccb29f36367ad49a08ec9b599b463b, type: 3}
+  - {fileID: 871134749857384736, guid: 3e218b08c9cc4dc42be9da0507868d25, type: 3}
+  - {fileID: 6368110840796035940, guid: e8176e8d262f45843a8507e2b7ef9ace, type: 3}
   orbit: {fileID: 1009603419}
 --- !u!4 &1901827054
 Transform:
@@ -6929,14 +6941,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLoadByPrefab: 0
-  loadTarget: 21-04-01
+  loadTarget: "\u5730\u6708"
   astralBodiesDict: []
   astralBodyPrefab: {fileID: 3597075151426224686, guid: 1e13c1220f795504abff0bafb4776125, type: 3}
   quizRoot: {fileID: 1009603420}
   orbitBase: {fileID: 1009603419}
   quizType: 0
-  target: {fileID: 0}
   answer: 1000
+  _target: {fileID: 0}
   quizUI: {fileID: 1673999407}
   waitTime: 10
   radiusOffset: 0.2
