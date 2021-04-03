@@ -40,6 +40,16 @@ namespace Quiz
             }
             else
             {
+                try
+                {
+                    loadTarget = Transformer.GetTransformer.quizName;
+
+                }
+                catch (Exception e)
+                {
+                    // ignored
+                }
+
                 LoadQuiz(loadTarget);
                 GenerateAstralBodiesWithoutPrefab();
             }
@@ -156,7 +166,7 @@ namespace Quiz
 
         public void LoadQuiz(string fileName)
         {
-            var result = QuizSaver.ConvertXml2QuizBase(QuizSaver.LoadXml(fileName));
+            QuizBaseStruct result = QuizSaver.ConvertXml2QuizBase(QuizSaver.LoadXml(fileName), fileName);
             _astralBodyStructDictList = result.astralBodyStructList;
             quizType                  = result.quizType;
         }

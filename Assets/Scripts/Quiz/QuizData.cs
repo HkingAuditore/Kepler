@@ -6,7 +6,7 @@ using UnityEngine;
 namespace Quiz
 {
     [Serializable]
-    public struct AstralBodyDict
+    public class AstralBodyDict
     {
         public  Transform      transform;
         public  QuizAstralBody astralBody;
@@ -17,19 +17,19 @@ namespace Quiz
         {
             get
             {
-                Debug.Log(astralBody.gameObject.name + " is target? : " + _isTarget);
+                // Debug.Log(astralBody.gameObject.name + " is target? : " + _isTarget);
 
                 return _isTarget;
             }
             set
             {
                 _isTarget = value;
-                Debug.Log(astralBody.gameObject.name + " set to " + _isTarget);
+                // Debug.Log(astralBody.gameObject.name + " set to " + _isTarget);
 
             }
         }
 
-        public AstralBodyDict(Transform transform, QuizAstralBody astralBody, bool isTarget) : this()
+        public AstralBodyDict(Transform transform, QuizAstralBody astralBody, bool isTarget)
         {
             this.transform  = transform;
             this.astralBody = astralBody;

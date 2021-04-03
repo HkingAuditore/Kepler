@@ -45,7 +45,7 @@ public class CameraController : MonoBehaviour
 
     private void Update()
     {
-        if (!Input.GetKey(KeyCode.LeftAlt))
+        if (Input.GetKey(KeyCode.Space))
             CameraMover();
         CameraScaler();
         if (IsFollowing)

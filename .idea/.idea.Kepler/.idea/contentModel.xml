@@ -429,12 +429,6 @@
           </e>
         </e>
         <e p="Quiz" t="Include">
-          <e p="21-03-09.xml" t="Include" />
-          <e p="21-03-091.xml" t="Include" />
-          <e p="21-03-29.xml" t="Include" />
-          <e p="21-03-31.xml" t="Include" />
-          <e p="21-04-01.xml" t="Include" />
-          <e p="21-04-02.xml" t="Include" />
           <e p="21-04-03.xml" t="Include" />
           <e p="地月.xml" t="Include" />
         </e>
@@ -474,6 +468,7 @@
             <e p="QuizEditor.cs" t="Include" />
             <e p="QuizSaver.cs" t="Include" />
             <e p="QuizSolver.cs" t="Include" />
+            <e p="Transformer.cs" t="Include" />
           </e>
           <e p="Satellite" t="Include">
             <e p="Satellite.cs" t="Include" />
@@ -502,6 +497,8 @@
             <e p="Quiz" t="Include">
               <e p="AstralBodyEditorQuizUI.cs" t="Include" />
               <e p="QuizEditorUI.cs" t="Include" />
+              <e p="QuizLineUI.cs" t="Include" />
+              <e p="QuizListUI.cs" t="Include" />
               <e p="QuizUI.cs" t="Include" />
               <e p="VarLineUI.cs" t="Include" />
             </e>

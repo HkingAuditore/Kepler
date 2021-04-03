@@ -22,30 +22,25 @@
     <list default="true" id="1afa9dc1-adab-467c-afda-52b72c3d10f3" name="默认的" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Kepler/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Kepler/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Kepler/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Kepler/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Arts/Models/Planets/crash_planet.blend.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Arts/Models/Planets/crash_planet.blend.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Arts/Models/Planets/low_poly_earth.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Arts/Models/Planets/low_poly_earth.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Arts/Models/Planets/planet.blend.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Arts/Models/Planets/planet.blend.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Arts/Models/Planets/planet2.blend.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Arts/Models/Planets/planet2.blend.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Le Tai's Asset/TranslucentImage/Demo/Materials/Sample Translucent Image Material.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Le Tai's Asset/TranslucentImage/Demo/Materials/Sample Translucent Image Material.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Le Tai's Asset/TranslucentImage/Material/Default-Translucent.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Le Tai's Asset/TranslucentImage/Material/Default-Translucent.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Quiz/Core.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Quiz/Core.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Quiz/Sphere 1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Quiz/Sphere 1.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Quiz/Sphere.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Quiz/Sphere.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/PhysicScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/PhysicScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Le Tai's Asset/TranslucentImage/Material/MyBlur.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Le Tai's Asset/TranslucentImage/Material/MyBlur.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Quiz/21-03-09.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Quiz/21-03-09.xml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Quiz/21-03-091.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Quiz/21-03-091.xml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Quiz/21-03-29.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Quiz/21-03-29.xml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Quiz/21-03-31.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Quiz/21-03-31.xml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Quiz/21-04-01.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Quiz/21-04-01.xml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Quiz/21-04-02.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Quiz/21-04-02.xml.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/QuizEdit.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/QuizEdit.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/QuizTest.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/QuizTest.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizAstralBody.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizAstralBody.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Camera/CameraController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Camera/CameraController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizBase.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizEditor.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizSaver.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizSaver.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Satellite/SatellitePart.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Satellite/SatellitePart.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SpacePhysic/AstralBody.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SpacePhysic/AstralBody.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/AstralBodyAddUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/AstralBodyAddUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/AstralBodyEditorUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/AstralBodyEditorUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/PositionEditorUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/PositionEditorUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/QuizUI.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/QuizUI.cs.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,6 +63,7 @@
     <setting file="file://C:/Program Files/Unity/Hub/Editor/2020.1.17f1c1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Image.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/StarStyleSettingUI.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/AstralBodyEditorUI.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Quiz/QuizTransformer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Camera/CameraController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Arts/Shaders/CustomPostProcessing/ShaderIds.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/183EA0E0-59EE-4107-865D-5753B201F130/53/1e292118/UnityEvent`1.cs" root0="SKIP_HIGHLIGHTING" />
@@ -75,6 +71,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/SelectorUI.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Satellite/SatelliteEngine.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Arts/Shaders/CustomPostProcessing/TextureFormatUtilities.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Quiz/QuizLineUI.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/MathPlus/MathPlus.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://C:/Program Files/Unity/Hub/Editor/2020.1.17f1c1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Slider.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameManager/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
@@ -107,16 +104,20 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/StarStyleSettingUI.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/AstralBodyEditorUI.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/Quiz/AstralBodyEditorQuizUI.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizSaver.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/SpacePhysic/AstralBody.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/Quiz/VarLineUI.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/AstralBodyAddUI.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizBase.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizData.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizEditor.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/Quiz/QuizEditorUI.cs" />
       <option value="$PROJECT_DIR$/Assets/Quiz/21-04-02.xml" />
       <option value="$PROJECT_DIR$/Assets/Quiz/地月.xml" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Camera/CameraController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizBase.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/Quiz/QuizListUI.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizData.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizSaver.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/Quiz/QuizLineUI.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizTransformer.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1iK5Y9kUuPbAZPnJQwHlUY16sq8" />
@@ -246,6 +247,7 @@
       <workItem from="1617242541096" duration="733000" />
       <workItem from="1617256443497" duration="3298000" />
       <workItem from="1617357017453" duration="23045000" />
+      <workItem from="1617415318763" duration="6126000" />
     </task>
     <servers />
   </component>

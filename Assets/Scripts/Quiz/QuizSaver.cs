@@ -11,6 +11,7 @@ namespace Quiz
     public struct QuizBaseStruct
     {
         public List<AstralBodyStructDict> astralBodyStructList;
+        public string                     quizName;
         public QuizType                   quizType;
     }
 
@@ -19,13 +20,18 @@ namespace Quiz
         private static readonly XmlDocument _xmlDoc = new XmlDocument();
         public                  QuizType    quizType;
         public                  GameObject  cloner;
-        private                 static  string      _xmlPath;
 
-        private void Awake()
+        public static string xmlPath
         {
-            Debug.Log("Generate!");
-            _xmlPath = Application.dataPath + "/Quiz/";
+            get => Application.dataPath + "/Quiz/";
         }
+        
+
+        // private void Awake()
+        // {
+        //     Debug.Log("Generate!");
+        //     
+        // }
 
         public XmlElement ConvertAstralBody2XmlElement(AstralBodyDict astralBodyDict)
         {
@@ -111,7 +117,7 @@ namespace Quiz
             astAstralBody.AppendChild(gravity);
             
 
-            astAstralBody.SetAttribute("IsCore", (astralBodyDict.astralBody.GetGameObject().name == "Core").ToString());
+            astAstralBody.SetAttribute("IsCore", (astralBodyDict.isTarget).ToString());
             astAstralBody.SetAttribute("Style", (astralBodyDict.astralBody.meshNum).ToString());
 
             dict.SetAttribute("IsTarget", astralBodyDict.isTarget.ToString());
@@ -132,7 +138,7 @@ namespace Quiz
 
         public void SaveXml(XmlDocument doc, string fileName)
         {
-            var path = _xmlPath + fileName + ".xml";
+            var path = xmlPath + fileName + ".xml";
             if (!File.Exists(path))
                 doc.Save(path);
             else
@@ -145,7 +151,7 @@ namespace Quiz
 
         public static XmlDocument LoadXml(string fileName)
         {
-            var path = _xmlPath + fileName + ".xml";
+            var path = xmlPath + fileName + ".xml";
             if (File.Exists(path))
             {
                 var xmlDoc = new XmlDocument();
@@ -154,7 +160,7 @@ namespace Quiz
                 return xmlDoc;
             }
 
-            Debug.Log(_xmlPath);
+            Debug.Log(xmlPath);
             throw new QuizSaverException(path + "文件不存在");
         }
 
@@ -164,9 +170,10 @@ namespace Quiz
             return new Vector3(float.Parse(vec[0]), float.Parse(vec[1]), float.Parse(vec[2]));
         }
 
-        public static QuizBaseStruct ConvertXml2QuizBase(XmlDocument xmlDoc)
+        public static QuizBaseStruct ConvertXml2QuizBase(XmlDocument xmlDoc,string fileName)
         {
             var quizBaseStruct = new QuizBaseStruct();
+            quizBaseStruct.quizName = fileName;
             var list           = new List<AstralBodyStructDict>();
             var astralBodyList = xmlDoc.SelectSingleNode("AstralBodyList").ChildNodes;
             foreach (XmlElement astralBodyElement in astralBodyList)
@@ -219,6 +226,27 @@ namespace Quiz
                 (QuizType) Enum.Parse(typeof(QuizType), xmlDoc.SelectSingleNode("AstralBodyList").Attributes[0].Value);
 
             return quizBaseStruct;
+        }
+
+        public static List<XmlDocument> GetQuizFiles(ref List<string> fileNames)
+        {
+            DirectoryInfo     dir          = new DirectoryInfo(xmlPath);
+            List<XmlDocument> xmlDocuments = new List<XmlDocument>();
+            fileNames = new List<string>();
+            FileInfo[]        files        = dir.GetFiles();
+            foreach (FileInfo f in files)
+            {
+                var filename = f.Name;
+                if (filename.EndsWith(".xml"))
+                {
+                    string trueName = filename.Split(new char[] {'.'})[0];
+                    xmlDocuments.Add(LoadXml(trueName));
+                    fileNames.Add(trueName);
+
+                }
+            }
+
+            return xmlDocuments;
         }
     }
 }
