@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TestMode.unity
     guid: 59ba247f177aaca49bb2970b3c7328f4
+  - enabled: 1
+    path: Assets/Scenes/QuizTest.unity
+    guid: 2df2a6fc906f63148a372a2979c13095
   m_configObjects: {}
