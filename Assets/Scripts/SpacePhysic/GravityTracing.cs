@@ -207,20 +207,33 @@ namespace SpacePhysic
 
         public ConicSection GetConicSection(ITraceable astralBody, int sampleCount)
         {
-            var sampleStep = sample / sampleCount;
+            // var sampleStep = sample / sampleCount;
+            //
+            // // Debug.Log("[0]:"+ConvertV3ToV2(_orbitPoints[astralBody][0]));
+            // // Debug.Log("[1]:"+ConvertV3ToV2(_orbitPoints[astralBody][sampleStep]));
+            // // Debug.Log("[2]:"+ConvertV3ToV2(_orbitPoints[astralBody][2 * sampleStep]));
+            // // Debug.Log("[3]:"+ConvertV3ToV2(_orbitPoints[astralBody][3 * sampleStep]));
+            // // Debug.Log("[4]:"+ConvertV3ToV2(_orbitPoints[astralBody][4 * sampleStep]));
+            // // Debug.Log("[5]:"+ConvertV3ToV2(_orbitPoints[astralBody][5 * sampleStep]));
+            // // Debug.Log("Now HashCode:" + astralBody.GetHashCode());
+            // var points = new List<Vector2>();
+            // for (var i = 0; i < sampleCount; i++) points.Add(ConvertV3ToV2(_orbitPoints[astralBody][i * sampleStep]));
+            //
+            // var conicSection =
+            //     CustomSolver.FitConicSection(points);
 
-            // Debug.Log("[0]:"+ConvertV3ToV2(_orbitPoints[astralBody][0]));
-            // Debug.Log("[1]:"+ConvertV3ToV2(_orbitPoints[astralBody][sampleStep]));
-            // Debug.Log("[2]:"+ConvertV3ToV2(_orbitPoints[astralBody][2 * sampleStep]));
-            // Debug.Log("[3]:"+ConvertV3ToV2(_orbitPoints[astralBody][3 * sampleStep]));
-            // Debug.Log("[4]:"+ConvertV3ToV2(_orbitPoints[astralBody][4 * sampleStep]));
-            // Debug.Log("[5]:"+ConvertV3ToV2(_orbitPoints[astralBody][5 * sampleStep]));
-            // Debug.Log("Now HashCode:" + astralBody.GetHashCode());
-            var points = new List<Vector2>();
-            for (var i = 0; i < sampleCount; i++) points.Add(ConvertV3ToV2(_orbitPoints[astralBody][i * sampleStep]));
+            var conicSection = CustomSolver.CalculateOrbit(new Vector2(astralBody.GetTransform().position.x,astralBody.GetTransform().position.z),
+                                                              new Vector2(astralBody.GetAffectedPlanets()[0].transform.position.x,astralBody.GetAffectedPlanets()[0].transform.position.z),
+                                                                          new Vector2(astralBody.GetVelocity().x,astralBody.GetVelocity().z), astralBody.GetMass(),
+                                                                          astralBody.GetAffectedPlanets()[0].mass);
 
-            var conicSection =
-                CustomSolver.FitConicSection(points);
+            // Debug.Log("new section:" + "semi major = " + newConicSection.semiMajorAxis);
+            // Debug.Log("new section:" + "semi minor = " + newConicSection.semiMinorAxis);
+            // Debug.Log("new section:" + "eccentricity = " + newConicSection.eccentricity);
+            // Debug.Log("new section:" + "geo center = " + newConicSection.geoCenter);
+            // Debug.Log("new section:" + "T = " + newConicSection.GetT(astralBody.GetAffectedPlanets()[0].mass));
+            Debug.Log("new section:" + "angle = " + conicSection.angle);
+
             
             return conicSection;
         }

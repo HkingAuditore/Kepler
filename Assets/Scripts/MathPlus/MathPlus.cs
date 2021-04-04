@@ -19,28 +19,29 @@ namespace MathPlus
 
     public class ConicSection
     {
-        public float   a; //x^2
-        public float   angle;
-        public float   b;            //xy
-        public float   c;            //y^2
-        public float   d;            //x
-        public float   e;            //y
-        public float   eccentricity; //离心率
-        public float   f;            //f
-        public float   focalLength;
-        public Vector2 geoCenter; //几何中心
-        public bool    isEllipse;
-        public float   semiMajorAxis; //长半轴
-        public float   semiMinorAxis; //短半轴
+        private static float   k = 10000;
+        public         float   a; //x^2
+        public         float   angle;
+        public         float   b;            //xy
+        public         float   c;            //y^2
+        public         float   d;            //x
+        public         float   e;            //y
+        public         float   eccentricity; //离心率
+        public         float   f;            //f
+        public         float   focalLength;
+        public         Vector2 geoCenter; //几何中心
+        public         bool    isEllipse;
+        public         float   semiMajorAxis; //长半轴
+        public         float   semiMinorAxis; //短半轴
 
         public ConicSection(float a, float b, float c, float d, float e, float f)
         {
-            this.a = a * 10000;
-            this.b = b * 10000;
-            this.c = c * 10000;
-            this.d = d * 10000;
-            this.e = e * 10000;
-            this.f = f * 10000;
+            this.a = a * k;
+            this.b = b * k;
+            this.c = c * k;
+            this.d = d * k;
+            this.e = e * k;
+            this.f = f * k;
 
             isEllipse = IsEllipse();
             geoCenter = GetGeoCenter();
@@ -50,6 +51,23 @@ namespace MathPlus
             focalLength   = Mathf.Sqrt(semiMajorAxis * semiMajorAxis - semiMinorAxis * semiMinorAxis);
             eccentricity  = GetEccentricity();
             angle         = GetAngle() + 90;
+        }
+        public ConicSection(float a, float b, float c,float theta,Vector2 geoCenter)
+        {
+            this.a =  (a * a *Mathf.Sin(theta) *Mathf.Sin(theta) + b * b *Mathf.Cos(theta) *Mathf.Cos(theta));
+            this.b =  (2 * (b * b - a * a) * Mathf.Sin(theta) * Mathf.Cos(theta));
+            this.c =  (a  * a     * Mathf.Cos(theta) * Mathf.Cos(theta) + b * b * Mathf.Sin(theta) * Mathf.Sin(theta));
+            this.d =  (-2 *this.a *geoCenter.x                          - this.b*geoCenter.y);
+            this.e =  (-this.b *geoCenter.x - 2*this.c*geoCenter.y);
+            this.f =  (this.a*geoCenter.x*geoCenter.x + this.b*geoCenter.x*geoCenter.y+this.c*geoCenter.y*geoCenter.y-a*a*b*b);
+
+            isEllipse      = IsEllipse();
+            this.geoCenter = geoCenter;
+            semiMajorAxis  = a;
+            semiMinorAxis  = b;
+            focalLength    = 2 * c;
+            eccentricity   = GetEccentricity();
+            angle          = GetAngle(theta);
         }
 
         public float[] GetY(float x)
@@ -135,6 +153,11 @@ namespace MathPlus
             }
 
             return Mathf.Atan(1 / b * (c - a - Mathf.Sqrt((a - c) * (a - c) + b * b))) * Mathf.Rad2Deg;
+        }
+        
+        private float GetAngle(float theta)
+        {
+            return theta;
         }
 
         /// <summary>
@@ -282,6 +305,33 @@ namespace MathPlus
             float   speed = Mathf.Sqrt(PhysicBase.GetG() * centerMass / r);
             Vector3 dir   = (Quaternion.AngleAxis(90, Vector3.up) * (centerPos - targetPos)).normalized;
             return dir * speed;
+        }
+
+        public static ConicSection CalculateOrbit(Vector2 targetPos,  Vector2 oriPos, Vector2 targetVelocity,
+                                                  float   targetMass, float   oriMass)
+        {
+            float miu = PhysicBase.GetG() * oriMass;
+
+            float h = targetPos.x * targetVelocity.y - targetPos.y * targetVelocity.x;
+            float r = Mathf.Sqrt(targetPos.x * targetPos.x + targetPos.y * targetPos.y);
+            float a = (miu * r) /
+                      (2 * miu - r * (targetVelocity.x * targetVelocity.x + targetVelocity.y * targetVelocity.y));
+            Vector2 ev = new Vector2(targetPos.x / r - (h * targetVelocity.y) / miu,
+                                     targetPos.y / r + (h * targetVelocity.x)  / miu);
+            Vector2 f2           = 2             * a * ev;
+            Vector2 geoCenter    = (f2 + oriPos) / 2;
+            float   e            = ev.magnitude;
+            float   c            = e * a;
+            float   b            = Mathf.Sqrt(a * a - c * c);
+            Vector2 orbitHorizon = (f2 - oriPos).normalized;
+            float   theta        = Vector2.Angle(new Vector2(1, 0), orbitHorizon);
+            Debug.Log("a = " + a);
+            Debug.Log("b = " + b);
+            Debug.Log("e = " + e);
+            Debug.Log("ev = " + ev);
+            Debug.Log("geoCenter = " + geoCenter);
+            Debug.Log("theta= " + theta);
+            return new ConicSection(a, b, c,theta, geoCenter);
         }
     }
 }
