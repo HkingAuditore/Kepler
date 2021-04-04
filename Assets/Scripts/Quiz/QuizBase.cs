@@ -54,7 +54,7 @@ namespace Quiz
                 GenerateAstralBodiesWithoutPrefab();
             }
 
-            orbitBase.DrawOrbits();
+            // orbitBase.DrawOrbits();
             orbitBase.Freeze(true);
             IsLoadDone = true;
         }

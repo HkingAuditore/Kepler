@@ -28,7 +28,23 @@ public class QuizUI : MonoBehaviour
     public void Generate()
     {
         this.target        = quizSolver.target;
-        title.text         = Enum.GetName(quizType.GetType(), quizType) + ":";
+        switch (quizType)
+        {
+            case QuizType.Mass:
+                title.text = "质量:";
+                break;
+            case QuizType.Density:
+                title.text = "密度:";
+                break;
+            case QuizType.Gravity:
+                title.text = "重力加速度:";
+                break;
+            case QuizType.Radius:
+                title.text = "轨道半径:";
+                break;
+            default:
+                throw new ArgumentOutOfRangeException();
+        }
         quizCondition.text = quizSolver.GetQuizSentence();
         GenerateAns();
     }

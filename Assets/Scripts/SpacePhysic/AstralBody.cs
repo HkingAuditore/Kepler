@@ -126,6 +126,11 @@ public class AstralBody : MonoBehaviour, ITraceable
         return transform;
     }
 
+    public Vector3 GetPosition()
+    {
+        return this.transform.position;
+    }
+
 
     public GameObject GetGameObject()
     {

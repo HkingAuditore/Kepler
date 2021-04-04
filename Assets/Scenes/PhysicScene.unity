@@ -3947,7 +3947,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e68c194b5cc8bd4695d50efb03d7e55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sample: 500
+  sample: 1500
   timeScale: 10
   splineComputer: {fileID: 554862199}
 --- !u!4 &1009603420
@@ -5454,7 +5454,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1330425301
 RectTransform:
   m_ObjectHideFlags: 0

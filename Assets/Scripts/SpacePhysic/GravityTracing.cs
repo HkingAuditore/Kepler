@@ -1,5 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using Dreamteck.Splines;
 using MathPlus;
 using UnityEngine;
@@ -9,6 +12,7 @@ namespace SpacePhysic
     public interface ITraceable
     {
         Transform        GetTransform();
+        Vector3          GetPosition();
         GameObject       GetGameObject();
         bool             GetEnableTracing();
         float            GetMass();
@@ -17,6 +21,11 @@ namespace SpacePhysic
         List<AstralBody> GetAffectedPlanets();
 
         AstralBody GetAstralBody();
+    }
+
+    enum ActionType
+    {
+        Finished
     }
 
     public class GravityTracing : MonoBehaviour
@@ -53,9 +62,47 @@ namespace SpacePhysic
             foreach (ITraceable traceable in GetComponentsInChildren<AstralBody>()) AddTracingTarget(traceable);
         }
 
-        private void FixedUpdate()
+        private List<ActionType> _actionTypes = new List<ActionType>();
+        private Thread           thread;
+
+        private void Dispatch()
+        {
+            lock (((ICollection) _actionTypes).SyncRoot)
+            {
+                if (_actionTypes.Count > 0)
+                {
+                    HandleAction();
+                    _actionTypes.RemoveAt(0);
+                }
+                else
+                {
+                    TraceGravity();
+                }
+            }
+        }
+
+        private void HandleAction()
         {
             DrawOrbits();
+        }
+
+        private void StartNewThread(object[] dict)
+        {
+            thread = new Thread(new ParameterizedThreadStart(Sample));
+            thread.Start(dict);
+        }
+
+        private void OnDisable()
+        {
+            if (thread != null)
+            {
+                thread.Abort();
+            }
+        }
+
+        private void FixedUpdate()
+        {
+            Dispatch();
         }
 
         public void AddTracingTarget(ITraceable traceable)
@@ -117,21 +164,26 @@ namespace SpacePhysic
             return PhysicBase.GetG() * (originMass * targetMass / (distance * distance));
         }
 
-        private Vector3 GetGravityVector3(ITraceable a0, ITraceable a1, int sampleTime)
+        private Vector3 GetGravityVector3(ITraceable a0, ITraceable a1, float a0Mass,float a1Mass,int sampleTime)
         {
             var distance            = Vector3.Distance(_orbitPoints[a0][sampleTime], _orbitPoints[a1][sampleTime]);
             var normalizedDirection = (_orbitPoints[a1][sampleTime] - _orbitPoints[a0][sampleTime]).normalized;
-            return CalculateGravityModulus(a0.GetMass(), a1.GetMass(), distance) * normalizedDirection;
+            // Debug.Log("a0Mass:" + a0Mass);
+            // Debug.Log("a1Mass:" + a1Mass);
+            // Debug.Log("distance:" + distance);
+            // Debug.Log("normalizedDirection:" + normalizedDirection);
+            // return PhysicBase.GetG() * (a0Mass * a1Mass / (distance * distance))* normalizedDirection;
+            return CalculateGravityModulus(a0Mass, a1Mass, distance) * normalizedDirection;
         }
 
-        private Vector3 CalculateForce(ITraceable astralBody, int sampleTime)
+        private Vector3 CalculateForce(ITraceable astralBody, int sampleTime,Dictionary<ITraceable,float> massDict)
         {
             var result = new Vector3(0, 0, 0);
             //求合力
             foreach (ITraceable body in astralBody.GetAffectedPlanets())
             {
                 if (body == astralBody) continue;
-                result += GetGravityVector3(astralBody, body, sampleTime);
+                result += GetGravityVector3(astralBody, body, massDict[astralBody],massDict[body],sampleTime);
             }
 
             // Debug.Log(astralBody.GetMass() + " force: " + result);
@@ -143,6 +195,7 @@ namespace SpacePhysic
         //引力步进
         private void TraceGravity()
         {
+            
             var astralBodyVelocities = new Dictionary<ITraceable, Vector3>();
 
 
@@ -154,11 +207,30 @@ namespace SpacePhysic
                 astralBodyVelocities[astralBody] = astralBody.GetVelocity();
                 //起始点改为当前位置
                 if (_orbitPoints.ContainsKey(astralBody)) _orbitPoints[astralBody].Clear();
-                _orbitPoints[astralBody].Add(astralBody.GetTransform().position);
+                _orbitPoints[astralBody].Add(astralBody.GetPosition());
             }
 
+            Dictionary<ITraceable, float> astralBodyMasses = new Dictionary<ITraceable, float>();
+            _astralBodies.ForEach(a => astralBodyMasses.Add(a,a.GetMass()));
+            
+            StartNewThread(new object[]{
+                (object)astralBodyVelocities,
+                (object)astralBodyMasses
+            });
+
+            
+           
+        }
+
+        private void Sample(object objs)
+        {
+            // Debug.Log("Tracing!");
+            object[] dicts= (object[])objs;
+            Dictionary<ITraceable, Vector3> astralBodyVelocities = (Dictionary <ITraceable, Vector3 >)dicts[0];
+            Dictionary<ITraceable, float> astralBodyMasses = (Dictionary <ITraceable, float >)dicts[1];
             //开始采样
             for (var i = 0; i < sample; i++)
+            {
                 //遍历星体
                 foreach (var astralBody in _astralBodies)
                 {
@@ -168,15 +240,18 @@ namespace SpacePhysic
                  * delta v=at
                  * s = vt + 0.5a(t^2)
                  */
-                    var acceleration = CalculateForce(astralBody, i) / astralBody.GetMass();
+                    var acceleration = CalculateForce(astralBody, i, astralBodyMasses) / astralBodyMasses[astralBody];
                     // Debug.Log("deltatime: " + _deltaTime);
-                    _orbitPoints[astralBody].Add(_orbitPoints[astralBody].Last() +
+                    _orbitPoints[astralBody].Add(_orbitPoints[astralBody].Last()               +
                                                  astralBodyVelocities[astralBody] * _deltaTime +
-                                                 .5f * acceleration * Mathf.Pow(_deltaTime, 2));
+                                                 .5f                              * acceleration * Mathf.Pow(_deltaTime, 2));
                     //加速后速度
                     astralBodyVelocities[astralBody] += acceleration * _deltaTime;
                     //Debug.DrawLine(_orbitPoints[astralBody].Last(),_orbitPoints[astralBody].Last() + CalculateForce(astralBody,i));
                 }
+            }
+            _actionTypes.Add(ActionType.Finished);
+            // Debug.Log(_actionTypes.Count);
         }
 
         private void DrawOrbit(ITraceable astralBody)
@@ -187,8 +262,9 @@ namespace SpacePhysic
 
         public void DrawOrbits()
         {
-            TraceGravity();
+            // TraceGravity();
             foreach (var astralBody in _astralBodies) DrawOrbit(astralBody);
+            
         }
 
         #endregion
