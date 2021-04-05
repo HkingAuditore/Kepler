@@ -5,7 +5,16 @@ using UnityEngine.UI;
 
 public class OrbitGraphUI : MonoBehaviour
 {
-    public float      l;
+    public Vector3   angularMomentum
+    {
+        get
+        {
+            Vector3 vm = astralBody.GetVelocity() * astralBody.Mass;
+            Vector3 r  = astralBody.transform.position - astralBody.affectedPlanets[0].transform.position;
+            return Vector3.Cross(r, vm);
+        }
+    }
+
     public AstralBody astralBody;
     public float      conHeight;
     public Text       angularVelocity;
@@ -67,13 +76,14 @@ public class OrbitGraphUI : MonoBehaviour
     private float GetOriAngle()
     {
         var tar2Ori = astralBody.transform.position - astralBody.affectedPlanets[0].transform.position;
-        var axis = astralBody.affectedPlanets[0].transform.position + new Vector3(
-                                                                                  1 * Mathf.Cos(orbit.angle *
-                                                                                                Mathf.Deg2Rad),
-                                                                                  0,
-                                                                                  1 * Mathf.Sin(orbit.angle *
-                                                                                                Mathf
-                                                                                                   .Deg2Rad));
+        // var axis = astralBody.affectedPlanets[0].transform.position + new Vector3(
+        //                                                                           1 * Mathf.Cos(orbit.angle *
+        //                                                                                         Mathf.Deg2Rad),
+        //                                                                           0,
+        //                                                                           1 * Mathf.Sin(orbit.angle *
+        //                                                                                         Mathf
+        //                                                                                            .Deg2Rad));
+        var axis = astralBody.affectedPlanets[0].transform.position - new Vector3(orbit.geoCenter.x,0,orbit.geoCenter.y);
         // Debug.DrawLine(astralBody.AffectedPlanets[0].transform.position,
         //                astralBody.AffectedPlanets[0].transform.position + tar2Ori,
         //                Color.magenta,
@@ -96,6 +106,8 @@ public class OrbitGraphUI : MonoBehaviour
         angle     *= Mathf.Sign(Vector3.Dot(normal, new Vector3(0, 1, 0))); //求法线向量与物体上方向向量点乘，结果为1或-1，修正旋转方向
         _curAngle =  angle;
         // Debug.Log(angle);
+        // return (orbit.semiMajorAxis * (1 - orbit.eccentricity * orbit.eccentricity))/Vector3.Distance(astralBody.transform.position,
+                                                                                                      // astralBody.affectedPlanets[0].transform.position);
         return angle;
     }
 
@@ -136,20 +148,48 @@ public class OrbitGraphUI : MonoBehaviour
                                      );
         _targetImageRect.anchoredPosition = new Vector2(_graphOrbit.c * orientation, 0);
 
+        
         //Fill
         _fillImageRect.anchoredPosition = _targetImageRect.anchoredPosition;
         var direction = _fillImageRect.position - _oriImageRect.transform.position;
         _fillImageRect.transform.up = direction;
-
-        Vector3 v = _angularVelocity * astralBody.GetVelocity();
-        Vector3 r = astralBody.transform.position - astralBody.affectedPlanets[0].transform.position;
-        Vector3   l = Vector3.Cross(r, v);
-        this.l = l.magnitude;
+        float r = Vector3.Distance(astralBody.transform.position,
+                                   astralBody.affectedPlanets[0].transform.position);
+        float s          = GetDADT()  * 30000;
+        float es         = Mathf.PI   * orbit.semiMajorAxis * orbit.semiMinorAxis;
+        float fillAmount = s          / (r * r * Mathf.PI);
+        float angle      = fillAmount * 360;
         
-        // Debug.Log("angle: " +angle);
-        // fillImage.fillAmount = angle / 360f;
+        var oriR = this.GetDistanceToFociByAngle(_curAngle);
+        var tarR = this.GetDistanceToFociByAngle(_curAngle + angle);
+        fillAmount           *= (oriR / tarR);
+        this.tr              =  tarR;
+        this.or              =  oriR;
+        fillAmount           =  Mathf.Min(fillAmount, (s / es) / (oriR / (orbit.semiMajorAxis + orbit.focalLength/2)));
+        fillImage.fillAmount =  fillAmount;
+        // this.r               = r;
     }
 
+    private float GetDADT()
+    {
+        return (this.angularMomentum.magnitude / astralBody.Mass)/ (2 * PhysicBase.GetG() * astralBody.affectedPlanets[0].Mass );
+    }
+
+    private float GetDistanceToFociByAngle(float angle)
+    {
+        return (orbit.semiMajorAxis * (1 - orbit.eccentricity * orbit.eccentricity)) / (1 + orbit.eccentricity * Mathf.Cos(angle*Mathf.Deg2Rad));
+    }
+
+    private float GetDistance()
+    {
+        return Vector3.Distance(_oriImageRect.position, _targetImageRect.position);
+    }
+
+    // public float am;
+    // public float tr;
+    // public float or;
+
+    
     private void CalculateAngularVelocity()
     {
         _angularVelocity = Mathf.Abs(_curAngle - _lastAngle) / Time.fixedDeltaTime;
