@@ -163,8 +163,8 @@ public class OrbitGraphUI : MonoBehaviour
         var oriR = this.GetDistanceToFociByAngle(_curAngle);
         var tarR = this.GetDistanceToFociByAngle(_curAngle + angle);
         fillAmount           *= (oriR / tarR);
-        this.tr              =  tarR;
-        this.or              =  oriR;
+        // this.tr              =  tarR;
+        // this.or              =  oriR;
         fillAmount           =  Mathf.Min(fillAmount, (s / es) / (oriR / (orbit.semiMajorAxis + orbit.focalLength/2)));
         fillImage.fillAmount =  fillAmount;
         // this.r               = r;
