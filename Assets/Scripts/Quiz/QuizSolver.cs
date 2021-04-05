@@ -2,22 +2,34 @@ using System;
 using System.Collections;
 using System.Text;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Quiz
 {
+    public enum Reason
+    {
+        Right,
+        NonCircleOrbit,
+        Crash,
+    }
     public class QuizSolver : QuizBase
     {
-        public  QuizUI quizUI;
-        public  float  waitTime;
-        public  float  radiusOffset = .2f;
-        private float  _tmpAnswer;
-
-        private bool _isRight = true;
+        public QuizUI     quizUI;
+        public float      waitTime;
+        public float      radiusOffset = .2f;
+        public UnityEvent resultEvent;
+        public UnityEvent answerEvent;
+        
+        private float _tmpAnswer;
+        private bool  _isRight = true;
+        private bool  _isAnswered = false;
         public bool isRight
         {
             get => _isRight;
             set => _isRight = value;
         }
+
+        private Reason _reason;
 
         public float TmpAnswer
         {
@@ -26,6 +38,28 @@ namespace Quiz
             {
                 _tmpAnswer = value;
                 FinishQuiz(_tmpAnswer.Equals(answer));
+                answerEvent.Invoke();
+            }
+        }
+
+        public Reason reason
+        {
+            get => _reason;
+            set
+            {
+                _reason = value;
+                if(_reason == Reason.Crash)
+                    resultEvent.Invoke();
+            }
+        }
+
+        public bool isAnswered
+        {
+            get => _isAnswered;
+            set
+            {
+                _isAnswered = value;
+                
             }
         }
 
@@ -50,8 +84,9 @@ namespace Quiz
             if (this.isRight)
             {
                 Debug.Log("Test Result: Right!");
-                
+                this.reason = Reason.Right;
             }
+            resultEvent.Invoke();
         }
 
         public override void Start()

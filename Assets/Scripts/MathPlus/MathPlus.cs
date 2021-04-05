@@ -324,13 +324,22 @@ namespace MathPlus
             float   c            = e * a;
             float   b            = Mathf.Sqrt(a * a - c * c);
             Vector2 orbitHorizon = (f2 - oriPos).normalized;
-            float   theta        = Vector2.Angle(new Vector2(1, 0), orbitHorizon);
-            Debug.Log("a = " + a);
-            Debug.Log("b = " + b);
-            Debug.Log("e = " + e);
-            Debug.Log("ev = " + ev);
-            Debug.Log("geoCenter = " + geoCenter);
-            Debug.Log("theta= " + theta);
+            float   theta = 0;
+            if (orbitHorizon.y > 0)
+            {
+                theta = Vector2.Angle(new Vector2(1, 0), orbitHorizon);
+            }
+            else
+            {
+                theta =180 - Vector2.Angle(new Vector2(1, 0), orbitHorizon);
+
+            }
+            // Debug.Log("a = " + a);
+            // Debug.Log("b = " + b);
+            // Debug.Log("e = " + e);
+            // Debug.Log("ev = " + ev);
+            // Debug.Log("geoCenter = " + geoCenter);
+            // Debug.Log("theta= " + theta);
             return new ConicSection(a, b, c,theta, geoCenter);
         }
     }

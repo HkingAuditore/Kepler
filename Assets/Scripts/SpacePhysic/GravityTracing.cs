@@ -60,10 +60,11 @@ namespace SpacePhysic
         {
             _deltaTime = 100f / sample * Time.fixedDeltaTime * timeScale;
             foreach (ITraceable traceable in GetComponentsInChildren<AstralBody>()) AddTracingTarget(traceable);
+            _thread = new Thread(new ParameterizedThreadStart(Sample));
         }
 
         private List<ActionType> _actionTypes = new List<ActionType>();
-        private Thread           thread;
+        private Thread           _thread;
 
         private void Dispatch()
         {
@@ -76,7 +77,10 @@ namespace SpacePhysic
                 }
                 else
                 {
-                    TraceGravity();
+                    if (!_thread.ThreadState.Equals(ThreadState.Running)) 
+                    {
+                        TraceGravity();
+                    }
                 }
             }
         }
@@ -88,19 +92,19 @@ namespace SpacePhysic
 
         private void StartNewThread(object[] dict)
         {
-            thread = new Thread(new ParameterizedThreadStart(Sample));
-            thread.Start(dict);
+            _thread = new Thread(new ParameterizedThreadStart(Sample));
+            _thread.Start(dict);
         }
 
         private void OnDisable()
         {
-            if (thread != null)
+            if (_thread != null)
             {
-                thread.Abort();
+                _thread.Abort();
             }
         }
 
-        private void FixedUpdate()
+        private void Update()
         {
             Dispatch();
         }
@@ -166,8 +170,12 @@ namespace SpacePhysic
 
         private Vector3 GetGravityVector3(ITraceable a0, ITraceable a1, float a0Mass,float a1Mass,int sampleTime)
         {
+            
             var distance            = Vector3.Distance(_orbitPoints[a0][sampleTime], _orbitPoints[a1][sampleTime]);
             var normalizedDirection = (_orbitPoints[a1][sampleTime] - _orbitPoints[a0][sampleTime]).normalized;
+            // Debug.Log(_orbitPoints[a1][sampleTime]);
+            // Debug.Log(_orbitPoints[a0][sampleTime]);
+            // Debug.Log("count:" + _orbitPoints[a1].Count);
             // Debug.Log("a0Mass:" + a0Mass);
             // Debug.Log("a1Mass:" + a1Mass);
             // Debug.Log("distance:" + distance);
@@ -209,6 +217,7 @@ namespace SpacePhysic
                 if (_orbitPoints.ContainsKey(astralBody)) _orbitPoints[astralBody].Clear();
                 _orbitPoints[astralBody].Add(astralBody.GetPosition());
             }
+            
 
             Dictionary<ITraceable, float> astralBodyMasses = new Dictionary<ITraceable, float>();
             _astralBodies.ForEach(a => astralBodyMasses.Add(a,a.GetMass()));
@@ -249,7 +258,10 @@ namespace SpacePhysic
                     astralBodyVelocities[astralBody] += acceleration * _deltaTime;
                     //Debug.DrawLine(_orbitPoints[astralBody].Last(),_orbitPoints[astralBody].Last() + CalculateForce(astralBody,i));
                 }
+
+                
             }
+            
             _actionTypes.Add(ActionType.Finished);
             // Debug.Log(_actionTypes.Count);
         }
@@ -281,7 +293,7 @@ namespace SpacePhysic
             return new Vector3(vector2.x, 0, vector2.y);
         }
 
-        public ConicSection GetConicSection(ITraceable astralBody, int sampleCount)
+        public ConicSection GetConicSection(ITraceable astralBody)
         {
             // var sampleStep = sample / sampleCount;
             //
@@ -308,22 +320,37 @@ namespace SpacePhysic
             // Debug.Log("new section:" + "eccentricity = " + newConicSection.eccentricity);
             // Debug.Log("new section:" + "geo center = " + newConicSection.geoCenter);
             // Debug.Log("new section:" + "T = " + newConicSection.GetT(astralBody.GetAffectedPlanets()[0].mass));
-            Debug.Log("new section:" + "angle = " + conicSection.angle);
+            // Debug.Log("new section:" + "angle = " + conicSection.angle);
 
             
             return conicSection;
         }
-
+        
         public void DrawMathOrbit(ConicSection conicSection, int sam)
         {
-            var points = new List<SplinePoint>();
-            var step   = 360f / sam;
-            for (var i = 0; i < sam; i++)
-                points.Add(new SplinePoint(ConvertV2ToV3(conicSection.GetPolarPos(i * step))));
-            points.Add(new SplinePoint(ConvertV2ToV3(conicSection.GetPolarPos(360))));
+            if (conicSection != null)
+            {
+                var points = new List<SplinePoint>();
+                var step   = 360f / sam;
+                for (var i = 0; i < sam; i++)
+                    points.Add(new SplinePoint(ConvertV2ToV3(conicSection.GetPolarPos(i * step))));
+                points.Add(new SplinePoint(ConvertV2ToV3(conicSection.GetPolarPos(360))));
 
-            splineComputer.SetPoints(points.ToArray());
-            splineComputer.Close();
+                splineComputer.SetPoints(points.ToArray());
+                splineComputer.Close();
+
+            }
+            else
+            {
+                splineComputer.SetPoints(new []
+                                         {
+                                             new SplinePoint(new Vector3(0, 0, 0)),
+                                             new SplinePoint(new Vector3(0, 0, 0)),
+                                             new SplinePoint(new Vector3(0, 0, 0)),
+                                             new SplinePoint(new Vector3(0, 0, 0))
+                                         });
+                splineComputer.Close();
+            }
 
             // mathOrbitDrawer.positionCount = sam + 1;
             // mathOrbitDrawer.SetPositions(points.ToArray());

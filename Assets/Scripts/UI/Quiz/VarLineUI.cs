@@ -18,6 +18,7 @@ public class VarLineUI : MonoBehaviour
 {
 
     public                         ShowPropertyType property;
+    public                         bool             isQuiz;
     [Header("UI Elements")] public Text             header;
     public                         Toggle           toggle;
     public                         Text             unit;
@@ -31,8 +32,8 @@ public class VarLineUI : MonoBehaviour
 
     [Header("Images")] public Sprite         editableImage;
     public                    Sprite         readOnlyImage;
-    [SerializeField] private                  QuizAstralBody _target;
-    public QuizAstralBody target
+    [SerializeField] private                  AstralBody _target;
+    public AstralBody target
     {
         get => _target;
         set
@@ -59,6 +60,7 @@ public class VarLineUI : MonoBehaviour
     [ContextMenu("快速应用")]
     public void Generate()
     {
+        this.toggle.gameObject.SetActive(isQuiz);
         header.text                                                 = headerString;
         unit.text                                                   = unitString;
         inputField.readOnly                                         = !enableInput;
@@ -73,45 +75,71 @@ public class VarLineUI : MonoBehaviour
             text.text  = "请输入";
             var rectTransform = inputField.gameObject.GetComponent<RectTransform>();
             rectTransform.sizeDelta = new Vector2(193f, rectTransform.sizeDelta.y);
-            rectTransform.anchoredPosition =
-                new Vector2(rectTransform.anchoredPosition.x + 17.9f, rectTransform.anchoredPosition.y);
+            // rectTransform.anchoredPosition =
+            //     new Vector2(rectTransform.anchoredPosition.x + 17.9f, rectTransform.anchoredPosition.y);
         }
+
+        
     }
 
     private void GenerateBasicInfo()
     {
-        switch (property)
+        if (isQuiz)
         {
-            case ShowPropertyType.m:
-                inputField.text = target.mass.ToString("f2");
-                toggle.isOn     = target.isMassPublic;
-                break;
-            case ShowPropertyType.v:
-                inputField.text = target.GetVelocity().magnitude.ToString("f2");
-                toggle.isOn     = target.isVelocityPublic;
-                break;
-            case ShowPropertyType.R:
-                inputField.text = target.size.ToString("f2");
-                toggle.isOn     = target.isSizePublic;
-                break;
-            case ShowPropertyType.T:
-                inputField.text = target.period.ToString("f2");
-                toggle.isOn     = target.isPeriodPublic;
-                break;
-            case ShowPropertyType.radius:
-                inputField.text = target.radius.ToString("f2");
-                toggle.isOn     = target.isRadiusPublic;
-                break;
-            case ShowPropertyType.omega:
-                inputField.text = target.globalAngularVelocity.ToString("f2");
-                toggle.isOn     = target.isAngularVelocityPublic;
-                break;
-            case ShowPropertyType.g:
-                inputField.text = target.gravity.ToString("f2");
-                toggle.isOn     = target.isGravityPublic;
-                break;
-            default:
-                throw new ArgumentOutOfRangeException();
+                    switch (property)
+                    {
+                        case ShowPropertyType.m:
+                            inputField.text = target.mass.ToString("f2");
+                            toggle.isOn     = ((QuizAstralBody) target).isMassPublic;
+                            break;
+                        case ShowPropertyType.v:
+                            inputField.text = target.GetVelocity().magnitude.ToString("f2");
+                            toggle.isOn     = ((QuizAstralBody) target).isVelocityPublic;
+                            break;
+                        case ShowPropertyType.R:
+                            inputField.text = target.size.ToString("f2");
+                            toggle.isOn     = ((QuizAstralBody) target).isSizePublic;
+                            break;
+                        case ShowPropertyType.T:
+                            inputField.text = ((QuizAstralBody) target).period.ToString("f2");
+                            toggle.isOn     = ((QuizAstralBody) target).isPeriodPublic;
+                            break;
+                        case ShowPropertyType.radius:
+                            inputField.text = ((QuizAstralBody) target).radius.ToString("f2");
+                            toggle.isOn     = ((QuizAstralBody) target).isRadiusPublic;
+                            break;
+                        case ShowPropertyType.omega:
+                            inputField.text = ((QuizAstralBody) target).globalAngularVelocity.ToString("f2");
+                            toggle.isOn     = ((QuizAstralBody) target).isAngularVelocityPublic;
+                            break;
+                        case ShowPropertyType.g:
+                            inputField.text = ((QuizAstralBody) target).gravity.ToString("f2");
+                            toggle.isOn     = ((QuizAstralBody) target).isGravityPublic;
+                            break;
+                        default:
+                            throw new ArgumentOutOfRangeException();
+                    }
+
+        }
+        else
+        {
+            switch (property)
+            {
+                case ShowPropertyType.m:
+                    inputField.text = target.mass.ToString("f2");
+                    break;
+                case ShowPropertyType.v:
+                    inputField.text = target.GetVelocity().magnitude.ToString("f2");
+                    break;
+                case ShowPropertyType.R:
+                    inputField.text = target.size.ToString("f2");
+                    break;
+                case ShowPropertyType.g:
+                    inputField.text = target.gravity.ToString("f2");
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
         }
         
     }
@@ -128,16 +156,16 @@ public class VarLineUI : MonoBehaviour
             case ShowPropertyType.R:
                 break;
             case ShowPropertyType.T:
-                inputField.text = target.period.ToString("f2");
+                inputField.text = ((QuizAstralBody) target).period.ToString("f2");
                 break;
             case ShowPropertyType.radius:
-                inputField.text = target.radius.ToString("f2");
+                inputField.text = ((QuizAstralBody) target).radius.ToString("f2");
                 break;
             case ShowPropertyType.omega:
-                inputField.text = target.globalAngularVelocity.ToString("f2");
+                inputField.text = ((QuizAstralBody) target).globalAngularVelocity.ToString("f2");
                 break;
             case ShowPropertyType.g:
-                inputField.text = target.gravity.ToString("f2");
+                inputField.text = (target).gravity.ToString("f2");
                 break;
             default:
                 throw new ArgumentOutOfRangeException();
@@ -149,25 +177,25 @@ public class VarLineUI : MonoBehaviour
         switch (property)
         {
             case ShowPropertyType.m:
-                target.isMassPublic = toggle.isOn;
+                ((QuizAstralBody) target).isMassPublic = toggle.isOn;
                 break;
             case ShowPropertyType.v:
-                target.isVelocityPublic = toggle.isOn;
+                ((QuizAstralBody) target).isVelocityPublic = toggle.isOn;
                 break;
             case ShowPropertyType.R:
-                target.isSizePublic = toggle.isOn;
+                ((QuizAstralBody) target).isSizePublic = toggle.isOn;
                 break;
             case ShowPropertyType.T:
-                target.isPeriodPublic = toggle.isOn;
+                ((QuizAstralBody) target).isPeriodPublic = toggle.isOn;
                 break;
             case ShowPropertyType.radius:
-                target.isRadiusPublic = toggle.isOn;
+                ((QuizAstralBody) target).isRadiusPublic = toggle.isOn;
                 break;
             case ShowPropertyType.omega:
-                target.isAngularVelocityPublic = toggle.isOn;
+                ((QuizAstralBody) target).isAngularVelocityPublic = toggle.isOn;
                 break;
             case ShowPropertyType.g:
-                target.isGravityPublic = toggle.isOn;
+                ((QuizAstralBody) target).isGravityPublic = toggle.isOn;
                 break;
             default:
                 throw new ArgumentOutOfRangeException();

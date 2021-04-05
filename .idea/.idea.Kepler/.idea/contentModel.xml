@@ -500,6 +500,7 @@
               <e p="QuizLineUI.cs" t="Include" />
               <e p="QuizListUI.cs" t="Include" />
               <e p="QuizUI.cs" t="Include" />
+              <e p="ResultUI.cs" t="Include" />
               <e p="VarLineUI.cs" t="Include" />
             </e>
             <e p="SatelliteControllerUI.cs" t="Include" />

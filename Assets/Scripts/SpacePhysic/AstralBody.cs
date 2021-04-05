@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using MathPlus;
 using SpacePhysic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -75,6 +76,7 @@ public class AstralBody : MonoBehaviour, ITraceable
             ChangeSize();
         }
     }
+
 
     private void Awake()
     {
@@ -293,5 +295,6 @@ public class AstralBody : MonoBehaviour, ITraceable
         AstralBody core = affectedPlanets.OrderByDescending(a => this.GetGravityVector3(a.GetRigidbody()).magnitude).FirstOrDefault();
         this.oriVelocity = (MathPlus.CustomSolver.GetCircleOrbitVelocity(this.transform.position,core.GetTransform().position,core.mass));
     }
+
     #endregion
 }

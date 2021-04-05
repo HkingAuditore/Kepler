@@ -1,9 +1,11 @@
 ﻿using MathPlus;
+using SpacePhysic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class OrbitGraphUI : MonoBehaviour
 {
+    public float      l;
     public AstralBody astralBody;
     public float      conHeight;
     public Text       angularVelocity;
@@ -11,6 +13,10 @@ public class OrbitGraphUI : MonoBehaviour
     public Image      ellipseImage;
     public Image      oriImage;
     public Image      targetImage;
+
+    [Header("Fill")] public RectTransform fillMask;
+    public                  Image         fillImage;
+
 
     private float _angularVelocity;
 
@@ -22,6 +28,7 @@ public class OrbitGraphUI : MonoBehaviour
     private float         _lastAngle;
     private RectTransform _oriImageRect;
     private RectTransform _targetImageRect;
+    private RectTransform _fillImageRect;
     public  ConicSection  orbit;
 
 
@@ -30,6 +37,7 @@ public class OrbitGraphUI : MonoBehaviour
         _ellipseImageRect = ellipseImage.gameObject.GetComponent<RectTransform>();
         _oriImageRect     = oriImage.gameObject.GetComponent<RectTransform>();
         _targetImageRect  = targetImage.gameObject.GetComponent<RectTransform>();
+        _fillImageRect    = fillImage.gameObject.GetComponent<RectTransform>();
     }
 
     private void FixedUpdate()
@@ -50,6 +58,7 @@ public class OrbitGraphUI : MonoBehaviour
         PosOri();
         _lastAngle                  = _curAngle;
         _ellipseImageRect.sizeDelta = new Vector2(2 * _graphOrbit.a, 2 * _graphOrbit.b);
+        fillMask.sizeDelta          = _ellipseImageRect.sizeDelta;
 
         // PosOri();
         PosTar();
@@ -59,12 +68,12 @@ public class OrbitGraphUI : MonoBehaviour
     {
         var tar2Ori = astralBody.transform.position - astralBody.affectedPlanets[0].transform.position;
         var axis = astralBody.affectedPlanets[0].transform.position + new Vector3(
-                    1 * Mathf.Cos(orbit.angle *
-                                  Mathf.Deg2Rad),
-                    0,
-                    1 * Mathf.Sin(orbit.angle *
-                                  Mathf
-                                     .Deg2Rad));
+                                                                                  1 * Mathf.Cos(orbit.angle *
+                                                                                                Mathf.Deg2Rad),
+                                                                                  0,
+                                                                                  1 * Mathf.Sin(orbit.angle *
+                                                                                                Mathf
+                                                                                                   .Deg2Rad));
         // Debug.DrawLine(astralBody.AffectedPlanets[0].transform.position,
         //                astralBody.AffectedPlanets[0].transform.position + tar2Ori,
         //                Color.magenta,
@@ -94,37 +103,51 @@ public class OrbitGraphUI : MonoBehaviour
     private void PosOri()
     {
         _oriImageRect.anchoredPosition = _graphOrbit.GetPolarPos(GetOriAngle());
+
         // Debug.Log(oriImage.rectTransform.anchoredPosition);
     }
 
     private void PosTar()
     {
         var lSizePos = new Vector3(orbit.geoCenter.x, 0, orbit.geoCenter.y) + new Vector3(
-                        1 * Mathf
-                           .Cos(orbit.angle *
-                                Mathf.Deg2Rad),
-                        0,
-                        1 * Mathf
-                           .Sin(orbit.angle *
-                                Mathf
-                                   .Deg2Rad)) *
-                       orbit.semiMajorAxis;
+                                                                                          1 * Mathf
+                                                                                             .Cos(orbit.angle *
+                                                                                                  Mathf.Deg2Rad),
+                                                                                          0,
+                                                                                          1 * Mathf
+                                                                                             .Sin(orbit.angle *
+                                                                                                  Mathf
+                                                                                                     .Deg2Rad)) *
+            orbit.semiMajorAxis;
         var rSizePos = new Vector3(orbit.geoCenter.x, 0, orbit.geoCenter.y) - new Vector3(
-                        1 * Mathf
-                           .Cos(orbit.angle *
-                                Mathf.Deg2Rad),
-                        0,
-                        1 * Mathf
-                           .Sin(orbit.angle *
-                                Mathf
-                                   .Deg2Rad)) *
-                       orbit.semiMajorAxis;
+                                                                                          1 * Mathf
+                                                                                             .Cos(orbit.angle *
+                                                                                                  Mathf.Deg2Rad),
+                                                                                          0,
+                                                                                          1 * Mathf
+                                                                                             .Sin(orbit.angle *
+                                                                                                  Mathf
+                                                                                                     .Deg2Rad)) *
+            orbit.semiMajorAxis;
         var orientation = -Mathf.Sign(
                                       Vector3.Distance(astralBody.affectedPlanets[0].transform.position, lSizePos)
-                                      -
+                                     -
                                       Vector3.Distance(astralBody.affectedPlanets[0].transform.position, rSizePos)
                                      );
         _targetImageRect.anchoredPosition = new Vector2(_graphOrbit.c * orientation, 0);
+
+        //Fill
+        _fillImageRect.anchoredPosition = _targetImageRect.anchoredPosition;
+        var direction = _fillImageRect.position - _oriImageRect.transform.position;
+        _fillImageRect.transform.up = direction;
+
+        Vector3 v = _angularVelocity * astralBody.GetVelocity();
+        Vector3 r = astralBody.transform.position - astralBody.affectedPlanets[0].transform.position;
+        Vector3   l = Vector3.Cross(r, v);
+        this.l = l.magnitude;
+        
+        // Debug.Log("angle: " +angle);
+        // fillImage.fillAmount = angle / 360f;
     }
 
     private void CalculateAngularVelocity()

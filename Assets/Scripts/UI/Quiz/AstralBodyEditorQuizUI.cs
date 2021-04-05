@@ -7,8 +7,6 @@ using UnityEngine.UI;
 public class AstralBodyEditorQuizUI : AstralBodyEditorUI
 {
 
-    [Header("Var Line List")] 
-    public List<VarLineUI> varLineUis;
 
     [Header("Quiz Setting")] public Toggle isThisTarget;
 
@@ -19,9 +17,9 @@ public class AstralBodyEditorQuizUI : AstralBodyEditorUI
         isThisTarget.interactable = !isThisTarget.isOn;
     }
 
-    protected override void Awake()
-    {
-    }
+    // protected override void Awake()
+    // {
+    // }
 
     protected override void OnEnable()
     {

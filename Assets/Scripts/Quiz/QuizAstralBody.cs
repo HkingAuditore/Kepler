@@ -15,8 +15,9 @@ public class QuizAstralBody : AstralBody
     public bool  isSizePublic;
     public float globalAngularVelocity;
 
-    private float _oriRadius;
-    private float _curRadius;
+    private float      _oriRadius;
+    private float      _curRadius;
+    private GameObject _line;
 
 
     public float _period;
@@ -73,7 +74,7 @@ public class QuizAstralBody : AstralBody
         if (GameManager.GetGameManager.quizBase.target != this)
         {
             this.radius = Vector3.Distance(this.transform.position, GameManager.GetGameManager.quizBase.target.transform.position);
-            ConicSection conicSection = GameManager.GetGameManager.orbit.GetConicSection(this, 1000);
+            ConicSection conicSection = GameManager.GetGameManager.orbit.GetConicSection(this);
             this.period = conicSection.GetT(GameManager.GetGameManager.quizBase.target.GetMass());
             //TODO t
             this.t                     = 2;
@@ -95,7 +96,7 @@ public class QuizAstralBody : AstralBody
 
     public void UpdateHighCost()
     {
-        ConicSection conicSection = GameManager.GetGameManager.orbit.GetConicSection(this, 1000);
+        ConicSection conicSection = GameManager.GetGameManager.orbit.GetConicSection(this);
         this.period = conicSection.GetT(GameManager.GetGameManager.quizBase.target.GetMass());
         //TODO t
         this.t                     = 2;
@@ -122,6 +123,17 @@ public class QuizAstralBody : AstralBody
     protected override void Start()
     {
         base.Start();
+        _line = this.transform.GetChild(0).gameObject;
+        try
+        {
+            var solver = (QuizSolver)GameManager.GetGameManager.quizBase;
+            _line.SetActive(false);
+            solver.answerEvent.AddListener((() => _line.SetActive(true)));
+
+        }
+        catch (Exception e)
+        {
+        }
     }
 
     protected override void FixedUpdate()
@@ -136,6 +148,7 @@ public class QuizAstralBody : AstralBody
                 (((QuizSolver) (GameManager.GetGameManager.quizBase)).radiusOffset * oriRadius))
             {
                 ((QuizSolver) (GameManager.GetGameManager.quizBase)).isRight = false;
+                ((QuizSolver) (GameManager.GetGameManager.quizBase)).reason  = Reason.NonCircleOrbit;
                 // Debug.Log("Test Result: Not Circle!");
                 // Debug.Log("Test Result Cur Radius:" + _curRadius);
 
@@ -148,6 +161,7 @@ public class QuizAstralBody : AstralBody
         if (ReferenceEquals(this, GameManager.GetGameManager.quizBase.target))
         {
             ((QuizSolver) (GameManager.GetGameManager.quizBase)).isRight = false;
+            ((QuizSolver) (GameManager.GetGameManager.quizBase)).reason  = Reason.Crash;
             // Debug.Log("Test Result: Hit!");
         }
     }
