@@ -49,6 +49,6 @@ public class ResultUI : MonoBehaviour
 
     public void Back()
     {
-        //TODO Back
+        SceneManager.LoadScene("TestMode");
     }
 }

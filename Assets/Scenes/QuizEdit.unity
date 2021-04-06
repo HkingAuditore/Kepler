@@ -2002,7 +2002,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u53BB   \u505A   \u7EC3   \u4E60"
+  m_Text: "\u8FD4   \u56DE   \u7EC3   \u4E60"
 --- !u!222 &239906342
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3223,7 +3223,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 469638809}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1673999407}
+        m_TargetAssemblyTypeName: QuizEditorUI, Assembly-CSharp
+        m_MethodName: ToTestMode
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &469638809
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9085,7 +9097,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1449158204
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10070,7 +10082,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1673999406
 RectTransform:
   m_ObjectHideFlags: 0

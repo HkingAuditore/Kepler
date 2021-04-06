@@ -115,12 +115,28 @@ public class AstralBodyEditorUI : MonoBehaviour
 
     public void OpenConicSectionPanel()
     {
-        orbitPanelUI.astralBody = this.astralBody;
-        orbitPanelUI.gameObject.SetActive(true);
+        try
+        {
+            orbitPanelUI.astralBody = this.astralBody;
+            orbitPanelUI.gameObject.SetActive(true);
+
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+        }
     }
     public void CloseConicSectionPanel()
     {
-        orbitPanelUI.gameObject.SetActive(false);
+        try
+        {
+            orbitPanelUI.gameObject.SetActive(false);
+
+        }
+        catch
+        {
+            //ignore
+        }
     }
 
     

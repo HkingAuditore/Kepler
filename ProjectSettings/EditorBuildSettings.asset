@@ -17,4 +17,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/QuizTest.unity
     guid: 2df2a6fc906f63148a372a2979c13095
+  - enabled: 1
+    path: Assets/Scenes/QuizEdit.unity
+    guid: f976ef6176191284ba14acb843174969
+  - enabled: 1
+    path: Assets/Scenes/Satellite.unity
+    guid: 73c01fadb26fc1d49a8009eea52c8cc3
   m_configObjects: {}

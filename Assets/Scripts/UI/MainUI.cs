@@ -9,4 +9,15 @@ public class MainUI : MonoBehaviour
     {
         SceneManager.LoadScene("PhysicScene") ;
     }
+
+    public void LoadTestMode()
+    {
+        SceneManager.LoadScene("TestMode") ;
+
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
+    }
 }

@@ -68,4 +68,9 @@ public class QuizEditorUI : MonoBehaviour
 
     }
 
+    public void ToTestMode()
+    {
+        SceneManager.LoadScene("TestMode");
+    }
+
 }
