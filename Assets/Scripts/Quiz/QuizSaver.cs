@@ -248,5 +248,13 @@ namespace Quiz
 
             return xmlDocuments;
         }
+
+        public static void DeleteQuizFiles(string quizName)
+        {
+            if (File.Exists(xmlPath + quizName + ".xml"))
+            {
+                File.Delete(xmlPath + quizName + ".xml");
+            }
+        }
     }
 }

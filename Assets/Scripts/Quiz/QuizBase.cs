@@ -54,6 +54,22 @@ namespace Quiz
                 GenerateAstralBodiesWithoutPrefab();
             }
 
+            switch (quizType)
+            {
+                case QuizType.Mass:
+                    this.answer = target.Mass;
+                    break;
+                case QuizType.Density:
+                    this.answer = target.density;
+                    break;
+                case QuizType.Gravity:
+                    break;
+                case QuizType.Radius:
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
+
             // orbitBase.DrawOrbits();
             orbitBase.Freeze(true);
             IsLoadDone = true;

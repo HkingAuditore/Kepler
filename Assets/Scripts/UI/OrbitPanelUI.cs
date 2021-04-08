@@ -17,6 +17,7 @@ public class OrbitPanelUI : MonoBehaviour
     public  Text           focalLength;
     public  Text           period;
     public  Text           angle;
+    public  Text           k;
     public  OrbitGraphUI   orbitGraphUI;
     public  ConicSection   orbit;
     private GravityTracing _gravityTracing;
@@ -80,6 +81,9 @@ public class OrbitPanelUI : MonoBehaviour
             focalLength.text = "焦距: " + orbit.focalLength.ToString("f2") + " m";
             period.text = "周期: " + orbit.GetT(astralBody.affectedPlanets[0].mass).ToString("f2") + " s";
             angle.text = "倾角: " + orbit.angle.ToString("f2") + " °";
+            k.text = "T²/a³ :" + (orbit.GetT(astralBody.affectedPlanets[0].mass) *
+                                  orbit.GetT(astralBody.affectedPlanets[0].mass) /
+                                  (orbit.semiMajorAxis * orbit.semiMajorAxis * orbit.semiMajorAxis));
             orbitGraphUI.astralBody = astralBody;
             orbitGraphUI.orbit = orbit;
             orbitGraphUI.gameObject.SetActive(true);

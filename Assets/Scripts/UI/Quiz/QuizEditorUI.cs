@@ -23,7 +23,24 @@ public class QuizEditorUI : MonoBehaviour
 
     public void SaveQuiz()
     {
-        ((QuizEditor) (GameManager.GetGameManager.quizBase)).SaveQuiz(nameField.text);
+        var quizEditor = ((QuizEditor) (GameManager.GetGameManager.quizBase));
+        switch (quizEditor.quizType)
+        {
+            case QuizType.Mass:
+                quizEditor.answer = quizEditor.target.Mass;
+                break;
+            case QuizType.Density:
+                quizEditor.answer = quizEditor.target.density;
+                break;
+            case QuizType.Gravity:
+                break;
+            case QuizType.Radius:
+                break;
+            default:
+                throw new ArgumentOutOfRangeException();
+        }
+        
+        quizEditor.SaveQuiz(nameField.text);
         SettingToProp();
     }
 

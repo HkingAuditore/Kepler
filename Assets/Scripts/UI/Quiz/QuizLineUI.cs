@@ -13,6 +13,7 @@ public class QuizLineUI : MonoBehaviour
     
     public string         name;
     public QuizBaseStruct quizStruct;
+    public QuizListUI     quizListUI;
 
     private void OnEnable()
     {
@@ -23,6 +24,11 @@ public class QuizLineUI : MonoBehaviour
     {
         Transformer.GetTransformer.quizName = this.name;
         SceneManager.LoadScene("QuizTest");
+    }
+
+    public void Delete()
+    {
+        quizListUI.DeleteQuiz(this.name);
     }
 
     public void Generate()
