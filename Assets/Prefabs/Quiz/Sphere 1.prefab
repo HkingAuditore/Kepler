@@ -146,7 +146,7 @@ MonoBehaviour:
   _size: 8
   triggerCollider: {fileID: 1575909808793090413}
   defaultCollider: {fileID: 1575909808793090416}
-  oriVelocity: {x: 0.3, y: 0, z: 10.8}
+  oriVelocity: {x: 1.4, y: 0, z: -6.8}
   angularVelocity: {x: 0, y: 0, z: 0}
   enableAffect: 1
   affectRadius: 8
@@ -162,9 +162,9 @@ MonoBehaviour:
   isGravityPublic: 0
   isSizePublic: 0
   globalAngularVelocity: 0.3393103
-  _period: 33.48276
+  _period: 129.4644
   isPeriodPublic: 1
-  _radius: 57.39083
+  _radius: 139.5527
   isRadiusPublic: 1
   _anglePerT: 0.1696551
   isAnglePerTPublic: 0

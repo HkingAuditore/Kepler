@@ -237,7 +237,7 @@ namespace Quiz
             foreach (FileInfo f in files)
             {
                 var filename = f.Name;
-                if (filename.EndsWith(".xml"))
+                if (filename.EndsWith(".xml") && filename!=".xml")
                 {
                     string trueName = filename.Split(new char[] {'.'})[0];
                     xmlDocuments.Add(LoadXml(trueName));
