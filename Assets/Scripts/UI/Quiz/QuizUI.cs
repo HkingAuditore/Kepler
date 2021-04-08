@@ -98,7 +98,7 @@ public class QuizUI : MonoBehaviour
     private void GenerateAns()
     {
         _gap    = (int) Random.Range(0, quizSolver.answer);
-        _gap    = Mathf.Clamp(_gap, 10, 1000);
+        _gap    = (int) Mathf.Clamp(_gap, 0.1f *quizSolver.answer, 0.3f * quizSolver.answer);
         _ansPos = Random.Range(0, (int) (quizSolver.answer / _gap));
     }
 

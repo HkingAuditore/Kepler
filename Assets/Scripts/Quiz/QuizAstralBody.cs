@@ -203,7 +203,7 @@ public class QuizAstralBody : AstralBody
 
         }
 
-
+        if (stringBuilder.Length == 0) return null;
         stringBuilder.Remove(stringBuilder.Length - 1, 1);
         return stringBuilder.ToString();
     }

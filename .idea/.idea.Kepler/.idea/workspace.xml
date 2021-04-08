@@ -20,19 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1afa9dc1-adab-467c-afda-52b72c3d10f3" name="默认的" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Kepler/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Kepler/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Kepler/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Kepler/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Le Tai's Asset/TranslucentImage/Material/Default-Translucent.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Le Tai's Asset/TranslucentImage/Material/Default-Translucent.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/QuizLine.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/QuizLine.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Quiz/.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/PhysicScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/PhysicScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizBase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizSaver.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizSaver.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/OrbitGraphUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/OrbitGraphUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/OrbitPanelUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/OrbitPanelUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Quiz/QuizEditorUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Quiz/QuizEditorUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Quiz/QuizLineUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Quiz/QuizLineUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Quiz/QuizListUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Quiz/QuizListUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Quiz/QuizUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Quiz/QuizUI.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,7 +92,6 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizData.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizTransformer.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Quiz/Transformer.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/UI/Quiz/QuizUI.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizSolver.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/SpacePhysic/AstralBody.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/Quiz/VarLineUI.cs" />
@@ -124,6 +111,7 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/Quiz/QuizLineUI.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/Quiz/QuizListUI.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizBase.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/Quiz/QuizUI.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1iK5Y9kUuPbAZPnJQwHlUY16sq8" />
@@ -258,7 +246,7 @@
       <workItem from="1617587994729" duration="26167000" />
       <workItem from="1617699245624" duration="2390000" />
       <workItem from="1617803829813" duration="6016000" />
-      <workItem from="1617883069724" duration="2609000" />
+      <workItem from="1617883069724" duration="2912000" />
     </task>
     <servers />
   </component>

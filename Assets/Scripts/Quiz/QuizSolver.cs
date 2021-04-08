@@ -97,13 +97,22 @@ namespace Quiz
 
         public String GetQuizSentence()
         {
-            StringBuilder stringBuilder = new StringBuilder();
-            stringBuilder.Append("中心星体的" + this.target.GetQuizConditionString() + "；");
+            StringBuilder stringBuilder = new StringBuilder(" ");
+            string           centerString  = this.target.GetQuizConditionString();
+            if(centerString!=null)
+            {
+                stringBuilder.Append("中心星体的" + centerString + "；");
+            } 
             int i = 1;
             foreach (AstralBodyDict dict in astralBodiesDict)
             {
                 if(dict.isTarget)continue;
-                stringBuilder.Append("绕转星体" + i + "的" + dict.astralBody.GetQuizConditionString() + "；");
+                string orbitString = dict.astralBody.GetQuizConditionString();
+                if(orbitString!=null)
+                {
+                    stringBuilder.Append("绕转星体" + i + "的" + orbitString + "；");
+                }
+                
             }
             stringBuilder.Remove(stringBuilder.Length - 1, 1);
             stringBuilder.Append("。请求出");
