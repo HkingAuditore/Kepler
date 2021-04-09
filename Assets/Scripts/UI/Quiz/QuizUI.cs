@@ -55,11 +55,11 @@ public class QuizUI : MonoBehaviour
         {
             case QuizType.Mass:
                 ansText.text = ConvertSliderValue2Ans(quizSlider.value).ToString("f2") + " kg";
-                target.ChangeMass(ConvertSliderValue2Ans(quizSlider.value));
+                target.Mass = ConvertSliderValue2Ans(quizSlider.value);
                 break;
             case QuizType.Density:
                 ansText.text = ConvertSliderValue2Ans(quizSlider.value).ToString("f2") + " kg/m3";
-                target.ChangeMass(ConvertSliderValue2Ans(quizSlider.value) * Mathf.PI * Mathf.Pow(target.size,3)*4/3);
+                target.Mass = (ConvertSliderValue2Ans(quizSlider.value) * Mathf.PI * Mathf.Pow(target.size,3)*4/3);
                 break;
             case QuizType.Gravity:
                 break;

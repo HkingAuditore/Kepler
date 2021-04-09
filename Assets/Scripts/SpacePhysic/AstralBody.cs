@@ -37,7 +37,7 @@ public class AstralBody : MonoBehaviour, ITraceable
         get => mass;
         set
         {
-            mass = value;
+            mass = value > 0 ? value : 0;
             SetMass();
         }
     }
@@ -148,7 +148,7 @@ public class AstralBody : MonoBehaviour, ITraceable
 
     public virtual float GetMass()
     {
-        return GetRigidbody().mass;
+        return GetAstralBody().Mass;
     }
 
 
@@ -228,11 +228,7 @@ public class AstralBody : MonoBehaviour, ITraceable
         AstralBodyRigidbody.mass = Mass;
     }
 
-    public void ChangeMass(float curMass)
-    {
-        Mass = curMass;
-        SetMass();
-    }
+
 
     public void ChangeDensity(float curDensity)
     {

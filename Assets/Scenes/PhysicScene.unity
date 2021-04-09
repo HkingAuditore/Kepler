@@ -714,7 +714,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7956293801194740826, guid: 1bd490fa7a3ca2b43a6a61e186c413cc, type: 3}
       propertyPath: unitString
-      value: m/s
+      value: km/s
       objectReference: {fileID: 0}
     - target: {fileID: 7956293801194740826, guid: 1bd490fa7a3ca2b43a6a61e186c413cc, type: 3}
       propertyPath: headerString
@@ -6027,7 +6027,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7956293801194740826, guid: 1bd490fa7a3ca2b43a6a61e186c413cc, type: 3}
       propertyPath: unitString
-      value: m
+      value: 10^3km
       objectReference: {fileID: 0}
     - target: {fileID: 7956293801194740826, guid: 1bd490fa7a3ca2b43a6a61e186c413cc, type: 3}
       propertyPath: headerString
@@ -7362,8 +7362,8 @@ MonoBehaviour:
   vectorText: {fileID: 1115932340}
   thisType: 0
   header: "\u53D7\u529B"
-  unit: N
-  showSize: 0.3
+  unit: 10^17N
+  showSize: 100
 --- !u!1 &1267500439
 GameObject:
   m_ObjectHideFlags: 0
@@ -8897,8 +8897,8 @@ MonoBehaviour:
   vectorText: {fileID: 1516169278}
   thisType: 1
   header: "\u901F\u5EA6"
-  unit: m/s
-  showSize: 5
+  unit: km/s
+  showSize: 10
 --- !u!120 &1514731291
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -10734,6 +10734,10 @@ PrefabInstance:
     - target: {fileID: 7956293801194740824, guid: 1bd490fa7a3ca2b43a6a61e186c413cc, type: 3}
       propertyPath: m_Name
       value: m_VarLine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7956293801194740826, guid: 1bd490fa7a3ca2b43a6a61e186c413cc, type: 3}
+      propertyPath: unitString
+      value: 10^21kg
       objectReference: {fileID: 0}
     - target: {fileID: 7956293801194740827, guid: 1bd490fa7a3ca2b43a6a61e186c413cc, type: 3}
       propertyPath: m_Pivot.x

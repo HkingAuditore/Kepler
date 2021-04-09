@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using Object = System.Object;
@@ -93,7 +94,7 @@ public class VarLineUI : MonoBehaviour
                             toggle.isOn     = ((QuizAstralBody) target).isMassPublic;
                             break;
                         case ShowPropertyType.v:
-                            inputField.text = target.GetVelocity().magnitude.ToString("f2");
+                            inputField.text = (.1f * target.GetVelocity().magnitude).ToString("f2");
                             toggle.isOn     = ((QuizAstralBody) target).isVelocityPublic;
                             break;
                         case ShowPropertyType.R:
@@ -113,7 +114,7 @@ public class VarLineUI : MonoBehaviour
                             toggle.isOn     = ((QuizAstralBody) target).isAngularVelocityPublic;
                             break;
                         case ShowPropertyType.g:
-                            inputField.text = ((QuizAstralBody) target).gravity.ToString("f2");
+                            inputField.text = (((QuizAstralBody) target).gravity * 0.01f).ToString("f2");
                             toggle.isOn     = ((QuizAstralBody) target).isGravityPublic;
                             break;
                         default:
@@ -129,13 +130,13 @@ public class VarLineUI : MonoBehaviour
                     inputField.text = target.mass.ToString("f2");
                     break;
                 case ShowPropertyType.v:
-                    inputField.text = target.GetVelocity().magnitude.ToString("f2");
+                    inputField.text = (.1f * target.GetVelocity().magnitude).ToString("f2");
                     break;
                 case ShowPropertyType.R:
                     inputField.text = target.size.ToString("f2");
                     break;
                 case ShowPropertyType.g:
-                    inputField.text = target.gravity.ToString("f2");
+                    inputField.text = (target.gravity *0.01f).ToString("f2");
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
@@ -159,13 +160,13 @@ public class VarLineUI : MonoBehaviour
                 inputField.text = ((QuizAstralBody) target).period.ToString("f2");
                 break;
             case ShowPropertyType.radius:
-                inputField.text = ((QuizAstralBody) target).radius.ToString("f2");
+                // inputField.text = ((QuizAstralBody) target).radius.ToString("f2");
                 break;
             case ShowPropertyType.omega:
                 inputField.text = ((QuizAstralBody) target).globalAngularVelocity.ToString("f2");
                 break;
             case ShowPropertyType.g:
-                inputField.text = (target).gravity.ToString("f2");
+                inputField.text = (target.gravity * 0.01f).ToString("f2");
                 break;
             default:
                 throw new ArgumentOutOfRangeException();
@@ -207,10 +208,10 @@ public class VarLineUI : MonoBehaviour
         switch (property)
         {
             case ShowPropertyType.m:
-                this.target.ChangeMass(float.Parse(inputField.text));
+                this.target.Mass = float.Parse(inputField.text);
                 break;
             case ShowPropertyType.v:
-                this.target.ChangeVelocity(float.Parse(inputField.text));
+                this.target.ChangeVelocity(10 * float.Parse(inputField.text));
                 break;
             case ShowPropertyType.R:
                 this.target.size = float.Parse(inputField.text);
@@ -218,6 +219,8 @@ public class VarLineUI : MonoBehaviour
             case ShowPropertyType.T:
                 break;
             case ShowPropertyType.radius:
+                this.target.GetTransform().position =
+                    (this.target.GetPosition() - GameManager.GetGameManager.quizBase.target.GetPosition()).normalized * float.Parse(inputField.text);
                 break;
             case ShowPropertyType.omega:
                 break;
@@ -233,7 +236,53 @@ public class VarLineUI : MonoBehaviour
         Debug.Log("Called!");
         inputField.text = velocity.magnitude.ToString("f2");
     }
-    
-    
+
+
+    private Vector3 _dragPos;
+    public void OnInputFieldDrag()
+    {
+        _dragPos = Input.mousePosition;
+    }
+    public void WhileInputFieldDrag()
+    {
+        float cur = float.Parse(inputField.text);
+        float step = 0.01f * cur;
+        float tmp = cur + step * Vector3.Distance(Input.mousePosition, _dragPos) * Mathf.Sign(Input.mousePosition.y - _dragPos.y);
+        tmp             = tmp > 0 ? tmp : 0;
+        
+        inputField.text = tmp.ToString("f2");
+        OnEditEnd();
+        _dragPos = Input.mousePosition;
+    }
+
+
+    private bool _isClicking = false;
+    private bool _isAdd;
+    public void WhileAddClicking(bool isAdd)
+    {
+        _isAdd      = isAdd;
+        _isClicking = true;
+    }
+
+    private void FixedUpdate()
+    {
+        if(_isClicking)
+        {
+            Debug.Log("In");
+            float cur  = float.Parse(inputField.text);
+            float step = 0.01f * cur;
+            float tmp  = cur + step * Time.fixedDeltaTime * (_isAdd ? 1 : -1);
+            tmp = tmp > 0 ? tmp : 0;
+
+            inputField.text = tmp.ToString("f2");
+            OnEditEnd();
+        }
+    }
+
+
+    public void OnClickEnd()
+    {
+        _isClicking = false;
+    }
     
 }
