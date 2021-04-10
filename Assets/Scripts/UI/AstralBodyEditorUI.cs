@@ -161,7 +161,15 @@ public class AstralBodyEditorUI : MonoBehaviour
     
     public void StyleSheetToMain()
     {
-        styleSheetPanel.gameObject.SetActive(false);
+        try
+        {
+            styleSheetPanel.gameObject.SetActive(false);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+
+        }
         mainPanel.SetActive(true);
     }
 }

@@ -67,6 +67,6 @@ public class LengthUI : MonoBehaviour
         lengthText.transform.position = new Vector3(Mathf.Clamp(tmpScreenPos.x, 60, Screen.width  - 60),
                                                     Mathf.Clamp(tmpScreenPos.y, 20, Screen.height - 20),
                                                     0);
-        lengthText.text = "距离:" + lengthCalculator.length.ToString("f2") + " m";
+        lengthText.text = "距离:" + (lengthCalculator.length * 1000).ToString("f2") + " km";
     }
 }

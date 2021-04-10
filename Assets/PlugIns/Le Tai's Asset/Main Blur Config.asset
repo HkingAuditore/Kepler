@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 510c61cdec524e86b647525bb5947f82, type: 3}
   m_Name: Main Blur Config
   m_EditorClassIdentifier: 
-  radius: 3.43
-  iteration: 2
+  radius: 1.39
+  iteration: 4
   maxDepth: 6
   strength: 8.42

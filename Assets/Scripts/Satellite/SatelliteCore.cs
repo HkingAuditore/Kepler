@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Satellite
 {
@@ -15,5 +16,13 @@ namespace Satellite
         {
             return satellite.GetMass();
         }
+
+        private void OnCollisionEnter(Collision other)
+        {
+            GameManager.GetGameManager.satelliteChallengeManger.satelliteResultType = SatelliteResultType.Crash;
+            Debug.Log("Crash!");
+        }
+        
+        
     }
 }

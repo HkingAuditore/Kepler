@@ -11,6 +11,7 @@ namespace Quiz
         Right,
         NonCircleOrbit,
         Crash,
+        Overtime
     }
     public class QuizSolver : QuizBase
     {
@@ -93,6 +94,12 @@ namespace Quiz
         {
             base.Start();
             quizUI.Generate();
+            GameManager.GetGameManager.globalTimer.countingDownEndEvent.AddListener((() =>
+                                                                                     {
+                                                                                         this.reason = Reason.Overtime;
+                                                                                         resultEvent.Invoke();
+                                                                                     }));
+            GameManager.GetGameManager.globalTimer.StartCounting();
         }
 
         public String GetQuizSentence()

@@ -5,9 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class MainUI : MonoBehaviour
 {
+    public GameObject settingPanel;
     public void LoadLabScene()
     {
-        SceneManager.LoadScene("PhysicScene") ;
+        SceneManager.LoadScene("LabMode") ;
     }
 
     public void LoadTestMode()
@@ -19,5 +20,10 @@ public class MainUI : MonoBehaviour
     public void Quit()
     {
         Application.Quit();
+    }
+
+    public void OpenSettingPanel()
+    {
+        settingPanel.SetActive(true);
     }
 }

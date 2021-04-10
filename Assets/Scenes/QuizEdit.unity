@@ -11311,6 +11311,7 @@ MonoBehaviour:
   quizBase: {fileID: 1901827055}
   isQuizEditMode: 1
   mainCamera: {fileID: 554928344}
+  globalTimer: {fileID: 0}
   meshList:
   - {fileID: 871134749857384736, guid: 3e218b08c9cc4dc42be9da0507868d25, type: 3}
   - {fileID: 4466750129858649191, guid: b628c2ad1ffb1c940a6529262f32d422, type: 3}
@@ -11324,6 +11325,8 @@ MonoBehaviour:
   - {fileID: 6368110840796035940, guid: e8176e8d262f45843a8507e2b7ef9ace, type: 3}
   - {fileID: 1968154814338336523, guid: 9cb2987897963394590cd290c6a3dafa, type: 3}
   orbit: {fileID: 1009603419}
+  satelliteChallengeManger: {fileID: 0}
+  bgmSource: {fileID: 554928345}
 --- !u!4 &1901827054
 Transform:
   m_ObjectHideFlags: 0

@@ -36,6 +36,9 @@ public class ResultUI : MonoBehaviour
             case Reason.Crash:
                 resultText.text = "你的星球被撞毁了！";
                 break;
+            case Reason.Overtime:
+                resultText.text = "你超时了！";
+                break;
             default:
                 throw new ArgumentOutOfRangeException();
         }

@@ -25,7 +25,7 @@ public class SatelliteControllerUI : MonoBehaviour
             this.slider.value = satelliteController.satellite.GetVelocity().magnitude;
             
         }
-        speedText.text = satelliteController.satellite.GetVelocity().magnitude.ToString("f2");
+        speedText.text = (.1f * satelliteController.satellite.GetVelocity().magnitude).ToString("f2") + " km/s";
     }
 
     public void ChangeSpeed()
