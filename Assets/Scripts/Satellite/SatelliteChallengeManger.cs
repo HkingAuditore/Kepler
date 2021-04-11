@@ -14,8 +14,11 @@ namespace Satellite
     }
     public class SatelliteChallengeManger : MonoBehaviour
     {
-        public  global::Satellite.Satellite satellite;
-        public  AstralBody                  target;
+        public global::Satellite.Satellite satellite;
+        public float                       angleThreshold;
+        public AstralBody                  target;
+        public float                       checkTime = 5f;
+
         private SatelliteResultType         _satelliteResultType = SatelliteResultType.NonResult;
     
         private bool _isSuccess  = true;
@@ -69,21 +72,20 @@ namespace Satellite
         {
             GameManager.GetGameManager.globalTimer.countingDownEndEvent.AddListener((() =>
                                                                                      {
-                                                                                         _checkDistance = Vector3.Distance(satellite.satelliteCore.transform.position, target.transform.position);
+                                                                                         // _checkDistance = Vector3.Distance(satellite.satelliteCore.transform.position, target.transform.position);
                                                                                          _isInCheck     = true;
 
                                                                                      }));
             GameManager.GetGameManager.globalTimer.StartCounting();
         }
 
-        private float _checkTime = 5f;
         private float _timer     = 0f;
         private void FixedUpdate()
         {
             if (_isInCheck)
             {
                 _timer += Time.fixedDeltaTime;
-                if ( _timer >= _checkTime)
+                if ( _timer >= checkTime)
                 {
                     this.satelliteResultType = SatelliteResultType.Success;
                     return;
@@ -92,19 +94,22 @@ namespace Satellite
             }
         }
 
-        private float _checkDistance;
+
         private void CheckSatelliteOrbit()
         {
-            float distance = Vector3.Distance(satellite.satelliteCore.transform.position, target.transform.position);
-            if (Mathf.Abs(distance - _checkDistance) > (.001f * _checkDistance))
+            Debug.DrawLine(satellite.satelliteCore.GetPosition(), satellite.satelliteCore.GetPosition() + satellite.satelliteCore.CalculateForce(),Color.magenta,60);
+            Vector3 force     = satellite.satelliteCore.CalculateForce();
+            Vector3 posVector = target.GetPosition() - satellite.satelliteCore.GetPosition();
+            float   angle     = Vector3.Angle(force, posVector);
+            if (angle > angleThreshold)
             {
                 this.satelliteResultType = SatelliteResultType.NotOrbit;
             }
         }
 
+
         public void CallCheck()
         {
-            _checkDistance = Vector3.Distance(satellite.satelliteCore.transform.position, target.transform.position);
             _isInCheck     = true;
 
         }

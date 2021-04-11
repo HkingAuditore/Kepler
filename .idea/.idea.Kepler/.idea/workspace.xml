@@ -20,26 +20,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1afa9dc1-adab-467c-afda-52b72c3d10f3" name="默认的" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Kepler/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Kepler/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Kepler/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Kepler/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.VSCodeCounter/2021-02-23_21-25-02/details.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.VSCodeCounter/2021-02-23_21-25-02/results.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.VSCodeCounter/2021-02-23_21-25-02/results.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.VSCodeCounter/2021-02-23_21-25-02/results.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.VSCodeCounter/2021-02-23_21-25-10/details.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.VSCodeCounter/2021-02-23_21-25-10/results.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.VSCodeCounter/2021-02-23_21-25-10/results.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.VSCodeCounter/2021-02-23_21-25-10/results.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Kepler/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Kepler/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Le Tai's Asset/Main Blur Config.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Le Tai's Asset/Main Blur Config.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Le Tai's Asset/TranslucentImage/Material/Default-Translucent.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Le Tai's Asset/TranslucentImage/Material/Default-Translucent.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/PhysicScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/PhysicScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/QuizEdit.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/QuizEdit.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/QuizTest.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/QuizTest.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Satellite.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Satellite.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/TestMode.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/TestMode.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizSolver.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizSolver.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Satellite/SatelliteCore.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Satellite/SatelliteCore.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/AstralBodyEditorUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/AstralBodyEditorUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/LengthUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/LengthUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/MainUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/MainUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Quiz/ResultUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Quiz/ResultUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/SatelliteControllerUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/SatelliteControllerUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Satellite/SatelliteChallengeManger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Satellite/SatelliteChallengeManger.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,13 +135,13 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Satellite/SatelliteCore.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/GlobalTimerUI.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/GameManager/GlobalTimer.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Satellite/SatelliteChallengeManger.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/Quiz/ResultUI.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizSolver.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/GameManager/GameManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/MainUI.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/GameManager/GlobalTransformer.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/SettingUI.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/GameManager/GameManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/GameManager/GlobalTransformer.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Satellite/SatelliteChallengeManger.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1iK5Y9kUuPbAZPnJQwHlUY16sq8" />
@@ -287,7 +279,8 @@
       <workItem from="1617883069724" duration="4060000" />
       <workItem from="1617937806003" duration="986000" />
       <workItem from="1617980503145" duration="4505000" />
-      <workItem from="1618068252217" duration="8080000" />
+      <workItem from="1618068252217" duration="8591000" />
+      <workItem from="1618109427516" duration="1666000" />
     </task>
     <servers />
   </component>

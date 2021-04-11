@@ -1,0 +1,59 @@
+Date : 2021-04-11 02:01:43
+Directory : g:\Kepler\Kepler\Assets\Arts\Shaders
+Total : 31 files,  3992 codes, 971 comments, 975 blanks, all 5938 lines
+
+Languages
++-----------+------------+------------+------------+------------+------------+
+| language  | files      | code       | comment    | blank      | total      |
++-----------+------------+------------+------------+------------+------------+
+| HLSL      |         18 |      2,160 |        848 |        593 |      3,601 |
+| ShaderLab |         11 |      1,554 |        107 |        339 |      2,000 |
+| C#        |          2 |        278 |         16 |         43 |        337 |
++-----------+------------+------------+------------+------------+------------+
+
+Directories
++-------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                | files      | code       | comment    | blank      | total      |
++-------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                   |         31 |      3,992 |        971 |        975 |      5,938 |
+| CustomPostProcessing                                                                |         20 |      2,551 |        868 |        660 |      4,079 |
+| CustomPostProcessing\API                                                            |         10 |        376 |          5 |        138 |        519 |
++-------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++-------------------------------------------------------------------------------------+-----------+------------+------------+------------+------------+
+| filename                                                                            | language  | code       | comment    | blank      | total      |
++-------------------------------------------------------------------------------------+-----------+------------+------------+------------+------------+
+| g:\Kepler\Kepler\Assets\Arts\Shaders\AuroraSky.shader                               | ShaderLab |        264 |         31 |         79 |        374 |
+| g:\Kepler\Kepler\Assets\Arts\Shaders\Blur.shader                                    | ShaderLab |        104 |          1 |         17 |        122 |
+| g:\Kepler\Kepler\Assets\Arts\Shaders\CustomPostProcessing\ACES.hlsl                 | HLSL      |        512 |        621 |        177 |      1,310 |
+| g:\Kepler\Kepler\Assets\Arts\Shaders\CustomPostProcessing\API\D3D11.hlsl            | HLSL      |         39 |          0 |         14 |         53 |
+| g:\Kepler\Kepler\Assets\Arts\Shaders\CustomPostProcessing\API\D3D12.hlsl            | HLSL      |         39 |          0 |         14 |         53 |
+| g:\Kepler\Kepler\Assets\Arts\Shaders\CustomPostProcessing\API\D3D9.hlsl             | HLSL      |         30 |          1 |         13 |         44 |
+| g:\Kepler\Kepler\Assets\Arts\Shaders\CustomPostProcessing\API\Metal.hlsl            | HLSL      |         34 |          0 |         14 |         48 |
+| g:\Kepler\Kepler\Assets\Arts\Shaders\CustomPostProcessing\API\OpenGL.hlsl           | HLSL      |         42 |          2 |         14 |         58 |
+| g:\Kepler\Kepler\Assets\Arts\Shaders\CustomPostProcessing\API\PSP2.hlsl             | HLSL      |         34 |          2 |         13 |         49 |
+| g:\Kepler\Kepler\Assets\Arts\Shaders\CustomPostProcessing\API\PSSL.hlsl             | HLSL      |         42 |          0 |         14 |         56 |
+| g:\Kepler\Kepler\Assets\Arts\Shaders\CustomPostProcessing\API\Switch.hlsl           | HLSL      |         38 |          0 |         14 |         52 |
+| g:\Kepler\Kepler\Assets\Arts\Shaders\CustomPostProcessing\API\Vulkan.hlsl           | HLSL      |         39 |          0 |         14 |         53 |
+| g:\Kepler\Kepler\Assets\Arts\Shaders\CustomPostProcessing\API\XboxOne.hlsl          | HLSL      |         39 |          0 |         14 |         53 |
+| g:\Kepler\Kepler\Assets\Arts\Shaders\CustomPostProcessing\Colors.hlsl               | HLSL      |        440 |        124 |         87 |        651 |
+| g:\Kepler\Kepler\Assets\Arts\Shaders\CustomPostProcessing\DepthOfField.hlsl         | HLSL      |        171 |         43 |         63 |        277 |
+| g:\Kepler\Kepler\Assets\Arts\Shaders\CustomPostProcessing\DepthOfField.shader       | ShaderLab |        219 |          5 |         42 |        266 |
+| g:\Kepler\Kepler\Assets\Arts\Shaders\CustomPostProcessing\DiskKernels.hlsl          | HLSL      |        180 |          8 |         17 |        205 |
+| g:\Kepler\Kepler\Assets\Arts\Shaders\CustomPostProcessing\Sampling.hlsl             | HLSL      |         62 |         12 |         18 |         92 |
+| g:\Kepler\Kepler\Assets\Arts\Shaders\CustomPostProcessing\ShaderIds.cs              | C#        |        137 |          3 |         22 |        162 |
+| g:\Kepler\Kepler\Assets\Arts\Shaders\CustomPostProcessing\StdLib.hlsl               | HLSL      |        234 |         33 |         56 |        323 |
+| g:\Kepler\Kepler\Assets\Arts\Shaders\CustomPostProcessing\TextureFormatUtilities.cs | C#        |        141 |         13 |         21 |        175 |
+| g:\Kepler\Kepler\Assets\Arts\Shaders\CustomPostProcessing\xRLib.hlsl                | HLSL      |         79 |          1 |         19 |         99 |
+| g:\Kepler\Kepler\Assets\Arts\Shaders\Mix.shader                                     | ShaderLab |         51 |          1 |         11 |         63 |
+| g:\Kepler\Kepler\Assets\Arts\Shaders\MixLayers.shader                               | ShaderLab |         49 |          4 |         11 |         64 |
+| g:\Kepler\Kepler\Assets\Arts\Shaders\OrbitLine.shader                               | ShaderLab |         52 |          6 |          7 |         65 |
+| g:\Kepler\Kepler\Assets\Arts\Shaders\Outline.shader                                 | ShaderLab |         97 |          3 |         15 |        115 |
+| g:\Kepler\Kepler\Assets\Arts\Shaders\Space.shader                                   | ShaderLab |        277 |         25 |         64 |        366 |
+| g:\Kepler\Kepler\Assets\Arts\Shaders\UIBlur.shader                                  | ShaderLab |        112 |          4 |         23 |        139 |
+| g:\Kepler\Kepler\Assets\Arts\Shaders\UIBlurPostEffect.shader                        | ShaderLab |        276 |         21 |         63 |        360 |
+| g:\Kepler\Kepler\Assets\Arts\Shaders\UIBlur_Shared.cginc                            | HLSL      |        106 |          1 |         18 |        125 |
+| g:\Kepler\Kepler\Assets\Arts\Shaders\UiLine.shader                                  | ShaderLab |         53 |          6 |          7 |         66 |
+| Total                                                                               |           |      3,992 |        971 |        975 |      5,938 |
++-------------------------------------------------------------------------------------+-----------+------------+------------+------------+------------+

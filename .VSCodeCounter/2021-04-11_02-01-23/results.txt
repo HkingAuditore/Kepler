@@ -1,0 +1,101 @@
+Date : 2021-04-11 02:01:23
+Directory : g:\Kepler\Kepler\Assets\Scripts
+Total : 65 files,  4932 codes, 368 comments, 988 blanks, all 6288 lines
+
+Languages
++----------+------------+------------+------------+------------+------------+
+| language | files      | code       | comment    | blank      | total      |
++----------+------------+------------+------------+------------+------------+
+| C#       |         65 |      4,932 |        368 |        988 |      6,288 |
++----------+------------+------------+------------+------------+------------+
+
+Directories
++----------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                             | files      | code       | comment    | blank      | total      |
++----------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                |         65 |      4,932 |        368 |        988 |      6,288 |
+| Animation                                                                        |          1 |         81 |          1 |         14 |         96 |
+| Camera                                                                           |          3 |        188 |          4 |         43 |        235 |
+| CustomPostProcessing                                                             |          4 |        306 |         73 |         82 |        461 |
+| Editor                                                                           |          1 |        359 |          0 |         42 |        401 |
+| GameManager                                                                      |          3 |        132 |          0 |         33 |        165 |
+| MathPlus                                                                         |          1 |        270 |         40 |         36 |        346 |
+| Quiz                                                                             |          7 |        822 |         62 |        164 |      1,048 |
+| Satellite                                                                        |          7 |        314 |         11 |         57 |        382 |
+| SpacePhysic                                                                      |          3 |        474 |         74 |        132 |        680 |
+| UI                                                                               |         29 |      1,748 |        101 |        329 |      2,178 |
+| UI\Quiz                                                                          |          7 |        614 |          8 |         99 |        721 |
+| UI\Satellite                                                                     |          1 |         49 |          0 |          8 |         57 |
++----------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++----------------------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| filename                                                                         | language | code       | comment    | blank      | total      |
++----------------------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| g:\Kepler\Kepler\Assets\Scripts\Animation\AstronautsAnimation.cs                 | C#       |         81 |          1 |         14 |         96 |
+| g:\Kepler\Kepler\Assets\Scripts\BloomEffect.cs                                   | C#       |         71 |          0 |         17 |         88 |
+| g:\Kepler\Kepler\Assets\Scripts\Camera\CameraController.cs                       | C#       |         78 |          1 |         21 |        100 |
+| g:\Kepler\Kepler\Assets\Scripts\Camera\CameraLayerMixer.cs                       | C#       |         82 |          3 |         15 |        100 |
+| g:\Kepler\Kepler\Assets\Scripts\Camera\LayerCamera.cs                            | C#       |         28 |          0 |          7 |         35 |
+| g:\Kepler\Kepler\Assets\Scripts\CustomPostProcessing\CameraMixer.cs              | C#       |         49 |          7 |         10 |         66 |
+| g:\Kepler\Kepler\Assets\Scripts\CustomPostProcessing\CustomPostProcessingBase.cs | C#       |         24 |          4 |          5 |         33 |
+| g:\Kepler\Kepler\Assets\Scripts\CustomPostProcessing\Dof.cs                      | C#       |        160 |         61 |         46 |        267 |
+| g:\Kepler\Kepler\Assets\Scripts\CustomPostProcessing\OutlineCatcher.cs           | C#       |         73 |          1 |         21 |         95 |
+| g:\Kepler\Kepler\Assets\Scripts\DeferredFogEffect.cs                             | C#       |         35 |          0 |          9 |         44 |
+| g:\Kepler\Kepler\Assets\Scripts\DepthOfFieldEffect.cs                            | C#       |         47 |          1 |         14 |         62 |
+| g:\Kepler\Kepler\Assets\Scripts\Editor\MyLightingShaderGUI.cs                    | C#       |        359 |          0 |         42 |        401 |
+| g:\Kepler\Kepler\Assets\Scripts\EmissiveOscillator.cs                            | C#       |         17 |          1 |          4 |         22 |
+| g:\Kepler\Kepler\Assets\Scripts\GPUInstancingTest.cs                             | C#       |         29 |          0 |          7 |         36 |
+| g:\Kepler\Kepler\Assets\Scripts\GameManager\GameManager.cs                       | C#       |         42 |          0 |          8 |         50 |
+| g:\Kepler\Kepler\Assets\Scripts\GameManager\GlobalTimer.cs                       | C#       |         65 |          0 |         18 |         83 |
+| g:\Kepler\Kepler\Assets\Scripts\GameManager\GlobalTransformer.cs                 | C#       |         25 |          0 |          7 |         32 |
+| g:\Kepler\Kepler\Assets\Scripts\MathPlus\MathPlus.cs                             | C#       |        270 |         40 |         36 |        346 |
+| g:\Kepler\Kepler\Assets\Scripts\Quiz\QuizAstralBody.cs                           | C#       |        184 |          7 |         33 |        224 |
+| g:\Kepler\Kepler\Assets\Scripts\Quiz\QuizBase.cs                                 | C#       |        140 |         14 |         36 |        190 |
+| g:\Kepler\Kepler\Assets\Scripts\Quiz\QuizData.cs                                 | C#       |        112 |         12 |         17 |        141 |
+| g:\Kepler\Kepler\Assets\Scripts\Quiz\QuizEditor.cs                               | C#       |         43 |          3 |         12 |         58 |
+| g:\Kepler\Kepler\Assets\Scripts\Quiz\QuizSaver.cs                                | C#       |        196 |         26 |         38 |        260 |
+| g:\Kepler\Kepler\Assets\Scripts\Quiz\QuizSolver.cs                               | C#       |        130 |          0 |         23 |        153 |
+| g:\Kepler\Kepler\Assets\Scripts\Quiz\Transformer.cs                              | C#       |         17 |          0 |          5 |         22 |
+| g:\Kepler\Kepler\Assets\Scripts\Satellite\Satellite.cs                           | C#       |         28 |          0 |          6 |         34 |
+| g:\Kepler\Kepler\Assets\Scripts\Satellite\SatelliteChallengeManger.cs            | C#       |        100 |          0 |         12 |        112 |
+| g:\Kepler\Kepler\Assets\Scripts\Satellite\SatelliteController.cs                 | C#       |         76 |          9 |         18 |        103 |
+| g:\Kepler\Kepler\Assets\Scripts\Satellite\SatelliteCore.cs                       | C#       |         22 |          0 |          6 |         28 |
+| g:\Kepler\Kepler\Assets\Scripts\Satellite\SatelliteEngine.cs                     | C#       |         18 |          0 |          3 |         21 |
+| g:\Kepler\Kepler\Assets\Scripts\Satellite\SatelliteParachute.cs                  | C#       |         10 |          0 |          0 |         10 |
+| g:\Kepler\Kepler\Assets\Scripts\Satellite\SatellitePart.cs                       | C#       |         60 |          2 |         12 |         74 |
+| g:\Kepler\Kepler\Assets\Scripts\SpacePhysic\AstralBody.cs                        | C#       |        212 |         19 |         65 |        296 |
+| g:\Kepler\Kepler\Assets\Scripts\SpacePhysic\GravityTracing.cs                    | C#       |        242 |         55 |         64 |        361 |
+| g:\Kepler\Kepler\Assets\Scripts\SpacePhysic\IOrbitCalculator.cs                  | C#       |         20 |          0 |          3 |         23 |
+| g:\Kepler\Kepler\Assets\Scripts\TangentSpaceVisualizer.cs                        | C#       |         39 |          0 |          5 |         44 |
+| g:\Kepler\Kepler\Assets\Scripts\UI\AstralBodyAddUI.cs                            | C#       |         44 |          2 |          8 |         54 |
+| g:\Kepler\Kepler\Assets\Scripts\UI\AstralBodyEditorUI.cs                         | C#       |        128 |         18 |         30 |        176 |
+| g:\Kepler\Kepler\Assets\Scripts\UI\AstralBodyPlacementUI.cs                      | C#       |         73 |          2 |         10 |         85 |
+| g:\Kepler\Kepler\Assets\Scripts\UI\GlobalTimerUI.cs                              | C#       |         20 |          0 |          4 |         24 |
+| g:\Kepler\Kepler\Assets\Scripts\UI\LabModeUI.cs                                  | C#       |         19 |          0 |          4 |         23 |
+| g:\Kepler\Kepler\Assets\Scripts\UI\LengthUI.cs                                   | C#       |         60 |          2 |         10 |         72 |
+| g:\Kepler\Kepler\Assets\Scripts\UI\MainUI.cs                                     | C#       |         24 |          0 |          6 |         30 |
+| g:\Kepler\Kepler\Assets\Scripts\UI\MeshEditor.cs                                 | C#       |         15 |          0 |          4 |         19 |
+| g:\Kepler\Kepler\Assets\Scripts\UI\OrbitGraphUI.cs                               | C#       |        211 |         48 |         42 |        301 |
+| g:\Kepler\Kepler\Assets\Scripts\UI\OrbitPanelUI.cs                               | C#       |         84 |          2 |         17 |        103 |
+| g:\Kepler\Kepler\Assets\Scripts\UI\PhysicSceneUI.cs                              | C#       |         11 |          0 |          2 |         13 |
+| g:\Kepler\Kepler\Assets\Scripts\UI\PositionEditorUI.cs                           | C#       |         52 |          0 |         15 |         67 |
+| g:\Kepler\Kepler\Assets\Scripts\UI\Quiz\AstralBodyEditorQuizUI.cs                | C#       |         35 |          3 |         13 |         51 |
+| g:\Kepler\Kepler\Assets\Scripts\UI\Quiz\QuizEditorUI.cs                          | C#       |         80 |          0 |         14 |         94 |
+| g:\Kepler\Kepler\Assets\Scripts\UI\Quiz\QuizLineUI.cs                            | C#       |         49 |          0 |         11 |         60 |
+| g:\Kepler\Kepler\Assets\Scripts\UI\Quiz\QuizListUI.cs                            | C#       |         48 |          1 |         10 |         59 |
+| g:\Kepler\Kepler\Assets\Scripts\UI\Quiz\QuizUI.cs                                | C#       |         97 |          1 |         13 |        111 |
+| g:\Kepler\Kepler\Assets\Scripts\UI\Quiz\ResultUI.cs                              | C#       |         49 |          0 |          9 |         58 |
+| g:\Kepler\Kepler\Assets\Scripts\UI\Quiz\VarLineUI.cs                             | C#       |        256 |          3 |         29 |        288 |
+| g:\Kepler\Kepler\Assets\Scripts\UI\SatelliteControllerUI.cs                      | C#       |         41 |          0 |         14 |         55 |
+| g:\Kepler\Kepler\Assets\Scripts\UI\Satellite\SatelliteResultUI.cs                | C#       |         49 |          0 |          8 |         57 |
+| g:\Kepler\Kepler\Assets\Scripts\UI\SelectorUI.cs                                 | C#       |         78 |         12 |         10 |        100 |
+| g:\Kepler\Kepler\Assets\Scripts\UI\SettingUI.cs                                  | C#       |         22 |          0 |          4 |         26 |
+| g:\Kepler\Kepler\Assets\Scripts\UI\StarStyleSettingUI.cs                         | C#       |         17 |          0 |          4 |         21 |
+| g:\Kepler\Kepler\Assets\Scripts\UI\TestModeUI.cs                                 | C#       |         15 |          0 |          4 |         19 |
+| g:\Kepler\Kepler\Assets\Scripts\UI\TutorialUI.cs                                 | C#       |         35 |          0 |          7 |         42 |
+| g:\Kepler\Kepler\Assets\Scripts\UI\UIManager.cs                                  | C#       |          7 |          0 |          1 |          8 |
+| g:\Kepler\Kepler\Assets\Scripts\UI\VectorUI.cs                                   | C#       |         69 |          3 |         13 |         85 |
+| g:\Kepler\Kepler\Assets\Scripts\UI\VelocityEditorUI.cs                           | C#       |         60 |          4 |         13 |         77 |
+| Total                                                                            |          |      4,932 |        368 |        988 |      6,288 |
++----------------------------------------------------------------------------------+----------+------------+------------+------------+------------+
