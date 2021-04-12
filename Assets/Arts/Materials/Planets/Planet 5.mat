@@ -70,7 +70,7 @@ Material:
     - _AOPower: 0.57
     - _AOuv: 0
     - _AmbientPower: 0
-    - _Brightness: 2.67
+    - _Brightness: 3.37
     - _BumpScale: 1
     - _ColorCorrectionEnable: 1
     - _Cull: 0
@@ -118,7 +118,7 @@ Material:
     - _Rotation_L: 0
     - _Rotation_R: 0
     - _Rotation_T: 58
-    - _Saturation: 1
+    - _Saturation: 1.33
     - _Shading_B: 0
     - _Shading_D: 0
     - _Shading_F: 0
@@ -182,5 +182,5 @@ Material:
     - _LMColor: {r: 1, g: 1, b: 1, a: 1}
     - _RimColor: {r: 0.03244037, g: 0.1812467, b: 0.254717, a: 1}
     - _ShadowColor: {r: 0.022042697, g: 0.003070489, b: 0.028301895, a: 1}
-    - _TintColor: {r: 0.9433962, g: 0.7630411, b: 0.53844786, a: 1}
+    - _TintColor: {r: 0.5800107, g: 0.88001794, b: 0.9245283, a: 1}
   m_BuildTextureStacks: []

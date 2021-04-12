@@ -31,22 +31,24 @@ namespace Animation
 
         private void Update()
         {
-            if (!selectorUI.isLocked && this._isPoint)
+            if(selectorUI !=null)
             {
-                _isPoint = false;
-                astronautsAnimator.ResetTrigger("Point");
-            }
-            
-            if (selectorUI.isLocked && !this._isPoint)
-            {
-                // astronautsAnimator.state
-                _isBored = false;
-                _isPoint = true;
-                astronautsAnimator.SetInteger("PointType", Random.Range(0, pointAnimationCount));
-                astronautsAnimator.SetTrigger("Point");
-                return;
-            }
+                if (!selectorUI.isLocked && this._isPoint)
+                {
+                    _isPoint = false;
+                    astronautsAnimator.ResetTrigger("Point");
+                }
 
+                if (selectorUI.isLocked && !this._isPoint)
+                {
+                    // astronautsAnimator.state
+                    _isBored = false;
+                    _isPoint = true;
+                    astronautsAnimator.SetInteger("PointType", Random.Range(0, pointAnimationCount));
+                    astronautsAnimator.SetTrigger("Point");
+                    return;
+                }
+            }
             if (this.astronautsAnimator.GetCurrentAnimatorStateInfo(0).IsName("Default"))
             {
                 if (_isBored)
