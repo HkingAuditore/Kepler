@@ -93,6 +93,7 @@ public class QuizUI : MonoBehaviour
         }
 
         gameObject.SetActive(false);
+        GameManager.GetGameManager.globalTimer.isPausing = true;
     }
 
     private void GenerateAns()

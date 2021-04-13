@@ -10,6 +10,7 @@ public class ResultUI : MonoBehaviour
 {
     public List<GameObject> quizUis;
     public Text             resultText;
+    public QuizStarsGroupUI quizStarsGroupUI;
     public GameObject       panel;
 
     private QuizSolver _quizSolver;
@@ -19,7 +20,7 @@ public class ResultUI : MonoBehaviour
     {
         _quizSolver             =  (QuizSolver)GameManager.GetGameManager.quizBase;
         _quizSolver.resultEvent.AddListener(ShowResult);
-
+        
     }
 
     private void ShowResult()
@@ -29,15 +30,19 @@ public class ResultUI : MonoBehaviour
         {
             case Reason.Right:
                 resultText.text = "你答对了！";
+                quizStarsGroupUI.CalculateSuccessStars();
                 break;
             case Reason.NonCircleOrbit:
-                resultText.text = "你的轨道不是圆形！";
+                resultText.text            = "你的轨道不是圆形！";
+                quizStarsGroupUI.starCount = 0;
                 break;
             case Reason.Crash:
-                resultText.text = "你的星球被撞毁了！";
+                resultText.text            = "你的星球被撞毁了！";
+                quizStarsGroupUI.starCount = 0;
                 break;
             case Reason.Overtime:
-                resultText.text = "你超时了！";
+                resultText.text            = "你超时了！";
+                quizStarsGroupUI.starCount = 0;
                 break;
             default:
                 throw new ArgumentOutOfRangeException();

@@ -45,19 +45,22 @@ namespace Satellite
                 switch (value)
                 {
                     case SatelliteResultType.Success:
-                        _satelliteResultType = value;
-                        isSuccess   = true;
-                        isCheckEnd  = true;
+                        _satelliteResultType                             = value;
+                        isSuccess                                        = true;
+                        isCheckEnd                                       = true;
+                        GameManager.GetGameManager.globalTimer.isPausing = true;
                         break;
                     case SatelliteResultType.Crash:
-                        _satelliteResultType = value;
-                        isSuccess   = false;
-                        isCheckEnd  = true;
+                        _satelliteResultType                             = value;
+                        isSuccess                                        = false;
+                        isCheckEnd                                       = true;
+                        GameManager.GetGameManager.globalTimer.isPausing = true;
                         break;
                     case SatelliteResultType.NotOrbit:
-                        _satelliteResultType = value;
-                        isSuccess   = false;
-                        isCheckEnd  = true;
+                        _satelliteResultType                             = value;
+                        isSuccess                                        = false;
+                        isCheckEnd                                       = true;
+                        GameManager.GetGameManager.globalTimer.isPausing = true;
                         break;
                     case SatelliteResultType.NonResult:
                         break;
@@ -110,8 +113,8 @@ namespace Satellite
 
         public void CallCheck()
         {
-            _isInCheck     = true;
-
+            _isInCheck                                       = true;
+            GameManager.GetGameManager.globalTimer.isPausing = true;
         }
     }
 }

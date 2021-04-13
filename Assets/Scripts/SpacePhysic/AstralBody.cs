@@ -108,6 +108,11 @@ public class AstralBody : MonoBehaviour, ITraceable
         AstralBodyRigidbody.AddForce(force);
     }
 
+    public virtual void OnCollisionEnter(Collision other)
+    {
+        throw new NotImplementedException();
+    }
+
 
     private void OnTriggerEnter(Collider other)
     {

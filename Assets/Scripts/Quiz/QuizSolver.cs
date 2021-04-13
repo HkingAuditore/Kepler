@@ -100,6 +100,9 @@ namespace Quiz
                                                                                          resultEvent.Invoke();
                                                                                      }));
             GameManager.GetGameManager.globalTimer.StartCounting();
+            resultEvent.AddListener(() => 
+                                        GameManager.GetGameManager.globalTimer.isPausing = true
+                                    );
         }
 
         public String GetQuizSentence()

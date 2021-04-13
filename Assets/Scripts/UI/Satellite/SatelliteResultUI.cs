@@ -8,8 +8,9 @@ using UnityEngine.UI;
 
 public class SatelliteResultUI : MonoBehaviour
 {
-    public GameObject panel;
-    public Text       resultText;
+    public GameObject       panel;
+    public Text             resultText;
+    public QuizStarsGroupUI quizStarsGroupUI;
     void Start()
     {
         StartCoroutine(WaitForCheck());
@@ -27,13 +28,15 @@ public class SatelliteResultUI : MonoBehaviour
         {
             case SatelliteResultType.Success:
                 resultText.text = "\"这是我个人的一小步，却是人类的一大步。\"";
+                quizStarsGroupUI.CalculateSuccessStars();
                 break;
             case SatelliteResultType.Crash:
-                resultText.text = "你的卫星成为了人类的新遗迹";
+                resultText.text            = "你的卫星成为了人类的新遗迹";
+                quizStarsGroupUI.starCount = 0;
                 break;
             case SatelliteResultType.NotOrbit:
-                resultText.text = "未能进入目标轨道";
-
+                resultText.text            = "未能进入目标轨道";
+                quizStarsGroupUI.starCount = 0;
                 break;
             case SatelliteResultType.NonResult:
                 break;
