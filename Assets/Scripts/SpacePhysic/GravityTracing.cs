@@ -357,5 +357,12 @@ namespace SpacePhysic
         }
 
         #endregion
+
+        public void RemoveAstralBody(AstralBody astralBody)
+        {
+            this.GetAstralBodyList().Remove(astralBody);
+            this._astralBodies.Remove(astralBody);
+            this.GetAstralBodyList().ForEach(a => a.GetAffectedPlanets().Remove(astralBody));
+        }
     }
 }

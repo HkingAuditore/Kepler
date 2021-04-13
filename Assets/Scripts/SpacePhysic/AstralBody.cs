@@ -110,7 +110,18 @@ public class AstralBody : MonoBehaviour, ITraceable
 
     public virtual void OnCollisionEnter(Collision other)
     {
-        throw new NotImplementedException();
+        var        effect          = Resources.Load("Effect/Explosion");
+        var        otherAstralBody = other.gameObject.GetComponent<AstralBody>();
+        AstralBody destroyBody     = otherAstralBody.Mass > this.Mass ? this : otherAstralBody;
+        var effectGameObj =
+            GameObject.Instantiate(effect, destroyBody.transform.position, destroyBody.transform.rotation);
+        Destroy(destroyBody.gameObject);
+        Destroy(effectGameObj,3f);
+    }
+
+    private void OnDestroy()
+    {
+        GameManager.GetGameManager.orbit.RemoveAstralBody(this);
     }
 
 

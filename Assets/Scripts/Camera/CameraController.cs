@@ -74,7 +74,7 @@ public class CameraController : MonoBehaviour
 
     private void CameraScaler()
     {
-        OrthoSize += Input.GetAxis("Mouse ScrollWheel") * scaleSize;
+        OrthoSize -= Input.GetAxis("Mouse ScrollWheel") * scaleSize;
         virtualCamera.m_Lens.OrthographicSize =
             Mathf.Lerp(virtualCamera.m_Lens.OrthographicSize, OrthoSize, orthoZoomSpeed);
     }

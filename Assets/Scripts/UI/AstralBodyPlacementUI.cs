@@ -1,4 +1,5 @@
-﻿using Quiz;
+﻿using System.Collections;
+using Quiz;
 using SpacePhysic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -58,6 +59,7 @@ namespace UI
                 // Debug.Log("Mouse Y: " + mousePosInWorld.y);
                 var newAstralBody = Instantiate(_placePrefab, new Vector3(mousePosInWorld.x, 0, mousePosInWorld.z),
                                                 Quaternion.LookRotation(new Vector3(0, 0, 0)), _orbits.transform);
+                
 
                 if(GameManager.GetGameManager.isQuizEditMode)
                 {
@@ -68,6 +70,7 @@ namespace UI
                 _inPlacing = false;
                 root.Switch2Normal();
                 Time.timeScale = 1;
+                StartCoroutine(SetCircleVelocity(newAstralBody));
             }
             else if (Input.GetMouseButton(1))
             {
@@ -76,6 +79,15 @@ namespace UI
                 Time.timeScale = 1;
             }
         }
+        
+
+        IEnumerator SetCircleVelocity(AstralBody astralBody)
+        {
+            yield return new WaitForSeconds(.2f);
+            Debug.Log("Set Velocity!");
+            astralBody.SetCircleVelocity();
+        }
+
 
         public void SetPlacing()
         {
