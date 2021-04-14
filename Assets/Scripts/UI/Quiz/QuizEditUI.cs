@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PhysicSceneUI : MonoBehaviour
+public class QuizEditUI : MonoBehaviour
 {
-    public void BackToMain()
+    public void BackToTestMode()
     {
-        SceneManager.LoadScene("LabMode");
+        SceneManager.LoadScene("TestMode");
     }
 }

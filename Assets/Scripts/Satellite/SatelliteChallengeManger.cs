@@ -73,6 +73,23 @@ namespace Satellite
 
         private void Start()
         {
+            switch (GlobalTransfer.getGlobalTransfer.difficulty)
+            {
+                case Difficulty.Easy:
+                    target.Mass *= 100;
+                    break;
+                case Difficulty.Normal:
+                    target.Mass *= 10;
+                    break;
+                case Difficulty.Difficult:
+                    target.Mass *= 5;
+                    break;
+                case Difficulty.Real:
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
+            
             GameManager.GetGameManager.globalTimer.countingDownEndEvent.AddListener((() =>
                                                                                      {
                                                                                          // _checkDistance = Vector3.Distance(satellite.satelliteCore.transform.position, target.transform.position);

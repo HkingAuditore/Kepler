@@ -22,7 +22,7 @@ public class QuizLineUI : MonoBehaviour
 
     public void OnClick()
     {
-        Transformer.GetTransformer.quizName = this.name;
+        GlobalTransfer.getGlobalTransfer.quizName = this.name;
         SceneManager.LoadScene("QuizTest");
     }
 

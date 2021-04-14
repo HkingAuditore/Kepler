@@ -42,7 +42,7 @@ namespace Quiz
             {
                 try
                 {
-                    loadTarget = Transformer.GetTransformer.quizName;
+                    loadTarget = GlobalTransfer.getGlobalTransfer.quizName;
 
                 }
                 catch (Exception e)

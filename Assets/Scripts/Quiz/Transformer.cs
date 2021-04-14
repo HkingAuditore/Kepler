@@ -12,7 +12,7 @@ public class Transformer : MonoBehaviour
         GetTransformer = this;
     }
 
-    public string quizName;
+
 
     private void Start()
     {

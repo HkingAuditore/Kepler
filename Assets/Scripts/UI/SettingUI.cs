@@ -10,7 +10,7 @@ public class SettingUI : MonoBehaviour
     public AudioSource bgmSource;
     public void ChangeAudioVolume()
     {
-        GlobalTransformer.GetGlobalTransformer.audioVolume = audioSlider.value * .1f;
+        GlobalTransfer.getGlobalTransfer.audioVolume = audioSlider.value * .1f;
     }
 
     private void Start()

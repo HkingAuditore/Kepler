@@ -1,5 +1,6 @@
 ﻿using Cinemachine;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class CameraController : MonoBehaviour
 {
@@ -46,8 +47,10 @@ public class CameraController : MonoBehaviour
     private void Update()
     {
         if (Input.GetKey(KeyCode.Space))
-            CameraMover();
-        CameraScaler();
+            // CameraMover();
+            CameraDrag();
+        if(EventSystem.current.IsPointerOverGameObject() ==false )
+            CameraScaler();
         if (IsFollowing)
             Follow();
     }
@@ -70,6 +73,33 @@ public class CameraController : MonoBehaviour
         _cameraBase.position += new Vector3(xSpeed, 0, ySpeed) * ((mainSpeed * Mathf.Pow(OrthoSize / _oriOrthoSize,0.9f)) * Time.deltaTime * (IsFollowing ? 0 : 1)) +
                                 new Vector3(Input.GetAxis("Mouse X"), 0, Input.GetAxis("Mouse Y")) *
                                 (correctiveSpeed * Mathf.Pow(OrthoSize / _oriOrthoSize, 1.3f) * Time.deltaTime);
+    }
+    
+    private Vector2 _dragOriPos;
+    private bool    _isInDrag = false;
+    private Vector2 _dragEndPos;
+    public void CameraDrag()
+    {
+        if (_isInDrag)
+        {
+            _dragEndPos = Input.mousePosition;
+            Vector2 offset = _dragEndPos - _dragOriPos;
+            _cameraBase.position -= new Vector3(offset.x, 0, offset.y) * ((IsFollowing ? 0 : 1) *0.5f);
+            _dragOriPos  = Input.mousePosition;
+        }
+        if(!_isInDrag && Input.GetMouseButtonDown(0))
+        {
+            _dragOriPos = Input.mousePosition;
+            _isInDrag   = true;
+        }
+        if(_isInDrag && Input.GetMouseButtonUp(0))
+        {
+            
+            _isInDrag   = false;
+
+        } 
+
+
     }
 
     private void CameraScaler()

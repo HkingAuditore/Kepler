@@ -20,8 +20,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1afa9dc1-adab-467c-afda-52b72c3d10f3" name="默认的" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Kepler/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Kepler/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Kepler/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Kepler/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Kepler/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Kepler/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Le Tai's Asset/TranslucentImage/Material/Default-Translucent.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Le Tai's Asset/TranslucentImage/Material/Default-Translucent.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Quiz/Sphere 1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Quiz/Sphere 1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/LabMode.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/LabMode.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/PhysicScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/PhysicScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/TestMode.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/TestMode.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Camera/CameraController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Camera/CameraController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager/GlobalTransformer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager/GlobalTransfer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager/GlobalTransformer.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager/GlobalTransfer.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizBase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Quiz/Transformer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Quiz/Transformer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Satellite/SatelliteChallengeManger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Satellite/SatelliteChallengeManger.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/LabModeUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/LabModeUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/PhysicSceneUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/PhysicSceneUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Quiz/QuizLineUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Quiz/QuizLineUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/SettingUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/SettingUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/TutorialUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/TutorialUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/VelocityEditorUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/VelocityEditorUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,6 +80,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/OrbitPanelUI.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/TestModeUI.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9577AC7A-62EF-4317-9789-031239BA8798/dd/cc3b36ba/List`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Init/Init.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Satellite/SatelliteChallengeManger.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9577AC7A-62EF-4317-9789-031239BA8798/d8/13a53ef3/StackTrace.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/183EA0E0-59EE-4107-865D-5753B201F130/41/897a26b6/StackTraceUtility.cs" root0="SKIP_HIGHLIGHTING" />
@@ -76,6 +98,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Satellite/SatelliteEngine.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Arts/Shaders/CustomPostProcessing/TextureFormatUtilities.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://C:/Program Files/Unity/Hub/Editor/2020.1.17f1c1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Slider.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/TutorialManagerUI.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameManager/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/SettingUI.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/183EA0E0-59EE-4107-865D-5753B201F130/bb/db32f4a2/Vector3.cs" root0="SKIP_HIGHLIGHTING" />
@@ -83,7 +106,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CustomPostProcessing/CustomPostProcessingBase.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/LengthUI.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Quiz/QuizStarUI.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameManager/GlobalTransformer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameManager/GlobalTransfer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/VectorUI.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://C:/Program Files/Unity/Hub/Editor/2020.1.17f1c1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/UIBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://C:/Program Files/Unity/Hub/Editor/2020.1.17f1c1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/EventSystem.cs" root0="SKIP_HIGHLIGHTING" />
@@ -94,10 +117,6 @@
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/Assets/Quiz/21-04-01.xml" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/UI/QuizEditorUI.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/UI/VarLineUI.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/UI/PositionEditorUI.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/StarStyleSettingUI.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/AstralBodyAddUI.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizEditor.cs" />
@@ -105,22 +124,17 @@
       <option value="$PROJECT_DIR$/Assets/Quiz/地月.xml" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizData.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizTransformer.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Quiz/Transformer.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/Quiz/AstralBodyEditorQuizUI.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/MathPlus/MathPlus.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/TestModeUI.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/UI/PhysicSceneUI.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/OrbitPanelUI.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/OrbitGraphUI.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/Quiz/QuizEditorUI.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/UI/Quiz/QuizLineUI.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/Quiz/QuizListUI.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizBase.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizAstralBody.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizSaver.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/Quiz/VarLineUI.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/VectorUI.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/UI/LabModeUI.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/SatelliteControllerUI.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/AstralBodyEditorUI.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/LengthUI.cs" />
@@ -134,16 +148,26 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Animation/AstronautsAnimation.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/Quiz/QuizUI.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizSolver.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Satellite/SatelliteChallengeManger.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/Quiz/QuizStarsUI.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/Quiz/ResultUI.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/Quiz/QuizStarUI.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/Quiz/QuizStarsGroupUI.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/Satellite/SatelliteResultUI.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Camera/CameraController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/SpacePhysic/AstralBody.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/SpacePhysic/GravityTracing.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/AstralBodyPlacementUI.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/TutorialManagerUI.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/TutorialUI.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/VelocityEditorUI.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Camera/CameraController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Init/Init.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Quiz/Transformer.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizBase.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/Quiz/QuizLineUI.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/GameManager/GlobalTransfer.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/LabModeUI.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Satellite/SatelliteChallengeManger.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/PhysicSceneUI.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1iK5Y9kUuPbAZPnJQwHlUY16sq8" />
@@ -167,7 +191,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="yiiguxing.plugin.translate" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
@@ -288,6 +312,7 @@
       <workItem from="1618109427516" duration="2461000" />
       <workItem from="1618229304935" duration="880000" />
       <workItem from="1618304330247" duration="11224000" />
+      <workItem from="1618402076641" duration="6374000" />
     </task>
     <servers />
   </component>
@@ -310,5 +335,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

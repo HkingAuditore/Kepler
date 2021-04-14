@@ -1,12 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class GlobalTransformer : MonoBehaviour
+[SerializeField]
+public enum Difficulty
 {
-    [SerializeField]private float _audioVolume = .5f;
+    Easy,
+    Normal,
+    Difficult,
+    Real
+}
+public class GlobalTransfer : MonoBehaviour
+{
+    [SerializeField] private float      _audioVolume = .5f;
+    public                   string     quizName;
+    public                   Difficulty difficulty;
     
-    public static GlobalTransformer GetGlobalTransformer { get; private set; }
+    public static GlobalTransfer getGlobalTransfer { get; private set; }
 
     public float audioVolume
     {
@@ -20,7 +29,7 @@ public class GlobalTransformer : MonoBehaviour
 
     private void Awake()
     {
-        GetGlobalTransformer = this;
+        getGlobalTransfer = this;
     }
     
     private void Start()

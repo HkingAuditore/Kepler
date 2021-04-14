@@ -44,7 +44,7 @@ public class GameManager : MonoBehaviour
 
     public void SetAudioVolume()
     {
-        bgmSource.volume = GlobalTransformer.GetGlobalTransformer.audioVolume;
+        bgmSource.volume = GlobalTransfer.getGlobalTransfer.audioVolume;
     }
 
 }

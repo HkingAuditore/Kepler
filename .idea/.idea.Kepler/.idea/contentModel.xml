@@ -460,9 +460,12 @@
           <e p="GameManager" t="Include">
             <e p="GameManager.cs" t="Include" />
             <e p="GlobalTimer.cs" t="Include" />
-            <e p="GlobalTransformer.cs" t="Include" />
+            <e p="GlobalTransfer.cs" t="Include" />
           </e>
           <e p="GPUInstancingTest.cs" t="Include" />
+          <e p="Init" t="Include">
+            <e p="Init.cs" t="Include" />
+          </e>
           <e p="MathPlus" t="Include">
             <e p="MathPlus.cs" t="Include" />
           </e>
@@ -506,10 +509,12 @@
             <e p="Quiz" t="Include">
               <e p="AstralBodyEditorQuizUI.cs" t="Include" />
               <e p="QuizEditorUI.cs" t="Include" />
+              <e p="QuizEditUI.cs" t="Include" />
               <e p="QuizLineUI.cs" t="Include" />
               <e p="QuizListUI.cs" t="Include" />
               <e p="QuizStarsGroupUI.cs" t="Include" />
               <e p="QuizStarUI.cs" t="Include" />
+              <e p="QuizTestUI.cs" t="Include" />
               <e p="QuizUI.cs" t="Include" />
               <e p="ResultUI.cs" t="Include" />
               <e p="VarLineUI.cs" t="Include" />
@@ -522,6 +527,7 @@
             <e p="SettingUI.cs" t="Include" />
             <e p="StarStyleSettingUI.cs" t="Include" />
             <e p="TestModeUI.cs" t="Include" />
+            <e p="TutorialManagerUI.cs" t="Include" />
             <e p="TutorialUI.cs" t="Include" />
             <e p="UIManager.cs" t="Include" />
             <e p="VectorUI.cs" t="Include" />
