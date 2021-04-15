@@ -25,7 +25,7 @@ public class PositionEditorUI : MonoBehaviour
 
     private void Update()
     {
-        transform.position = new Vector3(editingTarget.transform.position.x, transform.position.y,
+        transform.position = new Vector3(editingTarget.transform.position.x, editingTarget.transform.position.y,
                                          editingTarget.transform.position.z);
         transform.localScale = _camera.orthographicSize / 185 * new Vector3(1, 1, 1);
     }

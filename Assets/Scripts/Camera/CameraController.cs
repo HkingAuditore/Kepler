@@ -49,7 +49,15 @@ public class CameraController : MonoBehaviour
         if (Input.GetKey(KeyCode.Space))
             // CameraMover();
             CameraDrag();
-        if(EventSystem.current.IsPointerOverGameObject() ==false )
+        // if (Input.GetKey(KeyCode.LeftAlt))
+        // {
+        //     CameraRotator();
+        //     if (Input.GetMouseButton(1))
+        //     {
+        //         _camera.transform.localEulerAngles = new Vector3(0, 0, 0);
+        //     }
+        // }
+        if(EventSystem.current.IsPointerOverGameObject() ==false && !Input.GetKey(KeyCode.LeftAlt))
             CameraScaler();
         if (IsFollowing)
             Follow();
@@ -98,7 +106,14 @@ public class CameraController : MonoBehaviour
             _isInDrag   = false;
 
         } 
+        
+    }
+    public void CameraRotator()
+    {
 
+        virtualCamera.transform.rotation =
+                Quaternion.Euler(Input.GetAxis("Mouse ScrollWheel") * 10,
+                                 0, 0);
 
     }
 
