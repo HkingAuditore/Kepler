@@ -14,7 +14,8 @@ public class AstralBodyEditorQuizUI : AstralBodyEditorUI
     public override void OnAstralBodySet()
     {
         isThisTarget.isOn         = ReferenceEquals(GameManager.GetGameManager.quizBase.target, (QuizAstralBody)this.astralBody);
-        isThisTarget.interactable = !isThisTarget.isOn;
+        // isThisTarget.interactable = !isThisTarget.isOn;
+        isThisTarget.interactable = false;
     }
 
     // protected override void Awake()

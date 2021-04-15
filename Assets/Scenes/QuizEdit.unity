@@ -755,7 +755,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1820513581}
   toggleTransition: 1
   graphic: {fileID: 636268133}
@@ -792,7 +792,7 @@ MonoBehaviour:
             m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 0
-          m_CallState: 2
+          m_CallState: 0
 --- !u!1 &96426087
 GameObject:
   m_ObjectHideFlags: 0
@@ -15616,7 +15616,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u8BBE\u4E3A\u76EE\u6807\u661F\u7403"
+  m_Text: "\u662F\u5426\u4E3A\u76EE\u6807\u661F\u7403"
 --- !u!222 &1200498944
 CanvasRenderer:
   m_ObjectHideFlags: 0

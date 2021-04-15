@@ -20,16 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1afa9dc1-adab-467c-afda-52b72c3d10f3" name="默认的" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Kepler/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Kepler/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Kepler/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Kepler/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Kepler/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Kepler/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Examples/Projection/Materials/Dash.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Examples/Projection/Materials/Dash.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Le Tai's Asset/TranslucentImage/Material/Default-Translucent.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Le Tai's Asset/TranslucentImage/Material/Default-Translucent.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/LabMode.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/LabMode.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/PhysicScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/PhysicScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/QuizEdit.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/QuizEdit.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Satellite.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Satellite.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/TutorialManagerUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/TutorialManagerUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Quiz/AstralBodyEditorQuizUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Quiz/AstralBodyEditorQuizUI.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,7 +102,6 @@
       <option value="$PROJECT_DIR$/Assets/Quiz/地月.xml" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizData.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizTransformer.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/UI/Quiz/AstralBodyEditorQuizUI.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/MathPlus/MathPlus.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/TestModeUI.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/OrbitPanelUI.cs" />
@@ -156,6 +147,7 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/MultiTutorialUI.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/TutorialManagerUI.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/MultiTutorialManagerUI.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/Quiz/AstralBodyEditorQuizUI.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1iK5Y9kUuPbAZPnJQwHlUY16sq8" />
@@ -301,7 +293,7 @@
       <workItem from="1618229304935" duration="880000" />
       <workItem from="1618304330247" duration="11224000" />
       <workItem from="1618402076641" duration="6374000" />
-      <workItem from="1618483149562" duration="1141000" />
+      <workItem from="1618483149562" duration="1158000" />
     </task>
     <servers />
   </component>
