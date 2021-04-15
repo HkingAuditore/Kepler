@@ -189,7 +189,7 @@ public class QuizAstralBody : AstralBody
             stringBuilder.Append("表面重力加速度是" + this.gravity.ToString("f2") + "m/s²，");
         }
         if(isSizePublic){
-            stringBuilder.Append("星球半径是" + this.size.ToString("f2") + "m，");
+            stringBuilder.Append("半径是" + this.size.ToString("f2") + "m，");
         }
 
         if(isTPublic){

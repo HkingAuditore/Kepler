@@ -3303,7 +3303,7 @@ MonoBehaviour:
   autoOrient: 1
   updateFrameInterval: 0
   _slices: 1
-  vertexDirection: {x: 0.09248898, y: 0.089878626, z: -0.9916489}
+  vertexDirection: {x: -0.6976117, y: 0.41868752, z: -0.581411}
 --- !u!23 &554862197
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9554,7 +9554,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e863cc32367caf7469fde2076af77eaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countDownTime: 10
+  countDownTime: 200
   startCountDownEvent:
     m_PersistentCalls:
       m_Calls: []

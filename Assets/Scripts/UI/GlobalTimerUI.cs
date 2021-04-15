@@ -16,8 +16,8 @@ public class GlobalTimerUI : MonoBehaviour
 
     private void Update()
     {
-        float remainTime = _globalTimer.countDownTime - _globalTimer.timer;
-        remainTime = remainTime > 0 ? remainTime : 0;
-        timerText.text = remainTime.ToString("f2") + "s";
+        // float remainTime = _globalTimer.countDownTime - _globalTimer.timer;
+        // remainTime     = remainTime > 0 ? remainTime : 0;
+        timerText.text = _globalTimer.timer.ToString("f2") + "s";
     }
 }
