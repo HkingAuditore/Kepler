@@ -8,7 +8,7 @@ public class TutorialManagerUI : MonoBehaviour
 {
    public List<TutorialUI> tutorialUiList = new List<TutorialUI>();
 
-   private static Dictionary<string, bool> hasBeenActivatedDict = new Dictionary<string, bool>();
+   protected static Dictionary<string, bool> hasBeenActivatedDict = new Dictionary<string, bool>();
 
    private void Start()
    {
@@ -26,7 +26,7 @@ public class TutorialManagerUI : MonoBehaviour
        MonitorAwakePanel();
    }
 
-   private void MonitorAwakePanel()
+   protected virtual void MonitorAwakePanel()
    {
        foreach (var tutorial in tutorialUiList.Where(tutorial => (tutorial.awakePanel.activeSelf &&
                                                                   !hasBeenActivatedDict[tutorial.tutorialName]) ))

@@ -21,28 +21,15 @@
   <component name="ChangeListManager">
     <list default="true" id="1afa9dc1-adab-467c-afda-52b72c3d10f3" name="默认的" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Kepler/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Kepler/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Kepler/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Kepler/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Kepler/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Kepler/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Kepler/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Kepler/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Examples/Projection/Materials/Dash.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Examples/Projection/Materials/Dash.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Le Tai's Asset/TranslucentImage/Material/Default-Translucent.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Le Tai's Asset/TranslucentImage/Material/Default-Translucent.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Quiz/Sphere 1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Quiz/Sphere 1.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/LabMode.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/LabMode.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/PhysicScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/PhysicScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/TestMode.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/TestMode.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Camera/CameraController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Camera/CameraController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager/GlobalTransformer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager/GlobalTransfer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager/GlobalTransformer.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager/GlobalTransfer.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizBase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Quiz/Transformer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Quiz/Transformer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Satellite/SatelliteChallengeManger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Satellite/SatelliteChallengeManger.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/LabModeUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/LabModeUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/PhysicSceneUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/PhysicSceneUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Quiz/QuizLineUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Quiz/QuizLineUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/SettingUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/SettingUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/TutorialUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/TutorialUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/VelocityEditorUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/VelocityEditorUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/QuizEdit.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/QuizEdit.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Satellite.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Satellite.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/TutorialManagerUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/TutorialManagerUI.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,6 +93,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CustomPostProcessing/CustomPostProcessingBase.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/LengthUI.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Quiz/QuizStarUI.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/MultiTutorialManagerUI.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameManager/GlobalTransfer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/VectorUI.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://C:/Program Files/Unity/Hub/Editor/2020.1.17f1c1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/UIBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
@@ -117,8 +105,6 @@
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/Assets/Scripts/UI/StarStyleSettingUI.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/UI/AstralBodyAddUI.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizEditor.cs" />
       <option value="$PROJECT_DIR$/Assets/Quiz/21-04-02.xml" />
       <option value="$PROJECT_DIR$/Assets/Quiz/地月.xml" />
@@ -156,7 +142,6 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/SpacePhysic/AstralBody.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/SpacePhysic/GravityTracing.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/AstralBodyPlacementUI.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/UI/TutorialManagerUI.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/TutorialUI.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/VelocityEditorUI.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Camera/CameraController.cs" />
@@ -168,6 +153,9 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/LabModeUI.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Satellite/SatelliteChallengeManger.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/PhysicSceneUI.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/MultiTutorialUI.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/TutorialManagerUI.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/MultiTutorialManagerUI.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1iK5Y9kUuPbAZPnJQwHlUY16sq8" />
@@ -208,7 +196,7 @@
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
       <option name="selectedOptions">
-        <set />
+        <list />
       </option>
       <method v="2" />
     </configuration>
@@ -217,7 +205,7 @@
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
       <option name="selectedOptions">
-        <set />
+        <list />
       </option>
       <method v="2" />
     </configuration>
@@ -313,6 +301,7 @@
       <workItem from="1618229304935" duration="880000" />
       <workItem from="1618304330247" duration="11224000" />
       <workItem from="1618402076641" duration="6374000" />
+      <workItem from="1618483149562" duration="1141000" />
     </task>
     <servers />
   </component>
