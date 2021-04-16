@@ -493,6 +493,9 @@
             <e p="IOrbitCalculator.cs" t="Include" />
           </e>
           <e p="TangentSpaceVisualizer.cs" t="Include" />
+          <e p="TTS" t="Include">
+            <e p="VoiceGenertator.cs" t="Include" />
+          </e>
           <e p="UI" t="Include">
             <e p="AstralBodyAddUI.cs" t="Include" />
             <e p="AstralBodyEditorUI.cs" t="Include" />

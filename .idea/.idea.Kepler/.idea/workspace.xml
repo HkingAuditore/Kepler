@@ -21,8 +21,9 @@
   <component name="ChangeListManager">
     <list default="true" id="1afa9dc1-adab-467c-afda-52b72c3d10f3" name="默认的" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Kepler/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Kepler/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Camera/CameraController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Camera/CameraController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/PositionEditorUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/PositionEditorUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/VarLine.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/VarLine.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MathPlus/MathPlus.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MathPlus/MathPlus.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Quiz/VarLineUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Quiz/VarLineUI.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,7 +103,6 @@
       <option value="$PROJECT_DIR$/Assets/Quiz/地月.xml" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizData.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizTransformer.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/MathPlus/MathPlus.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/TestModeUI.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/OrbitPanelUI.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/OrbitGraphUI.cs" />
@@ -110,7 +110,6 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/Quiz/QuizListUI.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizAstralBody.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizSaver.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/UI/Quiz/VarLineUI.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/VectorUI.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/SatelliteControllerUI.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/AstralBodyEditorUI.cs" />
@@ -149,6 +148,8 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/Quiz/AstralBodyEditorQuizUI.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/PositionEditorUI.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Camera/CameraController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/MathPlus/MathPlus.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/Quiz/VarLineUI.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1iK5Y9kUuPbAZPnJQwHlUY16sq8" />
@@ -294,7 +295,8 @@
       <workItem from="1618229304935" duration="880000" />
       <workItem from="1618304330247" duration="11224000" />
       <workItem from="1618402076641" duration="6374000" />
-      <workItem from="1618483149562" duration="2623000" />
+      <workItem from="1618483149562" duration="2762000" />
+      <workItem from="1618587273100" duration="3543000" />
     </task>
     <servers />
   </component>

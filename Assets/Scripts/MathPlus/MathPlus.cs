@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using MathNet.Numerics.LinearAlgebra;
 using SpacePhysic;
 using UnityEngine;
@@ -341,6 +342,30 @@ namespace MathPlus
             // Debug.Log("geoCenter = " + geoCenter);
             // Debug.Log("theta= " + theta);
             return new ConicSection(a, b, c,theta, geoCenter);
+        }
+    }
+
+    public static class MathPlus
+    {
+        public static int GetExponent(this float d)
+        {
+            var doubleParts = ExtractScientificNotationParts(d);
+            return Convert.ToInt32(doubleParts[1]);
+        }
+
+        public static float GetMantissa(this float d)
+        {
+            var doubleParts = ExtractScientificNotationParts(d);
+            return (float)Convert.ToDouble(doubleParts[0]);
+        }
+
+        private static string[] ExtractScientificNotationParts(float d)
+        {
+            var doubleParts = d.ToString(@"E17").Split('E');
+            if (doubleParts.Length != 2)
+                throw new ArgumentException();
+
+            return doubleParts;
         }
     }
 }

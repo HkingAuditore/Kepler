@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using MathPlus;
 using UnityEngine;
 using UnityEngine.UI;
 using Object = System.Object;
@@ -24,6 +25,7 @@ public class VarLineUI : MonoBehaviour
     public                         Toggle           toggle;
     public                         Text             unit;
     public                         InputField       inputField;
+    public                         InputField       scientificCountingInputField;
     public                         bool             enableInput;
     public                         GameObject       add;
     public                         GameObject       minus;
@@ -75,7 +77,7 @@ public class VarLineUI : MonoBehaviour
             Text text = inputField.placeholder.gameObject.GetComponent<Text>();
             text.text  = "请输入";
             var rectTransform = inputField.gameObject.GetComponent<RectTransform>();
-            rectTransform.sizeDelta = new Vector2(193f, rectTransform.sizeDelta.y);
+            rectTransform.sizeDelta = new Vector2(115f, rectTransform.sizeDelta.y);
             // rectTransform.anchoredPosition =
             //     new Vector2(rectTransform.anchoredPosition.x + 17.9f, rectTransform.anchoredPosition.y);
         }
@@ -90,31 +92,38 @@ public class VarLineUI : MonoBehaviour
                     switch (property)
                     {
                         case ShowPropertyType.m:
-                            inputField.text = target.mass.ToString("f2");
+                            UpdateData(target.mass);
+                            // inputField.text = target.mass.ToString("f2");
                             toggle.isOn     = ((QuizAstralBody) target).isMassPublic;
                             break;
                         case ShowPropertyType.v:
-                            inputField.text = (.1f * target.GetVelocity().magnitude).ToString("f2");
+                            UpdateData(.1f         * target.GetVelocity().magnitude);
+                            // inputField.text = (.1f * target.GetVelocity().magnitude).ToString("f2");
                             toggle.isOn     = ((QuizAstralBody) target).isVelocityPublic;
                             break;
                         case ShowPropertyType.R:
-                            inputField.text = target.size.ToString("f2");
+                            UpdateData(target.size);
+                            // inputField.text = target.size.ToString("f2");
                             toggle.isOn     = ((QuizAstralBody) target).isSizePublic;
                             break;
                         case ShowPropertyType.T:
-                            inputField.text = ((QuizAstralBody) target).period.ToString("f2");
+                            UpdateData(((QuizAstralBody) target).period);
+                            // inputField.text = ((QuizAstralBody) target).period.ToString("f2");
                             toggle.isOn     = ((QuizAstralBody) target).isPeriodPublic;
                             break;
                         case ShowPropertyType.radius:
-                            inputField.text = ((QuizAstralBody) target).radius.ToString("f2");
+                            UpdateData( ((QuizAstralBody) target).radius);
+                            // inputField.text = ((QuizAstralBody) target).radius.ToString("f2");
                             toggle.isOn     = ((QuizAstralBody) target).isRadiusPublic;
                             break;
                         case ShowPropertyType.omega:
-                            inputField.text = ((QuizAstralBody) target).globalAngularVelocity.ToString("f2");
+                            UpdateData(((QuizAstralBody) target).globalAngularVelocity);
+                            // inputField.text = ((QuizAstralBody) target).globalAngularVelocity.ToString("f2");
                             toggle.isOn     = ((QuizAstralBody) target).isAngularVelocityPublic;
                             break;
                         case ShowPropertyType.g:
-                            inputField.text = (((QuizAstralBody) target).gravity * 0.01f).ToString("f2");
+                            UpdateData(((QuizAstralBody) target).gravity         * 0.01f);
+                            // inputField.text = (((QuizAstralBody) target).gravity * 0.01f).ToString("f2");
                             toggle.isOn     = ((QuizAstralBody) target).isGravityPublic;
                             break;
                         default:
@@ -157,16 +166,19 @@ public class VarLineUI : MonoBehaviour
             case ShowPropertyType.R:
                 break;
             case ShowPropertyType.T:
-                inputField.text = ((QuizAstralBody) target).period.ToString("f2");
+                UpdateData(((QuizAstralBody) target).period);
+                // inputField.text = ((QuizAstralBody) target).period.ToString("f2");
                 break;
             case ShowPropertyType.radius:
                 // inputField.text = ((QuizAstralBody) target).radius.ToString("f2");
                 break;
             case ShowPropertyType.omega:
-                inputField.text = ((QuizAstralBody) target).globalAngularVelocity.ToString("f2");
+                UpdateData(((QuizAstralBody) target).globalAngularVelocity);
+                // inputField.text = ((QuizAstralBody) target).globalAngularVelocity.ToString("f2");
                 break;
             case ShowPropertyType.g:
-                inputField.text = (target.gravity * 0.01f).ToString("f2");
+                UpdateData(target.gravity         * 0.01f);
+                // inputField.text = (target.gravity * 0.01f).ToString("f2");
                 break;
             default:
                 throw new ArgumentOutOfRangeException();
@@ -208,19 +220,26 @@ public class VarLineUI : MonoBehaviour
         switch (property)
         {
             case ShowPropertyType.m:
-                this.target.Mass = float.Parse(inputField.text);
+                this.target.Mass = GetData();
+                UpdateData(this.target.Mass);
                 break;
             case ShowPropertyType.v:
-                this.target.ChangeVelocity(10 * float.Parse(inputField.text));
+                // 10
+                this.target.ChangeVelocity(GetData());
+                UpdateData(this.target.GetVelocity().magnitude);
                 break;
             case ShowPropertyType.R:
-                this.target.size = float.Parse(inputField.text);
+                // 1
+                this.target.size = GetData();
+                UpdateData(this.target.size);
                 break;
             case ShowPropertyType.T:
                 break;
             case ShowPropertyType.radius:
+                // 1
                 this.target.GetTransform().position =
-                    (this.target.GetPosition() - GameManager.GetGameManager.quizBase.target.GetPosition()).normalized * float.Parse(inputField.text);
+                    (this.target.GetPosition() - GameManager.GetGameManager.quizBase.target.GetPosition()).normalized * GetData();
+                UpdateData( ((QuizAstralBody) target).radius);
                 break;
             case ShowPropertyType.omega:
                 break;
@@ -283,6 +302,69 @@ public class VarLineUI : MonoBehaviour
     public void OnClickEnd()
     {
         _isClicking = false;
+    }
+
+    private void UpdateData(float data)
+    {
+        int k = 1;
+        switch (property)
+        {
+            case ShowPropertyType.m:
+                k = 21;
+                break;
+            case ShowPropertyType.v:
+                k = 3;
+                break;
+            case ShowPropertyType.R:
+                k = 6;
+                break;
+            case ShowPropertyType.T:
+                k = 4;
+                break;
+            case ShowPropertyType.radius:
+                k = 6;
+                break;
+            case ShowPropertyType.omega:
+                k = -4;
+                break;
+            case ShowPropertyType.g:
+                break;
+            default:
+                throw new ArgumentOutOfRangeException();
+        }
+        this.inputField.text                   = data.GetMantissa().ToString("f2");
+        this.scientificCountingInputField.text = (data.GetExponent() + k).ToString();
+    }
+
+    private float GetData()
+    {
+        int k = 1;
+        switch (property)
+        {
+            case ShowPropertyType.m:
+                k = 21;
+                break;
+            case ShowPropertyType.v:
+                k = 3;
+                break;
+            case ShowPropertyType.R:
+                k = 6;
+                break;
+            case ShowPropertyType.T:
+                k = 4;
+                break;
+            case ShowPropertyType.radius:
+                k = 6;
+                break;
+            case ShowPropertyType.omega:
+                k = -4;
+                break;
+            case ShowPropertyType.g:
+                break;
+            default:
+                throw new ArgumentOutOfRangeException();
+        }
+        return float.Parse(this.inputField.text) * Mathf.Pow(10, int.Parse(this.scientificCountingInputField.text) - k);
     }
     
 }
