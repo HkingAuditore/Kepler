@@ -249,7 +249,10 @@ public class AstralBody : MonoBehaviour, ITraceable
     //调整星球体积
     private void ChangeSize()
     {
-        float showSize = Mathf.Pow(size,.2f) * GameManager.GetGameManager.globalDistanceScaler* GameManager.GetGameManager.globalDistanceScaler;
+        int localScale = GameManager.GetGameManager.globalDistanceScaler <= 0
+            ? 1
+            : GameManager.GetGameManager.globalDistanceScaler;
+        float showSize = Mathf.Pow(size, .2f) * localScale * localScale;
         transform.localScale = new Vector3(showSize , showSize , showSize );
         // defaultCollider.radius *= size;
         // if(enableAffect)

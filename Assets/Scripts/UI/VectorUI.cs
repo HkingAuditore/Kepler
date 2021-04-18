@@ -1,4 +1,5 @@
 ﻿using System;
+using StaticClasses;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -45,6 +46,7 @@ public class VectorUI : MonoBehaviour
         vectorArrow.positionCount = 0;
     }
 
+    // ReSharper disable Unity.PerformanceAnalysis
     private void ShowVector()
     {
         switch (thisType)
@@ -74,7 +76,19 @@ public class VectorUI : MonoBehaviour
         transform.position = new Vector3(Mathf.Clamp(tmpScreenPos.x, 60, Screen.width  - 60),
                                          Mathf.Clamp(tmpScreenPos.y, 20, Screen.height - 20),
                                          0);
-        vectorText.text = header + ":" + (_targetVector.magnitude * showSize).ToString("f2") + " " + unit;
+        string result ="";
+        switch (thisType)
+        {
+            case vectorType.Force:
+                result = ((double) (_targetVector.magnitude * 1000)).ToSuperscript(2);
+                break;
+            case vectorType.Velocity:
+                result = ((double) (_targetVector.magnitude * GameManager.GetGameManager.GetK(PropertyUnit.M))).ToSuperscript(2);
+                break;
+            default:
+                throw new ArgumentOutOfRangeException();
+        }
+        vectorText.text = header + ":" + result + unit;
     }
 
     public void Init()

@@ -358,14 +358,14 @@ public class VarLineUI : MonoBehaviour
                 k = 3;
                 break;
             case ShowPropertyType.R:
-                k =  2 * GameManager.GetGameManager.globalDistanceScaler;
+                k = GameManager.GetGameManager.GetK(PropertyUnit.M);
                 break;
             case ShowPropertyType.T:
                 k = GameManager.GetGameManager.GetK(PropertyUnit.S);
                 // k = 3  + GameManager.GetGameManager.globalMassScaler+  GameManager.GetGameManager.globalDistanceScaler * 3;
                 break;
             case ShowPropertyType.radius:
-                k = 1 + 2 * GameManager.GetGameManager.globalDistanceScaler;
+                k = 1 + GameManager.GetGameManager.GetK(PropertyUnit.M);
                 // k = 7 +  GameManager.GetGameManager.globalDistanceScaler * 2;
                 break;
             case ShowPropertyType.omega:

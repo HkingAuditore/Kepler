@@ -1,6 +1,7 @@
 using System;
 using MathPlus;
 using Quiz;
+using StaticClasses;
 using UnityEngine;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
@@ -53,7 +54,7 @@ public class QuizUI : MonoBehaviour
             case QuizType.Mass:
                 
                 target.realMass = ConvertSliderValue2Ans(quizSlider.value) * Mathf.Pow(10,-GameManager.GetGameManager.globalMassScaler * 2);
-                ansText.text = target.realMass.GetMantissa().ToString("f2") + "x10e" + target.realMass.GetExponent();
+                ansText.text = target.realMass.GetMantissa().ToString("f2") + "x10e" + target.realMass.GetExponent().ToString().ToSuperscript();
                 break;
             case QuizType.Density:
                 

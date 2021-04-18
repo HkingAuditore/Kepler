@@ -14891,7 +14891,7 @@ MonoBehaviour:
   vectorText: {fileID: 1115932340}
   thisType: 0
   header: "\u53D7\u529B"
-  unit: 10^17N
+  unit: N
   showSize: 100
 --- !u!1 &1267500439
 GameObject:
@@ -17965,7 +17965,7 @@ MonoBehaviour:
   vectorText: {fileID: 1516169278}
   thisType: 1
   header: "\u901F\u5EA6"
-  unit: km/s
+  unit: m/s
   showSize: 10
 --- !u!120 &1514731291
 LineRenderer:
@@ -21752,7 +21752,6 @@ MonoBehaviour:
   orbit: {fileID: 1009603419}
   satelliteChallengeManger: {fileID: 0}
   bgmSource: {fileID: 894007026}
-  _globalMassScaler: 0
   globalDistanceScaler: 0
 --- !u!4 &1901827054
 Transform:
