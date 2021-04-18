@@ -7,6 +7,7 @@ using UnityEngine;
 public class TutorialManagerUI : MonoBehaviour
 {
    public List<TutorialUI> tutorialUiList = new List<TutorialUI>();
+   // public VoiceGenerator   voiceGenerator;
 
    protected static Dictionary<string, bool> hasBeenActivatedDict = new Dictionary<string, bool>();
 

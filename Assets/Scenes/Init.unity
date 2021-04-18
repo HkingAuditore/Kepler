@@ -328,6 +328,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _audioVolume: 0.3
+  quizName: "\u771F\u5B9E\u5730\u65E5"
+  difficulty: 0
 --- !u!4 &1313590213
 Transform:
   m_ObjectHideFlags: 0

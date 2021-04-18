@@ -16,7 +16,7 @@ namespace Satellite
 
         public float GetMass()
         {
-            return satelliteParts.Sum(part => part.mass);
+            return satelliteParts.Sum(part => part.Mass);
         }
 
         public Transform GetTransform()

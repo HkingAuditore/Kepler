@@ -9,51 +9,79 @@ using UnityEngine.Serialization;
 
 public class AstralBody : MonoBehaviour, ITraceable
 {
-    [Header("Basic Property")] public float mass;
-
-    public                                        float          density;
-    [FormerlySerializedAs("originalSize")] public float          _size = 1;
-    private                                       int            _meshNum;
-    public                                        SphereCollider triggerCollider;
-    public                                        SphereCollider defaultCollider;
+    [FormerlySerializedAs("mass")] [Header("Basic Property")]
+    [SerializeField]private float _mass;
+    
+    [FormerlySerializedAs("originalSize")] [SerializeField]private float          _size = 1;
+    public                                         SphereCollider triggerCollider;
+    public                                         SphereCollider defaultCollider;
 
     [Header("Movement Property")] public Vector3 oriVelocity;
 
     public Vector3 angularVelocity;
-    
+
 
     [Header("Gravity Property")] public bool enableAffect = true;
 
     public float affectRadius;
     public bool  enableTracing;
 
-    public List<AstralBody> affectedPlanets = new List<AstralBody>();
-    public List<AstralBody> banAffectedPlanets = new List<AstralBody>();
+    public  List<AstralBody>    affectedPlanets    = new List<AstralBody>();
+    public  List<AstralBody>    banAffectedPlanets = new List<AstralBody>();
+    public  UnityEvent<Vector3> velocityChangedEvent;
+    private Rigidbody           _astralBodyRigidbody;
 
     private Vector3 _lastVelocity;
 
+    private MeshFilter _mesh;
+    private int        _meshNum;
+
+    [SerializeField]
+    private double   _realMass;
+    private Renderer _renderer;
+
     public float Mass
     {
-        get => mass;
-        set
+        get => _mass;
+        private set
         {
-            mass = value > 0 ? value : 0;
-            SetMass();
+            _mass = value > 0 ? value : 0;
+            try
+            {
+                SetMass();
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
         }
     }
 
-    public Rigidbody AstralBodyRigidbody { get; set; }
-
-    public Vector3 Force { get; private set; }
-    
-    public float gravity
+    public Rigidbody astralBodyRigidbody
     {
-        get => (SpacePhysic.PhysicBase.GetG() * this.Mass) / (this.size * this.size);
+        get => _astralBodyRigidbody;
+        set
+        {
+            if (_astralBodyRigidbody == null)
+            {
+                _astralBodyRigidbody = this.GetComponent<Rigidbody>();
+            }
+            _astralBodyRigidbody = value;
+        }
     }
 
-    private MeshFilter            _mesh;
-    private Renderer              _renderer;
-    public  UnityEvent<Vector3> velocityChangedEvent;
+    public Vector3 Force { get; private set; }
+
+    public float gravity
+    {
+        get
+        {
+            double realSize = this.size * Mathf.Pow(10, GameManager.GetGameManager.GetK(PropertyUnit.M));
+            // Debug.Log("RealSize = " + realSize);
+            return (float) ((SpacePhysic.PhysicBase.GetRealG() * this.realMass) / (realSize * realSize));
+        }
+    }
 
     public int meshNum
     {
@@ -77,12 +105,37 @@ public class AstralBody : MonoBehaviour, ITraceable
         }
     }
 
+    public double realMass
+    {
+        get => _realMass;
+        set
+        {
+            _realMass = value;
+            // Debug.Log(GameManager.GetGameManager.GetK(PropertyUnit.Kg));
+            // Debug.Log( Mathf.Pow(10, GameManager.GetGameManager.GetK(PropertyUnit.Kg)));
+            // Debug.Log("num:" + _realMass       * Mathf.Pow(10, GameManager.GetGameManager.GetK(PropertyUnit.Kg)));
+            Mass = (float) (_realMass * Mathf.Pow(10, GameManager.GetGameManager.GetK(PropertyUnit.Kg, _realMass)));
+            // Debug.Log((_realMass * Mathf.Pow(10, GameManager.GetGameManager.GetK(PropertyUnit.Kg, _realMass))));
+        }
+    }
+
+    [SerializeField]private double _density;
+    public double density
+    {
+        get
+        {
+            double realSize = this.size           * Mathf.Pow(10, GameManager.GetGameManager.GetK(PropertyUnit.M));
+            _density = (float) (3 * this.realMass / (4 * Mathf.PI * realSize * realSize * realSize));
+            return  _density;
+        }
+    }
+
 
     private void Awake()
     {
         _mesh               = this.GetComponent<MeshFilter>();
         _renderer           = this.GetComponent<Renderer>();
-        AstralBodyRigidbody = GetComponent<Rigidbody>();
+        astralBodyRigidbody = GetComponent<Rigidbody>();
 
     }
 
@@ -94,7 +147,7 @@ public class AstralBody : MonoBehaviour, ITraceable
         SetMass();
         ChangeSize();
 
-        AstralBodyRigidbody.angularVelocity = angularVelocity;
+        astralBodyRigidbody.angularVelocity = angularVelocity;
         _lastVelocity                       = oriVelocity;
         ChangeVelocity(oriVelocity);
     }
@@ -102,10 +155,15 @@ public class AstralBody : MonoBehaviour, ITraceable
     protected virtual void FixedUpdate()
     {
         var force                                           = CalculateForce();
-        if (!AstralBodyRigidbody.isKinematic) _lastVelocity = AstralBodyRigidbody.velocity;
+        if (!astralBodyRigidbody.isKinematic) _lastVelocity = astralBodyRigidbody.velocity;
         //Debug.Log(this.name + " force: " + force);
         // Debug.DrawLine(transform.position,transform.position + force,Color.green);
-        AstralBodyRigidbody.AddForce(force);
+        astralBodyRigidbody.AddForce(force);
+    }
+
+    private void OnDestroy()
+    {
+        GameManager.GetGameManager.orbit.RemoveAstralBody(this);
     }
 
     public virtual void OnCollisionEnter(Collision other)
@@ -117,11 +175,6 @@ public class AstralBody : MonoBehaviour, ITraceable
             GameObject.Instantiate(effect, destroyBody.transform.position, destroyBody.transform.rotation);
         Destroy(destroyBody.gameObject);
         Destroy(effectGameObj,3f);
-    }
-
-    private void OnDestroy()
-    {
-        GameManager.GetGameManager.orbit.RemoveAstralBody(this);
     }
 
 
@@ -170,8 +223,8 @@ public class AstralBody : MonoBehaviour, ITraceable
 
     public Rigidbody GetRigidbody()
     {
-        if (AstralBodyRigidbody == null) AstralBodyRigidbody = GetComponent<Rigidbody>();
-        return AstralBodyRigidbody;
+        if (astralBodyRigidbody == null) astralBodyRigidbody = GetComponent<Rigidbody>();
+        return astralBodyRigidbody;
     }
 
     public Vector3 GetVelocity()
@@ -189,8 +242,6 @@ public class AstralBody : MonoBehaviour, ITraceable
     {
         return this;
     }
-    
-
 
 
     #region 开放修改参数
@@ -198,7 +249,8 @@ public class AstralBody : MonoBehaviour, ITraceable
     //调整星球体积
     private void ChangeSize()
     {
-        transform.localScale = new Vector3(size, size, size);
+        float showSize = Mathf.Pow(size,.2f) * GameManager.GetGameManager.globalDistanceScaler* GameManager.GetGameManager.globalDistanceScaler;
+        transform.localScale = new Vector3(showSize , showSize , showSize );
         // defaultCollider.radius *= size;
         // if(enableAffect)
         //     triggerCollider.radius = affectRadius * size;
@@ -208,48 +260,51 @@ public class AstralBody : MonoBehaviour, ITraceable
 
     public void ChangeVelocity(Vector3 velocity)
     {
-        if (!AstralBodyRigidbody.isKinematic)
+        if (!astralBodyRigidbody.isKinematic)
         {
-            AstralBodyRigidbody.velocity = velocity;
+            astralBodyRigidbody.velocity = velocity;
         }
         else
         {
             this._lastVelocity                   = velocity;
-            this.AstralBodyRigidbody.isKinematic = false;
-            AstralBodyRigidbody.velocity         = velocity;
-            this.AstralBodyRigidbody.isKinematic = true;
+            this.astralBodyRigidbody.isKinematic = false;
+            astralBodyRigidbody.velocity         = velocity;
+            this.astralBodyRigidbody.isKinematic = true;
         }
 
         velocityChangedEvent.Invoke(velocity);
     }
-    
-    public void ChangeVelocity(float speed)
+
+    public void ChangeVelocity(double realSpeed)
     {
-        if (!AstralBodyRigidbody.isKinematic)
+        float speed = ((float) (realSpeed /
+                                GameManager.GetGameManager
+                                           .GetK(PropertyUnit.M)) * GameManager.GetGameManager
+                                                                               .GetK(PropertyUnit.S));
+        if (!astralBodyRigidbody.isKinematic)
         {
-            AstralBodyRigidbody.velocity = AstralBodyRigidbody.velocity.normalized * speed;
+            astralBodyRigidbody.velocity = astralBodyRigidbody.velocity.normalized * speed;
         }
         else
         {
             this._lastVelocity                   = this._lastVelocity.normalized * speed;
-            this.AstralBodyRigidbody.isKinematic = false;
-            AstralBodyRigidbody.velocity         = this._lastVelocity;
-            this.AstralBodyRigidbody.isKinematic = true;
+            this.astralBodyRigidbody.isKinematic = false;
+            astralBodyRigidbody.velocity         = this._lastVelocity;
+            this.astralBodyRigidbody.isKinematic = true;
         }
     }
 
     private protected virtual void SetMass()
     {
         // AstralBodyRigidbody.mass = Mathf.PI * (4/3)*Mathf.Pow(curSize,3) * this.density;
-        AstralBodyRigidbody.mass = Mass;
+        astralBodyRigidbody.mass = Mass;
     }
 
 
-
-    public void ChangeDensity(float curDensity)
-    {
-        density = curDensity;
-    }
+    // public void ChangeDensity(float curDensity)
+    // {
+    //     density = curDensity;
+    // }
 
     #endregion 开放修改参数
 
@@ -278,7 +333,7 @@ public class AstralBody : MonoBehaviour, ITraceable
         //计算引力向量集
         foreach (var astralBody in affectedPlanets)
             //float distance = Vector3.Distance(this.transform.position, astralBody.gameObject.transform.position);
-            forceResult += astralBody.GetGravityVector3(AstralBodyRigidbody);
+            forceResult += astralBody.GetGravityVector3(astralBodyRigidbody);
         //gravities.Add(astralBody.GetGravityVector3(this._rigidbody));
 
         //计算合力
@@ -291,21 +346,23 @@ public class AstralBody : MonoBehaviour, ITraceable
 
     #region 引力步进计算轨道
 
-    #endregion             
-    
+    #endregion
+
     #region 优化属性设置
+
     public void SetCircleVelocity()
     {
         //查找引力核心 
         AstralBody core = affectedPlanets.OrderByDescending(a => this.GetGravityVector3(a.GetRigidbody()).magnitude).FirstOrDefault();
-        this.ChangeVelocity(MathPlus.CustomSolver.GetCircleOrbitVelocity(this.transform.position,core.GetTransform().position,core.mass));
+        this.ChangeVelocity(MathPlus.CustomSolver.GetCircleOrbitVelocity(this.transform.position,core.GetTransform().position,core._mass));
     }
-[ContextMenu("To Circle Velocity")]
+
+    [ContextMenu("To Circle Velocity")]
     public void SetCircleVelocityMenu()
     {
         //查找引力核心
         AstralBody core = affectedPlanets.OrderByDescending(a => this.GetGravityVector3(a.GetRigidbody()).magnitude).FirstOrDefault();
-        this.oriVelocity = (MathPlus.CustomSolver.GetCircleOrbitVelocity(this.transform.position,core.GetTransform().position,core.mass));
+        this.oriVelocity = (MathPlus.CustomSolver.GetCircleOrbitVelocity(this.transform.position,core.GetTransform().position,core._mass));
     }
 
     #endregion

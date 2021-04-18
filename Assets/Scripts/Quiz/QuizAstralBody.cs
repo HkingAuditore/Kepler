@@ -170,7 +170,7 @@ public class QuizAstralBody : AstralBody
     {
         StringBuilder stringBuilder = new StringBuilder("");
         if(isMassPublic){
-            stringBuilder.Append("质量是" + this.mass.ToString("f2") + "kg，");
+            stringBuilder.Append("质量是" + this.realMass.ToString("f2") + "kg，");
         }
         if(isRadiusPublic){
             stringBuilder.Append("轨道半径是" + this.radius.ToString("f2") + "m，");

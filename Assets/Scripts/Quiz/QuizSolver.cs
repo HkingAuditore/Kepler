@@ -93,6 +93,7 @@ namespace Quiz
         public override void Start()
         {
             base.Start();
+            quizUI.quizType = this.quizType;
             quizUI.Generate();
             GameManager.GetGameManager.globalTimer.countingDownEndEvent.AddListener((() =>
                                                                                      {

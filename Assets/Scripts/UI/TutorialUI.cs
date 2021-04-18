@@ -2,14 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 [Serializable]
 public class TutorialUI : MonoBehaviour
 {
-    public  GameObject       awakePanel;
-    public  List<GameObject> tutorialClips;
-    public  string           tutorialName;
-    private int              _curStep = 0;
+    public  GameObject        awakePanel;
+    public  List<GameObject>  tutorialClips;
+    public  string            tutorialName;
+    public  TutorialManagerUI tutorialManagerUI;
+    private int               _curStep = 0;
+    private VoiceGenerator    _voiceGenerator;
 
     public int curStep
     {
@@ -21,6 +24,11 @@ public class TutorialUI : MonoBehaviour
         }
     }
 
+    // private void Start()
+    // {
+    //     _voiceGenerator = tutorialManagerUI.voiceGenerator;
+    // }
+
     public void StartTutorial()
     {
         curStep = 0;
@@ -31,7 +39,11 @@ public class TutorialUI : MonoBehaviour
     {
         tutorialClips.ForEach(t => t.SetActive(false));
         if(curStep < tutorialClips.Count)
+        {
             tutorialClips[curStep].SetActive(true);
+           // tutorialManagerUI.voiceGenerator.content = ( tutorialClips[curStep].transform.Find("Translucent Image").Find("Text").GetComponent<Text>().text);
+           // tutorialManagerUI.voiceGenerator.Speak(( tutorialClips[curStep].transform.Find("Translucent Image").Find("Text").GetComponent<Text>().text));
+        }        
         else
         {
             this.gameObject.SetActive(false);

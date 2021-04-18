@@ -41,6 +41,7 @@ public class QuizListUI : MonoBehaviour
             var rect = line.GetComponent<RectTransform>();
             rect.anchoredPosition3D = new Vector3(0, rect.localPosition.y, 0);
             quizLineUis.Add(line);
+            line.quizStruct = quizStruct;
             line.name       = quizStruct.quizName;
             line.quizListUI = this;
             line.gameObject.SetActive(true);

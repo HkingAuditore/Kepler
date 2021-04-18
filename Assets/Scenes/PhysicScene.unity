@@ -707,8 +707,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 11.514954, y: 6.8559875}
-  m_SizeDelta: {x: -118.13245, y: -99.02594}
+  m_AnchoredPosition: {x: 11.514954, y: -6.9}
+  m_SizeDelta: {x: -118.13245, y: -71.60602}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &55483519
 MonoBehaviour:
@@ -978,6 +978,7 @@ MonoBehaviour:
   tutorialClips:
   - {fileID: 1077043799}
   tutorialName: PhysicSceneOrbitPanel
+  tutorialManagerUI: {fileID: 1389360669}
 --- !u!1 &97044938
 GameObject:
   m_ObjectHideFlags: 0
@@ -10385,7 +10386,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sharedProfile: {fileID: 11400000, guid: 9a24152f384d2bf448be92b44ee2ce51, type: 2}
+  sharedProfile: {fileID: 0}
   isGlobal: 1
   blendDistance: 0
   weight: 1
@@ -10781,6 +10782,7 @@ MonoBehaviour:
   tutorialClips:
   - {fileID: 1441304276}
   tutorialName: PhysicSceneStyleEditor
+  tutorialManagerUI: {fileID: 1389360669}
 --- !u!1 &918983594
 GameObject:
   m_ObjectHideFlags: 0
@@ -11043,6 +11045,7 @@ MonoBehaviour:
   tutorialClips:
   - {fileID: 938473677}
   tutorialName: PhysicSceneVelocityEditor
+  tutorialManagerUI: {fileID: 1389360669}
 --- !u!1 &967835630
 GameObject:
   m_ObjectHideFlags: 0
@@ -11360,6 +11363,7 @@ MonoBehaviour:
   - {fileID: 954907161}
   - {fileID: 967835630}
   tutorialName: PhysicSceneAstralBodyEditorUI
+  tutorialManagerUI: {fileID: 1389360669}
 --- !u!1 &987268147
 GameObject:
   m_ObjectHideFlags: 0
@@ -15646,6 +15650,7 @@ MonoBehaviour:
   - {fileID: 572888459}
   - {fileID: 1173902257}
   tutorialName: PhysicSceneNormalPanel
+  tutorialManagerUI: {fileID: 1389360669}
 --- !u!1 &1331961159
 GameObject:
   m_ObjectHideFlags: 0
@@ -16165,6 +16170,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1389360668}
   - component: {fileID: 1389360669}
+  - component: {fileID: 1389360671}
+  - component: {fileID: 1389360670}
   m_Layer: 0
   m_Name: TutorialManager
   m_TagString: Untagged
@@ -16209,6 +16216,114 @@ MonoBehaviour:
   - {fileID: 90865617}
   - {fileID: 966009808}
   - {fileID: 914098450}
+--- !u!82 &1389360670
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1389360667}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &1389360671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1389360667}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75544070d3f3d64418c6c6fd0988e2f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1391221890
 GameObject:
   m_ObjectHideFlags: 0
@@ -21637,6 +21752,8 @@ MonoBehaviour:
   orbit: {fileID: 1009603419}
   satelliteChallengeManger: {fileID: 0}
   bgmSource: {fileID: 894007026}
+  _globalMassScaler: 0
+  globalDistanceScaler: 0
 --- !u!4 &1901827054
 Transform:
   m_ObjectHideFlags: 0

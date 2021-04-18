@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using SpacePhysic;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Quiz
 {
@@ -22,16 +23,34 @@ namespace Quiz
         }
 
         public  float                      answer;
+        public  UnityEvent               loadDoneEvent = new UnityEvent();
         private List<AstralBodyStructDict> _astralBodyStructDictList;
         [SerializeField]
         private QuizAstralBody             _target;
 
+        private bool _isLoadDone;
 
-        public bool IsLoadDone { private set; get; }
+
+        public bool isLoadDone
+        {
+            private set
+            {
+                _isLoadDone = value;
+                if (isLoadDone)
+                {
+                    loadDoneEvent.Invoke();
+                }
+            }
+            get => _isLoadDone;
+        }
 
 
         public virtual void Start()
         {
+            loadDoneEvent.AddListener((() =>
+                                       {
+                                           GameManager.GetGameManager.CalculateMassScales();
+                                       }));
             // List<AstralBody> astralBodies = new List<AstralBody>();
             // 放置星球
             if (isLoadByPrefab)
@@ -42,7 +61,8 @@ namespace Quiz
             {
                 try
                 {
-                    loadTarget = GlobalTransfer.getGlobalTransfer.quizName;
+                    if(!GameManager.GetGameManager.isQuizEditMode) 
+                        loadTarget = GlobalTransfer.getGlobalTransfer.quizName;
 
                 }
                 catch (Exception e)
@@ -60,7 +80,7 @@ namespace Quiz
                     this.answer = target.Mass;
                     break;
                 case QuizType.Density:
-                    this.answer = target.density;
+                    this.answer = (float)target.density;
                     break;
                 case QuizType.Gravity:
                     break;
@@ -72,7 +92,9 @@ namespace Quiz
 
             // orbitBase.DrawOrbits();
             orbitBase.Freeze(true);
-            IsLoadDone = true;
+            
+            isLoadDone = true;
+            
         }
 
 
@@ -106,10 +128,10 @@ namespace Quiz
             List<AstralBodyDict> astralBodyDicts = new List<AstralBodyDict>();
             foreach (AstralBodyStructDict pair in _astralBodyStructDictList)
             {
-                astralBodyPrefab.mass         = pair.mass;
+                astralBodyPrefab.realMass         = pair.mass;
                 astralBodyPrefab.isMassPublic = pair.isMassPublic;
                 
-                astralBodyPrefab.density      = pair.density;
+                // astralBodyPrefab.density      = pair.density;
                 astralBodyPrefab.size = pair.originalSize;
                 
                 astralBodyPrefab.oriVelocity      = pair.oriVelocity;

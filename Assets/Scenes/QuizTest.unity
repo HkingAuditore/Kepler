@@ -3303,7 +3303,7 @@ MonoBehaviour:
   autoOrient: 1
   updateFrameInterval: 0
   _slices: 1
-  vertexDirection: {x: -0.6976117, y: 0.41868752, z: -0.581411}
+  vertexDirection: {x: -0, y: 0.9995054, z: 0.03144574}
 --- !u!23 &554862197
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4385,7 +4385,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sharedProfile: {fileID: 11400000, guid: 9a24152f384d2bf448be92b44ee2ce51, type: 2}
+  sharedProfile: {fileID: 0}
   isGlobal: 1
   blendDistance: 0
   weight: 1
@@ -9528,6 +9528,8 @@ MonoBehaviour:
   orbit: {fileID: 1009603419}
   satelliteChallengeManger: {fileID: 0}
   bgmSource: {fileID: 856708458}
+  _globalMassScaler: 0
+  globalDistanceScaler: 0
 --- !u!4 &1901827054
 Transform:
   m_ObjectHideFlags: 0
@@ -9598,6 +9600,9 @@ MonoBehaviour:
   orbitBase: {fileID: 1009603419}
   quizType: 0
   answer: 1000
+  loadDoneEvent:
+    m_PersistentCalls:
+      m_Calls: []
   _target: {fileID: 0}
   quizUI: {fileID: 1673999407}
   waitTime: 5

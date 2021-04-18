@@ -76,13 +76,13 @@ namespace Satellite
             switch (GlobalTransfer.getGlobalTransfer.difficulty)
             {
                 case Difficulty.Easy:
-                    target.Mass *= 100;
+                    target.realMass *= 100;
                     break;
                 case Difficulty.Normal:
-                    target.Mass *= 10;
+                    target.realMass *= 10;
                     break;
                 case Difficulty.Difficult:
-                    target.Mass *= 5;
+                    target.realMass *= 5;
                     break;
                 case Difficulty.Real:
                     break;

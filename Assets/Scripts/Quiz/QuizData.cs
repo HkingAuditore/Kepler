@@ -40,9 +40,9 @@ namespace Quiz
     public struct AstralBodyStructDict
     {
         public Vector3 position;
-        public float   mass;
+        public double   mass;
         public bool    isMassPublic;
-        public float   density;
+        public double   density;
         public float   originalSize;
         public float   affectRadius;
         public Vector3 oriVelocity;
@@ -72,7 +72,7 @@ namespace Quiz
         public AstralBodyStructDict(Transform transform, AstralBody astralBody, bool isTarget, bool isCore)
         {
             position      = transform.position;
-            mass          = astralBody.mass;
+            mass          = astralBody.Mass;
             density       = astralBody.density;
             originalSize  = astralBody.size;
             affectRadius  = astralBody.affectRadius;

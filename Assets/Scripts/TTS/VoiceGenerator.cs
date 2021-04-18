@@ -8,6 +8,7 @@ using System.Threading;
 using UnityEngine.Networking;
 using System.Collections;
 
+
 public class VoiceGenerator : MonoBehaviour
 {
     private const string speekText = "北京市今天全天晴，气温7℃ ~ 19℃，空气质量优，有北风4-5级，挺凉快的。";
@@ -17,17 +18,23 @@ public class VoiceGenerator : MonoBehaviour
     private int err_code;
 
     private byte[] bytes;
+    private string _content;
+    public string content
+    {
+        get => _content;
+        set => _content = value;
+    }
 
     private void Awake()
     {
-        string xiaoyan_path = (Application.dataPath + "/TTS/xiaoyan.jet").Replace("/", "\\");
-        string common_path = (Application.dataPath + "/TTS/common.jet").Replace("/", "\\");
+        string xiaoyan_path = (Application.dataPath + "PlugIns/TTS/xiaoyan.jet").Replace("/", "\\");
+        string common_path = (Application.dataPath + "PlugIns/TTS/common.jet").Replace("/", "\\");
         offline_session_begin_params = "engine_type = local, voice_name = xiaoyan, text_encoding = utf8, tts_res_path = fo|" + xiaoyan_path + ";fo|" + common_path + ", sample_rate = 16000, speed = 50, volume = 50, pitch = 50, rdn = 0";
     }
 
     private void Start()
     {
-        int message = MSCDLL.MSPLogin("", "", "appid=5f80198b,word_dir= . ");
+        int message = MSCDLL.MSPLogin("", "", "appid=55b70993,word_dir= . ");
         if (message != (int)Errors.MSP_SUCCESS)
         {
             Debug.LogError("登录失败！错误信息：" + message);
@@ -35,14 +42,44 @@ public class VoiceGenerator : MonoBehaviour
         Debug.Log("登录成功");
     }
 
-    private void Update()
+    private Thread voiceThread;
+
+    
+
+    public void SpeakContent()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            //Online_TTS(speekText);
-            Offline_TTS(speekText);
-        }
+        voiceThread = new Thread(new ThreadStart(Speak));
+        voiceThread.Start();
     }
+    private void OnDestroy()
+    {
+        if (voiceThread != null)
+        {
+            voiceThread.Abort();
+        }
+        MSCDLL.MSPLogout();
+        Debug.Log("注销成功");
+    }
+    public void Speak()
+    {
+        Debug.Log(this.content);
+        Online_TTS(this.content);
+    }
+    
+    public void Speak(string content)
+    {
+        Debug.Log(this.content);
+        Online_TTS(content);
+    }
+
+    // private void Update()
+    // {
+    //     if (Input.GetMouseButtonDown(0))
+    //     {
+    //         Online_TTS(speekText);
+    //         // Offline_TTS(speekText);
+    //     }
+    // }
 
     private void Online_TTS(string speekText)
     {
@@ -75,7 +112,7 @@ public class VoiceGenerator : MonoBehaviour
                 Marshal.Copy(source, array, 0, (int)audio_len);
             }
             memoryStream.Write(array, 0, array.Length);
-            Thread.Sleep(100);
+            Thread.Sleep(150);
             if (synth_status == SynthStatus.MSP_TTS_FLAG_DATA_END || err_code != (int)Errors.MSP_SUCCESS)
                 break;
         }
@@ -86,6 +123,7 @@ public class VoiceGenerator : MonoBehaviour
             Debug.LogError("会话结束失败！错误信息: " + err_code);
             return;
         }
+
 
         WAVE_Header header = getWave_Header((int)memoryStream.Length - 44);//创建wav文件头
         byte[] headerByte = StructToBytes(header);//把文件头结构转化为字节数组
@@ -135,7 +173,7 @@ public class VoiceGenerator : MonoBehaviour
                 Marshal.Copy(source, array, 0, (int)audio_len);
             }
             memoryStream.Write(array, 0, array.Length);
-            Thread.Sleep(1);
+            Thread.Sleep(100);
             if (synth_status == SynthStatus.MSP_TTS_FLAG_DATA_END || err_code != (int)Errors.MSP_SUCCESS)
                 break;
         }
@@ -255,9 +293,5 @@ public class VoiceGenerator : MonoBehaviour
         }
     }
 
-    private void OnDestroy()
-    {
-        MSCDLL.MSPLogout();
-        Debug.Log("注销成功");
-    }
+
 }

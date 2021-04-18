@@ -11,6 +11,11 @@ namespace SpacePhysic
         {
             return G * Mathf.Pow(10, 0);
         }
+
+        public static double GetRealG()
+        {
+            return G * Mathf.Pow(10, -11);
+        }
     }
 
     public interface IOrbitCalculator

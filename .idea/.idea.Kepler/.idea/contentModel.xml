@@ -427,6 +427,11 @@
               </e>
             </e>
           </e>
+          <e p="TTS" t="Include">
+            <e p="Speaker.cs" t="Include" />
+            <e p="XunFeiOffline.cs" t="Include" />
+            <e p="XunFlyOffline.cs" t="Include" />
+          </e>
         </e>
         <e p="Quiz" t="Include">
           <e p="21-04-03.xml" t="Include" />
@@ -434,6 +439,8 @@
           <e p="四星.xml" t="Include" />
           <e p="地日.xml" t="Include" />
           <e p="地月.xml" t="Include" />
+          <e p="真实地日.xml" t="Include" />
+          <e p="真实地月.xml" t="Include" />
         </e>
         <e p="Scripts" t="Include">
           <e p="Animation" t="Include">
@@ -494,7 +501,8 @@
           </e>
           <e p="TangentSpaceVisualizer.cs" t="Include" />
           <e p="TTS" t="Include">
-            <e p="VoiceGenertator.cs" t="Include" />
+            <e p="MSCDLL.cs" t="Include" />
+            <e p="VoiceGenerator.cs" t="Include" />
           </e>
           <e p="UI" t="Include">
             <e p="AstralBodyAddUI.cs" t="Include" />
@@ -531,6 +539,7 @@
             <e p="SettingUI.cs" t="Include" />
             <e p="StarStyleSettingUI.cs" t="Include" />
             <e p="TestModeUI.cs" t="Include" />
+            <e p="TutorialClipUI.cs" t="Include" />
             <e p="TutorialManagerUI.cs" t="Include" />
             <e p="TutorialUI.cs" t="Include" />
             <e p="UIManager.cs" t="Include" />

@@ -13,7 +13,8 @@ public enum ShowPropertyType
     T,
     radius,
     omega,
-    g
+    g,
+    density
 }
 
 public class VarLineUI : MonoBehaviour
@@ -52,12 +53,13 @@ public class VarLineUI : MonoBehaviour
         }
     }
 
-    private bool _isInputting;
+    private bool _isInputting = false;
 
     [ExecuteInEditMode]
     private void Start()
     {
         Generate();
+        _isInputting = false;
     }
 
     [ContextMenu("快速应用")]
@@ -92,7 +94,7 @@ public class VarLineUI : MonoBehaviour
                     switch (property)
                     {
                         case ShowPropertyType.m:
-                            UpdateData(target.mass);
+                            UpdateData((float)target.realMass);
                             // inputField.text = target.mass.ToString("f2");
                             toggle.isOn     = ((QuizAstralBody) target).isMassPublic;
                             break;
@@ -107,12 +109,15 @@ public class VarLineUI : MonoBehaviour
                             toggle.isOn     = ((QuizAstralBody) target).isSizePublic;
                             break;
                         case ShowPropertyType.T:
+                            Debug.Log("period:" + ((QuizAstralBody) target).period);
                             UpdateData(((QuizAstralBody) target).period);
+
                             // inputField.text = ((QuizAstralBody) target).period.ToString("f2");
                             toggle.isOn     = ((QuizAstralBody) target).isPeriodPublic;
                             break;
                         case ShowPropertyType.radius:
                             UpdateData( ((QuizAstralBody) target).radius);
+                            Debug.Log("radius:" + ((QuizAstralBody) target).radius);
                             // inputField.text = ((QuizAstralBody) target).radius.ToString("f2");
                             toggle.isOn     = ((QuizAstralBody) target).isRadiusPublic;
                             break;
@@ -122,9 +127,15 @@ public class VarLineUI : MonoBehaviour
                             toggle.isOn     = ((QuizAstralBody) target).isAngularVelocityPublic;
                             break;
                         case ShowPropertyType.g:
-                            UpdateData(((QuizAstralBody) target).gravity         * 0.01f);
+                            UpdateData(((QuizAstralBody) target).gravity);
                             // inputField.text = (((QuizAstralBody) target).gravity * 0.01f).ToString("f2");
                             toggle.isOn     = ((QuizAstralBody) target).isGravityPublic;
+                            break;
+                        case ShowPropertyType.density:
+                            UpdateData((float)((QuizAstralBody) target).density);
+                            // inputField.text = (((QuizAstralBody) target).gravity * 0.01f).ToString("f2");
+                            //TODO 
+                            toggle.isOn = false;
                             break;
                         default:
                             throw new ArgumentOutOfRangeException();
@@ -136,7 +147,7 @@ public class VarLineUI : MonoBehaviour
             switch (property)
             {
                 case ShowPropertyType.m:
-                    inputField.text = target.mass.ToString("f2");
+                    inputField.text = target.Mass.ToString("f2");
                     break;
                 case ShowPropertyType.v:
                     inputField.text = (.1f * target.GetVelocity().magnitude).ToString("f2");
@@ -145,7 +156,10 @@ public class VarLineUI : MonoBehaviour
                     inputField.text = target.size.ToString("f2");
                     break;
                 case ShowPropertyType.g:
-                    inputField.text = (target.gravity *0.01f).ToString("f2");
+                    inputField.text = (target.gravity).ToString("f2");
+                    break;
+                case ShowPropertyType.density:
+                    inputField.text = (target.density).ToString("f2");
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
@@ -160,16 +174,27 @@ public class VarLineUI : MonoBehaviour
         switch (property)
         {
             case ShowPropertyType.m:
+                // if(!_isClicking && !_isAdd)
+                //     UpdateData((float)((QuizAstralBody) target).realMass);
                 break;
             case ShowPropertyType.v:
+                // if(!_isClicking && !_isAdd)
+                //     UpdateData((float)((QuizAstralBody) target).GetVelocity().magnitude);
                 break;
             case ShowPropertyType.R:
+                // if(!_isClicking && !_isAdd)
+                //     UpdateData((float)((QuizAstralBody) target).size);
                 break;
             case ShowPropertyType.T:
                 UpdateData(((QuizAstralBody) target).period);
                 // inputField.text = ((QuizAstralBody) target).period.ToString("f2");
                 break;
             case ShowPropertyType.radius:
+                Debug.Log("radius log _isClicking:" + _isClicking);
+                Debug.Log("radius log _isAdd:"      + _isAdd);
+                Debug.Log("radius log _isInputting:" + _isInputting);
+                if(!_isClicking && !_isAdd && !_isInputting)
+                    UpdateData((float)((QuizAstralBody) target).radius);
                 // inputField.text = ((QuizAstralBody) target).radius.ToString("f2");
                 break;
             case ShowPropertyType.omega:
@@ -177,8 +202,12 @@ public class VarLineUI : MonoBehaviour
                 // inputField.text = ((QuizAstralBody) target).globalAngularVelocity.ToString("f2");
                 break;
             case ShowPropertyType.g:
-                UpdateData(target.gravity         * 0.01f);
+                UpdateData(target.gravity);
                 // inputField.text = (target.gravity * 0.01f).ToString("f2");
+                break;
+            case ShowPropertyType.density:
+                // Debug.Log("density:" + target.density);
+                UpdateData((float)target.density);
                 break;
             default:
                 throw new ArgumentOutOfRangeException();
@@ -220,8 +249,10 @@ public class VarLineUI : MonoBehaviour
         switch (property)
         {
             case ShowPropertyType.m:
-                this.target.Mass = GetData();
-                UpdateData(this.target.Mass);
+                if(this.target.name =="Core")
+                    GameManager.GetGameManager.CalculateMassScales(GetData());
+                this.target.realMass = GetData();
+                UpdateData((float)this.target.realMass);
                 break;
             case ShowPropertyType.v:
                 // 10
@@ -230,16 +261,17 @@ public class VarLineUI : MonoBehaviour
                 break;
             case ShowPropertyType.R:
                 // 1
-                this.target.size = GetData();
+                this.target.size = (float)GetData() * Mathf.Pow(10,-this.GetK());
                 UpdateData(this.target.size);
                 break;
             case ShowPropertyType.T:
                 break;
             case ShowPropertyType.radius:
                 // 1
+                float distance = (float)GetData() * Mathf.Pow(10, -this.GetK());
                 this.target.GetTransform().position =
-                    (this.target.GetPosition() - GameManager.GetGameManager.quizBase.target.GetPosition()).normalized * GetData();
-                UpdateData( ((QuizAstralBody) target).radius);
+                    (this.target.GetPosition() - GameManager.GetGameManager.quizBase.target.GetPosition()).normalized *  distance ;
+                UpdateData(distance);
                 break;
             case ShowPropertyType.omega:
                 break;
@@ -248,6 +280,7 @@ public class VarLineUI : MonoBehaviour
             default:
                 throw new ArgumentOutOfRangeException();
         }
+        _isInputting = false;
     }
 
     private void OnVelocityChanged(Vector3 velocity)
@@ -306,65 +339,64 @@ public class VarLineUI : MonoBehaviour
 
     private void UpdateData(float data)
     {
-        int k = 1;
-        switch (property)
-        {
-            case ShowPropertyType.m:
-                k = 21;
-                break;
-            case ShowPropertyType.v:
-                k = 3;
-                break;
-            case ShowPropertyType.R:
-                k = 6;
-                break;
-            case ShowPropertyType.T:
-                k = 4;
-                break;
-            case ShowPropertyType.radius:
-                k = 6;
-                break;
-            case ShowPropertyType.omega:
-                k = -4;
-                break;
-            case ShowPropertyType.g:
-                break;
-            default:
-                throw new ArgumentOutOfRangeException();
-        }
+        int k = GetK();
+        // int k = 0;
         this.inputField.text                   = data.GetMantissa().ToString("f2");
         this.scientificCountingInputField.text = (data.GetExponent() + k).ToString();
     }
 
-    private float GetData()
+    private int GetK()
     {
-        int k = 1;
+        int k;
         switch (property)
         {
             case ShowPropertyType.m:
-                k = 21;
+                // k = 26 - GameManager.GetGameManager.globalMassScaler * 2;
+                k = 0;
                 break;
             case ShowPropertyType.v:
                 k = 3;
                 break;
             case ShowPropertyType.R:
-                k = 6;
+                k =  2 * GameManager.GetGameManager.globalDistanceScaler;
                 break;
             case ShowPropertyType.T:
-                k = 4;
+                k = GameManager.GetGameManager.GetK(PropertyUnit.S);
+                // k = 3  + GameManager.GetGameManager.globalMassScaler+  GameManager.GetGameManager.globalDistanceScaler * 3;
                 break;
             case ShowPropertyType.radius:
-                k = 6;
+                k = 1 + 2 * GameManager.GetGameManager.globalDistanceScaler;
+                // k = 7 +  GameManager.GetGameManager.globalDistanceScaler * 2;
                 break;
             case ShowPropertyType.omega:
                 k = -4;
                 break;
             case ShowPropertyType.g:
+                k = 0;
+                break;
+            case ShowPropertyType.density:
+                k = 0;
                 break;
             default:
                 throw new ArgumentOutOfRangeException();
         }
-        return float.Parse(this.inputField.text) * Mathf.Pow(10, int.Parse(this.scientificCountingInputField.text) - k);
+
+        return k;
+    }
+
+    private double GetData()
+    {
+        return double.Parse(this.inputField.text) * Mathf.Pow(10, int.Parse(this.scientificCountingInputField.text));
+    }
+
+    public void OnInputting()
+    {
+        _isInputting = true;
+    }
+
+    public void OnInputCancel()
+    {
+        _isInputting = false;
     }
     
 }

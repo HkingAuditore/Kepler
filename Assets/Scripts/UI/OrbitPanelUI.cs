@@ -79,10 +79,10 @@ public class OrbitPanelUI : MonoBehaviour
             geoCenter.text = "几何中心: (" + orbit.geoCenter.x.ToString("f2") + ", " + orbit.geoCenter.y.ToString("f2") + " )";
             eccentricity.text = "离心率: " + orbit.eccentricity.ToString("f2");
             focalLength.text = "焦距: " + orbit.focalLength.ToString("f2") + " m";
-            period.text = "周期: " + orbit.GetT(astralBody.affectedPlanets[0].mass).ToString("f2") + " s";
+            period.text = "周期: " + orbit.GetT(astralBody.affectedPlanets[0].Mass).ToString("f2") + " s";
             angle.text = "倾角: " + orbit.angle.ToString("f2") + " °";
-            k.text = "T²/a³ :" + (orbit.GetT(astralBody.affectedPlanets[0].mass) *
-                                  orbit.GetT(astralBody.affectedPlanets[0].mass) /
+            k.text = "T²/a³ :" + (orbit.GetT(astralBody.affectedPlanets[0].Mass) *
+                                  orbit.GetT(astralBody.affectedPlanets[0].Mass) /
                                   (orbit.semiMajorAxis * orbit.semiMajorAxis * orbit.semiMajorAxis));
             orbitGraphUI.astralBody = astralBody;
             orbitGraphUI.orbit = orbit;

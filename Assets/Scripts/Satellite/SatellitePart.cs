@@ -23,17 +23,17 @@ namespace Satellite
 
         private protected override void SetMass()
         {
-            AstralBodyRigidbody.mass = Mass;
+            astralBodyRigidbody.mass = Mass;
         }
 
         public void Push(Vector3 dir)
         {
-            AstralBodyRigidbody.AddForce(dir);
+            astralBodyRigidbody.AddForce(dir);
         }
 
         public void Rotate(Vector3 dir)
         {
-            AstralBodyRigidbody.AddTorque(dir);
+            astralBodyRigidbody.AddTorque(dir);
         }
 
         public void GenerateJoint()
@@ -42,7 +42,7 @@ namespace Satellite
             {
                 var jointComponent = gameObject.AddComponent<FixedJoint>();
                 _connectedJoints.Add(part.name, jointComponent);
-                jointComponent.connectedBody = part.AstralBodyRigidbody;
+                jointComponent.connectedBody = part.astralBodyRigidbody;
             }
         }
 

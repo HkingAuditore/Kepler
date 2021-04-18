@@ -1,4 +1,5 @@
 using System;
+using MathPlus;
 using Quiz;
 using UnityEngine;
 using UnityEngine.UI;
@@ -19,11 +20,7 @@ public class QuizUI : MonoBehaviour
     [SerializeField] private int _ansPos;
 
     [SerializeField] private int _gap;
-
-    private void Start()
-    {
-        
-    }
+    
 
     public void Generate()
     {
@@ -54,12 +51,14 @@ public class QuizUI : MonoBehaviour
         switch (quizType)
         {
             case QuizType.Mass:
-                ansText.text = ConvertSliderValue2Ans(quizSlider.value).ToString("f2") + " kg";
-                target.Mass = ConvertSliderValue2Ans(quizSlider.value);
+                
+                target.realMass = ConvertSliderValue2Ans(quizSlider.value) * Mathf.Pow(10,-GameManager.GetGameManager.globalMassScaler * 2);
+                ansText.text = target.realMass.GetMantissa().ToString("f2") + "x10e" + target.realMass.GetExponent();
                 break;
             case QuizType.Density:
-                ansText.text = ConvertSliderValue2Ans(quizSlider.value).ToString("f2") + " kg/m3";
-                target.Mass = (ConvertSliderValue2Ans(quizSlider.value) * Mathf.PI * Mathf.Pow(target.size,3)*4/3);
+                
+                target.realMass = (ConvertSliderValue2Ans(quizSlider.value) * Mathf.PI * Mathf.Pow(target.size * Mathf.Pow(10,GameManager.GetGameManager.GetK(PropertyUnit.M)),3)*4/3);
+                ansText.text = target.density.ToString("f2") + " kg/m3";
                 break;
             case QuizType.Gravity:
                 break;
@@ -79,8 +78,9 @@ public class QuizUI : MonoBehaviour
                 quizSolver.TmpAnswer = tmpAns;
                 break;
             case QuizType.Density:
-                throw new ArgumentOutOfRangeException();
+                // throw new ArgumentOutOfRangeException();
                 quizSolver.TmpAnswer = tmpAns;
+                // quizSolver.TmpAnswer = tmpAns;
                 break;
             case QuizType.Gravity:
                 throw new ArgumentOutOfRangeException();

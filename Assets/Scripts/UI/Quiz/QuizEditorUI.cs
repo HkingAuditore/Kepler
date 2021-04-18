@@ -30,7 +30,7 @@ public class QuizEditorUI : MonoBehaviour
                 quizEditor.answer = quizEditor.target.Mass;
                 break;
             case QuizType.Density:
-                quizEditor.answer = quizEditor.target.density;
+                quizEditor.answer = (float)quizEditor.target.density;
                 break;
             case QuizType.Gravity:
                 break;

@@ -313,7 +313,7 @@ namespace SpacePhysic
             var conicSection = CustomSolver.CalculateOrbit(new Vector2(astralBody.GetTransform().position.x,astralBody.GetTransform().position.z),
                                                               new Vector2(astralBody.GetAffectedPlanets()[0].transform.position.x,astralBody.GetAffectedPlanets()[0].transform.position.z),
                                                                           new Vector2(astralBody.GetVelocity().x,astralBody.GetVelocity().z), astralBody.GetMass(),
-                                                                          astralBody.GetAffectedPlanets()[0].mass);
+                                                                          astralBody.GetAffectedPlanets()[0].Mass);
 
             // Debug.Log("new section:" + "semi major = " + newConicSection.semiMajorAxis);
             // Debug.Log("new section:" + "semi minor = " + newConicSection.semiMinorAxis);

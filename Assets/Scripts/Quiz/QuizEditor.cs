@@ -10,8 +10,21 @@ namespace Quiz
         
         public void SaveQuiz(string quizName)
         {
-            orbitBase.Freeze(false);
-            StartCoroutine(WaitForCalculate(quizName));
+            // orbitBase.Freeze(false);
+            var xmlDoc = saver.ConvertOrbit2Xml(astralBodiesDict, quizType);
+            try
+            {
+                saver.SaveXml(xmlDoc, quizName);
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+
+            }
+
+            // GameManager.GetGameManager.CalculateScales();
+            // StartCoroutine(WaitForCalculate(quizName));
         }
         
         IEnumerator WaitForCalculate(string quizName) {

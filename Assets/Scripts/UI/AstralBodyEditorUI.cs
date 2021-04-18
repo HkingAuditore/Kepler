@@ -83,7 +83,16 @@ public class AstralBodyEditorUI : MonoBehaviour
             positionEditorUI.gameObject.SetActive(false);
             positionEditorUI.editingTarget = null;
             normalPanel.SetActive(true);
-            lengthUIList[0]?.transform.parent.gameObject.SetActive(false);
+            try
+            {
+                lengthUIList[0]?.transform.parent.gameObject.SetActive(false);
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                // throw;
+            }
         }
 
 

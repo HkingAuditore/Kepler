@@ -17,7 +17,7 @@ namespace Quiz
 
     public class QuizSaver : MonoBehaviour
     {
-        private static readonly XmlDocument _xmlDoc = new XmlDocument();
+        private    XmlDocument _xmlDoc = new XmlDocument();
         public                  QuizType    quizType;
         public                  GameObject  cloner;
 
@@ -53,7 +53,7 @@ namespace Quiz
             var astAstralBody = _xmlDoc.CreateElement("AstralBody");
             //写入天体属性
             var mass = _xmlDoc.CreateElement("Mass");
-            mass.InnerText = astralBodyDict.astralBody.mass.ToString(CultureInfo.InvariantCulture);
+            mass.InnerText = (astralBodyDict.astralBody.realMass).ToString(CultureInfo.InvariantCulture);
             mass.SetAttribute("IsPublic", astralBodyDict.astralBody.isMassPublic.ToString());
             astAstralBody.AppendChild(mass);
             var density = _xmlDoc.CreateElement("Density");
@@ -144,6 +144,7 @@ namespace Quiz
             else
             {
                 doc.Save(path);
+                AssetDatabase.Refresh();
                 throw new QuizSaverException("文件已存在，进行覆盖！");
             }            
             AssetDatabase.Refresh();
@@ -186,9 +187,9 @@ namespace Quiz
 
                 //AstralBody
                 var astralBodyXmlNode = astralBodyElement.GetElementsByTagName("AstralBody")[0];
-                astStruct.mass         = int.Parse(astralBodyXmlNode.ChildNodes[0].InnerText);
+                astStruct.mass         = double.Parse(astralBodyXmlNode.ChildNodes[0].InnerText);
                 astStruct.isMassPublic = Boolean.Parse(astralBodyXmlNode.ChildNodes[0].Attributes["IsPublic"].Value);
-                astStruct.density      = int.Parse(astralBodyXmlNode.ChildNodes[1].InnerText);
+                astStruct.density      = float.Parse(astralBodyXmlNode.ChildNodes[1].InnerText);
                 astStruct.originalSize = float.Parse(astralBodyXmlNode.ChildNodes[2].InnerText);
                 astStruct.isSizePublic = Boolean.Parse(astralBodyXmlNode.ChildNodes[2].Attributes["IsPublic"].Value);
                 astStruct.oriVelocity  = ConvertString2Vector3(astralBodyXmlNode.ChildNodes[3].InnerText);
