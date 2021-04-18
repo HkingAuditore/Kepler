@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using GameManagers;
 using SpacePhysic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -16,19 +17,20 @@ namespace Quiz
         public                     GravityTracing       orbitBase;
         public                     QuizType             quizType;
 
+        public float      answer;
+        public UnityEvent loadDoneEvent = new UnityEvent();
+
+        [SerializeField] private QuizAstralBody _target;
+
+        private List<AstralBodyStructDict> _astralBodyStructDictList;
+
+        private bool _isLoadDone;
+
         public QuizAstralBody target
         {
             get => _target;
             protected set => _target = value;
         }
-
-        public  float                      answer;
-        public  UnityEvent               loadDoneEvent = new UnityEvent();
-        private List<AstralBodyStructDict> _astralBodyStructDictList;
-        [SerializeField]
-        private QuizAstralBody             _target;
-
-        private bool _isLoadDone;
 
 
         public bool isLoadDone
@@ -36,10 +38,7 @@ namespace Quiz
             private set
             {
                 _isLoadDone = value;
-                if (isLoadDone)
-                {
-                    loadDoneEvent.Invoke();
-                }
+                if (isLoadDone) loadDoneEvent.Invoke();
             }
             get => _isLoadDone;
         }
@@ -47,10 +46,7 @@ namespace Quiz
 
         public virtual void Start()
         {
-            loadDoneEvent.AddListener((() =>
-                                       {
-                                           GameManager.GetGameManager.CalculateMassScales();
-                                       }));
+            loadDoneEvent.AddListener(() => { GameManager.GetGameManager.CalculateMassScales(); });
             // List<AstralBody> astralBodies = new List<AstralBody>();
             // 放置星球
             if (isLoadByPrefab)
@@ -61,9 +57,8 @@ namespace Quiz
             {
                 try
                 {
-                    if(!GameManager.GetGameManager.isQuizEditMode) 
+                    if (!GameManager.GetGameManager.isQuizEditMode)
                         loadTarget = GlobalTransfer.getGlobalTransfer.quizName;
-
                 }
                 catch (Exception e)
                 {
@@ -77,10 +72,10 @@ namespace Quiz
             switch (quizType)
             {
                 case QuizType.Mass:
-                    this.answer = target.Mass;
+                    answer = target.Mass;
                     break;
                 case QuizType.Density:
-                    this.answer = (float)target.density;
+                    answer = (float) target.density;
                     break;
                 case QuizType.Gravity:
                     break;
@@ -92,87 +87,87 @@ namespace Quiz
 
             // orbitBase.DrawOrbits();
             orbitBase.Freeze(true);
-            
+
             isLoadDone = true;
-            
         }
 
 
         private void GenerateAstralBodiesWithPrefab()
         {
-            List<AstralBodyDict> astralBodyDicts = new List<AstralBodyDict>();
+            var astralBodyDicts = new List<AstralBodyDict>();
             foreach (var pair in astralBodiesDict)
             {
-                QuizAstralBody target =
+                var target =
                     Instantiate(pair.astralBody, pair.transform.position, pair.transform.rotation, quizRoot);
                 orbitBase.AddTracingTarget(target);
                 try
                 {
-                    if(!pair.isTarget)
+                    if (!pair.isTarget)
                         target.affectedPlanets.Add(this.target);
                 }
                 catch (Exception e)
                 {
-                    
                 }
+
                 astralBodyDicts.Add(new AstralBodyDict(target.transform, target, pair.isTarget));
                 // Debug.Log("add HashCode:" + target.GetHashCode());
                 target.gameObject.name = target.gameObject.name.Replace("(Clone)", "");
                 if (pair.isTarget) this.target = target;
             }
-            this.astralBodiesDict = astralBodyDicts;
+
+            astralBodiesDict = astralBodyDicts;
         }
 
         private void GenerateAstralBodiesWithoutPrefab()
         {
-            List<AstralBodyDict> astralBodyDicts = new List<AstralBodyDict>();
-            foreach (AstralBodyStructDict pair in _astralBodyStructDictList)
+            var astralBodyDicts = new List<AstralBodyDict>();
+            foreach (var pair in _astralBodyStructDictList)
             {
-                astralBodyPrefab.realMass         = pair.mass;
+                astralBodyPrefab.realMass     = pair.mass;
                 astralBodyPrefab.isMassPublic = pair.isMassPublic;
-                
+
                 // astralBodyPrefab.density      = pair.density;
                 astralBodyPrefab.size = pair.originalSize;
-                
+
                 astralBodyPrefab.oriVelocity      = pair.oriVelocity;
                 astralBodyPrefab.isVelocityPublic = pair.isVelocityPublic;
-                
-                astralBodyPrefab.affectRadius     = pair.affectRadius;
-                astralBodyPrefab.enableAffect     = pair.enableAffect;
-                astralBodyPrefab.enableTracing    = pair.enableTracing;
-                
-                
+
+                astralBodyPrefab.affectRadius  = pair.affectRadius;
+                astralBodyPrefab.enableAffect  = pair.enableAffect;
+                astralBodyPrefab.enableTracing = pair.enableTracing;
+
+
                 //  astralBodyPrefab.globalAngularVelocity = pair.angularVelocity;
                 astralBodyPrefab.isAngularVelocityPublic = pair.isAngularVelocityPublic;
                 //
                 //
-                astralBodyPrefab.radius                  = pair.radius;
-                astralBodyPrefab.isRadiusPublic          = pair.isRadiusPublic;
-                
-                astralBodyPrefab.period       = pair.period;
-                astralBodyPrefab.isPeriodPublic          = pair.isPeriodPublic;
+                astralBodyPrefab.radius         = pair.radius;
+                astralBodyPrefab.isRadiusPublic = pair.isRadiusPublic;
 
-                
+                astralBodyPrefab.period         = pair.period;
+                astralBodyPrefab.isPeriodPublic = pair.isPeriodPublic;
+
+
                 astralBodyPrefab.isTPublic       = pair.isTPublic;
                 astralBodyPrefab.t               = pair.t;
                 astralBodyPrefab.isGravityPublic = pair.isGravityPublic;
                 astralBodyPrefab.isSizePublic    = pair.isSizePublic;
-                
+
                 // astralBodyPrefab.anglePerT             = pair.AnglePerT;
                 // astralBodyPrefab.isAnglePerTPublic     = pair.isAnglePerTPublic;
-               
-                
+
+
                 // astralBodyPrefab.distancePerT     = pair.distancePerT;
                 // astralBodyPrefab.isDistancePerTPublic = pair.isDistancePerTPublic;
-                
-                
-                QuizAstralBody target =
+
+
+                var target =
                     Instantiate(astralBodyPrefab, pair.position, Quaternion.Euler(0, 0, 0), quizRoot);
                 target.meshNum = pair.meshNum;
                 orbitBase.AddTracingTarget(target);
                 try
                 {
-                    if(!pair.isTarget)
+                    if (!pair.isTarget)
                         target.affectedPlanets.Add(this.target);
                 }
                 catch (Exception e)
@@ -181,30 +176,21 @@ namespace Quiz
                 }
 
                 // Debug.Log("add HashCode:" + target.GetHashCode());
-                astralBodyDicts.Add(new AstralBodyDict(target.transform,target,pair.isTarget));
-                
+                astralBodyDicts.Add(new AstralBodyDict(target.transform, target, pair.isTarget));
+
                 target.gameObject.name = target.gameObject.name.Replace("(Clone)", "");
-                if (pair.isCore)
-                {
-                    target.gameObject.name = "Core";
-                }
-                if (pair.isTarget)
-                {
-                    this.target = target;
-                }
+                if (pair.isCore) target.gameObject.name = "Core";
+                if (pair.isTarget) this.target          = target;
                 target.UpdateQuizAstralBodyPer();
-                
             }
 
-            this.astralBodiesDict = astralBodyDicts;
+            astralBodiesDict = astralBodyDicts;
         }
-
-        
 
 
         public void LoadQuiz(string fileName)
         {
-            QuizBaseStruct result = QuizSaver.ConvertXml2QuizBase(QuizSaver.LoadXml(fileName), fileName);
+            var result = QuizSaver.ConvertXml2QuizBase(QuizSaver.LoadXml(fileName), fileName);
             _astralBodyStructDictList = result.astralBodyStructList;
             quizType                  = result.quizType;
         }

@@ -1,4 +1,4 @@
-﻿using System;
+﻿using GameManagers;
 using UnityEngine;
 
 namespace Satellite
@@ -9,12 +9,7 @@ namespace Satellite
 
         protected void Awake()
         {
-            PartType      = SatelliteType.Core;
-        }
-
-        public override float GetMass()
-        {
-            return satellite.GetMass();
+            PartType = SatelliteType.Core;
         }
 
         private void OnCollisionEnter(Collision other)
@@ -22,7 +17,10 @@ namespace Satellite
             GameManager.GetGameManager.satelliteChallengeManger.satelliteResultType = SatelliteResultType.Crash;
             Debug.Log("Crash!");
         }
-        
-        
+
+        public override float GetMass()
+        {
+            return satellite.GetMass();
+        }
     }
 }

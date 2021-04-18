@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
+using SpacePhysic;
 using UnityEngine;
 
 namespace Quiz
@@ -8,26 +9,10 @@ namespace Quiz
     [Serializable]
     public class AstralBodyDict
     {
-        public  Transform      transform;
-        public  QuizAstralBody astralBody;
-        [SerializeField]
-        private bool           _isTarget;
+        public Transform      transform;
+        public QuizAstralBody astralBody;
 
-        public bool isTarget
-        {
-            get
-            {
-                // Debug.Log(astralBody.gameObject.name + " is target? : " + _isTarget);
-
-                return _isTarget;
-            }
-            set
-            {
-                _isTarget = value;
-                // Debug.Log(astralBody.gameObject.name + " set to " + _isTarget);
-
-            }
-        }
+        [SerializeField] private bool _isTarget;
 
         public AstralBodyDict(Transform transform, QuizAstralBody astralBody, bool isTarget)
         {
@@ -35,18 +20,29 @@ namespace Quiz
             this.astralBody = astralBody;
             this.isTarget   = isTarget;
         }
+
+        public bool isTarget
+        {
+            get =>
+                // Debug.Log(astralBody.gameObject.name + " is target? : " + _isTarget);
+                _isTarget;
+            set => _isTarget = value;
+            // Debug.Log(astralBody.gameObject.name + " set to " + _isTarget);
+        }
     }
 
     public struct AstralBodyStructDict
     {
         public Vector3 position;
-        public double   mass;
+        public double  mass;
         public bool    isMassPublic;
-        public double   density;
+        public double  density;
         public float   originalSize;
         public float   affectRadius;
         public Vector3 oriVelocity;
-        public bool    isVelocityPublic;
+
+        public bool isVelocityPublic;
+
         // public float angularVelocity;
         public bool  isAngularVelocityPublic;
         public float period;
@@ -58,16 +54,17 @@ namespace Quiz
         public bool isGravityPublic;
 
         public bool isSizePublic;
+
         // public float   AnglePerT;
         // public bool    isAnglePerTPublic;
         // public float   distancePerT;
         // public bool    isDistancePerTPublic;
-        public float   t;
-        public bool    isTPublic;
-        public bool    enableAffect;
-        public bool    enableTracing;
-        public bool    isTarget;
-        public bool    isCore;
+        public float t;
+        public bool  isTPublic;
+        public bool  enableAffect;
+        public bool  enableTracing;
+        public bool  isTarget;
+        public bool  isCore;
 
         public AstralBodyStructDict(Transform transform, AstralBody astralBody, bool isTarget, bool isCore)
         {
@@ -79,11 +76,11 @@ namespace Quiz
             oriVelocity   = astralBody.oriVelocity;
             enableAffect  = astralBody.enableAffect;
             enableTracing = astralBody.enableTracing;
-            this.meshNum  = astralBody.meshNum;
+            meshNum       = astralBody.meshNum;
             this.isTarget = isTarget;
             this.isCore   = isCore;
 
-            isMassPublic            = false;
+            isMassPublic = false;
             // angularVelocity         = default;
             isAngularVelocityPublic = false;
             period                  = 0;
@@ -99,7 +96,6 @@ namespace Quiz
             isVelocityPublic = false;
             isGravityPublic  = false;
             isSizePublic     = false;
-            
         }
     }
 

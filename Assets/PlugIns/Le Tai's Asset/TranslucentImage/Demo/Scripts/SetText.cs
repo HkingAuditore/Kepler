@@ -7,10 +7,10 @@ namespace LeTai.Asset.TranslucentImage.Demo
     {
         public string format = "0.0";
 
-        Text text;
+        private Text text;
 
         // Use this for initialization
-        void Awake()
+        private void Awake()
         {
             text = GetComponent<Text>();
         }

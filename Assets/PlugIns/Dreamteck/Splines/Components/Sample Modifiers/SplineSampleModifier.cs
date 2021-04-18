@@ -1,11 +1,10 @@
-﻿namespace Dreamteck.Splines
+﻿using System;
+using System.Collections.Generic;
+using UnityEngine;
+
+namespace Dreamteck.Splines
 {
-    using System.Collections;
-    using System.Collections.Generic;
-    using UnityEngine;
-
-
-    [System.Serializable]
+    [Serializable]
     public class SplineSampleModifier
     {
         public float blend = 1f;
@@ -17,12 +16,11 @@
 
         public virtual void SetKeys(List<Key> input)
         {
-            for (int i = 0; i < input.Count; i++) input[i].modifier = this;
+            for (var i = 0; i < input.Count; i++) input[i].modifier = this;
         }
 
         public virtual void Apply(SplineSample result)
         {
-
         }
 
         public virtual void Apply(SplineSample source, SplineSample destination)
@@ -31,36 +29,47 @@
             Apply(destination);
         }
 
-        [System.Serializable]
+        [Serializable]
         public class Key
         {
+            [SerializeField] private double _featherStart, _featherEnd, _centerStart = 0.25, _centerEnd = 0.75;
+
+            [SerializeField] internal SplineSampleModifier modifier;
+
+            public AnimationCurve interpolation;
+            public float          blend = 1f;
+
+            internal Key(double f, double t, SplineSampleModifier modifier)
+            {
+                this.modifier = modifier;
+                start         = f;
+                end           = t;
+                interpolation = AnimationCurve.Linear(0f, 0f, 1f, 1f);
+            }
+
             public double start
             {
-                get { return _featherStart; }
-                set {
-                    if (value != _featherStart)
-                    {
-                        _featherStart = DMath.Clamp01(value);
-                    }
+                get => _featherStart;
+                set
+                {
+                    if (value != _featherStart) _featherStart = DMath.Clamp01(value);
                 }
             }
 
             public double end
             {
-                get { return _featherEnd; }
-                set {
-                    if (value != _featherEnd)
-                    {
-                        _featherEnd = DMath.Clamp01(value);
-                    }
+                get => _featherEnd;
+                set
+                {
+                    if (value != _featherEnd) _featherEnd = DMath.Clamp01(value);
                 }
-
             }
 
             public double centerStart
             {
-                get { return _centerStart; }
-                set {
+                get => _centerStart;
+                set
+                {
                     if (value != _centerStart)
                     {
                         _centerStart = DMath.Clamp01(value);
@@ -71,8 +80,9 @@
 
             public double centerEnd
             {
-                get { return _centerEnd; }
-                set {
+                get => _centerEnd;
+                set
+                {
                     if (value != _centerEnd)
                     {
                         _centerEnd = DMath.Clamp01(value);
@@ -84,79 +94,55 @@
 
             public double globalCenterStart
             {
-                get {
-                    return LocalToGlobalPercent(centerStart);
-                }
-                set
-                {
-                    centerStart = DMath.Clamp01(GlobalToLocalPercent(value));
-                }
+                get => LocalToGlobalPercent(centerStart);
+                set => centerStart = DMath.Clamp01(GlobalToLocalPercent(value));
             }
 
             public double globalCenterEnd
             {
-                get
-                {
-                    return LocalToGlobalPercent(centerEnd);
-                }
-                set
-                {
-                    centerEnd = DMath.Clamp01(GlobalToLocalPercent(value));
-                }
+                get => LocalToGlobalPercent(centerEnd);
+                set => centerEnd = DMath.Clamp01(GlobalToLocalPercent(value));
             }
 
             public double position
             {
                 get
                 {
-                    double center = DMath.Lerp(_centerStart, _centerEnd, 0.5);
+                    var center = DMath.Lerp(_centerStart, _centerEnd, 0.5);
                     if (start > end)
                     {
-                        double pos = DMath.Lerp(_featherStart, _featherEnd, center);
-                        double fromToEndDistance = 1.0 - _featherStart;
-                        double centerDistance = center * (fromToEndDistance + _featherEnd);
+                        var pos               = DMath.Lerp(_featherStart, _featherEnd, center);
+                        var fromToEndDistance = 1.0 - _featherStart;
+                        var centerDistance    = center * (fromToEndDistance + _featherEnd);
                         pos = _featherStart + centerDistance;
                         if (pos > 1.0) pos -= 1.0;
                         return pos;
                     }
-                    else return DMath.Lerp(_featherStart, _featherEnd, center);
 
+                    return DMath.Lerp(_featherStart, _featherEnd, center);
                 }
                 set
                 {
-                    double delta = value - position;
+                    var delta = value - position;
                     start += delta;
-                    end += delta;
+                    end   += delta;
                 }
             }
 
-            [SerializeField]
-            private double _featherStart = 0.0, _featherEnd = 0.0, _centerStart = 0.25, _centerEnd = 0.75;
-            [SerializeField]
-            internal SplineSampleModifier modifier = null;
-            public AnimationCurve interpolation;
-            public float blend = 1f;
-
-            internal Key(double f, double t, SplineSampleModifier modifier)
-            {
-                this.modifier = modifier;
-                start = f;
-                end = t;
-                interpolation = AnimationCurve.Linear(0f, 0f, 1f, 1f);
-            }
-
-            double GlobalToLocalPercent(double t)
+            private double GlobalToLocalPercent(double t)
             {
                 if (_featherStart > _featherEnd)
                 {
-                    if (t > _featherStart) return DMath.InverseLerp(_featherStart, _featherStart + (1.0 - _featherStart) + _featherEnd, t);
-                    else if (t < _featherEnd) return DMath.InverseLerp(-(1.0 - _featherStart), _featherEnd, t);
-                    else return 0f;
+                    if (t > _featherStart)
+                        return DMath.InverseLerp(_featherStart, _featherStart + (1.0 - _featherStart) + _featherEnd, t);
+                    if (t < _featherEnd) return DMath.InverseLerp(-(1.0 - _featherStart), _featherEnd, t);
+                    return 0f;
                 }
+
                 return DMath.InverseLerp(_featherStart, _featherEnd, t);
             }
 
-            double LocalToGlobalPercent(double t)
+            private double LocalToGlobalPercent(double t)
             {
                 if (_featherStart > _featherEnd)
                 {
@@ -164,30 +150,26 @@
                     if (t > 1.0) t -= 1.0;
                     return t;
                 }
+
                 return DMath.Lerp(_featherStart, _featherEnd, t);
             }
 
             public float Evaluate(double t)
             {
-                t = (float)GlobalToLocalPercent(t);
-                if (t < _centerStart)
-                {
-                    return interpolation.Evaluate((float)t / (float)_centerStart) * blend;
-                }
+                t = (float) GlobalToLocalPercent(t);
+                if (t < _centerStart) return interpolation.Evaluate((float) t / (float) _centerStart) * blend;
 
                 if (t > _centerEnd)
-                {
-                    return interpolation.Evaluate(1f - (float)DMath.InverseLerp(_centerEnd, 1.0, t)) * blend;
-                }
+                    return interpolation.Evaluate(1f - (float) DMath.InverseLerp(_centerEnd, 1.0, t)) * blend;
                 return interpolation.Evaluate(1f) * blend;
             }
 
             public virtual Key Duplicate()
             {
-                Key newKey = new Key(start, end, modifier);
-                newKey._centerStart = _centerStart;
-                newKey._centerEnd = _centerEnd;
-                newKey.blend = blend;
+                var newKey = new Key(start, end, modifier);
+                newKey._centerStart  = _centerStart;
+                newKey._centerEnd    = _centerEnd;
+                newKey.blend         = blend;
                 newKey.interpolation = DuplicateUtility.DuplicateCurve(interpolation);
                 return newKey;
             }

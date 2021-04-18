@@ -1,32 +1,52 @@
-using System.Collections;
-using UnityEngine.Events;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace Dreamteck.Splines
 {
     public class SplineTracer : SplineUser
     {
-        public class NodeConnection
-        {
-            public Node node;
-            public int point = 0;
+        public delegate void JunctionHandler(List<NodeConnection> passed);
 
-            public NodeConnection(Node node, int point)
-            {
-                this.node = node;
-                this.point = point;
-            }
+        public enum PhysicsMode
+        {
+            Transform,
+            Rigidbody,
+            Rigidbody2D
         }
 
-        SplineTrigger[] triggerInvokeQueue = new SplineTrigger[0];
-        List<NodeConnection> nodeConnectionQueue = new List<NodeConnection>();
-        int addTriggerIndex = 0;
-        public enum PhysicsMode { Transform, Rigidbody, Rigidbody2D }
+        private const double MIN_DELTA = 0.000001;
+
+        [HideInInspector] public bool applyDirectionRotation = true;
+
+        [HideInInspector] public bool useTriggers;
+
+        [HideInInspector] public int triggerGroup;
+
+        [SerializeField] [HideInInspector] protected Spline.Direction _direction = Spline.Direction.Forward;
+
+        [SerializeField] [HideInInspector] protected PhysicsMode _physicsMode = PhysicsMode.Transform;
+
+        [SerializeField] [HideInInspector] protected TransformModule _motion;
+
+
+        [SerializeField] [HideInInspector] protected Rigidbody targetRigidbody;
+
+        [SerializeField] [HideInInspector] protected Rigidbody2D targetRigidbody2D;
+
+        [SerializeField] [HideInInspector] protected Transform targetTransform;
+
+        [SerializeField] [HideInInspector] protected SplineSample _result = new SplineSample();
+
+        [SerializeField] [HideInInspector] protected SplineSample _finalResult = new SplineSample();
+
+        private          int                  addTriggerIndex;
+        private readonly List<NodeConnection> nodeConnectionQueue = new List<NodeConnection>();
+
+        private SplineTrigger[] triggerInvokeQueue = new SplineTrigger[0];
+
         public PhysicsMode physicsMode
         {
-            get { return _physicsMode; }
+            get => _physicsMode;
             set
             {
                 _physicsMode = value;
@@ -44,27 +64,18 @@ namespace Dreamteck.Splines
         }
 
         /// <summary>
-        /// Returns the unmodified result from the evaluation
+        ///     Returns the unmodified result from the evaluation
         /// </summary>
-        public SplineSample result
-        {
-            get { return _result; }
-        }
+        public SplineSample result => _result;
 
         /// <summary>
-        /// Returns the offsetted evaluation result from the current follow position
+        ///     Returns the offsetted evaluation result from the current follow position
         /// </summary>
-        public SplineSample modifiedResult
-        {
-            get
-            {
-                return _finalResult;
-            }
-        }
+        public SplineSample modifiedResult => _finalResult;
 
         public Spline.Direction direction
         {
-            get { return _direction; }
+            get => _direction;
             set
             {
                 if (value != _direction)
@@ -75,46 +86,13 @@ namespace Dreamteck.Splines
             }
         }
 
-        [HideInInspector]
-        public bool applyDirectionRotation = true;
-        [HideInInspector]
-        public bool useTriggers = false;
-        [HideInInspector]
-        public int triggerGroup = 0;
-        [SerializeField]
-        [HideInInspector]
-        protected Spline.Direction _direction = Spline.Direction.Forward;
+        protected virtual void Start()
+        {
+            RefreshTargets();
+        }
 
-        [SerializeField]
-        [HideInInspector]
-        protected PhysicsMode _physicsMode = PhysicsMode.Transform;
-        [SerializeField]
-        [HideInInspector]
-        protected TransformModule _motion = null;
-
-
-        [SerializeField]
-        [HideInInspector]
-        protected Rigidbody targetRigidbody = null;
-        [SerializeField]
-        [HideInInspector]
-        protected Rigidbody2D targetRigidbody2D = null;
-        [SerializeField]
-        [HideInInspector]
-        protected Transform targetTransform = null;
-        [SerializeField]
-        [HideInInspector]
-        protected SplineSample _result = new SplineSample();
-        [SerializeField]
-        [HideInInspector]
-        protected SplineSample _finalResult = new SplineSample();
-
-        public delegate void JunctionHandler(List<NodeConnection> passed);
-
-        public event JunctionHandler onNode;
+        public event JunctionHandler    onNode;
         public event EmptySplineHandler onMotionApplied;
-
-        private const double MIN_DELTA = 0.000001;
 
 
 #if UNITY_EDITOR
@@ -125,14 +103,9 @@ namespace Dreamteck.Splines
         }
 #endif
 
-        protected virtual void Start()
-        {
-            RefreshTargets();
-        }
-
         public virtual void SetPercent(double percent, bool checkTriggers = false, bool handleJunctions = false)
         {
-            double lastPercent = _result.percent;
+            var lastPercent = _result.percent;
             Evaluate(percent, _result);
             ApplyMotion();
             if (checkTriggers)
@@ -140,26 +113,22 @@ namespace Dreamteck.Splines
                 CheckTriggers(lastPercent, percent);
                 InvokeTriggers();
             }
-            if (handleJunctions)
-            {
-                CheckNodes(lastPercent, percent);
-            }
+
+            if (handleJunctions) CheckNodes(lastPercent, percent);
         }
 
         public virtual void SetDistance(float distance, bool checkTriggers = false, bool handleJunctions = false)
         {
-            double lastPercent = _result.percent;
-            Evaluate(Travel(0.0, distance, Spline.Direction.Forward), _result);
+            var lastPercent = _result.percent;
+            Evaluate(Travel(0.0, distance), _result);
             ApplyMotion();
             if (checkTriggers)
             {
                 CheckTriggers(lastPercent, _result.percent);
                 InvokeTriggers();
             }
-            if (handleJunctions)
-            {
-                CheckNodes(lastPercent, _result.percent);
-            }
+
+            if (handleJunctions) CheckNodes(lastPercent, _result.percent);
         }
 
         protected virtual Rigidbody GetRigidbody()
@@ -180,13 +149,13 @@ namespace Dreamteck.Splines
         protected void ApplyMotion()
         {
             ModifySample(_result, _finalResult);
-            motion.targetUser = this;
+            motion.targetUser   = this;
             motion.splineResult = _finalResult;
             if (applyDirectionRotation) motion.direction = _direction;
-            else motion.direction = Spline.Direction.Forward;
+            else motion.direction                        = Spline.Direction.Forward;
 
 #if UNITY_EDITOR
-                if (!Application.isPlaying)
+            if (!Application.isPlaying)
             {
                 if (targetTransform == null) RefreshTargets();
                 if (targetTransform == null) return;
@@ -207,8 +176,11 @@ namespace Dreamteck.Splines
                     if (targetRigidbody == null)
                     {
                         RefreshTargets();
-                        if (targetRigidbody == null)  throw new MissingComponentException("There is no Rigidbody attached to " + name + " but the Physics mode is set to use one.");
+                        if (targetRigidbody == null)
+                            throw new MissingComponentException("There is no Rigidbody attached to " + name +
+                                                                " but the Physics mode is set to use one.");
                     }
+
                     motion.ApplyRigidbody(targetRigidbody);
                     if (onMotionApplied != null) onMotionApplied();
                     break;
@@ -216,8 +188,11 @@ namespace Dreamteck.Splines
                     if (targetRigidbody2D == null)
                     {
                         RefreshTargets();
-                        if (targetRigidbody2D == null) throw new MissingComponentException("There is no Rigidbody2D attached to " + name + " but the Physics mode is set to use one.");
+                        if (targetRigidbody2D == null)
+                            throw new MissingComponentException("There is no Rigidbody2D attached to " + name +
+                                                                " but the Physics mode is set to use one.");
                     }
+
                     motion.ApplyRigidbody2D(targetRigidbody2D);
                     if (onMotionApplied != null) onMotionApplied();
                     break;
@@ -230,48 +205,44 @@ namespace Dreamteck.Splines
             if (!Application.isPlaying) return;
 #endif
             if (onNode == null) return;
-            if (from == to) return;
+            if (from   == to) return;
             UnclipPercent(ref from);
             UnclipPercent(ref to);
-            Spline.FormatFromTo(ref from, ref to, true);
+            Spline.FormatFromTo(ref from, ref to);
             int fromPoint, toPoint;
             fromPoint = spline.PercentToPointIndex(from, _direction);
-            toPoint = spline.PercentToPointIndex(to, _direction);
+            toPoint   = spline.PercentToPointIndex(to,   _direction);
 
             if (fromPoint != toPoint)
             {
                 if (_direction == Spline.Direction.Forward)
-                {
-                    for (int i = fromPoint + 1; i <= toPoint; i++)
+                    for (var i = fromPoint + 1; i <= toPoint; i++)
                     {
-                        NodeConnection junction = GetJunction(i);
+                        var junction = GetJunction(i);
                         if (junction != null) nodeConnectionQueue.Add(junction);
                     }
-                }
                 else
-                {
-                    for (int i = toPoint - 1; i >= fromPoint; i--)
+                    for (var i = toPoint - 1; i >= fromPoint; i--)
                     {
-                        NodeConnection junction = GetJunction(i);
+                        var junction = GetJunction(i);
                         if (junction != null) nodeConnectionQueue.Add(junction);
                     }
-                }
             }
             else if (from < MIN_DELTA && to > from)
             {
-                NodeConnection junction = GetJunction(0);
+                var junction = GetJunction(0);
                 if (junction != null) nodeConnectionQueue.Add(junction);
             }
             else if (to > 1.0 - MIN_DELTA && from < to)
             {
-                NodeConnection junction = GetJunction(spline.pointCount - 1);
+                var junction = GetJunction(spline.pointCount - 1);
                 if (junction != null) nodeConnectionQueue.Add(junction);
             }
         }
 
         protected void InvokeNodes()
         {
-            if(nodeConnectionQueue.Count > 0)
+            if (nodeConnectionQueue.Count > 0)
             {
                 onNode(nodeConnectionQueue);
                 nodeConnectionQueue.Clear();
@@ -288,16 +259,17 @@ namespace Dreamteck.Splines
             UnclipPercent(ref from);
             UnclipPercent(ref to);
             if (triggerGroup < 0 || triggerGroup >= spline.triggerGroups.Length) return;
-            for (int i = 0; i < spline.triggerGroups[triggerGroup].triggers.Length; i++)
+            for (var i = 0; i < spline.triggerGroups[triggerGroup].triggers.Length; i++)
             {
                 if (spline.triggerGroups[triggerGroup].triggers[i] == null) continue;
-                if (spline.triggerGroups[triggerGroup].triggers[i].Check(from, to)) AddTriggerToQueue(spline.triggerGroups[triggerGroup].triggers[i]);
+                if (spline.triggerGroups[triggerGroup].triggers[i].Check(from, to))
+                    AddTriggerToQueue(spline.triggerGroups[triggerGroup].triggers[i]);
             }
         }
 
-        NodeConnection GetJunction(int pointIndex)
+        private NodeConnection GetJunction(int pointIndex)
         {
-            Node node = spline.GetNode(pointIndex);
+            var node = spline.GetNode(pointIndex);
             if (node == null) return null;
             return new NodeConnection(node, pointIndex);
         }
@@ -307,13 +279,9 @@ namespace Dreamteck.Splines
 #if UNITY_EDITOR
             if (!Application.isPlaying) return;
 #endif
-            for (int i = 0; i < addTriggerIndex; i++)
-            {
+            for (var i = 0; i < addTriggerIndex; i++)
                 if (triggerInvokeQueue[i] != null)
-                {
                     triggerInvokeQueue[i].Invoke(this);
-                }
-            }
             addTriggerIndex = 0;
         }
 
@@ -337,12 +305,26 @@ namespace Dreamteck.Splines
         {
             if (addTriggerIndex >= triggerInvokeQueue.Length)
             {
-                SplineTrigger[] newQueue = new SplineTrigger[triggerInvokeQueue.Length + spline.triggerGroups[triggerGroup].triggers.Length];
+                var newQueue =
+                    new SplineTrigger[triggerInvokeQueue.Length + spline.triggerGroups[triggerGroup].triggers.Length];
                 triggerInvokeQueue.CopyTo(newQueue, 0);
                 triggerInvokeQueue = newQueue;
             }
+
             triggerInvokeQueue[addTriggerIndex] = trigger;
             addTriggerIndex++;
+        }
+
+        public class NodeConnection
+        {
+            public Node node;
+            public int  point;
+
+            public NodeConnection(Node node, int point)
+            {
+                this.node  = node;
+                this.point = point;
+            }
         }
     }
 }

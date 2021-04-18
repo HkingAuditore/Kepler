@@ -1,70 +1,74 @@
+using System;
+using UnityEngine;
+using UnityEngine.Events;
+
 namespace Dreamteck.Splines
 {
-    using UnityEngine;
-    using UnityEngine.Events;
-
-    [System.Serializable]
-    public class TriggerGroup{
+    [Serializable]
+    public class TriggerGroup
+    {
 #if UNITY_EDITOR
-        public bool open = false;
+        public bool open;
 #endif
 
-        public bool enabled = true;
-        public string name = "";
-        public Color color = Color.white;
+        public bool            enabled  = true;
+        public string          name     = "";
+        public Color           color    = Color.white;
         public SplineTrigger[] triggers = new SplineTrigger[0];
 
         public void Check(double start, double end, SplineUser user = null)
         {
-            for (int i = 0; i < triggers.Length; i++)
+            for (var i = 0; i < triggers.Length; i++)
             {
-                if (triggers[i] == null)
-                {
-                    continue;
-                }
+                if (triggers[i] == null) continue;
 
-                if (triggers[i].Check(start, end))
-                {
-                    triggers[i].Invoke(user);
-                }
+                if (triggers[i].Check(start, end)) triggers[i].Invoke(user);
             }
         }
 
         public void Reset()
         {
-            for (int i = 0; i < triggers.Length; i++) triggers[i].Reset();
+            for (var i = 0; i < triggers.Length; i++) triggers[i].Reset();
         }
     }
 
-    [System.Serializable]
+    [Serializable]
     public class SplineTrigger
     {
+        public enum Type
+        {
+            Double,
+            Forward,
+            Backward
+        }
+
         public string name = "Trigger";
-        public enum Type { Double, Forward, Backward}
-        [SerializeField]
-        public Type type = Type.Double;
-        public bool workOnce = false;
-        private bool worked = false;
-        [Range(0f, 1f)]
-        public double position = 0.5;
-        [SerializeField]
-        public bool enabled = true;
-        [SerializeField]
-        public Color color = Color.white;
-        [SerializeField]
-        [HideInInspector]
-        public UnityEvent onCross = new UnityEvent();
-        public event System.Action<SplineUser> onUserCross;
+
+        [SerializeField] public Type type = Type.Double;
+
+        public bool workOnce;
+
+        [Range(0f, 1f)] public double position = 0.5;
+
+        [SerializeField] public bool enabled = true;
+
+        [SerializeField] public Color color = Color.white;
+
+        [SerializeField] [HideInInspector] public UnityEvent onCross = new UnityEvent();
+
+        private bool worked;
 
         public SplineTrigger(Type t)
         {
-            type = t;
+            type    = t;
             enabled = true;
             onCross = new UnityEvent();
         }
 
+        public event Action<SplineUser> onUserCross;
+
         /// <summary>
-        /// Add a new UnityAction to the trigger
+        ///     Add a new UnityAction to the trigger
         /// </summary>
         /// <param name="action"></param>
         public void AddListener(UnityAction action)
@@ -81,13 +85,21 @@ namespace Dreamteck.Splines
         {
             if (!enabled) return false;
             if (workOnce && worked) return false;
-            bool passed = false;
+            var passed = false;
             switch (type)
             {
-                case Type.Double: passed = (previousPercent <= position && currentPercent >= position) || (currentPercent <= position && previousPercent >= position); break;
-                case Type.Forward: passed = previousPercent <= position && currentPercent >= position; break;
-                case Type.Backward: passed = currentPercent <= position && previousPercent >= position; break;
+                case Type.Double:
+                    passed = previousPercent <= position && currentPercent  >= position ||
+                             currentPercent  <= position && previousPercent >= position;
+                    break;
+                case Type.Forward:
+                    passed = previousPercent <= position && currentPercent >= position;
+                    break;
+                case Type.Backward:
+                    passed = currentPercent <= position && previousPercent >= position;
+                    break;
             }
+
             if (passed) worked = true;
             return passed;
         }
@@ -99,12 +111,8 @@ namespace Dreamteck.Splines
 #endif
             onCross.Invoke();
             if (user)
-            {
                 if (onUserCross != null)
-                {
                     onUserCross(user);
-                }
-            }
         }
     }
 }

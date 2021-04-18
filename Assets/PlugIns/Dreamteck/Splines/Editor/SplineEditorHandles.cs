@@ -1,49 +1,49 @@
+using UnityEditor;
+using UnityEngine;
+
 namespace Dreamteck.Splines.Editor
 {
-    using UnityEngine;
-    using System.Collections;
-    using UnityEditor;
-
     public static class SplineEditorHandles
     {
         public static bool SliderButton(Vector3 position, bool drawHandle, Color color, float size)
         {
-            Camera cam = SceneView.currentDrawingSceneView.camera;
-            Vector3 localPos = cam.transform.InverseTransformPoint(position);
+            var cam      = SceneView.currentDrawingSceneView.camera;
+            var localPos = cam.transform.InverseTransformPoint(position);
             if (localPos.z < 0f) return false;
 
             size *= HandleUtility.GetHandleSize(position);
-            Vector2 screenPos = HandleUtility.WorldToGUIPoint(position);
-            Vector2 screenRectBase = HandleUtility.WorldToGUIPoint(position - cam.transform.right * size + cam.transform.up * size);
-            Rect rect = new Rect(screenRectBase.x, screenRectBase.y, (screenPos.x - screenRectBase.x) * 2f, (screenPos.y - screenRectBase.y) * 2f);
+            var screenPos = HandleUtility.WorldToGUIPoint(position);
+            var screenRectBase =
+                HandleUtility.WorldToGUIPoint(position - cam.transform.right * size + cam.transform.up * size);
+            var rect = new Rect(screenRectBase.x, screenRectBase.y, (screenPos.x - screenRectBase.x) * 2f,
+                                (screenPos.y                                     - screenRectBase.y) * 2f);
             if (drawHandle)
             {
-                Color previousColor = Handles.color;
+                var previousColor = Handles.color;
                 Handles.color = color;
-                Handles.RectangleHandleCap(0, position, Quaternion.LookRotation(-cam.transform.forward), HandleUtility.GetHandleSize(position) * 0.1f, EventType.Repaint);
+                Handles.RectangleHandleCap(0, position, Quaternion.LookRotation(-cam.transform.forward),
+                                           HandleUtility.GetHandleSize(position) * 0.1f, EventType.Repaint);
                 Handles.color = previousColor;
             }
+
             if (rect.Contains(Event.current.mousePosition))
-            {
                 if (Event.current.type == EventType.MouseDown && Event.current.button == 0)
-                {
                     return true;
-                }
-            }
             return false;
         }
 
-        public static bool CircleButton(Vector3 position, Quaternion rotation, float size, float clickableAreaMultiplier, Color color)
+        public static bool CircleButton(Vector3 position,                Quaternion rotation, float size,
+                                        float   clickableAreaMultiplier, Color      color)
         {
-            Color prev = Handles.color;
-            bool result = false;
+            var prev = Handles.color;
+            var result = false;
             Handles.color = color;
             result = Handles.Button(position, rotation, size, size * clickableAreaMultiplier, Handles.CircleHandleCap);
             Handles.color = prev;
             return result;
         }
 
-        public static Vector3 FreeMoveRectangle(Vector3 position, float size) 
+        public static Vector3 FreeMoveRectangle(Vector3 position, float size)
         {
             return Handles.FreeMoveHandle(position, Quaternion.identity, size, Vector3.zero, Handles.CircleHandleCap);
         }
@@ -75,17 +75,18 @@ namespace Dreamteck.Splines.Editor
 
         public static bool HoverArea(Vector3 position, float size)
         {
-            Camera cam = SceneView.currentDrawingSceneView.camera;
-            Vector3 localPos = cam.transform.InverseTransformPoint(position);
+            var cam      = SceneView.currentDrawingSceneView.camera;
+            var localPos = cam.transform.InverseTransformPoint(position);
             if (localPos.z < 0f) return false;
 
             size *= HandleUtility.GetHandleSize(position);
-            Vector2 screenPos = HandleUtility.WorldToGUIPoint(position);
-            Vector2 screenRectBase = HandleUtility.WorldToGUIPoint(position - cam.transform.right * size + cam.transform.up * size);
-            Rect rect = new Rect(screenRectBase.x, screenRectBase.y, (screenPos.x - screenRectBase.x) * 2f, (screenPos.y - screenRectBase.y) * 2f);
+            var screenPos = HandleUtility.WorldToGUIPoint(position);
+            var screenRectBase =
+                HandleUtility.WorldToGUIPoint(position - cam.transform.right * size + cam.transform.up * size);
+            var rect = new Rect(screenRectBase.x, screenRectBase.y, (screenPos.x - screenRectBase.x) * 2f,
+                                (screenPos.y                                     - screenRectBase.y) * 2f);
             if (rect.Contains(Event.current.mousePosition)) return true;
-            else return false;
+            return false;
         }
     }
 }
-

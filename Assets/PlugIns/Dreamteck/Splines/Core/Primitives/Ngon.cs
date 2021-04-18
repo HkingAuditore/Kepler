@@ -1,13 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Dreamteck.Splines.Primitives
 {
     public class Ngon : SplinePrimitive
     {
         public float radius = 1f;
-        public int sides = 3;
+        public int   sides  = 3;
 
         public override Spline.Type GetSplineType()
         {
@@ -19,12 +17,13 @@ namespace Dreamteck.Splines.Primitives
             base.Generate();
             closed = true;
             CreatePoints(sides + 1, SplinePoint.Type.SmoothMirrored);
-            for (int i = 0; i < sides; i++)
+            for (var i = 0; i < sides; i++)
             {
-                float percent = (float)i / sides;
-                Vector3 pos = Quaternion.AngleAxis(360f * percent, Vector3.forward) * Vector3.up * radius;
+                var percent = (float) i                                             / sides;
+                var pos     = Quaternion.AngleAxis(360f * percent, Vector3.forward) * Vector3.up * radius;
                 points[i].SetPosition(pos);
             }
+
             points[points.Length - 1] = points[0];
         }
     }

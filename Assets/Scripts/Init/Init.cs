@@ -1,15 +1,14 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Init : MonoBehaviour
+namespace Init
 {
-    // Start is called before the first frame update
-    void Start()
+    public class Init : MonoBehaviour
     {
-        SceneManager.LoadScene("Main");
+        // Start is called before the first frame update
+        private void Start()
+        {
+            SceneManager.LoadScene("Main");
+        }
     }
-
-
 }

@@ -13,9 +13,10 @@ namespace Satellite
 
         public void SetCurDirVelocity(float speed)
         {
-            Debug.Log(this.gameObject.name + " Changing Speed!");
-            Debug.DrawLine(this.transform.position, this.transform.position+this.astralBodyRigidbody.velocity.normalized*speed,Color.green);
-            this.ChangeVelocity(this.GetVelocity().normalized * speed);
+            Debug.Log(gameObject.name + " Changing Speed!");
+            Debug.DrawLine(transform.position, transform.position + astralBodyRigidbody.velocity.normalized * speed,
+                           Color.green);
+            ChangeVelocity(GetVelocity().normalized * speed);
         }
     }
 }

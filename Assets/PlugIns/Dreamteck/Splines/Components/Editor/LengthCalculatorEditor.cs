@@ -1,9 +1,8 @@
+using UnityEditor;
+using UnityEngine;
+
 namespace Dreamteck.Splines.Editor
 {
-    using UnityEngine;
-    using System.Collections;
-    using UnityEditor;
-
     [CustomEditor(typeof(LengthCalculator), true)]
     [CanEditMultipleObjects]
     public class LengthCalculatorEditor : SplineUserEditor
@@ -19,24 +18,25 @@ namespace Dreamteck.Splines.Editor
             EditorGUILayout.Space();
             EditorGUILayout.LabelField("Length Calculator", EditorStyles.boldLabel);
             base.BodyGUI();
-            LengthCalculator calculator = (LengthCalculator)target;
-            for (int i = 0; i < targets.Length; i++)
+            var calculator = (LengthCalculator) target;
+            for (var i = 0; i < targets.Length; i++)
             {
-                LengthCalculator lengthCalc = (LengthCalculator)targets[i];
+                var lengthCalc = (LengthCalculator) targets[i];
                 if (lengthCalc.spline == null) continue;
                 EditorGUILayout.HelpBox(lengthCalc.spline.name + " Length: " + lengthCalc.length, MessageType.Info);
             }
+
             if (targets.Length > 1) return;
-            SerializedProperty events = serializedObject.FindProperty("lengthEvents");
+            var events = serializedObject.FindProperty("lengthEvents");
 
             EditorGUI.BeginChangeCheck();
-            for (int i = 0; i < events.arraySize; i++)
+            for (var i = 0; i < events.arraySize; i++)
             {
-                SerializedProperty eventProperty = events.GetArrayElementAtIndex(i);
-                SerializedProperty onChange = eventProperty.FindPropertyRelative("onChange");
-                SerializedProperty enabled = eventProperty.FindPropertyRelative("enabled");
-                SerializedProperty targetLength = eventProperty.FindPropertyRelative("targetLength");
-                SerializedProperty type = eventProperty.FindPropertyRelative("type");
+                var eventProperty = events.GetArrayElementAtIndex(i);
+                var onChange      = eventProperty.FindPropertyRelative("onChange");
+                var enabled       = eventProperty.FindPropertyRelative("enabled");
+                var targetLength  = eventProperty.FindPropertyRelative("targetLength");
+                var type          = eventProperty.FindPropertyRelative("type");
 
                 EditorGUIUtility.labelWidth = 100;
                 EditorGUILayout.BeginHorizontal();
@@ -47,18 +47,20 @@ namespace Dreamteck.Splines.Editor
                 if (GUILayout.Button("x", GUILayout.Width(20)))
                 {
                     Undo.RecordObject(calculator, "Remove Length Event");
-                    ArrayUtility.RemoveAt(ref calculator.lengthEvents, i);
+                    UnityEditor.ArrayUtility.RemoveAt(ref calculator.lengthEvents, i);
                 }
+
                 EditorGUILayout.EndHorizontal();
                 EditorGUIUtility.labelWidth = 0;
                 EditorGUILayout.PropertyField(onChange);
                 EditorGUILayout.Space();
             }
+
             if (EditorGUI.EndChangeCheck()) serializedObject.ApplyModifiedProperties();
             if (GUILayout.Button("Add Length Event"))
             {
                 Undo.RecordObject(calculator, "Add Length Event");
-                ArrayUtility.Add(ref calculator.lengthEvents, new LengthCalculator.LengthEvent());
+                UnityEditor.ArrayUtility.Add(ref calculator.lengthEvents, new LengthCalculator.LengthEvent());
             }
         }
     }

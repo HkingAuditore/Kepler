@@ -1,21 +1,20 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class Transformer : MonoBehaviour
+namespace Quiz
 {
-    public static Transformer GetTransformer { get; private set; }
-
-    private void Awake()
+    public class Transformer : MonoBehaviour
     {
-        GetTransformer = this;
-    }
+        public static Transformer GetTransformer { get; private set; }
+
+        private void Awake()
+        {
+            GetTransformer = this;
+        }
 
 
-
-    private void Start()
-    {
-        GameObject.DontDestroyOnLoad(gameObject);
+        private void Start()
+        {
+            DontDestroyOnLoad(gameObject);
+        }
     }
 }

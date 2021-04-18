@@ -29,6 +29,9 @@ namespace Satellite
             foreach (var part in satelliteParts) part.GenerateJoint();
         }
 
-        public Vector3 GetVelocity() => satelliteCore.GetVelocity();
+        public Vector3 GetVelocity()
+        {
+            return satelliteCore.GetVelocity();
+        }
     }
 }

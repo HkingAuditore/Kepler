@@ -1,54 +1,113 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿using System;
+using UnityEngine;
 
 namespace Dreamteck
 {
-    [System.Serializable]
+    [Serializable]
     public class TS_Transform
     {
+        [SerializeField] [HideInInspector] private Transform _transform;
+
+        [SerializeField] [HideInInspector] private volatile float posX;
+
+        [SerializeField] [HideInInspector] private volatile float posY;
+
+        [SerializeField] [HideInInspector] private volatile float posZ;
+
+        [SerializeField] [HideInInspector] private volatile float scaleX = 1f;
+
+        [SerializeField] [HideInInspector] private volatile float scaleY = 1f;
+
+        [SerializeField] [HideInInspector] private volatile float scaleZ = 1f;
+
+        [SerializeField] [HideInInspector] private volatile float lossyScaleX = 1f;
+
+        [SerializeField] [HideInInspector] private volatile float lossyScaleY = 1f;
+
+        [SerializeField] [HideInInspector] private volatile float lossyScaleZ = 1f;
+
+        [SerializeField] [HideInInspector] private volatile float rotX;
+
+        [SerializeField] [HideInInspector] private volatile float rotY;
+
+        [SerializeField] [HideInInspector] private volatile float rotZ;
+
+        [SerializeField] [HideInInspector] private volatile float rotW;
+
+
+        [SerializeField] [HideInInspector] private volatile float lposX;
+
+        [SerializeField] [HideInInspector] private volatile float lposY;
+
+        [SerializeField] [HideInInspector] private volatile float lposZ;
+
+        [SerializeField] [HideInInspector] private volatile float lrotX;
+
+        [SerializeField] [HideInInspector] private volatile float lrotY;
+
+        [SerializeField] [HideInInspector] private volatile float lrotZ;
+
+        [SerializeField] [HideInInspector] private volatile float lrotW;
+#if UNITY_EDITOR
+        private volatile bool isPlaying;
+#endif
+        private bool setLocalPosition;
+        private bool setLocalRotation;
+
+        private bool setPosition;
+        private bool setRotation;
+        private bool setScale;
+
+        public TS_Transform(Transform input)
+        {
+            SetTransform(input);
+        }
+
         public Vector3 position
         {
-            get { return new Vector3(posX, posY, posZ); }
+            get => new Vector3(posX, posY, posZ);
             set
             {
-                setPosition = true;
+                setPosition      = true;
                 setLocalPosition = false;
-                posX = value.x;
-                posY = value.y;
-                posZ = value.z;
+                posX             = value.x;
+                posY             = value.y;
+                posZ             = value.z;
             }
         }
+
         public Quaternion rotation
         {
-            get { return new Quaternion(rotX, rotY, rotZ, rotW); }
+            get => new Quaternion(rotX, rotY, rotZ, rotW);
             set
             {
-                setRotation = true;
+                setRotation      = true;
                 setLocalRotation = false;
-                rotX = value.x;
-                rotY = value.y;
-                rotZ = value.z;
-                rotW = value.w;
+                rotX             = value.x;
+                rotY             = value.y;
+                rotZ             = value.z;
+                rotW             = value.w;
             }
         }
+
         public Vector3 scale
         {
-            get { return new Vector3(scaleX, scaleY, scaleZ); }
+            get => new Vector3(scaleX, scaleY, scaleZ);
             set
             {
                 setScale = true;
-                scaleX = value.x;
-                scaleY = value.y;
-                scaleZ = value.z;
+                scaleX   = value.x;
+                scaleY   = value.y;
+                scaleZ   = value.z;
             }
         }
 
         public Vector3 lossyScale
         {
-            get { return new Vector3(lossyScaleX, lossyScaleY, lossyScaleZ); }
+            get => new Vector3(lossyScaleX, lossyScaleY, lossyScaleZ);
             set
             {
-                setScale = true;
+                setScale    = true;
                 lossyScaleX = value.x;
                 lossyScaleY = value.y;
                 lossyScaleZ = value.z;
@@ -57,125 +116,36 @@ namespace Dreamteck
 
         public Vector3 localPosition
         {
-            get { return new Vector3(lposX, lposY, lposZ); }
+            get => new Vector3(lposX, lposY, lposZ);
             set
             {
                 setLocalPosition = true;
-                setPosition = false;
-                lposX = value.x;
-                lposY = value.y;
-                lposZ = value.z;
+                setPosition      = false;
+                lposX            = value.x;
+                lposY            = value.y;
+                lposZ            = value.z;
             }
         }
+
         public Quaternion localRotation
         {
-            get { return new Quaternion(lrotX, lrotY, lrotZ, lrotW); }
+            get => new Quaternion(lrotX, lrotY, lrotZ, lrotW);
             set
             {
                 setLocalRotation = true;
-                setRotation = false;
-                lrotX = value.x;
-                lrotY = value.y;
-                lrotZ = value.z;
-                lrotW = value.w;
+                setRotation      = false;
+                lrotX            = value.x;
+                lrotY            = value.y;
+                lrotZ            = value.z;
+                lrotW            = value.w;
             }
         }
 
-        private bool setPosition = false;
-        private bool setRotation = false;
-        private bool setScale = false;
-        private bool setLocalPosition = false;
-        private bool setLocalRotation = false;
-
-        public Transform transform
-        {
-            get
-            {
-                return _transform;
-            }
-        }
-
-        [SerializeField]
-        [HideInInspector]
-        private Transform _transform;
-
-        [SerializeField]
-        [HideInInspector]
-        private volatile float posX = 0f;
-        [SerializeField]
-        [HideInInspector]
-        private volatile float posY = 0f;
-        [SerializeField]
-        [HideInInspector]
-        private volatile float posZ = 0f;
-
-        [SerializeField]
-        [HideInInspector]
-        private volatile float scaleX = 1f;
-        [SerializeField]
-        [HideInInspector]
-        private volatile float scaleY = 1f;
-        [SerializeField]
-        [HideInInspector]
-        private volatile float scaleZ = 1f;
-
-        [SerializeField]
-        [HideInInspector]
-        private volatile float lossyScaleX = 1f;
-        [SerializeField]
-        [HideInInspector]
-        private volatile float lossyScaleY = 1f;
-        [SerializeField]
-        [HideInInspector]
-        private volatile float lossyScaleZ = 1f;
-
-        [SerializeField]
-        [HideInInspector]
-        private volatile float rotX = 0f;
-        [SerializeField]
-        [HideInInspector]
-        private volatile float rotY = 0f;
-        [SerializeField]
-        [HideInInspector]
-        private volatile float rotZ = 0f;
-        [SerializeField]
-        [HideInInspector]
-        private volatile float rotW = 0f;
-
-
-        [SerializeField]
-        [HideInInspector]
-        private volatile float lposX = 0f;
-        [SerializeField]
-        [HideInInspector]
-        private volatile float lposY = 0f;
-        [SerializeField]
-        [HideInInspector]
-        private volatile float lposZ = 0f;
-
-        [SerializeField]
-        [HideInInspector]
-        private volatile float lrotX = 0f;
-        [SerializeField]
-        [HideInInspector]
-        private volatile float lrotY = 0f;
-        [SerializeField]
-        [HideInInspector]
-        private volatile float lrotZ = 0f;
-        [SerializeField]
-        [HideInInspector]
-        private volatile float lrotW = 0f;
-#if UNITY_EDITOR
-        private volatile bool isPlaying = false;
-#endif
-
-        public TS_Transform(Transform input)
-        {
-            SetTransform(input);
-        }
+        public Transform transform => _transform;
 
         /// <summary>
-        /// Update the TS_Transform. Call this regularly on every frame you need it to update. Should ALWAYS be called from the main thread
+        ///     Update the TS_Transform. Call this regularly on every frame you need it to update. Should ALWAYS be called from the
+        ///     main thread
         /// </summary>
         public void Update()
         {
@@ -183,42 +153,55 @@ namespace Dreamteck
 #if UNITY_EDITOR
             isPlaying = Application.isPlaying;
 #endif
-            if (setPosition) _transform.position = position;
-            else if (setLocalPosition) _transform.localPosition = localPosition;
+            if (setPosition)
+            {
+                _transform.position = position;
+            }
+            else if (setLocalPosition)
+            {
+                _transform.localPosition = localPosition;
+            }
             else
             {
-                position = _transform.position;
+                position      = _transform.position;
                 localPosition = _transform.localPosition;
             }
 
             if (setScale) _transform.localScale = scale;
-            else scale = _transform.localScale;
+            else scale                          = _transform.localScale;
             lossyScale = _transform.lossyScale;
-            
 
-            if (setRotation) _transform.rotation = rotation;
-            else if (setLocalRotation) _transform.localRotation = localRotation;
+
+            if (setRotation)
+            {
+                _transform.rotation = rotation;
+            }
+            else if (setLocalRotation)
+            {
+                _transform.localRotation = localRotation;
+            }
             else
             {
-                rotation = _transform.rotation;
+                rotation      = _transform.rotation;
                 localRotation = _transform.localRotation;
             }
+
             setPosition = setLocalPosition = setRotation = setLocalRotation = setScale = false;
         }
 
         /// <summary>
-        /// Set the transform reference. Should ALWAYS be called from the main thread
+        ///     Set the transform reference. Should ALWAYS be called from the main thread
         /// </summary>
         /// <param name="input">Transform reference</param>
         public void SetTransform(Transform input)
         {
-            _transform = input;
+            _transform  = input;
             setPosition = setLocalPosition = setRotation = setLocalRotation = setScale = false;
             Update();
         }
 
         /// <summary>
-        /// Returns true if there's any change in the transform. Should ALWAYS be called from the main thread
+        ///     Returns true if there's any change in the transform. Should ALWAYS be called from the main thread
         /// </summary>
         /// <returns></returns>
         public bool HasChange()
@@ -227,7 +210,7 @@ namespace Dreamteck
         }
 
         /// <summary>
-        /// Returns true if there's a change in the position. Should ALWAYS be called from the main thread
+        ///     Returns true if there's a change in the position. Should ALWAYS be called from the main thread
         /// </summary>
         /// <returns></returns>
         public bool HasPositionChange()
@@ -236,25 +219,27 @@ namespace Dreamteck
         }
 
         /// <summary>
-        /// Returns true if there is a change in the rotation. Should ALWAYS be called from the main thread
+        ///     Returns true if there is a change in the rotation. Should ALWAYS be called from the main thread
         /// </summary>
         /// <returns></returns>
         public bool HasRotationChange()
         {
-            return rotX != _transform.rotation.x || rotY != _transform.rotation.y || rotZ != _transform.rotation.z || rotW != _transform.rotation.w;
+            return rotX != _transform.rotation.x || rotY != _transform.rotation.y || rotZ != _transform.rotation.z ||
+                   rotW != _transform.rotation.w;
         }
 
         /// <summary>
-        /// Returns true if there is a change in the scale. Should ALWAYS be called from the main thread
+        ///     Returns true if there is a change in the scale. Should ALWAYS be called from the main thread
         /// </summary>
         /// <returns></returns>
         public bool HasScaleChange()
         {
-            return lossyScaleX != _transform.lossyScale.x || lossyScaleY != _transform.lossyScale.y || lossyScaleZ != _transform.lossyScale.z;
+            return lossyScaleX != _transform.lossyScale.x || lossyScaleY != _transform.lossyScale.y ||
+                   lossyScaleZ != _transform.lossyScale.z;
         }
 
         /// <summary>
-        /// Thread-safe TransformPoint
+        ///     Thread-safe TransformPoint
         /// </summary>
         /// <param name="point"></param>
         /// <returns></returns>
@@ -263,13 +248,13 @@ namespace Dreamteck
 #if UNITY_EDITOR
             if (!isPlaying) return transform.TransformPoint(point);
 #endif
-            Vector3 scaled = new Vector3(point.x * lossyScaleX, point.y * lossyScaleY, point.z * lossyScaleZ);
-            Vector3 rotated = rotation * scaled;
+            var scaled  = new Vector3(point.x * lossyScaleX, point.y * lossyScaleY, point.z * lossyScaleZ);
+            var rotated = rotation * scaled;
             return position + rotated;
         }
 
         /// <summary>
-        /// Thread-safe TransformDirection
+        ///     Thread-safe TransformDirection
         /// </summary>
         /// <param name="direction"></param>
         /// <returns></returns>
@@ -282,7 +267,7 @@ namespace Dreamteck
         }
 
         /// <summary>
-        /// Thread-safe InverseTransformPoint
+        ///     Thread-safe InverseTransformPoint
         /// </summary>
         /// <param name="point"></param>
         /// <returns></returns>
@@ -295,7 +280,7 @@ namespace Dreamteck
         }
 
         /// <summary>
-        /// Thread-safe InverseTransformDirection
+        ///     Thread-safe InverseTransformDirection
         /// </summary>
         /// <param name="direction"></param>
         /// <returns></returns>
@@ -304,14 +289,13 @@ namespace Dreamteck
 #if UNITY_EDITOR
             if (!isPlaying) return transform.InverseTransformDirection(direction);
 #endif
-            Vector3 rotated = Quaternion.Inverse(rotation) * direction;
-            return new Vector3(rotated.x / lossyScaleX, rotated.y / lossyScaleY, rotated.z / lossyScaleZ);
+            var rotated = Quaternion.Inverse(rotation) * direction;
+            return new Vector3(rotated.x               / lossyScaleX, rotated.y / lossyScaleY, rotated.z / lossyScaleZ);
         }
 
         public T GetComponent<T>()
         {
             return _transform.GetComponent<T>();
         }
-
     }
 }

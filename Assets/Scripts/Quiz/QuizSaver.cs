@@ -17,15 +17,12 @@ namespace Quiz
 
     public class QuizSaver : MonoBehaviour
     {
-        private    XmlDocument _xmlDoc = new XmlDocument();
-        public                  QuizType    quizType;
-        public                  GameObject  cloner;
+        public           QuizType    quizType;
+        public           GameObject  cloner;
+        private readonly XmlDocument _xmlDoc = new XmlDocument();
 
-        public static string xmlPath
-        {
-            get => Application.dataPath + "/Quiz/";
-        }
-        
+        public static string xmlPath => Application.dataPath + "/Quiz/";
+
 
         // private void Awake()
         // {
@@ -45,6 +42,7 @@ namespace Quiz
             {
                 Console.WriteLine(e);
             }
+
             //写入坐标
             var pos = _xmlDoc.CreateElement("Position");
             pos.InnerText = astralBodyDict.transform.position.ToString();
@@ -53,7 +51,7 @@ namespace Quiz
             var astAstralBody = _xmlDoc.CreateElement("AstralBody");
             //写入天体属性
             var mass = _xmlDoc.CreateElement("Mass");
-            mass.InnerText = (astralBodyDict.astralBody.realMass).ToString(CultureInfo.InvariantCulture);
+            mass.InnerText = astralBodyDict.astralBody.realMass.ToString(CultureInfo.InvariantCulture);
             mass.SetAttribute("IsPublic", astralBodyDict.astralBody.isMassPublic.ToString());
             astAstralBody.AppendChild(mass);
             var density = _xmlDoc.CreateElement("Density");
@@ -64,12 +62,12 @@ namespace Quiz
 
             size.InnerText = astralBodyDict.astralBody.size.ToString(CultureInfo.InvariantCulture);
             astAstralBody.AppendChild(size);
-            
+
             var velocity = _xmlDoc.CreateElement("Velocity");
             velocity.InnerText = astralBodyDict.astralBody.GetVelocity().ToString();
             velocity.SetAttribute("IsPublic", astralBodyDict.astralBody.isVelocityPublic.ToString());
             astAstralBody.AppendChild(velocity);
-            
+
             var isAffect = _xmlDoc.CreateElement("EnableAffect");
             isAffect.InnerText = astralBodyDict.astralBody.enableAffect.ToString();
             astAstralBody.AppendChild(isAffect);
@@ -105,20 +103,20 @@ namespace Quiz
             // distancePerT.SetAttribute("IsPublic", astralBodyDict.astralBody.isDistancePerTPublic.ToString());
             // distancePerT.InnerText = astralBodyDict.astralBody.distancePerT.ToString(CultureInfo.InvariantCulture);
             // astAstralBody.AppendChild(distancePerT);
-            
+
             var t = _xmlDoc.CreateElement("T");
             t.SetAttribute("IsPublic", astralBodyDict.astralBody.isTPublic.ToString());
             t.InnerText = astralBodyDict.astralBody.t.ToString(CultureInfo.InvariantCulture);
             astAstralBody.AppendChild(t);
-            
+
             var gravity = _xmlDoc.CreateElement("Gravity");
             gravity.SetAttribute("IsPublic", astralBodyDict.astralBody.isGravityPublic.ToString());
             gravity.InnerText = astralBodyDict.astralBody.gravity.ToString(CultureInfo.InvariantCulture);
             astAstralBody.AppendChild(gravity);
-            
 
-            astAstralBody.SetAttribute("IsCore", (astralBodyDict.isTarget).ToString());
-            astAstralBody.SetAttribute("Style", (astralBodyDict.astralBody.meshNum).ToString());
+
+            astAstralBody.SetAttribute("IsCore", astralBodyDict.isTarget.ToString());
+            astAstralBody.SetAttribute("Style",  astralBodyDict.astralBody.meshNum.ToString());
 
             dict.SetAttribute("IsTarget", astralBodyDict.isTarget.ToString());
             dict.AppendChild(astTransform);
@@ -140,13 +138,16 @@ namespace Quiz
         {
             var path = xmlPath + fileName + ".xml";
             if (!File.Exists(path))
+            {
                 doc.Save(path);
+            }
             else
             {
                 doc.Save(path);
                 AssetDatabase.Refresh();
                 throw new QuizSaverException("文件已存在，进行覆盖！");
-            }            
+            }
+
             AssetDatabase.Refresh();
         }
 
@@ -171,7 +172,7 @@ namespace Quiz
             return new Vector3(float.Parse(vec[0]), float.Parse(vec[1]), float.Parse(vec[2]));
         }
 
-        public static QuizBaseStruct ConvertXml2QuizBase(XmlDocument xmlDoc,string fileName)
+        public static QuizBaseStruct ConvertXml2QuizBase(XmlDocument xmlDoc, string fileName)
         {
             var quizBaseStruct = new QuizBaseStruct();
             quizBaseStruct.quizName = fileName;
@@ -187,37 +188,38 @@ namespace Quiz
 
                 //AstralBody
                 var astralBodyXmlNode = astralBodyElement.GetElementsByTagName("AstralBody")[0];
-                astStruct.mass         = double.Parse(astralBodyXmlNode.ChildNodes[0].InnerText);
-                astStruct.isMassPublic = Boolean.Parse(astralBodyXmlNode.ChildNodes[0].Attributes["IsPublic"].Value);
-                astStruct.density      = float.Parse(astralBodyXmlNode.ChildNodes[1].InnerText);
-                astStruct.originalSize = float.Parse(astralBodyXmlNode.ChildNodes[2].InnerText);
-                astStruct.isSizePublic = Boolean.Parse(astralBodyXmlNode.ChildNodes[2].Attributes["IsPublic"].Value);
-                astStruct.oriVelocity  = ConvertString2Vector3(astralBodyXmlNode.ChildNodes[3].InnerText);
-                astStruct.isVelocityPublic = Boolean.Parse(astralBodyXmlNode.ChildNodes[3].Attributes["IsPublic"].Value);
-                astStruct.enableAffect  = bool.Parse(astralBodyXmlNode.ChildNodes[4].InnerText);
-                astStruct.enableTracing = bool.Parse(astralBodyXmlNode.ChildNodes[5].InnerText);
-                astStruct.affectRadius  = float.Parse(astralBodyXmlNode.ChildNodes[6].InnerText);
-                
-                astStruct.period = float.Parse(astralBodyXmlNode.ChildNodes[7].InnerText);
-                astStruct.isPeriodPublic = Boolean.Parse(astralBodyXmlNode.ChildNodes[7].Attributes["IsPublic"].Value);
+                astStruct.mass             = double.Parse(astralBodyXmlNode.ChildNodes[0].InnerText);
+                astStruct.isMassPublic     = bool.Parse(astralBodyXmlNode.ChildNodes[0].Attributes["IsPublic"].Value);
+                astStruct.density          = float.Parse(astralBodyXmlNode.ChildNodes[1].InnerText);
+                astStruct.originalSize     = float.Parse(astralBodyXmlNode.ChildNodes[2].InnerText);
+                astStruct.isSizePublic     = bool.Parse(astralBodyXmlNode.ChildNodes[2].Attributes["IsPublic"].Value);
+                astStruct.oriVelocity      = ConvertString2Vector3(astralBodyXmlNode.ChildNodes[3].InnerText);
+                astStruct.isVelocityPublic = bool.Parse(astralBodyXmlNode.ChildNodes[3].Attributes["IsPublic"].Value);
+                astStruct.enableAffect     = bool.Parse(astralBodyXmlNode.ChildNodes[4].InnerText);
+                astStruct.enableTracing    = bool.Parse(astralBodyXmlNode.ChildNodes[5].InnerText);
+                astStruct.affectRadius     = float.Parse(astralBodyXmlNode.ChildNodes[6].InnerText);
 
-                astStruct.isAngularVelocityPublic = Boolean.Parse(astralBodyXmlNode.ChildNodes[8].Attributes["IsPublic"].Value);
-                astStruct.radius = float.Parse(astralBodyXmlNode.ChildNodes[9].InnerText);
-                astStruct.isRadiusPublic = Boolean.Parse(astralBodyXmlNode.ChildNodes[9].Attributes["IsPublic"].Value);
+                astStruct.period         = float.Parse(astralBodyXmlNode.ChildNodes[7].InnerText);
+                astStruct.isPeriodPublic = bool.Parse(astralBodyXmlNode.ChildNodes[7].Attributes["IsPublic"].Value);
+
+                astStruct.isAngularVelocityPublic =
+                    bool.Parse(astralBodyXmlNode.ChildNodes[8].Attributes["IsPublic"].Value);
+                astStruct.radius         = float.Parse(astralBodyXmlNode.ChildNodes[9].InnerText);
+                astStruct.isRadiusPublic = bool.Parse(astralBodyXmlNode.ChildNodes[9].Attributes["IsPublic"].Value);
                 // astStruct.AnglePerT = float.Parse(astralBodyXmlNode.ChildNodes[10].InnerText);
                 // astStruct.isAnglePerTPublic = Boolean.Parse(astralBodyXmlNode.ChildNodes[10].Attributes["IsPublic"].Value);
                 // astStruct.distancePerT= float.Parse(astralBodyXmlNode.ChildNodes[11].InnerText);
                 // astStruct.isDistancePerTPublic = Boolean.Parse(astralBodyXmlNode.ChildNodes[11].Attributes["IsPublic"].Value);
-                
-                astStruct.t= float.Parse(astralBodyXmlNode.ChildNodes[10].InnerText);
-                astStruct.isTPublic = Boolean.Parse(astralBodyXmlNode.ChildNodes[10].Attributes["IsPublic"].Value);
 
-                astStruct.isGravityPublic = Boolean.Parse(astralBodyXmlNode.ChildNodes[11].Attributes["IsPublic"].Value);
+                astStruct.t         = float.Parse(astralBodyXmlNode.ChildNodes[10].InnerText);
+                astStruct.isTPublic = bool.Parse(astralBodyXmlNode.ChildNodes[10].Attributes["IsPublic"].Value);
+
+                astStruct.isGravityPublic = bool.Parse(astralBodyXmlNode.ChildNodes[11].Attributes["IsPublic"].Value);
 
 
-                astStruct.isCore        = bool.Parse(astralBodyXmlNode.Attributes["IsCore"].Value);
-                astStruct.meshNum        = int.Parse(astralBodyXmlNode.Attributes["Style"].Value);
-                astStruct.isTarget      = bool.Parse(astralBodyElement.GetAttribute("IsTarget"));
+                astStruct.isCore   = bool.Parse(astralBodyXmlNode.Attributes["IsCore"].Value);
+                astStruct.meshNum  = int.Parse(astralBodyXmlNode.Attributes["Style"].Value);
+                astStruct.isTarget = bool.Parse(astralBodyElement.GetAttribute("IsTarget"));
 
                 list.Add(astStruct);
             }
@@ -231,19 +233,18 @@ namespace Quiz
 
         public static List<XmlDocument> GetQuizFiles(ref List<string> fileNames)
         {
-            DirectoryInfo     dir          = new DirectoryInfo(xmlPath);
-            List<XmlDocument> xmlDocuments = new List<XmlDocument>();
+            var dir          = new DirectoryInfo(xmlPath);
+            var xmlDocuments = new List<XmlDocument>();
             fileNames = new List<string>();
-            FileInfo[]        files        = dir.GetFiles();
-            foreach (FileInfo f in files)
+            var files = dir.GetFiles();
+            foreach (var f in files)
             {
                 var filename = f.Name;
-                if (filename.EndsWith(".xml") && filename!=".xml")
+                if (filename.EndsWith(".xml") && filename != ".xml")
                 {
-                    string trueName = filename.Split(new char[] {'.'})[0];
+                    var trueName = filename.Split('.')[0];
                     xmlDocuments.Add(LoadXml(trueName));
                     fileNames.Add(trueName);
-
                 }
             }
 
@@ -252,10 +253,7 @@ namespace Quiz
 
         public static void DeleteQuizFiles(string quizName)
         {
-            if (File.Exists(xmlPath + quizName + ".xml"))
-            {
-                File.Delete(xmlPath + quizName + ".xml");
-            }
+            if (File.Exists(xmlPath + quizName + ".xml")) File.Delete(xmlPath + quizName + ".xml");
         }
     }
 }

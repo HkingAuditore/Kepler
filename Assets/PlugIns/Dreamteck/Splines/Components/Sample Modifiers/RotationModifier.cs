@@ -1,25 +1,12 @@
-﻿using System.Collections;
+﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace Dreamteck.Splines
 {
-    [System.Serializable]
+    [Serializable]
     public class RotationModifier : SplineSampleModifier
     {
-        [System.Serializable]
-        public class RotationKey : Key
-        {
-            public bool useLookTarget = false;
-            public Transform target = null;
-            public Vector3 rotation = Vector3.zero;
-
-            public RotationKey(Vector3 rotation, double f, double t, RotationModifier modifier) : base(f, t, modifier)
-            {
-                this.rotation = rotation;
-            }
-        }
-
         public List<RotationKey> keys = new List<RotationKey>();
 
         public RotationModifier()
@@ -29,15 +16,15 @@ namespace Dreamteck.Splines
 
         public override List<Key> GetKeys()
         {
-            List<Key> output = new List<Key>();
-            for (int i = 0; i < keys.Count; i++) output.Add(keys[i]);
+            var output = new List<Key>();
+            for (var i = 0; i < keys.Count; i++) output.Add(keys[i]);
             return output;
         }
 
         public override void SetKeys(List<Key> input)
         {
             keys = new List<RotationKey>();
-            for (int i = 0; i < input.Count; i++) keys.Add((RotationKey)input[i]);
+            for (var i = 0; i < input.Count; i++) keys.Add((RotationKey) input[i]);
             base.SetKeys(input);
         }
 
@@ -52,23 +39,35 @@ namespace Dreamteck.Splines
             base.Apply(result);
 
             Quaternion offset = Quaternion.identity, look = result.rotation;
-            for (int i = 0; i < keys.Count; i++)
-            {
+            for (var i = 0; i < keys.Count; i++)
                 if (keys[i].useLookTarget && keys[i].target != null)
                 {
-                    Quaternion lookDir = Quaternion.LookRotation(keys[i].target.position - result.position);
+                    var lookDir = Quaternion.LookRotation(keys[i].target.position - result.position);
                     look = Quaternion.Slerp(look, lookDir, keys[i].Evaluate(result.percent));
                 }
                 else
                 {
-                    Quaternion euler = Quaternion.Euler(keys[i].rotation.x, keys[i].rotation.y, keys[i].rotation.z);
+                    var euler = Quaternion.Euler(keys[i].rotation.x, keys[i].rotation.y, keys[i].rotation.z);
                     offset = Quaternion.Slerp(offset, offset * euler, keys[i].Evaluate(result.percent));
                 }
-            }
-            Quaternion rotation = look * offset;
-            Vector3 invertedNormal = Quaternion.Inverse(result.rotation) * result.up;
+
+            var rotation       = look                                * offset;
+            var invertedNormal = Quaternion.Inverse(result.rotation) * result.up;
             result.forward = rotation * Vector3.forward;
-            result.up = rotation * invertedNormal;
+            result.up      = rotation * invertedNormal;
+        }
+
+        [Serializable]
+        public class RotationKey : Key
+        {
+            public bool      useLookTarget;
+            public Transform target;
+            public Vector3   rotation = Vector3.zero;
+
+            public RotationKey(Vector3 rotation, double f, double t, RotationModifier modifier) : base(f, t, modifier)
+            {
+                this.rotation = rotation;
+            }
         }
     }
 }

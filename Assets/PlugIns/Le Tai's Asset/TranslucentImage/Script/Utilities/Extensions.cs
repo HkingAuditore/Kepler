@@ -6,12 +6,12 @@ namespace LeTai.Asset.TranslucentImage
 {
     public static class Extensions
     {
-        static Mesh fullscreenTriangle;
+        private static Mesh fullscreenTriangle;
 
         /// <summary>
-        /// A fullscreen triangle mesh.
+        ///     A fullscreen triangle mesh.
         /// </summary>
-        static Mesh FullscreenTriangle
+        private static Mesh FullscreenTriangle
         {
             get
             {
@@ -20,13 +20,13 @@ namespace LeTai.Asset.TranslucentImage
 
                 fullscreenTriangle = new Mesh {name = "Fullscreen Triangle"};
                 fullscreenTriangle.SetVertices(
-                    new List<Vector3>
-                    {
-                        new Vector3(-1f, -1f, 0f),
-                        new Vector3(-1f, 3f,  0f),
-                        new Vector3(3f,  -1f, 0f)
-                    }
-                );
+                                               new List<Vector3>
+                                               {
+                                                   new Vector3(-1f, -1f, 0f),
+                                                   new Vector3(-1f, 3f,  0f),
+                                                   new Vector3(3f,  -1f, 0f)
+                                               }
+                                              );
                 fullscreenTriangle.SetIndices(new[] {0, 1, 2}, MeshTopology.Triangles, 0, false);
                 fullscreenTriangle.UploadMeshData(false);
 
@@ -68,21 +68,21 @@ namespace LeTai.Asset.TranslucentImage
         public static Vector4 ToMinMaxVector(this Rect self)
         {
             return new Vector4(
-                self.xMin,
-                self.yMin,
-                self.xMax,
-                self.yMax
-            );
+                               self.xMin,
+                               self.yMin,
+                               self.xMax,
+                               self.yMax
+                              );
         }
 
         public static Vector4 ToVector4(this Rect self)
         {
             return new Vector4(
-                self.xMin,
-                self.yMin,
-                self.width,
-                self.height
-            );
+                               self.xMin,
+                               self.yMin,
+                               self.width,
+                               self.height
+                              );
         }
     }
 }

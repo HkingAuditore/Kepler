@@ -435,19 +435,23 @@
         </e>
         <e p="Quiz" t="Include">
           <e p="21-04-03.xml" t="Include" />
+          <e p="估算太阳质量.xml" t="Include" />
           <e p="双星.xml" t="Include" />
           <e p="四星.xml" t="Include" />
           <e p="地日.xml" t="Include" />
           <e p="地月.xml" t="Include" />
+          <e p="求太阳密度.xml" t="Include" />
+          <e p="求太阳质量.xml" t="Include" />
           <e p="真实地日.xml" t="Include" />
           <e p="真实地月.xml" t="Include" />
+          <e p="计算太阳质量.xml" t="Include" />
         </e>
         <e p="Scripts" t="Include">
           <e p="Animation" t="Include">
             <e p="AstronautsAnimation.cs" t="Include" />
           </e>
           <e p="BloomEffect.cs" t="Include" />
-          <e p="Camera" t="Include">
+          <e p="CustomCamera" t="Include">
             <e p="CameraController.cs" t="Include" />
             <e p="CameraLayerMixer.cs" t="Include" />
             <e p="LayerCamera.cs" t="Include" />
@@ -458,53 +462,7 @@
             <e p="Dof.cs" t="Include" />
             <e p="OutlineCatcher.cs" t="Include" />
           </e>
-          <e p="DeferredFogEffect.cs" t="Include" />
-          <e p="DepthOfFieldEffect.cs" t="Include" />
-          <e p="Editor" t="Include">
-            <e p="MyLightingShaderGUI.cs" t="Include" />
-          </e>
-          <e p="EmissiveOscillator.cs" t="Include" />
-          <e p="GameManager" t="Include">
-            <e p="GameManager.cs" t="Include" />
-            <e p="GlobalTimer.cs" t="Include" />
-            <e p="GlobalTransfer.cs" t="Include" />
-          </e>
-          <e p="GPUInstancingTest.cs" t="Include" />
-          <e p="Init" t="Include">
-            <e p="Init.cs" t="Include" />
-          </e>
-          <e p="MathPlus" t="Include">
-            <e p="MathPlus.cs" t="Include" />
-          </e>
-          <e p="Quiz" t="Include">
-            <e p="QuizAstralBody.cs" t="Include" />
-            <e p="QuizBase.cs" t="Include" />
-            <e p="QuizData.cs" t="Include" />
-            <e p="QuizEditor.cs" t="Include" />
-            <e p="QuizSaver.cs" t="Include" />
-            <e p="QuizSolver.cs" t="Include" />
-            <e p="Transformer.cs" t="Include" />
-          </e>
-          <e p="Satellite" t="Include">
-            <e p="Satellite.cs" t="Include" />
-            <e p="SatelliteChallengeManger.cs" t="Include" />
-            <e p="SatelliteController.cs" t="Include" />
-            <e p="SatelliteCore.cs" t="Include" />
-            <e p="SatelliteEngine.cs" t="Include" />
-            <e p="SatelliteParachute.cs" t="Include" />
-            <e p="SatellitePart.cs" t="Include" />
-          </e>
-          <e p="SpacePhysic" t="Include">
-            <e p="AstralBody.cs" t="Include" />
-            <e p="GravityTracing.cs" t="Include" />
-            <e p="IOrbitCalculator.cs" t="Include" />
-          </e>
-          <e p="TangentSpaceVisualizer.cs" t="Include" />
-          <e p="TTS" t="Include">
-            <e p="MSCDLL.cs" t="Include" />
-            <e p="VoiceGenerator.cs" t="Include" />
-          </e>
-          <e p="UI" t="Include">
+          <e p="CustomUI" t="Include">
             <e p="AstralBodyAddUI.cs" t="Include" />
             <e p="AstralBodyEditorUI.cs" t="Include" />
             <e p="AstralBodyPlacementUI.cs" t="Include" />
@@ -545,6 +503,55 @@
             <e p="UIManager.cs" t="Include" />
             <e p="VectorUI.cs" t="Include" />
             <e p="VelocityEditorUI.cs" t="Include" />
+          </e>
+          <e p="DeferredFogEffect.cs" t="Include" />
+          <e p="DepthOfFieldEffect.cs" t="Include" />
+          <e p="Editor" t="Include">
+            <e p="MyLightingShaderGUI.cs" t="Include" />
+          </e>
+          <e p="EmissiveOscillator.cs" t="Include" />
+          <e p="GameManagers" t="Include">
+            <e p="GameManager.cs" t="Include" />
+            <e p="GlobalTimer.cs" t="Include" />
+            <e p="GlobalTransfer.cs" t="Include" />
+          </e>
+          <e p="GPUInstancingTest.cs" t="Include" />
+          <e p="Init" t="Include">
+            <e p="Init.cs" t="Include" />
+          </e>
+          <e p="MathPlus" t="Include">
+            <e p="MathPlus.cs" t="Include" />
+          </e>
+          <e p="Quiz" t="Include">
+            <e p="QuizAstralBody.cs" t="Include" />
+            <e p="QuizBase.cs" t="Include" />
+            <e p="QuizData.cs" t="Include" />
+            <e p="QuizEditor.cs" t="Include" />
+            <e p="QuizSaver.cs" t="Include" />
+            <e p="QuizSolver.cs" t="Include" />
+            <e p="Transformer.cs" t="Include" />
+          </e>
+          <e p="Satellite" t="Include">
+            <e p="Satellite.cs" t="Include" />
+            <e p="SatelliteChallengeManger.cs" t="Include" />
+            <e p="SatelliteController.cs" t="Include" />
+            <e p="SatelliteCore.cs" t="Include" />
+            <e p="SatelliteEngine.cs" t="Include" />
+            <e p="SatelliteParachute.cs" t="Include" />
+            <e p="SatellitePart.cs" t="Include" />
+          </e>
+          <e p="SpacePhysic" t="Include">
+            <e p="AstralBody.cs" t="Include" />
+            <e p="GravityTracing.cs" t="Include" />
+            <e p="IOrbitCalculator.cs" t="Include" />
+          </e>
+          <e p="StaticClasses" t="Include">
+            <e p="StringPlus.cs" t="Include" />
+          </e>
+          <e p="TangentSpaceVisualizer.cs" t="Include" />
+          <e p="TTS" t="Include">
+            <e p="MSCDLL.cs" t="Include" />
+            <e p="VoiceGenerator.cs" t="Include" />
           </e>
         </e>
         <e p="Shaders" t="Include">

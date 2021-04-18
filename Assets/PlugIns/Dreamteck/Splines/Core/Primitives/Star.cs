@@ -1,14 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Dreamteck.Splines.Primitives
 {
     public class Star : SplinePrimitive
     {
+        public float depth  = 0.5f;
         public float radius = 1f;
-        public float depth = 0.5f;
-        public int sides = 5;
+        public int   sides  = 5;
 
         public override Spline.Type GetSplineType()
         {
@@ -20,13 +18,15 @@ namespace Dreamteck.Splines.Primitives
             base.Generate();
             closed = true;
             CreatePoints(sides * 2 + 1, SplinePoint.Type.SmoothMirrored);
-            float innerRadius = radius * depth;
-            for (int i = 0; i < sides * 2; i++)
+            var innerRadius = radius * depth;
+            for (var i = 0; i < sides * 2; i++)
             {
-                float percent = (float)i / (float)(sides * 2);
-                Vector3 pos = Quaternion.AngleAxis(180 + 360f * percent, Vector3.forward) * Vector3.up * ((float)i % 2f == 0 ? radius : innerRadius);
+                var percent = i / (float) (sides * 2);
+                var pos = Quaternion.AngleAxis(180 + 360f * percent, Vector3.forward) * Vector3.up *
+                          ((float) i % 2f == 0 ? radius : innerRadius);
                 points[i].SetPosition(pos);
             }
+
             points[points.Length - 1] = points[0];
         }
     }

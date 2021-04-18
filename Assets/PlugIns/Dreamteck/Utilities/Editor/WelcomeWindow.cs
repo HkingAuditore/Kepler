@@ -1,52 +1,21 @@
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using UnityEditor;
+using UnityEngine;
 
 namespace Dreamteck
 {
     public class WelcomeWindow : EditorWindow
     {
         public delegate void EmptyHandler();
-        protected WindowPanel[] panels = new WindowPanel[0];
-        protected Texture2D header;
-        protected static GUIStyle wrapText;
-        protected static GUIStyle buttonTitleText;
-        protected static GUIStyle warningText;
-        protected static GUIStyle titleText;
-        protected string headerTitle = "";
-        private static bool init = true;
 
-        public virtual void Load()
-        {
-            minSize = maxSize = new Vector2(450, 500);
-            buttonTitleText = new GUIStyle(GUI.skin.GetStyle("label"));
-            buttonTitleText.fontStyle = FontStyle.Bold;
-            titleText = new GUIStyle(GUI.skin.GetStyle("label"));
-            titleText.fontSize = 25;
-            titleText.fontStyle = FontStyle.Bold;
-            titleText.alignment = TextAnchor.MiddleLeft;
-            titleText.normal.textColor = Color.white;
-            warningText = new GUIStyle(GUI.skin.GetStyle("label"));
-            warningText.fontSize = 18;
-            warningText.fontStyle = FontStyle.Bold;
-            warningText.normal.textColor = Color.red;
-            warningText.alignment = TextAnchor.MiddleCenter;
-            wrapText = new GUIStyle(GUI.skin.GetStyle("label"));
-            wrapText.wordWrap = true;
-            init = false; 
-        }
-
-        protected virtual void SetTitle(string titleBar, string header)
-        {
-            titleContent = new GUIContent(titleBar);
-            headerTitle = header;
-        }
-
-        protected virtual void GetHeader()
-        {
-            header = null;
-        }
+        protected static GUIStyle      wrapText;
+        protected static GUIStyle      buttonTitleText;
+        protected static GUIStyle      warningText;
+        protected static GUIStyle      titleText;
+        private static   bool          init = true;
+        protected        Texture2D     header;
+        protected        string        headerTitle = "";
+        protected        WindowPanel[] panels      = new WindowPanel[0];
 
         protected void OnEnable()
         {
@@ -55,33 +24,64 @@ namespace Dreamteck
 
         protected void OnGUI()
         {
-            if (init)
-            {
-                Load();
-            }
+            if (init) Load();
             if (header == null) GetHeader();
-            GUI.DrawTexture(new Rect(0, 0, maxSize.x, 82), header, ScaleMode.StretchToFill);
-            GUI.Label(new Rect(90, 15, Screen.width - 95, 50), headerTitle, titleText);
-            for (int i = 0; i < panels.Length; i++)
-            {
-                panels[i].Draw();
-            }
+            GUI.DrawTexture(new Rect(0, 0,  maxSize.x,         82), header, ScaleMode.StretchToFill);
+            GUI.Label(new Rect(90,      15, Screen.width - 95, 50), headerTitle, titleText);
+            for (var i = 0; i < panels.Length; i++) panels[i].Draw();
             Repaint();
+        }
 
+        public virtual void Load()
+        {
+            minSize                      = maxSize = new Vector2(450, 500);
+            buttonTitleText              = new GUIStyle(GUI.skin.GetStyle("label"));
+            buttonTitleText.fontStyle    = FontStyle.Bold;
+            titleText                    = new GUIStyle(GUI.skin.GetStyle("label"));
+            titleText.fontSize           = 25;
+            titleText.fontStyle          = FontStyle.Bold;
+            titleText.alignment          = TextAnchor.MiddleLeft;
+            titleText.normal.textColor   = Color.white;
+            warningText                  = new GUIStyle(GUI.skin.GetStyle("label"));
+            warningText.fontSize         = 18;
+            warningText.fontStyle        = FontStyle.Bold;
+            warningText.normal.textColor = Color.red;
+            warningText.alignment        = TextAnchor.MiddleCenter;
+            wrapText                     = new GUIStyle(GUI.skin.GetStyle("label"));
+            wrapText.wordWrap            = true;
+            init                         = false;
+        }
+
+        protected virtual void SetTitle(string titleBar, string header)
+        {
+            titleContent = new GUIContent(titleBar);
+            headerTitle  = header;
+        }
+
+        protected virtual void GetHeader()
+        {
+            header = null;
         }
 
         public class WindowPanel
         {
-            public WindowPanel back = null;
-            public float slideStart = 0f;
-            public float slideDuration = 1f;
-            public enum SlideDiretion { Left, Right, Up, Down }
-            public SlideDiretion openDirection = SlideDiretion.Left;
-            public SlideDiretion closeDirection = SlideDiretion.Right;
-            private Vector2 origin = Vector2.zero;
-            private bool open = false;
-            private bool goingBack = false;
-            public List<Element> elements = new List<Element>();
+            public enum SlideDiretion
+            {
+                Left,
+                Right,
+                Up,
+                Down
+            }
+
+            public  WindowPanel   back;
+            public  SlideDiretion closeDirection = SlideDiretion.Right;
+            public  List<Element> elements       = new List<Element>();
+            private bool          goingBack;
+            private bool          open;
+            public  SlideDiretion openDirection = SlideDiretion.Left;
+            private Vector2       origin        = Vector2.zero;
+            public  float         slideDuration = 1f;
+            public  float         slideStart;
 
             public WindowPanel(string title, bool o, float slideDur = 1f)
             {
@@ -96,13 +96,7 @@ namespace Dreamteck
                 back = backPanel;
             }
 
-            public bool isActive
-            {
-                get
-                {
-                    return open || Time.realtimeSinceStartup - slideStart <= slideDuration;
-                }
-            }
+            public bool isActive => open || Time.realtimeSinceStartup - slideStart <= slideDuration;
 
             public void Back()
             {
@@ -121,19 +115,18 @@ namespace Dreamteck
                 SetState(true, useTransition, goBack);
             }
 
-            Vector2 GetSize()
+            private Vector2 GetSize()
             {
-                return new Vector2(Screen.width, Screen.height- 82);
+                return new Vector2(Screen.width, Screen.height - 82);
             }
 
-            void HandleOrigin()
+            private void HandleOrigin()
             {
-                float percent = Mathf.Clamp01((Time.realtimeSinceStartup - slideStart) / slideDuration);
-                Vector2 size = GetSize();
-                SlideDiretion dir = openDirection;
+                var percent        = Mathf.Clamp01((Time.realtimeSinceStartup - slideStart) / slideDuration);
+                var size           = GetSize();
+                var dir            = openDirection;
                 if (goingBack) dir = closeDirection;
                 if (open)
-                {
                     switch (dir)
                     {
                         case SlideDiretion.Left:
@@ -156,9 +149,7 @@ namespace Dreamteck
                             origin.y = Mathf.SmoothStep(-size.y, 0f, percent);
                             break;
                     }
-                }
                 else
-                {
                     switch (dir)
                     {
                         case SlideDiretion.Left:
@@ -181,15 +172,14 @@ namespace Dreamteck
                             origin.y = Mathf.SmoothStep(0f, -size.y, percent);
                             break;
                     }
-                }
             }
 
-            void SetState(bool state, bool useTransition, bool goBack = false)
+            private void SetState(bool state, bool useTransition, bool goBack = false)
             {
                 if (open == state) return;
                 open = state;
                 if (useTransition) slideStart = Time.realtimeSinceStartup;
-                else slideStart = Time.realtimeSinceStartup + slideDuration;
+                else slideStart               = Time.realtimeSinceStartup + slideDuration;
                 goingBack = goBack;
             }
 
@@ -197,30 +187,26 @@ namespace Dreamteck
             {
                 if (!isActive) return;
                 HandleOrigin();
-                Vector2 size = GetSize();
+                var size = GetSize();
                 GUILayout.BeginArea(new Rect(origin.x + 25, origin.y + 85, size.x - 25, size.y));
                 //Back button
                 if (back != null)
-                {
                     if (GUILayout.Button("◄", GUILayout.Width(45), GUILayout.Height(25)))
-                    {
                         Back();
-                    }
-                }
 
-                for (int i = 0; i < elements.Count; i++) elements[i].Draw();
+                for (var i = 0; i < elements.Count; i++) elements[i].Draw();
                 GUILayout.EndArea();
             }
 
 
             public class Element
             {
-                protected Vector2 size = Vector2.zero;
-                public ActionLink action = null;
+                public    ActionLink action;
+                protected Vector2    size = Vector2.zero;
 
                 public Element(float x, float y, ActionLink a = null)
                 {
-                    size = new Vector2(x, y);
+                    size   = new Vector2(x, y);
                     action = a;
                 }
 
@@ -233,7 +219,6 @@ namespace Dreamteck
             {
                 public Space(float x, float y) : base(x, y)
                 {
-           
                 }
 
                 internal override void Draw()
@@ -244,7 +229,7 @@ namespace Dreamteck
 
             public class Button : Element
             {
-                string text = "";
+                private readonly string text = "";
 
                 public Button(float x, float y, string t, ActionLink a) : base(x, y, a)
                 {
@@ -254,35 +239,35 @@ namespace Dreamteck
                 internal override void Draw()
                 {
                     base.Draw();
-                    if(GUILayout.Button(text, GUILayout.Width(size.x), GUILayout.Height(size.y)))
-                    {
-                        if (action != null) action.Do();
-                    }
+                    if (GUILayout.Button(text, GUILayout.Width(size.x), GUILayout.Height(size.y)))
+                        if (action != null)
+                            action.Do();
                 }
             }
 
             public class Thumbnail : Element
             {
-                private string thumbnailPath = "";
-                private string thumbnailName = "";
-                private Texture2D thumbnail = null;
-                public string title = "";
-                public string description = "";
+                public           string    description = "";
+                private readonly Texture2D thumbnail;
+                private readonly string    thumbnailName = "";
+                private readonly string    thumbnailPath = "";
+                public           string    title         = "";
 
-                public Thumbnail(string path, string fileName, string t, string d, ActionLink a, float x = 400, float y = 60) : base(x, y, a)
+                public Thumbnail(string path, string fileName, string t, string d, ActionLink a, float x = 400,
+                                 float  y = 60) : base(x, y, a)
                 {
-                    title = t;
-                    description = d;
+                    title         = t;
+                    description   = d;
                     thumbnailPath = path;
                     thumbnailName = fileName;
-                    
+
                     thumbnail = ResourceUtility.EditorLoadTexture(thumbnailPath, thumbnailName);
                 }
 
                 internal override void Draw()
                 {
-                    Rect rect = GUILayoutUtility.GetRect(size.x, size.y);
-                    Color buttonColor = Color.clear;
+                    var rect = GUILayoutUtility.GetRect(size.x, size.y);
+                    var buttonColor = Color.clear;
                     if (rect.Contains(Event.current.mousePosition)) buttonColor = Color.white;
                     GUI.BeginGroup(rect);
                     GUI.color = buttonColor;
@@ -290,10 +275,11 @@ namespace Dreamteck
                     GUI.color = Color.white;
                     if (thumbnail != null)
                     {
-                        Vector2 offset = new Vector2(0, (size.y - 50) / 2);
+                        var offset = new Vector2(0, (size.y - 50)    / 2);
                         GUI.DrawTexture(new Rect(offset, Vector2.one * 50), thumbnail, ScaleMode.StretchToFill);
                     }
-                    GUI.Label(new Rect(60, 5, 370 - 65, 16), title, buttonTitleText);
+
+                    GUI.Label(new Rect(60, 5,  370 - 65, 16), title,       buttonTitleText);
                     GUI.Label(new Rect(60, 20, 370 - 65, 40), description, wrapText);
                     GUI.EndGroup();
                     GUILayout.Space(10);
@@ -302,8 +288,8 @@ namespace Dreamteck
 
             public class ScrollText : Element
             {
-                Vector2 scroll = Vector2.zero;
-                string text = "";
+                private          Vector2 scroll = Vector2.zero;
+                private readonly string  text   = "";
 
                 public ScrollText(float x, float y, string t) : base(x, y)
                 {
@@ -321,40 +307,43 @@ namespace Dreamteck
 
             public class Label : Element
             {
-                string text = "";
-                Color color;
-                GUIStyle style = null;
+                private readonly Color    color;
+                private readonly GUIStyle style;
+                private readonly string   text = "";
+
                 public Label(string t, GUIStyle s, Color col) : base(400, 30)
                 {
                     color = col;
-                    text = t;
+                    text  = t;
                     style = s;
                 }
 
                 public Label(string t, GUIStyle s, Color col, float x, float y) : base(x, y)
                 {
                     color = col;
-                    text = t;
+                    text  = t;
                     style = s;
                 }
 
                 internal override void Draw()
                 {
                     base.Draw();
-                    Color prev = GUI.color;
+                    var prev = GUI.color;
                     GUI.color = color;
-                    if(style == null) EditorGUILayout.LabelField(text, GUILayout.Width(size.x), GUILayout.Height(size.y));
+                    if (style == null)
+                        EditorGUILayout.LabelField(text,  GUILayout.Width(size.x), GUILayout.Height(size.y));
                     else EditorGUILayout.LabelField(text, style, GUILayout.Width(size.x), GUILayout.Height(size.y));
                     GUI.color = prev;
                 }
             }
         }
 
-        public class ActionLink {
-            private string URL = "";
-            private WindowPanel currentPanel = null;
-            private WindowPanel targetPanel = null;
-            private EmptyHandler customHandler = null; 
+        public class ActionLink
+        {
+            private readonly WindowPanel  currentPanel;
+            private readonly EmptyHandler customHandler;
+            private readonly WindowPanel  targetPanel;
+            private readonly string       URL = "";
 
             public ActionLink(string u)
             {
@@ -369,20 +358,25 @@ namespace Dreamteck
             public ActionLink(WindowPanel target, WindowPanel current)
             {
                 currentPanel = current;
-                targetPanel = target;
+                targetPanel  = target;
             }
 
             public void Do()
             {
-                if (customHandler != null) customHandler();
-                else if(URL != "") Application.OpenURL(URL);
-                else if(targetPanel != null && currentPanel != null)
+                if (customHandler != null)
+                {
+                    customHandler();
+                }
+                else if (URL != "")
+                {
+                    Application.OpenURL(URL);
+                }
+                else if (targetPanel != null && currentPanel != null)
                 {
                     currentPanel.Close(true);
                     targetPanel.Open(true);
                 }
             }
         }
-
     }
 }

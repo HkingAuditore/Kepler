@@ -1,21 +1,11 @@
-﻿namespace Dreamteck.Splines
-{
-    using System.Collections;
-    using System.Collections.Generic;
-    using UnityEngine;
+﻿using System;
+using System.Collections.Generic;
 
-    [System.Serializable]
+namespace Dreamteck.Splines
+{
+    [Serializable]
     public class FollowerSpeedModifier : SplineSampleModifier
     {
-        [System.Serializable]
-        public class SpeedKey : Key
-        {
-            public float speed = 0f;
-
-            public SpeedKey(double f, double t, FollowerSpeedModifier modifier) : base(f, t, modifier)
-            {
-            }
-        }
         public List<SpeedKey> keys = new List<SpeedKey>();
 
         public FollowerSpeedModifier()
@@ -25,21 +15,18 @@
 
         public override List<Key> GetKeys()
         {
-            List<Key> output = new List<Key>();
-            for (int i = 0; i < keys.Count; i++)
-            {
-                output.Add(keys[i]);
-            }
+            var output = new List<Key>();
+            for (var i = 0; i < keys.Count; i++) output.Add(keys[i]);
             return output;
         }
 
         public override void SetKeys(List<Key> input)
         {
             keys = new List<SpeedKey>();
-            for (int i = 0; i < input.Count; i++)
+            for (var i = 0; i < input.Count; i++)
             {
                 input[i].modifier = this;
-                keys.Add((SpeedKey)input[i]);
+                keys.Add((SpeedKey) input[i]);
             }
         }
 
@@ -54,13 +41,24 @@
 
         public float GetSpeed(SplineSample sample)
         {
-            float speed = 0f;
-            for (int i = 0; i < keys.Count; i++)
+            var speed = 0f;
+            for (var i = 0; i < keys.Count; i++)
             {
-                float lerp = keys[i].Evaluate(sample.percent);
+                var lerp = keys[i].Evaluate(sample.percent);
                 speed += keys[i].speed * lerp;
             }
+
             return speed;
+        }
+
+        [Serializable]
+        public class SpeedKey : Key
+        {
+            public float speed;
+
+            public SpeedKey(double f, double t, FollowerSpeedModifier modifier) : base(f, t, modifier)
+            {
+            }
         }
     }
 }

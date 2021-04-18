@@ -5,11 +5,11 @@ namespace LeTai.Asset.TranslucentImage.Demo
     [RequireComponent(typeof(TranslucentImageSource))]
     public class ChangeBlurConfig : MonoBehaviour
     {
-        TranslucentImageSource    source;
-        public TranslucentImage[] translucentImages;
+        public  TranslucentImage[]     translucentImages;
+        private TranslucentImageSource source;
 
         // Use this for initialization
-        void Awake()
+        private void Awake()
         {
             source = GetComponent<TranslucentImageSource>();
         }
@@ -50,10 +50,7 @@ namespace LeTai.Asset.TranslucentImage.Demo
 
         public void ChangeVibrancy(float value)
         {
-            for (int i = 0; i < translucentImages.Length; i++)
-            {
-                translucentImages[i].vibrancy = value;
-            }
+            for (var i = 0; i < translucentImages.Length; i++) translucentImages[i].vibrancy = value;
         }
     }
 }

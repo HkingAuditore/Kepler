@@ -1,13 +1,11 @@
-﻿namespace Dreamteck.Splines.Examples
-{
-    using System.Collections;
-    using System.Collections.Generic;
-    using UnityEngine;
+﻿using UnityEngine;
 
+namespace Dreamteck.Splines.Examples
+{
     public class LapCounter : MonoBehaviour
     {
-        int currentLap;
-        public TextMesh text;
+        public  TextMesh text;
+        private int      currentLap;
 
         public void CountLap()
         {

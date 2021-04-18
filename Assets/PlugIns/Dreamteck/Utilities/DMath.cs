@@ -1,6 +1,5 @@
-﻿using UnityEngine;
-using System.Collections;
-using System;
+﻿using System;
+using UnityEngine;
 
 namespace Dreamteck
 {
@@ -59,17 +58,17 @@ namespace Dreamteck
         public static double InverseLerp(double a, double b, double t)
         {
             if (a == b) return 0.0;
-            return Clamp01((t-a)/(b-a));
+            return Clamp01((t - a) / (b - a));
         }
 
         public static Vector3 LerpVector3(Vector3 a, Vector3 b, double t)
         {
             t = Clamp01(t);
-            Vector3 delta = (b - a);
-            double x = a.x + delta.x * t;
-            double y = a.y + delta.y * t;
-            double z = a.z + delta.z * t;
-            return new Vector3((float)x, (float)y, (float)z);
+            var delta = b   - a;
+            var x     = a.x + delta.x * t;
+            var y     = a.y + delta.y * t;
+            var z     = a.z + delta.z * t;
+            return new Vector3((float) x, (float) y, (float) z);
         }
 
         public static double Round(double a)
@@ -79,7 +78,7 @@ namespace Dreamteck
 
         public static int RoundInt(double a)
         {
-            return (int)Math.Round(a);
+            return (int) Math.Round(a);
         }
 
         public static double Ceil(double a)
@@ -89,7 +88,7 @@ namespace Dreamteck
 
         public static int CeilInt(double a)
         {
-            return (int)Math.Ceiling(a);
+            return (int) Math.Ceiling(a);
         }
 
         public static double Floor(double a)
@@ -99,7 +98,7 @@ namespace Dreamteck
 
         public static int FloorInt(double a)
         {
-            return (int)Math.Floor(a);
+            return (int) Math.Floor(a);
         }
 
         public static double Move(double current, double target, double amount)
@@ -114,6 +113,7 @@ namespace Dreamteck
                 current -= amount;
                 if (current < target) return target;
             }
+
             return current;
         }
 

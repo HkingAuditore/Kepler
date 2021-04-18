@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using SpacePhysic;
 using UnityEngine;
 
 namespace Satellite
@@ -18,7 +19,7 @@ namespace Satellite
         private readonly Dictionary<string, FixedJoint> _connectedJoints = new Dictionary<string, FixedJoint>();
 
         // public float mass;
-        public SatelliteType PartType      { get; set; }
+        public SatelliteType PartType { get; set; }
 
 
         private protected override void SetMass()

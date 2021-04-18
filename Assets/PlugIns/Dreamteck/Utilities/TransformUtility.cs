@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Dreamteck
@@ -37,12 +35,13 @@ namespace Dreamteck
 
         public static bool IsParent(Transform child, Transform parent)
         {
-            Transform current = child;
-            while(current.parent != null)
+            var current = child;
+            while (current.parent != null)
             {
                 current = current.parent;
                 if (current == parent) return true;
             }
+
             return false;
         }
     }

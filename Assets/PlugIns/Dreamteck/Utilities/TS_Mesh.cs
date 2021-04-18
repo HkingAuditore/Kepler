@@ -1,34 +1,27 @@
-using UnityEngine;
-using System.Collections;
 using System.Collections.Generic;
+using UnityEngine;
 
 namespace Dreamteck
 {
     //Thread-safe mesh & bounds classes for working with threads.
     public class TS_Mesh
     {
-        public int vertexCount
-        {
-            get { return vertices.Length; }
-            set { }
-        }
-        public Vector3[] vertices = new Vector3[0];
-        public Vector3[] normals = new Vector3[0];
-        public Vector4[] tangents = new Vector4[0];
-        public Color[] colors = new Color[0];
-        public Vector2[] uv = new Vector2[0];
-        public Vector2[] uv2 = new Vector2[0];
-        public Vector2[] uv3 = new Vector2[0];
-        public Vector2[] uv4 = new Vector2[0];
-        public int[] triangles = new int[0];
-        public List<int[]> subMeshes = new List<int[]>();
         public TS_Bounds bounds = new TS_Bounds(Vector3.zero, Vector3.zero);
+        public Color[]   colors = new Color[0];
 
-        public volatile bool hasUpdate = false;
+        public volatile bool        hasUpdate;
+        public          Vector3[]   normals   = new Vector3[0];
+        public          List<int[]> subMeshes = new List<int[]>();
+        public          Vector4[]   tangents  = new Vector4[0];
+        public          int[]       triangles = new int[0];
+        public          Vector2[]   uv        = new Vector2[0];
+        public          Vector2[]   uv2       = new Vector2[0];
+        public          Vector2[]   uv3       = new Vector2[0];
+        public          Vector2[]   uv4       = new Vector2[0];
+        public          Vector3[]   vertices  = new Vector3[0];
 
         public TS_Mesh()
         {
-
         }
 
         public TS_Mesh(Mesh mesh)
@@ -36,74 +29,79 @@ namespace Dreamteck
             CreateFromMesh(mesh);
         }
 
+        public int vertexCount
+        {
+            get => vertices.Length;
+            set { }
+        }
+
         public void Clear()
         {
-            vertices = new Vector3[0];
-            normals = new Vector3[0];
-            tangents = new Vector4[0];
-            colors = new Color[0];
-            uv = new Vector2[0];
-            uv2 = new Vector2[0];
-            uv3 = new Vector2[0];
-            uv4 = new Vector2[0];
+            vertices  = new Vector3[0];
+            normals   = new Vector3[0];
+            tangents  = new Vector4[0];
+            colors    = new Color[0];
+            uv        = new Vector2[0];
+            uv2       = new Vector2[0];
+            uv3       = new Vector2[0];
+            uv4       = new Vector2[0];
             triangles = new int[0];
             subMeshes = new List<int[]>();
-            bounds = new TS_Bounds(Vector3.zero, Vector3.zero);
+            bounds    = new TS_Bounds(Vector3.zero, Vector3.zero);
         }
 
         public void CreateFromMesh(Mesh mesh)
         {
-            vertices = mesh.vertices;
-            normals = mesh.normals;
-            tangents = mesh.tangents;
-            colors = mesh.colors;
-            uv = mesh.uv;
-            uv2 = mesh.uv2;
-            uv3 = mesh.uv3;
-            uv4 = mesh.uv4;
+            vertices  = mesh.vertices;
+            normals   = mesh.normals;
+            tangents  = mesh.tangents;
+            colors    = mesh.colors;
+            uv        = mesh.uv;
+            uv2       = mesh.uv2;
+            uv3       = mesh.uv3;
+            uv4       = mesh.uv4;
             triangles = mesh.triangles;
-            bounds = new TS_Bounds(mesh.bounds);
-            for (int i = 0; i < mesh.subMeshCount; i++)
-            {
-                subMeshes.Add(mesh.GetTriangles(i));
-            }
+            bounds    = new TS_Bounds(mesh.bounds);
+            for (var i = 0; i < mesh.subMeshCount; i++) subMeshes.Add(mesh.GetTriangles(i));
         }
 
         public void Combine(List<TS_Mesh> newMeshes, bool overwrite = false)
         {
-            int newVerts = 0;
-            int newTris = 0;
-            int submeshCount = 0;
-            for(int i = 0; i < newMeshes.Count; i++)
+            var newVerts     = 0;
+            var newTris      = 0;
+            var submeshCount = 0;
+            for (var i = 0; i < newMeshes.Count; i++)
             {
                 newVerts += newMeshes[i].vertexCount;
-                newTris += newMeshes[i].triangles.Length;
+                newTris  += newMeshes[i].triangles.Length;
                 if (newMeshes[i].subMeshes.Count > submeshCount) submeshCount = newMeshes[i].subMeshes.Count;
             }
-            int[] submeshTrisCount = new int[submeshCount];
-            int[] submeshOffsets = new int[submeshCount];
-            for (int i = 0; i < newMeshes.Count; i++)
+
+            var submeshTrisCount = new int[submeshCount];
+            var submeshOffsets   = new int[submeshCount];
+            for (var i = 0; i < newMeshes.Count; i++)
             {
-                for (int j = 0; j < newMeshes[i].subMeshes.Count; j++) submeshTrisCount[j] += newMeshes[i].subMeshes[j].Length;
+                for (var j = 0; j < newMeshes[i].subMeshes.Count; j++)
+                    submeshTrisCount[j] += newMeshes[i].subMeshes[j].Length;
             }
 
             if (overwrite)
             {
-                int vertexOffset = 0;
-                int trisOffset = 0;
-                if (vertices.Length != newVerts) vertices = new Vector3[newVerts];
-                if (normals.Length != newVerts) normals = new Vector3[newVerts];
-                if (uv.Length != newVerts) uv = new Vector2[newVerts];
-                if (uv2.Length != newVerts) uv2 = new Vector2[newVerts];
-                if (uv3.Length != newVerts) uv3 = new Vector2[newVerts];
-                if (uv4.Length != newVerts) uv4 = new Vector2[newVerts];
-                if (colors.Length != newVerts) colors = new Color[newVerts];
-                if (tangents.Length != newVerts) tangents = new Vector4[newVerts];
+                var vertexOffset                           = 0;
+                var trisOffset                             = 0;
+                if (vertices.Length  != newVerts) vertices = new Vector3[newVerts];
+                if (normals.Length   != newVerts) normals  = new Vector3[newVerts];
+                if (uv.Length        != newVerts) uv       = new Vector2[newVerts];
+                if (uv2.Length       != newVerts) uv2      = new Vector2[newVerts];
+                if (uv3.Length       != newVerts) uv3      = new Vector2[newVerts];
+                if (uv4.Length       != newVerts) uv4      = new Vector2[newVerts];
+                if (colors.Length    != newVerts) colors   = new Color[newVerts];
+                if (tangents.Length  != newVerts) tangents = new Vector4[newVerts];
                 if (triangles.Length != newTris) triangles = new int[newTris];
-                if (subMeshes.Count != submeshCount) subMeshes.Clear();
-                
+                if (subMeshes.Count  != submeshCount) subMeshes.Clear();
 
-                for (int i = 0; i < newMeshes.Count; i++)
+
+                for (var i = 0; i < newMeshes.Count; i++)
                 {
                     newMeshes[i].vertices.CopyTo(vertices, vertexOffset);
                     newMeshes[i].normals.CopyTo(normals, vertexOffset);
@@ -114,43 +112,45 @@ namespace Dreamteck
                     newMeshes[i].colors.CopyTo(colors, vertexOffset);
                     newMeshes[i].tangents.CopyTo(tangents, vertexOffset);
 
-                    for (int j = trisOffset; j < trisOffset + newMeshes[i].triangles.Length; j++) triangles[j] = newMeshes[i].triangles[j - newTris] + vertexOffset;
+                    for (var j = trisOffset; j < trisOffset + newMeshes[i].triangles.Length; j++)
+                        triangles[j] = newMeshes[i].triangles[j - newTris] + vertexOffset;
                     trisOffset += newMeshes[i].triangles.Length;
 
-                    for (int j = 0; j < newMeshes[i].subMeshes.Count; j++)
+                    for (var j = 0; j < newMeshes[i].subMeshes.Count; j++)
                     {
-                        if (j >= subMeshes.Count) subMeshes.Add(new int[submeshTrisCount[j]]);
-                        else if (subMeshes[j].Length != submeshTrisCount[j]) subMeshes[j] = new int[submeshTrisCount[j]];
+                        if (j                        >= subMeshes.Count) subMeshes.Add(new int[submeshTrisCount[j]]);
+                        else if (subMeshes[j].Length != submeshTrisCount[j])
+                            subMeshes[j] = new int[submeshTrisCount[j]];
 
-                        for (int x = submeshOffsets[j]; x < submeshOffsets[j] + newMeshes[i].subMeshes[j].Length; x++)
-                        {
+                        for (var x = submeshOffsets[j]; x < submeshOffsets[j] + newMeshes[i].subMeshes[j].Length; x++)
                             subMeshes[j][x] = newMeshes[i].subMeshes[j][x - submeshOffsets[j]] + vertexOffset;
-                        }
                         submeshOffsets[j] += newMeshes[i].subMeshes[j].Length;
                     }
+
                     vertexOffset += newMeshes[i].vertexCount;
                 }
             }
             else
             {
-                Vector3[] newVertices = new Vector3[vertices.Length + newVerts];
-                Vector3[] newNormals = new Vector3[vertices.Length + newVerts];
-                Vector2[] newUvs = new Vector2[vertices.Length + newVerts];
-                Vector2[] newUvs2 = new Vector2[vertices.Length + newVerts];
-                Vector2[] newUvs3 = new Vector2[vertices.Length + newVerts];
-                Vector2[] newUvs4 = new Vector2[vertices.Length + newVerts];
-                Color[] newColors = new Color[vertices.Length + newVerts];
-                Vector4[] newTangents = new Vector4[tangents.Length + newVerts];
-                int[] newTriangles = new int[triangles.Length + newTris];
-                List<int[]> newSubmeshes = new List<int[]>();
-                for (int i = 0; i < submeshTrisCount.Length; i++)
+                var newVertices  = new Vector3[vertices.Length + newVerts];
+                var newNormals   = new Vector3[vertices.Length + newVerts];
+                var newUvs       = new Vector2[vertices.Length + newVerts];
+                var newUvs2      = new Vector2[vertices.Length + newVerts];
+                var newUvs3      = new Vector2[vertices.Length + newVerts];
+                var newUvs4      = new Vector2[vertices.Length + newVerts];
+                var newColors    = new Color[vertices.Length   + newVerts];
+                var newTangents  = new Vector4[tangents.Length + newVerts];
+                var newTriangles = new int[triangles.Length    + newTris];
+                var newSubmeshes = new List<int[]>();
+                for (var i = 0; i < submeshTrisCount.Length; i++)
                 {
                     newSubmeshes.Add(new int[submeshTrisCount[i]]);
                     if (i < subMeshes.Count) submeshTrisCount[i] = subMeshes[i].Length;
-                    else submeshTrisCount[i] = 0;
+                    else submeshTrisCount[i]                     = 0;
                 }
+
                 newVerts = vertexCount;
-                newTris = triangles.Length;
+                newTris  = triangles.Length;
                 vertices.CopyTo(newVertices, 0);
                 normals.CopyTo(newNormals, 0);
                 uv.CopyTo(newUvs, 0);
@@ -161,7 +161,7 @@ namespace Dreamteck
                 tangents.CopyTo(newTangents, 0);
                 triangles.CopyTo(newTriangles, 0);
 
-                for (int i = 0; i < newMeshes.Count; i++)
+                for (var i = 0; i < newMeshes.Count; i++)
                 {
                     newMeshes[i].vertices.CopyTo(newVertices, newVerts);
                     newMeshes[i].normals.CopyTo(newNormals, newVerts);
@@ -172,32 +172,30 @@ namespace Dreamteck
                     newMeshes[i].colors.CopyTo(newColors, newVerts);
                     newMeshes[i].tangents.CopyTo(newTangents, newVerts);
 
-                    for (int n = newTris; n < newTris + newMeshes[i].triangles.Length; n++)
-                    {
+                    for (var n = newTris; n < newTris + newMeshes[i].triangles.Length; n++)
                         newTriangles[n] = newMeshes[i].triangles[n - newTris] + newVerts;
-                    }
 
 
-                    for (int n = 0; n < newMeshes[i].subMeshes.Count; n++)
+                    for (var n = 0; n < newMeshes[i].subMeshes.Count; n++)
                     {
-                        for (int x = submeshTrisCount[n]; x < submeshTrisCount[n] + newMeshes[i].subMeshes[n].Length; x++)
-                        {
-                            newSubmeshes[n][x] = newMeshes[i].subMeshes[n][x - submeshTrisCount[n]] + newVerts;
-                        }
+                        for (var x = submeshTrisCount[n];
+                            x < submeshTrisCount[n] + newMeshes[i].subMeshes[n].Length;
+                            x++) newSubmeshes[n][x] = newMeshes[i].subMeshes[n][x - submeshTrisCount[n]] + newVerts;
                         submeshTrisCount[n] += newMeshes[i].subMeshes[n].Length;
                     }
-                    newTris += newMeshes[i].triangles.Length;
+
+                    newTris  += newMeshes[i].triangles.Length;
                     newVerts += newMeshes[i].vertexCount;
                 }
 
-                vertices = newVertices;
-                normals = newNormals;
-                uv = newUvs;
-                uv2 = newUvs2;
-                uv3 = newUvs3;
-                uv4 = newUvs4;
-                colors = newColors;
-                tangents = newTangents;
+                vertices  = newVertices;
+                normals   = newNormals;
+                uv        = newUvs;
+                uv2       = newUvs2;
+                uv3       = newUvs3;
+                uv4       = newUvs4;
+                colors    = newColors;
+                tangents  = newTangents;
                 triangles = newTriangles;
                 subMeshes = newSubmeshes;
             }
@@ -205,15 +203,15 @@ namespace Dreamteck
 
         public void Combine(TS_Mesh newMesh)
         {
-            Vector3[] newVertices = new Vector3[vertices.Length + newMesh.vertices.Length];
-            Vector3[] newNormals = new Vector3[normals.Length + newMesh.normals.Length];
-            Vector2[] newUvs = new Vector2[uv.Length + newMesh.uv.Length];
-            Vector2[] newUvs2 = new Vector2[uv.Length + newMesh.uv2.Length];
-            Vector2[] newUvs3 = new Vector2[uv.Length + newMesh.uv3.Length];
-            Vector2[] newUvs4 = new Vector2[uv.Length + newMesh.uv4.Length];
-            Color[] newColors = new Color[colors.Length + newMesh.colors.Length];
-            Vector4[] newTangents = new Vector4[tangents.Length + newMesh.tangents.Length];
-            int[] newTriangles = new int[triangles.Length + newMesh.triangles.Length];
+            var newVertices  = new Vector3[vertices.Length + newMesh.vertices.Length];
+            var newNormals   = new Vector3[normals.Length  + newMesh.normals.Length];
+            var newUvs       = new Vector2[uv.Length       + newMesh.uv.Length];
+            var newUvs2      = new Vector2[uv.Length       + newMesh.uv2.Length];
+            var newUvs3      = new Vector2[uv.Length       + newMesh.uv3.Length];
+            var newUvs4      = new Vector2[uv.Length       + newMesh.uv4.Length];
+            var newColors    = new Color[colors.Length     + newMesh.colors.Length];
+            var newTangents  = new Vector4[tangents.Length + newMesh.tangents.Length];
+            var newTriangles = new int[triangles.Length    + newMesh.triangles.Length];
 
             vertices.CopyTo(newVertices, 0);
             newMesh.vertices.CopyTo(newVertices, vertices.Length);
@@ -239,40 +237,38 @@ namespace Dreamteck
             tangents.CopyTo(newTangents, 0);
             newMesh.tangents.CopyTo(newTangents, tangents.Length);
 
-            for(int i = 0; i < newTriangles.Length; i++)
-            {
+            for (var i = 0; i < newTriangles.Length; i++)
                 if (i < triangles.Length) newTriangles[i] = triangles[i];
-                else  newTriangles[i] = (newMesh.triangles[i - triangles.Length] + vertices.Length);
-            }
+                else newTriangles[i]                      = newMesh.triangles[i - triangles.Length] + vertices.Length;
 
-            for(int i = 0; i < newMesh.subMeshes.Count; i++)
-            {
-                if(i >= subMeshes.Count) subMeshes.Add(newMesh.subMeshes[i]);
+            for (var i = 0; i < newMesh.subMeshes.Count; i++)
+                if (i >= subMeshes.Count)
+                {
+                    subMeshes.Add(newMesh.subMeshes[i]);
+                }
                 else
                 {
-                    int[] newTris = new int[subMeshes[i].Length + newMesh.subMeshes[i].Length];
+                    var newTris = new int[subMeshes[i].Length + newMesh.subMeshes[i].Length];
                     subMeshes[i].CopyTo(newTris, 0);
-                    for(int n = 0; n < newMesh.subMeshes[i].Length; n++)
-                    {
+                    for (var n = 0; n < newMesh.subMeshes[i].Length; n++)
                         newTris[subMeshes[i].Length + n] = newMesh.subMeshes[i][n] + vertices.Length;
-                    }
                     subMeshes[i] = newTris;
                 }
-            }
-            vertices = newVertices;
-            normals = newNormals;
-            uv = newUvs;
-            uv2 = newUvs2;
-            uv3 = newUvs3;
-            uv4 = newUvs4;
-            colors = newColors;
-            tangents = newTangents;
+
+            vertices  = newVertices;
+            normals   = newNormals;
+            uv        = newUvs;
+            uv2       = newUvs2;
+            uv3       = newUvs3;
+            uv4       = newUvs4;
+            colors    = newColors;
+            tangents  = newTangents;
             triangles = newTriangles;
         }
 
         public static TS_Mesh Copy(TS_Mesh input)
         {
-            TS_Mesh result = new TS_Mesh();
+            var result = new TS_Mesh();
             result.vertices = new Vector3[input.vertices.Length];
             input.vertices.CopyTo(result.vertices, 0);
             result.normals = new Vector3[input.normals.Length];
@@ -292,25 +288,26 @@ namespace Dreamteck
             result.triangles = new int[input.triangles.Length];
             input.triangles.CopyTo(result.triangles, 0);
             result.subMeshes = new List<int[]>();
-            for(int i = 0; i < input.subMeshes.Count; i++)
+            for (var i = 0; i < input.subMeshes.Count; i++)
             {
                 result.subMeshes.Add(new int[input.subMeshes[i].Length]);
                 input.subMeshes[i].CopyTo(result.subMeshes[i], 0);
             }
+
             result.bounds = new TS_Bounds(input.bounds.center, input.bounds.size);
             return result;
         }
 
         public void Absorb(TS_Mesh input)
         {
-            if (vertices.Length != input.vertexCount) vertices = new Vector3[input.vertexCount];
-            if (normals.Length != input.normals.Length) normals = new Vector3[input.normals.Length];
-            if (colors.Length != input.colors.Length) colors = new Color[input.colors.Length];
-            if (uv.Length != input.uv.Length) uv = new Vector2[input.uv.Length];
-            if (uv2.Length != input.uv2.Length) uv2 = new Vector2[input.uv2.Length];
-            if (uv3.Length != input.uv3.Length) uv3 = new Vector2[input.uv3.Length];
-            if (uv4.Length != input.uv4.Length) uv4 = new Vector2[input.uv4.Length];
-            if (tangents.Length != input.tangents.Length) tangents = new Vector4[input.tangents.Length];
+            if (vertices.Length  != input.vertexCount) vertices       = new Vector3[input.vertexCount];
+            if (normals.Length   != input.normals.Length) normals     = new Vector3[input.normals.Length];
+            if (colors.Length    != input.colors.Length) colors       = new Color[input.colors.Length];
+            if (uv.Length        != input.uv.Length) uv               = new Vector2[input.uv.Length];
+            if (uv2.Length       != input.uv2.Length) uv2             = new Vector2[input.uv2.Length];
+            if (uv3.Length       != input.uv3.Length) uv3             = new Vector2[input.uv3.Length];
+            if (uv4.Length       != input.uv4.Length) uv4             = new Vector2[input.uv4.Length];
+            if (tangents.Length  != input.tangents.Length) tangents   = new Vector4[input.tangents.Length];
             if (triangles.Length != input.triangles.Length) triangles = new int[input.triangles.Length];
 
             input.vertices.CopyTo(vertices, 0);
@@ -325,21 +322,23 @@ namespace Dreamteck
 
             if (subMeshes.Count == input.subMeshes.Count)
             {
-                for (int i = 0; i < subMeshes.Count; i++)
+                for (var i = 0; i < subMeshes.Count; i++)
                 {
-                    if (input.subMeshes[i].Length != subMeshes[i].Length) subMeshes[i] = new int[input.subMeshes[i].Length];
+                    if (input.subMeshes[i].Length != subMeshes[i].Length)
+                        subMeshes[i] = new int[input.subMeshes[i].Length];
                     input.subMeshes[i].CopyTo(subMeshes[i], 0);
                 }
             }
             else
             {
                 subMeshes = new List<int[]>();
-                for (int i = 0; i < input.subMeshes.Count; i++)
+                for (var i = 0; i < input.subMeshes.Count; i++)
                 {
                     subMeshes.Add(new int[input.subMeshes[i].Length]);
                     input.subMeshes[i].CopyTo(subMeshes[i], 0);
                 }
             }
+
             bounds = new TS_Bounds(input.bounds.center, input.bounds.size);
         }
 
@@ -350,19 +349,20 @@ namespace Dreamteck
             {
                 input.Clear();
                 input.vertices = vertices;
-                input.normals = normals;
+                input.normals  = normals;
                 if (tangents.Length == vertices.Length) input.tangents = tangents;
-                if (colors.Length == vertices.Length) input.colors = colors;
-                if(uv.Length == vertices.Length) input.uv = uv;
-                if (uv2.Length == vertices.Length) input.uv2 = uv2;
-                if (uv3.Length == vertices.Length) input.uv3 = uv3;
-                if (uv4.Length == vertices.Length) input.uv4 = uv4;
+                if (colors.Length   == vertices.Length) input.colors   = colors;
+                if (uv.Length       == vertices.Length) input.uv       = uv;
+                if (uv2.Length      == vertices.Length) input.uv2      = uv2;
+                if (uv3.Length      == vertices.Length) input.uv3      = uv3;
+                if (uv4.Length      == vertices.Length) input.uv4      = uv4;
                 input.triangles = triangles;
                 if (subMeshes.Count > 0)
                 {
                     input.subMeshCount = subMeshes.Count;
-                    for (int i = 0; i < subMeshes.Count; i++) input.SetTriangles(subMeshes[i], i);
+                    for (var i = 0; i < subMeshes.Count; i++) input.SetTriangles(subMeshes[i], i);
                 }
+
                 input.RecalculateBounds();
                 hasUpdate = false;
             }

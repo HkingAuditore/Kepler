@@ -20,20 +20,20 @@ namespace MathPlus
 
     public class ConicSection
     {
-        private static float   k = 10000;
-        public         float   a; //x^2
-        public         float   angle;
-        public         float   b;            //xy
-        public         float   c;            //y^2
-        public         float   d;            //x
-        public         float   e;            //y
-        public         float   eccentricity; //离心率
-        public         float   f;            //f
-        public         float   focalLength;
-        public         Vector2 geoCenter; //几何中心
-        public         bool    isEllipse;
-        public         float   semiMajorAxis; //长半轴
-        public         float   semiMinorAxis; //短半轴
+        private static readonly float   k = 10000;
+        public                  float   a; //x^2
+        public                  float   angle;
+        public                  float   b;            //xy
+        public                  float   c;            //y^2
+        public                  float   d;            //x
+        public                  float   e;            //y
+        public                  float   eccentricity; //离心率
+        public                  float   f;            //f
+        public                  float   focalLength;
+        public                  Vector2 geoCenter; //几何中心
+        public                  bool    isEllipse;
+        public                  float   semiMajorAxis; //长半轴
+        public                  float   semiMinorAxis; //短半轴
 
         public ConicSection(float a, float b, float c, float d, float e, float f)
         {
@@ -53,14 +53,16 @@ namespace MathPlus
             eccentricity  = GetEccentricity();
             angle         = GetAngle() + 90;
         }
-        public ConicSection(float a, float b, float c,float theta,Vector2 geoCenter)
+
+        public ConicSection(float a, float b, float c, float theta, Vector2 geoCenter)
         {
-            this.a =  (a * a *Mathf.Sin(theta) *Mathf.Sin(theta) + b * b *Mathf.Cos(theta) *Mathf.Cos(theta));
-            this.b =  (2 * (b * b - a * a) * Mathf.Sin(theta) * Mathf.Cos(theta));
-            this.c =  (a  * a     * Mathf.Cos(theta) * Mathf.Cos(theta) + b * b * Mathf.Sin(theta) * Mathf.Sin(theta));
-            this.d =  (-2 *this.a *geoCenter.x                          - this.b*geoCenter.y);
-            this.e =  (-this.b *geoCenter.x - 2*this.c*geoCenter.y);
-            this.f =  (this.a*geoCenter.x*geoCenter.x + this.b*geoCenter.x*geoCenter.y+this.c*geoCenter.y*geoCenter.y-a*a*b*b);
+            this.a = a * a * Mathf.Sin(theta) * Mathf.Sin(theta) + b * b * Mathf.Cos(theta) * Mathf.Cos(theta);
+            this.b = 2 * (b * b - a * a) * Mathf.Sin(theta) * Mathf.Cos(theta);
+            this.c = a       * a * Mathf.Cos(theta) * Mathf.Cos(theta) + b * b * Mathf.Sin(theta) * Mathf.Sin(theta);
+            d      = -2      * this.a * geoCenter.x - this.b * geoCenter.y;
+            e      = -this.b * geoCenter.x - 2 * this.c * geoCenter.y;
+            f = this.a * geoCenter.x * geoCenter.x + this.b * geoCenter.x * geoCenter.y +
+                this.c * geoCenter.y * geoCenter.y - a * a * b * b;
 
             isEllipse      = IsEllipse();
             this.geoCenter = geoCenter;
@@ -124,14 +126,14 @@ namespace MathPlus
                                                        (a - c) * (a - c) + b * b)
                                    )
                                   )
-                        / (b * b - 4 * a * c);
+                      / (b * b - 4 * a * c);
             var axis1 = Mathf.Sqrt(
                                    2 * (a * e * e + c * d * d - b * d * e + (b * b - 4 * a * c) * f) *
                                    (a + c - Mathf.Sqrt(
                                                        (a - c) * (a - c) + b * b)
                                    )
                                   )
-                        / (b * b - 4 * a * c);
+                      / (b * b - 4 * a * c);
             return new[]
                    {
                        Mathf.Max(Mathf.Abs(axis0), Mathf.Abs(axis1)),
@@ -155,7 +157,7 @@ namespace MathPlus
 
             return Mathf.Atan(1 / b * (c - a - Mathf.Sqrt((a - c) * (a - c) + b * b))) * Mathf.Rad2Deg;
         }
-        
+
         private float GetAngle(float theta)
         {
             return theta;
@@ -300,48 +302,43 @@ namespace MathPlus
                                    );
         }
 
-        public static Vector3 GetCircleOrbitVelocity(Vector3 targetPos, Vector3 centerPos,float centerMass)
+        public static Vector3 GetCircleOrbitVelocity(Vector3 targetPos, Vector3 centerPos, float centerMass)
         {
-            float   r     = Vector3.Distance(targetPos, centerPos);
-            float   speed = Mathf.Sqrt(PhysicBase.GetG() * centerMass / r);
-            Vector3 dir   = (Quaternion.AngleAxis(90, Vector3.up) * (centerPos - targetPos)).normalized;
+            var r     = Vector3.Distance(targetPos, centerPos);
+            var speed = Mathf.Sqrt(PhysicBase.GetG() * centerMass / r);
+            var dir   = (Quaternion.AngleAxis(90, Vector3.up) * (centerPos - targetPos)).normalized;
             return dir * speed;
         }
 
         public static ConicSection CalculateOrbit(Vector2 targetPos,  Vector2 oriPos, Vector2 targetVelocity,
                                                   float   targetMass, float   oriMass)
         {
-            float miu = PhysicBase.GetG() * oriMass;
+            var miu = PhysicBase.GetG() * oriMass;
 
-            float h = targetPos.x * targetVelocity.y - targetPos.y * targetVelocity.x;
-            float r = Mathf.Sqrt(targetPos.x * targetPos.x + targetPos.y * targetPos.y);
-            float a = (miu * r) /
-                      (2 * miu - r * (targetVelocity.x * targetVelocity.x + targetVelocity.y * targetVelocity.y));
-            Vector2 ev = new Vector2(targetPos.x / r - (h * targetVelocity.y) / miu,
-                                     targetPos.y / r + (h * targetVelocity.x)  / miu);
-            Vector2 f2           = 2             * a * ev;
-            Vector2 geoCenter    = (f2 + oriPos) / 2;
-            float   e            = ev.magnitude;
-            float   c            = e * a;
-            float   b            = Mathf.Sqrt(a * a - c * c);
-            Vector2 orbitHorizon = (f2 - oriPos).normalized;
-            float   theta = 0;
+            var h = targetPos.x * targetVelocity.y - targetPos.y * targetVelocity.x;
+            var r = Mathf.Sqrt(targetPos.x * targetPos.x + targetPos.y * targetPos.y);
+            var a = miu * r /
+                    (2 * miu - r * (targetVelocity.x * targetVelocity.x + targetVelocity.y * targetVelocity.y));
+            var ev = new Vector2(targetPos.x / r - h * targetVelocity.y / miu,
+                                 targetPos.y / r + h * targetVelocity.x / miu);
+            var   f2           = 2             * a * ev;
+            var   geoCenter    = (f2 + oriPos) / 2;
+            var   e            = ev.magnitude;
+            var   c            = e * a;
+            var   b            = Mathf.Sqrt(a * a - c * c);
+            var   orbitHorizon = (f2 - oriPos).normalized;
+            float theta        = 0;
             if (orbitHorizon.y > 0)
-            {
                 theta = Vector2.Angle(new Vector2(1, 0), orbitHorizon);
-            }
             else
-            {
-                theta =180 - Vector2.Angle(new Vector2(1, 0), orbitHorizon);
-
-            }
+                theta = 180 - Vector2.Angle(new Vector2(1, 0), orbitHorizon);
             // Debug.Log("a = " + a);
             // Debug.Log("b = " + b);
             // Debug.Log("e = " + e);
             // Debug.Log("ev = " + ev);
             // Debug.Log("geoCenter = " + geoCenter);
             // Debug.Log("theta= " + theta);
-            return new ConicSection(a, b, c,theta, geoCenter);
+            return new ConicSection(a, b, c, theta, geoCenter);
         }
     }
 
@@ -352,6 +349,7 @@ namespace MathPlus
             var doubleParts = ExtractScientificNotationParts(d);
             return Convert.ToInt32(doubleParts[1]);
         }
+
         public static int GetExponent(this double d)
         {
             var doubleParts = ExtractScientificNotationParts(d);
@@ -362,12 +360,13 @@ namespace MathPlus
         public static float GetMantissa(this float d)
         {
             var doubleParts = ExtractScientificNotationParts(d);
-            return (float)Convert.ToDouble(doubleParts[0]);
+            return (float) Convert.ToDouble(doubleParts[0]);
         }
+
         public static float GetMantissa(this double d)
         {
             var doubleParts = ExtractScientificNotationParts(d);
-            return (float)Convert.ToDouble(doubleParts[0]);
+            return (float) Convert.ToDouble(doubleParts[0]);
         }
 
         private static string[] ExtractScientificNotationParts(float d)
@@ -378,7 +377,7 @@ namespace MathPlus
 
             return doubleParts;
         }
-        
+
         private static string[] ExtractScientificNotationParts(double d)
         {
             var doubleParts = d.ToString(@"E17").Split('E');

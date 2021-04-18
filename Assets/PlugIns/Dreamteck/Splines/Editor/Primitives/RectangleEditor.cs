@@ -1,7 +1,5 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿using Dreamteck.Splines.Editor;
 using UnityEditor;
-using Dreamteck.Splines.Editor;
 
 namespace Dreamteck.Splines.Primitives
 {
@@ -15,14 +13,14 @@ namespace Dreamteck.Splines.Primitives
         public override void Open(DreamteckSplinesEditor editor)
         {
             base.Open(editor);
-            primitive = new Rectangle();
+            primitive        = new Rectangle();
             primitive.offset = origin;
         }
 
         protected override void OnGUI()
         {
             base.OnGUI();
-            Rectangle rect = (Rectangle)primitive;
+            var rect = (Rectangle) primitive;
             rect.size = EditorGUILayout.Vector2Field("Size", rect.size);
         }
     }

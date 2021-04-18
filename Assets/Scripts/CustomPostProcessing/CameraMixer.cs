@@ -6,15 +6,15 @@ namespace CustomPostProcessing
     {
         // public List<IRenderTexOuter> renderTexOuters = new List<IRenderTexOuter>();
         public OutlineCatcher renderTexOuter;
+
         // public LayerCamera    layerCamera;
-        public RenderTexture  renderTexture;
-        public Shader         mixShader;
+        public RenderTexture renderTexture;
+        public Shader        mixShader;
 
         [Header("Material Setting")] public Color edgeColor = Color.white;
 
         public Material      _mixMaterial;
         public RenderTexture _renderResultRT;
-
 
 
         public Material MixMaterial
@@ -32,7 +32,7 @@ namespace CustomPostProcessing
             MixMaterial.DisableKeyword("MIXTEX1");
             MixMaterial.DisableKeyword("MIXTEX2");
             MixMaterial.SetTexture("MixTex0", renderTexOuter.GetRenderResult());
-            
+
             // MixMaterial.SetTexture("MixTex1", layerCamera.GetRenderResult());
             // MixMaterial.SetTexture("MixTex", renderTexture);
         }
@@ -58,6 +58,7 @@ namespace CustomPostProcessing
                 Graphics.Blit(src, _renderResultRT);
             }
         }
+
         public RenderTexture GetRenderResult()
         {
             return _renderResultRT;

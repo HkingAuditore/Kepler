@@ -1,15 +1,14 @@
-using UnityEngine;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
+using UnityEngine;
 
 namespace Dreamteck.Splines
 {
     public class SplineTool
     {
+        protected bool                 promptSave;
         protected List<SplineComputer> splines = new List<SplineComputer>();
-        protected bool promptSave = false;
-        protected EditorWindow windowInstance = null;
+        protected EditorWindow         windowInstance;
 
         public virtual string GetName()
         {
@@ -23,7 +22,7 @@ namespace Dreamteck.Splines
 
         public virtual void Close()
         {
-            if(promptSave) ClosingDialog();
+            if (promptSave) ClosingDialog();
         }
 
         private void ClosingDialog()
@@ -57,10 +56,10 @@ namespace Dreamteck.Splines
             //EditorGUILayout.LabelField("Spline User", EditorStyles.boldLabel);
 
             EditorGUILayout.LabelField("Selected Splines", EditorStyles.boldLabel);
-            for (int i = 0; i < splines.Count; i++)
+            for (var i = 0; i < splines.Count; i++)
             {
-                SplineComputer lastComputer = splines[i];
-                splines[i] = (SplineComputer)EditorGUILayout.ObjectField(splines[i], typeof(SplineComputer), true);
+                var lastComputer = splines[i];
+                splines[i] = (SplineComputer) EditorGUILayout.ObjectField(splines[i], typeof(SplineComputer), true);
                 if (splines[i] == null)
                 {
                     splines.RemoveAt(i);
@@ -68,9 +67,9 @@ namespace Dreamteck.Splines
                     OnSplineRemoved(lastComputer);
                     continue;
                 }
+
                 if (lastComputer != splines[i])
-                {
-                    for (int j = 0; j < splines.Count; j++)
+                    for (var j = 0; j < splines.Count; j++)
                     {
                         if (j == i) continue;
                         if (splines[j] == splines[i])
@@ -79,59 +78,57 @@ namespace Dreamteck.Splines
                             break;
                         }
                     }
-                }
             }
+
             SplineComputer newComp = null;
-            newComp = (SplineComputer)EditorGUILayout.ObjectField(newComp, typeof(SplineComputer), true);
-            if(newComp != null)
+            newComp = (SplineComputer) EditorGUILayout.ObjectField(newComp, typeof(SplineComputer), true);
+            if (newComp != null)
             {
-                for (int i = 0; i < splines.Count; i++)
-                {
+                for (var i = 0; i < splines.Count; i++)
                     if (splines[i] == newComp)
                     {
                         newComp = null;
                         break;
                     }
-                }
+
                 if (newComp != null)
                 {
                     splines.Add(newComp);
                     OnSplineAdded(newComp);
                 }
             }
+
             EditorGUILayout.Space();
         }
 
         protected virtual void OnSplineAdded(SplineComputer spline)
         {
-
         }
 
         protected virtual void OnSplineRemoved(SplineComputer spline)
         {
-
         }
 
         protected void ClipUI(SplineUser user)
         {
-            float fclipFrom = (float)user.clipFrom, fclipTo = (float)user.clipTo;
+            float fclipFrom = (float) user.clipFrom, fclipTo = (float) user.clipTo;
             EditorGUILayout.BeginHorizontal();
             EditorGUILayout.MinMaxSlider(new GUIContent("Clip range:"), ref fclipFrom, ref fclipTo, 0f, 1f);
             EditorGUILayout.BeginHorizontal(GUILayout.MaxWidth(30));
             user.clipFrom = EditorGUILayout.FloatField(fclipFrom);
-            user.clipTo = EditorGUILayout.FloatField(fclipTo);
+            user.clipTo   = EditorGUILayout.FloatField(fclipTo);
             EditorGUILayout.EndHorizontal();
             EditorGUILayout.EndHorizontal();
         }
 
         protected void ClipUI(ref double from, ref double to)
         {
-            float fclipFrom = (float)from, fclipTo = (float)to;
+            float fclipFrom = (float) from, fclipTo = (float) to;
             EditorGUILayout.BeginHorizontal();
             EditorGUILayout.MinMaxSlider(new GUIContent("Clip range:"), ref fclipFrom, ref fclipTo, 0f, 1f);
             EditorGUILayout.BeginHorizontal(GUILayout.MaxWidth(30));
             from = EditorGUILayout.FloatField(fclipFrom);
-            to = EditorGUILayout.FloatField(fclipTo);
+            to   = EditorGUILayout.FloatField(fclipTo);
             EditorGUILayout.EndHorizontal();
             EditorGUILayout.EndHorizontal();
         }
@@ -146,7 +143,6 @@ namespace Dreamteck.Splines
 
         protected virtual void Rebuild()
         {
-            
         }
 
         protected void Repaint()
@@ -157,10 +153,8 @@ namespace Dreamteck.Splines
         protected void GetSplines()
         {
             splines.Clear();
-            for (int i = 0; i < Selection.gameObjects.Length; i++)
-            {
+            for (var i = 0; i < Selection.gameObjects.Length; i++)
                 splines.Add(Selection.gameObjects[i].GetComponent<SplineComputer>());
-            }
         }
 
         protected float LoadFloat(string name, float d)
@@ -185,23 +179,22 @@ namespace Dreamteck.Splines
 
         protected void SaveFloat(string name, float value)
         {
-             EditorPrefs.SetFloat(GetPrefix() + "_" + name, value);
+            EditorPrefs.SetFloat(GetPrefix() + "_" + name, value);
         }
 
         protected void SaveString(string name, string value)
         {
-             EditorPrefs.SetString(GetPrefix() + "_" + name, value);
+            EditorPrefs.SetString(GetPrefix() + "_" + name, value);
         }
 
         protected void SaveBool(string name, bool value)
         {
-             EditorPrefs.SetBool(GetPrefix() + "_" + name, value);
+            EditorPrefs.SetBool(GetPrefix() + "_" + name, value);
         }
 
         protected void SaveInt(string name, int value)
         {
-             EditorPrefs.SetInt(GetPrefix() + "_" + name, value);
+            EditorPrefs.SetInt(GetPrefix() + "_" + name, value);
         }
     }
-
 }

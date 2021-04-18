@@ -1,21 +1,18 @@
+using UnityEditor;
+using UnityEngine;
+
 namespace Dreamteck.Splines.Editor
 {
-    using UnityEngine;
-    using UnityEditor;
-    using System.Collections;
-    using System.Collections.Generic;
-
     public class PointMoveModule : PointTransformModule
     {
-        public bool snap = false;
-        public float snapGridSize = 1f;
-        public bool surfaceMode = false;
-        public float surfaceOffset = 0f;
+        public bool      snap;
+        public float     snapGridSize     = 1f;
         public LayerMask surfaceLayerMask = ~0;
+        public bool      surfaceMode;
+        public float     surfaceOffset;
 
         public PointMoveModule(SplineEditor editor) : base(editor)
         {
-
         }
 
         public override GUIContent GetIconOff()
@@ -31,10 +28,10 @@ namespace Dreamteck.Splines.Editor
         public override void LoadState()
         {
             base.LoadState();
-            snap = LoadBool("snap");
-            snapGridSize = LoadFloat("snapGridSize", 0.5f);
-            surfaceOffset = LoadFloat("surfaceOffset", 0f);
-            surfaceMode = LoadBool("surfaceMode");
+            snap             = LoadBool("snap");
+            snapGridSize     = LoadFloat("snapGridSize", 0.5f);
+            surfaceOffset    = LoadFloat("surfaceOffset");
+            surfaceMode      = LoadBool("surfaceMode");
             surfaceLayerMask = LoadInt("surfaceLayerMask", ~0);
         }
 
@@ -42,7 +39,7 @@ namespace Dreamteck.Splines.Editor
         {
             base.SaveState();
             SaveBool("snap", snap);
-            SaveFloat("snapGridSize", snapGridSize);
+            SaveFloat("snapGridSize",  snapGridSize);
             SaveFloat("surfaceOffset", surfaceOffset);
             SaveBool("surfaceMode", surfaceMode);
             SaveInt("surfaceLayerMask", surfaceLayerMask);
@@ -56,13 +53,14 @@ namespace Dreamteck.Splines.Editor
 
         public override void DrawInspector()
         {
-            editSpace = (EditSpace)EditorGUILayout.EnumPopup("Edit Space", editSpace);
+            editSpace   = (EditSpace) EditorGUILayout.EnumPopup("Edit Space", editSpace);
             surfaceMode = EditorGUILayout.Toggle("Move On Surface", surfaceMode);
             if (surfaceMode)
             {
                 surfaceLayerMask = DreamteckEditorGUI.LayermaskField("Surface Mask", surfaceLayerMask);
-                surfaceOffset = EditorGUILayout.FloatField("Surface Offset", surfaceOffset);
+                surfaceOffset    = EditorGUILayout.FloatField("Surface Offset", surfaceOffset);
             }
+
             snap = EditorGUILayout.Toggle("Snap to Grid", snap);
             if (snap)
             {
@@ -74,26 +72,37 @@ namespace Dreamteck.Splines.Editor
         public override void DrawScene()
         {
             if (selectedPoints.Count == 0) return;
-            Vector3 c = selectionCenter;
-            Vector3 lastPos = c;
+            var c       = selectionCenter;
+            var lastPos = c;
             if (surfaceMode)
             {
-                c = Handles.FreeMoveHandle(c, Quaternion.LookRotation(SceneView.currentDrawingSceneView.camera.transform.position - c), HandleUtility.GetHandleSize(c) * 0.2f, Vector3.zero, Handles.CircleHandleCap);
-                if(lastPos != c)
+                c =
+                    Handles.FreeMoveHandle(c,
+                                           Quaternion.LookRotation(SceneView.currentDrawingSceneView.camera.transform
+                                                                            .position - c),
+                                           HandleUtility.GetHandleSize(c) * 0.2f, Vector3.zero,
+                                           Handles.CircleHandleCap);
+                if (lastPos != c)
                 {
-                    Ray ray = HandleUtility.GUIPointToWorldRay(Event.current.mousePosition);
+                    var        ray = HandleUtility.GUIPointToWorldRay(Event.current.mousePosition);
                     RaycastHit hit;
                     if (Physics.Raycast(ray, out hit, Mathf.Infinity, surfaceLayerMask))
                     {
                         c = hit.point + hit.normal * surfaceOffset;
-                        Handles.DrawLine(hit.point, hit.point + hit.normal * HandleUtility.GetHandleSize(hit.point) * 0.5f);
+                        Handles.DrawLine(hit.point,
+                                         hit.point + hit.normal * HandleUtility.GetHandleSize(hit.point) * 0.5f);
                     }
                 }
-            } else c = Handles.PositionHandle(c, rotation);
+            }
+            else
+            {
+                c = Handles.PositionHandle(c, rotation);
+            }
+
             if (lastPos != c)
             {
                 RecordUndo("Move Points");
-                for (int i = 0; i < selectedPoints.Count; i++)
+                for (var i = 0; i < selectedPoints.Count; i++)
                 {
                     if (isClosed && selectedPoints[i] == points.Length - 1) continue;
                     points[selectedPoints[i]].SetPosition(points[selectedPoints[i]].position + (c - lastPos));
@@ -103,15 +112,15 @@ namespace Dreamteck.Splines.Editor
 
             if (splineType == Spline.Type.Bezier && selectedPoints.Count == 1)
             {
-                int index = selectedPoints[0];
+                var index = selectedPoints[0];
                 lastPos = points[index].tangent;
-                Vector3 newPos = Handles.PositionHandle(points[index].tangent, rotation);
+                var newPos       = Handles.PositionHandle(points[index].tangent, rotation);
                 if (snap) newPos = SnapPoint(newPos);
                 if (newPos != lastPos) RecordUndo("Move Tangents");
                 points[index].SetTangentPosition(newPos);
 
                 lastPos = points[index].tangent2;
-                newPos = Handles.PositionHandle(points[index].tangent2, rotation);
+                newPos  = Handles.PositionHandle(points[index].tangent2, rotation);
                 if (snap) newPos = SnapPoint(newPos);
                 if (newPos != lastPos) RecordUndo("Move Tangents");
                 points[index].SetTangent2Position(newPos);

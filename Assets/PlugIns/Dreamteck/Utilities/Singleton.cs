@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
@@ -7,19 +5,15 @@ namespace Dreamteck
 {
     public class Singleton<T> : MonoBehaviour where T : Component
     {
+        protected static         T    _instance;
         [SerializeField] private bool _dontDestryOnLoad = true;
-        [SerializeField] private bool _overrideInstance = false;
-
-        protected static T _instance;
+        [SerializeField] private bool _overrideInstance;
 
         public static T instance
         {
             get
             {
-                if (_instance == null)
-                {
-                    _instance = Object.FindObjectsOfType<T>().FirstOrDefault();
-                }
+                if (_instance == null) _instance = FindObjectsOfType<T>().FirstOrDefault();
 
                 return _instance;
             }
@@ -36,31 +30,26 @@ namespace Dreamteck
                 }
                 else
                 {
-                    Destroy(this.gameObject);
+                    Destroy(gameObject);
                 }
             }
             else
             {
                 _instance = this as T;
 
-                if (_dontDestryOnLoad)
-                {
-                    DontDestroyOnLoad(gameObject);
-                }
+                if (_dontDestryOnLoad) DontDestroyOnLoad(gameObject);
             }
-            Init();
-        }
 
-        protected virtual void Init()
-        {
+            Init();
         }
 
         protected virtual void OnDestroy()
         {
-            if (_instance == this && !_overrideInstance)
-            {
-                _instance = null;
-            }
+            if (_instance == this && !_overrideInstance) _instance = null;
+        }
+
+        protected virtual void Init()
+        {
         }
     }
 }

@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,12 +10,12 @@ namespace LeTai.Asset.TranslucentImage.Demo
 
         public Slider updateRateInput;
 
-        void Start()
+        private void Start()
         {
             StartCoroutine(DisableSource());
         }
 
-        IEnumerator DisableSource()
+        private IEnumerator DisableSource()
         {
             yield return null;
             changer.SetUpdateRate(0);

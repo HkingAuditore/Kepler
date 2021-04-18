@@ -1,15 +1,10 @@
 namespace Dreamteck.Splines.Editor
 {
-    using System.Collections;
-    using System.Collections.Generic;
-    using UnityEngine;
-    using UnityEditor;
-
     public class ComputerEditorModule : EditorModule
     {
-        protected SplineComputer spline;
-        public SplineEditorBase.UndoHandler undoHandler;
-        public EmptySplineHandler repaintHandler;
+        public    EmptySplineHandler           repaintHandler;
+        protected SplineComputer               spline;
+        public    SplineEditorBase.UndoHandler undoHandler;
 
         public ComputerEditorModule(SplineComputer spline)
         {

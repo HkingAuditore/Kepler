@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Dreamteck
@@ -8,10 +6,10 @@ namespace Dreamteck
     {
         public static AnimationCurve DuplicateCurve(AnimationCurve input)
         {
-            AnimationCurve target = new AnimationCurve();
+            var target = new AnimationCurve();
             target.postWrapMode = input.postWrapMode;
-            target.preWrapMode = input.preWrapMode;
-            for (int i = 0; i < input.keys.Length; i++) target.AddKey(input.keys[i]);
+            target.preWrapMode  = input.preWrapMode;
+            for (var i = 0; i < input.keys.Length; i++) target.AddKey(input.keys[i]);
             return target;
         }
 

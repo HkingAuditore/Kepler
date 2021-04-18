@@ -5,35 +5,35 @@ namespace LeTai.Asset.TranslucentImage.Demo
 {
     public class AutoMoveAndRotate : MonoBehaviour
     {
-        public Vector3andSpace moveUnitsPerSecond;
-        public Vector3andSpace rotateDegreesPerSecond;
-        public bool            ignoreTimescale, lateUpdate;
-        float                  m_LastRealTime;
+        public  Vector3andSpace moveUnitsPerSecond;
+        public  Vector3andSpace rotateDegreesPerSecond;
+        public  bool            ignoreTimescale, lateUpdate;
+        private float           m_LastRealTime;
 
 
-        void Start()
+        private void Start()
         {
             m_LastRealTime = Time.realtimeSinceStartup;
         }
 
-        void Update()
+        private void Update()
         {
             if (!lateUpdate)
                 DoWork();
         }
 
-        void LateUpdate()
+        private void LateUpdate()
         {
             if (lateUpdate)
                 DoWork();
         }
 
-        void DoWork()
+        private void DoWork()
         {
-            float deltaTime = Time.deltaTime;
+            var deltaTime = Time.deltaTime;
             if (ignoreTimescale)
             {
-                deltaTime      = (Time.realtimeSinceStartup - m_LastRealTime);
+                deltaTime      = Time.realtimeSinceStartup - m_LastRealTime;
                 m_LastRealTime = Time.realtimeSinceStartup;
             }
 

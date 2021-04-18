@@ -1,8 +1,10 @@
+using System.Collections.Generic;
+using UnityEditor;
+using UnityEditorInternal;
+using UnityEngine;
+
 namespace Dreamteck
 {
-    using UnityEditor;
-    using UnityEngine;
-    using System.Collections.Generic;
 #if !UNITY_2018_3_OR_NEWER
     using System.Reflection;
     using Type = System.Type;
@@ -20,31 +22,33 @@ namespace Dreamteck
                     _blankImage.SetPixel(0, 0, Color.white);
                     _blankImage.Apply();
                 }
+
                 return _blankImage;
             }
         }
-        private static Texture2D _blankImage = null;
+
+        private static Texture2D _blankImage;
 
         public static readonly Color backgroundColor = new Color(0.95f, 0.95f, 0.95f);
-        public static Color iconColor = Color.black;
+        public static          Color iconColor       = Color.black;
 
-        public static readonly Color highlightColor = new Color(0f, 0.564f, 1f, 1f);
-        public static readonly Color highlightContentColor = new Color(1f, 1f, 1f, 0.95f);
+        public static readonly Color highlightColor        = new Color(0f, 0.564f, 1f, 1f);
+        public static readonly Color highlightContentColor = new Color(1f, 1f,     1f, 0.95f);
 
 
         public static readonly Color inactiveColor = new Color(0.7f, 0.7f, 0.7f, 0.5f);
-        public static readonly Color activeColor = new Color(1f, 1f, 1f, 1f);
+        public static readonly Color activeColor   = new Color(1f,   1f,   1f,   1f);
 
-        public static readonly Color baseColor = Color.white;
-        public static readonly Color lightColor = Color.white;
+        public static readonly Color baseColor      = Color.white;
+        public static readonly Color lightColor     = Color.white;
         public static readonly Color lightDarkColor = Color.white;
-        public static readonly Color darkColor = Color.white;
-        public static readonly Color borderColor = Color.white;
+        public static readonly Color darkColor      = Color.white;
+        public static readonly Color borderColor    = Color.white;
 
-        private static List<int> layerNumbers = new List<int>();
+        private static readonly List<int> layerNumbers = new List<int>();
 
-        public static readonly GUIStyle labelText = null;
-        private static float scale = -1f;
+        public static readonly GUIStyle labelText;
+        private static         float    scale = -1f;
 
 #if !UNITY_2018_3_OR_NEWER
         private static MethodInfo gradientFieldMethod;
@@ -54,29 +58,32 @@ namespace Dreamteck
         {
             baseColor = EditorGUIUtility.isProSkin ? new Color32(56, 56, 56, 255) : new Color32(194, 194, 194, 255);
             lightColor = EditorGUIUtility.isProSkin ? new Color32(84, 84, 84, 255) : new Color32(222, 222, 222, 255);
-            lightDarkColor = EditorGUIUtility.isProSkin ? new Color32(30, 30, 30, 255) : new Color32(180, 180, 180, 255);
+            lightDarkColor = EditorGUIUtility.isProSkin
+                ? new Color32(30, 30, 30, 255)
+                : new Color32(180, 180, 180, 255);
             darkColor = EditorGUIUtility.isProSkin ? new Color32(15, 15, 15, 255) : new Color32(152, 152, 152, 255);
             borderColor = EditorGUIUtility.isProSkin ? new Color32(5, 5, 5, 255) : new Color32(100, 100, 100, 255);
             backgroundColor = baseColor;
             backgroundColor -= new Color(0.1f, 0.1f, 0.1f, 0f);
             iconColor = GUI.skin.label.normal.textColor;
 
-            labelText = new GUIStyle(GUI.skin.GetStyle("label"));
-            labelText.fontStyle = FontStyle.Bold;
-            labelText.alignment = TextAnchor.MiddleRight;
+            labelText                  = new GUIStyle(GUI.skin.GetStyle("label"));
+            labelText.fontStyle        = FontStyle.Bold;
+            labelText.alignment        = TextAnchor.MiddleRight;
             labelText.normal.textColor = Color.white;
             SetScale(1f);
 
 #if !UNITY_2018_3_OR_NEWER
             Type tyEditorGUILayout = typeof(EditorGUILayout);
-            gradientFieldMethod = tyEditorGUILayout.GetMethod("GradientField", BindingFlags.NonPublic | BindingFlags.Static, null, new Type[] { typeof(string), typeof(Gradient), typeof(GUILayoutOption[]) }, null);
+            gradientFieldMethod =
+ tyEditorGUILayout.GetMethod("GradientField", BindingFlags.NonPublic | BindingFlags.Static, null, new Type[] { typeof(string), typeof(Gradient), typeof(GUILayoutOption[]) }, null);
 #endif
-            }
+        }
 
         public static void SetScale(float newScale)
         {
             if (scale == newScale) return;
-            scale = newScale;
+            scale              = newScale;
             labelText.fontSize = Mathf.RoundToInt(12f * scale);
         }
 
@@ -84,44 +91,33 @@ namespace Dreamteck
         {
             if (style == null) style = labelText;
             if (!active) GUI.color = inactiveColor;
-            else GUI.color = activeColor;
+            else GUI.color         = activeColor;
             GUI.color = new Color(0f, 0f, 0f, GUI.color.a * 0.5f);
             GUI.Label(new Rect(position.x - 1, position.y + 1, position.width, position.height), text, style);
             if (!active) GUI.color = inactiveColor;
-            else GUI.color = activeColor;
+            else GUI.color         = activeColor;
             GUI.Label(position, text, style);
         }
 
         public static LayerMask LayermaskField(string label, LayerMask layerMask)
         {
-            string[] layers = UnityEditorInternal.InternalEditorUtility.layers;
+            var layers = InternalEditorUtility.layers;
 
             layerNumbers.Clear();
 
-            for (int i = 0; i < layers.Length; i++)
-            {
-                layerNumbers.Add(LayerMask.NameToLayer(layers[i]));
-            }
+            for (var i = 0; i < layers.Length; i++) layerNumbers.Add(LayerMask.NameToLayer(layers[i]));
 
-            int maskWithoutEmpty = 0;
-            for (int i = 0; i < layerNumbers.Count; i++)
-            {
+            var maskWithoutEmpty = 0;
+            for (var i = 0; i < layerNumbers.Count; i++)
                 if (((1 << layerNumbers[i]) & layerMask.value) > 0)
-                {
-                    maskWithoutEmpty |= (1 << i);
-                }
-            }
+                    maskWithoutEmpty |= 1 << i;
 
             maskWithoutEmpty = EditorGUILayout.MaskField(label, maskWithoutEmpty, layers);
 
-            int mask = 0;
-            for (int i = 0; i < layerNumbers.Count; i++)
-            {
+            var mask = 0;
+            for (var i = 0; i < layerNumbers.Count; i++)
                 if ((maskWithoutEmpty & (1 << i)) > 0)
-                {
-                    mask |= (1 << layerNumbers[i]);
-                }
-            }
+                    mask |= 1 << layerNumbers[i];
 
             layerMask.value = mask;
 
@@ -142,23 +138,25 @@ namespace Dreamteck
                     if (Event.current.type == EventType.DragPerform)
                     {
                         DragAndDrop.AcceptDrag();
-                        List<T> contentList = new List<T>();
+                        var contentList = new List<T>();
                         foreach (object dragged_object in DragAndDrop.objectReferences)
-                        {
                             if (dragged_object is GameObject)
                             {
-                                GameObject gameObject = (GameObject)dragged_object;
+                                var gameObject = (GameObject) dragged_object;
                                 if (acceptProjectAssets || !AssetDatabase.Contains(gameObject))
-                                {
-                                    if (gameObject.GetComponent<T>() != null) contentList.Add(gameObject.GetComponent<T>());
-                                }
+                                    if (gameObject.GetComponent<T>() != null)
+                                        contentList.Add(gameObject.GetComponent<T>());
                             }
-                        }
+
                         content = contentList.ToArray();
-                        return true; 
+                        return true;
                     }
-                    else return false;
+                    else
+                    {
+                        return false;
+                    }
             }
+
             return false;
         }
 
@@ -178,7 +176,7 @@ namespace Dreamteck
             EditorGUILayout.Space();
             EditorGUILayout.BeginHorizontal();
             GUILayout.FlexibleSpace();
-            Rect rect = GUILayoutUtility.GetRect(Screen.width / 2f, 2f);
+            var rect = GUILayoutUtility.GetRect(Screen.width / 2f, 2f);
             EditorGUI.DrawRect(rect, darkColor);
             GUILayout.FlexibleSpace();
             EditorGUILayout.EndHorizontal();

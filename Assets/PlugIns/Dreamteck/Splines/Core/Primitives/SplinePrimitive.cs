@@ -1,16 +1,15 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace Dreamteck.Splines.Primitives {
+namespace Dreamteck.Splines.Primitives
+{
     public class SplinePrimitive
     {
         protected bool closed = false;
-        protected SplinePoint[] points = new SplinePoint[0];
+        public    bool is2D   = false;
 
-        public Vector3 offset = Vector3.zero;
-        public Vector3 rotation = Vector3.zero;
-        public bool is2D = false;
+        public    Vector3       offset   = Vector3.zero;
+        protected SplinePoint[] points   = new SplinePoint[0];
+        public    Vector3       rotation = Vector3.zero;
 
         public virtual void Calculate()
         {
@@ -20,14 +19,13 @@ namespace Dreamteck.Splines.Primitives {
 
         protected virtual void Generate()
         {
-        
         }
 
         public Spline CreateSpline()
         {
             Generate();
             ApplyOffset();
-            Spline spline = new Spline(GetSplineType());
+            var spline = new Spline(GetSplineType());
             spline.points = points;
             if (closed) spline.Close();
             return spline;
@@ -37,7 +35,7 @@ namespace Dreamteck.Splines.Primitives {
         {
             Generate();
             ApplyOffset();
-            spline.type = GetSplineType();
+            spline.type   = GetSplineType();
             spline.points = points;
             if (closed) spline.Close();
             else if (spline.isClosed) spline.Break();
@@ -47,8 +45,8 @@ namespace Dreamteck.Splines.Primitives {
         {
             Generate();
             ApplyOffset();
-            GameObject go = new GameObject(name);
-            SplineComputer comp = go.AddComponent<SplineComputer>();
+            var go   = new GameObject(name);
+            var comp = go.AddComponent<SplineComputer>();
             comp.SetPoints(points, SplineComputer.Space.Local);
             if (closed) comp.Close();
             comp.transform.position = position;
@@ -81,29 +79,31 @@ namespace Dreamteck.Splines.Primitives {
             return closed;
         }
 
-        void ApplyOffset()
+        private void ApplyOffset()
         {
-            Quaternion freeRot = Quaternion.Euler(rotation);
-            if (is2D) freeRot = Quaternion.AngleAxis(-rotation.z, Vector3.forward) * Quaternion.AngleAxis(90f, Vector3.right);
-            for (int i = 0; i < points.Length; i++)
+            var freeRot = Quaternion.Euler(rotation);
+            if (is2D)
+                freeRot = Quaternion.AngleAxis(-rotation.z, Vector3.forward) * Quaternion.AngleAxis(90f, Vector3.right);
+            for (var i = 0; i < points.Length; i++)
             {
                 points[i].position = freeRot * points[i].position;
-                points[i].tangent = freeRot *  points[i].tangent;
+                points[i].tangent  = freeRot * points[i].tangent;
                 points[i].tangent2 = freeRot * points[i].tangent2;
-                points[i].normal = freeRot * points[i].normal;
+                points[i].normal   = freeRot * points[i].normal;
             }
-            for (int i = 0; i < points.Length; i++) points[i].SetPosition(points[i].position + offset);
+
+            for (var i = 0; i < points.Length; i++) points[i].SetPosition(points[i].position + offset);
         }
 
         protected void CreatePoints(int count, SplinePoint.Type type)
         {
             if (points.Length != count) points = new SplinePoint[count];
-            for (int i = 0; i < points.Length; i++)
+            for (var i = 0; i < points.Length; i++)
             {
-                points[i].type = type;
+                points[i].type   = type;
                 points[i].normal = Vector3.up;
-                points[i].color = Color.white;
-                points[i].size = 1f;
+                points[i].color  = Color.white;
+                points[i].size   = 1f;
             }
         }
     }

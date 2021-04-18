@@ -1,7 +1,4 @@
 using UnityEngine;
-using UnityEngine.Events;
-using System.Collections;
-using UnityEngine.Serialization;
 
 namespace Dreamteck.Splines
 {
@@ -9,13 +6,38 @@ namespace Dreamteck.Splines
     [AddComponentMenu("Dreamteck/Splines/Users/Spline Projector")]
     public class SplineProjector : SplineTracer
     {
-        public enum Mode {Accurate, Cached}
+        public enum Mode
+        {
+            Accurate,
+            Cached
+        }
+
+        [SerializeField] [HideInInspector] private Mode _mode = Mode.Cached;
+
+        [SerializeField] [HideInInspector] private bool _autoProject = true;
+
+        [SerializeField] [HideInInspector] [Range(3, 8)]
+        private int _subdivide = 4;
+
+        [SerializeField] [HideInInspector] private Transform _projectTarget;
+
+
+        [SerializeField] [HideInInspector] private Transform applyTarget;
+
+        [SerializeField] [HideInInspector] private GameObject _targetObject;
+
+        [SerializeField] [HideInInspector] public Vector2 _offset;
+
+        [SerializeField] [HideInInspector] public Vector3 _rotationOffset = Vector3.zero;
+
+        [SerializeField] [HideInInspector] private Vector3 lastPosition = Vector3.zero;
+
         public Mode mode
         {
-            get { return _mode; }
+            get => _mode;
             set
             {
-                if(value != _mode)
+                if (value != _mode)
                 {
                     _mode = value;
                     Rebuild();
@@ -25,10 +47,10 @@ namespace Dreamteck.Splines
 
         public bool autoProject
         {
-            get { return _autoProject; }
+            get => _autoProject;
             set
             {
-                if(value != _autoProject)
+                if (value != _autoProject)
                 {
                     _autoProject = value;
                     if (_autoProject) Rebuild();
@@ -38,7 +60,7 @@ namespace Dreamteck.Splines
 
         public int subdivide
         {
-            get { return _subdivide; }
+            get => _subdivide;
             set
             {
                 if (value != _subdivide)
@@ -51,9 +73,10 @@ namespace Dreamteck.Splines
 
         public Transform projectTarget
         {
-            get {
+            get
+            {
                 if (_projectTarget == null) return transform;
-                return _projectTarget; 
+                return _projectTarget;
             }
             set
             {
@@ -70,14 +93,13 @@ namespace Dreamteck.Splines
             get
             {
                 if (_targetObject == null)
-                {
                     if (applyTarget != null) //Temporary check to migrate SplineProjectors that use target
                     {
                         _targetObject = applyTarget.gameObject;
-                        applyTarget = null;
+                        applyTarget   = null;
                         return _targetObject;
                     }
-                }
+
                 return _targetObject;
             }
 
@@ -92,47 +114,14 @@ namespace Dreamteck.Splines
             }
         }
 
-        [SerializeField]
-        [HideInInspector]
-        private Mode _mode = Mode.Cached;
-        [SerializeField]
-        [HideInInspector]
-        private bool _autoProject = true;
-        [SerializeField]
-        [HideInInspector]
-        [Range(3, 8)]
-        private int _subdivide = 4;
-        [SerializeField]
-        [HideInInspector]
-        private Transform _projectTarget;
-
-
-        [SerializeField]
-        [HideInInspector]
-        private Transform applyTarget = null;
-        [SerializeField]
-        [HideInInspector]
-        private GameObject _targetObject;
-
-        [SerializeField]
-        [HideInInspector]
-        public Vector2 _offset;
-        [SerializeField]
-        [HideInInspector]
-        public Vector3 _rotationOffset = Vector3.zero;
-
-        public event SplineReachHandler onEndReached;
-        public event SplineReachHandler onBeginningReached;
-
-        [SerializeField]
-        [HideInInspector]
-        Vector3 lastPosition = Vector3.zero;
-
         protected override void Reset()
         {
             base.Reset();
             _projectTarget = transform;
         }
+
+        public event SplineReachHandler onEndReached;
+        public event SplineReachHandler onBeginningReached;
 
         protected override Transform GetTransform()
         {
@@ -157,14 +146,12 @@ namespace Dreamteck.Splines
         {
             base.LateRun();
             if (autoProject)
-            {
                 if (projectTarget && lastPosition != projectTarget.position)
                 {
                     lastPosition = projectTarget.position;
                     CalculateProjection();
                 }
-            }
-         }
+        }
 
         protected override void PostBuild()
         {
@@ -177,13 +164,10 @@ namespace Dreamteck.Splines
             if (spline != null)
             {
                 if (_mode == Mode.Accurate)
-                {
-                    spline.Project(_result, _projectTarget.position, clipFrom, clipTo, SplineComputer.EvaluateMode.Calculate, subdivide);
-                } 
+                    spline.Project(_result, _projectTarget.position, clipFrom, clipTo,
+                                   SplineComputer.EvaluateMode.Calculate, subdivide);
                 else
-                {
                     spline.Project(_result, _projectTarget.position, clipFrom, clipTo);
-                }
                 _result.percent = ClipPercent(_result.percent);
             }
         }
@@ -193,7 +177,8 @@ namespace Dreamteck.Splines
         {
             if (_mode == Mode.Accurate && spline != null)
             {
-                spline.Project(_result, _projectTarget.position, clipFrom, clipTo, SplineComputer.EvaluateMode.Calculate, subdivide);
+                spline.Project(_result, _projectTarget.position, clipFrom, clipTo,
+                               SplineComputer.EvaluateMode.Calculate, subdivide);
                 _result.percent = ClipPercent(_result.percent);
             }
             else
@@ -205,12 +190,12 @@ namespace Dreamteck.Splines
         public void CalculateProjection()
         {
             if (_projectTarget == null) return;
-            double lastPercent = _result.percent;
+            var lastPercent = _result.percent;
             Project();
 
             if (onBeginningReached != null && _result.percent <= clipFrom)
             {
-                if (!Mathf.Approximately((float)lastPercent, (float)_result.percent))
+                if (!Mathf.Approximately((float) lastPercent, (float) _result.percent))
                 {
                     onBeginningReached();
                     if (samplesAreLooped)
@@ -223,7 +208,7 @@ namespace Dreamteck.Splines
             }
             else if (onEndReached != null && _result.percent >= clipTo)
             {
-                if (!Mathf.Approximately((float)lastPercent, (float)_result.percent))
+                if (!Mathf.Approximately((float) lastPercent, (float) _result.percent))
                 {
                     onEndReached();
                     if (samplesAreLooped)
@@ -237,12 +222,9 @@ namespace Dreamteck.Splines
 
             CheckTriggers(lastPercent, _result.percent);
             CheckNodes(lastPercent, _result.percent);
-            
 
-            if (targetObject != null)
-            {
-                ApplyMotion();
-            }
+
+            if (targetObject != null) ApplyMotion();
 
             InvokeTriggers();
             InvokeNodes();

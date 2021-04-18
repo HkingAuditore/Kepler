@@ -1,7 +1,5 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿using Dreamteck.Splines.Editor;
 using UnityEditor;
-using Dreamteck.Splines.Editor;
 
 namespace Dreamteck.Splines.Primitives
 {
@@ -21,9 +19,9 @@ namespace Dreamteck.Splines.Primitives
         protected override void OnGUI()
         {
             base.OnGUI();
-            Ngon ngon = (Ngon)primitive;
+            var ngon = (Ngon) primitive;
             ngon.radius = EditorGUILayout.FloatField("Radius", ngon.radius);
-            ngon.sides = EditorGUILayout.IntField("Sides", ngon.sides);
+            ngon.sides  = EditorGUILayout.IntField("Sides", ngon.sides);
             if (ngon.sides < 3) ngon.sides = 3;
         }
     }

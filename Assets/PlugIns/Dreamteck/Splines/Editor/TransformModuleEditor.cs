@@ -1,17 +1,16 @@
+using UnityEditor;
+using UnityEngine;
+
 namespace Dreamteck.Splines.Editor
 {
-    using System.Collections;
-    using System.Collections.Generic;
-    using UnityEditor;
-    using UnityEngine;
-
     public class TransformModuleEditor : SplineUserSubEditor
     {
-        private TransformModule motionApplier;
+        private readonly TransformModule motionApplier;
 
-        public TransformModuleEditor(SplineUser user, SplineUserEditor parent, TransformModule input) : base(user, parent)
+        public TransformModuleEditor(SplineUser user, SplineUserEditor parent, TransformModule input) :
+            base(user, parent)
         {
-            title = "Motion";
+            title         = "Motion";
             motionApplier = input;
         }
 
@@ -32,8 +31,9 @@ namespace Dreamteck.Splines.Editor
             if (motionApplier.applyPosition)
             {
                 EditorGUI.indentLevel = 2;
-                motionApplier.offset = EditorGUILayout.Vector2Field("Offset", motionApplier.offset);
+                motionApplier.offset  = EditorGUILayout.Vector2Field("Offset", motionApplier.offset);
             }
+
             EditorGUI.indentLevel = 1;
 
             EditorGUILayout.BeginHorizontal();
@@ -48,9 +48,10 @@ namespace Dreamteck.Splines.Editor
 
             if (motionApplier.applyRotation)
             {
-                EditorGUI.indentLevel = 2;
+                EditorGUI.indentLevel        = 2;
                 motionApplier.rotationOffset = EditorGUILayout.Vector3Field("Offset", motionApplier.rotationOffset);
             }
+
             EditorGUI.indentLevel = 1;
             EditorGUILayout.BeginHorizontal();
             EditorGUILayout.LabelField("Scale", GUILayout.Width(EditorGUIUtility.labelWidth));
@@ -64,11 +65,13 @@ namespace Dreamteck.Splines.Editor
 
             if (motionApplier.applyScale)
             {
-                EditorGUI.indentLevel = 2;
+                EditorGUI.indentLevel   = 2;
                 motionApplier.baseScale = EditorGUILayout.Vector3Field("Base scale", motionApplier.baseScale);
             }
 
-            motionApplier.velocityHandleMode = (TransformModule.VelocityHandleMode)EditorGUILayout.EnumPopup("Velocity Mode", motionApplier.velocityHandleMode);
+            motionApplier.velocityHandleMode =
+                (TransformModule.VelocityHandleMode) EditorGUILayout.EnumPopup("Velocity Mode",
+                                                                               motionApplier.velocityHandleMode);
 
             EditorGUI.indentLevel = 0;
         }

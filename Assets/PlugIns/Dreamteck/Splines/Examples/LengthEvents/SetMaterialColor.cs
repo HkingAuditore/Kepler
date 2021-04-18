@@ -1,12 +1,11 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 namespace Dreamteck.Splines.Examples
 {
     public class SetMaterialColor : MonoBehaviour
     {
-        public Color[] colors;
-        SplineRenderer rend;
+        public  Color[]        colors;
+        private SplineRenderer rend;
 
         private void Start()
         {
@@ -18,6 +17,5 @@ namespace Dreamteck.Splines.Examples
             if (!Application.isPlaying) return;
             rend.color = colors[index];
         }
-
     }
 }

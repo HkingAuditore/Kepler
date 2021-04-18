@@ -4,14 +4,13 @@ namespace LeTai.Asset.TranslucentImage
 {
     public class ScalableBlur : IBlurAlgorithm
     {
-        Shader             shader;
-        Material           material;
-        ScalableBlurConfig config;
+        private const int                BLUR_PASS      = 0;
+        private const int                CROP_BLUR_PASS = 1;
+        private       ScalableBlurConfig config;
+        private       Material           material;
+        private       Shader             shader;
 
-        const int BLUR_PASS      = 0;
-        const int CROP_BLUR_PASS = 1;
-
-        Material Material
+        private Material Material
         {
             get
             {
@@ -20,7 +19,7 @@ namespace LeTai.Asset.TranslucentImage
 
                 return material;
             }
-            set { material = value; }
+            set => material = value;
         }
 
         public void Init(BlurConfig config)
@@ -32,13 +31,13 @@ namespace LeTai.Asset.TranslucentImage
         {
             if (blurredTexture.IsCreated()) blurredTexture.DiscardContents();
 
-            float radius = ScaleWithResolution(
-                config.Radius,
-                blurredTexture.width * sourceCropRegion.width,
-                blurredTexture.height * sourceCropRegion.height
-            );
+            var radius = ScaleWithResolution(
+                                             config.Radius,
+                                             blurredTexture.width  * sourceCropRegion.width,
+                                             blurredTexture.height * sourceCropRegion.height
+                                            );
 
-            int firstDownsampleFactor = config.Iteration > 0 ? 1 : 0;
+            var firstDownsampleFactor = config.Iteration > 0 ? 1 : 0;
 
             var tmpRt = CreateTempRenderTextureFrom(blurredTexture, firstDownsampleFactor);
 
@@ -51,16 +50,10 @@ namespace LeTai.Asset.TranslucentImage
             Graphics.Blit(source, tmpRt, Material, CROP_BLUR_PASS);
 
             //Downsample. (iteration - 1) pass
-            for (int i = 2; i <= config.Iteration; i++)
-            {
-                BlurAtDepth(i, ref blurredTexture, ref tmpRt);
-            }
+            for (var i = 2; i <= config.Iteration; i++) BlurAtDepth(i, ref blurredTexture, ref tmpRt);
 
             //Upsample. (iteration - 1) pass
-            for (int i = config.Iteration - 1; i >= 1; i--)
-            {
-                BlurAtDepth(i, ref blurredTexture, ref tmpRt);
-            }
+            for (var i = config.Iteration - 1; i >= 1; i--) BlurAtDepth(i, ref blurredTexture, ref tmpRt);
 
             //Final upsample
             Graphics.Blit(tmpRt, blurredTexture, Material, BLUR_PASS);
@@ -69,12 +62,12 @@ namespace LeTai.Asset.TranslucentImage
             source.filterMode = sourceFilterMode;
         }
 
-        ///<summary>
-        /// Relative blur size to maintain same look across multiple resolution
+        /// <summary>
+        ///     Relative blur size to maintain same look across multiple resolution
         /// </summary>
-        float ScaleWithResolution(float baseRadius, float width, float height)
+        private float ScaleWithResolution(float baseRadius, float width, float height)
         {
-            float scaleFactor = Mathf.Min(width, height) / 1080f;
+            var scaleFactor = Mathf.Min(width, height) / 1080f;
             scaleFactor = Mathf.Clamp(scaleFactor, .5f, 2f); //too much variation cause artifact
             return baseRadius * scaleFactor;
         }
@@ -85,10 +78,10 @@ namespace LeTai.Asset.TranslucentImage
             Material.SetVector(ShaderId.CROP_REGION, cropRegion);
         }
 
-        RenderTexture CreateTempRenderTextureFrom(RenderTexture source, int downsampleFactor)
+        private RenderTexture CreateTempRenderTextureFrom(RenderTexture source, int downsampleFactor)
         {
-            int w = source.width >> downsampleFactor; //= width / 2^downsample
-            int h = source.height >> downsampleFactor;
+            var w = source.width  >> downsampleFactor; //= width / 2^downsample
+            var h = source.height >> downsampleFactor;
 
             var rt = RenderTexture.GetTemporary(w, h, 0, source.format);
             rt.filterMode = FilterMode.Bilinear;

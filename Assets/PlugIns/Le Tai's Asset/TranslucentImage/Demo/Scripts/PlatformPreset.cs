@@ -9,15 +9,14 @@ namespace LeTai.Asset.TranslucentImage.Demo
         public Preset[] presets;
 
         // Use this for initialization
-        void Start()
+        private void Start()
         {
-            Slider sizeSlider         = GameObject.Find("Size Slider").GetComponent<Slider>();
-            Slider iterationSlider    = GameObject.Find("Iteration Slider").GetComponent<Slider>();
-            Slider downsampleSlider   = GameObject.Find("Downsample Slider").GetComponent<Slider>();
-            Slider maxUpdateRateField = GameObject.Find("Max update rate Slider").GetComponent<Slider>();
+            var sizeSlider         = GameObject.Find("Size Slider").GetComponent<Slider>();
+            var iterationSlider    = GameObject.Find("Iteration Slider").GetComponent<Slider>();
+            var downsampleSlider   = GameObject.Find("Downsample Slider").GetComponent<Slider>();
+            var maxUpdateRateField = GameObject.Find("Max update rate Slider").GetComponent<Slider>();
 
-            foreach (Preset preset in presets)
-            {
+            foreach (var preset in presets)
                 if (preset.platform == Application.platform)
                 {
                     sizeSlider.value         = preset.size;
@@ -25,7 +24,6 @@ namespace LeTai.Asset.TranslucentImage.Demo
                     downsampleSlider.value   = preset.downsample;
                     maxUpdateRateField.value = preset.maxUpdateRate;
                 }
-            }
         }
     }
 

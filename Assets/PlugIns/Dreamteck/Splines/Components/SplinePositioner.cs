@@ -1,13 +1,24 @@
 using UnityEngine;
-using System.Collections;
 
 namespace Dreamteck.Splines
 {
     [AddComponentMenu("Dreamteck/Splines/Users/Spline Positioner")]
     public class SplinePositioner : SplineTracer
     {
-        public enum Mode { Percent, Distance }
-        
+        public enum Mode
+        {
+            Percent,
+            Distance
+        }
+
+        [SerializeField] [HideInInspector] private GameObject _targetObject;
+
+        [SerializeField] [HideInInspector] private double _position;
+
+        [SerializeField] [HideInInspector] private float animPosition;
+
+        [SerializeField] [HideInInspector] private Mode _mode = Mode.Percent;
+
         public GameObject targetObject
         {
             get
@@ -29,17 +40,14 @@ namespace Dreamteck.Splines
 
         public double position
         {
-            get
-            {
-                return _position;
-            }
+            get => _position;
             set
             {
                 if (value != _position)
                 {
-                    animPosition = (float)value;
-                    _position = value;
-                    if (mode == Mode.Distance) SetDistance((float)_position, true);
+                    animPosition = (float) value;
+                    _position    = value;
+                    if (mode == Mode.Distance) SetDistance((float) _position, true);
                     else SetPercent(_position, true);
                 }
             }
@@ -47,7 +55,7 @@ namespace Dreamteck.Splines
 
         public Mode mode
         {
-            get { return _mode;  }
+            get => _mode;
             set
             {
                 if (value != _mode)
@@ -57,19 +65,6 @@ namespace Dreamteck.Splines
                 }
             }
         }
-
-        [SerializeField]
-        [HideInInspector]
-        private GameObject _targetObject;
-        [SerializeField]
-        [HideInInspector]
-        private double _position = 0.0;
-        [SerializeField]
-        [HideInInspector]
-        private float animPosition = 0f;
-        [SerializeField]
-        [HideInInspector]
-        private Mode _mode = Mode.Percent;
 
         protected override void OnDidApplyAnimationProperties()
         {
@@ -95,7 +90,7 @@ namespace Dreamteck.Splines
         protected override void PostBuild()
         {
             base.PostBuild();
-            if (mode == Mode.Distance) SetDistance((float)_position, true);
+            if (mode == Mode.Distance) SetDistance((float) _position, true);
             else SetPercent(_position, true);
         }
 

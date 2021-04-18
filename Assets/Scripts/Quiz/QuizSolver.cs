@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
 using System.Text;
+using CustomUI.Quiz;
+using GameManagers;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -13,6 +15,7 @@ namespace Quiz
         Crash,
         Overtime
     }
+
     public class QuizSolver : QuizBase
     {
         public QuizUI     quizUI;
@@ -20,17 +23,12 @@ namespace Quiz
         public float      radiusOffset = .2f;
         public UnityEvent resultEvent;
         public UnityEvent answerEvent;
-        
-        private float _tmpAnswer;
-        private bool  _isRight = true;
-        private bool  _isAnswered = false;
-        public bool isRight
-        {
-            get => _isRight;
-            set => _isRight = value;
-        }
 
         private Reason _reason;
+
+        private float _tmpAnswer;
+
+        public bool isRight { get; set; } = true;
 
         public float TmpAnswer
         {
@@ -49,82 +47,70 @@ namespace Quiz
             set
             {
                 _reason = value;
-                if(_reason == Reason.Crash)
+                if (_reason == Reason.Crash)
                     resultEvent.Invoke();
             }
         }
 
-        public bool isAnswered
+        public bool isAnswered { get; set; } = false;
+
+        public override void Start()
         {
-            get => _isAnswered;
-            set
-            {
-                _isAnswered = value;
-                
-            }
+            base.Start();
+            quizUI.quizType = quizType;
+            quizUI.Generate();
+            GameManager.GetGameManager.globalTimer.countingDownEndEvent.AddListener(() =>
+                                                                                    {
+                                                                                        reason = Reason.Overtime;
+                                                                                        resultEvent.Invoke();
+                                                                                    });
+            GameManager.GetGameManager.globalTimer.StartCounting();
+            resultEvent.AddListener(() =>
+                                        GameManager.GetGameManager.globalTimer.isPausing = true
+                                   );
         }
 
 
         private void FinishQuiz(bool isRight)
         {
-
             astralBodiesDict.ForEach(pair =>
                                      {
-                                         pair.astralBody.oriRadius = Vector3.Distance(pair.astralBody.transform.position, this.target.transform.position);
+                                         pair.astralBody.oriRadius =
+                                             Vector3.Distance(pair.astralBody.transform.position,
+                                                              target.transform.position);
                                          Debug.Log("Test Result Ori Radius:" + pair.astralBody.oriRadius);
-
                                      });
             orbitBase.Freeze(false);
 
             StartCoroutine(WaitForAnswer(waitTime));
         }
-        
-        IEnumerator WaitForAnswer(float time) {
+
+        private IEnumerator WaitForAnswer(float time)
+        {
             yield return new WaitForSeconds(time);
             Debug.Log("Test Result:Time out");
-            if (this.isRight)
+            if (isRight)
             {
                 Debug.Log("Test Result: Right!");
-                this.reason = Reason.Right;
+                reason = Reason.Right;
             }
+
             resultEvent.Invoke();
         }
 
-        public override void Start()
+        public string GetQuizSentence()
         {
-            base.Start();
-            quizUI.quizType = this.quizType;
-            quizUI.Generate();
-            GameManager.GetGameManager.globalTimer.countingDownEndEvent.AddListener((() =>
-                                                                                     {
-                                                                                         this.reason = Reason.Overtime;
-                                                                                         resultEvent.Invoke();
-                                                                                     }));
-            GameManager.GetGameManager.globalTimer.StartCounting();
-            resultEvent.AddListener(() => 
-                                        GameManager.GetGameManager.globalTimer.isPausing = true
-                                    );
-        }
-
-        public String GetQuizSentence()
-        {
-            StringBuilder stringBuilder = new StringBuilder(" ");
-            string           centerString  = this.target.GetQuizConditionString();
-            if(centerString!=null)
+            var stringBuilder = new StringBuilder(" ");
+            var centerString  = target.GetQuizConditionString();
+            if (centerString != null) stringBuilder.Append("中心星体的" + centerString + "；");
+            var i = 1;
+            foreach (var dict in astralBodiesDict)
             {
-                stringBuilder.Append("中心星体的" + centerString + "；");
-            } 
-            int i = 1;
-            foreach (AstralBodyDict dict in astralBodiesDict)
-            {
-                if(dict.isTarget)continue;
-                string orbitString = dict.astralBody.GetQuizConditionString();
-                if(orbitString!=null)
-                {
-                    stringBuilder.Append("绕转星体" + i + "的" + orbitString + "；");
-                }
-                
+                if (dict.isTarget) continue;
+                var orbitString = dict.astralBody.GetQuizConditionString();
+                if (orbitString != null) stringBuilder.Append("绕转星体" + i + "的" + orbitString + "；");
             }
+
             stringBuilder.Remove(stringBuilder.Length - 1, 1);
             stringBuilder.Append("。请求出");
             switch (quizType)
@@ -150,8 +136,5 @@ namespace Quiz
 
             return stringBuilder.ToString();
         }
-        
-        
-
     }
 }

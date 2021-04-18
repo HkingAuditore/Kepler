@@ -1,13 +1,14 @@
-﻿using UnityEngine;
-using System.Collections;
-
-namespace Dreamteck.Splines
+﻿namespace Dreamteck.Splines
 {
     //This is a blank SplineUser-derived class which you can use to build your custom SplineUser
     //You can safely delete any functions that you won't use
     //DO NOT ADD Update, LateUpdate or FixedUpdate, use Run, it is automatically called through one of these methods
     public class BlankUser : SplineUser
     {
+        private void Start()
+        {
+            //Write initialization code here
+        }
 #if UNITY_EDITOR
         public override void EditorAwake()
         {
@@ -15,11 +16,6 @@ namespace Dreamteck.Splines
             //Editor initialization 
         }
 #endif
-
-        void Start()
-        {
-            //Write initialization code here
-        }
 
         protected override void LateRun()
         {
@@ -40,6 +36,5 @@ namespace Dreamteck.Splines
             //Called on the main thread after Build has finished
             //Use it to apply the calculations from Build to GameObjects, Transforms, Meshes, etc.
         }
-
     }
 }

@@ -1,36 +1,35 @@
 ﻿using UnityEngine;
 
-public class GPUInstancingTest : MonoBehaviour {
+public class GPUInstancingTest : MonoBehaviour
+{
+    public Transform prefab;
 
-	public Transform prefab;
+    public int instances = 5000;
 
-	public int instances = 5000;
+    public float radius = 50f;
 
-	public float radius = 50f;
+    private void Start()
+    {
+        var properties = new MaterialPropertyBlock();
+        for (var i = 0; i < instances; i++)
+        {
+            var t = Instantiate(prefab);
+            t.localPosition = Random.insideUnitSphere * radius;
+            t.SetParent(transform);
 
-	void Start () {
-		MaterialPropertyBlock properties = new MaterialPropertyBlock();
-		for (int i = 0; i < instances; i++) {
-			Transform t = Instantiate(prefab);
-			t.localPosition = Random.insideUnitSphere * radius;
-			t.SetParent(transform);
+            properties.SetColor(
+                                "_Color", new Color(Random.value, Random.value, Random.value)
+                               );
 
-			properties.SetColor(
-				"_Color", new Color(Random.value, Random.value, Random.value)
-			);
-
-			MeshRenderer r = t.GetComponent<MeshRenderer>();
-			if (r) {
-				r.SetPropertyBlock(properties);
-			}
-			else {
-				for (int ci = 0; ci < t.childCount; ci++) {
-					r = t.GetChild(ci).GetComponent<MeshRenderer>();
-					if (r) {
-						r.SetPropertyBlock(properties);
-					}
-				}
-			}
-		}
-	}
+            var r = t.GetComponent<MeshRenderer>();
+            if (r)
+                r.SetPropertyBlock(properties);
+            else
+                for (var ci = 0; ci < t.childCount; ci++)
+                {
+                    r = t.GetChild(ci).GetComponent<MeshRenderer>();
+                    if (r) r.SetPropertyBlock(properties);
+                }
+        }
+    }
 }

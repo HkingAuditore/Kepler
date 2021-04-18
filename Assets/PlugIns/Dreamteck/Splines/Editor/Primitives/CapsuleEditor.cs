@@ -1,7 +1,5 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿using Dreamteck.Splines.Editor;
 using UnityEditor;
-using Dreamteck.Splines.Editor;
 
 namespace Dreamteck.Splines.Primitives
 {
@@ -21,7 +19,7 @@ namespace Dreamteck.Splines.Primitives
         protected override void OnGUI()
         {
             base.OnGUI();
-            Capsule capsule = (Capsule)primitive;
+            var capsule = (Capsule) primitive;
             capsule.radius = EditorGUILayout.FloatField("Radius", capsule.radius);
             capsule.height = EditorGUILayout.FloatField("Height", capsule.height);
         }

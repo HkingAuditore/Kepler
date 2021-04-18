@@ -1,158 +1,201 @@
+using System.IO;
+using UnityEditor;
+using UnityEngine;
+
 namespace Dreamteck.Splines.Editor
 {
-    using UnityEngine;
-    using System.Collections;
-    using UnityEditor;
-    using System.IO;
-
     public class BakeMeshWindow : EditorWindow
     {
+        public enum SaveFormat
+        {
+            MeshAsset,
+            OBJ,
+            None
+        }
+
         public bool isStatic = true;
-        public bool copy = false;
-        public bool removeComputer = false;
-        public bool permanent = false;
-        public bool generateLightmapUVs = false;
+        public bool copy;
+        public bool removeComputer;
+        public bool permanent;
+        public bool generateLightmapUVs;
 
-        MeshFilter filter;
-        MeshGenerator meshGen;
-        public enum SaveFormat { MeshAsset, OBJ, None }
-        SaveFormat format = SaveFormat.MeshAsset;
+        private MeshFilter    filter;
+        private SaveFormat    format = SaveFormat.MeshAsset;
+        private MeshGenerator meshGen;
 
-        public void Init(MeshGenerator generator)
+        private void OnDestroy()
         {
-            titleContent = new GUIContent("Bake Mesh");
-            meshGen = generator;
-            filter = generator.GetComponent<MeshFilter>();
-            if (EditorPrefs.HasKey("BakeWindow_isStatic")) isStatic = EditorPrefs.GetBool("BakeWindow_isStatic");
-            if (EditorPrefs.HasKey("BakeWindow_generateLightmapUVs")) generateLightmapUVs = EditorPrefs.GetBool("BakeWindow_generateLightmapUVs");
-            if (EditorPrefs.HasKey("BakeWindow_copy")) copy = EditorPrefs.GetBool("BakeWindow_copy");
-            if (EditorPrefs.HasKey("BakeWindow_removeComputer")) removeComputer = EditorPrefs.GetBool("BakeWindow_removeComputer");
-            if (EditorPrefs.HasKey("BakeWindow_permanent")) permanent = EditorPrefs.GetBool("BakeWindow_permanent");
-            format = (SaveFormat)EditorPrefs.GetInt("BakeWindow_format", 0);
-            minSize = new Vector2(340, 220);
-            maxSize = minSize;
-        }
-
-        void OnDestroy()
-        {
-            EditorPrefs.SetBool("BakeWindow_isStatic", isStatic);
+            EditorPrefs.SetBool("BakeWindow_isStatic",            isStatic);
             EditorPrefs.SetBool("BakeWindow_generateLightmapUVs", generateLightmapUVs);
-            EditorPrefs.SetBool("BakeWindow_copy", copy);
-            EditorPrefs.SetBool("BakeWindow_removeComputer", removeComputer);
-            EditorPrefs.SetBool("BakeWindow_permanent", permanent);
-            EditorPrefs.SetInt("BakeWindow_format", (int)format);
+            EditorPrefs.SetBool("BakeWindow_copy",                copy);
+            EditorPrefs.SetBool("BakeWindow_removeComputer",      removeComputer);
+            EditorPrefs.SetBool("BakeWindow_permanent",           permanent);
+            EditorPrefs.SetInt("BakeWindow_format", (int) format);
         }
 
-        void OnGUI() {
-            format = (SaveFormat)EditorGUILayout.EnumPopup("Save Format", format);
-            bool saveMesh = format != SaveFormat.None;
+        private void OnGUI()
+        {
+            format = (SaveFormat) EditorGUILayout.EnumPopup("Save Format", format);
+            var saveMesh = format != SaveFormat.None;
 
             if (format != SaveFormat.None) copy = EditorGUILayout.Toggle("Save without baking", copy);
-            bool isCopy = format != SaveFormat.None && copy;
+            var isCopy                          = format != SaveFormat.None && copy;
             switch (format)
             {
-                case SaveFormat.None: EditorGUILayout.HelpBox("Saves the mesh inside the scene for lightmap", MessageType.Info); break;
-                case SaveFormat.MeshAsset: EditorGUILayout.HelpBox("Saves the mesh as an .asset file inside the project. This makes using the mesh in prefabs and across scenes possible.", MessageType.Info); break;
-                case SaveFormat.OBJ: EditorGUILayout.HelpBox("Exports the mesh as an OBJ file which can be imported in a third-party modeling application.", MessageType.Info); break;
+                case SaveFormat.None:
+                    EditorGUILayout.HelpBox("Saves the mesh inside the scene for lightmap", MessageType.Info);
+                    break;
+                case SaveFormat.MeshAsset:
+                    EditorGUILayout
+                       .HelpBox("Saves the mesh as an .asset file inside the project. This makes using the mesh in prefabs and across scenes possible.",
+                                MessageType.Info);
+                    break;
+                case SaveFormat.OBJ:
+                    EditorGUILayout
+                       .HelpBox("Exports the mesh as an OBJ file which can be imported in a third-party modeling application.",
+                                MessageType.Info);
+                    break;
             }
+
             EditorGUILayout.Space();
 
             if (!isCopy)
             {
-                isStatic = EditorGUILayout.Toggle("Make Static", isStatic);
-                permanent = EditorGUILayout.Toggle("Permanent", permanent);
+                isStatic            = EditorGUILayout.Toggle("Make Static",           isStatic);
+                permanent           = EditorGUILayout.Toggle("Permanent",             permanent);
                 generateLightmapUVs = EditorGUILayout.Toggle("Generate Lightmap UVs", generateLightmapUVs);
                 if (permanent)
                 {
                     removeComputer = EditorGUILayout.Toggle("Remove SplineComputer", removeComputer);
-                    if (meshGen.spline.subscriberCount > 1 && !isCopy) EditorGUILayout.HelpBox("WARNING: Removing the SplineComputer from this object will cause other SplineUsers to malfunction!", MessageType.Warning);
+                    if (meshGen.spline.subscriberCount > 1 && !isCopy)
+                        EditorGUILayout
+                           .HelpBox("WARNING: Removing the SplineComputer from this object will cause other SplineUsers to malfunction!",
+                                    MessageType.Warning);
                 }
             }
 
-            string bakeText = "Bake Mesh";
+            var bakeText           = "Bake Mesh";
             if (saveMesh) bakeText = "Bake & Save Mesh";
-            if (isCopy) bakeText = "Save Mesh";
+            if (isCopy) bakeText   = "Save Mesh";
 
             if (GUILayout.Button(bakeText))
             {
                 if (permanent)
-                {
-                    if (!EditorUtility.DisplayDialog("Permanent bake?", "This operation will remove the Mesh Generator. Are you sure you want to continue?", "Yes", "No")) return;
-                }
-                string savePath = "";
+                    if (!EditorUtility.DisplayDialog("Permanent bake?",
+                                                     "This operation will remove the Mesh Generator. Are you sure you want to continue?",
+                                                     "Yes", "No"))
+                        return;
+                var savePath = "";
                 if (saveMesh)
                 {
-                    string ext = "asset";
+                    var ext                           = "asset";
                     if (format == SaveFormat.OBJ) ext = "obj";
-                    string meshName = "mesh";
-                    if (filter != null) meshName = filter.sharedMesh.name;
-                    savePath = EditorUtility.SaveFilePanel("Save " + meshName, Application.dataPath, meshName + "." + ext, ext);
+                    var meshName                      = "mesh";
+                    if (filter != null) meshName      = filter.sharedMesh.name;
+                    savePath = EditorUtility.SaveFilePanel("Save "  + meshName, Application.dataPath,
+                                                           meshName + "." + ext, ext);
                     if (!Directory.Exists(Path.GetDirectoryName(savePath)) || savePath == "")
                     {
-                        EditorUtility.DisplayDialog("Save error", "Invalid save path. Please select a valid save path and try again", "OK");
+                        EditorUtility.DisplayDialog("Save error",
+                                                    "Invalid save path. Please select a valid save path and try again",
+                                                    "OK");
                         return;
                     }
+
                     if (format == SaveFormat.OBJ && !copy && !savePath.StartsWith(Application.dataPath))
                     {
-                        EditorUtility.DisplayDialog("Save error", "OBJ files can be saved outside of the project folder only when \"Save without baking\" is selected. Please select a directory inside the project in order to save.", "OK");
+                        EditorUtility.DisplayDialog("Save error",
+                                                    "OBJ files can be saved outside of the project folder only when \"Save without baking\" is selected. Please select a directory inside the project in order to save.",
+                                                    "OK");
                         return;
                     }
 
                     if (format == SaveFormat.MeshAsset && !savePath.StartsWith(Application.dataPath))
                     {
-                        EditorUtility.DisplayDialog("Save error", "Asset files cannot be saved outside of the project directory. Please select a path inside the project directory.", "OK");
+                        EditorUtility.DisplayDialog("Save error",
+                                                    "Asset files cannot be saved outside of the project directory. Please select a path inside the project directory.",
+                                                    "OK");
                         return;
                     }
                 }
+
                 Undo.RecordObject(meshGen.gameObject, "Bake mesh");
-                if (!isCopy) Bake();
+                if (!isCopy)
+                {
+                    Bake();
+                }
                 else
                 {
                     UnityEditor.MeshUtility.Optimize(filter.sharedMesh);
                     Unwrapping.GenerateSecondaryUVSet(filter.sharedMesh);
                 }
+
                 if (saveMesh) SaveMeshFile(savePath);
             }
         }
 
-        void Bake()
+        public void Init(MeshGenerator generator)
+        {
+            titleContent = new GUIContent("Bake Mesh");
+            meshGen      = generator;
+            filter       = generator.GetComponent<MeshFilter>();
+            if (EditorPrefs.HasKey("BakeWindow_isStatic")) isStatic = EditorPrefs.GetBool("BakeWindow_isStatic");
+            if (EditorPrefs.HasKey("BakeWindow_generateLightmapUVs"))
+                generateLightmapUVs = EditorPrefs.GetBool("BakeWindow_generateLightmapUVs");
+            if (EditorPrefs.HasKey("BakeWindow_copy")) copy = EditorPrefs.GetBool("BakeWindow_copy");
+            if (EditorPrefs.HasKey("BakeWindow_removeComputer"))
+                removeComputer = EditorPrefs.GetBool("BakeWindow_removeComputer");
+            if (EditorPrefs.HasKey("BakeWindow_permanent")) permanent = EditorPrefs.GetBool("BakeWindow_permanent");
+            format  = (SaveFormat) EditorPrefs.GetInt("BakeWindow_format", 0);
+            minSize = new Vector2(340, 220);
+            maxSize = minSize;
+        }
+
+        private void Bake()
         {
             meshGen.Bake(isStatic, generateLightmapUVs);
             if (permanent && !copy)
             {
-                SplineComputer meshGenComputer = meshGen.spline;
+                var meshGenComputer = meshGen.spline;
                 if (permanent)
                 {
                     meshGenComputer.Unsubscribe(meshGen);
                     DestroyImmediate(meshGen);
                 }
+
                 if (removeComputer)
                 {
-                    if(meshGenComputer.GetComponents<Component>().Length == 2) DestroyImmediate(meshGenComputer.gameObject);
+                    if (meshGenComputer.GetComponents<Component>().Length == 2)
+                        DestroyImmediate(meshGenComputer.gameObject);
                     else DestroyImmediate(meshGenComputer);
                 }
             }
         }
 
-        void SaveMeshFile(string savePath)
+        private void SaveMeshFile(string savePath)
         {
             if (format == SaveFormat.None) return;
-            string relativePath = "";
-            if(savePath.StartsWith(Application.dataPath)) relativePath = "Assets" + savePath.Substring(Application.dataPath.Length);
+            var relativePath = "";
+            if (savePath.StartsWith(Application.dataPath))
+                relativePath = "Assets" + savePath.Substring(Application.dataPath.Length);
 
             if (format == SaveFormat.MeshAsset)
             {
                 if (copy)
                 {
-                    Mesh assetMesh = Dreamteck.MeshUtility.Copy(filter.sharedMesh);
+                    var assetMesh = MeshUtility.Copy(filter.sharedMesh);
                     AssetDatabase.CreateAsset(assetMesh, relativePath);
-                } else AssetDatabase.CreateAsset(filter.sharedMesh, relativePath);
+                }
+                else
+                {
+                    AssetDatabase.CreateAsset(filter.sharedMesh, relativePath);
+                }
             }
 
             if (format == SaveFormat.OBJ)
             {
-                MeshRenderer renderer = meshGen.GetComponent<MeshRenderer>();
-                string objString = Dreamteck.MeshUtility.ToOBJString(filter.sharedMesh, renderer.sharedMaterials);
+                var renderer  = meshGen.GetComponent<MeshRenderer>();
+                var objString = MeshUtility.ToOBJString(filter.sharedMesh, renderer.sharedMaterials);
                 File.WriteAllText(savePath, objString);
                 if (!copy) DestroyImmediate(filter.sharedMesh);
                 if (relativePath != "") //Import back the OBJ

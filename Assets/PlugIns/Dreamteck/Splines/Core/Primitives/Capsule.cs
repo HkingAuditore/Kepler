@@ -1,13 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Dreamteck.Splines.Primitives
 {
     public class Capsule : SplinePrimitive
     {
-        public float radius = 1f;
         public float height = 2f;
+        public float radius = 1f;
 
         public override Spline.Type GetSplineType()
         {
