@@ -1,0 +1,8 @@
+@startuml
+class MeshEditor {
+    + ChangeMesh() : void
+}
+MonoBehaviour <|-- MeshEditor
+MeshEditor --> "inputField" InputField
+MeshEditor --> "astralBodyEditorUI" AstralBodyEditorUI
+@enduml

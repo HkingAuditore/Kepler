@@ -1,0 +1,10 @@
+@startuml
+class MainUI {
+    + LoadLabScene() : void
+    + LoadTestMode() : void
+    + Quit() : void
+    + OpenSettingPanel() : void
+}
+MonoBehaviour <|-- MainUI
+MainUI --> "settingPanel" GameObject
+@enduml

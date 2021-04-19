@@ -1,0 +1,39 @@
+@startuml
+class CustomMatrix <<static>> {
+    + {static} SolveZeroEquations(matrixA:Matrix<float>) : Vector<float>
+}
+class ConicSection {
+    + a : float
+    + angle : float
+    + b : float
+    + c : float
+    + d : float
+    + e : float
+    + eccentricity : float
+    + f : float
+    + focalLength : float
+    + isEllipse : bool
+    + semiMajorAxis : float
+    + semiMinorAxis : float
+    + ConicSection(a:float, b:float, c:float, d:float, e:float, f:float)
+    + ConicSection(a:float, b:float, c:float, theta:float, geoCenter:Vector2)
+    + GetY(x:float) : float[]
+    + GetX(y:float) : float[]
+    + GetPolarPos(ag:float) : Vector2
+    + GetT(m:float) : float
+    + <<override>> ToString() : string
+}
+class CustomSolver <<static>> {
+    + {static} SolveConicSection(point0:Vector2, point1:Vector2, point2:Vector2, point3:Vector2, point4:Vector2, point5:Vector2) : ConicSection
+    + {static} FitConicSection(points:List<Vector2>) : ConicSection
+    + {static} GetCircleOrbitVelocity(targetPos:Vector3, centerPos:Vector3, centerMass:float) : Vector3
+    + {static} CalculateOrbit(targetPos:Vector2, oriPos:Vector2, targetVelocity:Vector2, targetMass:float, oriMass:float) : ConicSection
+}
+class MathPlus <<static>> {
+    + {static} GetExponent(d:float) : int
+    + {static} GetExponent(d:double) : int
+    + {static} GetMantissa(d:float) : float
+    + {static} GetMantissa(d:double) : float
+}
+ConicSection --> "geoCenter" Vector2
+@enduml

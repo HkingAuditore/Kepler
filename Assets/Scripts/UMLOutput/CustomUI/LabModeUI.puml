@@ -1,0 +1,11 @@
+@startuml
+class LabModeUI {
+    + ToLab() : void
+    + ToMoon(difficulty:int) : void
+    + ToMain() : void
+    + ShowDifficultyPanel() : void
+    + CloseDifficultyPanel() : void
+}
+MonoBehaviour <|-- LabModeUI
+LabModeUI --> "difficultyPanel" GameObject
+@enduml

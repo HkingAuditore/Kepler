@@ -1,0 +1,7 @@
+@startuml
+class TutorialClipUI {
+    + content : string
+}
+MonoBehaviour <|-- TutorialClipUI
+TutorialClipUI --> "text" Text
+@enduml

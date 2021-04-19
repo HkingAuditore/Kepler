@@ -1,0 +1,8 @@
+@startuml
+class LayerCamera {
+    + GetRenderResult() : RenderTexture
+}
+MonoBehaviour <|-- LayerCamera
+IRenderTexOuter <|-- LayerCamera
+LayerCamera --> "_renderResultRT" RenderTexture
+@enduml

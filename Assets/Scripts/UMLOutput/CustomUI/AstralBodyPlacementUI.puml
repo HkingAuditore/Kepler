@@ -1,0 +1,8 @@
+@startuml
+class AstralBodyPlacementUI {
+    + SetPlacing() : void
+}
+MonoBehaviour <|-- AstralBodyPlacementUI
+AstralBodyPlacementUI --> "root" AstralBodyAddUI
+AstralBodyPlacementUI --> "Target" Vector3
+@enduml

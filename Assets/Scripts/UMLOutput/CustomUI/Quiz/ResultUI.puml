@@ -1,0 +1,13 @@
+@startuml
+class ResultUI {
+    + Restart() : void
+    + Back() : void
+}
+class "List`1"<T> {
+}
+MonoBehaviour <|-- ResultUI
+ResultUI --> "quizUis<GameObject>" "List`1"
+ResultUI --> "resultText" Text
+ResultUI --> "quizStarsGroupUI" QuizStarsGroupUI
+ResultUI --> "panel" GameObject
+@enduml

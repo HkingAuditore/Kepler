@@ -1,0 +1,12 @@
+@startuml
+class SatelliteControllerUI {
+    + ChangeSpeed() : void
+    + Pause() : void
+    + Continue() : void
+}
+MonoBehaviour <|-- SatelliteControllerUI
+SatelliteControllerUI --> "satelliteController" SatelliteController
+SatelliteControllerUI --> "slider" Slider
+SatelliteControllerUI --> "speedText" Text
+SatelliteControllerUI --> "orbit" GravityTracing
+@enduml

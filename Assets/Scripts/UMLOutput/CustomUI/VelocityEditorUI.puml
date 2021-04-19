@@ -1,0 +1,11 @@
+@startuml
+class VelocityEditorUI {
+    + showSize : float = .1f
+    + OnDisable() : void
+}
+MonoBehaviour <|-- VelocityEditorUI
+VelocityEditorUI --> "velocityLine" LineRenderer
+VelocityEditorUI --> "editingTarget" AstralBody
+VelocityEditorUI --> "speedUI" Text
+VelocityEditorUI --> "velocityUI" VectorUI
+@enduml

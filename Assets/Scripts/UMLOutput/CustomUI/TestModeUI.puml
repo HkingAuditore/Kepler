@@ -1,0 +1,7 @@
+@startuml
+class TestModeUI {
+    + Back() : void
+    + ToEditMode() : void
+}
+MonoBehaviour <|-- TestModeUI
+@enduml

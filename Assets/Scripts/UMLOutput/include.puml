@@ -1,0 +1,1516 @@
+@startuml
+class BloomEffect {
+    + intensity : float = 1
+    + iterations : int = 4
+    + threshold : float = 1
+    + softThreshold : float = 0.5f
+    + debug : bool
+}
+MonoBehaviour <|-- BloomEffect
+BloomEffect --> "bloomShader" Shader
+class DeferredFogEffect {
+}
+MonoBehaviour <|-- DeferredFogEffect
+DeferredFogEffect --> "deferredFog" Shader
+class DepthOfFieldEffect {
+    + focusDistance : float = 10f
+    + focusRange : float = 3f
+    + bokehRadius : float = 4f
+}
+MonoBehaviour <|-- DepthOfFieldEffect
+DepthOfFieldEffect --> "dofShader" Shader
+class EmissiveOscillator {
+}
+MonoBehaviour <|-- EmissiveOscillator
+class GPUInstancingTest {
+    + instances : int = 5000
+    + radius : float = 50f
+}
+MonoBehaviour <|-- GPUInstancingTest
+GPUInstancingTest --> "prefab" Transform
+class TangentSpaceVisualizer {
+    + offset : float = 0.01f
+    + scale : float = 0.1f
+}
+MonoBehaviour <|-- TangentSpaceVisualizer
+enum AnimationType {
+    Bored,
+    Point,
+}
+class AstronautsAnimation {
+    + boredTimeMin : float = 3
+    + boredTimeMax : float = 6
+    + boredAnimationCount : int = 5
+    + pointAnimationCount : int = 3
+}
+MonoBehaviour <|-- AstronautsAnimation
+AstronautsAnimation --> "astronautsAnimator" Animator
+AstronautsAnimation --> "selectorUI" SelectorUI
+class CameraController {
+    + correctiveSpeed : float
+    + mainSpeed : float
+    + scaleSize : float
+    + scaleMin : float = 20
+    + scaleMax : float = 300
+    + orthoZoomSpeed : float
+    + focusOffset : float = 0.33f
+    + IsFollowing : bool <<get>> <<set>> = false
+    + GetMainCamera() : Camera
+    + CameraDrag() : void
+    + CameraRotator() : void
+    + FocusOn(target:Transform) : void
+    + ExitFocus() : void
+    + Follow() : void
+}
+MonoBehaviour <|-- CameraController
+CameraController --> "virtualCamera" CinemachineVirtualCamera
+class CameraLayerMixer {
+    + enableLayer0 : bool
+    + enableLayer1 : bool
+    + GetRenderResult() : RenderTexture
+}
+CustomPostProcessingBase <|-- CameraLayerMixer
+CameraLayerMixer --> "cameraMixer" CameraMixer
+CameraLayerMixer --> "layerCamera" LayerCamera
+CameraLayerMixer --> "mixShader" Shader
+CameraLayerMixer --> "_mixMaterial" Material
+CameraLayerMixer --> "_renderResultRT" RenderTexture
+CameraLayerMixer --> "MixMaterial" Material
+class LayerCamera {
+    + GetRenderResult() : RenderTexture
+}
+MonoBehaviour <|-- LayerCamera
+IRenderTexOuter <|-- LayerCamera
+LayerCamera --> "_renderResultRT" RenderTexture
+class CameraMixer {
+    + GetRenderResult() : RenderTexture
+}
+CustomPostProcessingBase <|-- CameraMixer
+CameraMixer --> "renderTexOuter" OutlineCatcher
+CameraMixer --> "renderTexture" RenderTexture
+CameraMixer --> "mixShader" Shader
+CameraMixer o-> "edgeColor" Color
+CameraMixer --> "_mixMaterial" Material
+CameraMixer --> "_renderResultRT" RenderTexture
+CameraMixer --> "MixMaterial" Material
+interface IRenderTexOuter {
+    GetRenderResult() : RenderTexture
+}
+class CustomPostProcessingBase {
+}
+MonoBehaviour <|-- CustomPostProcessingBase
+CustomPostProcessingBase --> "mainCamera" Camera
+enum KernelSize {
+    Small,
+    Medium,
+    Large,
+    VeryLarge,
+}
+class KernelSizeParameter <<sealed>> {
+}
+class Dof <<sealed>> {
+    + <<override>> IsEnabledAndSupported(context:PostProcessRenderContext) : bool
+}
+class DofRenderer <<sealed>> {
+    + DofRenderer()
+    + <<override>> GetCameraFlags() : DepthTextureMode
+    + <<override>> Render(context:PostProcessRenderContext) : void
+    + <<override>> Release() : void
+}
+class "ParameterOverride`1"<T> {
+}
+class "PostProcessEffectRenderer`1"<T> {
+}
+enum Pass {
+    CoCCalculation,
+    CoCTemporalFilter,
+    DownsampleAndPrefilter,
+    BokehSmallKernel,
+    BokehMediumKernel,
+    BokehLargeKernel,
+    BokehVeryLargeKernel,
+    PostFilter,
+    Combine,
+    DebugOverlay,
+}
+"ParameterOverride`1" "<KernelSize>" <|-- KernelSizeParameter
+PostProcessEffectSettings <|-- Dof
+Dof o-> "focusDistance" FloatParameter
+Dof o-> "aperture" FloatParameter
+Dof o-> "focalLength" FloatParameter
+Dof o-> "kernelSize" KernelSizeParameter
+"PostProcessEffectRenderer`1" "<Dof>" <|-- DofRenderer
+DofRenderer +-- Pass
+class OutlineCatcher {
+    + edgeOnly : float = 1f
+    + edgeSize : float = 0.5f
+    + GetRenderResult() : RenderTexture
+    + AddTarget(target:GameObject) : void
+    + RemoveTarget(target:GameObject) : void
+    + SetOutline() : void
+}
+CustomPostProcessingBase <|-- OutlineCatcher
+IRenderTexOuter <|-- OutlineCatcher
+OutlineCatcher --> "outlineCamera" Camera
+OutlineCatcher --> "outlineShader" Shader
+OutlineCatcher o-> "edgeColor" Color
+OutlineCatcher o-> "backgroundColor" Color
+OutlineCatcher --> "OutlineMaterial" Material
+class AstralBodyAddUI {
+    + isQuizEditMode : bool
+    + WaitForLoad() : IEnumerator
+    + Switch2Placement() : void
+    + Switch2Normal() : void
+}
+class "List`1"<T> {
+}
+MonoBehaviour <|-- AstralBodyAddUI
+AstralBodyAddUI --> "astralBodyPlacementUI" AstralBodyPlacementUI
+AstralBodyAddUI --> "placePrefab" AstralBody
+AstralBodyAddUI --> "orbits" GravityTracing
+AstralBodyAddUI --> "setActiveList<GameObject>" "List`1"
+AstralBodyAddUI --> "OrbitCore" Transform
+class AstralBodyEditorUI {
+    + isEnableEdit : bool = true
+    + isEnableEditorPanel : bool = true
+    + <<virtual>> OnAstralBodySet() : void
+    + EditVelocity() : void
+    + OpenConicSectionPanel() : void
+    + CloseConicSectionPanel() : void
+    + <<virtual>> SetVelocityInCircle() : void
+    + ClosePanel() : void
+    + MainToStyleSheet() : void
+    + StyleSheetToMain() : void
+}
+class "List`1"<T> {
+}
+MonoBehaviour <|-- AstralBodyEditorUI
+AstralBodyEditorUI --> "gravityTracing" GravityTracing
+AstralBodyEditorUI --> "positionEditorUI" PositionEditorUI
+AstralBodyEditorUI --> "velocityEditorUI" VelocityEditorUI
+AstralBodyEditorUI --> "normalPanel" GameObject
+AstralBodyEditorUI --> "forceUI" VectorUI
+AstralBodyEditorUI --> "velocityUI" VectorUI
+AstralBodyEditorUI --> "lengthUIList<LengthUI>" "List`1"
+AstralBodyEditorUI --> "orbitPanelUI" OrbitPanelUI
+AstralBodyEditorUI --> "editorPanel" GameObject
+AstralBodyEditorUI --> "varLineUis<VarLineUI>" "List`1"
+AstralBodyEditorUI --> "mainPanel" GameObject
+AstralBodyEditorUI --> "styleSheetPanel" StarStyleSettingUI
+AstralBodyEditorUI --> "astralBody" AstralBody
+class AstralBodyPlacementUI {
+    + SetPlacing() : void
+}
+MonoBehaviour <|-- AstralBodyPlacementUI
+AstralBodyPlacementUI --> "root" AstralBodyAddUI
+AstralBodyPlacementUI --> "Target" Vector3
+class GlobalTimerUI {
+}
+MonoBehaviour <|-- GlobalTimerUI
+GlobalTimerUI --> "timerText" Text
+class LabModeUI {
+    + ToLab() : void
+    + ToMoon(difficulty:int) : void
+    + ToMain() : void
+    + ShowDifficultyPanel() : void
+    + CloseDifficultyPanel() : void
+}
+MonoBehaviour <|-- LabModeUI
+LabModeUI --> "difficultyPanel" GameObject
+class LengthUI {
+    + ShowLength() : void
+}
+MonoBehaviour <|-- LengthUI
+LengthUI --> "lengthSpline" SplineComputer
+LengthUI --> "lengthCalculator" LengthCalculator
+LengthUI --> "lengthText" Text
+LengthUI --> "astralBody" AstralBody
+LengthUI --> "targetAstralBody" AstralBody
+class MainUI {
+    + LoadLabScene() : void
+    + LoadTestMode() : void
+    + Quit() : void
+    + OpenSettingPanel() : void
+}
+MonoBehaviour <|-- MainUI
+MainUI --> "settingPanel" GameObject
+class MeshEditor {
+    + ChangeMesh() : void
+}
+MonoBehaviour <|-- MeshEditor
+MeshEditor --> "inputField" InputField
+MeshEditor --> "astralBodyEditorUI" AstralBodyEditorUI
+class MultiTutorialManagerUI {
+}
+class "List`1"<T> {
+}
+TutorialManagerUI <|-- MultiTutorialManagerUI
+MultiTutorialManagerUI o-> "difficulties<Difficulty>" "List`1"
+class OrbitGraphUI {
+    + conHeight : float
+    + Init() : void
+}
+class GraphOrbit {
+    + <<readonly>> a : float
+    + <<readonly>> b : float
+    + <<readonly>> c : float
+    + <<readonly>> e : float
+    + GraphOrbit(conicSection:ConicSection, height:float)
+    + GetR(ag:float) : float
+    + GetPolarPos(ag:float) : Vector2
+}
+MonoBehaviour <|-- OrbitGraphUI
+OrbitGraphUI --> "astralBody" AstralBody
+OrbitGraphUI --> "angularVelocity" Text
+OrbitGraphUI --> "distance" Text
+OrbitGraphUI --> "area" Text
+OrbitGraphUI --> "ellipseImage" Image
+OrbitGraphUI --> "oriImage" Image
+OrbitGraphUI --> "targetImage" Image
+OrbitGraphUI --> "leftFociImage" Image
+OrbitGraphUI --> "rightFociImage" Image
+OrbitGraphUI --> "fillMask" RectTransform
+OrbitGraphUI --> "fillImage" Image
+OrbitGraphUI --> "orbit" ConicSection
+OrbitGraphUI --> "angularMomentum" Vector3
+OrbitGraphUI +-- GraphOrbit
+class OrbitPanelUI {
+    + isConicSection : bool
+    + Init() : void
+}
+MonoBehaviour <|-- OrbitPanelUI
+OrbitPanelUI --> "contentPanel" GameObject
+OrbitPanelUI --> "nullPanel" GameObject
+OrbitPanelUI --> "_astralBody" AstralBody
+OrbitPanelUI --> "majorAxis" Text
+OrbitPanelUI --> "minorAxis" Text
+OrbitPanelUI --> "geoCenter" Text
+OrbitPanelUI --> "eccentricity" Text
+OrbitPanelUI --> "focalLength" Text
+OrbitPanelUI --> "period" Text
+OrbitPanelUI --> "angle" Text
+OrbitPanelUI --> "k" Text
+OrbitPanelUI --> "orbitGraphUI" OrbitGraphUI
+OrbitPanelUI --> "orbit" ConicSection
+OrbitPanelUI --> "astralBody" AstralBody
+class PhysicSceneUI {
+    + BackToMain() : void
+}
+MonoBehaviour <|-- PhysicSceneUI
+class PositionEditorUI {
+    + moveSpeed : float
+    + isQuizEditor : bool
+    + OnBeginDrag() : void
+    + MoveAxis(isXAxis:bool) : void
+    + MoveCenter() : void
+    + OnEndDrag() : void
+}
+MonoBehaviour <|-- PositionEditorUI
+PositionEditorUI --> "xAxis" Button
+PositionEditorUI --> "zAxis" Button
+PositionEditorUI --> "editingTarget" AstralBody
+class SatelliteControllerUI {
+    + ChangeSpeed() : void
+    + Pause() : void
+    + Continue() : void
+}
+MonoBehaviour <|-- SatelliteControllerUI
+SatelliteControllerUI --> "satelliteController" SatelliteController
+SatelliteControllerUI --> "slider" Slider
+SatelliteControllerUI --> "speedText" Text
+SatelliteControllerUI --> "orbit" GravityTracing
+class SelectorUI {
+    + _isLocked : bool
+    + isLocked : bool <<get>> <<set>>
+    + Update() : void
+    + FocusOn() : void
+    + CancelFocus() : void
+}
+MonoBehaviour <|-- SelectorUI
+SelectorUI --> "outlineCatcher" OutlineCatcher
+SelectorUI --> "astralBodyEditorUI" AstralBodyEditorUI
+SelectorUI --> "selectedGameObject" GameObject
+class SettingUI {
+    + ChangeAudioVolume() : void
+    + ClosePanel() : void
+}
+MonoBehaviour <|-- SettingUI
+SettingUI --> "audioSlider" Slider
+SettingUI --> "bgmSource" AudioSource
+class StarStyleSettingUI {
+    + ChangeStyle(index:int) : void
+}
+MonoBehaviour <|-- StarStyleSettingUI
+StarStyleSettingUI --> "astralBody" AstralBody
+class TestModeUI {
+    + Back() : void
+    + ToEditMode() : void
+}
+MonoBehaviour <|-- TestModeUI
+class TutorialClipUI {
+    + content : string
+}
+MonoBehaviour <|-- TutorialClipUI
+TutorialClipUI --> "text" Text
+class TutorialManagerUI {
+    + Update() : void
+}
+class "List`1"<T> {
+}
+MonoBehaviour <|-- TutorialManagerUI
+TutorialManagerUI o-> "tutorialUiList<TutorialUI>" "List`1"
+class TutorialUI {
+    + tutorialName : string
+    + curStep : int <<get>> <<set>>
+    + StartTutorial() : void
+    + GetTutorialCLipsList() : void
+    + GenerateTutorialName() : void
+    + NextStep() : void
+    + FormerStep() : void
+    + Quit() : void
+}
+class "List`1"<T> {
+}
+MonoBehaviour <|-- TutorialUI
+TutorialUI --> "awakePanel" GameObject
+TutorialUI --> "tutorialClips<GameObject>" "List`1"
+TutorialUI --> "tutorialManagerUI" TutorialManagerUI
+class UIManager {
+}
+MonoBehaviour <|-- UIManager
+enum vectorType {
+    Force,
+    Velocity,
+}
+class VectorUI {
+    + header : string
+    + unit : string
+    + showSize : float = .5f
+    + Init() : void
+}
+MonoBehaviour <|-- VectorUI
+VectorUI --> "vectorArrow" LineRenderer
+VectorUI --> "astralBody" AstralBody
+VectorUI --> "vectorText" Text
+VectorUI --> "thisType" vectorType
+class VelocityEditorUI {
+    + showSize : float = .1f
+    + OnDisable() : void
+}
+MonoBehaviour <|-- VelocityEditorUI
+VelocityEditorUI --> "velocityLine" LineRenderer
+VelocityEditorUI --> "editingTarget" AstralBody
+VelocityEditorUI --> "speedUI" Text
+VelocityEditorUI --> "velocityUI" VectorUI
+class MyLightingShaderGUI {
+    + <<override>> OnGUI(editor:MaterialEditor, properties:MaterialProperty[]) : void
+}
+enum SmoothnessSource {
+    Uniform,
+    Albedo,
+    Metallic,
+}
+enum RenderingMode {
+    Opaque,
+    Cutout,
+    Fade,
+    Transparent,
+}
+enum TessellationMode {
+    Uniform,
+    Edge,
+}
+class RenderingSettings <<struct>> {
+    + renderType : string
+    + zWrite : bool
+}
+ShaderGUI <|-- MyLightingShaderGUI
+MyLightingShaderGUI +-- SmoothnessSource
+MyLightingShaderGUI +-- RenderingMode
+MyLightingShaderGUI +-- TessellationMode
+MyLightingShaderGUI +-- RenderingSettings
+RenderingSettings --> "queue" RenderQueue
+RenderingSettings --> "srcBlend" BlendMode
+RenderingSettings --> "dstBlend" BlendMode
+enum PropertyUnit {
+    M,
+    Kg,
+    S,
+}
+class GameManager {
+    + isQuizEditMode : bool
+    + globalDistanceScaler : int
+    + globalMassScaler : int <<get>>
+    + GetMainCameraController() : CameraController
+    + GetMeshAndMaterialsFromList(index:int, materials:List<Material>) : Mesh
+    + SetAudioVolume() : void
+    + CalculateMassScales() : void
+    + CalculateMassScales(realMass:double) : void
+    + CalculateDistanceScale() : void
+    + GetK(propertyUnit:PropertyUnit, mass:double) : int
+    + GetK(propertyUnit:PropertyUnit) : int
+}
+class "List`1"<T> {
+}
+MonoBehaviour <|-- GameManager
+GameManager --> "quizBase" QuizBase
+GameManager --> "mainCamera" Camera
+GameManager --> "globalTimer" GlobalTimer
+GameManager --> "meshList<GameObject>" "List`1"
+GameManager --> "orbit" GravityTracing
+GameManager --> "satelliteChallengeManger" SatelliteChallengeManger
+GameManager --> "bgmSource" AudioSource
+GameManager --> "GetGameManager" GameManager
+class GlobalTimer {
+    + countDownTime : float
+    + isPausing : bool <<get>> <<set>> = false
+    + isCountDownEnd : bool <<get>> <<set>>
+    + isCountingDown : bool <<get>> <<set>>
+    + timer : float <<get>> <<set>>
+    + Reset() : void
+    + StartCounting() : void
+}
+MonoBehaviour <|-- GlobalTimer
+GlobalTimer o-> "startCountDownEvent" UnityEvent
+GlobalTimer o-> "countingDownEvent" UnityEvent
+GlobalTimer o-> "countingDownEndEvent" UnityEvent
+enum Difficulty {
+    Easy,
+    Normal,
+    Difficult,
+    Real,
+}
+class GlobalTransfer {
+    + quizName : string
+    + audioVolume : float <<get>> <<set>>
+}
+MonoBehaviour <|-- GlobalTransfer
+GlobalTransfer --> "difficulty" Difficulty
+GlobalTransfer --> "getGlobalTransfer" GlobalTransfer
+class Init {
+}
+MonoBehaviour <|-- Init
+class CustomMatrix <<static>> {
+    + {static} SolveZeroEquations(matrixA:Matrix<float>) : Vector<float>
+}
+class ConicSection {
+    + a : float
+    + angle : float
+    + b : float
+    + c : float
+    + d : float
+    + e : float
+    + eccentricity : float
+    + f : float
+    + focalLength : float
+    + isEllipse : bool
+    + semiMajorAxis : float
+    + semiMinorAxis : float
+    + ConicSection(a:float, b:float, c:float, d:float, e:float, f:float)
+    + ConicSection(a:float, b:float, c:float, theta:float, geoCenter:Vector2)
+    + GetY(x:float) : float[]
+    + GetX(y:float) : float[]
+    + GetPolarPos(ag:float) : Vector2
+    + GetT(m:float) : float
+    + <<override>> ToString() : string
+}
+class CustomSolver <<static>> {
+    + {static} SolveConicSection(point0:Vector2, point1:Vector2, point2:Vector2, point3:Vector2, point4:Vector2, point5:Vector2) : ConicSection
+    + {static} FitConicSection(points:List<Vector2>) : ConicSection
+    + {static} GetCircleOrbitVelocity(targetPos:Vector3, centerPos:Vector3, centerMass:float) : Vector3
+    + {static} CalculateOrbit(targetPos:Vector2, oriPos:Vector2, targetVelocity:Vector2, targetMass:float, oriMass:float) : ConicSection
+}
+class MathPlus <<static>> {
+    + {static} GetExponent(d:float) : int
+    + {static} GetExponent(d:double) : int
+    + {static} GetMantissa(d:float) : float
+    + {static} GetMantissa(d:double) : float
+}
+ConicSection --> "geoCenter" Vector2
+class QuizAstralBody {
+    + isMassPublic : bool
+    + isVelocityPublic : bool
+    + isAngularVelocityPublic : bool
+    + isGravityPublic : bool
+    + isSizePublic : bool
+    + globalAngularVelocity : float
+    + _period : float
+    + isPeriodPublic : bool
+    + _radius : float
+    + isRadiusPublic : bool
+    + _anglePerT : float
+    + isAnglePerTPublic : bool
+    + _distancePerT : float
+    + isDistancePerTPublic : bool
+    + _t : float
+    + isTPublic : bool
+    + period : float <<get>> <<set>>
+    + radius : float <<get>> <<set>>
+    + anglePerT : float <<get>> <<set>>
+    + distancePerT : float <<get>> <<set>>
+    + t : float <<get>> <<set>>
+    + oriRadius : float <<get>> <<set>>
+    + UpdateQuizAstralBody() : void
+    + UpdateHighCost() : void
+    + UpdateLowCost() : void
+    + UpdateQuizAstralBodyPer() : void
+    + GetQuizConditionString() : string
+    + CheckPublicity() : bool
+}
+AstralBody <|-- QuizAstralBody
+class QuizBase {
+    + isLoadByPrefab : bool
+    + loadTarget : string
+    + answer : float
+    + isLoadDone : bool <<get>>
+    + <<virtual>> Start() : void
+    + LoadQuiz(fileName:string) : void
+}
+MonoBehaviour <|-- QuizBase
+QuizBase --> "astralBodyPrefab" QuizAstralBody
+QuizBase --> "quizRoot" Transform
+QuizBase --> "orbitBase" GravityTracing
+QuizBase --> "quizType" QuizType
+QuizBase o-> "loadDoneEvent" UnityEvent
+QuizBase --> "target" QuizAstralBody
+class AstralBodyDict {
+    + AstralBodyDict(transform:Transform, astralBody:QuizAstralBody, isTarget:bool)
+    + isTarget : bool <<get>> <<set>>
+}
+class AstralBodyStructDict <<struct>> {
+    + mass : double
+    + isMassPublic : bool
+    + density : double
+    + originalSize : float
+    + affectRadius : float
+    + isVelocityPublic : bool
+    + isAngularVelocityPublic : bool
+    + period : float
+    + isPeriodPublic : bool
+    + radius : float
+    + isRadiusPublic : bool
+    + meshNum : int
+    + isGravityPublic : bool
+    + isSizePublic : bool
+    + t : float
+    + isTPublic : bool
+    + enableAffect : bool
+    + enableTracing : bool
+    + isTarget : bool
+    + isCore : bool
+    + AstralBodyStructDict(transform:Transform, astralBody:AstralBody, isTarget:bool, isCore:bool)
+}
+enum QuizType {
+    Mass,
+    Density,
+    Gravity,
+    Radius,
+}
+class QuizData {
+    + quizName : string
+}
+class QuizSaverException {
+    + QuizSaverException()
+    + QuizSaverException(message:string)
+    + QuizSaverException(message:string, inner:Exception)
+}
+class "List`1"<T> {
+}
+AstralBodyDict --> "transform" Transform
+AstralBodyDict --> "astralBody" QuizAstralBody
+AstralBodyStructDict --> "position" Vector3
+AstralBodyStructDict --> "oriVelocity" Vector3
+QuizData --> "astralBodies<AstralBodyDict>" "List`1"
+Exception <|-- QuizSaverException
+class QuizEditor {
+    + SaveQuiz(quizName:string) : void
+    + AddAstralBody(astralBody:QuizAstralBody, isTarget:bool) : void
+    + SetTarget(target:QuizAstralBody) : void
+    + SetType(t:QuizType) : void
+}
+QuizBase <|-- QuizEditor
+QuizEditor --> "saver" QuizSaver
+class QuizBaseStruct <<struct>> {
+    + quizName : string
+}
+class QuizSaver {
+    + {static} xmlPath : string <<get>>
+    + ConvertAstralBody2XmlElement(astralBodyDict:AstralBodyDict) : XmlElement
+    + ConvertOrbit2Xml(astOrbit:List<AstralBodyDict>, quizType:QuizType) : XmlDocument
+    + SaveXml(doc:XmlDocument, fileName:string) : void
+    + {static} LoadXml(fileName:string) : XmlDocument
+    + {static} ConvertXml2QuizBase(xmlDoc:XmlDocument, fileName:string) : QuizBaseStruct
+    + {static} GetQuizFiles(fileNames:List<string>) : List<XmlDocument>
+    + {static} DeleteQuizFiles(quizName:string) : void
+}
+class "List`1"<T> {
+}
+QuizBaseStruct --> "astralBodyStructList<AstralBodyStructDict>" "List`1"
+QuizBaseStruct --> "quizType" QuizType
+MonoBehaviour <|-- QuizSaver
+QuizSaver --> "quizType" QuizType
+QuizSaver --> "cloner" GameObject
+enum Reason {
+    Right,
+    NonCircleOrbit,
+    Crash,
+    Overtime,
+}
+class QuizSolver {
+    + waitTime : float
+    + radiusOffset : float = .2f
+    + isRight : bool <<get>> <<set>> = true
+    + TmpAnswer : float <<get>> <<set>>
+    + isAnswered : bool <<get>> <<set>> = false
+    + <<override>> Start() : void
+    + GetQuizSentence() : string
+}
+QuizBase <|-- QuizSolver
+QuizSolver --> "quizUI" QuizUI
+QuizSolver --> "resultEvent" UnityEvent
+QuizSolver --> "answerEvent" UnityEvent
+QuizSolver --> "reason" Reason
+class Transformer {
+}
+MonoBehaviour <|-- Transformer
+Transformer --> "GetTransformer" Transformer
+class Satellite {
+    + GetMass() : float
+    + GetTransform() : Transform
+    + GetVelocity() : Vector3
+}
+class "List`1"<T> {
+}
+MonoBehaviour <|-- Satellite
+Satellite o-> "satelliteParts<SatellitePart>" "List`1"
+Satellite --> "satelliteCore" SatelliteCore
+enum SatelliteResultType {
+    Success,
+    Crash,
+    NotOrbit,
+    NonResult,
+}
+class SatelliteChallengeManger {
+    + angleThreshold : float
+    + checkTime : float = 5f
+    + isSuccess : bool <<get>> <<set>> = true
+    + isCheckEnd : bool <<get>> <<set>>
+    + CallCheck() : void
+}
+MonoBehaviour <|-- SatelliteChallengeManger
+SatelliteChallengeManger --> "satellite" Satellite
+SatelliteChallengeManger --> "target" AstralBody
+SatelliteChallengeManger --> "satelliteResultType" SatelliteResultType
+class SatelliteController {
+    + speed : float
+    + angularSpeed : float
+    + SetCurDirVelocity(newSpeed:float) : void
+    + SeparateControl() : void
+}
+MonoBehaviour <|-- SatelliteController
+SatelliteController --> "satellite" Satellite
+class SatelliteCore {
+    + <<override>> GetMass() : float
+}
+SatelliteEngine <|-- SatelliteCore
+SatelliteCore --> "satellite" Satellite
+class SatelliteEngine {
+    + engineStage : int
+    + SetCurDirVelocity(speed:float) : void
+}
+SatellitePart <|-- SatelliteEngine
+class SatelliteParachute {
+}
+SatellitePart <|-- SatelliteParachute
+enum SatelliteType {
+    Core,
+    Engine,
+    Parachute,
+}
+class SatellitePart {
+    + satelliteName : string
+    + Push(dir:Vector3) : void
+    + Rotate(dir:Vector3) : void
+    + GenerateJoint() : void
+    + GetPartName() : void
+    + Separate(partName:string) : void
+    + Separate(separateAll:bool) : void
+}
+class "List`1"<T> {
+}
+AstralBody <|-- SatellitePart
+SatellitePart o-> "connectedPartList<SatellitePart>" "List`1"
+SatellitePart --> "PartType" SatelliteType
+class AstralBody {
+    + enableAffect : bool = true
+    + affectRadius : float
+    + enableTracing : bool
+    + Mass : float <<get>>
+    + gravity : float <<get>>
+    + meshNum : int <<get>> <<set>>
+    + size : float <<get>> <<set>>
+    + realMass : double <<get>> <<set>>
+    + density : double <<get>>
+    + <<virtual>> OnCollisionEnter(other:Collision) : void
+    + GetTransform() : Transform
+    + GetPosition() : Vector3
+    + GetGameObject() : GameObject
+    + GetEnableTracing() : bool
+    + <<virtual>> GetMass() : float
+    + GetRigidbody() : Rigidbody
+    + GetVelocity() : Vector3
+    + GetAffectedPlanets() : List<AstralBody>
+    + GetAstralBody() : AstralBody
+    + ChangeVelocity(velocity:Vector3) : void
+    + ChangeVelocity(realSpeed:double) : void
+    + GetGravityVector3(rigidbody:Rigidbody) : Vector3
+    + CalculateForce() : Vector3
+    + SetCircleVelocity() : void
+    + SetCircleVelocityMenu() : void
+}
+class "List`1"<T> {
+}
+class "UnityEvent`1"<T> {
+}
+MonoBehaviour <|-- AstralBody
+ITraceable <|-- AstralBody
+AstralBody --> "triggerCollider" SphereCollider
+AstralBody --> "defaultCollider" SphereCollider
+AstralBody --> "oriVelocity" Vector3
+AstralBody --> "angularVelocity" Vector3
+AstralBody o-> "affectedPlanets<AstralBody>" "List`1"
+AstralBody o-> "banAffectedPlanets<AstralBody>" "List`1"
+AstralBody --> "velocityChangedEvent<Vector3>" "UnityEvent`1"
+AstralBody --> "astralBodyRigidbody" Rigidbody
+AstralBody --> "Force" Vector3
+interface ITraceable {
+    GetTransform() : Transform
+    GetPosition() : Vector3
+    GetGameObject() : GameObject
+    GetEnableTracing() : bool
+    GetMass() : float
+    GetRigidbody() : Rigidbody
+    GetVelocity() : Vector3
+    GetAffectedPlanets() : List<AstralBody>
+    GetAstralBody() : AstralBody
+}
+enum ActionType {
+    Finished,
+}
+class GravityTracing {
+    + sample : int = 20
+    + timeScale : float = 100
+    + isFreezing : bool <<get>>
+    + Awake() : void
+    + AddTracingTarget(traceable:ITraceable) : void
+    + Freeze(isFreezing:bool) : void
+    + GetAstralBodyList() : List<AstralBody>
+    + RemoveAstralBody(astralBody:AstralBody) : void
+    + DrawOrbits() : void
+    + GetConicSection(astralBody:ITraceable) : ConicSection
+    + DrawMathOrbit(conicSection:ConicSection, sam:int) : void
+}
+MonoBehaviour <|-- GravityTracing
+GravityTracing --> "splineComputer" SplineComputer
+class PhysicBase <<static>> {
+    + {static} G : float = 6.67f
+    + {static} GetG() : float
+    + {static} GetRealG() : double
+}
+interface IOrbitCalculator {
+    CalculateOrbit(t:int, totalNumber:int) : Vector3
+    DrawOrbit(lineRenderer:LineRenderer, totalNumber:int) : void
+    GenerateOrbit() : void
+}
+class "List`1"<T> {
+}
+IOrbitCalculator --> "OrbitPoints<Vector3>" "List`1"
+class StringPlus <<static>> {
+    + {static} ToSuperscript(str:string) : string
+    + {static} ToSuperscript(d:double, fCount:int) : string
+}
+class MSCDLL {
+    + {static} <<extern>> MSPLogin(usr:string, pwd:string, parameters:string) : int
+    + {static} <<extern>> MSPLogout() : int
+    + {static} <<extern>> QISRSessionBegin(grammarList:string, _params:string, errorCode:int) : IntPtr
+    + {static} <<extern>> QISRAudioWrite(sessionID:IntPtr, waveData:byte[], waveLen:uint, audioStatus:AudioStatus, epStatus:EpStatus, recogStatus:RecogStatus) : int
+    + {static} <<extern>> QISRGetResult(sessionID:IntPtr, rsltStatus:RecogStatus, waitTime:int, errorCode:int) : IntPtr
+    + {static} <<extern>> QISRSessionEnd(sessionID:IntPtr, hints:string) : int
+    + {static} <<extern>> QISRBuildGrammar(grammarType:IntPtr, grammarContent:string, grammarLength:uint, _params:string, callback:GrammarCallBack, userData:IntPtr) : int
+    + {static} <<extern>> QISRUploadData(sessionID:string, dataName:string, userData:byte[], lenght:uint, paramValue:string, errorCode:int) : IntPtr
+    + {static} <<extern>> QIVWSessionBegin(grammarList:string, _params:string, errorCode:int) : IntPtr
+    + {static} <<extern>> QIVWAudioWrite(sessionID:string, waveData:byte[], waveLen:uint, audioStatus:AudioStatus) : int
+    + {static} <<extern>> QIVWGetResInfo(resPath:string, resInfo:string, infoLen:uint, _params:string) : int
+    + {static} <<extern>> QIVWRegisterNotify(sessionID:string, msgProcCb:ivw_ntf_handler, userData:IntPtr) : int
+    + {static} <<extern>> QIVWSessionEnd(sessionID:string, hints:string) : int
+    + {static} <<extern>> QTTSSessionBegin(_params:string, errorCode:int) : IntPtr
+    + {static} <<extern>> QTTSTextPut(sessionID:IntPtr, textString:string, textLen:uint, _params:string) : int
+    + {static} <<extern>> QTTSAudioGet(sessionID:IntPtr, audioLen:uint, synthStatus:SynthStatus, errorCode:int) : IntPtr
+    + {static} <<extern>> QTTSAudioInfo(sessionID:IntPtr) : IntPtr
+    + {static} <<extern>> QTTSSessionEnd(sessionID:IntPtr, hints:string) : int
+}
+enum Errors {
+    MSP_SUCCESS= 0,
+    MSP_ERROR_FAIL= -1,
+    MSP_ERROR_EXCEPTION= -2,
+    MSP_ERROR_GENERAL= 10100,
+    MSP_ERROR_OUT_OF_MEMORY= 10101,
+    MSP_ERROR_FILE_NOT_FOUND= 10102,
+    MSP_ERROR_NOT_SUPPORT= 10103,
+    MSP_ERROR_NOT_IMPLEMENT= 10104,
+    MSP_ERROR_ACCESS= 10105,
+    MSP_ERROR_INVALID_PARA= 10106,
+    MSP_ERROR_INVALID_PARA_VALUE= 10107,
+    MSP_ERROR_INVALID_HANDLE= 10108,
+    MSP_ERROR_INVALID_DATA= 10109,
+    MSP_ERROR_NO_LICENSE= 10110,
+    MSP_ERROR_NOT_INIT= 10111,
+    MSP_ERROR_NULL_HANDLE= 10112,
+    MSP_ERROR_OVERFLOW= 10113,
+    MSP_ERROR_TIME_OUT= 10114,
+    MSP_ERROR_OPEN_FILE= 10115,
+    MSP_ERROR_NOT_FOUND= 10116,
+    MSP_ERROR_NO_ENOUGH_BUFFER= 10117,
+    MSP_ERROR_NO_DATA= 10118,
+    MSP_ERROR_NO_MORE_DATA= 10119,
+    MSP_ERROR_NO_RESPONSE_DATA= 10120,
+    MSP_ERROR_ALREADY_EXIST= 10121,
+    MSP_ERROR_LOAD_MODULE= 10122,
+    MSP_ERROR_BUSY= 10123,
+    MSP_ERROR_INVALID_CONFIG= 10124,
+    MSP_ERROR_VERSION_CHECK= 10125,
+    MSP_ERROR_CANCELED= 10126,
+    MSP_ERROR_INVALID_MEDIA_TYPE= 10127,
+    MSP_ERROR_CONFIG_INITIALIZE= 10128,
+    MSP_ERROR_CREATE_HANDLE= 10129,
+    MSP_ERROR_CODING_LIB_NOT_LOAD= 10130,
+    MSP_ERROR_USER_CANCELLED= 10131,
+    MSP_ERROR_INVALID_OPERATION= 10132,
+    MSP_ERROR_MESSAGE_NOT_COMPLETE= 10133,
+    MSP_ERROR_NO_EID= 10134,
+    MSP_ERROE_OVER_REQ= 10135,
+    MSP_ERROR_USER_ACTIVE_ABORT= 10136,
+    MSP_ERROR_BUSY_GRMBUILDING= 10137,
+    MSP_ERROR_BUSY_LEXUPDATING= 10138,
+    MSP_ERROR_SESSION_RESET= 10139,
+    MSP_ERROR_BOS_TIMEOUT= 10140,
+    MSP_ERROR_STREAM_FILTER= 10141,
+    MSP_ERROR_STREAM_CLEAR= 10142,
+    MSP_ERROR_NET_GENERAL= 10200,
+    MSP_ERROR_NET_OPENSOCK= 10201,
+    MSP_ERROR_NET_CONNECTSOCK= 10202,
+    MSP_ERROR_NET_ACCEPTSOCK= 10203,
+    MSP_ERROR_NET_SENDSOCK= 10204,
+    MSP_ERROR_NET_RECVSOCK= 10205,
+    MSP_ERROR_NET_INVALIDSOCK= 10206,
+    MSP_ERROR_NET_BADADDRESS= 10207,
+    MSP_ERROR_NET_BINDSEQUENCE= 10208,
+    MSP_ERROR_NET_NOTOPENSOCK= 10209,
+    MSP_ERROR_NET_NOTBIND= 10210,
+    MSP_ERROR_NET_NOTLISTEN= 10211,
+    MSP_ERROR_NET_CONNECTCLOSE= 10212,
+    MSP_ERROR_NET_NOTDGRAMSOCK= 10213,
+    MSP_ERROR_NET_DNS= 10214,
+    MSP_ERROR_NET_INIT= 10215,
+    MSP_ERROR_NFL_INNER_ERROR= 10216,
+    MSP_ERROR_MSS_TIME_OUT= 10217,
+    MSP_ERROT_CLIENT_TIME_OUT= 10218,
+    MSP_ERROR_CLIENT_CLOSE= 10219,
+    MSP_ERROR_CLIENT_AREA_CHANGE= 10220,
+    MSP_ERROR_NET_SSL_HANDSHAKE= 10221,
+    MSP_ERROR_NET_INVALID_ROOT_CERT= 10222,
+    MSP_ERROR_NET_INVALID_CLIENT_CERT= 10223,
+    MSP_ERROR_NET_INVALID_SERVER_CERT= 10224,
+    MSP_ERROR_NET_INVALID_KEY= 10225,
+    MSP_ERROR_NET_CERT_VERIFY_FAILED= 10226,
+    MSP_ERROR_NET_WOULDBLOCK= 10227,
+    MSP_ERROR_NET_NOTBLOCK= 10228,
+    MSP_ERROR_MSG_GENERAL= 10300,
+    MSP_ERROR_MSG_PARSE_ERROR= 10301,
+    MSP_ERROR_MSG_BUILD_ERROR= 10302,
+    MSP_ERROR_MSG_PARAM_ERROR= 10303,
+    MSP_ERROR_MSG_CONTENT_EMPTY= 10304,
+    MSP_ERROR_MSG_INVALID_CONTENT_TYPE= 10305,
+    MSP_ERROR_MSG_INVALID_CONTENT_LENGTH= 10306,
+    MSP_ERROR_MSG_INVALID_CONTENT_ENCODE= 10307,
+    MSP_ERROR_MSG_INVALID_KEY= 10308,
+    MSP_ERROR_MSG_KEY_EMPTY= 10309,
+    MSP_ERROR_MSG_SESSION_ID_EMPTY= 10310,
+    MSP_ERROR_MSG_LOGIN_ID_EMPTY= 10311,
+    MSP_ERROR_MSG_SYNC_ID_EMPTY= 10312,
+    MSP_ERROR_MSG_APP_ID_EMPTY= 10313,
+    MSP_ERROR_MSG_EXTERN_ID_EMPTY= 10314,
+    MSP_ERROR_MSG_INVALID_CMD= 10315,
+    MSP_ERROR_MSG_INVALID_SUBJECT= 10316,
+    MSP_ERROR_MSG_INVALID_VERSION= 10317,
+    MSP_ERROR_MSG_NO_CMD= 10318,
+    MSP_ERROR_MSG_NO_SUBJECT= 10319,
+    MSP_ERROR_MSG_NO_VERSION= 10320,
+    MSP_ERROR_MSG_MSSP_EMPTY= 10321,
+    MSP_ERROR_MSG_NEW_RESPONSE= 10322,
+    MSP_ERROR_MSG_NEW_CONTENT= 10323,
+    MSP_ERROR_MSG_INVALID_SESSION_ID= 10324,
+    MSP_ERROR_MSG_INVALID_CONTENT= 10325,
+    MSP_ERROR_DB_GENERAL= 10400,
+    MSP_ERROR_DB_EXCEPTION= 10401,
+    MSP_ERROR_DB_NO_RESULT= 10402,
+    MSP_ERROR_DB_INVALID_USER= 10403,
+    MSP_ERROR_DB_INVALID_PWD= 10404,
+    MSP_ERROR_DB_CONNECT= 10405,
+    MSP_ERROR_DB_INVALID_SQL= 10406,
+    MSP_ERROR_DB_INVALID_APPID= 10407,
+    MSP_ERROR_DB_NO_UID= 10408,
+    MSP_ERROR_RES_GENERAL= 10500,
+    MSP_ERROR_RES_LOAD= 10501,
+    MSP_ERROR_RES_FREE= 10502,
+    MSP_ERROR_RES_MISSING= 10503,
+    MSP_ERROR_RES_INVALID_NAME= 10504,
+    MSP_ERROR_RES_INVALID_ID= 10505,
+    MSP_ERROR_RES_INVALID_IMG= 10506,
+    MSP_ERROR_RES_WRITE= 10507,
+    MSP_ERROR_RES_LEAK= 10508,
+    MSP_ERROR_RES_HEAD= 10509,
+    MSP_ERROR_RES_DATA= 10510,
+    MSP_ERROR_RES_SKIP= 10511,
+    MSP_ERROR_TTS_GENERAL= 10600,
+    MSP_ERROR_TTS_TEXTEND= 10601,
+    MSP_ERROR_TTS_TEXT_EMPTY= 10602,
+    MSP_ERROR_TTS_LTTS_ERROR= 10603,
+    MSP_ERROR_REC_GENERAL= 10700,
+    MSP_ERROR_REC_INACTIVE= 10701,
+    MSP_ERROR_REC_GRAMMAR_ERROR= 10702,
+    MSP_ERROR_REC_NO_ACTIVE_GRAMMARS= 10703,
+    MSP_ERROR_REC_DUPLICATE_GRAMMAR= 10704,
+    MSP_ERROR_REC_INVALID_MEDIA_TYPE= 10705,
+    MSP_ERROR_REC_INVALID_LANGUAGE= 10706,
+    MSP_ERROR_REC_URI_NOT_FOUND= 10707,
+    MSP_ERROR_REC_URI_TIMEOUT= 10708,
+    MSP_ERROR_REC_URI_FETCH_ERROR= 10709,
+    MSP_ERROR_REC_PROC_MOD= 10710,
+    MSP_ERROR_EP_GENERAL= 10800,
+    MSP_ERROR_EP_NO_SESSION_NAME= 10801,
+    MSP_ERROR_EP_INACTIVE= 10802,
+    MSP_ERROR_EP_INITIALIZED= 10803,
+    MSP_ERROR_TUV_GENERAL= 10900,
+    MSP_ERROR_TUV_GETHIDPARAM= 10901,
+    MSP_ERROR_TUV_TOKEN= 10902,
+    MSP_ERROR_TUV_CFGFILE= 10903,
+    MSP_ERROR_TUV_RECV_CONTENT= 10904,
+    MSP_ERROR_TUV_VERFAIL= 10905,
+    MSP_ERROR_LOGIN_SUCCESS= 11000,
+    MSP_ERROR_LOGIN_NO_LICENSE= 11001,
+    MSP_ERROR_LOGIN_SESSIONID_INVALID= 11002,
+    MSP_ERROR_LOGIN_SESSIONID_ERROR= 11003,
+    MSP_ERROR_LOGIN_UNLOGIN= 11004,
+    MSP_ERROR_LOGIN_INVALID_USER= 11005,
+    MSP_ERROR_LOGIN_INVALID_PWD= 11006,
+    MSP_ERROR_LOGIN_SYSTEM_ERROR= 11099,
+    MSP_ERROR_HCR_GENERAL= 11100,
+    MSP_ERROR_HCR_RESOURCE_NOT_EXIST= 11101,
+    MSP_ERROR_HCR_CREATE= 11102,
+    MSP_ERROR_HCR_DESTROY= 11103,
+    MSP_ERROR_HCR_START= 11104,
+    MSP_ERROR_HCR_APPEND_STROKES= 11105,
+    MSP_ERROR_HCR_INIT= 11106,
+    MSP_ERROR_HCR_POINT_DECODE= 11107,
+    MSP_ERROR_HCR_DISPATCH= 11108,
+    MSP_ERROR_HCR_GETRESULT= 11109,
+    MSP_ERROR_HCR_RESOURCE= 11110,
+    MSP_ERROR_AUTH_NO_LICENSE= 11200,
+    MSP_ERROR_AUTH_NO_ENOUGH_LICENSE= 11201,
+    MSP_ERROR_AUTH_INVALID_LICENSE= 11202,
+    MSP_ERROR_AUTH_LICENSE_EXPIRED= 11203,
+    MSP_ERROR_AUTH_NEED_MORE_DATA= 11204,
+    MSP_ERROR_AUTH_LICENSE_TO_BE_EXPIRED= 11205,
+    MSP_ERROR_AUTH_INVALID_MACHINE_ID= 11206,
+    MSP_ERROR_AUTH_LOCAL_ASR_FORBIDDEN= 11207,
+    MSP_ERROR_AUTH_LOCAL_TTS_FORBIDDEN= 11208,
+    MSP_ERROR_AUTH_LOCAL_IVW_FORBIDDEN= 11209,
+    MSP_ERROR_AUTH_APPID_NOT_MATCH= 11210,
+    MSP_ERROR_AUTH_UID_NOT_MATCH= 11211,
+    MSP_ERROR_AUTH_TRIAL_EXPIRED= 11212,
+    MSP_ERROR_AUTH_LOCAL_IFD_FORBIDDEN= 11213,
+    MSP_ERROR_AIUI_NO_ENOUGH_LICENSE= 11216,
+    MSP_ERROR_AUTH_DVC_NO_LICENSE= 11300,
+    MSP_ERROR_AUTH_DVC_NO_ENOUGH_LICENSE= 11301,
+    MSP_ERROR_AUTH_DVC_INVALID_LICENSE= 11302,
+    MSP_ERROR_AUTH_DVC_LICENSE_EXPIRED= 11303,
+    MSP_ERROR_AUTH_DVC_NEED_MORE_DATA= 11304,
+    MSP_ERROR_AUTH_DVC_LICENSE_TO_BE_EXPIRED= 11305,
+    MSP_ERROR_AUTH_DVC_EXCEED_LICENSE= 11306,
+    MSP_ERROR_ASE_EXCEP_SILENCE= 11401,
+    MSP_ERROR_ASE_EXCEP_SNRATIO= 11402,
+    MSP_ERROR_ASE_EXCEP_PAPERDATA= 11403,
+    MSP_ERROR_ASE_EXCEP_PAPERCONTENTS= 11404,
+    MSP_ERROR_ASE_EXCEP_NOTMONO= 11405,
+    MSP_ERROR_ASE_EXCEP_OTHERS= 11406,
+    MSP_ERROR_ASE_EXCEP_PAPERFMT= 11407,
+    MSP_ERROR_ASE_EXCEP_ULISTWORD= 11408,
+    MSP_ERROR_IOT_BASE= 11500,
+    MSP_ERROR_IOT_PARAM_ERROR= 11501,
+    MSP_ERROR_IOT_INVALID_SERVICE= 11502,
+    MSP_ERROR_IOT_INVALID_PRODUCTID= 11503,
+    MSP_EEROR_IOT_INVALID_ATTR= 11504,
+    MSP_ERROR_IOT_INVALID_PLATFORM= 11505,
+    MSP_ERROR_IOT_DID_NOT_FOUND= 11506,
+    MSP_ERROR_IVP_GENERAL= 11600,
+    MSP_ERROR_IVP_EXTRA_RGN_SOPPORT= 11601,
+    MSP_ERROR_IVP_TRUNCATED= 11602,
+    MSP_ERROR_IVP_MUCH_NOISE= 11603,
+    MSP_ERROR_IVP_TOO_LOW= 11604,
+    MSP_ERROR_IVP_ZERO_AUDIO= 11605,
+    MSP_ERROR_IVP_UTTER_TOO_SHORT= 11606,
+    MSP_ERROR_IVP_TEXT_NOT_MATCH= 11607,
+    MSP_ERROR_IVP_NO_ENOUGH_AUDIO= 11608,
+    MSP_ERROR_IVP_MODEL_NOT_FOUND_IN_HBASE= 11610,
+    MSP_ERROR_IFR_NOT_FACE_IMAGE= 11700,
+    MSP_ERROR_FACE_IMAGE_FULL_LEFT= 11701,
+    MSP_ERROR_FACE_IMAGE_FULL_RIGHT= 11702,
+    MSP_ERROR_IMAGE_CLOCKWISE_WHIRL= 11703,
+    MSP_ERROR_IMAGE_COUNTET_CLOCKWISE_WHIRL= 11704,
+    MSP_ERROR_VALID_IMAGE_SIZE= 11705,
+    MSP_ERROR_ILLUMINATION= 11706,
+    MSP_ERROR_FACE_OCCULTATION= 11707,
+    MSP_ERROR_FACE_INVALID_MODEL= 11708,
+    MSP_ERROR_FUSION_INVALID_INPUT_TYPE= 11709,
+    MSP_ERROR_FUSION_NO_ENOUGH_DATA= 11710,
+    MSP_ERROR_FUSION_ENOUGH_DATA= 11711,
+    MSP_ERROR_AIUI_CID_EXPIRED= 11800,
+    MSP_ERROR_ICT_ENCODER= 11900,
+    MSP_ERROR_HTTP_BASE= 12000,
+    MSP_ERROR_HTTP_400= 12400,
+    MSP_ERROR_HTTP_401= 12401,
+    MSP_ERROR_HTTP_402= 12402,
+    MSP_ERROR_HTTP_403= 12403,
+    MSP_ERROR_HTTP_404= 12404,
+    MSP_ERROR_HTTP_405= 12405,
+    MSP_ERROR_HTTP_406= 12406,
+    MSP_ERROR_HTTP_407= 12407,
+    MSP_ERROR_HTTP_408= 12408,
+    MSP_ERROR_HTTP_409= 12409,
+    MSP_ERROR_HTTP_410= 12410,
+    MSP_ERROR_HTTP_411= 12411,
+    MSP_ERROR_HTTP_412= 12412,
+    MSP_ERROR_HTTP_413= 12413,
+    MSP_ERROR_HTTP_414= 12414,
+    MSP_ERROR_HTTP_415= 12415,
+    MSP_ERROR_HTTP_416= 12416,
+    MSP_ERROR_HTTP_417= 12417,
+    MSP_ERROR_HTTP_500= 12500,
+    MSP_ERROR_HTTP_501= 12501,
+    MSP_ERROR_HTTP_502= 12502,
+    MSP_ERROR_HTTP_503= 12503,
+    MSP_ERROR_HTTP_504= 12504,
+    MSP_ERROR_HTTP_505= 12505,
+    MSP_ERROR_ISV_NO_USER= 13000,
+    MSP_ERROR_LUA_BASE= 14000,
+    MSP_ERROR_LUA_YIELD= 14001,
+    MSP_ERROR_LUA_ERRRUN= 14002,
+    MSP_ERROR_LUA_ERRSYNTAX= 14003,
+    MSP_ERROR_LUA_ERRMEM= 14004,
+    MSP_ERROR_LUA_ERRERR= 14005,
+    MSP_ERROR_LUA_INVALID_PARAM= 14006,
+    MSP_ERROR_MMP_BASE= 15000,
+    MSP_ERROR_MMP_MYSQL_INITFAIL= 15001,
+    MSP_ERROR_MMP_REDIS_INITFAIL= 15002,
+    MSP_ERROR_MMP_NETDSS_INITFAIL= 15003,
+    MSP_ERROR_MMP_TAIR_INITFAIL= 15004,
+    MSP_ERROR_MMP_MAIL_SESSION_FAIL= 15006,
+    MSP_ERROR_MMP_MAIL_LOGON_FAIL= 15007,
+    MSP_ERROR_MMP_MAIL_USER_ILLEGAL= 15008,
+    MSP_ERROR_MMP_MAIL_PWD_ERR= 15009,
+    MSP_ERROR_MMP_MAIL_SOCKET_ERR= 15010,
+    MSP_ERROR_MMP_MAIL_INIT_FAIL= 15011,
+    MSP_ERROR_MMP_STORE_MNR_NO_INIT= 15012,
+    MSP_ERROR_MMP_STORE_MNR_POOL_FULL= 15013,
+    MSP_ERROR_MMP_STRATGY_PARAM_ILLEGAL= 15014,
+    MSP_ERROR_MMP_STRATGY_PARAM_TOOLOOG= 15015,
+    MSP_ERROR_MMP_PARAM_NULL= 15016,
+    MSP_ERROR_MMP_ERR_MORE_TOTAL= 15017,
+    MSP_ERROR_MMP_PROC_THRESHOLD= 15018,
+    MSP_ERROR_MMP_SERVER_THRESHOLD= 15019,
+    MSP_ERROR_MMP_PYTHON_NO_EXIST= 15020,
+    MSP_ERROR_MMP_PYTHON_IMPORT_FAILED= 15021,
+    MSP_ERROR_MMP_PYTHON_BAD_FUNC= 15022,
+    MSP_ERROR_MMP_DB_DATA_ILLEGAL= 15023,
+    MSP_ERROR_MMP_REDIS_NOT_CONN= 15024,
+    MSP_ERROR_MMP_PMA_NOT_FOUND_STRATEGY= 15025,
+    MSP_ERROR_MMP_TAIR_CONNECT= 15026,
+    MSP_ERROR_MMP_PMC_SERVINFO_INVALID= 15027,
+    MSP_ERROR_MMP_ALARM_GROUP_NULL= 15028,
+    MSP_ERROR_MMP_ALARM_CONTXT_NULL= 15029,
+    MSP_ERROR_LMOD_BASE= 16000,
+    MSP_ERROR_LMOD_NOT_FOUND= 16001,
+    MSP_ERROR_LMOD_UNEXPECTED_BIN= 16002,
+    MSP_ERROR_LMOD_LOADCODE= 16003,
+    MSP_ERROR_LMOD_PRECALL= 16004,
+    MSP_ERROR_LMOD_RUNTIME_EXCEPTION= 16005,
+    MSP_ERROR_LMOD_ALREADY_LOADED= 16006,
+    MSP_ERROR_BIZ_BASE= 17000,
+    MSP_ERROR_NGX_LOG_MORE_TOTEL_SIZE= 18000,
+    MSP_ERROR_FLASH_NETWORK_CONNECT_FIALED= 19000,
+    MSP_ERROR_FLASH_NETWORK_CHECK_FIALED= 19001,
+    MSP_ERROR_FLASH_NETWORK_CHECK_TIMEOUT= 19002,
+    MSP_ERROR_FLASH_NETWORK_CLOSED_EXCEPTION= 19003,
+    SPEECH_ERROR_NO_NETWORK= 20001,
+    SPEECH_ERROR_NETWORK_TIMEOUT= 20002,
+    SPEECH_ERROR_NET_EXPECTION= 20003,
+    SPEECH_ERROR_INVALID_RESULT= 20004,
+    SPEECH_ERROR_NO_MATCH= 20005,
+    SPEECH_ERROR_AUDIO_RECORD= 20006,
+    SPEECH_ERROR_NO_SPPECH= 20007,
+    SPEECH_ERROR_SPEECH_TIMEOUT= 20008,
+    SPEECH_ERROR_EMPTY_UTTERANCE= 20009,
+    SPEECH_ERROR_FILE_ACCESS= 20010,
+    SPEECH_ERROR_PLAY_MEDIA= 20011,
+    SPEECH_ERROR_INVALID_PARAM= 20012,
+    SPEECH_ERROR_TEXT_OVERFLOW= 20013,
+    SPEECH_ERROR_INVALID_DATA= 20014,
+    SPEECH_ERROR_LOGIN= 20015,
+    SPEECH_ERROR_PERMISSION_DENIED= 20016,
+    SPEECH_ERROR_INTERRUPT= 20017,
+    SPEECH_ERROR_VERSION_LOWER= 20018,
+    SPEECH_CLIENT_ERROR_ISUSING= 20019,
+    SPEECH_ERROR_SYSTEM_PREINSTALL= 20020,
+    SPEECH_ERROR_UNSATISFIED_LINK= 20021,
+    SPEECH_ERROR_UNKNOWN= 20999,
+    SPEECH_ERROR_COMPONENT_NOT_INSTALLED= 21001,
+    SPEECH_ERROR_ENGINE_NOT_SUPPORTED= 21002,
+    SPEECH_ERROR_ENGINE_INIT_FAIL= 21003,
+    SPEECH_ERROR_ENGINE_CALL_FAIL= 21004,
+    SPEECH_ERROR_ENGINE_BUSY= 21005,
+    SPEECH_ERROR_LOCAL_NO_INIT= 22001,
+    SPEECH_ERROR_LOCAL_RESOURCE= 22002,
+    SPEECH_ERROR_LOCAL_ENGINE= 22003,
+    SPEECH_ERROR_IVW_INTERRUPT= 22004,
+    SPEECH_SUCCESS= 0,
+    SPEECH_ERROR_ASR_CLIENT= 23000,
+    SPEECH_ERROR_ASR_INVALID_PARA= 23001,
+    SPEECH_ERROR_ASR_INVALID_PARA_VALUE= 23002,
+    SPEECH_ERROR_ASR_OUT_OF_MEMORY= 23003,
+    SPEECH_ERROR_ASR_CREATE_HANDLE_FAILED= 23004,
+    SPEECH_ERROR_ASR_ENGINE_INIT_FAILED= 23005,
+    SPEECH_ERROR_ASR_ENGINE_STARTED= 23006,
+    SPEECH_ERROR_ASR_ENGINE_UNINIT= 23007,
+    SPEECH_ERROR_ASR_SPEECH_TIMEOUT= 23008,
+    SPEECH_ERROR_ASR_NO_RECOGNIZED_RESULT= 23009,
+    SPEECH_ERROR_ASR_INVALID_HANDLE= 23010,
+    SPEECH_ERROR_ASR_FILE_ACCESS= 23011,
+    SPEECH_ERROR_AITALK_FALSE=
+            23100,
+    SPEECH_ERROR_AITALK_PERMISSION_DENIED= 23101,
+    SPEECH_ERROR_AITALK_INVALID_PARA= 23102,
+    SPEECH_ERROR_AITALK_BUFFER_OVERFLOW= 23103,
+    SPEECH_ERROR_AITALK_FAILED= 23104,
+    SPEECH_ERROR_AITALK_NOT_SUPPORTED= 23105,
+    SPEECH_ERROR_AITALK_OUT_OF_MEMORY= 23106,
+    SPEECH_ERROR_AITALK_INVALID_RESOURCE= 23107,
+    SPEECH_ERROR_AITALK_NOT_FOUND= 23108,
+    SPEECH_ERROR_AITALK_INVALID_GRAMMAR= 23109,
+    SPEECH_ERROR_AITALK_INVALID_CALL= 23110,
+    SPEECH_ERROR_AITALK_SYNTAX_ERROR= 23111,
+    SPEECH_ERROR_AITALK_RESET=
+            23112,
+    SPEECH_ERROR_AITALK_ENDED= 23113,
+    SPEECH_ERROR_AITALK_IDLE=
+            23114,
+    SPEECH_ERROR_AITALK_CANNOT_SAVE_FILE= 23115,
+    SPEECH_ERROR_AITALK_INVALID_GRAMMAR_NAME= 23116,
+    SPEECH_ERROR_AITALK_BUFFER_EMPTY= 23117,
+    SPEECH_ERROR_AITALK_GET_RESULT= 23118,
+    SPEECH_ERROR_AITALK_REACT_OUT_TIME= 23119,
+    SPEECH_ERROR_AITALK_SPEECH_OUT_TIME= 23120,
+    SPEECH_ERROR_AITALK_AUDIO_CUT= 23121,
+    SPEECH_ERROR_AITALK_AUDIO_LOWER= 23122,
+    SPEECH_ERROR_AITALK_INSUFFICIENT_PERMISSIONS= 23123,
+    SPEECH_ERROR_AITALK_RESULT_ERROR= 23124,
+    SPEECH_ERROR_AITALK_SHORT_PAUSE= 23125,
+    SPEECH_ERROR_AITALK_BUSY= 23126,
+    SPEECH_ERROR_AITALK_GRM_NOT_UPDATE= 23127,
+    SPEECH_ERROR_AITALK_STARTED= 23128,
+    SPEECH_ERROR_AITALK_STOPPED= 23129,
+    SPEECH_ERROR_AITALK_ALREADY_STARTED= 23130,
+    SPEECH_ERROR_AITALK_ALREADY_STOPPED= 23131,
+    SPEECH_ERROR_AITALK_TOO_MANY_COMMAND= 23132,
+    SPEECH_ERROR_AITALK_WAIT= 23133,
+    SPEECH_ERROR_AITALK_MAE_RIGHT= 23134,
+    SPEECH_ERROR_AITALK_MAE_WRONG= 23135,
+    SPEECH_ERROR_AITALK_GRM_ERR= 23300,
+    SPEECH_ERROR_TTS_INVALID_PARA= 24000,
+    SPEECH_ERROR_TTS_INVALID_PARA_VALUE= 24001,
+    SPEECH_ERROR_TTS_OUT_OF_MEMORY= 24002,
+    SPEECH_ERROR_TTS_INVALID_HANDLE= 24003,
+    SPEECH_ERROR_TTS_CREATE_HANDLE_FAILED= 24004,
+    SPEECH_ERROR_TTS_INVALID_RESOURCE= 24005,
+    SPEECH_ERROR_TTS_INVALID_VOICE_NAME= 24006,
+    SPEECH_ERROR_TTS_ENGINE_UNINIT= 24007,
+    SPEECH_ERROR_TTS_ENGINE_INIT_FAILED= 24008,
+    SPEECH_ERROR_TTS_ENGINE_BUSY= 24009,
+    SPEECH_ERROR_AISOUND_BASE= 24100,
+    SPEECH_ERROR_AISOUND_UNIMPEMENTED= 24100,
+    SPEECH_ERROR_AISOUND_UNSUPPORTED= 24101,
+    SPEECH_ERROR_AISOUND_INVALID_HANDLE= 24102,
+    SPEECH_ERROR_AISOUND_INVALID_PARA= 24103,
+    SPEECH_ERROR_AISOUND_INSUFFICIENT_HEAP= 24104,
+    SPEECH_ERROR_AISOUND_STATE_REFUSE= 24105,
+    SPEECH_ERROR_AISOUND_INVALID_PARA_ID= 24106,
+    SPEECH_ERROR_AISOUND_INVALID_PARA_VALUE= 24107,
+    SPEECH_ERROR_AISOUND_RESOURCE= 24108,
+    SPEECH_ERROR_AISOUND_RESOURCE_READ= 24109,
+    SPEECH_ERROR_AISOUND_LBENDIAN= 24110,
+    SPEECH_ERROR_AISOUND_HEADFILE= 24111,
+    SPEECH_ERROR_AISOUND_BUFFER_OVERFLOW= 24112,
+    SPEECH_ERROR_AISOUND_INVALID_ISAMPA=
+            24113,
+    SPEECH_ERROR_AISOUND_INVALID_CSSML= 24114,
+    SPEECH_ERROR_IVW_ENGINE_UNINI= 25000,
+    SPEECH_ERROR_IVW_RESVER_NOMATCH= 25001,
+    SPEECH_ERROR_IVW_BUFFERED_AUDIOD_LITTLE= 25002,
+    SPEECH_ERROR_IVW_INVALID_RESTYPE= 25003,
+    SPEECH_ERROR_IVW_INVALID_RESHEADVER= 25004,
+    SPEECH_ERROR_IVW_INVALID_CALL= 25101,
+    SPEECH_ERROR_IVW_INVALID_ARG= 25102,
+    SPEECH_ERROR_IVW_TELL_SIZE= 25103,
+    SPEECH_ERROR_IVW_OUT_OF_MEMORY= 25104,
+    SPEECH_ERROR_IVW_OUT_BUFFER_FULL= 25105,
+    SPEECH_ERROR_IVW_OUT_BUFFER_EMPTY= 25106,
+    SPEECH_ERROR_IVW_INVALID_RESOURCE= 25107,
+    SPEECH_ERROR_IVW_REPETITIOPN_ENTER= 25108,
+    SPEECH_ERROR_IVW_NOT_SUPPORT= 25109,
+    SPEECH_ERROR_IVW_NOT_FOUND= 25110,
+    SPEECH_ERROR_IVW_INVALID_SN= 25111,
+    SPEECH_ERROR_IVW_LIMITTED= 25112,
+    SPEECH_ERROR_IVW_TIME_OUT= 25113,
+    SPEECH_ERROR_IVW_ENROLL1_SUCESS= 25114,
+    SPEECH_ERROR_IVW_ENROLL1_FAILED= 25115,
+    SPEECH_ERROR_IVW_ENROLL2_SUCESS= 25116,
+    SPEECH_ERROR_IVW_ENROLL2_FAILED= 25117,
+    SPEECH_ERROR_IVW_ENROLL3_SUCESS= 25118,
+    SPEECH_ERROR_IVW_ENROLL3_FAILED= 25119,
+    SPEECH_ERROR_IVW_SPEECH_TOO_SHORT= 25120,
+    SPEECH_ERROR_IVW_SPEECH_STOP= 25121,
+    SPEECH_ERROR_LFASR_BASE= 26000,
+}
+enum AudioStatus {
+    MSP_AUDIO_SAMPLE_INIT= 0x00,
+    MSP_AUDIO_SAMPLE_FIRST= 0x01,
+    MSP_AUDIO_SAMPLE_CONTINUE= 0x02,
+    MSP_AUDIO_SAMPLE_LAST= 0x04,
+}
+enum RecogStatus {
+    MSP_REC_STATUS_SUCCESS= 0,
+    MSP_REC_STATUS_NO_MATCH= 1,
+    MSP_REC_STATUS_INCOMPLETE= 2,
+    MSP_REC_STATUS_NON_SPEECH_DETECTED= 3,
+    MSP_REC_STATUS_SPEECH_DETECTED= 4,
+    MSP_REC_STATUS_COMPLETE= 5,
+    MSP_REC_STATUS_MAX_CPU_TIME= 6,
+    MSP_REC_STATUS_MAX_SPEECH= 7,
+    MSP_REC_STATUS_STOPPED= 8,
+    MSP_REC_STATUS_REJECTED= 9,
+    MSP_REC_STATUS_NO_SPEECH_FOUND= 10,
+    MSP_REC_STATUS_FAILURE= MSP_REC_STATUS_NO_MATCH,
+}
+enum EpStatus {
+    MSP_EP_LOOKING_FOR_SPEECH= 0,
+    MSP_EP_IN_SPEECH= 1,
+    MSP_EP_AFTER_SPEECH= 3,
+    MSP_EP_TIMEOUT= 4,
+    MSP_EP_ERROR= 5,
+    MSP_EP_MAX_SPEECH= 6,
+    MSP_EP_IDLE= 7,
+}
+enum SynthesizingStatus {
+    MSP_TTS_FLAG_STILL_HAVE_DATA= 1,
+    MSP_TTS_FLAG_DATA_END= 2,
+    MSP_TTS_FLAG_CMD_CANCELED= 4,
+}
+enum HandwritingStatus {
+    MSP_HCR_DATA_FIRST= 1,
+    MSP_HCR_DATA_CONTINUE= 2,
+    MSP_HCR_DATA_END= 4,
+}
+enum IvwStatus {
+    MSP_IVW_MSG_WAKEUP= 1,
+    MSP_IVW_MSG_ERROR= 2,
+    MSP_IVW_MSG_ISR_RESULT= 3,
+    MSP_IVW_MSG_ISR_EPS= 4,
+    MSP_IVW_MSG_VOLUME= 5,
+    MSP_IVW_MSG_ENROLL= 6,
+    MSP_IVW_MSG_RESET= 7,
+}
+enum UploadStatus {
+    MSP_DATA_SAMPLE_INIT= 0x00,
+    MSP_DATA_SAMPLE_FIRST= 0x01,
+    MSP_DATA_SAMPLE_CONTINUE= 0x02,
+    MSP_DATA_SAMPLE_LAST= 0x04,
+}
+enum SynthStatus {
+    MSP_TTS_FLAG_STILL_HAVE_DATA= 1,
+    MSP_TTS_FLAG_DATA_END= 2,
+    MSP_TTS_FLAG_CMD_CANCELED= 0,
+}
+class VoiceGenerator {
+    + content : string <<get>> <<set>>
+    + SpeakContent() : void
+    + Speak() : void
+    + Speak(content:string) : void
+    + OnAudioLoadAndPaly(url:string, type:AudioType, audio:AudioSource) : IEnumerator
+}
+class WAVE_Header <<struct>> {
+    + RIFF_ID : int
+    + File_Size : int
+    + RIFF_Type : int
+    + FMT_ID : int
+    + FMT_Size : int
+    + FMT_Tag : short
+    + FMT_Channel : ushort
+    + FMT_SamplesPerSec : int
+    + AvgBytesPerSec : int
+    + BlockAlign : ushort
+    + BitsPerSample : ushort
+    + DATA_ID : int
+    + DATA_Size : int
+}
+MonoBehaviour <|-- VoiceGenerator
+VoiceGenerator +-- WAVE_Header
+class AstralBodyEditorQuizUI {
+    + <<override>> OnAstralBodySet() : void
+    + <<override>> SetVelocityInCircle() : void
+    + SetToTarget() : void
+}
+AstralBodyEditorUI <|-- AstralBodyEditorQuizUI
+AstralBodyEditorQuizUI --> "isThisTarget" Toggle
+class QuizEditorUI {
+    + SaveQuiz() : void
+    + ReloadScene() : void
+    + ChangeQuizType(type:int) : void
+    + SettingToProp() : void
+    + MainToSetting() : void
+    + SettingToMain() : void
+    + ToTestMode() : void
+}
+MonoBehaviour <|-- QuizEditorUI
+QuizEditorUI --> "mainPanel" GameObject
+QuizEditorUI --> "quizSetting" GameObject
+QuizEditorUI --> "prop" GameObject
+QuizEditorUI --> "nameField" InputField
+class QuizEditUI {
+    + BackToTestMode() : void
+}
+MonoBehaviour <|-- QuizEditUI
+class QuizLineUI {
+    + name : string
+    + OnClick() : void
+    + Delete() : void
+    + Generate() : void
+}
+MonoBehaviour <|-- QuizLineUI
+QuizLineUI --> "quizName" Text
+QuizLineUI --> "quizType" Text
+QuizLineUI --> "quizListUI" QuizListUI
+QuizLineUI --> "quizStruct" QuizBaseStruct
+class QuizListUI {
+    + offset : float
+    + DeleteQuiz(quizName:string) : void
+}
+class "List`1"<T> {
+}
+MonoBehaviour <|-- QuizListUI
+QuizListUI o-> "quizLineUis<QuizLineUI>" "List`1"
+QuizListUI --> "content" RectTransform
+QuizListUI --> "linePrefab" QuizLineUI
+class QuizStarsGroupUI {
+    + _starCount : int
+    + starCount : int <<get>> <<set>>
+    + CalculateSuccessStars() : void
+    + ShowStars() : void
+}
+class "List`1"<T> {
+}
+MonoBehaviour <|-- QuizStarsGroupUI
+QuizStarsGroupUI o-> "quizStarUis<QuizStarUI>" "List`1"
+QuizStarsGroupUI --> "globalTimer" GlobalTimer
+class QuizStarUI {
+    + isSet : bool <<get>> <<set>>
+    + PlayAnimation() : void
+}
+MonoBehaviour <|-- QuizStarUI
+QuizStarUI --> "starBackground" Image
+QuizStarUI --> "starForward" Image
+QuizStarUI --> "animator" Animator
+class QuizTestUI {
+    + BackToTestMode() : void
+}
+MonoBehaviour <|-- QuizTestUI
+class QuizUI {
+    + Generate() : void
+    + OnValueChange() : void
+    + Confirm() : void
+}
+MonoBehaviour <|-- QuizUI
+QuizUI --> "quizSolver" QuizSolver
+QuizUI --> "quizSlider" Slider
+QuizUI --> "title" Text
+QuizUI --> "quizType" QuizType
+QuizUI --> "ansText" Text
+QuizUI --> "confirm" Button
+QuizUI --> "quizCondition" Text
+QuizUI --> "target" AstralBody
+class ResultUI {
+    + Restart() : void
+    + Back() : void
+}
+class "List`1"<T> {
+}
+MonoBehaviour <|-- ResultUI
+ResultUI --> "quizUis<GameObject>" "List`1"
+ResultUI --> "resultText" Text
+ResultUI --> "quizStarsGroupUI" QuizStarsGroupUI
+ResultUI --> "panel" GameObject
+enum ShowPropertyType {
+    m,
+    v,
+    R,
+    T,
+    radius,
+    omega,
+    g,
+    density,
+}
+class VarLineUI {
+    + isQuiz : bool
+    + enableInput : bool
+    + headerString : string
+    + unitString : string
+    + Generate() : void
+    + ChangePublicity() : void
+    + OnEditEnd() : void
+    + OnInputFieldDrag() : void
+    + WhileInputFieldDrag() : void
+    + WhileAddClicking(isAdd:bool) : void
+    + OnClickEnd() : void
+    + OnInputting() : void
+    + OnInputCancel() : void
+}
+MonoBehaviour <|-- VarLineUI
+VarLineUI --> "property" ShowPropertyType
+VarLineUI --> "header" Text
+VarLineUI --> "toggle" Toggle
+VarLineUI --> "unit" Text
+VarLineUI --> "inputField" InputField
+VarLineUI --> "scientificCountingInputField" InputField
+VarLineUI --> "add" GameObject
+VarLineUI --> "minus" GameObject
+VarLineUI --> "editableImage" Sprite
+VarLineUI --> "readOnlyImage" Sprite
+VarLineUI --> "target" AstralBody
+class SatelliteResultUI {
+    + BackToLabMode() : void
+    + Reload() : void
+}
+MonoBehaviour <|-- SatelliteResultUI
+SatelliteResultUI --> "panel" GameObject
+SatelliteResultUI --> "resultText" Text
+SatelliteResultUI --> "quizStarsGroupUI" QuizStarsGroupUI
+@enduml

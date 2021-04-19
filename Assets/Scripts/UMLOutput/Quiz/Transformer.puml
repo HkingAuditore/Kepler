@@ -1,0 +1,6 @@
+@startuml
+class Transformer {
+}
+MonoBehaviour <|-- Transformer
+Transformer --> "GetTransformer" Transformer
+@enduml

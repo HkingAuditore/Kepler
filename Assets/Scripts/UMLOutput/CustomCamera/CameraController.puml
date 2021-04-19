@@ -1,0 +1,20 @@
+@startuml
+class CameraController {
+    + correctiveSpeed : float
+    + mainSpeed : float
+    + scaleSize : float
+    + scaleMin : float = 20
+    + scaleMax : float = 300
+    + orthoZoomSpeed : float
+    + focusOffset : float = 0.33f
+    + IsFollowing : bool <<get>> <<set>> = false
+    + GetMainCamera() : Camera
+    + CameraDrag() : void
+    + CameraRotator() : void
+    + FocusOn(target:Transform) : void
+    + ExitFocus() : void
+    + Follow() : void
+}
+MonoBehaviour <|-- CameraController
+CameraController --> "virtualCamera" CinemachineVirtualCamera
+@enduml

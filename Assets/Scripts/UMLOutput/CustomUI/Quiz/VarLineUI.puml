@@ -1,0 +1,39 @@
+@startuml
+enum ShowPropertyType {
+    m,
+    v,
+    R,
+    T,
+    radius,
+    omega,
+    g,
+    density,
+}
+class VarLineUI {
+    + isQuiz : bool
+    + enableInput : bool
+    + headerString : string
+    + unitString : string
+    + Generate() : void
+    + ChangePublicity() : void
+    + OnEditEnd() : void
+    + OnInputFieldDrag() : void
+    + WhileInputFieldDrag() : void
+    + WhileAddClicking(isAdd:bool) : void
+    + OnClickEnd() : void
+    + OnInputting() : void
+    + OnInputCancel() : void
+}
+MonoBehaviour <|-- VarLineUI
+VarLineUI --> "property" ShowPropertyType
+VarLineUI --> "header" Text
+VarLineUI --> "toggle" Toggle
+VarLineUI --> "unit" Text
+VarLineUI --> "inputField" InputField
+VarLineUI --> "scientificCountingInputField" InputField
+VarLineUI --> "add" GameObject
+VarLineUI --> "minus" GameObject
+VarLineUI --> "editableImage" Sprite
+VarLineUI --> "readOnlyImage" Sprite
+VarLineUI --> "target" AstralBody
+@enduml

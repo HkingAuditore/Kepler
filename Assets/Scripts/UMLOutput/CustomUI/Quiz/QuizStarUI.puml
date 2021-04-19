@@ -1,0 +1,10 @@
+@startuml
+class QuizStarUI {
+    + isSet : bool <<get>> <<set>>
+    + PlayAnimation() : void
+}
+MonoBehaviour <|-- QuizStarUI
+QuizStarUI --> "starBackground" Image
+QuizStarUI --> "starForward" Image
+QuizStarUI --> "animator" Animator
+@enduml

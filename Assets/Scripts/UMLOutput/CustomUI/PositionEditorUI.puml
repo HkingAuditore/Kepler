@@ -1,0 +1,14 @@
+@startuml
+class PositionEditorUI {
+    + moveSpeed : float
+    + isQuizEditor : bool
+    + OnBeginDrag() : void
+    + MoveAxis(isXAxis:bool) : void
+    + MoveCenter() : void
+    + OnEndDrag() : void
+}
+MonoBehaviour <|-- PositionEditorUI
+PositionEditorUI --> "xAxis" Button
+PositionEditorUI --> "zAxis" Button
+PositionEditorUI --> "editingTarget" AstralBody
+@enduml

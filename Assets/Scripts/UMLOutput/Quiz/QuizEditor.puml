@@ -1,0 +1,10 @@
+@startuml
+class QuizEditor {
+    + SaveQuiz(quizName:string) : void
+    + AddAstralBody(astralBody:QuizAstralBody, isTarget:bool) : void
+    + SetTarget(target:QuizAstralBody) : void
+    + SetType(t:QuizType) : void
+}
+QuizBase <|-- QuizEditor
+QuizEditor --> "saver" QuizSaver
+@enduml

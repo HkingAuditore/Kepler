@@ -1,0 +1,15 @@
+@startuml
+class GlobalTimer {
+    + countDownTime : float
+    + isPausing : bool <<get>> <<set>> = false
+    + isCountDownEnd : bool <<get>> <<set>>
+    + isCountingDown : bool <<get>> <<set>>
+    + timer : float <<get>> <<set>>
+    + Reset() : void
+    + StartCounting() : void
+}
+MonoBehaviour <|-- GlobalTimer
+GlobalTimer o-> "startCountDownEvent" UnityEvent
+GlobalTimer o-> "countingDownEvent" UnityEvent
+GlobalTimer o-> "countingDownEndEvent" UnityEvent
+@enduml

@@ -1,0 +1,7 @@
+@startuml
+class TangentSpaceVisualizer {
+    + offset : float = 0.01f
+    + scale : float = 0.1f
+}
+MonoBehaviour <|-- TangentSpaceVisualizer
+@enduml

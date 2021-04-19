@@ -1,0 +1,15 @@
+@startuml
+enum AnimationType {
+    Bored,
+    Point,
+}
+class AstronautsAnimation {
+    + boredTimeMin : float = 3
+    + boredTimeMax : float = 6
+    + boredAnimationCount : int = 5
+    + pointAnimationCount : int = 3
+}
+MonoBehaviour <|-- AstronautsAnimation
+AstronautsAnimation --> "astronautsAnimator" Animator
+AstronautsAnimation --> "selectorUI" SelectorUI
+@enduml

@@ -1,0 +1,21 @@
+@startuml
+class OrbitPanelUI {
+    + isConicSection : bool
+    + Init() : void
+}
+MonoBehaviour <|-- OrbitPanelUI
+OrbitPanelUI --> "contentPanel" GameObject
+OrbitPanelUI --> "nullPanel" GameObject
+OrbitPanelUI --> "_astralBody" AstralBody
+OrbitPanelUI --> "majorAxis" Text
+OrbitPanelUI --> "minorAxis" Text
+OrbitPanelUI --> "geoCenter" Text
+OrbitPanelUI --> "eccentricity" Text
+OrbitPanelUI --> "focalLength" Text
+OrbitPanelUI --> "period" Text
+OrbitPanelUI --> "angle" Text
+OrbitPanelUI --> "k" Text
+OrbitPanelUI --> "orbitGraphUI" OrbitGraphUI
+OrbitPanelUI --> "orbit" ConicSection
+OrbitPanelUI --> "astralBody" AstralBody
+@enduml

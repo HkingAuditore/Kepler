@@ -1,0 +1,12 @@
+@startuml
+class Satellite {
+    + GetMass() : float
+    + GetTransform() : Transform
+    + GetVelocity() : Vector3
+}
+class "List`1"<T> {
+}
+MonoBehaviour <|-- Satellite
+Satellite o-> "satelliteParts<SatellitePart>" "List`1"
+Satellite --> "satelliteCore" SatelliteCore
+@enduml

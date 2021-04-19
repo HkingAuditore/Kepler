@@ -1,0 +1,16 @@
+@startuml
+class AstralBodyAddUI {
+    + isQuizEditMode : bool
+    + WaitForLoad() : IEnumerator
+    + Switch2Placement() : void
+    + Switch2Normal() : void
+}
+class "List`1"<T> {
+}
+MonoBehaviour <|-- AstralBodyAddUI
+AstralBodyAddUI --> "astralBodyPlacementUI" AstralBodyPlacementUI
+AstralBodyAddUI --> "placePrefab" AstralBody
+AstralBodyAddUI --> "orbits" GravityTracing
+AstralBodyAddUI --> "setActiveList<GameObject>" "List`1"
+AstralBodyAddUI --> "OrbitCore" Transform
+@enduml

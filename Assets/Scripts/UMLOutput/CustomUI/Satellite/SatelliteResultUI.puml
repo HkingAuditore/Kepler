@@ -1,0 +1,10 @@
+@startuml
+class SatelliteResultUI {
+    + BackToLabMode() : void
+    + Reload() : void
+}
+MonoBehaviour <|-- SatelliteResultUI
+SatelliteResultUI --> "panel" GameObject
+SatelliteResultUI --> "resultText" Text
+SatelliteResultUI --> "quizStarsGroupUI" QuizStarsGroupUI
+@enduml

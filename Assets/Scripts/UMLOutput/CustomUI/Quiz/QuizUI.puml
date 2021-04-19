@@ -1,0 +1,16 @@
+@startuml
+class QuizUI {
+    + Generate() : void
+    + OnValueChange() : void
+    + Confirm() : void
+}
+MonoBehaviour <|-- QuizUI
+QuizUI --> "quizSolver" QuizSolver
+QuizUI --> "quizSlider" Slider
+QuizUI --> "title" Text
+QuizUI --> "quizType" QuizType
+QuizUI --> "ansText" Text
+QuizUI --> "confirm" Button
+QuizUI --> "quizCondition" Text
+QuizUI --> "target" AstralBody
+@enduml

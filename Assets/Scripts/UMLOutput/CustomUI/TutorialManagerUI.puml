@@ -1,0 +1,9 @@
+@startuml
+class TutorialManagerUI {
+    + Update() : void
+}
+class "List`1"<T> {
+}
+MonoBehaviour <|-- TutorialManagerUI
+TutorialManagerUI o-> "tutorialUiList<TutorialUI>" "List`1"
+@enduml

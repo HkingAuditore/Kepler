@@ -1,0 +1,44 @@
+@startuml
+class AstralBody {
+    + enableAffect : bool = true
+    + affectRadius : float
+    + enableTracing : bool
+    + Mass : float <<get>>
+    + gravity : float <<get>>
+    + meshNum : int <<get>> <<set>>
+    + size : float <<get>> <<set>>
+    + realMass : double <<get>> <<set>>
+    + density : double <<get>>
+    + <<virtual>> OnCollisionEnter(other:Collision) : void
+    + GetTransform() : Transform
+    + GetPosition() : Vector3
+    + GetGameObject() : GameObject
+    + GetEnableTracing() : bool
+    + <<virtual>> GetMass() : float
+    + GetRigidbody() : Rigidbody
+    + GetVelocity() : Vector3
+    + GetAffectedPlanets() : List<AstralBody>
+    + GetAstralBody() : AstralBody
+    + ChangeVelocity(velocity:Vector3) : void
+    + ChangeVelocity(realSpeed:double) : void
+    + GetGravityVector3(rigidbody:Rigidbody) : Vector3
+    + CalculateForce() : Vector3
+    + SetCircleVelocity() : void
+    + SetCircleVelocityMenu() : void
+}
+class "List`1"<T> {
+}
+class "UnityEvent`1"<T> {
+}
+MonoBehaviour <|-- AstralBody
+ITraceable <|-- AstralBody
+AstralBody --> "triggerCollider" SphereCollider
+AstralBody --> "defaultCollider" SphereCollider
+AstralBody --> "oriVelocity" Vector3
+AstralBody --> "angularVelocity" Vector3
+AstralBody o-> "affectedPlanets<AstralBody>" "List`1"
+AstralBody o-> "banAffectedPlanets<AstralBody>" "List`1"
+AstralBody --> "velocityChangedEvent<Vector3>" "UnityEvent`1"
+AstralBody --> "astralBodyRigidbody" Rigidbody
+AstralBody --> "Force" Vector3
+@enduml

@@ -1,0 +1,9 @@
+@startuml
+interface IRenderTexOuter {
+    GetRenderResult() : RenderTexture
+}
+class CustomPostProcessingBase {
+}
+MonoBehaviour <|-- CustomPostProcessingBase
+CustomPostProcessingBase --> "mainCamera" Camera
+@enduml

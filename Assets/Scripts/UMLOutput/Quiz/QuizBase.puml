@@ -1,0 +1,17 @@
+@startuml
+class QuizBase {
+    + isLoadByPrefab : bool
+    + loadTarget : string
+    + answer : float
+    + isLoadDone : bool <<get>>
+    + <<virtual>> Start() : void
+    + LoadQuiz(fileName:string) : void
+}
+MonoBehaviour <|-- QuizBase
+QuizBase --> "astralBodyPrefab" QuizAstralBody
+QuizBase --> "quizRoot" Transform
+QuizBase --> "orbitBase" GravityTracing
+QuizBase --> "quizType" QuizType
+QuizBase o-> "loadDoneEvent" UnityEvent
+QuizBase --> "target" QuizAstralBody
+@enduml

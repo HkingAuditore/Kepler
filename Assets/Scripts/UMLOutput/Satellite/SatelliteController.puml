@@ -1,0 +1,10 @@
+@startuml
+class SatelliteController {
+    + speed : float
+    + angularSpeed : float
+    + SetCurDirVelocity(newSpeed:float) : void
+    + SeparateControl() : void
+}
+MonoBehaviour <|-- SatelliteController
+SatelliteController --> "satellite" Satellite
+@enduml

@@ -1,0 +1,9 @@
+@startuml
+class SettingUI {
+    + ChangeAudioVolume() : void
+    + ClosePanel() : void
+}
+MonoBehaviour <|-- SettingUI
+SettingUI --> "audioSlider" Slider
+SettingUI --> "bgmSource" AudioSource
+@enduml

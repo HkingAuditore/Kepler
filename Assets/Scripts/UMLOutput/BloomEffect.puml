@@ -1,0 +1,11 @@
+@startuml
+class BloomEffect {
+    + intensity : float = 1
+    + iterations : int = 4
+    + threshold : float = 1
+    + softThreshold : float = 0.5f
+    + debug : bool
+}
+MonoBehaviour <|-- BloomEffect
+BloomEffect --> "bloomShader" Shader
+@enduml

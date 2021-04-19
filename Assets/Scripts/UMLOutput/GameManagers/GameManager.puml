@@ -1,0 +1,31 @@
+@startuml
+enum PropertyUnit {
+    M,
+    Kg,
+    S,
+}
+class GameManager {
+    + isQuizEditMode : bool
+    + globalDistanceScaler : int
+    + globalMassScaler : int <<get>>
+    + GetMainCameraController() : CameraController
+    + GetMeshAndMaterialsFromList(index:int, materials:List<Material>) : Mesh
+    + SetAudioVolume() : void
+    + CalculateMassScales() : void
+    + CalculateMassScales(realMass:double) : void
+    + CalculateDistanceScale() : void
+    + GetK(propertyUnit:PropertyUnit, mass:double) : int
+    + GetK(propertyUnit:PropertyUnit) : int
+}
+class "List`1"<T> {
+}
+MonoBehaviour <|-- GameManager
+GameManager --> "quizBase" QuizBase
+GameManager --> "mainCamera" Camera
+GameManager --> "globalTimer" GlobalTimer
+GameManager --> "meshList<GameObject>" "List`1"
+GameManager --> "orbit" GravityTracing
+GameManager --> "satelliteChallengeManger" SatelliteChallengeManger
+GameManager --> "bgmSource" AudioSource
+GameManager --> "GetGameManager" GameManager
+@enduml

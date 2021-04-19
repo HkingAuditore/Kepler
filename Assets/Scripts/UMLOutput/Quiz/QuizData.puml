@@ -1,0 +1,51 @@
+@startuml
+class AstralBodyDict {
+    + AstralBodyDict(transform:Transform, astralBody:QuizAstralBody, isTarget:bool)
+    + isTarget : bool <<get>> <<set>>
+}
+class AstralBodyStructDict <<struct>> {
+    + mass : double
+    + isMassPublic : bool
+    + density : double
+    + originalSize : float
+    + affectRadius : float
+    + isVelocityPublic : bool
+    + isAngularVelocityPublic : bool
+    + period : float
+    + isPeriodPublic : bool
+    + radius : float
+    + isRadiusPublic : bool
+    + meshNum : int
+    + isGravityPublic : bool
+    + isSizePublic : bool
+    + t : float
+    + isTPublic : bool
+    + enableAffect : bool
+    + enableTracing : bool
+    + isTarget : bool
+    + isCore : bool
+    + AstralBodyStructDict(transform:Transform, astralBody:AstralBody, isTarget:bool, isCore:bool)
+}
+enum QuizType {
+    Mass,
+    Density,
+    Gravity,
+    Radius,
+}
+class QuizData {
+    + quizName : string
+}
+class QuizSaverException {
+    + QuizSaverException()
+    + QuizSaverException(message:string)
+    + QuizSaverException(message:string, inner:Exception)
+}
+class "List`1"<T> {
+}
+AstralBodyDict --> "transform" Transform
+AstralBodyDict --> "astralBody" QuizAstralBody
+AstralBodyStructDict --> "position" Vector3
+AstralBodyStructDict --> "oriVelocity" Vector3
+QuizData --> "astralBodies<AstralBodyDict>" "List`1"
+Exception <|-- QuizSaverException
+@enduml

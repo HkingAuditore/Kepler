@@ -1,0 +1,12 @@
+@startuml
+class QuizListUI {
+    + offset : float
+    + DeleteQuiz(quizName:string) : void
+}
+class "List`1"<T> {
+}
+MonoBehaviour <|-- QuizListUI
+QuizListUI o-> "quizLineUis<QuizLineUI>" "List`1"
+QuizListUI --> "content" RectTransform
+QuizListUI --> "linePrefab" QuizLineUI
+@enduml

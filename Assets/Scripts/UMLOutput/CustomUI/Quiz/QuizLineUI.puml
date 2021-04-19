@@ -1,0 +1,13 @@
+@startuml
+class QuizLineUI {
+    + name : string
+    + OnClick() : void
+    + Delete() : void
+    + Generate() : void
+}
+MonoBehaviour <|-- QuizLineUI
+QuizLineUI --> "quizName" Text
+QuizLineUI --> "quizType" Text
+QuizLineUI --> "quizListUI" QuizListUI
+QuizLineUI --> "quizStruct" QuizBaseStruct
+@enduml

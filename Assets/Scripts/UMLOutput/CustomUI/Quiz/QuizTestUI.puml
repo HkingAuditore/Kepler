@@ -1,0 +1,6 @@
+@startuml
+class QuizTestUI {
+    + BackToTestMode() : void
+}
+MonoBehaviour <|-- QuizTestUI
+@enduml
