@@ -5,14 +5,6 @@ using UnityEngine;
 
 namespace Satellite
 {
-    public enum SatelliteResultType
-    {
-        Success,
-        Crash,
-        NotOrbit,
-        NonResult
-    }
-
     public class SatelliteChallengeManger : MonoBehaviour
     {
         public  Satellite  satellite;

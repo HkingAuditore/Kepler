@@ -8,14 +8,6 @@ using UnityEngine.Events;
 
 namespace Quiz
 {
-    public enum Reason
-    {
-        Right,
-        NonCircleOrbit,
-        Crash,
-        Overtime
-    }
-
     public class QuizSolver : QuizBase
     {
         public QuizUI     quizUI;

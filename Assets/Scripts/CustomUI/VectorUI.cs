@@ -7,12 +7,6 @@ using UnityEngine.UI;
 
 namespace CustomUI
 {
-    public enum vectorType
-    {
-        Force,
-        Velocity
-    }
-
     public class VectorUI : MonoBehaviour
     {
         public LineRenderer vectorArrow;

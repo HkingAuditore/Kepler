@@ -8,18 +8,6 @@ using UnityEngine.UI;
 
 namespace CustomUI.Quiz
 {
-    public enum ShowPropertyType
-    {
-        m,
-        v,
-        R,
-        T,
-        radius,
-        omega,
-        g,
-        density
-    }
-
     public class VarLineUI : MonoBehaviour
     {
         public                         ShowPropertyType property;

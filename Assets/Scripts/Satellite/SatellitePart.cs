@@ -4,13 +4,6 @@ using UnityEngine;
 
 namespace Satellite
 {
-    public enum SatelliteType
-    {
-        Core,
-        Engine,
-        Parachute
-    }
-
     public class SatellitePart : AstralBody
     {
         public string              satelliteName;

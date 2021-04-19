@@ -6,12 +6,6 @@ using Random = UnityEngine.Random;
 
 namespace Animation
 {
-    internal enum AnimationType
-    {
-        Bored,
-        Point
-    }
-
     public class AstronautsAnimation : MonoBehaviour
     {
         public Animator   astronautsAnimator;

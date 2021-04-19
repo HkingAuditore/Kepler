@@ -8,25 +8,6 @@ using UnityEngine;
 
 namespace SpacePhysic
 {
-    public interface ITraceable
-    {
-        Transform        GetTransform();
-        Vector3          GetPosition();
-        GameObject       GetGameObject();
-        bool             GetEnableTracing();
-        float            GetMass();
-        Rigidbody        GetRigidbody();
-        Vector3          GetVelocity();
-        List<AstralBody> GetAffectedPlanets();
-
-        AstralBody GetAstralBody();
-    }
-
-    internal enum ActionType
-    {
-        Finished
-    }
-
     public class GravityTracing : MonoBehaviour
     {
         public int sample = 20;

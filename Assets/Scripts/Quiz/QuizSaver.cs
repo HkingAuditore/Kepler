@@ -8,13 +8,6 @@ using UnityEngine;
 
 namespace Quiz
 {
-    public struct QuizBaseStruct
-    {
-        public List<AstralBodyStructDict> astralBodyStructList;
-        public string                     quizName;
-        public QuizType                   quizType;
-    }
-
     public class QuizSaver : MonoBehaviour
     {
         public           QuizType    quizType;

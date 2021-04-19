@@ -2,15 +2,6 @@
 
 namespace GameManagers
 {
-    [SerializeField]
-    public enum Difficulty
-    {
-        Easy,
-        Normal,
-        Difficult,
-        Real
-    }
-
     public class GlobalTransfer : MonoBehaviour
     {
         [SerializeField] private float      _audioVolume = .5f;

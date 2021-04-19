@@ -10,13 +10,6 @@ using UnityEngine.Serialization;
 
 namespace GameManagers
 {
-    public enum PropertyUnit
-    {
-        M,
-        Kg,
-        S
-    }
-
     public class GameManager : MonoBehaviour
     {
         [SerializeField]                     private CameraController         _mainCameraController;

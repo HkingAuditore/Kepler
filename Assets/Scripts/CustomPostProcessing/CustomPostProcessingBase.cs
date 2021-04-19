@@ -2,11 +2,6 @@
 
 namespace CustomPostProcessing
 {
-    public interface IRenderTexOuter
-    {
-        RenderTexture GetRenderResult();
-    }
-
     [ExecuteInEditMode]
     public class CustomPostProcessingBase : MonoBehaviour
     {
