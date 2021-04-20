@@ -12,7 +12,7 @@ namespace CustomUI
 
         private void Start()
         {
-            _meshList = GameManager.GetGameManager.meshList;
+            _meshList = GameManager.getGameManager.meshList;
         }
 
         public void ChangeStyle(int index)

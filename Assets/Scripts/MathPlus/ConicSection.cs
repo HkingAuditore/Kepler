@@ -5,20 +5,72 @@ namespace MathPlus
 {
     public class ConicSection
     {
-        private static readonly float   k = 10000;
-        public                  float   a; //x^2
-        public                  float   angle;
-        public                  float   b;            //xy
-        public                  float   c;            //y^2
-        public                  float   d;            //x
-        public                  float   e;            //y
-        public                  float   eccentricity; //离心率
-        public                  float   f;            //f
-        public                  float   focalLength;
-        public                  Vector2 geoCenter; //几何中心
-        public                  bool    isEllipse;
-        public                  float   semiMajorAxis; //长半轴
-        public                  float   semiMinorAxis; //短半轴
+        private static readonly float k = 10000;
+
+        /// <summary>
+        ///     椭圆一般方程a
+        /// </summary>
+        public float a; //x^2
+
+        /// <summary>
+        ///     椭圆倾斜角
+        /// </summary>
+        public float angle;
+
+        /// <summary>
+        ///     椭圆一般方程b
+        /// </summary>
+        public float b; //xy
+
+        /// <summary>
+        ///     椭圆一般方程c
+        /// </summary>
+        public float c; //y^2
+
+        /// <summary>
+        ///     椭圆一般方程d
+        /// </summary>
+        public float d; //x
+
+        /// <summary>
+        ///     椭圆一般方程e
+        /// </summary>
+        public float e; //y
+
+        /// <summary>
+        ///     椭圆离心率
+        /// </summary>
+        public float eccentricity; //离心率
+
+        /// <summary>
+        ///     椭圆一般方程f
+        /// </summary>
+        public float f; //f
+
+        /// <summary>
+        ///     椭圆焦距
+        /// </summary>
+        public float focalLength;
+
+        /// <summary>
+        ///     椭圆几何中心
+        /// </summary>
+        public Vector2 geoCenter; //几何中心
+
+        /// <summary>
+        ///     是否为椭圆
+        /// </summary>
+        public bool isEllipse;
+
+        /// <summary>
+        ///     椭圆半长轴
+        /// </summary>
+        public float semiMajorAxis; //长半轴
+
+        /// <summary>
+        ///     椭圆半短轴
+        /// </summary>
+        public float semiMinorAxis; //短半轴
 
         public ConicSection(float a, float b, float c, float d, float e, float f)
         {
@@ -39,6 +91,13 @@ namespace MathPlus
             angle         = GetAngle() + 90;
         }
 
+        /// <summary>
+        /// </summary>
+        /// <param name="a"></param>
+        /// <param name="b"></param>
+        /// <param name="c"></param>
+        /// <param name="theta">倾斜角</param>
+        /// <param name="geoCenter"></param>
         public ConicSection(float a, float b, float c, float theta, Vector2 geoCenter)
         {
             this.a = a * a * Mathf.Sin(theta) * Mathf.Sin(theta) + b * b * Mathf.Cos(theta) * Mathf.Cos(theta);
@@ -58,6 +117,11 @@ namespace MathPlus
             angle          = GetAngle(theta);
         }
 
+        /// <summary>
+        ///     求椭圆在x坐标下的y
+        /// </summary>
+        /// <param name="x"></param>
+        /// <returns></returns>
         public float[] GetY(float x)
         {
             var eqA   = c;
@@ -67,12 +131,17 @@ namespace MathPlus
             if (delta < 0)
                 return null;
             return new[]
-            {
-                (-eqB - Mathf.Sqrt(delta)) / 2 * eqA,
-                (-eqB + Mathf.Sqrt(delta)) / 2 * eqA
-            };
+                   {
+                       (-eqB - Mathf.Sqrt(delta)) / 2 * eqA,
+                       (-eqB + Mathf.Sqrt(delta)) / 2 * eqA
+                   };
         }
 
+        /// <summary>
+        ///     求椭圆在y坐标下的x
+        /// </summary>
+        /// <param name="y"></param>
+        /// <returns></returns>
         public float[] GetX(float y)
         {
             var eqA   = a;
@@ -82,11 +151,12 @@ namespace MathPlus
             if (delta < 0)
                 return null;
             return new[]
-            {
-                (-eqB - Mathf.Sqrt(delta)) / 2 * eqA,
-                (-eqB + Mathf.Sqrt(delta)) / 2 * eqA
-            };
+                   {
+                       (-eqB - Mathf.Sqrt(delta)) / 2 * eqA,
+                       (-eqB + Mathf.Sqrt(delta)) / 2 * eqA
+                   };
         }
+
 
         private bool IsEllipse()
         {
@@ -98,32 +168,32 @@ namespace MathPlus
         private Vector2 GetGeoCenter()
         {
             return new Vector2((2 * c * d - b * e) / (b * b - 4 * a * c),
-                    (2 * a * e - b * d) / (b * b - 4 * a * c)
-                )
+                               (2 * a * e - b * d) / (b * b - 4 * a * c)
+                              )
                 ;
         }
 
         private float[] GetSemiAxis()
         {
             var axis0 = Mathf.Sqrt(
-                            2 * (a * e * e + c * d * d - b * d * e + (b * b - 4 * a * c) * f) *
-                            (a + c + Mathf.Sqrt(
-                                (a - c) * (a - c) + b * b)
-                            )
-                        )
-                        / (b * b - 4 * a * c);
+                                   2 * (a * e * e + c * d * d - b * d * e + (b * b - 4 * a * c) * f) *
+                                   (a + c + Mathf.Sqrt(
+                                                       (a - c) * (a - c) + b * b)
+                                   )
+                                  )
+                      / (b * b - 4 * a * c);
             var axis1 = Mathf.Sqrt(
-                            2 * (a * e * e + c * d * d - b * d * e + (b * b - 4 * a * c) * f) *
-                            (a + c - Mathf.Sqrt(
-                                (a - c) * (a - c) + b * b)
-                            )
-                        )
-                        / (b * b - 4 * a * c);
+                                   2 * (a * e * e + c * d * d - b * d * e + (b * b - 4 * a * c) * f) *
+                                   (a + c - Mathf.Sqrt(
+                                                       (a - c) * (a - c) + b * b)
+                                   )
+                                  )
+                      / (b * b - 4 * a * c);
             return new[]
-            {
-                Mathf.Max(Mathf.Abs(axis0), Mathf.Abs(axis1)),
-                Mathf.Min(Mathf.Abs(axis0), Mathf.Abs(axis1))
-            };
+                   {
+                       Mathf.Max(Mathf.Abs(axis0), Mathf.Abs(axis1)),
+                       Mathf.Min(Mathf.Abs(axis0), Mathf.Abs(axis1))
+                   };
         }
 
         private float GetEccentricity()
@@ -149,21 +219,27 @@ namespace MathPlus
         }
 
         /// <summary>
+        ///     求椭圆在极坐标下角度对应的位置
         /// </summary>
         /// <param name="ag">角度制</param>
         /// <returns></returns>
         public Vector2 GetPolarPos(float ag)
         {
             var r = semiMinorAxis / Mathf.Sqrt(1 - eccentricity * eccentricity * Mathf.Cos(ag * Mathf.Deg2Rad) *
-                Mathf.Cos(ag                                   * Mathf.Deg2Rad));
+                                               Mathf.Cos(ag                                   * Mathf.Deg2Rad));
             // Debug.Log("r: " + r);
             var sumAngle = ag + angle;
             var pos = new Vector2(r * Mathf.Cos(sumAngle * Mathf.Deg2Rad),
-                r * Mathf.Sin(sumAngle * Mathf.Deg2Rad));
+                                  r * Mathf.Sin(sumAngle * Mathf.Deg2Rad));
             // Debug.Log(geoCenter + pos);
             return geoCenter + pos;
         }
 
+        /// <summary>
+        ///     求椭圆轨道周期
+        /// </summary>
+        /// <param name="m">中心天体质量</param>
+        /// <returns></returns>
         public float GetT(float m)
         {
             return 2 * Mathf.PI * Mathf.Sqrt(semiMajorAxis * semiMajorAxis * semiMajorAxis / (PhysicBase.GetG() * m));

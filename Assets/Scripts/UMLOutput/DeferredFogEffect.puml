@@ -1,6 +1,0 @@
-@startuml
-class DeferredFogEffect {
-}
-MonoBehaviour <|-- DeferredFogEffect
-DeferredFogEffect --> "deferredFog" Shader
-@enduml

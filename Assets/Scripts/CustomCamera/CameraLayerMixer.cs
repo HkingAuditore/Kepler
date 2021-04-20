@@ -6,16 +6,23 @@ namespace CustomCamera
     public class CameraLayerMixer : CustomPostProcessingBase
     {
         public CameraMixer cameraMixer;
-        public LayerCamera layerCamera;
-        public bool        enableLayer0;
-        public bool        enableLayer1;
 
-        public Shader mixShader;
+        /// <summary>
+        ///     开启Layer0
+        /// </summary>
+        public bool enableLayer0;
 
-        public Material      _mixMaterial;
-        public RenderTexture _renderResultRT;
+        /// <summary>
+        ///     开启layer1
+        /// </summary>
+        public bool enableLayer1;
 
-        public Material MixMaterial
+        public  LayerCamera   layerCamera;
+        public  Shader        mixShader;
+        private Material      _mixMaterial;
+        private RenderTexture _renderResultRT;
+
+        private Material MixMaterial
         {
             get
             {
@@ -72,6 +79,10 @@ namespace CustomCamera
             }
         }
 
+        /// <summary>
+        ///     抓取渲染结果
+        /// </summary>
+        /// <returns></returns>
         public RenderTexture GetRenderResult()
         {
             return _renderResultRT;

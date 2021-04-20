@@ -1,5 +1,0 @@
-@startuml
-class EmissiveOscillator {
-}
-MonoBehaviour <|-- EmissiveOscillator
-@enduml

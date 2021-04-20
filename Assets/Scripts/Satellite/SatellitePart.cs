@@ -4,14 +4,23 @@ using UnityEngine;
 
 namespace Satellite
 {
+    /// <summary>
+    ///     卫星部件
+    /// </summary>
     public class SatellitePart : AstralBody
     {
-        public string              satelliteName;
+        /// <summary>
+        ///     连接的部件
+        /// </summary>
         public List<SatellitePart> connectedPartList = new List<SatellitePart>();
 
+        public           string                         satelliteName;
         private readonly Dictionary<string, FixedJoint> _connectedJoints = new Dictionary<string, FixedJoint>();
 
         // public float mass;
+        /// <summary>
+        ///     部件类型
+        /// </summary>
         public SatelliteType PartType { get; set; }
 
 
@@ -46,12 +55,20 @@ namespace Satellite
             satelliteName = gameObject.name;
         }
 
-        //分离连接到该部分的特定关节
+
+        /// <summary>
+        ///     分离连接到该部分的特定关节
+        /// </summary>
+        /// <param name="partName"></param>
         public void Separate(string partName)
         {
             Destroy(_connectedJoints[partName]);
         }
 
+        /// <summary>
+        ///     分离
+        /// </summary>
+        /// <param name="separateAll">是否完全分离</param>
         public void Separate(bool separateAll)
         {
             if (separateAll)

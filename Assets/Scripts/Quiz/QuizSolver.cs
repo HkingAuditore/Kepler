@@ -10,19 +10,37 @@ namespace Quiz
 {
     public class QuizSolver : QuizBase
     {
-        public QuizUI     quizUI;
-        public float      waitTime;
-        public float      radiusOffset = .2f;
-        public UnityEvent resultEvent;
+        /// <summary>
+        ///     回答事件
+        /// </summary>
         public UnityEvent answerEvent;
 
+        public QuizUI quizUI;
+
+        /// <summary>
+        ///     容错范围
+        /// </summary>
+        public float radiusOffset = .2f;
+
+        /// <summary>
+        ///     结果事件
+        /// </summary>
+        public UnityEvent resultEvent;
+
+        /// <summary>
+        ///     检查等待时间
+        /// </summary>
+        public float waitTime;
+
         private Reason _reason;
+        private float  _tmpAnswer;
 
-        private float _tmpAnswer;
-
+        /// <summary>
+        ///     回答是否正确
+        /// </summary>
         public bool isRight { get; set; } = true;
 
-        public float TmpAnswer
+        public float tmpAnswer
         {
             get => _tmpAnswer;
             set
@@ -33,6 +51,9 @@ namespace Quiz
             }
         }
 
+        /// <summary>
+        ///     结果
+        /// </summary>
         public Reason reason
         {
             get => _reason;
@@ -46,19 +67,19 @@ namespace Quiz
 
         public bool isAnswered { get; set; } = false;
 
-        public override void Start()
+        protected override void Start()
         {
             base.Start();
             quizUI.quizType = quizType;
             quizUI.Generate();
-            GameManager.GetGameManager.globalTimer.countingDownEndEvent.AddListener(() =>
+            GameManager.getGameManager.globalTimer.countingDownEndEvent.AddListener(() =>
                                                                                     {
                                                                                         reason = Reason.Overtime;
                                                                                         resultEvent.Invoke();
                                                                                     });
-            GameManager.GetGameManager.globalTimer.StartCounting();
+            GameManager.getGameManager.globalTimer.StartCounting();
             resultEvent.AddListener(() =>
-                                        GameManager.GetGameManager.globalTimer.isPausing = true
+                                        GameManager.getGameManager.globalTimer.isPausing = true
                                    );
         }
 
@@ -90,6 +111,11 @@ namespace Quiz
             resultEvent.Invoke();
         }
 
+        /// <summary>
+        ///     获取问题
+        /// </summary>
+        /// <returns></returns>
+        /// <exception cref="ArgumentOutOfRangeException"></exception>
         public string GetQuizSentence()
         {
             var stringBuilder = new StringBuilder(" ");

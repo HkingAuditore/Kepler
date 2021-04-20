@@ -11,8 +11,6 @@ namespace TTS
 {
     public class VoiceGenerator : MonoBehaviour
     {
-        private const string speekText = "北京市今天全天晴，气温7℃ ~ 19℃，空气质量优，有北风4-5级，挺凉快的。";
-
         private const string session_begin_params =
             "voice_name = xiaoyan, text_encoding = utf8, sample_rate = 16000, speed = 50, volume = 50, pitch = 50, rdn = 0";
 
@@ -55,12 +53,16 @@ namespace TTS
             voiceThread.Start();
         }
 
-        public void Speak()
+        private void Speak()
         {
             Debug.Log(content);
             Online_TTS(content);
         }
 
+        /// <summary>
+        ///     文字转语音
+        /// </summary>
+        /// <param name="content"></param>
         public void Speak(string content)
         {
             Debug.Log(this.content);

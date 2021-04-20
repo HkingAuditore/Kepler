@@ -9,30 +9,58 @@ namespace Quiz
 {
     public class QuizBase : MonoBehaviour
     {
-        public                     bool                 isLoadByPrefab;
-        public                     string               loadTarget;
-        [SerializeField] protected List<AstralBodyDict> astralBodiesDict;
-        public                     QuizAstralBody       astralBodyPrefab;
-        public                     Transform            quizRoot;
-        public                     GravityTracing       orbitBase;
-        public                     QuizType             quizType;
-
-        public float      answer;
-        public UnityEvent loadDoneEvent = new UnityEvent();
-
         [SerializeField] private QuizAstralBody _target;
 
+        /// <summary>
+        ///     答案
+        /// </summary>
+        public float answer;
+
+        [SerializeField] protected List<AstralBodyDict> astralBodiesDict;
+
+        /// <summary>
+        ///     生成用实体
+        /// </summary>
+        public QuizAstralBody astralBodyPrefab;
+
+        /// <summary>
+        ///     是否由Prefab载入
+        /// </summary>
+        public bool isLoadByPrefab;
+
+        /// <summary>
+        ///     加载完成事件
+        /// </summary>
+        public UnityEvent loadDoneEvent = new UnityEvent();
+
+        /// <summary>
+        ///     加载文件名
+        /// </summary>
+        public string loadTarget;
+
+        public GravityTracing orbitBase;
+        public Transform      quizRoot;
+
+        /// <summary>
+        ///     问题类型
+        /// </summary>
+        public QuizType quizType;
+
         private List<AstralBodyStructDict> _astralBodyStructDictList;
+        private bool                       _isLoadDone;
 
-        private bool _isLoadDone;
-
+        /// <summary>
+        ///     问题目标
+        /// </summary>
         public QuizAstralBody target
         {
             get => _target;
             protected set => _target = value;
         }
 
-
+        /// <summary>
+        ///     是否加载完成
+        /// </summary>
         public bool isLoadDone
         {
             private set
@@ -44,9 +72,9 @@ namespace Quiz
         }
 
 
-        public virtual void Start()
+        protected virtual void Start()
         {
-            loadDoneEvent.AddListener(() => { GameManager.GetGameManager.CalculateMassScales(); });
+            loadDoneEvent.AddListener(() => { GameManager.getGameManager.CalculateMassScales(); });
             // List<AstralBody> astralBodies = new List<AstralBody>();
             // 放置星球
             if (isLoadByPrefab)
@@ -57,7 +85,7 @@ namespace Quiz
             {
                 try
                 {
-                    if (!GameManager.GetGameManager.isQuizEditMode)
+                    if (!GameManager.getGameManager.isQuizEditMode)
                         loadTarget = GlobalTransfer.getGlobalTransfer.quizName;
                 }
                 catch (Exception e)
@@ -188,7 +216,7 @@ namespace Quiz
         }
 
 
-        public void LoadQuiz(string fileName)
+        private void LoadQuiz(string fileName)
         {
             var result = QuizSaver.ConvertXml2QuizBase(QuizSaver.LoadXml(fileName), fileName);
             _astralBodyStructDictList = result.astralBodyStructList;

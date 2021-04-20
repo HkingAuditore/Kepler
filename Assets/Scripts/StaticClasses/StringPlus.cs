@@ -4,6 +4,11 @@ namespace StaticClasses
 {
     public static class StringPlus
     {
+        /// <summary>
+        ///     将数字转换为上标
+        /// </summary>
+        /// <param name="str"></param>
+        /// <returns></returns>
         public static string ToSuperscript(this string str)
         {
             return str.Replace("0", "\u2070")

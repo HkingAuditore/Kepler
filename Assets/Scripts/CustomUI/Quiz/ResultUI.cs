@@ -10,17 +10,16 @@ namespace CustomUI.Quiz
 {
     public class ResultUI : MonoBehaviour
     {
-        public List<GameObject> quizUis;
-        public Text             resultText;
-        public QuizStarsGroupUI quizStarsGroupUI;
-        public GameObject       panel;
-
-        private QuizSolver _quizSolver;
+        public  GameObject       panel;
+        public  QuizStarsGroupUI quizStarsGroupUI;
+        public  List<GameObject> quizUis;
+        public  Text             resultText;
+        private QuizSolver       _quizSolver;
 
 
         private void Start()
         {
-            _quizSolver = (QuizSolver) GameManager.GetGameManager.quizBase;
+            _quizSolver = (QuizSolver) GameManager.getGameManager.quizBase;
             _quizSolver.resultEvent.AddListener(ShowResult);
         }
 

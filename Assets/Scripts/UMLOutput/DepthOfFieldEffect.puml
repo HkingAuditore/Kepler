@@ -1,9 +1,0 @@
-@startuml
-class DepthOfFieldEffect {
-    + focusDistance : float = 10f
-    + focusRange : float = 3f
-    + bokehRadius : float = 4f
-}
-MonoBehaviour <|-- DepthOfFieldEffect
-DepthOfFieldEffect --> "dofShader" Shader
-@enduml

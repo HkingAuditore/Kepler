@@ -1,11 +1,13 @@
 ﻿using CustomPostProcessing;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace CustomCamera
 {
     public class LayerCamera : MonoBehaviour, IRenderTexOuter
     {
-        public RenderTexture _renderResultRT;
+        [FormerlySerializedAs("_renderResultRT")]
+        public RenderTexture renderResultRT;
 
         private void OnEnable()
         {
@@ -14,20 +16,20 @@ namespace CustomCamera
 
         private void OnDestroy()
         {
-            if (_renderResultRT != null) RenderTexture.ReleaseTemporary(_renderResultRT);
+            if (renderResultRT != null) RenderTexture.ReleaseTemporary(renderResultRT);
         }
 
         [ImageEffectOpaque]
         private void OnRenderImage(RenderTexture src, RenderTexture dest)
         {
             Graphics.Blit(src, dest);
-            if (_renderResultRT == null) _renderResultRT = RenderTexture.GetTemporary(dest.width, dest.height);
-            Graphics.Blit(src, _renderResultRT);
+            if (renderResultRT == null) renderResultRT = RenderTexture.GetTemporary(dest.width, dest.height);
+            Graphics.Blit(src, renderResultRT);
         }
 
         public RenderTexture GetRenderResult()
         {
-            return _renderResultRT;
+            return renderResultRT;
         }
     }
 }

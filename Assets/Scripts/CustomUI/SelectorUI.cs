@@ -8,12 +8,12 @@ namespace CustomUI
 {
     public class SelectorUI : MonoBehaviour
     {
-        public OutlineCatcher     outlineCatcher;
+        public bool               _isLocked;
         public AstralBodyEditorUI astralBodyEditorUI;
+        public OutlineCatcher     outlineCatcher;
 
         // public  List<GameObject> selectedGameObjects = new List<GameObject>();
         public  GameObject       selectedGameObject;
-        public  bool             _isLocked;
         private CameraController _cameraController;
         private Camera           _mainCamera;
 
@@ -25,8 +25,8 @@ namespace CustomUI
 
         private void Start()
         {
-            _mainCamera       = GameManager.GetGameManager.mainCamera;
-            _cameraController = GameManager.GetGameManager.GetMainCameraController();
+            _mainCamera       = GameManager.getGameManager.mainCamera;
+            _cameraController = GameManager.getGameManager.GetMainCameraController();
         }
 
         public void Update()
@@ -75,7 +75,7 @@ namespace CustomUI
             // Debug.DrawLine(ray.origin, hitInfo.point);
         }
 
-        public void FocusOn()
+        private void FocusOn()
         {
             if (Input.GetMouseButtonDown(0) && selectedGameObject != null)
             {
@@ -88,7 +88,7 @@ namespace CustomUI
             }
         }
 
-        public void CancelFocus()
+        private void CancelFocus()
         {
             if (Input.GetMouseButtonDown(1))
             {

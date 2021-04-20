@@ -1,9 +1,0 @@
-@startuml
-class AstralBodyEditorQuizUI {
-    + <<override>> OnAstralBodySet() : void
-    + <<override>> SetVelocityInCircle() : void
-    + SetToTarget() : void
-}
-AstralBodyEditorUI <|-- AstralBodyEditorQuizUI
-AstralBodyEditorQuizUI --> "isThisTarget" Toggle
-@enduml

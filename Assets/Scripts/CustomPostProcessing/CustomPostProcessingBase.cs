@@ -5,6 +5,9 @@ namespace CustomPostProcessing
     [ExecuteInEditMode]
     public class CustomPostProcessingBase : MonoBehaviour
     {
+        /// <summary>
+        ///     主相机
+        /// </summary>
         public Camera mainCamera;
 
         // private void Start()

@@ -6,8 +6,8 @@ namespace CustomUI
 {
     public class MeshEditor : MonoBehaviour
     {
-        public InputField         inputField;
         public AstralBodyEditorUI astralBodyEditorUI;
+        public InputField         inputField;
 
 
         public void ChangeMesh()

@@ -1,28 +1,31 @@
 ﻿using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace CustomPostProcessing
 {
     public class CameraMixer : CustomPostProcessingBase
     {
-        // public List<IRenderTexOuter> renderTexOuters = new List<IRenderTexOuter>();
-        public OutlineCatcher renderTexOuter;
+        [FormerlySerializedAs("_mixMaterial")] public Material mixMaterial;
 
-        // public LayerCamera    layerCamera;
-        public RenderTexture renderTexture;
-        public Shader        mixShader;
+        [FormerlySerializedAs("_renderResultRT")]
+        public RenderTexture renderResultRT;
 
+        /// <summary>
+        ///     边界颜色
+        /// </summary>
         [Header("Material Setting")] public Color edgeColor = Color.white;
 
-        public Material      _mixMaterial;
-        public RenderTexture _renderResultRT;
+        public Shader         mixShader;
+        public OutlineCatcher renderTexOuter;
+        public RenderTexture  renderTexture;
 
 
-        public Material MixMaterial
+        private Material MixMaterial
         {
             get
             {
-                _mixMaterial = GenerateMaterial(mixShader, ref _mixMaterial);
-                return _mixMaterial;
+                mixMaterial = GenerateMaterial(mixShader, ref mixMaterial);
+                return mixMaterial;
             }
         }
 
@@ -47,21 +50,25 @@ namespace CustomPostProcessing
                 // MixMaterial.SetTexture("_MixTex1", layerCamera.GetRenderResult());
                 MixMaterial.SetColor("_EdgeColor", edgeColor);
                 // MixMaterial.SetTexture("MixTex", renderTexture);
-                if (_renderResultRT == null) _renderResultRT = RenderTexture.GetTemporary(dest.width, dest.height);
+                if (renderResultRT == null) renderResultRT = RenderTexture.GetTemporary(dest.width, dest.height);
 
-                Graphics.Blit(src, dest,            MixMaterial);
-                Graphics.Blit(src, _renderResultRT, MixMaterial);
+                Graphics.Blit(src, dest,           MixMaterial);
+                Graphics.Blit(src, renderResultRT, MixMaterial);
             }
             else
             {
                 Graphics.Blit(src, dest);
-                Graphics.Blit(src, _renderResultRT);
+                Graphics.Blit(src, renderResultRT);
             }
         }
 
+        /// <summary>
+        ///     抓取渲染结果
+        /// </summary>
+        /// <returns></returns>
         public RenderTexture GetRenderResult()
         {
-            return _renderResultRT;
+            return renderResultRT;
         }
     }
 }

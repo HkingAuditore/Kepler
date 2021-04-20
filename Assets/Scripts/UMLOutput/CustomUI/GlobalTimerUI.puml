@@ -1,6 +1,0 @@
-@startuml
-class GlobalTimerUI {
-}
-MonoBehaviour <|-- GlobalTimerUI
-GlobalTimerUI --> "timerText" Text
-@enduml

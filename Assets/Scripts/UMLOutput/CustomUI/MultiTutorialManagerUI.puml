@@ -1,8 +1,0 @@
-@startuml
-class MultiTutorialManagerUI {
-}
-class "List`1"<T> {
-}
-TutorialManagerUI <|-- MultiTutorialManagerUI
-MultiTutorialManagerUI o-> "difficulties<Difficulty>" "List`1"
-@enduml

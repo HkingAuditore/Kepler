@@ -6,10 +6,9 @@ namespace Quiz
     [Serializable]
     public class AstralBodyDict
     {
-        public Transform      transform;
-        public QuizAstralBody astralBody;
-
-        [SerializeField] private bool _isTarget;
+        [SerializeField] private bool           _isTarget;
+        public                   QuizAstralBody astralBody;
+        public                   Transform      transform;
 
         public AstralBodyDict(Transform transform, QuizAstralBody astralBody, bool isTarget)
         {

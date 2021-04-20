@@ -10,11 +10,9 @@ namespace Quiz
 {
     public class QuizSaver : MonoBehaviour
     {
-        public           QuizType    quizType;
-        public           GameObject  cloner;
         private readonly XmlDocument _xmlDoc = new XmlDocument();
 
-        public static string xmlPath => Application.dataPath + "/Quiz/";
+        private static string xmlPath => Application.dataPath + "/Quiz/";
 
 
         // private void Awake()
@@ -23,7 +21,7 @@ namespace Quiz
         //     
         // }
 
-        public XmlElement ConvertAstralBody2XmlElement(AstralBodyDict astralBodyDict)
+        private XmlElement ConvertAstralBody2XmlElement(AstralBodyDict astralBodyDict)
         {
             var dict         = _xmlDoc.CreateElement("AstralBodyDict");
             var astTransform = _xmlDoc.CreateElement("Transform");
@@ -117,6 +115,12 @@ namespace Quiz
             return dict;
         }
 
+        /// <summary>
+        ///     将星体群转为XML文档
+        /// </summary>
+        /// <param name="astOrbit">AstralBodyDict集</param>
+        /// <param name="quizType">问题类型</param>
+        /// <returns></returns>
         public XmlDocument ConvertOrbit2Xml(List<AstralBodyDict> astOrbit, QuizType quizType)
         {
             var astList = _xmlDoc.CreateElement("AstralBodyList");
@@ -127,6 +131,12 @@ namespace Quiz
             return _xmlDoc;
         }
 
+        /// <summary>
+        ///     保存XML
+        /// </summary>
+        /// <param name="doc"></param>
+        /// <param name="fileName"></param>
+        /// <exception cref="QuizSaverException"></exception>
         public void SaveXml(XmlDocument doc, string fileName)
         {
             var path = xmlPath + fileName + ".xml";
@@ -144,6 +154,12 @@ namespace Quiz
             AssetDatabase.Refresh();
         }
 
+        /// <summary>
+        ///     加载XML
+        /// </summary>
+        /// <param name="fileName"></param>
+        /// <returns></returns>
+        /// <exception cref="QuizSaverException"></exception>
         public static XmlDocument LoadXml(string fileName)
         {
             var path = xmlPath + fileName + ".xml";
@@ -165,6 +181,12 @@ namespace Quiz
             return new Vector3(float.Parse(vec[0]), float.Parse(vec[1]), float.Parse(vec[2]));
         }
 
+        /// <summary>
+        ///     将XML转为问题
+        /// </summary>
+        /// <param name="xmlDoc">xml文档</param>
+        /// <param name="fileName">文件名</param>
+        /// <returns></returns>
         public static QuizBaseStruct ConvertXml2QuizBase(XmlDocument xmlDoc, string fileName)
         {
             var quizBaseStruct = new QuizBaseStruct();
@@ -224,6 +246,11 @@ namespace Quiz
             return quizBaseStruct;
         }
 
+        /// <summary>
+        ///     获取存档问题集合
+        /// </summary>
+        /// <param name="fileNames"></param>
+        /// <returns></returns>
         public static List<XmlDocument> GetQuizFiles(ref List<string> fileNames)
         {
             var dir          = new DirectoryInfo(xmlPath);
@@ -244,6 +271,10 @@ namespace Quiz
             return xmlDocuments;
         }
 
+        /// <summary>
+        ///     删除问题存档
+        /// </summary>
+        /// <param name="quizName"></param>
         public static void DeleteQuizFiles(string quizName)
         {
             if (File.Exists(xmlPath + quizName + ".xml")) File.Delete(xmlPath + quizName + ".xml");

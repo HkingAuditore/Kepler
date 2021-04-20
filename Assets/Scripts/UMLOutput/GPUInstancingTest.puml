@@ -1,8 +1,0 @@
-@startuml
-class GPUInstancingTest {
-    + instances : int = 5000
-    + radius : float = 50f
-}
-MonoBehaviour <|-- GPUInstancingTest
-GPUInstancingTest --> "prefab" Transform
-@enduml

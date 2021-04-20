@@ -4,8 +4,7 @@ using UnityEngine;
 [ExecuteInEditMode]
 public class DeferredFogEffect : MonoBehaviour
 {
-    public Shader deferredFog;
-
+    public                  Shader deferredFog;
     [NonSerialized] private Camera deferredCamera;
 
     [NonSerialized] private Material fogMaterial;

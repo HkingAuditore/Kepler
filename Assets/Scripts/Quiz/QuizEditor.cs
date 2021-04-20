@@ -8,6 +8,10 @@ namespace Quiz
     {
         public QuizSaver saver;
 
+        /// <summary>
+        ///     保存问题
+        /// </summary>
+        /// <param name="quizName"></param>
         public void SaveQuiz(string quizName)
         {
             // orbitBase.Freeze(false);
@@ -33,12 +37,20 @@ namespace Quiz
             saver.SaveXml(xmlDoc, quizName);
         }
 
-
+        /// <summary>
+        ///     加入星体
+        /// </summary>
+        /// <param name="astralBody"></param>
+        /// <param name="isTarget">是否为目标</param>
         public void AddAstralBody(QuizAstralBody astralBody, bool isTarget = false)
         {
             astralBodiesDict.Add(new AstralBodyDict(astralBody.transform, astralBody, isTarget));
         }
 
+        /// <summary>
+        ///     设置问题目标
+        /// </summary>
+        /// <param name="target"></param>
         public void SetTarget(QuizAstralBody target)
         {
             var oriTarget = this.target;
@@ -57,11 +69,6 @@ namespace Quiz
                                          // Debug.Log(ast.astralBody.gameObject.name + " is target ? : " + ast.isTarget);
                                          // ast.isTarget = true;
                                      });
-        }
-
-        public void SetType(QuizType t)
-        {
-            quizType = t;
         }
     }
 }

@@ -5,13 +5,32 @@ namespace Satellite
 {
     public class SatelliteController : MonoBehaviour
     {
-        public float speed;
+        /// <summary>
+        ///     角速度
+        /// </summary>
         public float angularSpeed;
 
-        public           Satellite               satellite;
+        /// <summary>
+        ///     卫星
+        /// </summary>
+        public Satellite satellite;
+
+        /// <summary>
+        ///     速度
+        /// </summary>
+        public float speed;
+
         private readonly List<SatelliteEngine>[] _satelliteEngineStageLists = new List<SatelliteEngine>[5];
-        private          int                     curEngineStage;
-        private          int                     engineStages;
+
+        /// <summary>
+        ///     当前引擎执行阶段
+        /// </summary>
+        private int curEngineStage;
+
+        /// <summary>
+        ///     执行阶段数量
+        /// </summary>
+        private int engineStages;
 
 
         private void Start()
@@ -25,6 +44,10 @@ namespace Satellite
             // Push();
         }
 
+        /// <summary>
+        ///     设置速度
+        /// </summary>
+        /// <param name="newSpeed"></param>
         public void SetCurDirVelocity(float newSpeed)
         {
             _satelliteEngineStageLists[curEngineStage].ForEach(engine => engine.SetCurDirVelocity(newSpeed));
@@ -77,6 +100,9 @@ namespace Satellite
             // }
         }
 
+        /// <summary>
+        ///     分离
+        /// </summary>
         public void SeparateControl()
         {
             if (curEngineStage < engineStages)

@@ -1,6 +1,0 @@
-@startuml
-class QuizEditUI {
-    + BackToTestMode() : void
-}
-MonoBehaviour <|-- QuizEditUI
-@enduml

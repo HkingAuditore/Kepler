@@ -1,7 +1,0 @@
-@startuml
-class SatelliteEngine {
-    + engineStage : int
-    + SetCurDirVelocity(speed:float) : void
-}
-SatellitePart <|-- SatelliteEngine
-@enduml

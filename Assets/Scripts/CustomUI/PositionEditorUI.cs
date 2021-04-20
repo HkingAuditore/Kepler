@@ -8,12 +8,11 @@ namespace CustomUI
 {
     public class PositionEditorUI : MonoBehaviour
     {
-        public Button     xAxis;
-        public Button     zAxis;
-        public AstralBody editingTarget;
-        public float      moveSpeed;
-        public bool       isQuizEditor;
-
+        public  AstralBody editingTarget;
+        public  bool       isQuizEditor;
+        public  float      moveSpeed;
+        public  Button     xAxis;
+        public  Button     zAxis;
         private AstralBody _astralBody;
 
         private Camera _camera;
@@ -23,7 +22,7 @@ namespace CustomUI
 
         private void Start()
         {
-            _camera = GameManager.GetGameManager.GetMainCameraController().GetMainCamera();
+            _camera = GameManager.getGameManager.GetMainCameraController().GetMainCamera();
         }
 
 
@@ -36,7 +35,7 @@ namespace CustomUI
 
         public void OnBeginDrag()
         {
-            GameManager.GetGameManager.GetMainCameraController().IsFollowing = false;
+            GameManager.getGameManager.GetMainCameraController().IsFollowing = false;
             oriMousePos = _camera.ScreenToWorldPoint(Input.mousePosition);
         }
 
@@ -60,7 +59,7 @@ namespace CustomUI
 
         public void OnEndDrag()
         {
-            GameManager.GetGameManager.GetMainCameraController().IsFollowing = true;
+            GameManager.getGameManager.GetMainCameraController().IsFollowing = true;
             if (isQuizEditor) ((QuizAstralBody) editingTarget).UpdateHighCost();
         }
     }

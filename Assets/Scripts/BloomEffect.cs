@@ -13,19 +13,19 @@ public class BloomEffect : MonoBehaviour
 
     public Shader bloomShader;
 
+    public bool debug;
+
     [Range(0, 10)] public float intensity = 1;
 
     [Range(1, 16)] public int iterations = 4;
 
-    [Range(0, 10)] public float threshold = 1;
-
     [Range(0, 1)] public float softThreshold = 0.5f;
 
-    public bool debug;
-
-    [NonSerialized] private Material bloom;
+    [Range(0, 10)] public float threshold = 1;
 
     private readonly RenderTexture[] textures = new RenderTexture[16];
+
+    [NonSerialized] private Material bloom;
 
     private void OnRenderImage(RenderTexture source, RenderTexture destination)
     {

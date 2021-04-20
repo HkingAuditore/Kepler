@@ -4,26 +4,38 @@ namespace CustomPostProcessing
 {
     public class OutlineCatcher : CustomPostProcessingBase, IRenderTexOuter
     {
-        public Camera outlineCamera;
+        /// <summary>
+        ///     背景颜色
+        /// </summary>
+        public Color backgroundColor = Color.white;
 
-        public Shader outlineShader;
+        /// <summary>
+        ///     描边颜色
+        /// </summary>
+        public Color edgeColor = Color.black;
 
-
+        /// <summary>
+        ///     描边范围
+        /// </summary>
         [Header("Material Setting")] [Range(0, 1)]
         public float edgeOnly = 1f;
 
+        /// <summary>
+        ///     描边尺寸
+        /// </summary>
         [Range(0.3f, 1)] public float edgeSize = 0.5f;
 
-        public Color edgeColor       = Color.black;
-        public Color backgroundColor = Color.white;
+        /// <summary>
+        ///     描边相机
+        /// </summary>
+        public Camera outlineCamera;
 
-
+        public  Shader        outlineShader;
         private Material      _outlineMaterial;
         private RenderTexture _outlineTexture;
-
         private RenderTexture _renderResultRT;
 
-        public Material OutlineMaterial
+        private Material outlineMaterial
         {
             get
             {
@@ -51,15 +63,15 @@ namespace CustomPostProcessing
         [ImageEffectOpaque]
         private void OnRenderImage(RenderTexture src, RenderTexture dest)
         {
-            if (OutlineMaterial != null)
+            if (outlineMaterial != null)
             {
-                OutlineMaterial.SetFloat("_EdgeOnly", edgeOnly);
-                OutlineMaterial.SetFloat("_EdgeSize", edgeSize);
-                OutlineMaterial.SetColor("_EdgeColor",       edgeColor);
-                OutlineMaterial.SetColor("_BackgroundColor", backgroundColor);
-                Graphics.Blit(src, dest, OutlineMaterial);
+                outlineMaterial.SetFloat("_EdgeOnly", edgeOnly);
+                outlineMaterial.SetFloat("_EdgeSize", edgeSize);
+                outlineMaterial.SetColor("_EdgeColor",       edgeColor);
+                outlineMaterial.SetColor("_BackgroundColor", backgroundColor);
+                Graphics.Blit(src, dest, outlineMaterial);
                 if (_renderResultRT == null) _renderResultRT = RenderTexture.GetTemporary(dest.width, dest.height);
-                Graphics.Blit(src, _renderResultRT, OutlineMaterial);
+                Graphics.Blit(src, _renderResultRT, outlineMaterial);
             }
             else
             {
@@ -75,19 +87,23 @@ namespace CustomPostProcessing
 
         #region 选择逻辑
 
-        // private readonly List<GameObject> _selectedObjects = new List<GameObject>();
+        /// <summary>
+        ///     新增描边对象
+        /// </summary>
+        /// <param name="target">描边对象</param>
         public void AddTarget(GameObject target)
         {
             target.layer = LayerMask.NameToLayer("Outline");
         }
 
+        /// <summary>
+        ///     移除描边对象
+        /// </summary>
+        /// <param name="target">
+        ///     描边对象<</param>
         public void RemoveTarget(GameObject target)
         {
             target.layer = 23;
-        }
-
-        public void SetOutline()
-        {
         }
 
         #endregion

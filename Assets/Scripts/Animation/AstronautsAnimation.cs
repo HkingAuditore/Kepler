@@ -8,11 +8,31 @@ namespace Animation
 {
     public class AstronautsAnimation : MonoBehaviour
     {
-        public Animator   astronautsAnimator;
-        public float      boredTimeMin        = 3;
-        public float      boredTimeMax        = 6;
-        public int        boredAnimationCount = 5;
-        public int        pointAnimationCount = 3;
+        /// <summary>
+        ///     宇航员动画机
+        /// </summary>
+        public Animator astronautsAnimator;
+
+        /// <summary>
+        ///     等待动作数量
+        /// </summary>
+        public int boredAnimationCount = 5;
+
+        /// <summary>
+        ///     等待最大时长
+        /// </summary>
+        public float boredTimeMax = 6;
+
+        /// <summary>
+        ///     等效最小时长
+        /// </summary>
+        public float boredTimeMin = 3;
+
+        /// <summary>
+        ///     交互动画数量
+        /// </summary>
+        public int pointAnimationCount = 3;
+
         public SelectorUI selectorUI;
 
         private bool _isBored;

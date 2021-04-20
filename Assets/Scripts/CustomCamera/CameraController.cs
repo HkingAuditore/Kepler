@@ -6,31 +6,52 @@ namespace CustomCamera
 {
     public class CameraController : MonoBehaviour
     {
-        public CinemachineVirtualCamera virtualCamera;
-
+        /// <summary>
+        ///     矫正速度
+        /// </summary>
         public float correctiveSpeed;
-        public float mainSpeed;
-        public float scaleSize;
-        public float scaleMin = 20;
-        public float scaleMax = 300;
-        public float orthoZoomSpeed;
+
+        /// <summary>
+        ///     聚焦位移
+        /// </summary>
         public float focusOffset = 0.33f;
 
-        private Camera           _camera;
-        private Transform        _cameraBase;
-        private CinemachineBrain _cameraBrain;
-        private Vector2          _dragEndPos;
+        /// <summary>
+        ///     移动速度
+        /// </summary>
+        public float mainSpeed;
 
-        private Vector2 _dragOriPos;
+        /// <summary>
+        ///     缩放速度
+        /// </summary>
+        public float orthoZoomSpeed;
 
+        /// <summary>
+        ///     最大缩放尺寸
+        /// </summary>
+        public float scaleMax = 300;
 
+        /// <summary>
+        ///     最小缩放尺寸
+        /// </summary>
+        public float scaleMin = 20;
+
+        /// <summary>
+        ///     标准缩放尺寸
+        /// </summary>
+        public float scaleSize;
+
+        public  CinemachineVirtualCamera     virtualCamera;
+        private Camera                       _camera;
+        private Transform                    _cameraBase;
+        private CinemachineBrain             _cameraBrain;
+        private Vector2                      _dragEndPos;
+        private Vector2                      _dragOriPos;
         private Transform                    _followingTarget;
         private CinemachineFramingTransposer _framingTransposer;
         private bool                         _isInDrag;
         private float                        _oriOrthoSize;
-
-
-        private float _orthoSize;
+        private float                        _orthoSize;
 
         public bool IsFollowing { get; set; } = false;
 
@@ -91,7 +112,7 @@ namespace CustomCamera
                                     (correctiveSpeed * Mathf.Pow(OrthoSize / _oriOrthoSize, 1.3f) * Time.deltaTime);
         }
 
-        public void CameraDrag()
+        private void CameraDrag()
         {
             if (_isInDrag)
             {
@@ -124,7 +145,10 @@ namespace CustomCamera
                 Mathf.Lerp(virtualCamera.m_Lens.OrthographicSize, OrthoSize, orthoZoomSpeed);
         }
 
-
+        /// <summary>
+        ///     聚焦
+        /// </summary>
+        /// <param name="target">聚焦目标</param>
         public void FocusOn(Transform target)
         {
             virtualCamera.m_LookAt       = target;
@@ -132,12 +156,15 @@ namespace CustomCamera
             _followingTarget             = target;
         }
 
+        /// <summary>
+        ///     退出聚焦
+        /// </summary>
         public void ExitFocus()
         {
             _framingTransposer.m_ScreenX = 0.5f;
         }
 
-        public void Follow()
+        private void Follow()
         {
             _cameraBase.transform.position = new Vector3(_followingTarget.position.x, _cameraBase.transform.position.y,
                                                          _followingTarget.position.z);

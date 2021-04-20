@@ -2,6 +2,9 @@
 
 namespace Satellite
 {
+    /// <summary>
+    ///     卫星引擎
+    /// </summary>
     public class SatelliteEngine : SatellitePart
     {
         public int engineStage;

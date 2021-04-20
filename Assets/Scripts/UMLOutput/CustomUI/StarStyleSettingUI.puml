@@ -1,7 +1,0 @@
-@startuml
-class StarStyleSettingUI {
-    + ChangeStyle(index:int) : void
-}
-MonoBehaviour <|-- StarStyleSettingUI
-StarStyleSettingUI --> "astralBody" AstralBody
-@enduml

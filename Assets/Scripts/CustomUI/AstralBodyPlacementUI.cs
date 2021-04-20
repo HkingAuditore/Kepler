@@ -32,7 +32,7 @@ namespace CustomUI
             _horizontalLine = transform.Find("Horizontal").GetComponent<RectTransform>();
             _rangeText      = transform.Find("RangeText").GetComponent<Text>();
             _lineRenderer   = GetComponent<LineRenderer>();
-            _camera         = GameManager.GetGameManager.GetMainCameraController().GetMainCamera();
+            _camera         = GameManager.getGameManager.GetMainCameraController().GetMainCamera();
             _orbitCore      = root.OrbitCore;
         }
 
@@ -62,10 +62,10 @@ namespace CustomUI
                                                 Quaternion.LookRotation(new Vector3(0, 0, 0)), _orbits.transform);
 
 
-                if (GameManager.GetGameManager.isQuizEditMode)
+                if (GameManager.getGameManager.isQuizEditMode)
                 {
-                    (GameManager.GetGameManager.quizBase as QuizEditor)?.AddAstralBody((QuizAstralBody) newAstralBody);
-                    newAstralBody.affectedPlanets.Add(GameManager.GetGameManager.quizBase.target);
+                    (GameManager.getGameManager.quizBase as QuizEditor)?.AddAstralBody((QuizAstralBody) newAstralBody);
+                    newAstralBody.affectedPlanets.Add(GameManager.getGameManager.quizBase.target);
                 }
 
                 _orbits.AddTracingTarget(newAstralBody);

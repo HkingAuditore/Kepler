@@ -10,27 +10,25 @@ namespace CustomUI.Quiz
 {
     public class VarLineUI : MonoBehaviour
     {
-        public                         ShowPropertyType property;
-        public                         bool             isQuiz;
-        [Header("UI Elements")] public Text             header;
-        public                         Toggle           toggle;
-        public                         Text             unit;
-        public                         InputField       inputField;
-        public                         InputField       scientificCountingInputField;
-        public                         bool             enableInput;
-        public                         GameObject       add;
-        public                         GameObject       minus;
+        [SerializeField] private AstralBody _target;
+        public                   GameObject add;
 
-        [Header("Texts")] public string headerString;
-        public                   string unitString;
+        [Header("Images")] public      Sprite editableImage;
+        public                         bool   enableInput;
+        [Header("UI Elements")] public Text   header;
 
-        [Header("Images")] public Sprite     editableImage;
-        public                    Sprite     readOnlyImage;
-        [SerializeField] private  AstralBody _target;
-
-
-        private Vector3 _dragPos;
-        private bool    _isAdd;
+        [Header("Texts")] public string           headerString;
+        public                   InputField       inputField;
+        public                   bool             isQuiz;
+        public                   GameObject       minus;
+        public                   ShowPropertyType property;
+        public                   Sprite           readOnlyImage;
+        public                   InputField       scientificCountingInputField;
+        public                   Toggle           toggle;
+        public                   Text             unit;
+        public                   string           unitString;
+        private                  Vector3          _dragPos;
+        private                  bool             _isAdd;
 
 
         private bool _isClicking;
@@ -255,7 +253,7 @@ namespace CustomUI.Quiz
             {
                 case ShowPropertyType.m:
                     if (target.name == "Core")
-                        GameManager.GetGameManager.CalculateMassScales(GetData());
+                        GameManager.getGameManager.CalculateMassScales(GetData());
                     target.realMass = GetData();
                     UpdateData((float) target.realMass);
                     break;
@@ -275,7 +273,7 @@ namespace CustomUI.Quiz
                     // 1
                     var distance = (float) GetData() * Mathf.Pow(10, -GetK());
                     target.GetTransform().position =
-                        (target.GetPosition() - GameManager.GetGameManager.quizBase.target.GetPosition()).normalized *
+                        (target.GetPosition() - GameManager.getGameManager.quizBase.target.GetPosition()).normalized *
                         distance;
                     UpdateData(distance);
                     break;
@@ -347,14 +345,14 @@ namespace CustomUI.Quiz
                     k = 3;
                     break;
                 case ShowPropertyType.R:
-                    k = GameManager.GetGameManager.GetK(PropertyUnit.M);
+                    k = GameManager.getGameManager.GetK(PropertyUnit.M);
                     break;
                 case ShowPropertyType.T:
-                    k = GameManager.GetGameManager.GetK(PropertyUnit.S);
+                    k = GameManager.getGameManager.GetK(PropertyUnit.S);
                     // k = 3  + GameManager.GetGameManager.globalMassScaler+  GameManager.GetGameManager.globalDistanceScaler * 3;
                     break;
                 case ShowPropertyType.radius:
-                    k = 1 + GameManager.GetGameManager.GetK(PropertyUnit.M);
+                    k = 1 + GameManager.getGameManager.GetK(PropertyUnit.M);
                     // k = 7 +  GameManager.GetGameManager.globalDistanceScaler * 2;
                     break;
                 case ShowPropertyType.omega:

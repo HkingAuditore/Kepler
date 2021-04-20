@@ -1,6 +1,0 @@
-@startuml
-class StringPlus <<static>> {
-    + {static} ToSuperscript(str:string) : string
-    + {static} ToSuperscript(d:double, fCount:int) : string
-}
-@enduml

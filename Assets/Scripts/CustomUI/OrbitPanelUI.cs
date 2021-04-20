@@ -9,21 +9,21 @@ namespace CustomUI
 {
     public class OrbitPanelUI : MonoBehaviour
     {
-        public  GameObject     contentPanel;
-        public  GameObject     nullPanel;
-        public  bool           isConicSection;
         public  AstralBody     _astralBody;
-        public  Text           majorAxis;
-        public  Text           minorAxis;
-        public  Text           geoCenter;
+        public  Text           angle;
+        public  GameObject     contentPanel;
         public  Text           eccentricity;
         public  Text           focalLength;
-        public  Text           period;
-        public  Text           angle;
+        public  Text           geoCenter;
+        public  bool           isConicSection;
         public  Text           k;
+        public  Text           majorAxis;
+        public  Text           minorAxis;
+        public  GameObject     nullPanel;
         public  OrbitGraphUI   orbitGraphUI;
+        public  Text           period;
         private GravityTracing _gravityTracing;
-        public  ConicSection   orbit;
+        private ConicSection   _orbit;
 
         public AstralBody astralBody
         {
@@ -33,7 +33,7 @@ namespace CustomUI
 
         private void Awake()
         {
-            _gravityTracing = GameManager.GetGameManager.orbit;
+            _gravityTracing = GameManager.getGameManager.orbit;
         }
 
         private void FixedUpdate()
@@ -46,19 +46,15 @@ namespace CustomUI
             Init();
         }
 
-        private void OnDisable()
-        {
-        }
 
-
-        public void Init()
+        private void Init()
         {
             // Debug.Log(_gravityTracing);
             // Debug.Log(astralBody);
 
             try
             {
-                orbit          = _gravityTracing.GetConicSection(astralBody);
+                _orbit         = _gravityTracing.GetConicSection(astralBody);
                 isConicSection = true;
             }
             catch (Exception e)
@@ -67,26 +63,27 @@ namespace CustomUI
             }
 
 
-            if (isConicSection && !float.IsNaN(orbit.semiMajorAxis) && !float.IsNaN(orbit.semiMinorAxis))
+            if (isConicSection && !float.IsNaN(_orbit.semiMajorAxis) && !float.IsNaN(_orbit.semiMinorAxis))
             {
                 contentPanel.SetActive(true);
                 nullPanel.SetActive(false);
-                majorAxis.text = "长轴:" + orbit.semiMajorAxis.ToString("f2") + " m";
-                minorAxis.text = "短轴:" + orbit.semiMinorAxis.ToString("f2") + " m";
-                geoCenter.text = "几何中心: (" + orbit.geoCenter.x.ToString("f2") + ", " + orbit.geoCenter.y.ToString("f2") +
+                majorAxis.text = "长轴:" + _orbit.semiMajorAxis.ToString("f2") + " m";
+                minorAxis.text = "短轴:" + _orbit.semiMinorAxis.ToString("f2") + " m";
+                geoCenter.text = "几何中心: ("                         + _orbit.geoCenter.x.ToString("f2") + ", " +
+                                 _orbit.geoCenter.y.ToString("f2") +
                                  " )";
-                eccentricity.text = "离心率: " + orbit.eccentricity.ToString("f2");
-                focalLength.text  = "焦距: "  + orbit.focalLength.ToString("f2")                              + " m";
-                period.text       = "周期: "  + orbit.GetT(astralBody.affectedPlanets[0].Mass).ToString("f2") + " s";
-                angle.text        = "倾角: "  + orbit.angle.ToString("f2")                                    + " °";
-                k.text = "T²/a³ :" + orbit.GetT(astralBody.affectedPlanets[0].Mass) *
-                    orbit.GetT(astralBody.affectedPlanets[0].Mass) /
-                    (orbit.semiMajorAxis * orbit.semiMajorAxis * orbit.semiMajorAxis);
+                eccentricity.text = "离心率: " + _orbit.eccentricity.ToString("f2");
+                focalLength.text  = "焦距: "  + _orbit.focalLength.ToString("f2")                              + " m";
+                period.text       = "周期: "  + _orbit.GetT(astralBody.affectedPlanets[0].Mass).ToString("f2") + " s";
+                angle.text        = "倾角: "  + _orbit.angle.ToString("f2")                                    + " °";
+                k.text = "T²/a³ :" + _orbit.GetT(astralBody.affectedPlanets[0].Mass) *
+                    _orbit.GetT(astralBody.affectedPlanets[0].Mass) /
+                    (_orbit.semiMajorAxis * _orbit.semiMajorAxis * _orbit.semiMajorAxis);
                 orbitGraphUI.astralBody = astralBody;
-                orbitGraphUI.orbit      = orbit;
+                orbitGraphUI.orbit      = _orbit;
                 orbitGraphUI.gameObject.SetActive(true);
                 orbitGraphUI.Init();
-                _gravityTracing.DrawMathOrbit(orbit, 20);
+                _gravityTracing.DrawMathOrbit(_orbit, 20);
             }
             else
             {

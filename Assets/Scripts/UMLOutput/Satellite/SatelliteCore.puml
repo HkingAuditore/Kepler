@@ -1,7 +1,0 @@
-@startuml
-class SatelliteCore {
-    + <<override>> GetMass() : float
-}
-SatelliteEngine <|-- SatelliteCore
-SatelliteCore --> "satellite" Satellite
-@enduml

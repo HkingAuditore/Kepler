@@ -27,338 +27,246 @@
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Kepler/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Kepler/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Kepler/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Kepler/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Kepler/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Kepler/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/BlankUser.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/BlankUser.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/EdgeColliderGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/EdgeColliderGenerator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/Editor/BakeMeshWindow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/Editor/BakeMeshWindow.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/Editor/LengthCalculatorEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/Editor/LengthCalculatorEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/Editor/MeshGenEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/Editor/MeshGenEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/Editor/NodeEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/Editor/NodeEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/Editor/ObjectBenderEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/Editor/ObjectBenderEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/Editor/ObjectControllerEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/Editor/ObjectControllerEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/Editor/ParticleControllerEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/Editor/ParticleControllerEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/Editor/PathGeneratorEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/Editor/PathGeneratorEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/Editor/PolygonColliderGenEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/Editor/PolygonColliderGenEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/Editor/SetDistanceWindow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/Editor/SetDistanceWindow.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/Editor/SplineFollowerEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/Editor/SplineFollowerEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/Editor/SplineMeshEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/Editor/SplineMeshEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/Editor/SplineMorphEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/Editor/SplineMorphEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/Editor/SplinePositionerEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/Editor/SplinePositionerEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/Editor/SplineProjectorEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/Editor/SplineProjectorEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/Editor/SplineRendererEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/Editor/SplineRendererEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/Editor/SplineTracerEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/Editor/SplineTracerEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/Editor/SplineUserEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/Editor/SplineUserEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/Editor/SplineUserSubEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/Editor/SplineUserSubEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/Editor/SurfaceGeneratorEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/Editor/SurfaceGeneratorEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/Editor/TubeGeneratorEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/Editor/TubeGeneratorEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/Editor/WaveformGeneratorEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/Editor/WaveformGeneratorEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/LengthCalculator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/LengthCalculator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/MeshGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/MeshGenerator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/Node.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/Node.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/ObjectBender.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/ObjectBender.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/ObjectController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/ObjectController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/ParticleController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/ParticleController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/PathGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/PathGenerator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/PolygonColliderGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/PolygonColliderGenerator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/Sample Modifiers/ColorModifier.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/Sample Modifiers/ColorModifier.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/Sample Modifiers/Editor/ColorModifierEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/Sample Modifiers/Editor/ColorModifierEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/Sample Modifiers/Editor/FollowerSpeedModifierEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/Sample Modifiers/Editor/FollowerSpeedModifierEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/Sample Modifiers/Editor/MeshScaleModifierEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/Sample Modifiers/Editor/MeshScaleModifierEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/Sample Modifiers/Editor/OffsetModifierEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/Sample Modifiers/Editor/OffsetModifierEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/Sample Modifiers/Editor/RotationModifierEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/Sample Modifiers/Editor/RotationModifierEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/Sample Modifiers/Editor/SizeModifierEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/Sample Modifiers/Editor/SizeModifierEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/Sample Modifiers/Editor/SplineSampleModifierEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/Sample Modifiers/Editor/SplineSampleModifierEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/Sample Modifiers/FollowerSpeedModifier.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/Sample Modifiers/FollowerSpeedModifier.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/Sample Modifiers/MeshScaleModifier.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/Sample Modifiers/MeshScaleModifier.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/Sample Modifiers/OffsetModifier.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/Sample Modifiers/OffsetModifier.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/Sample Modifiers/RotationModifier.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/Sample Modifiers/RotationModifier.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/Sample Modifiers/SizeModifier.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/Sample Modifiers/SizeModifier.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/Sample Modifiers/SplineSampleModifier.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/Sample Modifiers/SplineSampleModifier.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/SplineComputer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/SplineComputer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/SplineFollower.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/SplineFollower.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/SplineMesh.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/SplineMesh.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/SplineMorph.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/SplineMorph.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/SplinePositioner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/SplinePositioner.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/SplineProjector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/SplineProjector.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/SplineRenderer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/SplineRenderer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/SplineTracer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/SplineTracer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/SplineUser.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/SplineUser.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/SurfaceGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/SurfaceGenerator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/TubeGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/TubeGenerator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/WaveformGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/WaveformGenerator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Core/IO/CSV.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Core/IO/CSV.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Core/IO/SVG.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Core/IO/SVG.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Core/IO/SplineParser.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Core/IO/SplineParser.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Core/ObjectSequence.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Core/ObjectSequence.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Core/Primitives/Capsule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Core/Primitives/Capsule.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Core/Primitives/Ellipse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Core/Primitives/Ellipse.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Core/Primitives/Line.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Core/Primitives/Line.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Core/Primitives/Ngon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Core/Primitives/Ngon.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Core/Primitives/Rectangle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Core/Primitives/Rectangle.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Core/Primitives/RoundedRectangle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Core/Primitives/RoundedRectangle.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Core/Primitives/Spiral.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Core/Primitives/Spiral.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Core/Primitives/SplinePrimitive.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Core/Primitives/SplinePrimitive.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Core/Primitives/Star.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Core/Primitives/Star.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Core/SampleCollection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Core/SampleCollection.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Core/Spline.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Core/Spline.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Core/SplinePoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Core/SplinePoint.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Core/SplinePrefs.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Core/SplinePrefs.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Core/SplineSample.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Core/SplineSample.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Core/SplineThreading.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Core/SplineThreading.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Core/SplineTrigger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Core/SplineTrigger.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Core/TransformModule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Core/TransformModule.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Editor/ComputerSplitModule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Editor/ComputerSplitModule.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Editor/DSSplineDrawer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Editor/DSSplineDrawer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Editor/Primitives/CapsuleEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Editor/Primitives/CapsuleEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Editor/Primitives/EllipseEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Editor/Primitives/EllipseEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Editor/Primitives/LineEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Editor/Primitives/LineEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Editor/Primitives/NgonEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Editor/Primitives/NgonEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Editor/Primitives/PrimitiveEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Editor/Primitives/PrimitiveEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Editor/Primitives/RectangleEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Editor/Primitives/RectangleEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Editor/Primitives/RoundedRectangleEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Editor/Primitives/RoundedRectangleEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Editor/Primitives/SpiralEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Editor/Primitives/SpiralEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Editor/Primitives/StarEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Editor/Primitives/StarEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Editor/SplineComputerEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Editor/SplineComputerEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Editor/SplineComputerEditorHandles.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Editor/SplineComputerEditorHandles.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Editor/SplineDrawer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Editor/SplineDrawer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Editor/SplineEditor/DS Editor/ComputerEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Editor/SplineEditor/DS Editor/ComputerEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Editor/SplineEditor/DS Editor/ComputerEditorModule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Editor/SplineEditor/DS Editor/ComputerEditorModule.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Editor/SplineEditor/DS Editor/ComputerMergeModule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Editor/SplineEditor/DS Editor/ComputerMergeModule.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Editor/SplineEditor/DS Editor/DSCreatePointModule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Editor/SplineEditor/DS Editor/DSCreatePointModule.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Editor/SplineEditor/DS Editor/DreamteckSplinesEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Editor/SplineEditor/DS Editor/DreamteckSplinesEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Editor/SplineEditor/DS Editor/PrimitivesModule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Editor/SplineEditor/DS Editor/PrimitivesModule.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Editor/SplineEditor/DS Editor/SplineDebugEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Editor/SplineEditor/DS Editor/SplineDebugEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Editor/SplineEditor/DS Editor/SplineTriggersEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Editor/SplineEditor/DS Editor/SplineTriggersEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Editor/SplineEditor/EditorModule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Editor/SplineEditor/EditorModule.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Editor/SplineEditor/Point Modules/CreatePointModule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Editor/SplineEditor/Point Modules/CreatePointModule.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Editor/SplineEditor/Point Modules/DeletePointModule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Editor/SplineEditor/Point Modules/DeletePointModule.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Editor/SplineEditor/Point Modules/MainPointModule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Editor/SplineEditor/Point Modules/MainPointModule.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Editor/SplineEditor/Point Modules/PointMirrorModule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Editor/SplineEditor/Point Modules/PointMirrorModule.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Editor/SplineEditor/Point Modules/PointModule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Editor/SplineEditor/Point Modules/PointModule.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Editor/SplineEditor/Point Modules/PointMoveModule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Editor/SplineEditor/Point Modules/PointMoveModule.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Editor/SplineEditor/Point Modules/PointNormalModule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Editor/SplineEditor/Point Modules/PointNormalModule.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Editor/SplineEditor/Point Modules/PointRotateModule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Editor/SplineEditor/Point Modules/PointRotateModule.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Editor/SplineEditor/Point Modules/PointScaleModule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Editor/SplineEditor/Point Modules/PointScaleModule.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Editor/SplineEditor/Point Modules/PointTransformModule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Editor/SplineEditor/Point Modules/PointTransformModule.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Editor/SplineEditor/SplineEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Editor/SplineEditor/SplineEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Editor/SplineEditor/SplineEditorBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Editor/SplineEditor/SplineEditorBase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Editor/SplineEditorGUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Editor/SplineEditorGUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Editor/SplineEditorHandles.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Editor/SplineEditorHandles.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Editor/SplineEditorWindow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Editor/SplineEditorWindow.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Editor/SplinePreset.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Editor/SplinePreset.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Editor/Tools/BakeTool.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Editor/Tools/BakeTool.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Editor/Tools/Explorer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Editor/Tools/Explorer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Editor/Tools/ImportTool.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Editor/Tools/ImportTool.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Editor/Tools/LevelTerrainTool.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Editor/Tools/LevelTerrainTool.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Editor/Tools/ObjectSpawnTool.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Editor/Tools/ObjectSpawnTool.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Editor/Tools/SplineTool.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Editor/Tools/SplineTool.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Editor/Tools/SplineToolsWindow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Editor/Tools/SplineToolsWindow.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Editor/Tools/UpdateTool.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Editor/Tools/UpdateTool.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Editor/TransformModuleEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Editor/TransformModuleEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Editor/WelcomeScreen.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Editor/WelcomeScreen.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Examples/AudioVisualization/SpectrumVisualizer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Examples/AudioVisualization/SpectrumVisualizer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Examples/Following/Scripts/CameraSmoothRotation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Examples/Following/Scripts/CameraSmoothRotation.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Examples/Following/Scripts/URLButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Examples/Following/Scripts/URLButton.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Examples/Junctions/Scripts/JunctionSwitch.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Examples/Junctions/Scripts/JunctionSwitch.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Examples/Junctions/Scripts/TrainCamera.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Examples/Junctions/Scripts/TrainCamera.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Examples/Junctions/Scripts/TrainEngine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Examples/Junctions/Scripts/TrainEngine.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Examples/Junctions/Scripts/Wagon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Examples/Junctions/Scripts/Wagon.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Examples/LengthEvents/SetMaterialColor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Examples/LengthEvents/SetMaterialColor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Examples/Projection/Scripts/AddForceAlongPath.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Examples/Projection/Scripts/AddForceAlongPath.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Examples/Projection/Scripts/BallCamera.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Examples/Projection/Scripts/BallCamera.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Examples/Projection/Scripts/LapCounter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Examples/Projection/Scripts/LapCounter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Examples/RollerCoaster/Scripts/CameraLook.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Examples/RollerCoaster/Scripts/CameraLook.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Examples/RollerCoaster/Scripts/RollerCoaster.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Examples/RollerCoaster/Scripts/RollerCoaster.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Utilities/ArrayUtility.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Utilities/ArrayUtility.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Utilities/ColorUtility.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Utilities/ColorUtility.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Utilities/DMath.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Utilities/DMath.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Utilities/DuplicateUtility.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Utilities/DuplicateUtility.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Utilities/Editor/DreamteckEditorGUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Utilities/Editor/DreamteckEditorGUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Utilities/Editor/EditorGUIEvents.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Utilities/Editor/EditorGUIEvents.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Utilities/Editor/FindDerivedClasses.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Utilities/Editor/FindDerivedClasses.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Utilities/Editor/ResourceUtility.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Utilities/Editor/ResourceUtility.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Utilities/Editor/Toolbar.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Utilities/Editor/Toolbar.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Utilities/Editor/WelcomeWindow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Utilities/Editor/WelcomeWindow.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Utilities/LinearAlgebraUtility.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Utilities/LinearAlgebraUtility.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Utilities/MeshUtility.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Utilities/MeshUtility.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Utilities/SceneUtility.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Utilities/SceneUtility.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Utilities/ScriptableObjectUtility.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Utilities/ScriptableObjectUtility.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Utilities/Singleton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Utilities/Singleton.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Utilities/TS_Bounds.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Utilities/TS_Bounds.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Utilities/TS_Mesh.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Utilities/TS_Mesh.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Utilities/TS_Transform.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Utilities/TS_Transform.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Utilities/TransformUtility.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Utilities/TransformUtility.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Utilities/Utilities.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Utilities/Utilities.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/FlatKit/Demos/Common/Scripts/Motion/CameraMouseOrbit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/FlatKit/Demos/Common/Scripts/Motion/CameraMouseOrbit.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/FlatKit/Demos/Common/Scripts/Motion/Editor/LinearMotionEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/FlatKit/Demos/Common/Scripts/Motion/Editor/LinearMotionEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/FlatKit/Demos/Common/Scripts/Motion/LinearMotion.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/FlatKit/Demos/Common/Scripts/Motion/LinearMotion.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/FlatKit/Scripts/UvScroller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/FlatKit/Scripts/UvScroller.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/FlatKit/Shaders/GradientSkybox/Editor/GradientSkyboxEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/FlatKit/Shaders/GradientSkybox/Editor/GradientSkyboxEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/FlatKit/Shaders/ImageEffects/Scripts/FogImageEffect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/FlatKit/Shaders/ImageEffects/Scripts/FogImageEffect.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/FlatKit/Shaders/ImageEffects/Scripts/OutlineImageEffect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/FlatKit/Shaders/ImageEffects/Scripts/OutlineImageEffect.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/FlatKit/Shaders/StylizedSurface/DustyroomStylizedLighting.cginc" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/FlatKit/Shaders/StylizedSurface/DustyroomStylizedLighting.cginc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/FlatKit/Shaders/StylizedSurface/DustyroomTerrainSplatmapCommon.cginc" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/FlatKit/Shaders/StylizedSurface/DustyroomTerrainSplatmapCommon.cginc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/FlatKit/Shaders/StylizedSurface/Editor/StylizedSurfaceEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/FlatKit/Shaders/StylizedSurface/Editor/StylizedSurfaceEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Le Tai's Asset/TranslucentImage/Demo/Scripts/AutoMoveAndRotate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Le Tai's Asset/TranslucentImage/Demo/Scripts/AutoMoveAndRotate.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Le Tai's Asset/TranslucentImage/Demo/Scripts/ChangeBlurConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Le Tai's Asset/TranslucentImage/Demo/Scripts/ChangeBlurConfig.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Le Tai's Asset/TranslucentImage/Demo/Scripts/ColorSchemeManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Le Tai's Asset/TranslucentImage/Demo/Scripts/ColorSchemeManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Le Tai's Asset/TranslucentImage/Demo/Scripts/ControlCenter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Le Tai's Asset/TranslucentImage/Demo/Scripts/ControlCenter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Le Tai's Asset/TranslucentImage/Demo/Scripts/FPSCounter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Le Tai's Asset/TranslucentImage/Demo/Scripts/FPSCounter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Le Tai's Asset/TranslucentImage/Demo/Scripts/PlatformPreset.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Le Tai's Asset/TranslucentImage/Demo/Scripts/PlatformPreset.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Le Tai's Asset/TranslucentImage/Demo/Scripts/SetText.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Le Tai's Asset/TranslucentImage/Demo/Scripts/SetText.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Le Tai's Asset/TranslucentImage/Demo/Scripts/SimpleCameraController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Le Tai's Asset/TranslucentImage/Demo/Scripts/SimpleCameraController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Le Tai's Asset/TranslucentImage/Demo/Scripts/SliderChangeOnStart.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Le Tai's Asset/TranslucentImage/Demo/Scripts/SliderChangeOnStart.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Le Tai's Asset/TranslucentImage/Demo/Scripts/ToggleSecondBlurLayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Le Tai's Asset/TranslucentImage/Demo/Scripts/ToggleSecondBlurLayer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Le Tai's Asset/TranslucentImage/Demo/Scripts/UnrestrictFramerate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Le Tai's Asset/TranslucentImage/Demo/Scripts/UnrestrictFramerate.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Le Tai's Asset/TranslucentImage/Demo/Scripts/WorldSpaceSetup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Le Tai's Asset/TranslucentImage/Demo/Scripts/WorldSpaceSetup.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Le Tai's Asset/TranslucentImage/Script/BlurAlgorithm/BlurConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Le Tai's Asset/TranslucentImage/Script/BlurAlgorithm/BlurConfig.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Le Tai's Asset/TranslucentImage/Script/BlurAlgorithm/ScalableBlur.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Le Tai's Asset/TranslucentImage/Script/BlurAlgorithm/ScalableBlur.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Le Tai's Asset/TranslucentImage/Script/BlurAlgorithm/ScalableBlurConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Le Tai's Asset/TranslucentImage/Script/BlurAlgorithm/ScalableBlurConfig.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Le Tai's Asset/TranslucentImage/Script/Editor/MenuIntegration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Le Tai's Asset/TranslucentImage/Script/Editor/MenuIntegration.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Le Tai's Asset/TranslucentImage/Script/Editor/ScalableBlurConfigEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Le Tai's Asset/TranslucentImage/Script/Editor/ScalableBlurConfigEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Le Tai's Asset/TranslucentImage/Script/Editor/ScenceGizmoAutoDisable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Le Tai's Asset/TranslucentImage/Script/Editor/ScenceGizmoAutoDisable.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Le Tai's Asset/TranslucentImage/Script/Editor/TranslucentImageEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Le Tai's Asset/TranslucentImage/Script/Editor/TranslucentImageEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Le Tai's Asset/TranslucentImage/Script/Editor/TranslucentImageSourceEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Le Tai's Asset/TranslucentImage/Script/Editor/TranslucentImageSourceEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Le Tai's Asset/TranslucentImage/Script/TranslucentImage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Le Tai's Asset/TranslucentImage/Script/TranslucentImage.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Le Tai's Asset/TranslucentImage/Script/TranslucentImageEditorEnhancement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Le Tai's Asset/TranslucentImage/Script/TranslucentImageEditorEnhancement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Le Tai's Asset/TranslucentImage/Script/TranslucentImageMeshEffect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Le Tai's Asset/TranslucentImage/Script/TranslucentImageMeshEffect.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Le Tai's Asset/TranslucentImage/Script/TranslucentImageSource.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Le Tai's Asset/TranslucentImage/Script/TranslucentImageSource.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Le Tai's Asset/TranslucentImage/Script/Utilities/Extensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Le Tai's Asset/TranslucentImage/Script/Utilities/Extensions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Le Tai's Asset/TranslucentImage/Script/Utilities/ResizableScreenRect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Le Tai's Asset/TranslucentImage/Script/Utilities/ResizableScreenRect.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Le Tai's Asset/TranslucentImage/Script/Utilities/ShaderId.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Le Tai's Asset/TranslucentImage/Script/Utilities/ShaderId.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Minimalist/Editor/EditorGUILayoutExtended.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Minimalist/Editor/EditorGUILayoutExtended.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Minimalist/Editor/MinimalistClipboard.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Minimalist/Editor/MinimalistClipboard.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Minimalist/Editor/MinimalistEditorHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Minimalist/Editor/MinimalistEditorHelper.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Minimalist/Editor/MinimalistSkyEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Minimalist/Editor/MinimalistSkyEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Minimalist/Editor/MinimalistStandardEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Minimalist/Editor/MinimalistStandardEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Minimalist/Shaders/BRP/Minimalist.cginc" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Minimalist/Shaders/BRP/Minimalist.cginc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Minimalist/Shaders/URP/Minimalist.hlsl" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Minimalist/Shaders/URP/Minimalist.hlsl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Minimalist/Shaders/URP/MinimalistDepthOnlyPass.hlsl" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Minimalist/Shaders/URP/MinimalistDepthOnlyPass.hlsl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Minimalist/Shaders/URP/MinimalistInput.hlsl" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Minimalist/Shaders/URP/MinimalistInput.hlsl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Minimalist/Shaders/URP/MinimalistInputSrpBatched.hlsl" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Minimalist/Shaders/URP/MinimalistInputSrpBatched.hlsl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Minimalist/Shaders/URP/MinimalistMetaPass.hlsl" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Minimalist/Shaders/URP/MinimalistMetaPass.hlsl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Minimalist/Shaders/URP/MinimalistShadowCasterPass.hlsl" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Minimalist/Shaders/URP/MinimalistShadowCasterPass.hlsl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Starfield Skybox/Demo/Script/LookCamera.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Starfield Skybox/Demo/Script/LookCamera.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/TTS/Speaker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/TTS/Speaker.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/TTS/XunFeiOffline.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/TTS/XunFeiOffline.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/TTS/XunFlyOffline.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/TTS/XunFlyOffline.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Quiz/Sphere 1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Quiz/Sphere 1.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Animation/AstronautsAnimation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Animation/AstronautsAnimation.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/BloomEffect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BloomEffect.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Camera.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Camera/CameraController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Camera/CameraController.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Camera/CameraLayerMixer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Camera/CameraLayerMixer.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Camera/LayerCamera.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Camera/LayerCamera.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomCamera/CameraController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomCamera/CameraController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomCamera/CameraLayerMixer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomCamera/CameraLayerMixer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomCamera/LayerCamera.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomCamera/LayerCamera.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomPostProcessing/CameraMixer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomPostProcessing/CameraMixer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomPostProcessing/CustomPostProcessingBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomPostProcessing/CustomPostProcessingBase.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomPostProcessing/Dof.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomPostProcessing/Dof.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomPostProcessing/DofRenderer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomPostProcessing/DofRenderer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomPostProcessing/OutlineCatcher.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomPostProcessing/OutlineCatcher.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/AstralBodyAddUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/AstralBodyAddUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/AstralBodyEditorUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/AstralBodyEditorUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/AstralBodyPlacementUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/AstralBodyPlacementUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/GlobalTimerUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/GlobalTimerUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/LengthUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/LengthUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/MeshEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/MeshEditor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/OrbitGraphUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/OrbitGraphUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/OrbitPanelUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/OrbitPanelUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/PositionEditorUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/PositionEditorUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/Quiz/AstralBodyEditorQuizUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/Quiz/AstralBodyEditorQuizUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/Quiz/QuizEditorUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/Quiz/QuizEditorUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/Quiz/QuizLineUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/Quiz/QuizLineUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/Quiz/QuizListUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/Quiz/QuizListUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/Quiz/QuizStarUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/Quiz/QuizStarUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/Quiz/QuizStarsGroupUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/Quiz/QuizStarsGroupUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/Quiz/QuizUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/Quiz/QuizUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/Quiz/ResultUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/Quiz/ResultUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/Quiz/VarLineUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/Quiz/VarLineUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/Satellite/SatelliteResultUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/Satellite/SatelliteResultUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/SatelliteControllerUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/SatelliteControllerUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/SelectorUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/SelectorUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/StarStyleSettingUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/StarStyleSettingUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/TutorialUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/TutorialUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/VectorUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/VectorUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/VelocityEditorUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/VelocityEditorUI.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/DeferredFogEffect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DeferredFogEffect.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/DepthOfFieldEffect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DepthOfFieldEffect.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Editor/MyLightingShaderGUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Editor/MyLightingShaderGUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EmissiveOscillator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EmissiveOscillator.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/GPUInstancingTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GPUInstancingTest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager/GameManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager/GameManager.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager/GlobalTimer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager/GlobalTimer.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager/GlobalTransfer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager/GlobalTransfer.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Init/Init.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Init/Init.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManagers/Difficulty.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManagers/Difficulty.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManagers/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManagers/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManagers/GlobalTimer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManagers/GlobalTimer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManagers/GlobalTransfer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManagers/GlobalTransfer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManagers/PropertyUnit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManagers/PropertyUnit.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MathPlus/ConicSection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MathPlus/ConicSection.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MathPlus/CustomSolver.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MathPlus/CustomSolver.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/MathPlus/MathPlus.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MathPlus/MathPlus.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Quiz/AstralBodyDict.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Quiz/AstralBodyDict.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Quiz/AstralBodyStructDict.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Quiz/AstralBodyStructDict.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizAstralBody.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizAstralBody.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizBase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizData.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizEditor.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizSaver.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizSaver.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizSolver.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizSolver.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Quiz/Transformer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Quiz/Transformer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizType.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Quiz/Reason.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Quiz/Reason.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Satellite/Satellite.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Satellite/Satellite.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Satellite/SatelliteChallengeManger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Satellite/SatelliteChallengeManger.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Satellite/SatelliteController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Satellite/SatelliteController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Satellite/SatelliteCore.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Satellite/SatelliteCore.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Satellite/SatelliteEngine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Satellite/SatelliteEngine.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Satellite/SatelliteParachute.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Satellite/SatelliteParachute.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Satellite/SatellitePart.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Satellite/SatellitePart.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Satellite/SatelliteResultType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Satellite/SatelliteResultType.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Satellite/SatelliteType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Satellite/SatelliteType.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/SpacePhysic/AstralBody.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SpacePhysic/AstralBody.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/SpacePhysic/GravityTracing.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SpacePhysic/GravityTracing.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SpacePhysic/PhysicBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SpacePhysic/PhysicBase.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/StaticClasses/StringPlus.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StaticClasses/StringPlus.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TTS/MSCDLL.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TTS/MSCDLL.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/TTS/VoiceGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TTS/VoiceGenerator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TangentSpaceVisualizer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TangentSpaceVisualizer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/AstralBodyAddUI.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/AstralBodyAddUI.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/AstralBodyEditorUI.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/AstralBodyEditorUI.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/AstralBodyPlacementUI.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/AstralBodyPlacementUI.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/GlobalTimerUI.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/GlobalTimerUI.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/LabModeUI.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/LabModeUI.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/LengthUI.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/LengthUI.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/MainUI.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/MainUI.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/MeshEditor.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/MeshEditor.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/MultiTutorialManagerUI.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/MultiTutorialManagerUI.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/OrbitGraphUI.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/OrbitGraphUI.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/OrbitPanelUI.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/OrbitPanelUI.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/PhysicSceneUI.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/PhysicSceneUI.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/PositionEditorUI.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/PositionEditorUI.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Quiz.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Quiz/AstralBodyEditorQuizUI.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Quiz/AstralBodyEditorQuizUI.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Quiz/QuizEditUI.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Quiz/QuizEditUI.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Quiz/QuizEditorUI.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Quiz/QuizEditorUI.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Quiz/QuizLineUI.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Quiz/QuizLineUI.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Quiz/QuizListUI.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Quiz/QuizListUI.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Quiz/QuizStarUI.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Quiz/QuizStarUI.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Quiz/QuizStarsGroupUI.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Quiz/QuizStarsGroupUI.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Quiz/QuizTestUI.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Quiz/QuizTestUI.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Quiz/QuizUI.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Quiz/QuizUI.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Quiz/ResultUI.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Quiz/ResultUI.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Quiz/VarLineUI.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Quiz/VarLineUI.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Satellite.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Satellite/SatelliteResultUI.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Satellite/SatelliteResultUI.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/SatelliteControllerUI.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/SatelliteControllerUI.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/SelectorUI.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/SelectorUI.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/SettingUI.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/SettingUI.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/StarStyleSettingUI.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/StarStyleSettingUI.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/TestModeUI.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/TestModeUI.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/TutorialClipUI.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/TutorialClipUI.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/TutorialManagerUI.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/TutorialManagerUI.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/TutorialUI.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/TutorialUI.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/UIManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/UIManager.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/VectorUI.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/VectorUI.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/VelocityEditorUI.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/VelocityEditorUI.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/Animation.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/Animation/AstronautsAnimation.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/Animation/AstronautsAnimation.puml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/BloomEffect.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/BloomEffect.puml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomCamera.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomCamera/CameraController.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomCamera/CameraController.puml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomCamera/CameraLayerMixer.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomCamera/CameraLayerMixer.puml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomCamera/LayerCamera.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomCamera/LayerCamera.puml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomPostProcessing.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomPostProcessing/CameraMixer.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomPostProcessing/CameraMixer.puml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomPostProcessing/CustomPostProcessingBase.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomPostProcessing/CustomPostProcessingBase.puml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomPostProcessing/Dof.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomPostProcessing/Dof.puml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomPostProcessing/OutlineCatcher.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomPostProcessing/OutlineCatcher.puml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/AstralBodyAddUI.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/AstralBodyAddUI.puml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/AstralBodyEditorUI.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/AstralBodyEditorUI.puml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/AstralBodyPlacementUI.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/AstralBodyPlacementUI.puml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/GlobalTimerUI.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/GlobalTimerUI.puml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/LabModeUI.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/LabModeUI.puml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/LengthUI.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/LengthUI.puml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/MainUI.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/MainUI.puml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/MeshEditor.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/MeshEditor.puml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/MultiTutorialManagerUI.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/MultiTutorialManagerUI.puml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/OrbitGraphUI.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/OrbitGraphUI.puml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/OrbitPanelUI.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/OrbitPanelUI.puml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/PhysicSceneUI.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/PhysicSceneUI.puml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/PositionEditorUI.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/PositionEditorUI.puml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/Quiz.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/Quiz/AstralBodyEditorQuizUI.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/Quiz/AstralBodyEditorQuizUI.puml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/Quiz/QuizEditUI.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/Quiz/QuizEditUI.puml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/Quiz/QuizEditorUI.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/Quiz/QuizEditorUI.puml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/Quiz/QuizLineUI.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/Quiz/QuizLineUI.puml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/Quiz/QuizListUI.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/Quiz/QuizListUI.puml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/Quiz/QuizStarUI.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/Quiz/QuizStarUI.puml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/Quiz/QuizStarsGroupUI.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/Quiz/QuizStarsGroupUI.puml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/Quiz/QuizTestUI.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/Quiz/QuizTestUI.puml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/Quiz/QuizUI.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/Quiz/QuizUI.puml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/Quiz/ResultUI.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/Quiz/ResultUI.puml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/Quiz/VarLineUI.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/Quiz/VarLineUI.puml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/Satellite.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/Satellite/SatelliteResultUI.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/Satellite/SatelliteResultUI.puml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/SatelliteControllerUI.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/SatelliteControllerUI.puml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/SelectorUI.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/SelectorUI.puml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/SettingUI.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/SettingUI.puml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/StarStyleSettingUI.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/StarStyleSettingUI.puml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/TestModeUI.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/TestModeUI.puml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/TutorialClipUI.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/TutorialClipUI.puml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/TutorialManagerUI.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/TutorialManagerUI.puml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/TutorialUI.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/TutorialUI.puml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/UIManager.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/UIManager.puml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/VectorUI.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/VectorUI.puml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/VelocityEditorUI.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/VelocityEditorUI.puml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/DeferredFogEffect.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/DeferredFogEffect.puml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/DepthOfFieldEffect.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/DepthOfFieldEffect.puml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/Editor.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/Editor/MyLightingShaderGUI.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/Editor/MyLightingShaderGUI.puml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/EmissiveOscillator.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/EmissiveOscillator.puml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/GPUInstancingTest.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/GPUInstancingTest.puml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/GameManagers.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/GameManagers/GameManager.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/GameManagers/GameManager.puml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/GameManagers/GlobalTimer.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/GameManagers/GlobalTimer.puml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/GameManagers/GlobalTransfer.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/GameManagers/GlobalTransfer.puml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/Init.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/Init/Init.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/Init/Init.puml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/MathPlus.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/MathPlus/MathPlus.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/MathPlus/MathPlus.puml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/Quiz.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/Quiz/QuizAstralBody.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/Quiz/QuizAstralBody.puml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/Quiz/QuizBase.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/Quiz/QuizBase.puml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/Quiz/QuizData.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/Quiz/QuizData.puml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/Quiz/QuizEditor.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/Quiz/QuizEditor.puml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/Quiz/QuizSaver.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/Quiz/QuizSaver.puml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/Quiz/QuizSolver.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/Quiz/QuizSolver.puml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/Quiz/Transformer.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/Quiz/Transformer.puml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/Satellite.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/Satellite/Satellite.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/Satellite/Satellite.puml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/Satellite/SatelliteChallengeManger.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/Satellite/SatelliteChallengeManger.puml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/Satellite/SatelliteController.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/Satellite/SatelliteController.puml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/Satellite/SatelliteCore.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/Satellite/SatelliteCore.puml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/Satellite/SatelliteEngine.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/Satellite/SatelliteEngine.puml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/Satellite/SatelliteParachute.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/Satellite/SatelliteParachute.puml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/Satellite/SatellitePart.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/Satellite/SatellitePart.puml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/SpacePhysic.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/SpacePhysic/AstralBody.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/SpacePhysic/AstralBody.puml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/SpacePhysic/GravityTracing.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/SpacePhysic/GravityTracing.puml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/SpacePhysic/IOrbitCalculator.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/SpacePhysic/IOrbitCalculator.puml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/StaticClasses.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/StaticClasses/StringPlus.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/StaticClasses/StringPlus.puml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/TTS.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/TTS/MSCDLL.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/TTS/MSCDLL.puml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/TTS/VoiceGenerator.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/TTS/VoiceGenerator.puml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/TangentSpaceVisualizer.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/TangentSpaceVisualizer.puml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/include.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/include.puml.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -377,98 +285,100 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/TTS/MSCDLL.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://C:/Program Files/Unity/Hub/Editor/2020.1.17f1c1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Image.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/183EA0E0-59EE-4107-865D-5753B201F130/c8/dd9dc85d/Transform.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Quiz/Transformer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Arts/Shaders/CustomPostProcessing/ShaderIds.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/183EA0E0-59EE-4107-865D-5753B201F130/53/1e292118/UnityEvent`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Satellite/SatelliteEngine.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Arts/Shaders/CustomPostProcessing/TextureFormatUtilities.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PlugIns/TTS/Speaker.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/MathPlus/MathPlus.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://C:/Program Files/Unity/Hub/Editor/2020.1.17f1c1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Slider.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/064879C9-AC8E-41CA-9377-98C1B77235B1/2f/4319b373/AudioClip.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/183EA0E0-59EE-4107-865D-5753B201F130/bb/db32f4a2/Vector3.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/8F7365E1-61EF-448E-9A7B-623472A117E2/d6/e4ba4b3e/Animator.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Satellite/SatellitePart.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E81851A0-DC73-4A79-AFA9-F5B7273162BE/c3/04713f13/Object.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/CustomPostProcessing/CustomPostProcessingBase.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Quiz/QuizData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9577AC7A-62EF-4317-9789-031239BA8798/9f/a303a93a/StackFrame.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9577AC7A-62EF-4317-9789-031239BA8798/dd/cc3b36ba/List`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Init/Init.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://C:/Program Files/Unity/Hub/Editor/2020.1.17f1c1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/UIBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Satellite/SatelliteChallengeManger.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9577AC7A-62EF-4317-9789-031239BA8798/d8/13a53ef3/StackTrace.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/183EA0E0-59EE-4107-865D-5753B201F130/7e/a8eb5153/Application.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/183EA0E0-59EE-4107-865D-5753B201F130/41/897a26b6/StackTraceUtility.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/614A0DAB-6631-4920-8348-E40F69AD9112/39/2e10e57d/Rigidbody.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/TTS/MSCDLL.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://C:/Program Files/Unity/Hub/Editor/2020.1.17f1c1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Image.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Quiz/Transformer.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Arts/Shaders/CustomPostProcessing/ShaderIds.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Satellite/SatelliteEngine.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Arts/Shaders/CustomPostProcessing/TextureFormatUtilities.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/PlugIns/TTS/Speaker.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://C:/Program Files/Unity/Hub/Editor/2020.1.17f1c1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Slider.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/183EA0E0-59EE-4107-865D-5753B201F130/bb/db32f4a2/Vector3.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Satellite/SatellitePart.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/CustomPostProcessing/CustomPostProcessingBase.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://C:/Program Files/Unity/Hub/Editor/2020.1.17f1c1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/UIBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://C:/Program Files/Unity/Hub/Editor/2020.1.17f1c1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/EventSystem.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CustomPostProcessing/OutlineCatcher.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Quiz/QuizSolver.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/183EA0E0-59EE-4107-865D-5753B201F130/b3/81716a6a/Object.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/183EA0E0-59EE-4107-865D-5753B201F130/7e/a8eb5153/Application.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/183EA0E0-59EE-4107-865D-5753B201F130/41/897a26b6/StackTraceUtility.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/614A0DAB-6631-4920-8348-E40F69AD9112/39/2e10e57d/Rigidbody.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/Assets/Scripts/UI/Quiz/VarLineUI.cs" />
-      <option value="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Components/SurfaceGenerator.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Camera/CameraController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/CustomCamera/CameraController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/CustomCamera/CameraLayerMixer.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/CustomCamera/LayerCamera.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Editor/MyLightingShaderGUI.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/GameManagers/GameManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/GameManagers/GlobalTimer.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/GameManagers/GlobalTransfer.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Init/Init.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizAstralBody.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Quiz/Transformer.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/SpacePhysic/AstralBody.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/TTS/VoiceGenerator.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/CustomPostProcessing/CameraMixer.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/CustomPostProcessing/CustomPostProcessingBase.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/CustomPostProcessing/OutlineCatcher.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/CustomUI/Quiz/AstralBodyEditorQuizUI.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/CustomUI/Quiz/QuizEditorUI.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/CustomUI/Quiz/QuizEditUI.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/CustomUI/Quiz/QuizLineUI.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/CustomUI/Quiz/QuizListUI.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/CustomUI/Quiz/QuizStarsGroupUI.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/CustomUI/Quiz/QuizStarUI.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/CustomUI/Quiz/QuizTestUI.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/CustomUI/Quiz/QuizUI.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/CustomUI/Quiz/ResultUI.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/CustomUI/Quiz/VarLineUI.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/CustomUI/Satellite/SatelliteResultUI.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/CustomUI/AstralBodyAddUI.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/CustomUI/AstralBodyEditorUI.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/CustomUI/AstralBodyAddUI.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/CustomUI/AstralBodyPlacementUI.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/CustomUI/GlobalTimerUI.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/CustomUI/LabModeUI.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/CustomUI/LengthUI.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/CustomUI/MainUI.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/CustomUI/MeshEditor.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/CustomUI/MultiTutorialManagerUI.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/CustomUI/OrbitGraphUI.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/CustomUI/OrbitPanelUI.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/CustomUI/PhysicSceneUI.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/CustomUI/SatelliteControllerUI.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/CustomUI/PositionEditorUI.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/CustomUI/SatelliteControllerUI.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/CustomUI/SelectorUI.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/CustomUI/SettingUI.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/CustomUI/StarStyleSettingUI.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/CustomUI/TestModeUI.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/CustomUI/TutorialClipUI.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/CustomUI/TutorialManagerUI.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/CustomUI/TutorialUI.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/CustomUI/VectorUI.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/CustomUI/UIManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/CustomUI/VelocityEditorUI.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/GameManagers/Difficulty.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/GameManagers/GlobalTimer.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/GameManagers/GlobalTransfer.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/GameManagers/GameManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/GameManagers/PropertyUnit.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/MathPlus/ConicSection.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/MathPlus/CustomSolver.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/MathPlus/MathPlus.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Quiz/AstralBodyDict.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Quiz/AstralBodyStructDict.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizAstralBody.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizBase.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizEditor.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizSaver.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizSolver.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizType.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Quiz/Reason.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Satellite/Satellite.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Satellite/SatelliteChallengeManger.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Satellite/SatelliteController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Satellite/SatelliteCore.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Satellite/SatelliteEngine.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Satellite/SatelliteParachute.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Satellite/SatellitePart.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Satellite/SatelliteResultType.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Satellite/SatelliteType.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/SpacePhysic/AstralBody.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/SpacePhysic/GravityTracing.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/SpacePhysic/PhysicBase.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/StaticClasses/StringPlus.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/TTS/VoiceGenerator.cs" />
     </changedPaths>
   </component>
   <component name="NamedScopeManager">
     <scope name="Scripts" pattern="file[riderModule]:Assets/Scripts/*" />
   </component>
   <component name="ProjectId" id="1iK5Y9kUuPbAZPnJQwHlUY16sq8" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -488,7 +398,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="yiiguxing.plugin.translate" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
@@ -618,6 +528,8 @@
       <workItem from="1618666488420" duration="11487000" />
       <workItem from="1618712510523" duration="10197000" />
       <workItem from="1618753975026" duration="3249000" />
+      <workItem from="1618820956429" duration="827000" />
+      <workItem from="1618832166121" duration="1752000" />
     </task>
     <servers />
   </component>

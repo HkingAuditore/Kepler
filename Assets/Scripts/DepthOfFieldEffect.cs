@@ -11,14 +11,14 @@ public class DepthOfFieldEffect : MonoBehaviour
     private const int postFilterPass        = 3;
     private const int combinePass           = 4;
 
-    [Range(0.1f, 100f)] public float focusDistance = 10f;
-
-    [Range(0.1f, 10f)] public float focusRange = 3f;
-
     [Range(1f, 10f)] public float bokehRadius = 4f;
 
     // [HideInInspector]
     public Shader dofShader;
+
+    [Range(0.1f, 100f)] public float focusDistance = 10f;
+
+    [Range(0.1f, 10f)] public float focusRange = 3f;
 
     [NonSerialized] private Material dofMaterial;
 

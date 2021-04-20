@@ -59,7 +59,7 @@ namespace PostProcessing
         }
 
         private RenderTexture CheckHistory(int                 eye, int id, PostProcessRenderContext context,
-            RenderTextureFormat format)
+                                           RenderTextureFormat format)
         {
             var rt = m_CoCHistoryTextures[eye][id];
 
@@ -107,7 +107,7 @@ namespace PostProcessing
             // CoC calculation pass
             context.GetScreenSpaceTemporaryRT(cmd, ShaderIDs.CoCTex, 0, cocFormat, RenderTextureReadWrite.Linear);
             cmd.BlitFullscreenTriangle(BuiltinRenderTextureType.None, ShaderIDs.CoCTex, sheet,
-                (int) Pass.CoCCalculation);
+                                       (int) Pass.CoCCalculation);
 
             // CoC temporal filter pass when TAA is enabled
             if (context.IsTemporalAntialiasingActive())
@@ -130,21 +130,21 @@ namespace PostProcessing
 
             // Downsampling and prefiltering pass
             context.GetScreenSpaceTemporaryRT(cmd, ShaderIDs.DepthOfFieldTex, 0, colorFormat,
-                RenderTextureReadWrite.Default, FilterMode.Bilinear, context.width / 2,
-                context.height                                                     / 2);
+                                              RenderTextureReadWrite.Default, FilterMode.Bilinear, context.width / 2,
+                                              context.height                                                     / 2);
             cmd.BlitFullscreenTriangle(context.source, ShaderIDs.DepthOfFieldTex, sheet,
-                (int) Pass.DownsampleAndPrefilter);
+                                       (int) Pass.DownsampleAndPrefilter);
 
             // Bokeh simulation pass
             context.GetScreenSpaceTemporaryRT(cmd, ShaderIDs.DepthOfFieldTemp, 0, colorFormat,
-                RenderTextureReadWrite.Default, FilterMode.Bilinear, context.width / 2,
-                context.height                                                     / 2);
+                                              RenderTextureReadWrite.Default, FilterMode.Bilinear, context.width / 2,
+                                              context.height                                                     / 2);
             cmd.BlitFullscreenTriangle(ShaderIDs.DepthOfFieldTex, ShaderIDs.DepthOfFieldTemp, sheet,
-                (int) Pass.BokehSmallKernel + (int) settings.kernelSize.value);
+                                       (int) Pass.BokehSmallKernel + (int) settings.kernelSize.value);
 
             // Postfilter pass
             cmd.BlitFullscreenTriangle(ShaderIDs.DepthOfFieldTemp, ShaderIDs.DepthOfFieldTex, sheet,
-                (int) Pass.PostFilter);
+                                       (int) Pass.PostFilter);
             cmd.ReleaseTemporaryRT(ShaderIDs.DepthOfFieldTemp);
 
             // Debug overlay pass

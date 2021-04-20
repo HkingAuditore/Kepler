@@ -7,12 +7,11 @@ namespace CustomUI
 {
     public class SatelliteControllerUI : MonoBehaviour
     {
-        public SatelliteController satelliteController;
-        public Slider              slider;
-        public Text                speedText;
-        public GravityTracing      orbit;
-
-        private bool isEditing;
+        public  GravityTracing      orbit;
+        public  SatelliteController satelliteController;
+        public  Slider              slider;
+        public  Text                speedText;
+        private bool                isEditing;
 
 
         private void FixedUpdate()

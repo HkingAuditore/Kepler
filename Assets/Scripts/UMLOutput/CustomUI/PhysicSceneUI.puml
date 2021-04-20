@@ -1,6 +1,0 @@
-@startuml
-class PhysicSceneUI {
-    + BackToMain() : void
-}
-MonoBehaviour <|-- PhysicSceneUI
-@enduml

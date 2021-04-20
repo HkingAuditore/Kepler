@@ -9,9 +9,9 @@ namespace CustomUI
     public class AstralBodyAddUI : MonoBehaviour
     {
         public AstralBodyPlacementUI astralBodyPlacementUI;
-        public AstralBody            placePrefab;
-        public GravityTracing        orbits;
         public bool                  isQuizEditMode;
+        public GravityTracing        orbits;
+        public AstralBody            placePrefab;
         public List<GameObject>      setActiveList;
 
 
@@ -30,11 +30,11 @@ namespace CustomUI
             }
         }
 
-        public IEnumerator WaitForLoad()
+        private IEnumerator WaitForLoad()
         {
             // Debug.Log("Wait 4 Core");
             // Debug.Log(GameManager.GetGameManager.quizBase.IsLoadDone);
-            yield return new WaitUntil(() => GameManager.GetGameManager.quizBase.isLoadDone);
+            yield return new WaitUntil(() => GameManager.getGameManager.quizBase.isLoadDone);
             OrbitCore = orbits.transform.Find("Core");
             Debug.Log(OrbitCore);
         }

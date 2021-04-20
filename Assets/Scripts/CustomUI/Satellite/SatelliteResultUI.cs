@@ -12,8 +12,8 @@ namespace CustomUI.Satellite
     public class SatelliteResultUI : MonoBehaviour
     {
         public GameObject       panel;
-        public Text             resultText;
         public QuizStarsGroupUI quizStarsGroupUI;
+        public Text             resultText;
 
         private void Start()
         {
@@ -22,8 +22,9 @@ namespace CustomUI.Satellite
 
         private IEnumerator WaitForCheck()
         {
-            yield return new WaitUntil(() => GameManager.GetGameManager.satelliteChallengeManger.isCheckEnd); //Lambda表达式
-            ShowResultPanel(GameManager.GetGameManager.satelliteChallengeManger.satelliteResultType);
+            yield return
+                new WaitUntil(() => GameManager.getGameManager.satelliteChallengeManger.isCheckEnd); //Lambda表达式
+            ShowResultPanel(GameManager.getGameManager.satelliteChallengeManger.satelliteResultType);
         }
 
         private void ShowResultPanel(SatelliteResultType resultType)

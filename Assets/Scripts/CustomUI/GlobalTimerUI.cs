@@ -11,7 +11,7 @@ namespace CustomUI
 
         private void Start()
         {
-            _globalTimer = GameManager.GetGameManager.globalTimer;
+            _globalTimer = GameManager.getGameManager.globalTimer;
         }
 
         private void Update()

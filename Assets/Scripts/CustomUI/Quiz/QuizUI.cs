@@ -12,19 +12,18 @@ namespace CustomUI.Quiz
 {
     public class QuizUI : MonoBehaviour
     {
-        public QuizSolver quizSolver;
-        public Slider     quizSlider;
-        public Text       title;
-        public QuizType   quizType;
-        public Text       ansText;
-        public Button     confirm;
-        public Text       quizCondition;
-
-        public AstralBody target;
-
         [SerializeField] private int _ansPos;
 
-        [SerializeField] private int _gap;
+        [SerializeField] private int        _gap;
+        public                   Text       ansText;
+        public                   Button     confirm;
+        public                   Text       quizCondition;
+        public                   Slider     quizSlider;
+        public                   QuizSolver quizSolver;
+        public                   QuizType   quizType;
+
+        public AstralBody target;
+        public Text       title;
 
 
         public void Generate()
@@ -59,14 +58,18 @@ namespace CustomUI.Quiz
                 case QuizType.Mass:
 
                     target.realMass = ConvertSliderValue2Ans(quizSlider.value) *
-                                      Mathf.Pow(10, -GameManager.GetGameManager.globalMassScaler * 2);
+                                      Mathf.Pow(10, -GameManager.getGameManager.globalMassScaler * 2);
                     ansText.text = target.realMass.GetMantissa().ToString("f2") + "x10e" +
                                    target.realMass.GetExponent().ToString().ToSuperscript();
                     break;
                 case QuizType.Density:
 
                     target.realMass = ConvertSliderValue2Ans(quizSlider.value) * Mathf.PI *
-                        Mathf.Pow(target.size * Mathf.Pow(10, GameManager.GetGameManager.GetK(PropertyUnit.M)), 3) * 4 / 3;
+                                      Mathf.Pow(
+                                                target.size *
+                                                Mathf.Pow(10, GameManager.getGameManager.GetK(PropertyUnit.M)),
+                                                3) * 4 /
+                                      3;
                     ansText.text = target.density.ToString("f2") + " kg/m3";
                     break;
                 case QuizType.Gravity:
@@ -84,11 +87,11 @@ namespace CustomUI.Quiz
             switch (quizType)
             {
                 case QuizType.Mass:
-                    quizSolver.TmpAnswer = tmpAns;
+                    quizSolver.tmpAnswer = tmpAns;
                     break;
                 case QuizType.Density:
                     // throw new ArgumentOutOfRangeException();
-                    quizSolver.TmpAnswer = tmpAns;
+                    quizSolver.tmpAnswer = tmpAns;
                     // quizSolver.TmpAnswer = tmpAns;
                     break;
                 case QuizType.Gravity:
@@ -102,7 +105,7 @@ namespace CustomUI.Quiz
             }
 
             gameObject.SetActive(false);
-            GameManager.GetGameManager.globalTimer.isPausing = true;
+            GameManager.getGameManager.globalTimer.isPausing = true;
         }
 
         private void GenerateAns()

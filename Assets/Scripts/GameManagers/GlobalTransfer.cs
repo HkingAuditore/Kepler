@@ -2,21 +2,35 @@
 
 namespace GameManagers
 {
+    /// <summary>
+    ///     全局信息传递
+    /// </summary>
     public class GlobalTransfer : MonoBehaviour
     {
-        [SerializeField] private float      _audioVolume = .5f;
-        public                   string     quizName;
-        public                   Difficulty difficulty;
+        [SerializeField] private float _audioVolume = .5f;
+
+        /// <summary>
+        ///     难度
+        /// </summary>
+        public Difficulty difficulty;
+
+        /// <summary>
+        ///     问题名称
+        /// </summary>
+        public string quizName;
 
         public static GlobalTransfer getGlobalTransfer { get; private set; }
 
+        /// <summary>
+        ///     获取音量
+        /// </summary>
         public float audioVolume
         {
             get => _audioVolume;
             set
             {
                 _audioVolume = Mathf.Clamp01(value);
-                GameManager.GetGameManager.SetAudioVolume();
+                GameManager.getGameManager.SetAudioVolume();
             }
         }
 

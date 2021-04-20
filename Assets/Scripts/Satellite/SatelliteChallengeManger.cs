@@ -7,20 +7,44 @@ namespace Satellite
 {
     public class SatelliteChallengeManger : MonoBehaviour
     {
-        public  Satellite  satellite;
-        public  float      angleThreshold;
-        public  AstralBody target;
-        public  float      checkTime = 5f;
-        private bool       _isInCheck;
+        /// <summary>
+        ///     角度容错
+        /// </summary>
+        public float angleThreshold;
 
+        /// <summary>
+        ///     检查等待时间
+        /// </summary>
+        public float checkTime = 5f;
+
+        /// <summary>
+        ///     操控卫星
+        /// </summary>
+        public Satellite satellite;
+
+        /// <summary>
+        ///     目标星球
+        /// </summary>
+        public AstralBody target;
+
+        private bool                _isInCheck;
         private SatelliteResultType _satelliteResultType = SatelliteResultType.NonResult;
+        private float               _timer;
 
-        private float _timer;
-
+        /// <summary>
+        ///     是否成功
+        /// </summary>
         public bool isSuccess { get; set; } = true;
 
+        /// <summary>
+        ///     是否检查完成
+        /// </summary>
         public bool isCheckEnd { get; set; }
 
+        /// <summary>
+        ///     结果
+        /// </summary>
+        /// <exception cref="ArgumentOutOfRangeException"></exception>
         public SatelliteResultType satelliteResultType
         {
             get => _satelliteResultType;
@@ -32,19 +56,19 @@ namespace Satellite
                         _satelliteResultType                             = value;
                         isSuccess                                        = true;
                         isCheckEnd                                       = true;
-                        GameManager.GetGameManager.globalTimer.isPausing = true;
+                        GameManager.getGameManager.globalTimer.isPausing = true;
                         break;
                     case SatelliteResultType.Crash:
                         _satelliteResultType                             = value;
                         isSuccess                                        = false;
                         isCheckEnd                                       = true;
-                        GameManager.GetGameManager.globalTimer.isPausing = true;
+                        GameManager.getGameManager.globalTimer.isPausing = true;
                         break;
                     case SatelliteResultType.NotOrbit:
                         _satelliteResultType                             = value;
                         isSuccess                                        = false;
                         isCheckEnd                                       = true;
-                        GameManager.GetGameManager.globalTimer.isPausing = true;
+                        GameManager.getGameManager.globalTimer.isPausing = true;
                         break;
                     case SatelliteResultType.NonResult:
                         break;
@@ -73,12 +97,12 @@ namespace Satellite
                     throw new ArgumentOutOfRangeException();
             }
 
-            GameManager.GetGameManager.globalTimer.countingDownEndEvent.AddListener(() =>
+            GameManager.getGameManager.globalTimer.countingDownEndEvent.AddListener(() =>
                                                                                     {
                                                                                         // _checkDistance = Vector3.Distance(satellite.satelliteCore.transform.position, target.transform.position);
                                                                                         _isInCheck = true;
                                                                                     });
-            GameManager.GetGameManager.globalTimer.StartCounting();
+            GameManager.getGameManager.globalTimer.StartCounting();
         }
 
         private void FixedUpdate()
@@ -108,11 +132,13 @@ namespace Satellite
             if (angle > angleThreshold) satelliteResultType = SatelliteResultType.NotOrbit;
         }
 
-
+        /// <summary>
+        ///     检查
+        /// </summary>
         public void CallCheck()
         {
             _isInCheck                                       = true;
-            GameManager.GetGameManager.globalTimer.isPausing = true;
+            GameManager.getGameManager.globalTimer.isPausing = true;
         }
     }
 }

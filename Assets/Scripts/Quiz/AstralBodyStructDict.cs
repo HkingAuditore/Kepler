@@ -5,38 +5,114 @@ namespace Quiz
 {
     public struct AstralBodyStructDict
     {
+        /// <summary>
+        ///     位置坐标
+        /// </summary>
         public Vector3 position;
-        public double  mass;
-        public bool    isMassPublic;
-        public double  density;
-        public float   originalSize;
-        public float   affectRadius;
+
+        /// <summary>
+        ///     质量
+        /// </summary>
+        public double mass;
+
+        /// <summary>
+        ///     质量是否为条件
+        /// </summary>
+        public bool isMassPublic;
+
+        /// <summary>
+        ///     密度
+        /// </summary>
+        public double density;
+
+        /// <summary>
+        ///     星球半径
+        /// </summary>
+        public float originalSize;
+
+        /// <summary>
+        ///     引力影响范围
+        /// </summary>
+        public float affectRadius;
+
+        /// <summary>
+        ///     初速度
+        /// </summary>
         public Vector3 oriVelocity;
 
+        /// <summary>
+        ///     速度是否为条件
+        /// </summary>
         public bool isVelocityPublic;
 
         // public float angularVelocity;
-        public bool  isAngularVelocityPublic;
-        public float period;
-        public bool  isPeriodPublic;
-        public float radius;
-        public bool  isRadiusPublic;
-        public int   meshNum;
+        /// <summary>
+        ///     角速度是否为条件
+        /// </summary>
+        public bool isAngularVelocityPublic;
 
+        /// <summary>
+        ///     周期
+        /// </summary>
+        public float period;
+
+        /// <summary>
+        ///     周期是否为条件
+        /// </summary>
+        public bool isPeriodPublic;
+
+        /// <summary>
+        ///     与中心星体的距离
+        /// </summary>
+        public float radius;
+
+        /// <summary>
+        ///     与中心星体的距离是否为条件
+        /// </summary>
+        public bool isRadiusPublic;
+
+        /// <summary>
+        ///     星球使用样式编号
+        /// </summary>
+        public int meshNum;
+
+        /// <summary>
+        ///     表面重力加速度是否为条件
+        /// </summary>
         public bool isGravityPublic;
 
+        /// <summary>
+        ///     星球半径是否为条件
+        /// </summary>
         public bool isSizePublic;
 
         // public float   AnglePerT;
         // public bool    isAnglePerTPublic;
         // public float   distancePerT;
         // public bool    isDistancePerTPublic;
+
         public float t;
         public bool  isTPublic;
-        public bool  enableAffect;
-        public bool  enableTracing;
-        public bool  isTarget;
-        public bool  isCore;
+
+        /// <summary>
+        ///     是否可以影响其他星球
+        /// </summary>
+        public bool enableAffect;
+
+        /// <summary>
+        ///     是否可以被追踪
+        /// </summary>
+        public bool enableTracing;
+
+        /// <summary>
+        ///     是否为目标
+        /// </summary>
+        public bool isTarget;
+
+        /// <summary>
+        ///     是否为中心天体
+        /// </summary>
+        public bool isCore;
 
         public AstralBodyStructDict(Transform transform, AstralBody astralBody, bool isTarget, bool isCore)
         {

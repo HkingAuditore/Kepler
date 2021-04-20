@@ -11,8 +11,8 @@ namespace CustomUI
     {
         public  GameObject        awakePanel;
         public  List<GameObject>  tutorialClips;
-        public  string            tutorialName;
         public  TutorialManagerUI tutorialManagerUI;
+        public  string            tutorialName;
         private int               _curStep;
         private VoiceGenerator    _voiceGenerator;
 

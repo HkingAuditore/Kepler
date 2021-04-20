@@ -7,22 +7,20 @@ namespace CustomUI
 {
     public class OrbitGraphUI : MonoBehaviour
     {
+        public Text       angularVelocity;
+        public Text       area;
         public AstralBody astralBody;
         public float      conHeight;
-        public Text       angularVelocity;
         public Text       distance;
-        public Text       area;
         public Image      ellipseImage;
-        public Image      oriImage;
-        public Image      targetImage;
-        public Image      leftFociImage;
-        public Image      rightFociImage;
+        public Image      fillImage;
 
         [Header("Fill")] public RectTransform fillMask;
-        public                  Image         fillImage;
-
-
-        private float _angularVelocity;
+        public                  Image         leftFociImage;
+        public                  Image         oriImage;
+        public                  Image         rightFociImage;
+        public                  Image         targetImage;
+        private                 float         _angularVelocity;
 
         private float         _curAngle;
         private RectTransform _ellipseImageRect;
@@ -37,7 +35,7 @@ namespace CustomUI
         private RectTransform _targetImageRect;
         public  ConicSection  orbit;
 
-        public Vector3 angularMomentum
+        private Vector3 angularMomentum
         {
             get
             {
@@ -204,7 +202,7 @@ namespace CustomUI
             fillAmount *= oriR / tarR;
             // this.tr              =  tarR;
             // this.or              =  oriR;
-            fillAmount           = Mathf.Min(fillAmount, s / es / (oriR / (orbit.semiMajorAxis + orbit.focalLength / 2)));
+            fillAmount = Mathf.Min(fillAmount, s / es / (oriR / (orbit.semiMajorAxis + orbit.focalLength / 2)));
             fillImage.fillAmount = fillAmount;
             // this.r               = r;
             // dadtt = GetDADT() ;

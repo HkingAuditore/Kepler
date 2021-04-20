@@ -448,6 +448,7 @@
         </e>
         <e p="Scripts" t="Include">
           <e p="Animation" t="Include">
+            <e p="AnimationType.cs" t="Include" />
             <e p="AstronautsAnimation.cs" t="Include" />
           </e>
           <e p="BloomEffect.cs" t="Include" />
@@ -460,6 +461,10 @@
             <e p="CameraMixer.cs" t="Include" />
             <e p="CustomPostProcessingBase.cs" t="Include" />
             <e p="Dof.cs" t="Include" />
+            <e p="DofRenderer.cs" t="Include" />
+            <e p="IRenderTexOuter.cs" t="Include" />
+            <e p="KernelSize.cs" t="Include" />
+            <e p="KernelSizeParameter.cs" t="Include" />
             <e p="OutlineCatcher.cs" t="Include" />
           </e>
           <e p="CustomUI" t="Include">
@@ -487,6 +492,7 @@
               <e p="QuizTestUI.cs" t="Include" />
               <e p="QuizUI.cs" t="Include" />
               <e p="ResultUI.cs" t="Include" />
+              <e p="ShowPropertyType.cs" t="Include" />
               <e p="VarLineUI.cs" t="Include" />
             </e>
             <e p="Satellite" t="Include">
@@ -501,6 +507,7 @@
             <e p="TutorialManagerUI.cs" t="Include" />
             <e p="TutorialUI.cs" t="Include" />
             <e p="UIManager.cs" t="Include" />
+            <e p="vectorType.cs" t="Include" />
             <e p="VectorUI.cs" t="Include" />
             <e p="VelocityEditorUI.cs" t="Include" />
           </e>
@@ -511,24 +518,36 @@
           </e>
           <e p="EmissiveOscillator.cs" t="Include" />
           <e p="GameManagers" t="Include">
+            <e p="Difficulty.cs" t="Include" />
             <e p="GameManager.cs" t="Include" />
             <e p="GlobalTimer.cs" t="Include" />
             <e p="GlobalTransfer.cs" t="Include" />
+            <e p="PropertyUnit.cs" t="Include" />
           </e>
           <e p="GPUInstancingTest.cs" t="Include" />
           <e p="Init" t="Include">
             <e p="Init.cs" t="Include" />
           </e>
           <e p="MathPlus" t="Include">
+            <e p="ConicSection.cs" t="Include" />
+            <e p="ConicSectionDelegate.cs" t="Include" />
+            <e p="CustomMatrix.cs" t="Include" />
+            <e p="CustomSolver.cs" t="Include" />
             <e p="MathPlus.cs" t="Include" />
           </e>
           <e p="Quiz" t="Include">
+            <e p="AstralBodyDict.cs" t="Include" />
+            <e p="AstralBodyStructDict.cs" t="Include" />
             <e p="QuizAstralBody.cs" t="Include" />
             <e p="QuizBase.cs" t="Include" />
+            <e p="QuizBaseStruct.cs" t="Include" />
             <e p="QuizData.cs" t="Include" />
             <e p="QuizEditor.cs" t="Include" />
             <e p="QuizSaver.cs" t="Include" />
+            <e p="QuizSaverException.cs" t="Include" />
             <e p="QuizSolver.cs" t="Include" />
+            <e p="QuizType.cs" t="Include" />
+            <e p="Reason.cs" t="Include" />
             <e p="Transformer.cs" t="Include" />
           </e>
           <e p="Satellite" t="Include">
@@ -539,18 +558,32 @@
             <e p="SatelliteEngine.cs" t="Include" />
             <e p="SatelliteParachute.cs" t="Include" />
             <e p="SatellitePart.cs" t="Include" />
+            <e p="SatelliteResultType.cs" t="Include" />
+            <e p="SatelliteType.cs" t="Include" />
           </e>
           <e p="SpacePhysic" t="Include">
+            <e p="ActionType.cs" t="Include" />
             <e p="AstralBody.cs" t="Include" />
             <e p="GravityTracing.cs" t="Include" />
             <e p="IOrbitCalculator.cs" t="Include" />
+            <e p="ITraceable.cs" t="Include" />
+            <e p="PhysicBase.cs" t="Include" />
           </e>
           <e p="StaticClasses" t="Include">
             <e p="StringPlus.cs" t="Include" />
           </e>
           <e p="TangentSpaceVisualizer.cs" t="Include" />
           <e p="TTS" t="Include">
+            <e p="AudioStatus.cs" t="Include" />
+            <e p="EpStatus.cs" t="Include" />
+            <e p="Errors.cs" t="Include" />
+            <e p="HandwritingStatus.cs" t="Include" />
+            <e p="IvwStatus.cs" t="Include" />
             <e p="MSCDLL.cs" t="Include" />
+            <e p="RecogStatus.cs" t="Include" />
+            <e p="SynthesizingStatus.cs" t="Include" />
+            <e p="SynthStatus.cs" t="Include" />
+            <e p="UploadStatus.cs" t="Include" />
             <e p="VoiceGenerator.cs" t="Include" />
           </e>
         </e>

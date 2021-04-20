@@ -9,21 +9,20 @@ namespace CustomUI
 {
     public class VectorUI : MonoBehaviour
     {
-        public LineRenderer vectorArrow;
-        public AstralBody   astralBody;
-        public Text         vectorText;
-        public vectorType   thisType;
-        public string       header;
-        public string       unit;
-        public float        showSize = .5f;
-
-        private Camera  _camera;
-        private Vector3 _targetVector;
+        public  AstralBody   astralBody;
+        public  string       header;
+        public  float        showSize = .5f;
+        public  vectorType   thisType;
+        public  string       unit;
+        public  LineRenderer vectorArrow;
+        public  Text         vectorText;
+        private Camera       _camera;
+        private Vector3      _targetVector;
 
 
         private void Start()
         {
-            _camera = GameManager.GetGameManager.GetMainCameraController().GetMainCamera();
+            _camera = GameManager.getGameManager.GetMainCameraController().GetMainCamera();
             Init();
         }
 
@@ -79,7 +78,7 @@ namespace CustomUI
                     result = ((double) (_targetVector.magnitude * 1000)).ToSuperscript(2);
                     break;
                 case vectorType.Velocity:
-                    result = ((double) (_targetVector.magnitude * GameManager.GetGameManager.GetK(PropertyUnit.M)))
+                    result = ((double) (_targetVector.magnitude * GameManager.getGameManager.GetK(PropertyUnit.M)))
                        .ToSuperscript(2);
                     break;
                 default:
@@ -89,7 +88,7 @@ namespace CustomUI
             vectorText.text = header + ":" + result + unit;
         }
 
-        public void Init()
+        private void Init()
         {
             vectorArrow.positionCount = 2;
             ShowVector();

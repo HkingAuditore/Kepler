@@ -244,7 +244,8 @@ namespace Editor
                                              MakeLabel(map), map,
                                              tex ? FindProperty("_DetailBumpScale") : null
                                             );
-            if (EditorGUI.EndChangeCheck() && tex != map.textureValue) SetKeyword("_DETAIL_NORMAL_MAP", map.textureValue);
+            if (EditorGUI.EndChangeCheck() && tex != map.textureValue)
+                SetKeyword("_DETAIL_NORMAL_MAP", map.textureValue);
         }
 
         private void DoAdvanced()

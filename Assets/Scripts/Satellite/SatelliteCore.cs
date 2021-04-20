@@ -3,6 +3,9 @@ using UnityEngine;
 
 namespace Satellite
 {
+    /// <summary>
+    ///     卫星核心
+    /// </summary>
     public class SatelliteCore : SatelliteEngine
     {
         public Satellite satellite;
@@ -14,7 +17,7 @@ namespace Satellite
 
         private void OnCollisionEnter(Collision other)
         {
-            GameManager.GetGameManager.satelliteChallengeManger.satelliteResultType = SatelliteResultType.Crash;
+            GameManager.getGameManager.satelliteChallengeManger.satelliteResultType = SatelliteResultType.Crash;
             Debug.Log("Crash!");
         }
 

@@ -5,12 +5,22 @@ namespace MathPlus
 {
     public static class MathPlus
     {
+        /// <summary>
+        ///     获取科学计数法指数部分
+        /// </summary>
+        /// <param name="d"></param>
+        /// <returns></returns>
         public static int GetExponent(this float d)
         {
             var doubleParts = ExtractScientificNotationParts(d);
             return Convert.ToInt32(doubleParts[1]);
         }
 
+        /// <summary>
+        ///     获取科学计数法指数部分
+        /// </summary>
+        /// <param name="d"></param>
+        /// <returns></returns>
         public static int GetExponent(this double d)
         {
             var doubleParts = ExtractScientificNotationParts(d);
@@ -18,12 +28,22 @@ namespace MathPlus
             return Convert.ToInt32(doubleParts[1]);
         }
 
+        /// <summary>
+        ///     获取科学计数法小数部分
+        /// </summary>
+        /// <param name="d"></param>
+        /// <returns></returns>
         public static float GetMantissa(this float d)
         {
             var doubleParts = ExtractScientificNotationParts(d);
             return (float) Convert.ToDouble(doubleParts[0]);
         }
 
+        /// <summary>
+        ///     获取科学计数法小数部分
+        /// </summary>
+        /// <param name="d"></param>
+        /// <returns></returns>
         public static float GetMantissa(this double d)
         {
             var doubleParts = ExtractScientificNotationParts(d);

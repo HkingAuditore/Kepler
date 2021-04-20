@@ -10,13 +10,18 @@ namespace SpacePhysic
 {
     public class GravityTracing : MonoBehaviour
     {
+        /// <summary>
+        ///     采样率
+        /// </summary>
         public int sample = 20;
 
+        /// <summary>
+        ///     采样时间尺度
+        /// </summary>
         public float timeScale = 100;
 
-        // public LineRenderer mathOrbitDrawer;
-        public SplineComputer splineComputer;
-
+        public           SplineComputer   splineComputer;
+        private readonly List<ActionType> _actionTypes  = new List<ActionType>();
         private readonly List<ITraceable> _astralBodies = new List<ITraceable>();
 
         //坐标点
@@ -26,12 +31,12 @@ namespace SpacePhysic
         private readonly Dictionary<ITraceable, LineRenderer> _orbitRenderers =
             new Dictionary<ITraceable, LineRenderer>();
 
-        private readonly List<ActionType> _actionTypes = new List<ActionType>();
-
-        private float _deltaTime;
-
+        private float  _deltaTime;
         private Thread _thread;
 
+        /// <summary>
+        ///     是否冻结星群
+        /// </summary>
         public bool isFreezing { get; private set; }
 
 
@@ -79,6 +84,10 @@ namespace SpacePhysic
             _thread.Start(dict);
         }
 
+        /// <summary>
+        ///     增加追踪实体
+        /// </summary>
+        /// <param name="traceable"></param>
         public void AddTracingTarget(ITraceable traceable)
         {
             // Debug.Log("Add HashCode:" + traceable.GetHashCode());
@@ -103,6 +112,10 @@ namespace SpacePhysic
             }
         }
 
+        /// <summary>
+        ///     冻结
+        /// </summary>
+        /// <param name="isFreezing">是否冻结</param>
         public void Freeze(bool isFreezing)
         {
             this.isFreezing = isFreezing;
@@ -121,13 +134,17 @@ namespace SpacePhysic
                                   });
         }
 
-        public List<AstralBody> GetAstralBodyList()
+        private List<AstralBody> GetAstralBodyList()
         {
             var list = (from traceable in _astralBodies
                         select traceable.GetAstralBody()).ToList();
             return list;
         }
 
+        /// <summary>
+        ///     移除追踪实体
+        /// </summary>
+        /// <param name="astralBody"></param>
         public void RemoveAstralBody(AstralBody astralBody)
         {
             GetAstralBodyList().Remove(astralBody);
@@ -241,7 +258,10 @@ namespace SpacePhysic
             _orbitRenderers[astralBody].SetPositions(_orbitPoints[astralBody].ToArray());
         }
 
-        public void DrawOrbits()
+        /// <summary>
+        ///     绘制轨道
+        /// </summary>
+        private void DrawOrbits()
         {
             // TraceGravity();
             foreach (var astralBody in _astralBodies) DrawOrbit(astralBody);
@@ -261,6 +281,11 @@ namespace SpacePhysic
             return new Vector3(vector2.x, 0, vector2.y);
         }
 
+        /// <summary>
+        ///     获取轨道圆锥曲线
+        /// </summary>
+        /// <param name="astralBody"></param>
+        /// <returns></returns>
         public ConicSection GetConicSection(ITraceable astralBody)
         {
             // var sampleStep = sample / sampleCount;
@@ -298,6 +323,11 @@ namespace SpacePhysic
             return conicSection;
         }
 
+        /// <summary>
+        ///     绘制轨道
+        /// </summary>
+        /// <param name="conicSection"></param>
+        /// <param name="sam"></param>
         public void DrawMathOrbit(ConicSection conicSection, int sam)
         {
             if (conicSection != null)

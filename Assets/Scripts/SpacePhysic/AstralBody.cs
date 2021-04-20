@@ -9,42 +9,81 @@ using UnityEngine.Serialization;
 
 namespace SpacePhysic
 {
+    /// <summary>
+    ///     星体物理实体
+    /// </summary>
     public class AstralBody : MonoBehaviour, ITraceable
     {
+        [SerializeField] private double _density;
+
         [FormerlySerializedAs("mass")] [Header("Basic Property")] [SerializeField]
         private float _mass;
+
+        [SerializeField] private double _realMass;
 
         [FormerlySerializedAs("originalSize")] [SerializeField]
         private float _size = 1;
 
-        public SphereCollider triggerCollider;
-        public SphereCollider defaultCollider;
+        /// <summary>
+        ///     对之产生影响的星球
+        /// </summary>
+        public List<AstralBody> affectedPlanets = new List<AstralBody>();
 
-        [Header("Movement Property")] public Vector3 oriVelocity;
+        /// <summary>
+        ///     引力影响范围
+        /// </summary>
+        public float affectRadius;
 
+        /// <summary>
+        ///     角速度
+        /// </summary>
         public Vector3 angularVelocity;
 
+        /// <summary>
+        ///     屏蔽影响的星球
+        /// </summary>
+        public List<AstralBody> banAffectedPlanets = new List<AstralBody>();
 
+        /// <summary>
+        ///     物理碰撞检测盒
+        /// </summary>
+        public SphereCollider defaultCollider;
+
+        /// <summary>
+        ///     是否可以影响其他星球
+        /// </summary>
         [Header("Gravity Property")] public bool enableAffect = true;
 
-        public float affectRadius;
-        public bool  enableTracing;
+        /// <summary>
+        ///     是否可以被追踪
+        /// </summary>
+        public bool enableTracing;
 
-        public List<AstralBody>    affectedPlanets    = new List<AstralBody>();
-        public List<AstralBody>    banAffectedPlanets = new List<AstralBody>();
+        /// <summary>
+        ///     初速度
+        /// </summary>
+        [Header("Movement Property")] public Vector3 oriVelocity;
+
+        /// <summary>
+        ///     触发影响检测盒
+        /// </summary>
+        public SphereCollider triggerCollider;
+
+        /// <summary>
+        ///     速度变化事件
+        /// </summary>
         public UnityEvent<Vector3> velocityChangedEvent;
 
-        [SerializeField] private double _realMass;
-
-        [SerializeField] private double    _density;
-        private                  Rigidbody _astralBodyRigidbody;
-
-        private Vector3 _lastVelocity;
+        private Rigidbody _astralBodyRigidbody;
+        private Vector3   _lastVelocity;
 
         private MeshFilter _mesh;
         private int        _meshNum;
         private Renderer   _renderer;
 
+        /// <summary>
+        ///     质量（缩放后）
+        /// </summary>
         public float Mass
         {
             get => _mass;
@@ -62,7 +101,10 @@ namespace SpacePhysic
             }
         }
 
-        public Rigidbody astralBodyRigidbody
+        /// <summary>
+        ///     星体的刚体
+        /// </summary>
+        protected Rigidbody astralBodyRigidbody
         {
             get => _astralBodyRigidbody;
             set
@@ -72,18 +114,27 @@ namespace SpacePhysic
             }
         }
 
+        /// <summary>
+        ///     受力
+        /// </summary>
         public Vector3 Force { get; private set; }
 
+        /// <summary>
+        ///     表面重力加速度
+        /// </summary>
         public float gravity
         {
             get
             {
-                double realSize = size * Mathf.Pow(10, GameManager.GetGameManager.GetK(PropertyUnit.M));
+                double realSize = size * Mathf.Pow(10, GameManager.getGameManager.GetK(PropertyUnit.M));
                 // Debug.Log("RealSize = " + realSize);
                 return (float) (PhysicBase.GetRealG() * realMass / (realSize * realSize));
             }
         }
 
+        /// <summary>
+        ///     使用星球样式
+        /// </summary>
         public int meshNum
         {
             get => _meshNum;
@@ -91,11 +142,14 @@ namespace SpacePhysic
             {
                 _meshNum = value;
                 var materials = new List<Material>();
-                _mesh.sharedMesh          = GameManager.GetGameManager.GetMeshAndMaterialsFromList(_meshNum, ref materials);
+                _mesh.sharedMesh = GameManager.getGameManager.GetMeshAndMaterialsFromList(_meshNum, ref materials);
                 _renderer.sharedMaterials = materials.ToArray();
             }
         }
 
+        /// <summary>
+        ///     星球半径
+        /// </summary>
         public float size
         {
             get => _size;
@@ -106,6 +160,9 @@ namespace SpacePhysic
             }
         }
 
+        /// <summary>
+        ///     真实质量
+        /// </summary>
         public double realMass
         {
             get => _realMass;
@@ -115,16 +172,19 @@ namespace SpacePhysic
                 // Debug.Log(GameManager.GetGameManager.GetK(PropertyUnit.Kg));
                 // Debug.Log( Mathf.Pow(10, GameManager.GetGameManager.GetK(PropertyUnit.Kg)));
                 // Debug.Log("num:" + _realMass       * Mathf.Pow(10, GameManager.GetGameManager.GetK(PropertyUnit.Kg)));
-                Mass = (float) (_realMass * Mathf.Pow(10, GameManager.GetGameManager.GetK(PropertyUnit.Kg, _realMass)));
+                Mass = (float) (_realMass * Mathf.Pow(10, GameManager.getGameManager.GetK(PropertyUnit.Kg, _realMass)));
                 // Debug.Log((_realMass * Mathf.Pow(10, GameManager.GetGameManager.GetK(PropertyUnit.Kg, _realMass))));
             }
         }
 
+        /// <summary>
+        ///     密度
+        /// </summary>
         public double density
         {
             get
             {
-                double realSize = size           * Mathf.Pow(10, GameManager.GetGameManager.GetK(PropertyUnit.M));
+                double realSize = size           * Mathf.Pow(10, GameManager.getGameManager.GetK(PropertyUnit.M));
                 _density = (float) (3 * realMass / (4 * Mathf.PI * realSize * realSize * realSize));
                 return _density;
             }
@@ -161,7 +221,7 @@ namespace SpacePhysic
 
         private void OnDestroy()
         {
-            GameManager.GetGameManager.orbit.RemoveAstralBody(this);
+            GameManager.getGameManager.orbit.RemoveAstralBody(this);
         }
 
         public virtual void OnCollisionEnter(Collision other)
@@ -191,17 +251,28 @@ namespace SpacePhysic
                 astral.affectedPlanets.Remove(this);
         }
 
+        /// <summary>
+        ///     获取坐标
+        /// </summary>
+        /// <returns></returns>
         public Transform GetTransform()
         {
             return transform;
         }
 
+        /// <summary>
+        ///     委屈位置
+        /// </summary>
+        /// <returns></returns>
         public Vector3 GetPosition()
         {
             return transform.position;
         }
 
-
+        /// <summary>
+        ///     获取Gameobject
+        /// </summary>
+        /// <returns></returns>
         public GameObject GetGameObject()
         {
             return gameObject;
@@ -226,6 +297,7 @@ namespace SpacePhysic
             return astralBodyRigidbody;
         }
 
+
         public Vector3 GetVelocity()
         {
             return _lastVelocity;
@@ -245,12 +317,12 @@ namespace SpacePhysic
 
         #region 开放修改参数
 
-        //调整星球体积
+        ///调整星球体积
         private void ChangeSize()
         {
-            var localScale = GameManager.GetGameManager.globalDistanceScaler <= 0
+            var localScale = GameManager.getGameManager.globalDistanceScaler <= 0
                 ? 1
-                : GameManager.GetGameManager.globalDistanceScaler;
+                : GameManager.getGameManager.globalDistanceScaler;
             var showSize = Mathf.Pow(size, .2f) * localScale * localScale;
             transform.localScale = new Vector3(showSize, showSize, showSize);
             // defaultCollider.radius *= size;
@@ -258,8 +330,12 @@ namespace SpacePhysic
             //     triggerCollider.radius = affectRadius * size;
             // size = curSize;
         }
-        //调整星球密度
 
+
+        /// <summary>
+        ///     调整星球速度
+        /// </summary>
+        /// <param name="velocity">速度向量</param>
         public void ChangeVelocity(Vector3 velocity)
         {
             if (!astralBodyRigidbody.isKinematic)
@@ -277,11 +353,15 @@ namespace SpacePhysic
             velocityChangedEvent.Invoke(velocity);
         }
 
+        /// <summary>
+        ///     保持当前速度方向调整速度
+        /// </summary>
+        /// <param name="realSpeed">新速度数值</param>
         public void ChangeVelocity(double realSpeed)
         {
             var speed = (float) (realSpeed /
-                                 GameManager.GetGameManager
-                                            .GetK(PropertyUnit.M)) * GameManager.GetGameManager
+                                 GameManager.getGameManager
+                                            .GetK(PropertyUnit.M)) * GameManager.getGameManager
                                                                                 .GetK(PropertyUnit.S);
             if (!astralBodyRigidbody.isKinematic)
             {
@@ -319,14 +399,17 @@ namespace SpacePhysic
             return PhysicBase.GetG() * (GetMass() * targetMass / (distance * distance));
         }
 
-        public Vector3 GetGravityVector3(Rigidbody rigidbody)
+        private Vector3 GetGravityVector3(Rigidbody rigidbody)
         {
             var distance            = Vector3.Distance(transform.position, rigidbody.position);
             var normalizedDirection = (transform.position - rigidbody.position).normalized;
             return CalculateGravityModulus(rigidbody.mass, distance) * normalizedDirection;
         }
 
-        //计算线速度向量
+        /// <summary>
+        ///     计算受力
+        /// </summary>
+        /// <returns></returns>
         public Vector3 CalculateForce()
         {
             //List<Vector3> gravities = new List<Vector3>();
@@ -352,6 +435,9 @@ namespace SpacePhysic
 
         #region 优化属性设置
 
+        /// <summary>
+        ///     设置环绕速度
+        /// </summary>
         public void SetCircleVelocity()
         {
             //查找引力核心 
@@ -367,7 +453,8 @@ namespace SpacePhysic
             //查找引力核心
             var core = affectedPlanets.OrderByDescending(a => GetGravityVector3(a.GetRigidbody()).magnitude)
                                       .FirstOrDefault();
-            oriVelocity = CustomSolver.GetCircleOrbitVelocity(transform.position, core.GetTransform().position, core._mass);
+            oriVelocity =
+                CustomSolver.GetCircleOrbitVelocity(transform.position, core.GetTransform().position, core._mass);
         }
 
         #endregion

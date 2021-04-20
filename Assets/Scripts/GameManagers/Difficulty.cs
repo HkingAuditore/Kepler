@@ -2,6 +2,9 @@
 
 namespace GameManagers
 {
+    /// <summary>
+    ///     难度
+    /// </summary>
     [SerializeField]
     public enum Difficulty
     {

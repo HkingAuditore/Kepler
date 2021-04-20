@@ -1,5 +1,0 @@
-@startuml
-class Init {
-}
-MonoBehaviour <|-- Init
-@enduml

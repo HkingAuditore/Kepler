@@ -6,10 +6,10 @@ namespace CustomUI.Quiz
 {
     public class QuizStarsGroupUI : MonoBehaviour
     {
-        public List<QuizStarUI> quizStarUis = new List<QuizStarUI>();
-        public int              _starCount;
+        public int _starCount;
 
-        public GlobalTimer globalTimer;
+        public GlobalTimer      globalTimer;
+        public List<QuizStarUI> quizStarUis = new List<QuizStarUI>();
 
         public int starCount
         {
@@ -33,7 +33,7 @@ namespace CustomUI.Quiz
             starCount = quizStarUis.Count - (int) (timeCostPercent / step);
         }
 
-        public void ShowStars()
+        private void ShowStars()
         {
             for (var i = 0; i < quizStarUis.Count; i++) quizStarUis[i].isSet = i + 1 <= starCount;
         }

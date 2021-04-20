@@ -9,21 +9,20 @@ namespace CustomUI.Quiz
 {
     public class QuizEditorUI : MonoBehaviour
     {
-        public GameObject mainPanel;
-        public GameObject quizSetting;
-        public GameObject prop;
-        public InputField nameField;
-
+        public  GameObject mainPanel;
+        public  InputField nameField;
+        public  GameObject prop;
+        public  GameObject quizSetting;
         private QuizEditor _quizEditor;
 
         private void Start()
         {
-            _quizEditor = (QuizEditor) GameManager.GetGameManager.quizBase;
+            _quizEditor = (QuizEditor) GameManager.getGameManager.quizBase;
         }
 
         public void SaveQuiz()
         {
-            var quizEditor = (QuizEditor) GameManager.GetGameManager.quizBase;
+            var quizEditor = (QuizEditor) GameManager.getGameManager.quizBase;
             switch (quizEditor.quizType)
             {
                 case QuizType.Mass:
@@ -65,7 +64,7 @@ namespace CustomUI.Quiz
             _quizEditor.quizType = t;
         }
 
-        public void SettingToProp()
+        private void SettingToProp()
         {
             quizSetting.SetActive(false);
             prop.SetActive(true);

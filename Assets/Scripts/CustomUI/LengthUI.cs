@@ -8,13 +8,12 @@ namespace CustomUI
 {
     public class LengthUI : MonoBehaviour
     {
-        public SplineComputer   lengthSpline;
-        public LengthCalculator lengthCalculator;
-        public Text             lengthText;
-        public AstralBody       astralBody;
-        public AstralBody       targetAstralBody;
-
-        private Camera _camera;
+        public  AstralBody       astralBody;
+        public  LengthCalculator lengthCalculator;
+        public  SplineComputer   lengthSpline;
+        public  Text             lengthText;
+        public  AstralBody       targetAstralBody;
+        private Camera           _camera;
 
         private void Update()
         {
@@ -34,7 +33,7 @@ namespace CustomUI
 
         private void InitLength()
         {
-            _camera = GameManager.GetGameManager.mainCamera;
+            _camera = GameManager.getGameManager.mainCamera;
             var nodeOri = astralBody.gameObject.GetComponent<Node>();
             if (nodeOri == null)
                 nodeOri = astralBody.gameObject.AddComponent<Node>();
@@ -63,7 +62,7 @@ namespace CustomUI
             Destroy(targetAstralBody.gameObject.GetComponent<Node>());
         }
 
-        public void ShowLength()
+        private void ShowLength()
         {
             var tmpScreenPos =
                 _camera.WorldToScreenPoint((astralBody.transform.position + targetAstralBody.transform.position) * .5f);

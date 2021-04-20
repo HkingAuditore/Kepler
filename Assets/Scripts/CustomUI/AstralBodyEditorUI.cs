@@ -10,25 +10,25 @@ namespace CustomUI
 {
     public class AstralBodyEditorUI : MonoBehaviour
     {
-        public bool isEnableEdit        = true;
-        public bool isEnableEditorPanel = true;
+        public GameObject editorPanel;
+        public VectorUI   forceUI;
 
         public GravityTracing gravityTracing;
+        public bool           isEnableEdit        = true;
+        public bool           isEnableEditorPanel = true;
+        public List<LengthUI> lengthUIList;
 
-        public PositionEditorUI positionEditorUI;
-        public VelocityEditorUI velocityEditorUI;
-        public GameObject       normalPanel;
-        public VectorUI         forceUI;
-        public VectorUI         velocityUI;
-        public List<LengthUI>   lengthUIList;
-        public OrbitPanelUI     orbitPanelUI;
-        public GameObject       editorPanel;
+        public GameObject   mainPanel;
+        public GameObject   normalPanel;
+        public OrbitPanelUI orbitPanelUI;
 
-        [Header("Var Line List")] public List<VarLineUI> varLineUis;
+        public PositionEditorUI   positionEditorUI;
+        public StarStyleSettingUI styleSheetPanel;
 
-        public  GameObject         mainPanel;
-        public  StarStyleSettingUI styleSheetPanel;
-        private AstralBody         _astralBody;
+        [Header("Var Line List")] public List<VarLineUI>  varLineUis;
+        public                           VelocityEditorUI velocityEditorUI;
+        public                           VectorUI         velocityUI;
+        private                          AstralBody       _astralBody;
 
         private Text _massText;
 
@@ -90,7 +90,7 @@ namespace CustomUI
             }
         }
 
-        public virtual void OnAstralBodySet()
+        protected virtual void OnAstralBodySet()
         {
         }
 
@@ -131,7 +131,7 @@ namespace CustomUI
             }
         }
 
-        public void CloseConicSectionPanel()
+        private void CloseConicSectionPanel()
         {
             try
             {
@@ -152,7 +152,7 @@ namespace CustomUI
         public void ClosePanel()
         {
             gameObject.SetActive(false);
-            GameManager.GetGameManager.GetMainCameraController().ExitFocus();
+            GameManager.getGameManager.GetMainCameraController().ExitFocus();
         }
 
         public void MainToStyleSheet()

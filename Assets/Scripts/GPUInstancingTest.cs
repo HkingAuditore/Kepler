@@ -2,9 +2,8 @@
 
 public class GPUInstancingTest : MonoBehaviour
 {
+    public int       instances = 5000;
     public Transform prefab;
-
-    public int instances = 5000;
 
     public float radius = 50f;
 

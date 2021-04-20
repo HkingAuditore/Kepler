@@ -7,17 +7,17 @@ namespace CustomUI
 {
     public class VelocityEditorUI : MonoBehaviour
     {
-        public  LineRenderer velocityLine;
         public  AstralBody   editingTarget;
-        public  Text         speedUI;
         public  float        showSize = .1f;
+        public  Text         speedUI;
+        public  LineRenderer velocityLine;
         public  VectorUI     velocityUI;
         private Camera       _camera;
         private Vector3      _mousePos;
 
         private Vector3 _velocity;
 
-        private protected float Speed
+        private float Speed
         {
             get
             {
@@ -33,7 +33,7 @@ namespace CustomUI
         private void Start()
         {
             velocityLine.SetPosition(0, editingTarget.transform.position);
-            _camera = GameManager.GetGameManager.GetMainCameraController().GetMainCamera();
+            _camera = GameManager.getGameManager.GetMainCameraController().GetMainCamera();
         }
 
         private void Update()

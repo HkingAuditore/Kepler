@@ -7,10 +7,10 @@ namespace CustomUI.Quiz
 {
     public class QuizListUI : MonoBehaviour
     {
-        public List<QuizLineUI> quizLineUis = new List<QuizLineUI>();
         public RectTransform    content;
         public QuizLineUI       linePrefab;
         public float            offset;
+        public List<QuizLineUI> quizLineUis = new List<QuizLineUI>();
 
         private void Start()
         {
@@ -27,14 +27,16 @@ namespace CustomUI.Quiz
             var xmlList   = QuizSaver.GetQuizFiles(ref fileNames);
             var quizBaseStructs = (from xmlDocument in xmlList
                                    select QuizSaver.ConvertXml2QuizBase(xmlDocument,
-                                                                        fileNames[xmlList.IndexOf(xmlDocument)])).ToList();
+                                                                        fileNames[xmlList.IndexOf(xmlDocument)]))
+               .ToList();
             content.sizeDelta = new Vector2(content.sizeDelta.x, quizBaseStructs.Count * offset * 0.5f);
             for (var i = 0; i < quizBaseStructs.Count; i++)
             {
                 var quizStruct = quizBaseStructs[i];
                 // Debug.Log(oriPos - new Vector3(0, (i + 1) * offset, 0));
 
-                var line = Instantiate(linePrefab, oriPos - new Vector3(0, (i + 1) * offset, 0), Quaternion.Euler(0, 0, 0),
+                var line = Instantiate(linePrefab, oriPos - new Vector3(0, (i + 1) * offset, 0),
+                                       Quaternion.Euler(0, 0, 0),
                                        content);
                 var rect = line.GetComponent<RectTransform>();
                 rect.anchoredPosition3D = new Vector3(0, rect.localPosition.y, 0);

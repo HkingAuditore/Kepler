@@ -9,11 +9,10 @@ namespace CustomUI.Quiz
 {
     public class QuizLineUI : MonoBehaviour
     {
-        public Text quizName;
-        public Text quizType;
-
         public string         name;
         public QuizListUI     quizListUI;
+        public Text           quizName;
+        public Text           quizType;
         public QuizBaseStruct quizStruct;
 
         private void OnEnable()
@@ -32,7 +31,7 @@ namespace CustomUI.Quiz
             quizListUI.DeleteQuiz(name);
         }
 
-        public void Generate()
+        private void Generate()
         {
             quizName.text = name;
             switch (quizStruct.quizType)

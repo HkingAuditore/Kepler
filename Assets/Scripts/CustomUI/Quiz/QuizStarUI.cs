@@ -5,11 +5,10 @@ namespace CustomUI.Quiz
 {
     public class QuizStarUI : MonoBehaviour
     {
-        public Image    starBackground;
-        public Image    starForward;
-        public Animator animator;
-
-        private bool _isSet;
+        public  Animator animator;
+        public  Image    starBackground;
+        public  Image    starForward;
+        private bool     _isSet;
 
         public bool isSet
         {
@@ -27,7 +26,7 @@ namespace CustomUI.Quiz
             PlayAnimation();
         }
 
-        public void PlayAnimation()
+        private void PlayAnimation()
         {
             GetComponent<Animator>().SetBool("StarSet", isSet);
             GetComponent<Animator>().SetBool("PreSet",  true);
