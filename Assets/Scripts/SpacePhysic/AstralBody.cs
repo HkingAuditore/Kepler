@@ -190,6 +190,22 @@ namespace SpacePhysic
             }
         }
 
+        private Vector3 lastVelocity
+        {
+            get
+            {
+                // Debug.Log( this.name + ":" + _lastVelocity.magnitude);
+                return _lastVelocity;
+            }
+            set
+            {
+                _lastVelocity = value;
+                Debug.Log(this.name + " Set velocity:" + value);
+            }
+        }
+        
+        public bool isLoadDone { get; protected set; } = false;
+
 
         private void Awake()
         {
@@ -200,20 +216,26 @@ namespace SpacePhysic
 
         protected virtual void Start()
         {
+            Generate();
+            isLoadDone = true;
+        }
+
+        protected void Generate()
+        {
             triggerCollider.radius =  affectRadius;
             defaultCollider.radius *= 1.2f;
             SetMass();
             ChangeSize();
 
             astralBodyRigidbody.angularVelocity = angularVelocity;
-            _lastVelocity                       = oriVelocity;
+            lastVelocity                        = oriVelocity;
             ChangeVelocity(oriVelocity);
         }
 
         protected virtual void FixedUpdate()
         {
             var force                                           = CalculateForce();
-            if (!astralBodyRigidbody.isKinematic) _lastVelocity = astralBodyRigidbody.velocity;
+            if (!astralBodyRigidbody.isKinematic) lastVelocity = astralBodyRigidbody.velocity;
             //Debug.Log(this.name + " force: " + force);
             // Debug.DrawLine(transform.position,transform.position + force,Color.green);
             astralBodyRigidbody.AddForce(force);
@@ -300,7 +322,7 @@ namespace SpacePhysic
 
         public Vector3 GetVelocity()
         {
-            return _lastVelocity;
+            return lastVelocity;
         }
 
 
@@ -344,7 +366,7 @@ namespace SpacePhysic
             }
             else
             {
-                _lastVelocity                   = velocity;
+                lastVelocity                   = velocity;
                 astralBodyRigidbody.isKinematic = false;
                 astralBodyRigidbody.velocity    = velocity;
                 astralBodyRigidbody.isKinematic = true;
@@ -369,9 +391,9 @@ namespace SpacePhysic
             }
             else
             {
-                _lastVelocity                   = _lastVelocity.normalized * speed;
+                lastVelocity                   = lastVelocity.normalized * speed;
                 astralBodyRigidbody.isKinematic = false;
-                astralBodyRigidbody.velocity    = _lastVelocity;
+                astralBodyRigidbody.velocity    = lastVelocity;
                 astralBodyRigidbody.isKinematic = true;
             }
         }

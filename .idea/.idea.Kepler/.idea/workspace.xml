@@ -27,14 +27,21 @@
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Kepler/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Kepler/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Kepler/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Kepler/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Kepler/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Kepler/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizAstralBodyDict.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizAstralBodyDataDict.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizAstralBodyDict.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizAstralBodyDataDict.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Le Tai's Asset/TranslucentImage/LWRP support (deprecated).unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Le Tai's Asset/TranslucentImage/UniversalRP support.unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Examples.unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/PlaymakerActions.unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Le Tai's Asset/TranslucentImage/Material/Default-Translucent.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Le Tai's Asset/TranslucentImage/Material/Default-Translucent.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Quiz/Sphere 1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Quiz/Sphere 1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManagers/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManagers/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MathPlus/MathPlus.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MathPlus/MathPlus.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizAstralBody.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizAstralBody.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizBase.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizBaseStruct.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizBaseStruct.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizSaver.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizSaver.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/XmlSaver/AstralBodyDict.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/XmlSaver/AstralBodyDataDict.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/XmlSaver/AstralBodyDict.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/XmlSaver/AstralBodyDataDict.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/XmlSaver/SceneBaseStruct.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/XmlSaver/SceneBaseStruct.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizSolver.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizSolver.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SpacePhysic/AstralBody.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SpacePhysic/AstralBody.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SpacePhysic/GravityTracing.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SpacePhysic/GravityTracing.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/XmlSaver/XmlSaver.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/XmlSaver/XmlSaver.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -55,34 +62,39 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://C:/Program Files/Unity/Hub/Editor/2020.1.17f1c1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Image.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Satellite/SatellitePart.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/CustomPostProcessing/CustomPostProcessingBase.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Quiz/QuizData.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Quiz/Transformer.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Arts/Shaders/CustomPostProcessing/ShaderIds.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://C:/Program Files/Unity/Hub/Editor/2020.1.17f1c1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/UIBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Init/Init.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Satellite/SatelliteChallengeManger.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Quiz/QuizData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Arts/Shaders/CustomPostProcessing/ShaderIds.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Quiz/AstralBodyDict.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://C:/Program Files/Unity/Hub/Editor/2020.1.17f1c1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/EventSystem.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Satellite/SatelliteEngine.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/MathPlus/MathPlus.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Quiz/Transformer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Quiz/QuizSolver.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Arts/Shaders/CustomPostProcessing/TextureFormatUtilities.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/CustomPostProcessing/OutlineCatcher.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/MathPlus/MathPlus.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/183EA0E0-59EE-4107-865D-5753B201F130/f3/0c28b3de/Component.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Satellite/SatellitePart.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://C:/Program Files/Unity/Hub/Editor/2020.1.17f1c1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/EventSystem.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/CustomPostProcessing/CustomPostProcessingBase.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://C:/Program Files/Unity/Hub/Editor/2020.1.17f1c1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Slider.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/CustomPostProcessing/OutlineCatcher.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://C:/Program Files/Unity/Hub/Editor/2020.1.17f1c1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/UIBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Init/Init.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
-    <changedPaths>
-      <option value="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizAstralBodyDict.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizBase.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Quiz/PrefabAstralBodyDict.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Quiz/AstralBodyDict.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/XmlSaver/AstralBodyDataDict.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizAstralBodyDataDict.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizSaver.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizBaseStruct.cs" />
-    </changedPaths>
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizBaseStruct.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizSaver.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/XmlSaver/XmlSaver.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/MathPlus/MathPlus.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizBase.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameManagers/GameManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SpacePhysic/GravityTracing.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizAstralBody.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SpacePhysic/AstralBody.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizSolver.cs" />
+      </list>
+    </option>
   </component>
   <component name="NamedScopeManager">
     <scope name="Scripts" pattern="file[riderModule]:Assets/Scripts/*" />
@@ -125,7 +137,7 @@
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
       <option name="selectedOptions">
-        <list />
+        <set />
       </option>
       <method v="2" />
     </configuration>
@@ -134,7 +146,7 @@
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
       <option name="selectedOptions">
-        <list />
+        <set />
       </option>
       <method v="2" />
     </configuration>
@@ -244,6 +256,8 @@
       <workItem from="1618922520922" duration="8070000" />
       <workItem from="1618971007966" duration="4650000" />
       <workItem from="1618981538576" duration="1211000" />
+      <workItem from="1618984602656" duration="5529000" />
+      <workItem from="1618991363427" duration="2016000" />
     </task>
     <servers />
   </component>
@@ -266,6 +280,12 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="343" y="200" key="run.anything.popup" timestamp="1618993206669">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state x="343" y="200" key="run.anything.popup/0.0.1368.872@0.0.1368.872" timestamp="1618993206669" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

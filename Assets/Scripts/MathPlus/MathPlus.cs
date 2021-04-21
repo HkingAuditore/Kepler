@@ -24,7 +24,7 @@ namespace MathPlus
         public static int GetExponent(this double d)
         {
             var doubleParts = ExtractScientificNotationParts(d);
-            Debug.Log(doubleParts[1]);
+            // Debug.Log(doubleParts[1]);
             return Convert.ToInt32(doubleParts[1]);
         }
 

@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Linq;
 using System.Text;
 using CustomUI.Quiz;
 using GameManagers;
@@ -71,16 +72,24 @@ namespace Quiz
         {
             base.Start();
             quizUI.quizType = quizType;
-            quizUI.Generate();
+
             GameManager.getGameManager.globalTimer.countingDownEndEvent.AddListener(() =>
-                                                                                    {
-                                                                                        reason = Reason.Overtime;
-                                                                                        resultEvent.Invoke();
-                                                                                    });
+            {
+                reason = Reason.Overtime;
+                resultEvent.Invoke();
+            });
             GameManager.getGameManager.globalTimer.StartCounting();
             resultEvent.AddListener(() =>
                                         GameManager.getGameManager.globalTimer.isPausing = true
                                    );
+            StartCoroutine(WaitUntilQuizAstralBodyLoadDone());
+
+        }
+        
+        IEnumerator WaitUntilQuizAstralBodyLoadDone()
+        {
+            yield return new WaitUntil(() => astralBodiesDict.All(a => a.astralBody.isLoadDone));
+            quizUI.Generate();
         }
 
 
@@ -122,12 +131,15 @@ namespace Quiz
             var centerString  = target.GetQuizConditionString();
             if (centerString != null) stringBuilder.Append("中心星体的" + centerString + "；");
             var i = 1;
-            foreach (var dict in astralBodiesDict)
+            foreach (AstralBodyDict<QuizAstralBody> dict in astralBodiesDict)
             {
                 if (dict.isTarget) continue;
                 var orbitString = dict.astralBody.GetQuizConditionString();
                 if (orbitString != null) stringBuilder.Append("绕转星体" + i + "的" + orbitString + "；");
+                // Debug.Log("mass:" + dict.astralBody.realMass);
             }
+
+
 
             stringBuilder.Remove(stringBuilder.Length - 1, 1);
             stringBuilder.Append("。请求出");

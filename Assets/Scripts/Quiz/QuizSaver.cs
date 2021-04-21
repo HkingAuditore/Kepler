@@ -130,66 +130,70 @@ namespace Quiz
         /// <returns></returns>
         public static QuizBaseStruct ConvertXml2SceneBase(XmlDocument xmlDoc, string fileName)
         {
-            return (QuizBaseStruct)ConvertXml2SceneBase(xmlDoc, fileName, (astralBodyStruct, astralBodyElement) =>
-                                                          {
-                                                              QuizAstralBodyDataDict astStruct =
-                                                                  QuizAstralBodyDataDict.FromAstralBodyDict(astralBodyStruct);
-                                                              var astralBodyXmlNode =
-                                                                  astralBodyElement
-                                                                     .GetElementsByTagName("AstralBody")
-                                                                      [0];
-                                                              astStruct.isMassPublic =
-                                                                  bool.Parse(astralBodyXmlNode
-                                                                            .SelectSingleNode("Mass")
-                                                                           ?.Attributes?["IsPublic"]
-                                                                            .Value ?? "false");
-                                                              astStruct.isSizePublic =
-                                                                  bool.Parse(astralBodyXmlNode
-                                                                            .SelectSingleNode("Size")
-                                                                           ?.Attributes?["IsPublic"]
-                                                                            .Value ?? "false");
-                                                              astStruct.isVelocityPublic =
-                                                                  bool.Parse(astralBodyXmlNode
-                                                                            .SelectSingleNode("Velocity")
-                                                                           ?.Attributes?["IsPublic"]
-                                                                            .Value ??  "false");
-                                                              astStruct.isPeriodPublic =
-                                                                  bool.Parse(astralBodyXmlNode
-                                                                            .SelectSingleNode("Period")
-                                                                           ?.Attributes?["IsPublic"]
-                                                                            .Value ??  "false");
-                                                              astStruct.isAngularVelocityPublic =
-                                                                  bool.Parse(astralBodyXmlNode
-                                                                            .SelectSingleNode("AngularVelocity")
-                                                                           ?.Attributes?["IsPublic"]
-                                                                            .Value ??  "false");
-                                                              astStruct.radius =
-                                                                  float.Parse(astralBodyXmlNode
-                                                                             .SelectSingleNode("Radius")
-                                                                            ?.InnerText ?? "0");
-                                                              astStruct.isRadiusPublic =
-                                                                  bool.Parse(astralBodyXmlNode
-                                                                            .SelectSingleNode("Radius")
-                                                                           ?.Attributes?["IsPublic"]
-                                                                            .Value ??  "false");
-                                                              astStruct.t =
-                                                                  float.Parse(astralBodyXmlNode
-                                                                             .SelectSingleNode("T")
-                                                                            ?.InnerText ?? "0");
-                                                              astStruct.isTPublic =
-                                                                  bool.Parse(astralBodyXmlNode
-                                                                            .SelectSingleNode("T")
-                                                                           ?.Attributes?["IsPublic"]
-                                                                            .Value ??  "false");
-                                                              astStruct.isGravityPublic =
-                                                                  bool.Parse(astralBodyXmlNode
-                                                                            .SelectSingleNode("Gravity")
-                                                                           ?.Attributes?["IsPublic"]
-                                                                            .Value ??  "false");
-                                                              astStruct.isTarget =
-                                                                  bool.Parse(astralBodyElement
-                                                                                .GetAttribute("IsTarget"));
-                                                          });
+            var quizBaseStruct =  (QuizBaseStruct)(XmlSaver<QuizAstralBody>.ConvertXml2SceneBase(xmlDoc, fileName, (astralBodyStruct, astralBodyElement) =>
+                                                                          {
+                                                                              QuizAstralBodyDataDict astStruct =
+                                                                                  (QuizAstralBodyDataDict)astralBodyStruct;
+                                                                              var astralBodyXmlNode =
+                                                                                  astralBodyElement
+                                                                                     .GetElementsByTagName("AstralBody")
+                                                                                      [0];
+                                                                              astStruct.isMassPublic =
+                                                                                  bool.Parse(astralBodyXmlNode
+                                                                                     .SelectSingleNode("Mass")
+                                                                                    ?.Attributes?["IsPublic"]
+                                                                                     .Value ?? "false");
+                                                                              astStruct.isSizePublic =
+                                                                                  bool.Parse(astralBodyXmlNode
+                                                                                     .SelectSingleNode("Size")
+                                                                                    ?.Attributes?["IsPublic"]
+                                                                                     .Value ?? "false");
+                                                                              astStruct.isVelocityPublic =
+                                                                                  bool.Parse(astralBodyXmlNode
+                                                                                     .SelectSingleNode("Velocity")
+                                                                                    ?.Attributes?["IsPublic"]
+                                                                                     .Value ??  "false");
+                                                                              astStruct.isPeriodPublic =
+                                                                                  bool.Parse(astralBodyXmlNode
+                                                                                     .SelectSingleNode("Period")
+                                                                                    ?.Attributes?["IsPublic"]
+                                                                                     .Value ??  "false");
+                                                                              astStruct.isAngularVelocityPublic =
+                                                                                  bool.Parse(astralBodyXmlNode
+                                                                                     .SelectSingleNode("AngularVelocity")
+                                                                                    ?.Attributes?["IsPublic"]
+                                                                                     .Value ??  "false");
+                                                                              astStruct.radius =
+                                                                                  float.Parse(astralBodyXmlNode
+                                                                                     .SelectSingleNode("Radius")
+                                                                                    ?.InnerText ?? "0");
+                                                                              astStruct.isRadiusPublic =
+                                                                                  bool.Parse(astralBodyXmlNode
+                                                                                     .SelectSingleNode("Radius")
+                                                                                    ?.Attributes?["IsPublic"]
+                                                                                     .Value ??  "false");
+                                                                              astStruct.t =
+                                                                                  float.Parse(astralBodyXmlNode
+                                                                                     .SelectSingleNode("T")
+                                                                                    ?.InnerText ?? "0");
+                                                                              astStruct.isTPublic =
+                                                                                  bool.Parse(astralBodyXmlNode
+                                                                                     .SelectSingleNode("T")
+                                                                                    ?.Attributes?["IsPublic"]
+                                                                                     .Value ??  "false");
+                                                                              astStruct.isGravityPublic =
+                                                                                  bool.Parse(astralBodyXmlNode
+                                                                                     .SelectSingleNode("Gravity")
+                                                                                    ?.Attributes?["IsPublic"]
+                                                                                     .Value ??  "false");
+                                                                              astStruct.isTarget =
+                                                                                  bool.Parse(astralBodyElement
+                                                                                     .GetAttribute("IsTarget"));
+                                                                          }));
+            quizBaseStruct.quizType =
+                (QuizType) Enum.Parse(typeof(QuizType), xmlDoc.SelectSingleNode("AstralBodyList").Attributes[0].Value);
+            quizBaseStruct.quizName = fileName;
+            return quizBaseStruct;
         }
 
 

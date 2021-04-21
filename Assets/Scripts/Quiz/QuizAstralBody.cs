@@ -51,18 +51,32 @@ namespace Quiz
         /// </summary>
         public bool isVelocityPublic;
 
-        private float      _curRadius;
-        private GameObject _line;
+        private                  float      _curRadius;
+        private                  GameObject _line;
+        [SerializeField] private float      _radius;
+        [SerializeField]                 private float      _period;
 
         /// <summary>
         ///     周期
         /// </summary>
-        public float period { get; set; }
+        public float period
+        {
+            get => _period;
+            set => _period = value;
+        }
 
         /// <summary>
         ///     与中心天体距离
         /// </summary>
-        public float radius { get; set; }
+        public float radius
+        {
+            get => _radius;
+            set
+            {
+                // Debug.Log("tmp radius set:" + value);
+                _radius = value;
+            }
+        }
 
         private float anglePerT { get; set; }
 
@@ -72,9 +86,11 @@ namespace Quiz
 
         public float oriRadius { get; set; }
 
+
+
         protected override void Start()
         {
-            base.Start();
+            Generate();
             _line = transform.GetChild(0).gameObject;
             try
             {
@@ -85,12 +101,14 @@ namespace Quiz
             catch (Exception e)
             {
             }
+
+            isLoadDone = true;
         }
 
         protected override void FixedUpdate()
         {
             base.FixedUpdate();
-            UpdateLowCost();
+            UpdateQuizAstralBody();
             if (GameManager.getGameManager.isQuizEditMode) return;
             if (!GameManager.getGameManager.quizBase.orbitBase.isFreezing &&
                 ((QuizSolver) GameManager.getGameManager.quizBase).isRight)
@@ -165,6 +183,7 @@ namespace Quiz
         {
             radius = Vector3.Distance(transform.position,
                                       GameManager.getGameManager.quizBase.target.transform.position);
+
         }
 
         public void UpdateQuizAstralBodyPer()
@@ -216,7 +235,7 @@ namespace Quiz
                                      GetScientificFloat(radius, 1 + GameManager.getGameManager.GetK(PropertyUnit.M)) +
                                      "m，");
             if (isVelocityPublic) stringBuilder.Append("速度是" + GetScientificFloat(GetVelocity().magnitude, 3) + "m/s，");
-
+            Debug.Log(this.name + ":"+GetVelocity());
             if (isAngularVelocityPublic)
                 stringBuilder.Append("角速度是" + GetScientificFloat(globalAngularVelocity * Mathf.Deg2Rad, -4) + "rad/s，");
             if (isPeriodPublic)
@@ -238,6 +257,7 @@ namespace Quiz
 
             if (stringBuilder.Length == 0) return null;
             stringBuilder.Remove(stringBuilder.Length - 1, 1);
+
             return stringBuilder.ToString();
         }
 

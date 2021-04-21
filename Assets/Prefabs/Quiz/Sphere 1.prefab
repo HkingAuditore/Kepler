@@ -142,8 +142,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _density: 0
-  _mass: 0.0597
-  _realMass: 5.97000008267511e+24
+  _mass: 0.15499999
+  _realMass: 1.54999993211365e+25
   _size: 0.0637
   affectedPlanets: []
   affectRadius: 8
@@ -152,7 +152,7 @@ MonoBehaviour:
   defaultCollider: {fileID: 1575909808793090416}
   enableAffect: 1
   enableTracing: 1
-  oriVelocity: {x: 18.6, y: 0, z: -23.1}
+  oriVelocity: {x: 26.6, y: 0, z: -13.2}
   triggerCollider: {fileID: 1575909808793090413}
   velocityChangedEvent:
     m_PersistentCalls:
@@ -168,6 +168,8 @@ MonoBehaviour:
   isSizePublic: 0
   isTPublic: 0
   isVelocityPublic: 1
+  _radius: 150
+  _period: 31.76298
 --- !u!1 &1575909809772103913
 GameObject:
   m_ObjectHideFlags: 0

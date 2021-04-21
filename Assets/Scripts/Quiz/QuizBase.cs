@@ -150,9 +150,11 @@ namespace Quiz
         private void GenerateAstralBodiesWithoutPrefab()
         {
             var astralBodyDicts = new List<AstralBodyDict<QuizAstralBody>>();
-            foreach (var pair in _astralBodyStructDictList)
+            foreach (QuizAstralBodyDataDict pair in _astralBodyStructDictList)
             {
                 astralBodyPrefab.realMass     = pair.mass;
+                // Debug.Log("pair mass:" + pair.mass);
+                // Debug.Log("prefab mass:" +  astralBodyPrefab.realMass);
                 astralBodyPrefab.isMassPublic = pair.isMassPublic;
 
                 // astralBodyPrefab.density      = pair.density;
@@ -171,6 +173,7 @@ namespace Quiz
                 //
                 //
                 astralBodyPrefab.radius         = pair.radius;
+
                 astralBodyPrefab.isRadiusPublic = pair.isRadiusPublic;
 
                 astralBodyPrefab.period         = pair.period;
@@ -211,6 +214,7 @@ namespace Quiz
                 if (pair.isCore) target.gameObject.name = "Core";
                 if (pair.isTarget) this.target          = target;
                 target.UpdateQuizAstralBodyPer();
+
             }
 
             astralBodiesDict = astralBodyDicts;

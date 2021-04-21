@@ -135,11 +135,11 @@ namespace GameManagers
         public void CalculateMassScales(double realMass)
         {
             var e = MathPlus.MathPlus.GetExponent(realMass);
-            Debug.Log("e:"                    + e);
+            // Debug.Log("e:"                    + e);
             var offset = Mathf.Clamp(e, 2, 3) - e;
 
             globalMassScaler = Mathf.CeilToInt(offset / 2f);
-            Debug.Log("globalMassScaler" + globalMassScaler);
+            // Debug.Log("globalMassScaler" + globalMassScaler);
         }
 
         /// <summary>
@@ -216,7 +216,7 @@ namespace GameManagers
                     //     CalculateScales(mass);
                     // }
                     k = getGameManager.globalMassScaler * 2;
-                    Debug.Log("k:" + k);
+                    // Debug.Log("k:" + k);
 
                     break;
                 case PropertyUnit.S:

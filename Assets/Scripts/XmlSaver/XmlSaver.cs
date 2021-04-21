@@ -1,6 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Xml;
+using Quiz;
 using SpacePhysic;
 using UnityEditor;
 using UnityEngine;
@@ -105,11 +107,23 @@ namespace XmlSaver
             if (File.Exists(xmlPath + sceneName + ".xml")) File.Delete(xmlPath + sceneName + ".xml");
         }
 
-        
-        public static SceneBaseStruct<T> ConvertXml2SceneBase(XmlDocument                       xmlDoc, string fileName,
-                                                              ConvertAstralBodyDictHandler<T> convertDelegate = null)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="xmlDoc"></param>
+        /// <param name="fileName"></param>
+        /// <param name="convertDelegate">对astralBodyStructList中元素处理的委托</param>
+        /// <typeparam name="U">astralBodyStructList的类型</typeparam>
+        /// <returns></returns>
+        public static SceneBaseStruct<T> ConvertXml2SceneBase(XmlDocument                   xmlDoc, string fileName,
+                                                              ConvertAstralBodyDictHandler<T> convertDelegate = null) 
         {
-            var sceneBaseStruct = new SceneBaseStruct<T>();
+            SceneBaseStruct<T> sceneBaseStruct = new SceneBaseStruct<T>();
+            if (typeof(T) == typeof(QuizAstralBody))
+            {
+                sceneBaseStruct = (SceneBaseStruct<T>)Activator.CreateInstance(typeof(QuizBaseStruct));
+            }
+   
             var list            = new List<AstralBodyDataDict<T>>();
             var astralBodyList  = xmlDoc.SelectSingleNode("AstralBodyList").ChildNodes;
 
@@ -148,7 +162,11 @@ namespace XmlSaver
                 convertHandler += convertDelegate;
             foreach (XmlElement astralBodyElement in astralBodyList)
             {
-                var astStruct = new AstralBodyDataDict<T>();
+                AstralBodyDataDict<T> astStruct = new AstralBodyDataDict<T>();
+                if (typeof(T) == typeof(QuizAstralBody))
+                {
+                    astStruct = (AstralBodyDataDict<T>)Activator.CreateInstance(typeof(QuizAstralBodyDataDict));
+                }
 
                 convertHandler(astStruct, astralBodyElement);
 

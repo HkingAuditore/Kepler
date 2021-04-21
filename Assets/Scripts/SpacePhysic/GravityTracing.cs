@@ -49,7 +49,8 @@ namespace SpacePhysic
 
         private void Update()
         {
-            Dispatch();
+            if(!isFreezing)
+                Dispatch();
         }
 
         private void OnDisable()
