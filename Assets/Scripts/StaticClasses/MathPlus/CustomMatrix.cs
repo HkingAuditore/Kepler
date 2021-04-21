@@ -1,6 +1,6 @@
 ﻿using MathNet.Numerics.LinearAlgebra;
 
-namespace MathPlus
+namespace StaticClasses.MathPlus
 {
     public static class CustomMatrix
     {

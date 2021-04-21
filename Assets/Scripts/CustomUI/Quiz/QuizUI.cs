@@ -1,9 +1,9 @@
 using System;
 using GameManagers;
-using MathPlus;
 using Quiz;
 using SpacePhysic;
 using StaticClasses;
+using StaticClasses.MathPlus;
 using UnityEngine;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;

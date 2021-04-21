@@ -3,7 +3,7 @@ using MathNet.Numerics.LinearAlgebra;
 using SpacePhysic;
 using UnityEngine;
 
-namespace MathPlus
+namespace StaticClasses.MathPlus
 {
     public static class CustomSolver
     {

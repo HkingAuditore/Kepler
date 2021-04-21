@@ -1,4 +1,4 @@
-﻿using MathPlus;
+﻿using StaticClasses.MathPlus;
 
 namespace StaticClasses
 {

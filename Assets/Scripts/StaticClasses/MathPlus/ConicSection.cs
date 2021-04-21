@@ -1,7 +1,7 @@
 ﻿using SpacePhysic;
 using UnityEngine;
 
-namespace MathPlus
+namespace StaticClasses.MathPlus
 {
     public class ConicSection
     {

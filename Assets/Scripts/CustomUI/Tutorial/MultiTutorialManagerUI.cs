@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using GameManagers;
 
-namespace CustomUI
+namespace CustomUI.Tutorial
 {
     public class MultiTutorialManagerUI : TutorialManagerUI
     {

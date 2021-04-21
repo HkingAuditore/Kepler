@@ -468,19 +468,22 @@
             <e p="OutlineCatcher.cs" t="Include" />
           </e>
           <e p="CustomUI" t="Include">
-            <e p="AstralBodyAddUI.cs" t="Include" />
-            <e p="AstralBodyEditorUI.cs" t="Include" />
-            <e p="AstralBodyPlacementUI.cs" t="Include" />
+            <e p="AstralBodyEditor" t="Include">
+              <e p="AstralBodyAddUI.cs" t="Include" />
+              <e p="AstralBodyEditorUI.cs" t="Include" />
+              <e p="AstralBodyPlacementUI.cs" t="Include" />
+              <e p="MeshEditor.cs" t="Include" />
+              <e p="OrbitGraphUI.cs" t="Include" />
+              <e p="OrbitPanelUI.cs" t="Include" />
+              <e p="PositionEditorUI.cs" t="Include" />
+              <e p="StarStyleSettingUI.cs" t="Include" />
+              <e p="VelocityEditorUI.cs" t="Include" />
+            </e>
             <e p="GlobalTimerUI.cs" t="Include" />
             <e p="LabModeUI.cs" t="Include" />
             <e p="LengthUI.cs" t="Include" />
             <e p="MainUI.cs" t="Include" />
-            <e p="MeshEditor.cs" t="Include" />
-            <e p="MultiTutorialManagerUI.cs" t="Include" />
-            <e p="OrbitGraphUI.cs" t="Include" />
-            <e p="OrbitPanelUI.cs" t="Include" />
             <e p="PhysicSceneUI.cs" t="Include" />
-            <e p="PositionEditorUI.cs" t="Include" />
             <e p="Quiz" t="Include">
               <e p="AstralBodyEditorQuizUI.cs" t="Include" />
               <e p="QuizEditorUI.cs" t="Include" />
@@ -496,20 +499,21 @@
               <e p="VarLineUI.cs" t="Include" />
             </e>
             <e p="Satellite" t="Include">
+              <e p="SatelliteControllerUI.cs" t="Include" />
               <e p="SatelliteResultUI.cs" t="Include" />
             </e>
-            <e p="SatelliteControllerUI.cs" t="Include" />
             <e p="SelectorUI.cs" t="Include" />
             <e p="SettingUI.cs" t="Include" />
-            <e p="StarStyleSettingUI.cs" t="Include" />
             <e p="TestModeUI.cs" t="Include" />
-            <e p="TutorialClipUI.cs" t="Include" />
-            <e p="TutorialManagerUI.cs" t="Include" />
-            <e p="TutorialUI.cs" t="Include" />
+            <e p="Tutorial" t="Include">
+              <e p="MultiTutorialManagerUI.cs" t="Include" />
+              <e p="TutorialClipUI.cs" t="Include" />
+              <e p="TutorialManagerUI.cs" t="Include" />
+              <e p="TutorialUI.cs" t="Include" />
+            </e>
             <e p="UIManager.cs" t="Include" />
             <e p="vectorType.cs" t="Include" />
             <e p="VectorUI.cs" t="Include" />
-            <e p="VelocityEditorUI.cs" t="Include" />
           </e>
           <e p="DeferredFogEffect.cs" t="Include" />
           <e p="DepthOfFieldEffect.cs" t="Include" />
@@ -527,13 +531,6 @@
           <e p="GPUInstancingTest.cs" t="Include" />
           <e p="Init" t="Include">
             <e p="Init.cs" t="Include" />
-          </e>
-          <e p="MathPlus" t="Include">
-            <e p="ConicSection.cs" t="Include" />
-            <e p="ConicSectionDelegate.cs" t="Include" />
-            <e p="CustomMatrix.cs" t="Include" />
-            <e p="CustomSolver.cs" t="Include" />
-            <e p="MathPlus.cs" t="Include" />
           </e>
           <e p="Quiz" t="Include">
             <e p="AstralBodyDict.cs" t="Include" />
@@ -569,6 +566,13 @@
             <e p="PhysicBase.cs" t="Include" />
           </e>
           <e p="StaticClasses" t="Include">
+            <e p="MathPlus" t="Include">
+              <e p="ConicSection.cs" t="Include" />
+              <e p="ConicSectionDelegate.cs" t="Include" />
+              <e p="CustomMatrix.cs" t="Include" />
+              <e p="CustomSolver.cs" t="Include" />
+              <e p="MathPlus.cs" t="Include" />
+            </e>
             <e p="StringPlus.cs" t="Include" />
           </e>
           <e p="TangentSpaceVisualizer.cs" t="Include" />

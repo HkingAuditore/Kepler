@@ -3,7 +3,7 @@ using GameManagers;
 using SpacePhysic;
 using UnityEngine;
 
-namespace CustomUI
+namespace CustomUI.AstralBodyEditor
 {
     public class StarStyleSettingUI : MonoBehaviour
     {

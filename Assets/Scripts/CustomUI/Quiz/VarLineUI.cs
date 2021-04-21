@@ -1,8 +1,8 @@
 ﻿using System;
 using GameManagers;
-using MathPlus;
 using Quiz;
 using SpacePhysic;
+using StaticClasses.MathPlus;
 using UnityEngine;
 using UnityEngine.UI;
 

@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Text;
 using GameManagers;
-using MathPlus;
 using SpacePhysic;
 using StaticClasses;
+using StaticClasses.MathPlus;
 using UnityEngine;
 
 namespace Quiz

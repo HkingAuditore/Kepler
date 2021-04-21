@@ -2,7 +2,7 @@
 using System.Linq;
 using UnityEngine;
 
-namespace CustomUI
+namespace CustomUI.Tutorial
 {
     public class TutorialManagerUI : MonoBehaviour
     {

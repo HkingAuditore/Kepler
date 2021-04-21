@@ -1,11 +1,11 @@
 ﻿using System;
 using GameManagers;
-using MathPlus;
 using SpacePhysic;
+using StaticClasses.MathPlus;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace CustomUI
+namespace CustomUI.AstralBodyEditor
 {
     public class OrbitPanelUI : MonoBehaviour
     {

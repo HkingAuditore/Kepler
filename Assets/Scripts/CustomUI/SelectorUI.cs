@@ -1,5 +1,6 @@
 ﻿using CustomCamera;
 using CustomPostProcessing;
+using CustomUI.AstralBodyEditor;
 using GameManagers;
 using SpacePhysic;
 using UnityEngine;

@@ -1,9 +1,9 @@
-﻿using MathPlus;
-using SpacePhysic;
+﻿using SpacePhysic;
+using StaticClasses.MathPlus;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace CustomUI
+namespace CustomUI.AstralBodyEditor
 {
     public class OrbitGraphUI : MonoBehaviour
     {

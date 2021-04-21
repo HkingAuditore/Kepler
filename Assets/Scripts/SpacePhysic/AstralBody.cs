@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using GameManagers;
-using MathPlus;
+using StaticClasses.MathPlus;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Serialization;

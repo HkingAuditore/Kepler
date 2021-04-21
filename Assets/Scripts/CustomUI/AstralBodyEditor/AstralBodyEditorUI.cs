@@ -6,7 +6,7 @@ using SpacePhysic;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace CustomUI
+namespace CustomUI.AstralBodyEditor
 {
     public class AstralBodyEditorUI : MonoBehaviour
     {

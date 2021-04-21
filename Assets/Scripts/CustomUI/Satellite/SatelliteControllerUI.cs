@@ -3,7 +3,7 @@ using SpacePhysic;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace CustomUI
+namespace CustomUI.Satellite
 {
     public class SatelliteControllerUI : MonoBehaviour
     {

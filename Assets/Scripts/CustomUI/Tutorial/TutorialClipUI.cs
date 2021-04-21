@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-namespace CustomUI
+namespace CustomUI.Tutorial
 {
     public class TutorialClipUI : MonoBehaviour
     {

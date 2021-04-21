@@ -5,6 +5,7 @@ using CustomCamera;
 using Quiz;
 using Satellite;
 using SpacePhysic;
+using StaticClasses.MathPlus;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -134,7 +135,7 @@ namespace GameManagers
         /// <param name="realMass">参照质量</param>
         public void CalculateMassScales(double realMass)
         {
-            var e = MathPlus.MathPlus.GetExponent(realMass);
+            var e = MathPlus.GetExponent(realMass);
             // Debug.Log("e:"                    + e);
             var offset = Mathf.Clamp(e, 2, 3) - e;
 

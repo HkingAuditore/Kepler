@@ -4,7 +4,7 @@ using TTS;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace CustomUI
+namespace CustomUI.Tutorial
 {
     [Serializable]
     public class TutorialUI : MonoBehaviour
