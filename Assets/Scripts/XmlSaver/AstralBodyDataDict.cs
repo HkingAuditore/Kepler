@@ -7,7 +7,7 @@ namespace XmlSaver
     {
         
     }
-    public class AstralBodyDict<T> : IAstralBodyDictale where T : AstralBody
+    public class AstralBodyDataDict<T> : IAstralBodyDictale where T : AstralBody
     {
         /// <summary>
         ///     位置坐标
@@ -69,12 +69,12 @@ namespace XmlSaver
         /// </summary>
         public bool isCore;
 
-        public AstralBodyDict()
+        public AstralBodyDataDict()
         {
             
         }
         
-        public AstralBodyDict(Transform transform, T astralBody, bool isCore)
+        public AstralBodyDataDict(Transform transform, T astralBody, bool isCore)
         {
             position      = transform.position;
             mass          = astralBody.Mass;

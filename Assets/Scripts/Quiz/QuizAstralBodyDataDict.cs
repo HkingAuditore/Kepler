@@ -1,11 +1,12 @@
 ﻿using System.Collections.Generic;
 using SpacePhysic;
 using UnityEngine;
+using XmlSaver;
 
 namespace Quiz
 {
     [SerializeField]
-    public class QuizAstralBodyDict : XmlSaver.AstralBodyDict<QuizAstralBody>
+    public class QuizAstralBodyDataDict : XmlSaver.AstralBodyDataDict<QuizAstralBody>
     {
 
         /// <summary>
@@ -62,7 +63,7 @@ namespace Quiz
         public bool isTarget;
 
 
-        public QuizAstralBodyDict(Transform transform, QuizAstralBody astralBody, bool isTarget, bool isCore) : base(transform,astralBody,isCore)
+        public QuizAstralBodyDataDict(Transform transform, QuizAstralBody astralBody, bool isTarget, bool isCore) : base(transform,astralBody,isCore)
         {
 
             isMassPublic            = false;
@@ -80,17 +81,43 @@ namespace Quiz
             this.isTarget = isTarget;
         }
 
-        public QuizAstralBodyDict()
+        public QuizAstralBodyDataDict(AstralBodyDataDict<QuizAstralBody> quizAstralBodyDict)
+        {
+            position      = quizAstralBodyDict.position;
+            mass          = quizAstralBodyDict.mass;
+            density       = quizAstralBodyDict.density;
+            originalSize  = quizAstralBodyDict.originalSize;
+            affectRadius  = quizAstralBodyDict.affectRadius;
+            oriVelocity   = quizAstralBodyDict.oriVelocity;
+            enableAffect  = quizAstralBodyDict.enableAffect;
+            enableTracing = quizAstralBodyDict.enableTracing;
+            meshNum       = quizAstralBodyDict.meshNum;
+            this.isCore   = isCore;
+            
+            period                  = 0;
+            radius                  = 0;
+            isMassPublic            = false;
+            isAngularVelocityPublic = false;
+            period                  = 0;
+            isPeriodPublic          = false;
+            radius                  = 0;
+            isRadiusPublic          = false;
+            t                       = 0;
+            isTPublic               = false;
+            isVelocityPublic        = false;
+            isGravityPublic         = false;
+            isSizePublic            = false;
+        }
+
+        public QuizAstralBodyDataDict()
         {
             
         }
 
-        public static explicit operator QuizAstralBodyDict (XmlSaver.AstralBodyDict<QuizAstralBody> dict)
+        public static QuizAstralBodyDataDict FromAstralBodyDict(XmlSaver.AstralBodyDataDict<Quiz.QuizAstralBody> dataDict)
         {
-            xx类 x = new xx类();
-            y.porp = x.porp;
-            return x;
+            QuizAstralBodyDataDict quizAstralBodyDataDict = new QuizAstralBodyDataDict(dataDict);
+            return quizAstralBodyDataDict;
         }
-        
     }
 }

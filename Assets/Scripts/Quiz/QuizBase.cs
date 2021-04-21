@@ -47,7 +47,7 @@ namespace Quiz
         /// </summary>
         public QuizType quizType;
 
-        private List<QuizAstralBodyDict> _astralBodyStructDictList;
+        private List<QuizAstralBodyDataDict> _astralBodyStructDictList;
         private bool                       _isLoadDone;
 
         /// <summary>
@@ -220,7 +220,7 @@ namespace Quiz
         private void LoadQuiz(string fileName)
         {
             var result = QuizSaver.ConvertXml2SceneBase(QuizSaver.LoadXml(fileName), fileName);
-            _astralBodyStructDictList =result.astralBodyStructList.ConvertAll(q => (QuizAstralBodyDict)q);
+            _astralBodyStructDictList =result.astralBodyStructList.ConvertAll(q => (QuizAstralBodyDataDict)q);
             quizType                  = result.quizType;
         }
     }

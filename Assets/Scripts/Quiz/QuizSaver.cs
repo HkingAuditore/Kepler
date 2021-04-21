@@ -132,8 +132,8 @@ namespace Quiz
         {
             return (QuizBaseStruct)ConvertXml2SceneBase(xmlDoc, fileName, (astralBodyStruct, astralBodyElement) =>
                                                           {
-                                                              QuizAstralBodyDict astStruct =
-                                                                  (QuizAstralBodyDict) astralBodyStruct;
+                                                              QuizAstralBodyDataDict astStruct =
+                                                                  QuizAstralBodyDataDict.FromAstralBodyDict(astralBodyStruct);
                                                               var astralBodyXmlNode =
                                                                   astralBodyElement
                                                                      .GetElementsByTagName("AstralBody")

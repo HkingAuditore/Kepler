@@ -6,7 +6,7 @@ namespace XmlSaver
 {
     public class SceneBaseStruct<T> where T : AstralBody
     {
-        public List<AstralBodyDict<T>> astralBodyStructList;
+        public List<AstralBodyDataDict<T>> astralBodyStructList;
 
     }
 }

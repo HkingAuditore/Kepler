@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace XmlSaver
 {
-    public delegate void ConvertAstralBodyDictHandler<T>(AstralBodyDict<T> astralBodyDict, XmlElement xmlElement)
+    public delegate void ConvertAstralBodyDictHandler<T>(AstralBodyDataDict<T> astralBodyDataDict, XmlElement xmlElement)
         where T : AstralBody;
 
     public class XmlSaver<T> : MonoBehaviour where T : AstralBody
@@ -110,7 +110,7 @@ namespace XmlSaver
                                                               ConvertAstralBodyDictHandler<T> convertDelegate = null)
         {
             var sceneBaseStruct = new SceneBaseStruct<T>();
-            var list            = new List<AstralBodyDict<T>>();
+            var list            = new List<AstralBodyDataDict<T>>();
             var astralBodyList  = xmlDoc.SelectSingleNode("AstralBodyList").ChildNodes;
 
             ConvertAstralBodyDictHandler<T> convertHandler;
@@ -148,7 +148,7 @@ namespace XmlSaver
                 convertHandler += convertDelegate;
             foreach (XmlElement astralBodyElement in astralBodyList)
             {
-                var astStruct = new AstralBodyDict<T>();
+                var astStruct = new AstralBodyDataDict<T>();
 
                 convertHandler(astStruct, astralBodyElement);
 
