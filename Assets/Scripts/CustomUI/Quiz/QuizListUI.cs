@@ -24,9 +24,9 @@ namespace CustomUI.Quiz
                                      content.position.z);
             Debug.Log(oriPos);
             var fileNames = new List<string>();
-            var xmlList   = QuizSaver.GetQuizFiles(ref fileNames);
+            var xmlList   = QuizSaver.GetFiles(ref fileNames);
             var quizBaseStructs = (from xmlDocument in xmlList
-                                   select QuizSaver.ConvertXml2QuizBase(xmlDocument,
+                                   select QuizSaver.ConvertXml2SceneBase(xmlDocument,
                                                                         fileNames[xmlList.IndexOf(xmlDocument)]))
                .ToList();
             content.sizeDelta = new Vector2(content.sizeDelta.x, quizBaseStructs.Count * offset * 0.5f);

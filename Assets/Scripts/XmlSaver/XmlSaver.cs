@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System.Collections.Generic;
+using System.IO;
 using System.Xml;
 using SpacePhysic;
 using UnityEditor;
@@ -6,11 +7,14 @@ using UnityEngine;
 
 namespace XmlSaver
 {
+    public delegate void ConvertAstralBodyDictHandler<T>(AstralBodyDict<T> astralBodyDict, XmlElement xmlElement)
+        where T : AstralBody;
+
     public class XmlSaver<T> : MonoBehaviour where T : AstralBody
     {
-        protected  XmlDocument _xmlDoc = new XmlDocument();
+        protected XmlDocument _xmlDoc = new XmlDocument();
 
-        private static string xmlPath      => Application.dataPath + "/ScenesData/";
+        private static string xmlPath => Application.dataPath + "/ScenesData/";
 
         /// <summary>
         ///     保存XML
@@ -42,7 +46,7 @@ namespace XmlSaver
         /// <param name="pathDirectory">存储文件夹</param>
         /// <returns></returns>
         /// <exception cref="SaverException"></exception>
-        public static XmlDocument LoadXml(string fileName,string pathDirectory = null)
+        public static XmlDocument LoadXml(string fileName, string pathDirectory = null)
         {
             pathDirectory = pathDirectory ?? xmlPath;
             var path = pathDirectory + fileName + ".xml";
@@ -65,14 +69,95 @@ namespace XmlSaver
         }
 
         /// <summary>
-        ///     删除问题存档
+        ///     获取存档问题集合
         /// </summary>
-        /// <param name="quizName"></param>
+        /// <param name="fileNames"></param>
+        /// <returns></returns>
+        public static List<XmlDocument> GetFiles(ref List<string> fileNames, string pathDirectory = null)
+        {
+            pathDirectory = pathDirectory ?? xmlPath;
+            var dir          = new DirectoryInfo(pathDirectory);
+            var xmlDocuments = new List<XmlDocument>();
+            fileNames = new List<string>();
+            var files = dir.GetFiles();
+            foreach (var f in files)
+            {
+                var filename = f.Name;
+                if (filename.EndsWith(".xml") && filename != ".xml")
+                {
+                    var trueName = filename.Split('.')[0];
+                    xmlDocuments.Add(LoadXml(trueName, pathDirectory));
+                    fileNames.Add(trueName);
+                }
+            }
+
+            return xmlDocuments;
+        }
+
+        /// <summary>
+        ///     删除存档
+        /// </summary>
+        /// <param name="sceneName">存档名</param>
+        /// <param name="pathDirectory">存档路径</param>
         public static void DeleteFiles(string sceneName, string pathDirectory = null)
         {
             pathDirectory = pathDirectory ?? xmlPath;
             if (File.Exists(xmlPath + sceneName + ".xml")) File.Delete(xmlPath + sceneName + ".xml");
         }
 
+        
+        public static SceneBaseStruct<T> ConvertXml2SceneBase(XmlDocument                       xmlDoc, string fileName,
+                                                              ConvertAstralBodyDictHandler<T> convertDelegate = null)
+        {
+            var sceneBaseStruct = new SceneBaseStruct<T>();
+            var list            = new List<AstralBodyDict<T>>();
+            var astralBodyList  = xmlDoc.SelectSingleNode("AstralBodyList").ChildNodes;
+
+            ConvertAstralBodyDictHandler<T> convertHandler;
+            convertHandler = (astralBodyDict, xmlElement) =>
+                             {
+                                 //Position
+                                 astralBodyDict.position =
+                                     ConvertString2Vector3(xmlElement.GetElementsByTagName("Transform")[0].InnerText);
+
+                                 //AstralBody
+                                 var astralBodyXmlNode = xmlElement.GetElementsByTagName("AstralBody")[0];
+                                 astralBodyDict.mass =
+                                     double.Parse(astralBodyXmlNode.SelectSingleNode("Mass").InnerText);
+                                 astralBodyDict.density =
+                                     float.Parse(astralBodyXmlNode.SelectSingleNode("Density").InnerText);
+                                 astralBodyDict.originalSize =
+                                     float.Parse(astralBodyXmlNode.SelectSingleNode("Size").InnerText);
+                                 astralBodyDict.oriVelocity =
+                                     ConvertString2Vector3(astralBodyXmlNode.SelectSingleNode("Velocity").InnerText);
+                                 astralBodyDict.enableAffect =
+                                     bool.Parse(astralBodyXmlNode.SelectSingleNode("EnableAffect").InnerText);
+                                 astralBodyDict.enableTracing =
+                                     bool.Parse(astralBodyXmlNode.SelectSingleNode("EnableTracing").InnerText);
+                                 astralBodyDict.affectRadius =
+                                     float.Parse(astralBodyXmlNode.SelectSingleNode("AffectRadius").InnerText);
+                                 astralBodyDict.period =
+                                     float.Parse(astralBodyXmlNode.SelectSingleNode("Period").InnerText);
+                                 astralBodyDict.radius =
+                                     float.Parse(astralBodyXmlNode.SelectSingleNode("Radius").InnerText);
+                                 astralBodyDict.isCore  = bool.Parse(astralBodyXmlNode.Attributes["IsCore"].Value);
+                                 astralBodyDict.meshNum = int.Parse(astralBodyXmlNode.Attributes["Style"].Value);
+
+                             };
+            if(convertDelegate!=null)
+                convertHandler += convertDelegate;
+            foreach (XmlElement astralBodyElement in astralBodyList)
+            {
+                var astStruct = new AstralBodyDict<T>();
+
+                convertHandler(astStruct, astralBodyElement);
+
+                list.Add(astStruct);
+            }
+
+            sceneBaseStruct.astralBodyStructList = list;
+
+            return sceneBaseStruct;
+        }
     }
 }

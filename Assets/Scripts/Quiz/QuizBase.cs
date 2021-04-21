@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using GameManagers;
 using SpacePhysic;
 using UnityEngine;
@@ -218,8 +219,8 @@ namespace Quiz
 
         private void LoadQuiz(string fileName)
         {
-            var result = QuizSaver.ConvertXml2QuizBase(QuizSaver.LoadXml(fileName), fileName);
-            _astralBodyStructDictList = result.astralBodyStructList;
+            var result = QuizSaver.ConvertXml2SceneBase(QuizSaver.LoadXml(fileName), fileName);
+            _astralBodyStructDictList =result.astralBodyStructList.ConvertAll(q => (QuizAstralBodyDict)q);
             quizType                  = result.quizType;
         }
     }

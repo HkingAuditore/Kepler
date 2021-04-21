@@ -1,4 +1,5 @@
-﻿using SpacePhysic;
+﻿using System.Collections.Generic;
+using SpacePhysic;
 using UnityEngine;
 
 namespace Quiz
@@ -82,6 +83,13 @@ namespace Quiz
         public QuizAstralBodyDict()
         {
             
+        }
+
+        public static explicit operator QuizAstralBodyDict (XmlSaver.AstralBodyDict<QuizAstralBody> dict)
+        {
+            xx类 x = new xx类();
+            y.porp = x.porp;
+            return x;
         }
         
     }

@@ -4,9 +4,9 @@ using SpacePhysic;
 
 namespace XmlSaver
 {
-    public class SceneBaseStruct<T> where T : IAstralBodyDictale
+    public class SceneBaseStruct<T> where T : AstralBody
     {
-        public List<T>  astralBodyStructList;
+        public List<AstralBodyDict<T>> astralBodyStructList;
 
     }
 }
