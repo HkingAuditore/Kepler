@@ -5,10 +5,11 @@ using GameManagers;
 using SpacePhysic;
 using UnityEngine;
 using UnityEngine.Events;
+using XmlSaver;
 
 namespace Quiz
 {
-    public class QuizBase : MonoBehaviour
+    public class QuizBase : SceneLoadBase<QuizAstralBody>
     {
         [SerializeField] private QuizAstralBody _target;
 
@@ -17,38 +18,13 @@ namespace Quiz
         /// </summary>
         public float answer;
 
-        [SerializeField] protected List<AstralBodyDict<QuizAstralBody>> astralBodiesDict;
-
-        /// <summary>
-        ///     生成用实体
-        /// </summary>
-        public QuizAstralBody astralBodyPrefab;
-
-        /// <summary>
-        ///     是否由Prefab载入
-        /// </summary>
-        public bool isLoadByPrefab;
-
-        /// <summary>
-        ///     加载完成事件
-        /// </summary>
-        public UnityEvent loadDoneEvent = new UnityEvent();
-
-        /// <summary>
-        ///     加载文件名
-        /// </summary>
-        public string loadTarget;
-
-        public GravityTracing orbitBase;
-        public Transform      quizRoot;
-
         /// <summary>
         ///     问题类型
         /// </summary>
         public QuizType quizType;
 
-        private List<QuizAstralBodyDataDict> _astralBodyStructDictList;
-        private bool                       _isLoadDone;
+
+
 
         /// <summary>
         ///     问题目标
@@ -62,15 +38,6 @@ namespace Quiz
         /// <summary>
         ///     是否加载完成
         /// </summary>
-        public bool isLoadDone
-        {
-            private set
-            {
-                _isLoadDone = value;
-                if (isLoadDone) loadDoneEvent.Invoke();
-            }
-            get => _isLoadDone;
-        }
 
 
         protected virtual void Start()
@@ -121,13 +88,13 @@ namespace Quiz
         }
 
 
-        private void GenerateAstralBodiesWithPrefab()
+        protected override void GenerateAstralBodiesWithPrefab()
         {
-            var astralBodyDicts = new List<AstralBodyDict<QuizAstralBody>>();
+            var        astralBodyDicts = new List<AstralBodyDict<QuizAstralBody>>();
             foreach (var pair in astralBodiesDict)
             {
                 var target =
-                    Instantiate(pair.astralBody, pair.transform.position, pair.transform.rotation, quizRoot);
+                    Instantiate(pair.astralBody, pair.transform.position, pair.transform.rotation, sceneRoot);
                 orbitBase.AddTracingTarget(target);
                 try
                 {
@@ -147,54 +114,25 @@ namespace Quiz
             astralBodiesDict = astralBodyDicts;
         }
 
-        private void GenerateAstralBodiesWithoutPrefab()
+        protected override void GenerateAstralBodiesWithoutPrefab()
         {
-            var astralBodyDicts = new List<AstralBodyDict<QuizAstralBody>>();
+            base.GenerateAstralBodiesWithoutPrefab(((prefab, pair) =>
+                                                    {
+                                                        prefab.isMassPublic            = pair.isMassPublic;
+                                                        prefab.isVelocityPublic        = pair.isVelocityPublic;
+                                                        prefab.isAngularVelocityPublic = pair.isAngularVelocityPublic;
+                                                        prefab.isRadiusPublic          = pair.isRadiusPublic;
+                                                        prefab.isPeriodPublic          = pair.isPeriodPublic;
+                                                        prefab.isTPublic               = pair.isTPublic;
+                                                        prefab.t                       = pair.t;
+                                                        prefab.isGravityPublic         = pair.isGravityPublic;
+                                                        prefab.isSizePublic            = pair.isSizePublic;
+
+                                                    }));
             foreach (QuizAstralBodyDataDict pair in _astralBodyStructDictList)
             {
-                astralBodyPrefab.realMass     = pair.mass;
-                // Debug.Log("pair mass:" + pair.mass);
-                // Debug.Log("prefab mass:" +  astralBodyPrefab.realMass);
-                astralBodyPrefab.isMassPublic = pair.isMassPublic;
-
-                // astralBodyPrefab.density      = pair.density;
-                astralBodyPrefab.size = pair.originalSize;
-
-                astralBodyPrefab.oriVelocity      = pair.oriVelocity;
-                astralBodyPrefab.isVelocityPublic = pair.isVelocityPublic;
-
-                astralBodyPrefab.affectRadius  = pair.affectRadius;
-                astralBodyPrefab.enableAffect  = pair.enableAffect;
-                astralBodyPrefab.enableTracing = pair.enableTracing;
-
-
-                //  astralBodyPrefab.globalAngularVelocity = pair.angularVelocity;
-                astralBodyPrefab.isAngularVelocityPublic = pair.isAngularVelocityPublic;
-                //
-                //
-                astralBodyPrefab.radius         = pair.radius;
-
-                astralBodyPrefab.isRadiusPublic = pair.isRadiusPublic;
-
-                astralBodyPrefab.period         = pair.period;
-                astralBodyPrefab.isPeriodPublic = pair.isPeriodPublic;
-
-
-                astralBodyPrefab.isTPublic       = pair.isTPublic;
-                astralBodyPrefab.t               = pair.t;
-                astralBodyPrefab.isGravityPublic = pair.isGravityPublic;
-                astralBodyPrefab.isSizePublic    = pair.isSizePublic;
-
-                // astralBodyPrefab.anglePerT             = pair.AnglePerT;
-                // astralBodyPrefab.isAnglePerTPublic     = pair.isAnglePerTPublic;
-
-
-                // astralBodyPrefab.distancePerT     = pair.distancePerT;
-                // astralBodyPrefab.isDistancePerTPublic = pair.isDistancePerTPublic;
-
-
                 var target =
-                    Instantiate(astralBodyPrefab, pair.position, Quaternion.Euler(0, 0, 0), quizRoot);
+                    Instantiate(astralBodyPrefab, pair.position, Quaternion.Euler(0, 0, 0), sceneRoot);
                 target.meshNum = pair.meshNum;
                 orbitBase.AddTracingTarget(target);
                 try
@@ -223,8 +161,8 @@ namespace Quiz
 
         private void LoadQuiz(string fileName)
         {
-            var result = QuizSaver.ConvertXml2SceneBase(QuizSaver.LoadXml(fileName), fileName);
-            _astralBodyStructDictList =result.astralBodyStructList.ConvertAll(q => (QuizAstralBodyDataDict)q);
+            var result  = QuizSaver.ConvertXml2SceneBase(QuizSaver.LoadXml(fileName), fileName);
+            _astralBodyStructDictList =result.astralBodyStructList;
             quizType                  = result.quizType;
         }
     }

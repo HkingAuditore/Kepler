@@ -24,55 +24,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1afa9dc1-adab-467c-afda-52b72c3d10f3" name="默认的" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/AstralBodyEditor.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/Tutorial.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizAstralBodyDict.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizAstralBodyDict.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/XmlSaver/SceneLoadBase.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/XmlSaver/SceneLoadBase.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Kepler/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Kepler/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/AstralBodyAddUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/AstralBodyEditor/AstralBodyAddUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/AstralBodyAddUI.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/AstralBodyEditor/AstralBodyAddUI.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/AstralBodyEditorUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/AstralBodyEditor/AstralBodyEditorUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/AstralBodyEditorUI.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/AstralBodyEditor/AstralBodyEditorUI.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/AstralBodyPlacementUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/AstralBodyEditor/AstralBodyPlacementUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/AstralBodyPlacementUI.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/AstralBodyEditor/AstralBodyPlacementUI.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/MeshEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/AstralBodyEditor/MeshEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/MeshEditor.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/AstralBodyEditor/MeshEditor.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/MultiTutorialManagerUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/Tutorial/MultiTutorialManagerUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/MultiTutorialManagerUI.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/Tutorial/MultiTutorialManagerUI.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/OrbitGraphUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/AstralBodyEditor/OrbitGraphUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/OrbitGraphUI.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/AstralBodyEditor/OrbitGraphUI.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/OrbitPanelUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/AstralBodyEditor/OrbitPanelUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/OrbitPanelUI.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/AstralBodyEditor/OrbitPanelUI.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/PositionEditorUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/AstralBodyEditor/PositionEditorUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/PositionEditorUI.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/AstralBodyEditor/PositionEditorUI.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/Quiz/QuizUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/Quiz/QuizUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/Quiz/VarLineUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/Quiz/VarLineUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/SatelliteControllerUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/Satellite/SatelliteControllerUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/SatelliteControllerUI.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/Satellite/SatelliteControllerUI.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/StarStyleSettingUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/AstralBodyEditor/StarStyleSettingUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/StarStyleSettingUI.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/AstralBodyEditor/StarStyleSettingUI.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/TutorialClipUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/Tutorial/TutorialClipUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/TutorialClipUI.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/Tutorial/TutorialClipUI.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/TutorialManagerUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/Tutorial/TutorialManagerUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/TutorialManagerUI.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/Tutorial/TutorialManagerUI.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/TutorialUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/Tutorial/TutorialUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/TutorialUI.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/Tutorial/TutorialUI.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/VelocityEditorUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/AstralBodyEditor/VelocityEditorUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/VelocityEditorUI.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/AstralBodyEditor/VelocityEditorUI.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManagers/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManagers/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MathPlus.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StaticClasses/MathPlus.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MathPlus/ConicSection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StaticClasses/MathPlus/ConicSection.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MathPlus/ConicSection.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StaticClasses/MathPlus/ConicSection.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MathPlus/ConicSectionDelegate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StaticClasses/MathPlus/ConicSectionDelegate.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MathPlus/ConicSectionDelegate.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StaticClasses/MathPlus/ConicSectionDelegate.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MathPlus/CustomMatrix.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StaticClasses/MathPlus/CustomMatrix.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MathPlus/CustomMatrix.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StaticClasses/MathPlus/CustomMatrix.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MathPlus/CustomSolver.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StaticClasses/MathPlus/CustomSolver.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MathPlus/CustomSolver.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StaticClasses/MathPlus/CustomSolver.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MathPlus/MathPlus.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StaticClasses/MathPlus/MathPlus.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MathPlus/MathPlus.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StaticClasses/MathPlus/MathPlus.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizAstralBody.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizAstralBody.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SpacePhysic/AstralBody.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SpacePhysic/AstralBody.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SpacePhysic/GravityTracing.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SpacePhysic/GravityTracing.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StaticClasses/StringPlus.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StaticClasses/StringPlus.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Kepler/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Kepler/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Quiz/AstralBodyDict.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Quiz/AstralBodyDict.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizAstralBodyDataDict.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizAstralBodyDataDict.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizBase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/XmlSaver/XmlSaver.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/XmlSaver/XmlSaver.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,9 +76,7 @@
       <list>
         <option value="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizBaseStruct.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizSaver.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/XmlSaver/XmlSaver.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MathPlus/MathPlus.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizBase.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameManagers/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SpacePhysic/GravityTracing.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizAstralBody.cs" />
@@ -128,6 +87,26 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/StaticClasses/MathPlus/CustomMatrix.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/StaticClasses/MathPlus/CustomSolver.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/StaticClasses/MathPlus/MathPlus.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/CustomUI/AstralBodyEditor/AstralBodyAddUI.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/CustomUI/AstralBodyEditor/AstralBodyEditorUI.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/CustomUI/AstralBodyEditor/AstralBodyPlacementUI.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/CustomUI/AstralBodyEditor/MeshEditor.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/CustomUI/AstralBodyEditor/OrbitGraphUI.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/CustomUI/AstralBodyEditor/OrbitPanelUI.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/CustomUI/AstralBodyEditor/PositionEditorUI.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/CustomUI/AstralBodyEditor/StarStyleSettingUI.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/CustomUI/AstralBodyEditor/VelocityEditorUI.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/CustomUI/Satellite/SatelliteControllerUI.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/CustomUI/Tutorial/MultiTutorialManagerUI.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/CustomUI/Tutorial/TutorialClipUI.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/CustomUI/Tutorial/TutorialManagerUI.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/CustomUI/Tutorial/TutorialUI.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizAstralBodyDataDict.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Quiz/AstralBodyDict.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizAstralBodyDict.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/XmlSaver/XmlSaver.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizBase.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/XmlSaver/SceneLoadBase.cs" />
       </list>
     </option>
   </component>
@@ -292,7 +271,7 @@
       <workItem from="1618971007966" duration="4650000" />
       <workItem from="1618981538576" duration="1211000" />
       <workItem from="1618984602656" duration="5529000" />
-      <workItem from="1618991363427" duration="2474000" />
+      <workItem from="1618991363427" duration="6048000" />
     </task>
     <servers />
   </component>

@@ -160,6 +160,7 @@ namespace XmlSaver
                              };
             if(convertDelegate!=null)
                 convertHandler += convertDelegate;
+            
             foreach (XmlElement astralBodyElement in astralBodyList)
             {
                 AstralBodyDataDict<T> astStruct = new AstralBodyDataDict<T>();

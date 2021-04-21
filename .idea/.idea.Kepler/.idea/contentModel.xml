@@ -536,6 +536,7 @@
             <e p="AstralBodyDict.cs" t="Include" />
             <e p="QuizAstralBody.cs" t="Include" />
             <e p="QuizAstralBodyDataDict.cs" t="Include" />
+            <e p="QuizAstralBodyDict.cs" t="Include" />
             <e p="QuizBase.cs" t="Include" />
             <e p="QuizBaseStruct.cs" t="Include" />
             <e p="QuizData.cs" t="Include" />
@@ -593,6 +594,7 @@
             <e p="AstralBodyDataDict.cs" t="Include" />
             <e p="SaverException.cs" t="Include" />
             <e p="SceneBaseStruct.cs" t="Include" />
+            <e p="SceneLoadBase.cs" t="Include" />
             <e p="XmlSaver.cs" t="Include" />
           </e>
         </e>
