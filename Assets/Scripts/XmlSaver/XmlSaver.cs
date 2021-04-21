@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Xml;
 using Quiz;
@@ -9,12 +10,15 @@ using UnityEngine;
 
 namespace XmlSaver
 {
-    public delegate void ConvertAstralBodyDictHandler<T>(AstralBodyDataDict<T> astralBodyDataDict, XmlElement xmlElement)
-        where T : AstralBody;
+
 
     public class XmlSaver<T> : MonoBehaviour where T : AstralBody
     {
-        protected XmlDocument _xmlDoc = new XmlDocument();
+        public delegate void ConvertAstralBodyDictHandler(AstralBodyDataDict<T> astralBodyDataDict,
+                                                             XmlElement            xmlElement);
+        public delegate XmlElement  ConvertAstralBodyPropertyToXmlHandler(AstralBodyDict<T> astralBodyDict,
+                                                                          XmlDocument xmlDoc);
+        protected       XmlDocument _xmlDoc = new XmlDocument();
 
         private static string xmlPath => Application.dataPath + "/ScenesData/";
 
@@ -108,26 +112,23 @@ namespace XmlSaver
         }
 
         /// <summary>
-        /// 
         /// </summary>
         /// <param name="xmlDoc"></param>
         /// <param name="fileName"></param>
         /// <param name="convertDelegate">对astralBodyStructList中元素处理的委托</param>
         /// <typeparam name="U">astralBodyStructList的类型</typeparam>
         /// <returns></returns>
-        public static SceneBaseStruct<T> ConvertXml2SceneBase(XmlDocument                   xmlDoc, string fileName,
-                                                              ConvertAstralBodyDictHandler<T> convertDelegate = null) 
+        public static SceneBaseStruct<T> ConvertXml2SceneBase(XmlDocument                     xmlDoc, string fileName,
+                                                              ConvertAstralBodyDictHandler convertDelegate = null)
         {
-            SceneBaseStruct<T> sceneBaseStruct = new SceneBaseStruct<T>();
+            var sceneBaseStruct = new SceneBaseStruct<T>();
             if (typeof(T) == typeof(QuizAstralBody))
-            {
-                sceneBaseStruct = (SceneBaseStruct<T>)Activator.CreateInstance(typeof(QuizBaseStruct));
-            }
-   
-            var list            = new List<AstralBodyDataDict<T>>();
-            var astralBodyList  = xmlDoc.SelectSingleNode("AstralBodyList").ChildNodes;
+                sceneBaseStruct = (SceneBaseStruct<T>) Activator.CreateInstance(typeof(QuizBaseStruct));
 
-            ConvertAstralBodyDictHandler<T> convertHandler;
+            var list           = new List<AstralBodyDataDict<T>>();
+            var astralBodyList = xmlDoc.SelectSingleNode("AstralBodyList").ChildNodes;
+
+            ConvertAstralBodyDictHandler convertHandler;
             convertHandler = (astralBodyDict, xmlElement) =>
                              {
                                  //Position
@@ -156,18 +157,15 @@ namespace XmlSaver
                                      float.Parse(astralBodyXmlNode.SelectSingleNode("Radius").InnerText);
                                  astralBodyDict.isCore  = bool.Parse(astralBodyXmlNode.Attributes["IsCore"].Value);
                                  astralBodyDict.meshNum = int.Parse(astralBodyXmlNode.Attributes["Style"].Value);
-
                              };
-            if(convertDelegate!=null)
+            if (convertDelegate != null)
                 convertHandler += convertDelegate;
-            
+
             foreach (XmlElement astralBodyElement in astralBodyList)
             {
-                AstralBodyDataDict<T> astStruct = new AstralBodyDataDict<T>();
+                var astStruct = new AstralBodyDataDict<T>();
                 if (typeof(T) == typeof(QuizAstralBody))
-                {
-                    astStruct = (AstralBodyDataDict<T>)Activator.CreateInstance(typeof(QuizAstralBodyDataDict));
-                }
+                    astStruct = (AstralBodyDataDict<T>) Activator.CreateInstance(typeof(QuizAstralBodyDataDict));
 
                 convertHandler(astStruct, astralBodyElement);
 
@@ -177,6 +175,91 @@ namespace XmlSaver
             sceneBaseStruct.astralBodyStructList = list;
 
             return sceneBaseStruct;
+        }
+
+        /// <summary>
+        /// 将星体转为XmlElemt
+        /// </summary>
+        /// <param name="astralBodyDict"></param>
+        /// <param name="convertAstralBodyPropertyToXmlHandler">属性处理委托</param>
+        /// <returns></returns>
+        protected virtual XmlElement ConvertAstralBody2XmlElement(AstralBodyDict<T> astralBodyDict,
+                                                                  ConvertAstralBodyPropertyToXmlHandler convertAstralBodyPropertyToXmlHandler = null)
+        {
+            if (convertAstralBodyPropertyToXmlHandler == null)
+            {
+                convertAstralBodyPropertyToXmlHandler = (bodyDict, xmlDoc) =>
+                                                        {
+                                                            XmlElement astAstralBody =
+                                                                xmlDoc.CreateElement("AstralBody");
+                                                            //写入天体属性
+                                                            var mass = xmlDoc.CreateElement("Mass");
+                                                            mass.InnerText =
+                                                                bodyDict.astralBody.realMass
+                                                                        .ToString(CultureInfo.InvariantCulture);
+                                                            astAstralBody.AppendChild(mass);
+                                                            var density = xmlDoc.CreateElement("Density");
+                                                            density.InnerText =
+                                                                bodyDict.astralBody.density
+                                                                        .ToString(CultureInfo.InvariantCulture);
+                                                            astAstralBody.AppendChild(density);
+                                                            var size = xmlDoc.CreateElement("Size");
+
+                                                            size.InnerText =
+                                                                bodyDict.astralBody.size
+                                                                        .ToString(CultureInfo.InvariantCulture);
+                                                            astAstralBody.AppendChild(size);
+
+                                                            var velocity =xmlDoc.CreateElement("Velocity");
+                                                            velocity.InnerText = bodyDict.astralBody.GetVelocity()
+                                                                                         .ToString();
+                                                            astAstralBody.AppendChild(velocity);
+
+                                                            var isAffect = xmlDoc.CreateElement("EnableAffect");
+                                                            isAffect.InnerText = bodyDict.astralBody.enableAffect
+                                                                                         .ToString();
+                                                            astAstralBody.AppendChild(isAffect);
+                                                            var isTracing = xmlDoc.CreateElement("EnableTracing");
+                                                            isTracing.InnerText = bodyDict.astralBody
+                                                                                          .enableTracing
+                                                                                          .ToString();
+                                                            astAstralBody.AppendChild(isTracing);
+                                                            var affectRadius = xmlDoc.CreateElement("AffectRadius");
+                                                            affectRadius.InnerText =
+                                                                bodyDict.astralBody.affectRadius
+                                                                        .ToString(CultureInfo.InvariantCulture);
+                                                            astAstralBody.AppendChild(affectRadius);
+
+
+                                                            var gravity = xmlDoc.CreateElement("Gravity");
+                                                            gravity.InnerText =
+                                                                bodyDict.astralBody.gravity
+                                                                        .ToString(CultureInfo.InvariantCulture);
+                                                            astAstralBody.AppendChild(gravity);
+
+                                                            astAstralBody.SetAttribute("IsCore",
+                                                                                       bodyDict.isCore
+                                                                                               .ToString());
+                                                            astAstralBody.SetAttribute("Style",
+                                                                                       bodyDict.astralBody.meshNum
+                                                                                               .ToString());
+
+                                                            return astAstralBody;
+                                                        };
+            }
+            var dict         = _xmlDoc.CreateElement("AstralBodyDict");
+            var astTransform = _xmlDoc.CreateElement("Transform");
+
+            //写入坐标
+            XmlElement pos = _xmlDoc.CreateElement("Position");
+            pos.InnerText = astralBodyDict.transform.position.ToString();
+            astTransform.AppendChild(pos);
+            
+
+            
+            dict.AppendChild(astTransform);
+            dict.AppendChild(convertAstralBodyPropertyToXmlHandler(astralBodyDict,_xmlDoc));
+            return dict;
         }
     }
 }

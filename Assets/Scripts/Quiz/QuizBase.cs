@@ -1,10 +1,7 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using GameManagers;
-using SpacePhysic;
 using UnityEngine;
-using UnityEngine.Events;
 using XmlSaver;
 
 namespace Quiz
@@ -24,8 +21,6 @@ namespace Quiz
         public QuizType quizType;
 
 
-
-
         /// <summary>
         ///     问题目标
         /// </summary>
@@ -38,9 +33,7 @@ namespace Quiz
         /// <summary>
         ///     是否加载完成
         /// </summary>
-
-
-        protected virtual void Start()
+        protected override void Start()
         {
             loadDoneEvent.AddListener(() => { GameManager.getGameManager.CalculateMassScales(); });
             // List<AstralBody> astralBodies = new List<AstralBody>();
@@ -61,7 +54,7 @@ namespace Quiz
                     // ignored
                 }
 
-                LoadQuiz(loadTarget);
+                LoadScene(loadTarget);
                 GenerateAstralBodiesWithoutPrefab();
             }
 
@@ -81,20 +74,19 @@ namespace Quiz
                     throw new ArgumentOutOfRangeException();
             }
 
-            // orbitBase.DrawOrbits();
             orbitBase.Freeze(true);
-
             isLoadDone = true;
         }
 
 
         protected override void GenerateAstralBodiesWithPrefab()
         {
-            var        astralBodyDicts = new List<AstralBodyDict<QuizAstralBody>>();
-            foreach (var pair in astralBodiesDict)
+            var astralBodyDicts = new List<QuizAstralBodyDict>();
+            foreach (var astralBodyDict in astralBodiesDict)
             {
+                var pair = (QuizAstralBodyDict) astralBodyDict;
                 var target =
-                    Instantiate(pair.astralBody, pair.transform.position, pair.transform.rotation, sceneRoot);
+                    Instantiate(pair.astralBody, pair.transform.position, pair.transform.rotation, OrbitRoot);
                 orbitBase.AddTracingTarget(target);
                 try
                 {
@@ -105,64 +97,88 @@ namespace Quiz
                 {
                 }
 
-                astralBodyDicts.Add(new AstralBodyDict<QuizAstralBody>(target.transform, target, pair.isTarget));
+                astralBodyDicts.Add(new QuizAstralBodyDict(target.transform, target, pair.isCore,pair.isTarget));
                 // Debug.Log("add HashCode:" + target.GetHashCode());
                 target.gameObject.name = target.gameObject.name.Replace("(Clone)", "");
                 if (pair.isTarget) this.target = target;
             }
 
-            astralBodiesDict = astralBodyDicts;
+            astralBodiesDict = astralBodyDicts.ConvertAll(dict => (AstralBodyDict<QuizAstralBody>) dict);
         }
 
-        protected override void GenerateAstralBodiesWithoutPrefab()
+        protected override void GenerateAstralBodiesWithoutPrefab(
+            AstralBodyDataDictProcessHandler dataDictProcessHandler  = null,
+            AstralBodyDataDictProcessHandler afterDictProcessHandler = null)
         {
-            base.GenerateAstralBodiesWithoutPrefab(((prefab, pair) =>
-                                                    {
-                                                        prefab.isMassPublic            = pair.isMassPublic;
-                                                        prefab.isVelocityPublic        = pair.isVelocityPublic;
-                                                        prefab.isAngularVelocityPublic = pair.isAngularVelocityPublic;
-                                                        prefab.isRadiusPublic          = pair.isRadiusPublic;
-                                                        prefab.isPeriodPublic          = pair.isPeriodPublic;
-                                                        prefab.isTPublic               = pair.isTPublic;
-                                                        prefab.t                       = pair.t;
-                                                        prefab.isGravityPublic         = pair.isGravityPublic;
-                                                        prefab.isSizePublic            = pair.isSizePublic;
+            base.GenerateAstralBodiesWithoutPrefab(dataDictProcessHandler ?? ((prefab, pair, dictList) =>
+                                                                              {
+                                                                                  var quizPair = (QuizAstralBodyDataDict) pair;
+                                                                                  prefab.isMassPublic            = quizPair.isMassPublic;
+                                                                                  prefab.isVelocityPublic        = quizPair.isVelocityPublic;
+                                                                                  prefab.isAngularVelocityPublic = quizPair.isAngularVelocityPublic;
+                                                                                  prefab.isRadiusPublic          = quizPair.isRadiusPublic;
+                                                                                  prefab.isPeriodPublic          = quizPair.isPeriodPublic;
+                                                                                  prefab.isTPublic               = quizPair.isTPublic;
+                                                                                  prefab.t                       = quizPair.t;
+                                                                                  prefab.isGravityPublic         = quizPair.isGravityPublic;
+                                                                                  prefab.isSizePublic            = quizPair.isSizePublic;
+                                                                              }), afterDictProcessHandler ??
+                                                                                  ((prefab, pair, dictList) =>
+                                                                                   {
+                                                                                       var quizPair =
+                                                                                           (QuizAstralBodyDataDict)
+                                                                                           pair;
+                                                                                       var target =
+                                                                                           Instantiate(astralBodyPrefab,
+                                                                                                       pair.position,
+                                                                                                       Quaternion
+                                                                                                          .Euler(0, 0,
+                                                                                                                 0),
+                                                                                                       OrbitRoot);
+                                                                                       try
+                                                                                       {
+                                                                                           if (!quizPair.isTarget)
+                                                                                               target.affectedPlanets
+                                                                                                     .Add(this.target);
+                                                                                       }
+                                                                                       catch (Exception e)
+                                                                                       {
+                                                                                           // ignored
+                                                                                       }
 
-                                                    }));
-            foreach (QuizAstralBodyDataDict pair in _astralBodyStructDictList)
-            {
-                var target =
-                    Instantiate(astralBodyPrefab, pair.position, Quaternion.Euler(0, 0, 0), sceneRoot);
-                target.meshNum = pair.meshNum;
-                orbitBase.AddTracingTarget(target);
-                try
-                {
-                    if (!pair.isTarget)
-                        target.affectedPlanets.Add(this.target);
-                }
-                catch (Exception e)
-                {
-                    // ignored
-                }
+                                                                                       target.meshNum = pair.meshNum;
+                                                                                       orbitBase
+                                                                                          .AddTracingTarget(target);
 
-                // Debug.Log("add HashCode:" + target.GetHashCode());
-                astralBodyDicts.Add(new AstralBodyDict<QuizAstralBody>(target.transform, target, pair.isTarget));
 
-                target.gameObject.name = target.gameObject.name.Replace("(Clone)", "");
-                if (pair.isCore) target.gameObject.name = "Core";
-                if (pair.isTarget) this.target          = target;
-                target.UpdateQuizAstralBodyPer();
+                                                                                       // Debug.Log("add HashCode:" + target.GetHashCode());
+                                                                                       dictList
+                                                                                          .Add(new
+                                                                                                   QuizAstralBodyDict(target.transform,
+                                                                                                                      target,
+                                                                                                                      quizPair
+                                                                                                                         .isCore,
+                                                                                                                      quizPair
+                                                                                                                         .isTarget));
 
-            }
-
-            astralBodiesDict = astralBodyDicts;
+                                                                                       target.gameObject.name =
+                                                                                           target.gameObject.name
+                                                                                                 .Replace("(Clone)",
+                                                                                                          "");
+                                                                                       if (quizPair.isCore)
+                                                                                           target.gameObject.name =
+                                                                                               "Core";
+                                                                                       if (quizPair.isTarget)
+                                                                                           this.target = target;
+                                                                                       target.UpdateQuizAstralBodyPer();
+                                                                                   }));
         }
 
 
-        private void LoadQuiz(string fileName)
+        protected override void LoadScene(string fileName)
         {
-            var result  = QuizSaver.ConvertXml2SceneBase(QuizSaver.LoadXml(fileName), fileName);
-            _astralBodyStructDictList =result.astralBodyStructList;
+            var result = QuizSaver.ConvertXml2SceneBase(QuizSaver.LoadXml(fileName), fileName);
+            _astralBodyStructDictList = result.astralBodyStructList;
             quizType                  = result.quizType;
         }
     }

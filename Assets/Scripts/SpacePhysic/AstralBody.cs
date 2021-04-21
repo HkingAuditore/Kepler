@@ -200,7 +200,7 @@ namespace SpacePhysic
             set
             {
                 _lastVelocity = value;
-                Debug.Log(this.name + " Set velocity:" + value);
+                // Debug.Log(this.name + " Set velocity:" + value);
             }
         }
         

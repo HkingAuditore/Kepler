@@ -1,0 +1,40 @@
+<AstralBodyList QuizType="Mass">
+  <AstralBodyDict IsTarget="True">
+    <Transform>
+      <Position>(0.0, 0.0, 0.0)</Position>
+    </Transform>
+    <AstralBody IsCore="True" Style="0">
+      <Mass IsPublic="False">1.98000002979398E+30</Mass>
+      <Density>1402.00268554688</Density>
+      <Size IsPublic="True">6.96</Size>
+      <Velocity IsPublic="False">(0.0, 0.0, 0.0)</Velocity>
+      <EnableAffect>True</EnableAffect>
+      <EnableTracing>True</EnableTracing>
+      <AffectRadius>8</AffectRadius>
+      <Period IsPublic="False">0</Period>
+      <AngularVelocity IsPublic="False">0</AngularVelocity>
+      <Radius IsPublic="False">0</Radius>
+      <T IsPublic="False">0</T>
+      <Gravity IsPublic="True">272.6293</Gravity>
+    </AstralBody>
+  </AstralBodyDict>
+  <AstralBodyDict IsTarget="False">
+    <Transform>
+      <Position>(-66.9, 0.0, -134.2)</Position>
+    </Transform>
+    <AstralBody IsCore="False" Style="1">
+      <Mass IsPublic="False">1.54999993211365E+25</Mass>
+      <Density>14316.1025390625</Density>
+      <Size IsPublic="False">0.0637</Size>
+      <Velocity IsPublic="True">(26.6, 0.0, -13.2)</Velocity>
+      <EnableAffect>True</EnableAffect>
+      <EnableTracing>True</EnableTracing>
+      <AffectRadius>8</AffectRadius>
+      <Period IsPublic="True">31.76298</Period>
+      <AngularVelocity IsPublic="True">0.08823049</AngularVelocity>
+      <Radius IsPublic="True">150</Radius>
+      <T IsPublic="False">2</T>
+      <Gravity IsPublic="False">25.47878</Gravity>
+    </AstralBody>
+  </AstralBodyDict>
+</AstralBodyList>

@@ -92,14 +92,11 @@ namespace Quiz
         {
             Generate();
             _line = transform.GetChild(0).gameObject;
-            try
+            if (GameManager.getGameManager.quizBase.GetType() == typeof(QuizSolver))
             {
                 var solver = (QuizSolver) GameManager.getGameManager.quizBase;
                 _line.SetActive(false);
                 solver.answerEvent.AddListener(() => _line.SetActive(true));
-            }
-            catch (Exception e)
-            {
             }
 
             isLoadDone = true;

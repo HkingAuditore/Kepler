@@ -37,7 +37,9 @@ namespace SpacePhysic
         /// <summary>
         ///     是否冻结星群
         /// </summary>
-        public bool isFreezing { get; private set; }
+        public bool isFreezing { get;  private set; }
+
+        public bool isShowOrbit { get; set; } = true;
 
 
         public void Awake()
@@ -49,8 +51,11 @@ namespace SpacePhysic
 
         private void Update()
         {
-            if(!isFreezing)
+            if(isShowOrbit)
+            {
                 Dispatch();
+            }
+            
         }
 
         private void OnDisable()
@@ -58,7 +63,7 @@ namespace SpacePhysic
             if (_thread != null) _thread.Abort();
         }
 
-        private void Dispatch()
+        public void Dispatch()
         {
             lock (((ICollection) _actionTypes).SyncRoot)
             {
@@ -119,6 +124,7 @@ namespace SpacePhysic
         /// <param name="isFreezing">是否冻结</param>
         public void Freeze(bool isFreezing)
         {
+            Debug.Log("Freeze!");
             this.isFreezing = isFreezing;
             _astralBodies.ForEach(astral =>
                                   {

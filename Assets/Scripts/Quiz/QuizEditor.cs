@@ -8,6 +8,12 @@ namespace Quiz
     {
         public QuizSaver saver;
 
+        protected override void Start()
+        {
+            base.Start();
+            orbitBase.Dispatch();
+        }
+
         /// <summary>
         ///     保存问题
         /// </summary>
@@ -57,10 +63,11 @@ namespace Quiz
             this.target = target;
             astralBodiesDict.ForEach(ast =>
                                      {
+                                         QuizAstralBodyDict quizAstralBodyDict = (QuizAstralBodyDict) ast;
                                          // Debug.Log(ast.astralBody.GetHashCode() + " <==> " + target.GetHashCode());
-                                         ast.isTarget = ast.astralBody == target;
-                                         ast.astralBody.affectedPlanets.Remove(oriTarget);
-                                         if (!ast.isTarget)
+                                         quizAstralBodyDict.isTarget = ast.astralBody == target;
+                                         quizAstralBodyDict.astralBody.affectedPlanets.Remove(oriTarget);
+                                         if (!quizAstralBodyDict.isTarget)
                                          {
                                              ast.astralBody.affectedPlanets.Remove(target);
                                              ast.astralBody.affectedPlanets.Add(target);

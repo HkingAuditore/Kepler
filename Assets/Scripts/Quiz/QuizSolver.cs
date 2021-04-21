@@ -83,6 +83,7 @@ namespace Quiz
                                         GameManager.getGameManager.globalTimer.isPausing = true
                                    );
             StartCoroutine(WaitUntilQuizAstralBodyLoadDone());
+            orbitBase.isShowOrbit = false;
 
         }
         
@@ -100,7 +101,7 @@ namespace Quiz
                                          pair.astralBody.oriRadius =
                                              Vector3.Distance(pair.astralBody.transform.position,
                                                               target.transform.position);
-                                         Debug.Log("Test Result Ori Radius:" + pair.astralBody.oriRadius);
+                                         // Debug.Log("Test Result Ori Radius:" + pair.astralBody.oriRadius);
                                      });
             orbitBase.Freeze(false);
 
@@ -133,7 +134,8 @@ namespace Quiz
             var i = 1;
             foreach (AstralBodyDict<QuizAstralBody> dict in astralBodiesDict)
             {
-                if (dict.isTarget) continue;
+                QuizAstralBodyDict quizDict = (QuizAstralBodyDict) dict;
+                if (quizDict.isTarget) continue;
                 var orbitString = dict.astralBody.GetQuizConditionString();
                 if (orbitString != null) stringBuilder.Append("绕转星体" + i + "的" + orbitString + "；");
                 // Debug.Log("mass:" + dict.astralBody.realMass);

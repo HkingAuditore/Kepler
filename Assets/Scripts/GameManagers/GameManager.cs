@@ -63,7 +63,7 @@ namespace GameManagers
         /// </summary>
         public SatelliteChallengeManger satelliteChallengeManger;
 
-        private int _globalMassScaler;
+        [SerializeField]private int _globalMassScaler;
 
         public static GameManager getGameManager { get; private set; }
 
@@ -125,8 +125,12 @@ namespace GameManagers
         /// </summary>
         public void CalculateMassScales()
         {
-            var coreBody = orbit.transform.Find("Core").GetComponent<AstralBody>();
-            CalculateMassScales(coreBody.realMass);
+            if (_getNum == 0)
+            {
+                var coreBody = orbit.transform.Find("Core").GetComponent<AstralBody>();
+                CalculateMassScales(coreBody.realMass);
+                
+            }
         }
 
         /// <summary>
@@ -136,10 +140,15 @@ namespace GameManagers
         public void CalculateMassScales(double realMass)
         {
             var e = MathPlus.GetExponent(realMass);
-            // Debug.Log("e:"                    + e);
+            Debug.Log("e:"                    + e);
             var offset = Mathf.Clamp(e, 2, 3) - e;
+            Debug.Log("offset:" + offset);
 
-            globalMassScaler = Mathf.CeilToInt(offset / 2f);
+            var smallerScaler = Mathf.FloorToInt(offset / 2f);
+            var biggerScaler  = Mathf.CeilToInt(offset  / 2f);
+            globalMassScaler = e <= 26 ? smallerScaler : biggerScaler;
+            Debug.Log("global Scaler:" + globalMassScaler);
+
             // Debug.Log("globalMassScaler" + globalMassScaler);
         }
 

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using GameManagers;
 using Quiz;
 using SpacePhysic;
 using UnityEngine;
@@ -10,7 +11,7 @@ namespace XmlSaver
 {
     public class SceneLoadBase<T> : MonoBehaviour where T : AstralBody
     {
-        protected delegate void AstralBodyDataDictProcessHandler(T prefab,AstralBodyDataDict<T> astralBodyDataDict);
+        protected delegate void AstralBodyDataDictProcessHandler(T prefab,AstralBodyDataDict<T> astralBodyDataDict,List<AstralBodyDict<T>> astralBodyDictList);
 
         /// <summary>
         /// 场景星球集合
@@ -41,7 +42,7 @@ namespace XmlSaver
         /// <summary>
         /// 生成基点
         /// </summary>
-        public Transform      sceneRoot;
+       public Transform OrbitRoot;
 
         protected List<AstralBodyDataDict<T>> _astralBodyStructDictList;
 
@@ -60,6 +61,31 @@ namespace XmlSaver
 
         #endregion
 
+        protected virtual void Start()
+        {
+            loadDoneEvent.AddListener(() => { GameManager.getGameManager.CalculateMassScales(); });
+            // List<AstralBody> astralBodies = new List<AstralBody>();
+            // 放置星球
+            if (isLoadByPrefab)
+            {
+                GenerateAstralBodiesWithPrefab();
+            }
+            else
+            {
+                LoadScene(loadTarget);
+                GenerateAstralBodiesWithoutPrefab();
+            }
+
+
+            isLoadDone = true;
+        }
+
+        protected virtual void LoadScene(string fileName)
+        {
+            var result = XmlSaver.XmlSaver<T>.ConvertXml2SceneBase(XmlSaver.XmlSaver<AstralBody>.LoadXml(fileName), fileName);
+            _astralBodyStructDictList = result.astralBodyStructList;
+
+        }
 
         protected virtual void GenerateAstralBodiesWithPrefab()
         {
@@ -68,7 +94,7 @@ namespace XmlSaver
             foreach (var pair in astralBodiesDict)
             {
                 var target =
-                    Instantiate(pair.astralBody, pair.transform.position, pair.transform.rotation, sceneRoot);
+                    Instantiate(pair.astralBody, pair.transform.position, pair.transform.rotation, OrbitRoot);
                 orbitBase.AddTracingTarget(target);
                 if (pair.isCore)
                     core = target;
@@ -89,11 +115,8 @@ namespace XmlSaver
                                                                  AstralBodyDataDictProcessHandler afterDictProcessHandler = null)
         {
             List<AstralBodyDict<T>>          astralBodyDicts = new List<AstralBodyDict<T>>();
-            if (typeof(T) == typeof(QuizAstralBody))
-            {
-                astralBodyDicts = (List<AstralBodyDict<T>>)Activator.CreateInstance(typeof(QuizAstralBodyDataDict));
-            }
-            AstralBodyDataDictProcessHandler processHandler = (prefab,pair) =>
+
+            AstralBodyDataDictProcessHandler processHandler = (prefab,pair,dictList) =>
                                                               {
                                                                   prefab.realMass      = pair.mass;
                                                                   prefab.size          = pair.originalSize;
@@ -101,43 +124,52 @@ namespace XmlSaver
                                                                   prefab.affectRadius  = pair.affectRadius;
                                                                   prefab.enableAffect  = pair.enableAffect;
                                                                   prefab.enableTracing = pair.enableTracing;
-
+                                                                  prefab.size          = pair.originalSize;
                                                               };
             if (dataDictProcessHandler != null)
             {
                 processHandler += dataDictProcessHandler;
             }
             
-            AstralBody core ;
+            AstralBody core =null;
 
-            processHandler += (prefab, pair) =>
-                              {
-                                  var target =
-                                      Instantiate(astralBodyPrefab, pair.position, Quaternion.Euler(0, 0, 0),
-                                                  sceneRoot);
-                                  target.meshNum = pair.meshNum;
-                                  orbitBase.AddTracingTarget(target);
-                                  if (pair.isCore)
-                                      core = target;
-
-                                  astralBodyDicts.Add(new AstralBodyDict<T>(target.transform, target, pair.isCore));
-
-                                  target.gameObject.name = target.gameObject.name.Replace("(Clone)", "");
-                                  if (pair.isCore) target.gameObject.name = "Core";
-
-                              };
             
             if (afterDictProcessHandler != null)
             {
                 processHandler += afterDictProcessHandler;
             }
+            else
+            {
+                processHandler += (prefab, pair, dictList) =>
+                                  {
+                                      var target =
+                                          Instantiate(astralBodyPrefab, pair.position, Quaternion.Euler(0, 0, 0),
+                                                      OrbitRoot);
+                                      target.meshNum = pair.meshNum;
+                                      orbitBase.AddTracingTarget(target);
+                                      if (pair.isCore)
+                                          core = target;
+                                      else
+                                      {
+                                          target.affectedPlanets.Add(core);
+                                      }
+
+                                      dictList.Add(new AstralBodyDict<T>(target.transform, target, pair.isCore));
+
+                                      target.gameObject.name = target.gameObject.name.Replace("(Clone)", "");
+                                      if (pair.isCore) target.gameObject.name = "Core";
+
+                                  };
+
+            }
             
             foreach (AstralBodyDataDict<T> pair in _astralBodyStructDictList)
             {
-                processHandler(astralBodyPrefab,pair);
+                processHandler(astralBodyPrefab, pair, astralBodyDicts);
             }
 
             astralBodiesDict = astralBodyDicts;
         }
     }
+    
 }

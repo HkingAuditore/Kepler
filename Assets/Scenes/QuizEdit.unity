@@ -168,12 +168,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 554928344}
-  outlineCamera: {fileID: 25532563}
-  outlineShader: {fileID: 4800000, guid: 9a4fbdeca491d6645968a83d68e3f9e2, type: 3}
+  backgroundColor: {r: 0, g: 0, b: 0, a: 0}
+  edgeColor: {r: 1, g: 1, b: 1, a: 1}
   edgeOnly: 1
   edgeSize: 0.391
-  edgeColor: {r: 1, g: 1, b: 1, a: 1}
-  backgroundColor: {r: 0, g: 0, b: 0, a: 0}
+  outlineCamera: {fileID: 25532563}
+  outlineShader: {fileID: 4800000, guid: 9a4fbdeca491d6645968a83d68e3f9e2, type: 3}
 --- !u!20 &25532563
 Camera:
   m_ObjectHideFlags: 0
@@ -2636,9 +2636,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   astronautsAnimator: {fileID: 215390612}
-  boredTimeMin: 6
-  boredTimeMax: 12
   boredAnimationCount: 5
+  boredTimeMax: 12
+  boredTimeMin: 6
   pointAnimationCount: 3
   selectorUI: {fileID: 736456931}
 --- !u!95 &215390612
@@ -2905,17 +2905,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fce4d6260dfa5244af2cfe0f32039c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  editorPanel: {fileID: 1842356810}
+  forceUI: {fileID: 1248854065}
+  gravityTracing: {fileID: 1009603419}
   isEnableEdit: 1
   isEnableEditorPanel: 1
-  gravityTracing: {fileID: 1009603419}
-  positionEditorUI: {fileID: 1842356812}
-  velocityEditorUI: {fileID: 0}
-  normalPanel: {fileID: 1673999405}
-  forceUI: {fileID: 1248854065}
-  velocityUI: {fileID: 1514731290}
   lengthUIList: []
+  mainPanel: {fileID: 816201402}
+  normalPanel: {fileID: 1673999405}
   orbitPanelUI: {fileID: 0}
-  editorPanel: {fileID: 1842356810}
+  positionEditorUI: {fileID: 1842356812}
+  styleSheetPanel: {fileID: 1819423225}
   varLineUis:
   - {fileID: 7956293800177882262}
   - {fileID: 936755777}
@@ -2925,8 +2925,8 @@ MonoBehaviour:
   - {fileID: 840799378}
   - {fileID: 210713981}
   - {fileID: 1438696134}
-  mainPanel: {fileID: 816201402}
-  styleSheetPanel: {fileID: 1819423225}
+  velocityEditorUI: {fileID: 0}
+  velocityUI: {fileID: 1514731290}
   isThisTarget: {fileID: 86355108}
 --- !u!1 &239906339
 GameObject:
@@ -3861,11 +3861,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 598e68924c9f6324bbfd049d3bae754c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  editorPathColor: {r: 1, g: 1, b: 1, a: 1}
-  alwaysDraw: 0
-  drawThinckness: 0
-  billboardThickness: 1
-  isNewlyCreated: 0
   multithreaded: 0
   rebuildOnAwake: 1
   updateMode: 0
@@ -3909,6 +3904,11 @@ MonoBehaviour:
   - {fileID: 284363327}
   - {fileID: 284363326}
   nodes: []
+  editorPathColor: {r: 1, g: 1, b: 1, a: 1}
+  alwaysDraw: 0
+  drawThinckness: 0
+  billboardThickness: 1
+  isNewlyCreated: 0
 --- !u!1 &298722494
 GameObject:
   m_ObjectHideFlags: 0
@@ -4044,8 +4044,8 @@ MonoBehaviour:
   - {fileID: 726970802}
   - {fileID: 1356126882}
   - {fileID: 1750716781}
-  tutorialName: QuizEditQuizTypeSetting
   tutorialManagerUI: {fileID: 0}
+  tutorialName: QuizEditQuizTypeSetting
 --- !u!1 &305818145
 GameObject:
   m_ObjectHideFlags: 0
@@ -5806,8 +5806,8 @@ MonoBehaviour:
   awakePanel: {fileID: 305818145}
   tutorialClips:
   - {fileID: 1146618697}
-  tutorialName: QuizEditAstralBodyPlacementUI
   tutorialManagerUI: {fileID: 0}
+  tutorialName: QuizEditAstralBodyPlacementUI
 --- !u!1 &510806461
 GameObject:
   m_ObjectHideFlags: 0
@@ -6572,7 +6572,7 @@ MonoBehaviour:
   autoOrient: 1
   updateFrameInterval: 0
   _slices: 1
-  vertexDirection: {x: -0, y: 0.9995054, z: 0.03144574}
+  vertexDirection: {x: -0.0604361, y: 0.9975369, z: -0.035604298}
 --- !u!23 &554862197
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6634,11 +6634,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 598e68924c9f6324bbfd049d3bae754c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  editorPathColor: {r: 1, g: 1, b: 1, a: 1}
-  alwaysDraw: 0
-  drawThinckness: 0
-  billboardThickness: 1
-  isNewlyCreated: 0
   multithreaded: 0
   rebuildOnAwake: 1
   updateMode: 0
@@ -6715,6 +6710,11 @@ MonoBehaviour:
   _subscribers:
   - {fileID: 554862196}
   nodes: []
+  editorPathColor: {r: 1, g: 1, b: 1, a: 1}
+  alwaysDraw: 0
+  drawThinckness: 0
+  billboardThickness: 1
+  isNewlyCreated: 0
 --- !u!1 &554928342
 GameObject:
   m_ObjectHideFlags: 0
@@ -6940,14 +6940,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfff57381068cab4a9f4091b1c6a8cb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  virtualCamera: {fileID: 1265611630}
   correctiveSpeed: 100
-  mainSpeed: 150
-  scaleSize: 100
-  scaleMin: 20
-  scaleMax: 300
-  orthoZoomSpeed: 0.025
   focusOffset: 0.33
+  mainSpeed: 150
+  orthoZoomSpeed: 0.025
+  scaleMax: 300
+  scaleMin: 20
+  scaleSize: 100
+  virtualCamera: {fileID: 1265611630}
 --- !u!114 &554928348
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6961,12 +6961,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 0}
+  mixMaterial: {fileID: 1855607970}
+  renderResultRT: {fileID: 0}
+  edgeColor: {r: 1, g: 0.9424448, b: 0, a: 1}
+  mixShader: {fileID: 4800000, guid: 9d1e5ad067a5aee43bfa8e7f97782862, type: 3}
   renderTexOuter: {fileID: 25532562}
   renderTexture: {fileID: 8400000, guid: 9051336c0a1f00e4f959253de161c1b6, type: 2}
-  mixShader: {fileID: 4800000, guid: 9d1e5ad067a5aee43bfa8e7f97782862, type: 3}
-  edgeColor: {r: 1, g: 0.9424448, b: 0, a: 1}
-  _mixMaterial: {fileID: 1855607970}
-  _renderResultRT: {fileID: 0}
 --- !u!81 &554928349
 AudioListener:
   m_ObjectHideFlags: 0
@@ -8783,8 +8783,8 @@ MonoBehaviour:
   - {fileID: 1821436030}
   - {fileID: 538119083}
   - {fileID: 683625795}
-  tutorialName: QuizEditQuizPanel
   tutorialManagerUI: {fileID: 0}
+  tutorialName: QuizEditQuizPanel
 --- !u!1 &711697846
 GameObject:
   m_ObjectHideFlags: 0
@@ -9112,10 +9112,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5586a2743d2cc2d48824139edae736ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outlineCatcher: {fileID: 25532562}
-  astralBodyEditorUI: {fileID: 236484340}
-  selectedGameObject: {fileID: 0}
   _isLocked: 0
+  astralBodyEditorUI: {fileID: 236484340}
+  outlineCatcher: {fileID: 25532562}
+  selectedGameObject: {fileID: 0}
 --- !u!1 &745011765
 GameObject:
   m_ObjectHideFlags: 0
@@ -13281,9 +13281,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   astralBodyPlacementUI: {fileID: 305818147}
-  placePrefab: {fileID: 3597075151426224686, guid: 1e13c1220f795504abff0bafb4776125, type: 3}
-  orbits: {fileID: 1009603419}
   isQuizEditMode: 1
+  orbits: {fileID: 1009603419}
+  placePrefab: {fileID: 3597075151426224686, guid: 1e13c1220f795504abff0bafb4776125, type: 3}
   setActiveList:
   - {fileID: 791609493}
   - {fileID: 2004965994}
@@ -15897,8 +15897,8 @@ MonoBehaviour:
   awakePanel: {fileID: 1819423223}
   tutorialClips:
   - {fileID: 2038864753}
-  tutorialName: QuizEditStyleEditor
   tutorialManagerUI: {fileID: 0}
+  tutorialName: QuizEditStyleEditor
 --- !u!1 &1219925214
 GameObject:
   m_ObjectHideFlags: 0
@@ -16365,13 +16365,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cea70d530508a8647a9eb5ca39c16fa8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vectorArrow: {fileID: 1248854064}
   astralBody: {fileID: 0}
-  vectorText: {fileID: 1115932340}
-  thisType: 0
   header: "\u53D7\u529B"
-  unit: 10^17N
   showSize: 100
+  thisType: 0
+  unit: 10^17N
+  vectorArrow: {fileID: 1248854064}
+  vectorText: {fileID: 1115932340}
 --- !u!1 &1251449281
 GameObject:
   m_ObjectHideFlags: 0
@@ -18850,13 +18850,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cea70d530508a8647a9eb5ca39c16fa8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vectorArrow: {fileID: 1514731291}
   astralBody: {fileID: 0}
-  vectorText: {fileID: 1516169278}
-  thisType: 1
   header: "\u901F\u5EA6"
-  unit: km/s
   showSize: 10
+  thisType: 1
+  unit: km/s
+  vectorArrow: {fileID: 1514731291}
+  vectorText: {fileID: 1516169278}
 --- !u!120 &1514731291
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -20340,9 +20340,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainPanel: {fileID: 96426087}
-  quizSetting: {fileID: 1285466898}
-  prop: {fileID: 1310478938}
   nameField: {fileID: 747977521}
+  prop: {fileID: 1310478938}
+  quizSetting: {fileID: 1285466898}
 --- !u!1 &1694912590
 GameObject:
   m_ObjectHideFlags: 0
@@ -22102,11 +22102,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8cc6eb195aaee44aa7e3a498e70ca15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  editingTarget: {fileID: 0}
+  isQuizEditor: 1
+  moveSpeed: 20
   xAxis: {fileID: 1927521031}
   zAxis: {fileID: 536275563}
-  editingTarget: {fileID: 0}
-  moveSpeed: 20
-  isQuizEditor: 1
 --- !u!1 &1846406587
 GameObject:
   m_ObjectHideFlags: 0
@@ -22850,10 +22850,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mainCameraController: {fileID: 554928347}
-  quizBase: {fileID: 1901827055}
+  bgmSource: {fileID: 554928345}
+  globalDistanceScaler: 3
+  globalTimer: {fileID: 0}
   isQuizEditMode: 1
   mainCamera: {fileID: 554928344}
-  globalTimer: {fileID: 0}
   meshList:
   - {fileID: 871134749857384736, guid: 3e218b08c9cc4dc42be9da0507868d25, type: 3}
   - {fileID: 4466750129858649191, guid: b628c2ad1ffb1c940a6529262f32d422, type: 3}
@@ -22867,10 +22868,8 @@ MonoBehaviour:
   - {fileID: 6368110840796035940, guid: e8176e8d262f45843a8507e2b7ef9ace, type: 3}
   - {fileID: 1968154814338336523, guid: 9cb2987897963394590cd290c6a3dafa, type: 3}
   orbit: {fileID: 1009603419}
+  quizBase: {fileID: 1901827055}
   satelliteChallengeManger: {fileID: 0}
-  bgmSource: {fileID: 554928345}
-  _globalMassScaler: 0
-  globalDistanceScaler: 3
 --- !u!4 &1901827054
 Transform:
   m_ObjectHideFlags: 0
@@ -22897,18 +22896,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb3674e87af051d449b490a5744fbeb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isLoadByPrefab: 0
-  loadTarget: "\u771F\u5B9E\u5730\u65E5"
   astralBodiesDict: []
   astralBodyPrefab: {fileID: 3597075151426224686, guid: 1e13c1220f795504abff0bafb4776125, type: 3}
-  quizRoot: {fileID: 1009603420}
-  orbitBase: {fileID: 1009603419}
-  quizType: 0
-  answer: 0
+  isLoadByPrefab: 0
   loadDoneEvent:
     m_PersistentCalls:
       m_Calls: []
+  loadTarget: "\u771F\u5B9E\u5730\u65E5"
+  orbitBase: {fileID: 1009603419}
+  OrbitRoot: {fileID: 1009603420}
   _target: {fileID: 0}
+  answer: 0
+  quizType: 0
   saver: {fileID: 1901827056}
 --- !u!114 &1901827056
 MonoBehaviour:
@@ -22922,8 +22921,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21164fc9131cc7d4c8825ff7279a2be9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  quizType: 0
-  cloner: {fileID: 1575909808793090412, guid: 1e13c1220f795504abff0bafb4776125, type: 3}
 --- !u!1 &1904576857
 GameObject:
   m_ObjectHideFlags: 0
@@ -23511,10 +23508,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6d59524e26ad1c40801e75b3fd817ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lengthSpline: {fileID: 284363330}
-  lengthCalculator: {fileID: 284363326}
-  lengthText: {fileID: 231007073}
   astralBody: {fileID: 0}
+  lengthCalculator: {fileID: 284363326}
+  lengthSpline: {fileID: 284363330}
+  lengthText: {fileID: 231007073}
   targetAstralBody: {fileID: 0}
 --- !u!1 &1933329832
 GameObject:
@@ -25223,8 +25220,8 @@ MonoBehaviour:
   - {fileID: 1858738767}
   - {fileID: 1708184147}
   - {fileID: 71150177}
-  tutorialName: QuizEditAstralBodyEditorUI
   tutorialManagerUI: {fileID: 0}
+  tutorialName: QuizEditAstralBodyEditorUI
 --- !u!1 &2110943830
 GameObject:
   m_ObjectHideFlags: 0

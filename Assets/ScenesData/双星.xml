@@ -1,0 +1,59 @@
+<AstralBodyList QuizType="Mass">
+  <AstralBodyDict IsTarget="True">
+    <Transform>
+      <Position>(0.0, 0.0, 0.0)</Position>
+    </Transform>
+    <AstralBody IsCore="True" Style="1">
+      <Mass IsPublic="False">1000</Mass>
+      <Density>1000</Density>
+      <Size IsPublic="True">30</Size>
+      <Velocity IsPublic="False">(0.0, 0.0, 0.0)</Velocity>
+      <EnableAffect>True</EnableAffect>
+      <EnableTracing>True</EnableTracing>
+      <AffectRadius>8</AffectRadius>
+      <Period IsPublic="False">0</Period>
+      <AngularVelocity IsPublic="False">0</AngularVelocity>
+      <Radius IsPublic="False">0</Radius>
+      <T IsPublic="False">0</T>
+      <Gravity IsPublic="True">7.411111</Gravity>
+    </AstralBody>
+  </AstralBodyDict>
+  <AstralBodyDict IsTarget="False">
+    <Transform>
+      <Position>(-128.4, 0.0, -54.1)</Position>
+    </Transform>
+    <AstralBody IsCore="False" Style="5">
+      <Mass IsPublic="False">1</Mass>
+      <Density>1000</Density>
+      <Size IsPublic="False">8</Size>
+      <Velocity IsPublic="True">(2.7, 0.0, -6.4)</Velocity>
+      <EnableAffect>True</EnableAffect>
+      <EnableTracing>True</EnableTracing>
+      <AffectRadius>8</AffectRadius>
+      <Period IsPublic="True">127.3588</Period>
+      <AngularVelocity IsPublic="True">0.3537744</AngularVelocity>
+      <Radius IsPublic="True">139.3635</Radius>
+      <T IsPublic="False">2</T>
+      <Gravity IsPublic="False">0.1042188</Gravity>
+    </AstralBody>
+  </AstralBodyDict>
+  <AstralBodyDict IsTarget="False">
+    <Transform>
+      <Position>(77.8, 0.0, -25.4)</Position>
+    </Transform>
+    <AstralBody IsCore="False" Style="0">
+      <Mass IsPublic="False">1</Mass>
+      <Density>1000</Density>
+      <Size IsPublic="False">8</Size>
+      <Velocity IsPublic="True">(2.8, 0.0, 8.6)</Velocity>
+      <EnableAffect>True</EnableAffect>
+      <EnableTracing>True</EnableTracing>
+      <AffectRadius>8</AffectRadius>
+      <Period IsPublic="True">57.03171</Period>
+      <AngularVelocity IsPublic="True">0.1584214</AngularVelocity>
+      <Radius IsPublic="True">81.88987</Radius>
+      <T IsPublic="False">2</T>
+      <Gravity IsPublic="False">0.1042188</Gravity>
+    </AstralBody>
+  </AstralBodyDict>
+</AstralBodyList>

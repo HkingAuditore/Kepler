@@ -12,10 +12,10 @@ namespace Quiz
         private static string xmlPath => Application.dataPath + "/Quiz/";
 
 
-        private XmlElement ConvertAstralBody2XmlElement(AstralBodyDict<QuizAstralBody> astralBodyDict)
+        protected override XmlElement ConvertAstralBody2XmlElement(AstralBodyDict<QuizAstralBody> astralBodyDict,
+                                                                   ConvertAstralBodyPropertyToXmlHandler convertAstralBodyPropertyToXmlHandler = null)
         {
-            var dict         = _xmlDoc.CreateElement("AstralBodyDict");
-            var astTransform = _xmlDoc.CreateElement("Transform");
+
             try
             {
                 astralBodyDict.astralBody.UpdateQuizAstralBody();
@@ -25,85 +25,235 @@ namespace Quiz
                 Console.WriteLine(e);
             }
 
-            //写入坐标
-            var pos = _xmlDoc.CreateElement("Position");
-            pos.InnerText = astralBodyDict.transform.position.ToString();
-            astTransform.AppendChild(pos);
+            return base.ConvertAstralBody2XmlElement(astralBodyDict, convertAstralBodyPropertyToXmlHandler ?? ((dict, doc) =>
+                                                                                                        {
+                                                                                                            QuizAstralBodyDict
+                                                                                                                quizDict
+                                                                                                                    = (
+                                                                                                                        QuizAstralBodyDict
+                                                                                                                    ) dict;
+                                                                                                            var
+                                                                                                                astAstralBody
+                                                                                                                    = doc
+                                                                                                                       .CreateElement("AstralBody");
+                                                                                                            //写入天体属性
+                                                                                                            var mass =
+                                                                                                                doc
+                                                                                                                   .CreateElement("Mass");
+                                                                                                            mass
+                                                                                                                   .InnerText
+                                                                                                                = quizDict
+                                                                                                                 .astralBody
+                                                                                                                 .realMass
+                                                                                                                 .ToString(CultureInfo
+                                                                                                                              .InvariantCulture);
+                                                                                                            mass
+                                                                                                               .SetAttribute("IsPublic",
+                                                                                                                             quizDict
+                                                                                                                                .astralBody
+                                                                                                                                .isMassPublic
+                                                                                                                                .ToString());
+                                                                                                            astAstralBody
+                                                                                                               .AppendChild(mass);
+                                                                                                            var density
+                                                                                                                = doc
+                                                                                                                   .CreateElement("Density");
+                                                                                                            density
+                                                                                                                   .InnerText
+                                                                                                                = quizDict
+                                                                                                                 .astralBody
+                                                                                                                 .density
+                                                                                                                 .ToString(CultureInfo
+                                                                                                                              .InvariantCulture);
+                                                                                                            astAstralBody
+                                                                                                               .AppendChild(density);
+                                                                                                            var size =
+                                                                                                                doc
+                                                                                                                   .CreateElement("Size");
+                                                                                                            size
+                                                                                                               .SetAttribute("IsPublic",
+                                                                                                                             quizDict
+                                                                                                                                .astralBody
+                                                                                                                                .isSizePublic
+                                                                                                                                .ToString());
 
-            var astAstralBody = _xmlDoc.CreateElement("AstralBody");
-            //写入天体属性
-            var mass = _xmlDoc.CreateElement("Mass");
-            mass.InnerText = astralBodyDict.astralBody.realMass.ToString(CultureInfo.InvariantCulture);
-            mass.SetAttribute("IsPublic", astralBodyDict.astralBody.isMassPublic.ToString());
-            astAstralBody.AppendChild(mass);
-            var density = _xmlDoc.CreateElement("Density");
-            density.InnerText = astralBodyDict.astralBody.density.ToString(CultureInfo.InvariantCulture);
-            astAstralBody.AppendChild(density);
-            var size = _xmlDoc.CreateElement("Size");
-            size.SetAttribute("IsPublic", astralBodyDict.astralBody.isSizePublic.ToString());
+                                                                                                            size
+                                                                                                                   .InnerText
+                                                                                                                = quizDict
+                                                                                                                 .astralBody
+                                                                                                                 .size
+                                                                                                                 .ToString(CultureInfo
+                                                                                                                              .InvariantCulture);
+                                                                                                            astAstralBody
+                                                                                                               .AppendChild(size);
 
-            size.InnerText = astralBodyDict.astralBody.size.ToString(CultureInfo.InvariantCulture);
-            astAstralBody.AppendChild(size);
+                                                                                                            var velocity
+                                                                                                                = doc
+                                                                                                                   .CreateElement("Velocity");
+                                                                                                            velocity
+                                                                                                                   .InnerText
+                                                                                                                = quizDict
+                                                                                                                 .astralBody
+                                                                                                                 .GetVelocity()
+                                                                                                                 .ToString();
+                                                                                                            velocity
+                                                                                                               .SetAttribute("IsPublic",
+                                                                                                                             quizDict
+                                                                                                                                .astralBody
+                                                                                                                                .isVelocityPublic
+                                                                                                                                .ToString());
+                                                                                                            astAstralBody
+                                                                                                               .AppendChild(velocity);
 
-            var velocity = _xmlDoc.CreateElement("Velocity");
-            velocity.InnerText = astralBodyDict.astralBody.GetVelocity().ToString();
-            velocity.SetAttribute("IsPublic", astralBodyDict.astralBody.isVelocityPublic.ToString());
-            astAstralBody.AppendChild(velocity);
+                                                                                                            var isAffect
+                                                                                                                =doc
+                                                                                                                   .CreateElement("EnableAffect");
+                                                                                                            isAffect
+                                                                                                                   .InnerText
+                                                                                                                = quizDict
+                                                                                                                 .astralBody
+                                                                                                                 .enableAffect
+                                                                                                                 .ToString();
+                                                                                                            astAstralBody
+                                                                                                               .AppendChild(isAffect);
+                                                                                                            var
+                                                                                                                isTracing
+                                                                                                                    = doc
+                                                                                                                       .CreateElement("EnableTracing");
+                                                                                                            isTracing
+                                                                                                                   .InnerText
+                                                                                                                = quizDict
+                                                                                                                 .astralBody
+                                                                                                                 .enableTracing
+                                                                                                                 .ToString();
+                                                                                                            astAstralBody
+                                                                                                               .AppendChild(isTracing);
+                                                                                                            var
+                                                                                                                affectRadius
+                                                                                                                    = doc
+                                                                                                                       .CreateElement("AffectRadius");
+                                                                                                            affectRadius
+                                                                                                                   .InnerText
+                                                                                                                = quizDict
+                                                                                                                 .astralBody
+                                                                                                                 .affectRadius
+                                                                                                                 .ToString(CultureInfo
+                                                                                                                              .InvariantCulture);
+                                                                                                            astAstralBody
+                                                                                                               .AppendChild(affectRadius);
 
-            var isAffect = _xmlDoc.CreateElement("EnableAffect");
-            isAffect.InnerText = astralBodyDict.astralBody.enableAffect.ToString();
-            astAstralBody.AppendChild(isAffect);
-            var isTracing = _xmlDoc.CreateElement("EnableTracing");
-            isTracing.InnerText = astralBodyDict.astralBody.enableTracing.ToString();
-            astAstralBody.AppendChild(isTracing);
-            var affectRadius = _xmlDoc.CreateElement("AffectRadius");
-            affectRadius.InnerText = astralBodyDict.astralBody.affectRadius.ToString(CultureInfo.InvariantCulture);
-            astAstralBody.AppendChild(affectRadius);
+                                                                                                            var period =
+                                                                                                                doc
+                                                                                                                   .CreateElement("Period");
+                                                                                                            period
+                                                                                                               .SetAttribute("IsPublic",
+                                                                                                                             quizDict
+                                                                                                                                .astralBody
+                                                                                                                                .isPeriodPublic
+                                                                                                                                .ToString());
+                                                                                                            period
+                                                                                                                   .InnerText
+                                                                                                                = quizDict
+                                                                                                                 .astralBody
+                                                                                                                 .period
+                                                                                                                 .ToString(CultureInfo
+                                                                                                                              .InvariantCulture);
+                                                                                                            astAstralBody
+                                                                                                               .AppendChild(period);
+                                                                                                            //
+                                                                                                            var
+                                                                                                                angularVelocity
+                                                                                                                    = doc
+                                                                                                                       .CreateElement("AngularVelocity");
+                                                                                                            angularVelocity
+                                                                                                               .SetAttribute("IsPublic",
+                                                                                                                             quizDict
+                                                                                                                                .astralBody
+                                                                                                                                .isAngularVelocityPublic
+                                                                                                                                .ToString());
+                                                                                                            angularVelocity
+                                                                                                                   .InnerText
+                                                                                                                = quizDict
+                                                                                                                 .astralBody
+                                                                                                                 .globalAngularVelocity
+                                                                                                                 .ToString();
+                                                                                                            astAstralBody
+                                                                                                               .AppendChild(angularVelocity);
+                                                                                                            //
+                                                                                                            var radius =
+                                                                                                                doc
+                                                                                                                   .CreateElement("Radius");
+                                                                                                            radius
+                                                                                                               .SetAttribute("IsPublic",
+                                                                                                                             quizDict
+                                                                                                                                .astralBody
+                                                                                                                                .isRadiusPublic
+                                                                                                                                .ToString());
+                                                                                                            radius
+                                                                                                                   .InnerText
+                                                                                                                = quizDict
+                                                                                                                 .astralBody
+                                                                                                                 .radius
+                                                                                                                 .ToString(CultureInfo
+                                                                                                                              .InvariantCulture);
+                                                                                                            astAstralBody
+                                                                                                               .AppendChild(radius);
 
-            var period = _xmlDoc.CreateElement("Period");
-            period.SetAttribute("IsPublic", astralBodyDict.astralBody.isPeriodPublic.ToString());
-            period.InnerText = astralBodyDict.astralBody.period.ToString(CultureInfo.InvariantCulture);
-            astAstralBody.AppendChild(period);
-            //
-            var angularVelocity = _xmlDoc.CreateElement("AngularVelocity");
-            angularVelocity.SetAttribute("IsPublic", astralBodyDict.astralBody.isAngularVelocityPublic.ToString());
-            angularVelocity.InnerText = astralBodyDict.astralBody.globalAngularVelocity.ToString();
-            astAstralBody.AppendChild(angularVelocity);
-            //
-            var radius = _xmlDoc.CreateElement("Radius");
-            radius.SetAttribute("IsPublic", astralBodyDict.astralBody.isRadiusPublic.ToString());
-            radius.InnerText = astralBodyDict.astralBody.radius.ToString(CultureInfo.InvariantCulture);
-            astAstralBody.AppendChild(radius);
-            //
-            // var anglePerT = _xmlDoc.CreateElement("AnglePerT");
-            // anglePerT.SetAttribute("IsPublic", astralBodyDict.astralBody.isAnglePerTPublic.ToString());
-            // anglePerT.InnerText = astralBodyDict.astralBody.anglePerT.ToString(CultureInfo.InvariantCulture);
-            // astAstralBody.AppendChild(anglePerT);
-            //
-            //
-            // var distancePerT = _xmlDoc.CreateElement("DistancePerT");
-            // distancePerT.SetAttribute("IsPublic", astralBodyDict.astralBody.isDistancePerTPublic.ToString());
-            // distancePerT.InnerText = astralBodyDict.astralBody.distancePerT.ToString(CultureInfo.InvariantCulture);
-            // astAstralBody.AppendChild(distancePerT);
 
-            var t = _xmlDoc.CreateElement("T");
-            t.SetAttribute("IsPublic", astralBodyDict.astralBody.isTPublic.ToString());
-            t.InnerText = astralBodyDict.astralBody.t.ToString(CultureInfo.InvariantCulture);
-            astAstralBody.AppendChild(t);
+                                                                                                            var t =
+                                                                                                                doc
+                                                                                                                   .CreateElement("T");
+                                                                                                            t.SetAttribute("IsPublic",
+                                                                                                                           quizDict
+                                                                                                                              .astralBody
+                                                                                                                              .isTPublic
+                                                                                                                              .ToString());
+                                                                                                            t.InnerText
+                                                                                                                = quizDict
+                                                                                                                 .astralBody
+                                                                                                                 .t
+                                                                                                                 .ToString(CultureInfo
+                                                                                                                              .InvariantCulture);
+                                                                                                            astAstralBody
+                                                                                                               .AppendChild(t);
 
-            var gravity = _xmlDoc.CreateElement("Gravity");
-            gravity.SetAttribute("IsPublic", astralBodyDict.astralBody.isGravityPublic.ToString());
-            gravity.InnerText = astralBodyDict.astralBody.gravity.ToString(CultureInfo.InvariantCulture);
-            astAstralBody.AppendChild(gravity);
+                                                                                                            var gravity
+                                                                                                                = doc
+                                                                                                                   .CreateElement("Gravity");
+                                                                                                            gravity
+                                                                                                               .SetAttribute("IsPublic",
+                                                                                                                             quizDict
+                                                                                                                                .astralBody
+                                                                                                                                .isGravityPublic
+                                                                                                                                .ToString());
+                                                                                                            gravity
+                                                                                                                   .InnerText
+                                                                                                                = quizDict
+                                                                                                                 .astralBody
+                                                                                                                 .gravity
+                                                                                                                 .ToString(CultureInfo
+                                                                                                                              .InvariantCulture);
+                                                                                                            astAstralBody
+                                                                                                               .AppendChild(gravity);
 
 
-            astAstralBody.SetAttribute("IsCore", astralBodyDict.isTarget.ToString());
-            astAstralBody.SetAttribute("Style",  astralBodyDict.astralBody.meshNum.ToString());
+                                                                                                            astAstralBody
+                                                                                                               .SetAttribute("IsCore",
+                                                                                                                             quizDict
+                                                                                                                                .isTarget
+                                                                                                                                .ToString());
+                                                                                                            astAstralBody
+                                                                                                               .SetAttribute("Style",
+                                                                                                                             quizDict
+                                                                                                                                .astralBody
+                                                                                                                                .meshNum
+                                                                                                                                .ToString());
+                                                                                                            astAstralBody.SetAttribute("IsTarget", quizDict.isTarget.ToString());
+                                                                                                            return
+                                                                                                                astAstralBody;
 
-            dict.SetAttribute("IsTarget", astralBodyDict.isTarget.ToString());
-            dict.AppendChild(astTransform);
-            dict.AppendChild(astAstralBody);
-            return dict;
+                                                                                                        }));
+            
         }
 
         /// <summary>

@@ -977,8 +977,8 @@ MonoBehaviour:
   awakePanel: {fileID: 216456881}
   tutorialClips:
   - {fileID: 1077043799}
-  tutorialName: PhysicSceneOrbitPanel
   tutorialManagerUI: {fileID: 1389360669}
+  tutorialName: PhysicSceneOrbitPanel
 --- !u!1 &97044938
 GameObject:
   m_ObjectHideFlags: 0
@@ -2613,19 +2613,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f32d9cd72fe6c404eb35fd11c35eadc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contentPanel: {fileID: 1208745980}
-  nullPanel: {fileID: 239632632}
-  isConicSection: 0
   _astralBody: {fileID: 0}
-  majorAxis: {fileID: 1466582877}
-  minorAxis: {fileID: 1299107269}
-  geoCenter: {fileID: 1508335416}
+  angle: {fileID: 1004224426}
+  contentPanel: {fileID: 1208745980}
   eccentricity: {fileID: 179379195}
   focalLength: {fileID: 450356928}
-  period: {fileID: 2002277177}
-  angle: {fileID: 1004224426}
+  geoCenter: {fileID: 1508335416}
+  isConicSection: 0
   k: {fileID: 517244559}
+  majorAxis: {fileID: 1466582877}
+  minorAxis: {fileID: 1299107269}
+  nullPanel: {fileID: 239632632}
   orbitGraphUI: {fileID: 1980459840}
+  period: {fileID: 2002277177}
 --- !u!1 &219034908
 GameObject:
   m_ObjectHideFlags: 0
@@ -3552,24 +3552,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00df2f8e626310e45aa0c6051adcc424, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  editorPanel: {fileID: 1842356810}
+  forceUI: {fileID: 1248854065}
+  gravityTracing: {fileID: 1009603419}
   isEnableEdit: 1
   isEnableEditorPanel: 1
-  gravityTracing: {fileID: 1009603419}
-  positionEditorUI: {fileID: 1842356812}
-  velocityEditorUI: {fileID: 1924732253}
-  normalPanel: {fileID: 1771801768}
-  forceUI: {fileID: 1248854065}
-  velocityUI: {fileID: 1514731290}
   lengthUIList: []
+  mainPanel: {fileID: 734663414}
+  normalPanel: {fileID: 1771801768}
   orbitPanelUI: {fileID: 216456885}
-  editorPanel: {fileID: 1842356810}
+  positionEditorUI: {fileID: 1842356812}
+  styleSheetPanel: {fileID: 1775064171}
   varLineUis:
   - {fileID: 397710340}
   - {fileID: 831001536}
   - {fileID: 1771696440}
   - {fileID: 1933376576}
-  mainPanel: {fileID: 734663414}
-  styleSheetPanel: {fileID: 1775064171}
+  velocityEditorUI: {fileID: 1924732253}
+  velocityUI: {fileID: 1514731290}
 --- !u!1 &239632632
 GameObject:
   m_ObjectHideFlags: 0
@@ -4359,11 +4359,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 598e68924c9f6324bbfd049d3bae754c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  editorPathColor: {r: 1, g: 1, b: 1, a: 1}
-  alwaysDraw: 0
-  drawThinckness: 0
-  billboardThickness: 1
-  isNewlyCreated: 0
   multithreaded: 0
   rebuildOnAwake: 1
   updateMode: 0
@@ -4407,6 +4402,11 @@ MonoBehaviour:
   - {fileID: 284363327}
   - {fileID: 284363326}
   nodes: []
+  editorPathColor: {r: 1, g: 1, b: 1, a: 1}
+  alwaysDraw: 0
+  drawThinckness: 0
+  billboardThickness: 1
+  isNewlyCreated: 0
 --- !u!1 &305818145
 GameObject:
   m_ObjectHideFlags: 0
@@ -7127,7 +7127,7 @@ MonoBehaviour:
   autoOrient: 1
   updateFrameInterval: 0
   _slices: 1
-  vertexDirection: {x: -0, y: 1.0000001, z: 0.00000011920929}
+  vertexDirection: {x: -0.0604361, y: 0.9975369, z: -0.035604298}
 --- !u!23 &554862197
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7189,11 +7189,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 598e68924c9f6324bbfd049d3bae754c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  editorPathColor: {r: 1, g: 1, b: 1, a: 1}
-  alwaysDraw: 0
-  drawThinckness: 0
-  billboardThickness: 1
-  isNewlyCreated: 0
   multithreaded: 0
   rebuildOnAwake: 1
   updateMode: 0
@@ -7270,6 +7265,11 @@ MonoBehaviour:
   _subscribers:
   - {fileID: 554862196}
   nodes: []
+  editorPathColor: {r: 1, g: 1, b: 1, a: 1}
+  alwaysDraw: 0
+  drawThinckness: 0
+  billboardThickness: 1
+  isNewlyCreated: 0
 --- !u!1 &554892156
 GameObject:
   m_ObjectHideFlags: 0
@@ -9111,10 +9111,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5586a2743d2cc2d48824139edae736ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outlineCatcher: {fileID: 1780162743}
-  astralBodyEditorUI: {fileID: 236484340}
-  selectedGameObject: {fileID: 0}
   _isLocked: 0
+  astralBodyEditorUI: {fileID: 236484340}
+  outlineCatcher: {fileID: 1780162743}
+  selectedGameObject: {fileID: 0}
 --- !u!1 &736944951
 GameObject:
   m_ObjectHideFlags: 0
@@ -10533,12 +10533,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 0}
+  mixMaterial: {fileID: 494833017}
+  renderResultRT: {fileID: 0}
+  edgeColor: {r: 1, g: 0.9424448, b: 0, a: 1}
+  mixShader: {fileID: 4800000, guid: 9d1e5ad067a5aee43bfa8e7f97782862, type: 3}
   renderTexOuter: {fileID: 1780162743}
   renderTexture: {fileID: 8400000, guid: 9051336c0a1f00e4f959253de161c1b6, type: 2}
-  mixShader: {fileID: 4800000, guid: 9d1e5ad067a5aee43bfa8e7f97782862, type: 3}
-  edgeColor: {r: 1, g: 0.9424448, b: 0, a: 1}
-  _mixMaterial: {fileID: 494833017}
-  _renderResultRT: {fileID: 0}
 --- !u!114 &894007024
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10551,14 +10551,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfff57381068cab4a9f4091b1c6a8cb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  virtualCamera: {fileID: 1749464136}
   correctiveSpeed: 100
-  mainSpeed: 150
-  scaleSize: 100
-  scaleMin: 20
-  scaleMax: 300
-  orthoZoomSpeed: 0.025
   focusOffset: 0.33
+  mainSpeed: 150
+  orthoZoomSpeed: 0.025
+  scaleMax: 300
+  scaleMin: 20
+  scaleSize: 100
+  virtualCamera: {fileID: 1749464136}
 --- !u!114 &894007025
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10781,8 +10781,8 @@ MonoBehaviour:
   awakePanel: {fileID: 1775064170}
   tutorialClips:
   - {fileID: 1441304276}
-  tutorialName: PhysicSceneStyleEditor
   tutorialManagerUI: {fileID: 1389360669}
+  tutorialName: PhysicSceneStyleEditor
 --- !u!1 &918983594
 GameObject:
   m_ObjectHideFlags: 0
@@ -11044,8 +11044,8 @@ MonoBehaviour:
   awakePanel: {fileID: 1924732251}
   tutorialClips:
   - {fileID: 938473677}
-  tutorialName: PhysicSceneVelocityEditor
   tutorialManagerUI: {fileID: 1389360669}
+  tutorialName: PhysicSceneVelocityEditor
 --- !u!1 &967835630
 GameObject:
   m_ObjectHideFlags: 0
@@ -11362,8 +11362,8 @@ MonoBehaviour:
   - {fileID: 554892156}
   - {fileID: 954907161}
   - {fileID: 967835630}
-  tutorialName: PhysicSceneAstralBodyEditorUI
   tutorialManagerUI: {fileID: 1389360669}
+  tutorialName: PhysicSceneAstralBodyEditorUI
 --- !u!1 &987268147
 GameObject:
   m_ObjectHideFlags: 0
@@ -12063,9 +12063,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   astralBodyPlacementUI: {fileID: 305818147}
-  placePrefab: {fileID: 3607051221231995094, guid: 46128c62cd16e3a408b346895da68b45, type: 3}
-  orbits: {fileID: 1009603419}
   isQuizEditMode: 0
+  orbits: {fileID: 1009603419}
+  placePrefab: {fileID: 3607051221231995094, guid: 46128c62cd16e3a408b346895da68b45, type: 3}
   setActiveList: []
 --- !u!1 &1033355718
 GameObject:
@@ -14886,13 +14886,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cea70d530508a8647a9eb5ca39c16fa8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vectorArrow: {fileID: 1248854064}
   astralBody: {fileID: 0}
-  vectorText: {fileID: 1115932340}
-  thisType: 0
   header: "\u53D7\u529B"
-  unit: N
   showSize: 100
+  thisType: 0
+  unit: N
+  vectorArrow: {fileID: 1248854064}
+  vectorText: {fileID: 1115932340}
 --- !u!1 &1267500439
 GameObject:
   m_ObjectHideFlags: 0
@@ -15649,8 +15649,8 @@ MonoBehaviour:
   - {fileID: 1310484812}
   - {fileID: 572888459}
   - {fileID: 1173902257}
-  tutorialName: PhysicSceneNormalPanel
   tutorialManagerUI: {fileID: 1389360669}
+  tutorialName: PhysicSceneNormalPanel
 --- !u!1 &1331961159
 GameObject:
   m_ObjectHideFlags: 0
@@ -17960,13 +17960,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cea70d530508a8647a9eb5ca39c16fa8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vectorArrow: {fileID: 1514731291}
   astralBody: {fileID: 0}
-  vectorText: {fileID: 1516169278}
-  thisType: 1
   header: "\u901F\u5EA6"
-  unit: m/s
   showSize: 10
+  thisType: 1
+  unit: m/s
+  vectorArrow: {fileID: 1514731291}
+  vectorText: {fileID: 1516169278}
 --- !u!120 &1514731291
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -19820,8 +19820,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1558b98859723c84dab3164cb12b4fbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputField: {fileID: 887499495}
   astralBodyEditorUI: {fileID: 236484340}
+  inputField: {fileID: 887499495}
 --- !u!1 &1767419259
 GameObject:
   m_ObjectHideFlags: 0
@@ -20286,12 +20286,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 894007019}
-  outlineCamera: {fileID: 1780162747}
-  outlineShader: {fileID: 4800000, guid: 9a4fbdeca491d6645968a83d68e3f9e2, type: 3}
+  backgroundColor: {r: 0, g: 0, b: 0, a: 0}
+  edgeColor: {r: 1, g: 1, b: 1, a: 1}
   edgeOnly: 1
   edgeSize: 0.391
-  edgeColor: {r: 1, g: 1, b: 1, a: 1}
-  backgroundColor: {r: 0, g: 0, b: 0, a: 0}
+  outlineCamera: {fileID: 1780162747}
+  outlineShader: {fileID: 4800000, guid: 9a4fbdeca491d6645968a83d68e3f9e2, type: 3}
 --- !u!20 &1780162747
 Camera:
   m_ObjectHideFlags: 0
@@ -21333,11 +21333,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8cc6eb195aaee44aa7e3a498e70ca15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  editingTarget: {fileID: 0}
+  isQuizEditor: 0
+  moveSpeed: 20
   xAxis: {fileID: 1927521031}
   zAxis: {fileID: 536275563}
-  editingTarget: {fileID: 0}
-  moveSpeed: 20
-  isQuizEditor: 0
 --- !u!1 &1856517418
 GameObject:
   m_ObjectHideFlags: 0
@@ -21713,6 +21713,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1901827054}
   - component: {fileID: 1901827053}
+  - component: {fileID: 1901827055}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -21733,10 +21734,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mainCameraController: {fileID: 894007024}
-  quizBase: {fileID: 0}
+  bgmSource: {fileID: 894007026}
+  globalDistanceScaler: 3
+  globalTimer: {fileID: 0}
   isQuizEditMode: 0
   mainCamera: {fileID: 894007019}
-  globalTimer: {fileID: 0}
   meshList:
   - {fileID: 871134749857384736, guid: 3e218b08c9cc4dc42be9da0507868d25, type: 3}
   - {fileID: 4466750129858649191, guid: b628c2ad1ffb1c940a6529262f32d422, type: 3}
@@ -21750,9 +21752,8 @@ MonoBehaviour:
   - {fileID: 6368110840796035940, guid: e8176e8d262f45843a8507e2b7ef9ace, type: 3}
   - {fileID: 1968154814338336523, guid: 9cb2987897963394590cd290c6a3dafa, type: 3}
   orbit: {fileID: 1009603419}
+  quizBase: {fileID: 0}
   satelliteChallengeManger: {fileID: 0}
-  bgmSource: {fileID: 894007026}
-  globalDistanceScaler: 0
 --- !u!4 &1901827054
 Transform:
   m_ObjectHideFlags: 0
@@ -21767,6 +21768,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1901827055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1901827052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e04d60fa6ecb4bfeaac78cf894fcd7a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  astralBodiesDict: []
+  astralBodyPrefab: {fileID: 4466750129858649188, guid: b628c2ad1ffb1c940a6529262f32d422, type: 3}
+  isLoadByPrefab: 0
+  loadDoneEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  loadTarget: "\u771F\u5B9E\u5730\u65E5"
+  orbitBase: {fileID: 1009603419}
+  OrbitRoot: {fileID: 1009603420}
 --- !u!1 &1913262941
 GameObject:
   m_ObjectHideFlags: 0
@@ -22028,10 +22050,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9631da20655d02418709655929458ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocityLine: {fileID: 1924732254}
   editingTarget: {fileID: 0}
-  speedUI: {fileID: 1898557190}
   showSize: 0.1
+  speedUI: {fileID: 1898557190}
+  velocityLine: {fileID: 1924732254}
   velocityUI: {fileID: 1514731290}
 --- !u!120 &1924732254
 LineRenderer:
@@ -22173,9 +22195,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   astronautsAnimator: {fileID: 1925928756}
-  boredTimeMin: 6
-  boredTimeMax: 12
   boredAnimationCount: 5
+  boredTimeMax: 12
+  boredTimeMin: 6
   pointAnimationCount: 3
   selectorUI: {fileID: 736456931}
 --- !u!1 &1927521029
@@ -22409,10 +22431,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6d59524e26ad1c40801e75b3fd817ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lengthSpline: {fileID: 284363330}
-  lengthCalculator: {fileID: 284363326}
-  lengthText: {fileID: 231007073}
   astralBody: {fileID: 0}
+  lengthCalculator: {fileID: 284363326}
+  lengthSpline: {fileID: 284363330}
+  lengthText: {fileID: 231007073}
   targetAstralBody: {fileID: 0}
 --- !u!114 &1933376576 stripped
 MonoBehaviour:
@@ -23269,18 +23291,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 710ff21aa686c6f4e8fd0612a3993df4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  angularVelocity: {fileID: 531814989}
+  area: {fileID: 1384946360}
   astralBody: {fileID: 0}
   conHeight: 180
-  angularVelocity: {fileID: 531814989}
   distance: {fileID: 1196472855}
-  area: {fileID: 1384946360}
   ellipseImage: {fileID: 1727621533}
-  oriImage: {fileID: 1654819154}
-  targetImage: {fileID: 1804846446}
-  leftFociImage: {fileID: 2138297312}
-  rightFociImage: {fileID: 591205601}
-  fillMask: {fileID: 2040237798}
   fillImage: {fileID: 1822699332}
+  fillMask: {fileID: 2040237798}
+  leftFociImage: {fileID: 2138297312}
+  oriImage: {fileID: 1654819154}
+  rightFociImage: {fileID: 591205601}
+  targetImage: {fileID: 1804846446}
 --- !u!1 &1990777078
 GameObject:
   m_ObjectHideFlags: 0
@@ -25121,6 +25143,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Core
       objectReference: {fileID: 0}
+    - target: {fileID: 871134749857384736, guid: 3e218b08c9cc4dc42be9da0507868d25, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 871134749857384743, guid: 3e218b08c9cc4dc42be9da0507868d25, type: 3}
       propertyPath: banAffectedPlanets.Array.data[0]
       value: 
@@ -25140,7 +25166,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6368110840796035940, guid: e8176e8d262f45843a8507e2b7ef9ace, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6368110840796035943, guid: e8176e8d262f45843a8507e2b7ef9ace, type: 3}
       propertyPath: affectedPlanets.Array.size
@@ -25251,6 +25277,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mercury
       objectReference: {fileID: 0}
+    - target: {fileID: 1342138967438411701, guid: ba4ccd564088a9247b9c90e23d51081c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1342138967438411702, guid: ba4ccd564088a9247b9c90e23d51081c, type: 3}
       propertyPath: affectedPlanets.Array.size
       value: 1
@@ -25274,7 +25304,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7660210638911855748, guid: 9226e5d3b3c3af849bde82c64c085dba, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7660210638911855751, guid: 9226e5d3b3c3af849bde82c64c085dba, type: 3}
       propertyPath: affectedPlanets.Array.size
@@ -25472,7 +25502,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1968154814338336523, guid: 9cb2987897963394590cd290c6a3dafa, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1968154814338336532, guid: 9cb2987897963394590cd290c6a3dafa, type: 3}
       propertyPath: m_RootOrder
@@ -25577,7 +25607,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1866530193286672185, guid: 136f1401e662747439c164fcd68e9f71, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1866530193286672186, guid: 136f1401e662747439c164fcd68e9f71, type: 3}
       propertyPath: affectedPlanets.Array.size
@@ -25610,7 +25640,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3004606916121283970, guid: 3a072af3482a0824a9019de894bcb898, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3004606916121283997, guid: 3a072af3482a0824a9019de894bcb898, type: 3}
       propertyPath: m_RootOrder
@@ -25679,7 +25709,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2409649615308437762, guid: ebccb29f36367ad49a08ec9b599b463b, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2409649615308437789, guid: ebccb29f36367ad49a08ec9b599b463b, type: 3}
       propertyPath: m_RootOrder
@@ -25740,7 +25770,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2396627440855739368, guid: 8846308c1e68b6a429883a31f1c7d629, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2396627440855739371, guid: 8846308c1e68b6a429883a31f1c7d629, type: 3}
       propertyPath: affectedPlanets.Array.size
@@ -25817,7 +25847,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4466750129858649191, guid: b628c2ad1ffb1c940a6529262f32d422, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4466750129858649208, guid: b628c2ad1ffb1c940a6529262f32d422, type: 3}
       propertyPath: m_RootOrder
