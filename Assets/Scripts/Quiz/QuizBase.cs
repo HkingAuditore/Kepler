@@ -16,7 +16,7 @@ namespace Quiz
         /// </summary>
         public float answer;
 
-        [SerializeField] protected List<AstralBodyDict> astralBodiesDict;
+        [SerializeField] protected List<AstralBodyDict<QuizAstralBody>> astralBodiesDict;
 
         /// <summary>
         ///     生成用实体
@@ -46,7 +46,7 @@ namespace Quiz
         /// </summary>
         public QuizType quizType;
 
-        private List<AstralBodyStructDict> _astralBodyStructDictList;
+        private List<QuizAstralBodyDict> _astralBodyStructDictList;
         private bool                       _isLoadDone;
 
         /// <summary>
@@ -122,7 +122,7 @@ namespace Quiz
 
         private void GenerateAstralBodiesWithPrefab()
         {
-            var astralBodyDicts = new List<AstralBodyDict>();
+            var astralBodyDicts = new List<AstralBodyDict<QuizAstralBody>>();
             foreach (var pair in astralBodiesDict)
             {
                 var target =
@@ -137,7 +137,7 @@ namespace Quiz
                 {
                 }
 
-                astralBodyDicts.Add(new AstralBodyDict(target.transform, target, pair.isTarget));
+                astralBodyDicts.Add(new AstralBodyDict<QuizAstralBody>(target.transform, target, pair.isTarget));
                 // Debug.Log("add HashCode:" + target.GetHashCode());
                 target.gameObject.name = target.gameObject.name.Replace("(Clone)", "");
                 if (pair.isTarget) this.target = target;
@@ -148,7 +148,7 @@ namespace Quiz
 
         private void GenerateAstralBodiesWithoutPrefab()
         {
-            var astralBodyDicts = new List<AstralBodyDict>();
+            var astralBodyDicts = new List<AstralBodyDict<QuizAstralBody>>();
             foreach (var pair in _astralBodyStructDictList)
             {
                 astralBodyPrefab.realMass     = pair.mass;
@@ -204,7 +204,7 @@ namespace Quiz
                 }
 
                 // Debug.Log("add HashCode:" + target.GetHashCode());
-                astralBodyDicts.Add(new AstralBodyDict(target.transform, target, pair.isTarget));
+                astralBodyDicts.Add(new AstralBodyDict<QuizAstralBody>(target.transform, target, pair.isTarget));
 
                 target.gameObject.name = target.gameObject.name.Replace("(Clone)", "");
                 if (pair.isCore) target.gameObject.name = "Core";

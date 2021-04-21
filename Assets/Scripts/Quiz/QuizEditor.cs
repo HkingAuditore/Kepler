@@ -44,7 +44,7 @@ namespace Quiz
         /// <param name="isTarget">是否为目标</param>
         public void AddAstralBody(QuizAstralBody astralBody, bool isTarget = false)
         {
-            astralBodiesDict.Add(new AstralBodyDict(astralBody.transform, astralBody, isTarget));
+            astralBodiesDict.Add(new AstralBodyDict<QuizAstralBody>(astralBody.transform, astralBody, isTarget));
         }
 
         /// <summary>

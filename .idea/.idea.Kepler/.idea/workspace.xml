@@ -24,249 +24,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1afa9dc1-adab-467c-afda-52b72c3d10f3" name="默认的" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizAstralBodyDict.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/XmlSaver.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/XmlSaver/AstralBodyDict.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/XmlSaver/AstralBodyDict.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/XmlSaver/SceneBaseStruct.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/XmlSaver/SceneBaseStruct.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/XmlSaver/XmlSaver.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/XmlSaver/XmlSaver.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Kepler/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Kepler/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Kepler/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Kepler/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Kepler/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Kepler/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Quiz/Sphere 1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Quiz/Sphere 1.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Animation/AstronautsAnimation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Animation/AstronautsAnimation.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BloomEffect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BloomEffect.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomCamera/CameraController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomCamera/CameraController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomCamera/CameraLayerMixer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomCamera/CameraLayerMixer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomCamera/LayerCamera.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomCamera/LayerCamera.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomPostProcessing/CameraMixer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomPostProcessing/CameraMixer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomPostProcessing/CustomPostProcessingBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomPostProcessing/CustomPostProcessingBase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomPostProcessing/Dof.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomPostProcessing/Dof.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomPostProcessing/DofRenderer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomPostProcessing/DofRenderer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomPostProcessing/OutlineCatcher.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomPostProcessing/OutlineCatcher.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/AstralBodyAddUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/AstralBodyAddUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/AstralBodyEditorUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/AstralBodyEditorUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/AstralBodyPlacementUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/AstralBodyPlacementUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/GlobalTimerUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/GlobalTimerUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/LengthUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/LengthUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/MeshEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/MeshEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/OrbitGraphUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/OrbitGraphUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/OrbitPanelUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/OrbitPanelUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/PositionEditorUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/PositionEditorUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/Quiz/AstralBodyEditorQuizUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/Quiz/AstralBodyEditorQuizUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/Quiz/QuizEditorUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/Quiz/QuizEditorUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/Quiz/QuizLineUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/Quiz/QuizLineUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Le Tai's Asset/TranslucentImage/Material/Default-Translucent.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Le Tai's Asset/TranslucentImage/Material/Default-Translucent.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/Quiz/QuizListUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/Quiz/QuizListUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/Quiz/QuizStarUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/Quiz/QuizStarUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/Quiz/QuizStarsGroupUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/Quiz/QuizStarsGroupUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/Quiz/QuizUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/Quiz/QuizUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/Quiz/ResultUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/Quiz/ResultUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/Quiz/VarLineUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/Quiz/VarLineUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/Satellite/SatelliteResultUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/Satellite/SatelliteResultUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/SatelliteControllerUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/SatelliteControllerUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/SelectorUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/SelectorUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/StarStyleSettingUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/StarStyleSettingUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/TutorialUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/TutorialUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/VectorUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/VectorUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/VelocityEditorUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/VelocityEditorUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DeferredFogEffect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DeferredFogEffect.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DepthOfFieldEffect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DepthOfFieldEffect.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Editor/MyLightingShaderGUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Editor/MyLightingShaderGUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GPUInstancingTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GPUInstancingTest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManagers/Difficulty.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManagers/Difficulty.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManagers/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManagers/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManagers/GlobalTimer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManagers/GlobalTimer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManagers/GlobalTransfer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManagers/GlobalTransfer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManagers/PropertyUnit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManagers/PropertyUnit.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MathPlus/ConicSection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MathPlus/ConicSection.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MathPlus/CustomSolver.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MathPlus/CustomSolver.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MathPlus/MathPlus.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MathPlus/MathPlus.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Quiz/AstralBodyDict.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Quiz/AstralBodyDict.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Quiz/AstralBodyStructDict.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Quiz/AstralBodyStructDict.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizAstralBody.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizAstralBody.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Quiz/AstralBodyStructDict.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Quiz/AstralBodyStructDict.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizAstralBodyDict.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizBase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizBaseStruct.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizBaseStruct.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizData.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizEditor.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizSaver.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizSaver.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizSolver.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizSolver.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizType.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Quiz/Reason.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Quiz/Reason.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Satellite/Satellite.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Satellite/Satellite.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Satellite/SatelliteChallengeManger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Satellite/SatelliteChallengeManger.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Satellite/SatelliteController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Satellite/SatelliteController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Satellite/SatelliteCore.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Satellite/SatelliteCore.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Satellite/SatelliteEngine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Satellite/SatelliteEngine.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Satellite/SatelliteParachute.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Satellite/SatelliteParachute.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Satellite/SatellitePart.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Satellite/SatellitePart.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Satellite/SatelliteResultType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Satellite/SatelliteResultType.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Satellite/SatelliteType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Satellite/SatelliteType.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SpacePhysic/AstralBody.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SpacePhysic/AstralBody.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SpacePhysic/GravityTracing.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SpacePhysic/GravityTracing.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SpacePhysic/PhysicBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SpacePhysic/PhysicBase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StaticClasses/StringPlus.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StaticClasses/StringPlus.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TTS/VoiceGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TTS/VoiceGenerator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/Animation.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/Animation/AstronautsAnimation.puml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/Animation/AstronautsAnimation.puml.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/BloomEffect.puml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/BloomEffect.puml.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomCamera.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomCamera/CameraController.puml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomCamera/CameraController.puml.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomCamera/CameraLayerMixer.puml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomCamera/CameraLayerMixer.puml.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomCamera/LayerCamera.puml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomCamera/LayerCamera.puml.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomPostProcessing.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomPostProcessing/CameraMixer.puml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomPostProcessing/CameraMixer.puml.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomPostProcessing/CustomPostProcessingBase.puml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomPostProcessing/CustomPostProcessingBase.puml.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomPostProcessing/Dof.puml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomPostProcessing/Dof.puml.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomPostProcessing/OutlineCatcher.puml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomPostProcessing/OutlineCatcher.puml.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/AstralBodyAddUI.puml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/AstralBodyAddUI.puml.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/AstralBodyEditorUI.puml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/AstralBodyEditorUI.puml.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/AstralBodyPlacementUI.puml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/AstralBodyPlacementUI.puml.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/GlobalTimerUI.puml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/GlobalTimerUI.puml.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/LabModeUI.puml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/LabModeUI.puml.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/LengthUI.puml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/LengthUI.puml.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/MainUI.puml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/MainUI.puml.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/MeshEditor.puml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/MeshEditor.puml.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/MultiTutorialManagerUI.puml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/MultiTutorialManagerUI.puml.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/OrbitGraphUI.puml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/OrbitGraphUI.puml.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/OrbitPanelUI.puml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/OrbitPanelUI.puml.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/PhysicSceneUI.puml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/PhysicSceneUI.puml.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/PositionEditorUI.puml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/PositionEditorUI.puml.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/Quiz.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/Quiz/AstralBodyEditorQuizUI.puml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/Quiz/AstralBodyEditorQuizUI.puml.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/Quiz/QuizEditUI.puml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/Quiz/QuizEditUI.puml.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/Quiz/QuizEditorUI.puml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/Quiz/QuizEditorUI.puml.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/Quiz/QuizLineUI.puml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/Quiz/QuizLineUI.puml.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/Quiz/QuizListUI.puml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/Quiz/QuizListUI.puml.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/Quiz/QuizStarUI.puml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/Quiz/QuizStarUI.puml.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/Quiz/QuizStarsGroupUI.puml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/Quiz/QuizStarsGroupUI.puml.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/Quiz/QuizTestUI.puml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/Quiz/QuizTestUI.puml.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/Quiz/QuizUI.puml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/Quiz/QuizUI.puml.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/Quiz/ResultUI.puml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/Quiz/ResultUI.puml.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/Quiz/VarLineUI.puml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/Quiz/VarLineUI.puml.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/Satellite.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/Satellite/SatelliteResultUI.puml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/Satellite/SatelliteResultUI.puml.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/SatelliteControllerUI.puml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/SatelliteControllerUI.puml.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/SelectorUI.puml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/SelectorUI.puml.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/SettingUI.puml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/SettingUI.puml.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/StarStyleSettingUI.puml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/StarStyleSettingUI.puml.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/TestModeUI.puml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/TestModeUI.puml.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/TutorialClipUI.puml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/TutorialClipUI.puml.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/TutorialManagerUI.puml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/TutorialManagerUI.puml.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/TutorialUI.puml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/TutorialUI.puml.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/UIManager.puml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/UIManager.puml.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/VectorUI.puml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/VectorUI.puml.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/VelocityEditorUI.puml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/CustomUI/VelocityEditorUI.puml.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/DeferredFogEffect.puml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/DeferredFogEffect.puml.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/DepthOfFieldEffect.puml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/DepthOfFieldEffect.puml.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/Editor.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/Editor/MyLightingShaderGUI.puml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/Editor/MyLightingShaderGUI.puml.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/EmissiveOscillator.puml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/EmissiveOscillator.puml.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/GPUInstancingTest.puml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/GPUInstancingTest.puml.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/GameManagers.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/GameManagers/GameManager.puml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/GameManagers/GameManager.puml.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/GameManagers/GlobalTimer.puml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/GameManagers/GlobalTimer.puml.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/GameManagers/GlobalTransfer.puml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/GameManagers/GlobalTransfer.puml.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/Init.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/Init/Init.puml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/Init/Init.puml.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/MathPlus.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/MathPlus/MathPlus.puml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/MathPlus/MathPlus.puml.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/Quiz.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/Quiz/QuizAstralBody.puml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/Quiz/QuizAstralBody.puml.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/Quiz/QuizBase.puml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/Quiz/QuizBase.puml.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/Quiz/QuizData.puml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/Quiz/QuizData.puml.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/Quiz/QuizEditor.puml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/Quiz/QuizEditor.puml.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/Quiz/QuizSaver.puml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/Quiz/QuizSaver.puml.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/Quiz/QuizSolver.puml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/Quiz/QuizSolver.puml.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/Quiz/Transformer.puml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/Quiz/Transformer.puml.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/Satellite.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/Satellite/Satellite.puml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/Satellite/Satellite.puml.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/Satellite/SatelliteChallengeManger.puml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/Satellite/SatelliteChallengeManger.puml.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/Satellite/SatelliteController.puml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/Satellite/SatelliteController.puml.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/Satellite/SatelliteCore.puml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/Satellite/SatelliteCore.puml.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/Satellite/SatelliteEngine.puml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/Satellite/SatelliteEngine.puml.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/Satellite/SatelliteParachute.puml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/Satellite/SatelliteParachute.puml.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/Satellite/SatellitePart.puml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/Satellite/SatellitePart.puml.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/SpacePhysic.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/SpacePhysic/AstralBody.puml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/SpacePhysic/AstralBody.puml.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/SpacePhysic/GravityTracing.puml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/SpacePhysic/GravityTracing.puml.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/SpacePhysic/IOrbitCalculator.puml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/SpacePhysic/IOrbitCalculator.puml.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/StaticClasses.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/StaticClasses/StringPlus.puml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/StaticClasses/StringPlus.puml.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/TTS.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/TTS/MSCDLL.puml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/TTS/MSCDLL.puml.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/TTS/VoiceGenerator.puml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/TTS/VoiceGenerator.puml.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/TangentSpaceVisualizer.puml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/TangentSpaceVisualizer.puml.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/include.puml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UMLOutput/include.puml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizSaverException.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/XmlSaver/SaverException.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizSaverException.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/XmlSaver/SaverException.cs.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -319,17 +99,6 @@
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/Assets/Scripts/CustomCamera/LayerCamera.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/CustomPostProcessing/CameraMixer.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/CustomPostProcessing/CustomPostProcessingBase.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/CustomPostProcessing/OutlineCatcher.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/CustomUI/Quiz/AstralBodyEditorQuizUI.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/CustomUI/Quiz/QuizEditorUI.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/CustomUI/Quiz/QuizLineUI.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/CustomUI/Quiz/QuizStarsGroupUI.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/CustomUI/Quiz/QuizStarUI.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/CustomUI/AstralBodyEditorUI.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/CustomUI/AstralBodyAddUI.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/CustomUI/AstralBodyPlacementUI.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/CustomUI/LengthUI.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/CustomUI/OrbitGraphUI.cs" />
@@ -347,12 +116,8 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/MathPlus/ConicSection.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/MathPlus/CustomSolver.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/MathPlus/MathPlus.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Quiz/AstralBodyDict.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Quiz/AstralBodyStructDict.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizAstralBody.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizBase.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizEditor.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizSaver.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizSolver.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizType.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Quiz/Reason.cs" />
@@ -370,6 +135,21 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/SpacePhysic/PhysicBase.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/StaticClasses/StringPlus.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/TTS/VoiceGenerator.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Quiz/AstralBodyDict.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizData.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizEditor.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Quiz/SaverException.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/XmlSaver/SaverException.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/XmlSaver/AstralBodyStructDict.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizAstralBodyStructDict.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizAstralBodyDict.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/XmlSaver/AstralBodyDict.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/XmlSaver/SceneBaseStruct.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizBaseStruct.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizBase.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/XmlSaver/XmlSaver.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizSaver.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/CustomUI/Quiz/QuizListUI.cs" />
     </changedPaths>
   </component>
   <component name="NamedScopeManager">
@@ -530,6 +310,8 @@
       <workItem from="1618753975026" duration="3249000" />
       <workItem from="1618820956429" duration="827000" />
       <workItem from="1618832166121" duration="1752000" />
+      <workItem from="1618922232167" duration="91000" />
+      <workItem from="1618922520922" duration="8070000" />
     </task>
     <servers />
   </component>

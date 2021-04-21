@@ -537,14 +537,13 @@
           </e>
           <e p="Quiz" t="Include">
             <e p="AstralBodyDict.cs" t="Include" />
-            <e p="AstralBodyStructDict.cs" t="Include" />
             <e p="QuizAstralBody.cs" t="Include" />
+            <e p="QuizAstralBodyDict.cs" t="Include" />
             <e p="QuizBase.cs" t="Include" />
             <e p="QuizBaseStruct.cs" t="Include" />
             <e p="QuizData.cs" t="Include" />
             <e p="QuizEditor.cs" t="Include" />
             <e p="QuizSaver.cs" t="Include" />
-            <e p="QuizSaverException.cs" t="Include" />
             <e p="QuizSolver.cs" t="Include" />
             <e p="QuizType.cs" t="Include" />
             <e p="Reason.cs" t="Include" />
@@ -585,6 +584,12 @@
             <e p="SynthStatus.cs" t="Include" />
             <e p="UploadStatus.cs" t="Include" />
             <e p="VoiceGenerator.cs" t="Include" />
+          </e>
+          <e p="XmlSaver" t="Include">
+            <e p="AstralBodyDict.cs" t="Include" />
+            <e p="SaverException.cs" t="Include" />
+            <e p="SceneBaseStruct.cs" t="Include" />
+            <e p="XmlSaver.cs" t="Include" />
           </e>
         </e>
         <e p="Shaders" t="Include">

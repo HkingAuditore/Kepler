@@ -1,16 +1,17 @@
 ﻿using System;
+using SpacePhysic;
 using UnityEngine;
 
 namespace Quiz
 {
     [Serializable]
-    public class AstralBodyDict
+    public class AstralBodyDict<T> where T : AstralBody
     {
         [SerializeField] private bool           _isTarget;
-        public                   QuizAstralBody astralBody;
+        public                   T astralBody;
         public                   Transform      transform;
 
-        public AstralBodyDict(Transform transform, QuizAstralBody astralBody, bool isTarget)
+        public AstralBodyDict(Transform transform, T astralBody, bool isTarget)
         {
             this.transform  = transform;
             this.astralBody = astralBody;

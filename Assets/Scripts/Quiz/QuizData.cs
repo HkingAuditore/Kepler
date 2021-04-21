@@ -4,7 +4,7 @@ namespace Quiz
 {
     public class QuizData
     {
-        public List<AstralBodyDict> astralBodies;
-        public string               quizName;
+        public List<AstralBodyDict<QuizAstralBody>> astralBodies;
+        public string                               quizName;
     }
 }

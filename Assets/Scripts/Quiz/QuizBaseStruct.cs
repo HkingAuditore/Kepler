@@ -1,11 +1,11 @@
 using System.Collections.Generic;
+using XmlSaver;
 
 namespace Quiz
 {
-    public struct QuizBaseStruct
+    public class QuizBaseStruct : SceneBaseStruct<QuizAstralBodyDict>
     {
-        public List<AstralBodyStructDict> astralBodyStructList;
-        public string                     quizName;
-        public QuizType                   quizType;
+        public string   quizName;
+        public QuizType quizType;
     }
 }

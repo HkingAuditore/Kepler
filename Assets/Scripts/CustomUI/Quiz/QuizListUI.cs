@@ -50,7 +50,7 @@ namespace CustomUI.Quiz
 
         public void DeleteQuiz(string quizName)
         {
-            QuizSaver.DeleteQuizFiles(quizName);
+            QuizSaver.DeleteFiles(quizName);
             quizLineUis.ForEach(q => Destroy(q.gameObject));
             quizLineUis.Clear();
 
