@@ -1,16 +1,18 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Quiz;
+using SpacePhysic;
 using UnityEngine;
+using XmlSaver;
 
-namespace CustomUI.Quiz
+namespace CustomUI.Lab
 {
-    public class QuizListUI : MonoBehaviour
+    public class LabSceneListUI : MonoBehaviour
     {
         public RectTransform    content;
-        public QuizLineUI       linePrefab;
+        public LabSceneLineUI       linePrefab;
         public float            offset;
-        public List<QuizLineUI> quizLineUis = new List<QuizLineUI>();
+        public List<LabSceneLineUI> scenesLineUis = new List<LabSceneLineUI>();
 
         private void Start()
         {
@@ -24,15 +26,15 @@ namespace CustomUI.Quiz
                                      content.position.z);
             Debug.Log(oriPos);
             var fileNames = new List<string>();
-            var xmlList   = QuizSaver.GetFiles(ref fileNames);
-            var quizBaseStructs = (from xmlDocument in xmlList
-                                   select QuizSaver.ConvertXml2SceneBase(xmlDocument,
-                                                                        fileNames[xmlList.IndexOf(xmlDocument)]))
+            var xmlList   = XmlSaver.XmlSaver<AstralBody>.GetFiles(ref fileNames);
+            var sceneQuizStruct = (from xmlDocument in xmlList
+                                   select XmlSaver.XmlSaver<AstralBody>.ConvertXml2SceneBase(xmlDocument,
+                                                                                             fileNames[xmlList.IndexOf(xmlDocument)]))
                .ToList();
-            content.sizeDelta = new Vector2(content.sizeDelta.x, quizBaseStructs.Count * offset * 0.5f);
-            for (var i = 0; i < quizBaseStructs.Count; i++)
+            content.sizeDelta = new Vector2(content.sizeDelta.x, sceneQuizStruct.Count * offset * 0.5f);
+            for (var i = 0; i < sceneQuizStruct.Count; i++)
             {
-                var quizStruct = quizBaseStructs[i];
+                SceneBaseStruct<AstralBody> quizStruct = sceneQuizStruct[i];
                 // Debug.Log(oriPos - new Vector3(0, (i + 1) * offset, 0));
 
                 var line = Instantiate(linePrefab, oriPos - new Vector3(0, (i + 1) * offset, 0),
@@ -40,21 +42,13 @@ namespace CustomUI.Quiz
                                        content);
                 var rect = line.GetComponent<RectTransform>();
                 rect.anchoredPosition3D = new Vector3(0, rect.localPosition.y, 0);
-                quizLineUis.Add(line);
-                line.quizStruct = quizStruct;
+                scenesLineUis.Add(line);
+                line.sceneStruct = quizStruct;
                 line.name       = quizStruct.sceneName;
-                line.quizListUI = this;
+                line.labSceneListUI = this;
                 line.gameObject.SetActive(true);
             }
         }
 
-        public void DeleteQuiz(string quizName)
-        {
-            QuizSaver.DeleteFiles(quizName);
-            quizLineUis.ForEach(q => Destroy(q.gameObject));
-            quizLineUis.Clear();
-
-            GenerateLines();
-        }
     }
 }

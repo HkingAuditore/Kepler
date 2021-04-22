@@ -342,7 +342,7 @@ namespace Quiz
                                                                           }));
             quizBaseStruct.quizType =
                 (QuizType) Enum.Parse(typeof(QuizType), xmlDoc.SelectSingleNode("AstralBodyList").Attributes[0].Value);
-            quizBaseStruct.quizName = fileName;
+            quizBaseStruct.sceneName = fileName;
             return quizBaseStruct;
         }
 

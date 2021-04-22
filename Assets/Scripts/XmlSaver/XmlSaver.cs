@@ -173,7 +173,7 @@ namespace XmlSaver
             }
 
             sceneBaseStruct.astralBodyStructList = list;
-
+            sceneBaseStruct.sceneName            = fileName;
             return sceneBaseStruct;
         }
 
@@ -260,6 +260,20 @@ namespace XmlSaver
             dict.AppendChild(astTransform);
             dict.AppendChild(convertAstralBodyPropertyToXmlHandler(astralBodyDict,_xmlDoc));
             return dict;
+        }
+        
+        /// <summary>
+        ///     将星体群转为XML文档
+        /// </summary>
+        /// <param name="astOrbit">AstralBodyDict集</param>
+        /// <returns></returns>
+        public virtual XmlDocument ConvertOrbit2Xml(List<AstralBodyDict<T>> astOrbit)
+        {
+            var astList = _xmlDoc.CreateElement("AstralBodyList");
+            foreach (var astralBodyDict in astOrbit) astList.AppendChild(ConvertAstralBody2XmlElement(astralBodyDict));
+            
+            _xmlDoc.AppendChild(astList);
+            return _xmlDoc;
         }
     }
 }

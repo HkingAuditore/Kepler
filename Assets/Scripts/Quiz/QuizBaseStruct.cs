@@ -5,7 +5,6 @@ namespace Quiz
 {
     public class QuizBaseStruct : SceneBaseStruct<QuizAstralBody>
     {
-        public string   quizName;
         public QuizType quizType;
 
         // public static QuizBaseStruct FromSceneBaseStruct(SceneBaseStruct<Quiz.QuizAstralBody> sceneBaseStruct)

@@ -47,7 +47,7 @@ namespace Quiz
                 try
                 {
                     if (!GameManager.getGameManager.isQuizEditMode)
-                        loadTarget = GlobalTransfer.getGlobalTransfer.quizName;
+                        loadTarget = GlobalTransfer.getGlobalTransfer.sceneName;
                 }
                 catch (Exception e)
                 {

@@ -493,6 +493,10 @@
               <e p="VelocityEditorUI.cs" t="Include" />
             </e>
             <e p="GlobalTimerUI.cs" t="Include" />
+            <e p="Lab" t="Include">
+              <e p="LabSceneLineUI.cs" t="Include" />
+              <e p="LabSceneListUI.cs" t="Include" />
+            </e>
             <e p="LabModeUI.cs" t="Include" />
             <e p="LengthUI.cs" t="Include" />
             <e p="MainUI.cs" t="Include" />

@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LabMode.unity
     guid: b8cef211390060c48b6a0e34110c9c5b
+  - enabled: 1
+    path: Assets/Scenes/Satellite 1.unity
+    guid: 22326d8f35ba33147a6a54f34bae27c4
   m_configObjects: {}

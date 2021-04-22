@@ -17,7 +17,7 @@ namespace GameManagers
         /// <summary>
         ///     问题名称
         /// </summary>
-        public string quizName;
+        public string sceneName;
 
         public static GlobalTransfer getGlobalTransfer { get; private set; }
 

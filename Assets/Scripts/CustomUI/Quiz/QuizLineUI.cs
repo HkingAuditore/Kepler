@@ -22,7 +22,7 @@ namespace CustomUI.Quiz
 
         public void OnClick()
         {
-            GlobalTransfer.getGlobalTransfer.quizName = name;
+            GlobalTransfer.getGlobalTransfer.sceneName = name;
             SceneManager.LoadScene("QuizTest");
         }
 

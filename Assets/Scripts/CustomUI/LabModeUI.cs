@@ -7,6 +7,9 @@ namespace CustomUI
     public class LabModeUI : MonoBehaviour
     {
         public GameObject difficultyPanel;
+        public GameObject sceneListPanel;
+        public GameObject satellitePanel;
+        public int        satelliteSceneIndex;
 
         public void ToLab()
         {
@@ -16,7 +19,18 @@ namespace CustomUI
         public void ToMoon(int difficulty)
         {
             GlobalTransfer.getGlobalTransfer.difficulty = (Difficulty) difficulty;
-            SceneManager.LoadScene("Satellite");
+            switch (satelliteSceneIndex)
+            {
+                case 0 :
+                    SceneManager.LoadScene("Satellite");
+                    break;
+                case 1:
+                    SceneManager.LoadScene("Satellite 1");
+                    break;
+                default:
+                    break;
+            }
+
         }
 
         public void ToMain()
@@ -32,6 +46,30 @@ namespace CustomUI
         public void CloseDifficultyPanel()
         {
             difficultyPanel.SetActive(false);
+        }
+
+        public void ShowScenesListPanel()
+        {
+            sceneListPanel.SetActive(true);
+        }
+        
+        public void CloseScenesListPanel()
+        {
+            sceneListPanel.SetActive(false);
+        }
+
+        public void ShowSatellitePanel()
+        {
+            satellitePanel.SetActive(true);
+        }
+        public void CloseSatellitePanel()
+        {
+            satellitePanel.SetActive(false);
+        }
+
+        public void SetSatelliteIndex(int index)
+        {
+            this.satelliteSceneIndex = index;
         }
     }
 }

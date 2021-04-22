@@ -21,6 +21,8 @@ namespace XmlSaver
         ///     生成用实体
         /// </summary>
         public T astralBodyPrefab;
+
+        public T core;
         /// <summary>
         ///     是否由Prefab载入
         /// </summary>
@@ -63,6 +65,7 @@ namespace XmlSaver
 
         protected virtual void Start()
         {
+            this.loadTarget = GlobalTransfer.getGlobalTransfer.sceneName;
             loadDoneEvent.AddListener(() => { GameManager.getGameManager.CalculateMassScales(); });
             // List<AstralBody> astralBodies = new List<AstralBody>();
             // 放置星球
@@ -130,8 +133,6 @@ namespace XmlSaver
             {
                 processHandler += dataDictProcessHandler;
             }
-            
-            AstralBody core =null;
 
             
             if (afterDictProcessHandler != null)
