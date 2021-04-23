@@ -447,17 +447,9 @@
           <e p="计算太阳质量.xml" t="Include" />
         </e>
         <e p="ScenesData" t="Include">
-          <e p="21-04-03.xml" t="Include" />
-          <e p="估算太阳质量.xml" t="Include" />
-          <e p="双星.xml" t="Include" />
-          <e p="四星.xml" t="Include" />
-          <e p="地日.xml" t="Include" />
-          <e p="地月.xml" t="Include" />
-          <e p="求太阳密度.xml" t="Include" />
-          <e p="求太阳质量.xml" t="Include" />
+          <e p="Test.xml" t="Include" />
           <e p="真实地日.xml" t="Include" />
           <e p="真实地月.xml" t="Include" />
-          <e p="计算太阳质量.xml" t="Include" />
         </e>
         <e p="Scripts" t="Include">
           <e p="Animation" t="Include">
@@ -584,6 +576,7 @@
             <e p="PhysicBase.cs" t="Include" />
           </e>
           <e p="StaticClasses" t="Include">
+            <e p="GameobjectPlus.cs" t="Include" />
             <e p="MathPlus" t="Include">
               <e p="ConicSection.cs" t="Include" />
               <e p="ConicSectionDelegate.cs" t="Include" />
@@ -613,6 +606,7 @@
             <e p="SceneBaseStruct.cs" t="Include" />
             <e p="SceneEditor.cs" t="Include" />
             <e p="SceneLoadBase.cs" t="Include" />
+            <e p="SceneSaver.cs" t="Include" />
             <e p="XmlSaver.cs" t="Include" />
           </e>
         </e>

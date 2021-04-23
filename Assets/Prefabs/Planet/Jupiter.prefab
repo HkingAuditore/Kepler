@@ -98,18 +98,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65dc87998d120fe4b90a2991302fe566, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mass: 100
-  density: 1000
+  _density: 0
+  _mass: 100
+  _realMass: 0
   _size: 20
-  triggerCollider: {fileID: 3004606916121283971}
-  defaultCollider: {fileID: 3004606916121284093}
-  oriVelocity: {x: -0.7539633, y: 0, z: -7.959529}
-  angularVelocity: {x: 0.13, y: 0.18, z: 0}
-  enableAffect: 0
-  affectRadius: 8
-  enableTracing: 1
   affectedPlanets: []
+  affectRadius: 8
+  angularVelocity: {x: 0.13, y: 0.18, z: 0}
   banAffectedPlanets: []
+  defaultCollider: {fileID: 3004606916121284093}
+  enableAffect: 0
+  enableTracing: 1
+  oriVelocity: {x: -0.7539633, y: 0, z: -7.959529}
+  triggerCollider: {fileID: 3004606916121283971}
+  velocityChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  _meshNum: 2
 --- !u!54 &3004606916121283968
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -67,6 +67,11 @@ namespace CustomUI.AstralBodyEditor
                     (GameManager.getGameManager.quizBase as QuizEditor)?.AddAstralBody((QuizAstralBody) newAstralBody);
                     newAstralBody.affectedPlanets.Add(GameManager.getGameManager.quizBase.target);
                 }
+                else
+                {
+                    (GameManager.getGameManager.sceneEditor)?.AddAstralBody((AstralBody) newAstralBody);
+                    newAstralBody.affectedPlanets.Add(GameManager.getGameManager.sceneEditor.core);
+                }
 
                 _orbits.AddTracingTarget(newAstralBody);
                 _inPlacing = false;

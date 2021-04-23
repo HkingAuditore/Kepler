@@ -12,7 +12,7 @@ namespace XmlSaver
 {
 
 
-    public class XmlSaver<T> : MonoBehaviour where T : AstralBody
+    public abstract class XmlSaver<T> : MonoBehaviour where T : AstralBody
     {
         public delegate void ConvertAstralBodyDictHandler(AstralBodyDataDict<T> astralBodyDataDict,
                                                              XmlElement            xmlElement);
@@ -151,10 +151,7 @@ namespace XmlSaver
                                      bool.Parse(astralBodyXmlNode.SelectSingleNode("EnableTracing").InnerText);
                                  astralBodyDict.affectRadius =
                                      float.Parse(astralBodyXmlNode.SelectSingleNode("AffectRadius").InnerText);
-                                 astralBodyDict.period =
-                                     float.Parse(astralBodyXmlNode.SelectSingleNode("Period").InnerText);
-                                 astralBodyDict.radius =
-                                     float.Parse(astralBodyXmlNode.SelectSingleNode("Radius").InnerText);
+
                                  astralBodyDict.isCore  = bool.Parse(astralBodyXmlNode.Attributes["IsCore"].Value);
                                  astralBodyDict.meshNum = int.Parse(astralBodyXmlNode.Attributes["Style"].Value);
                              };

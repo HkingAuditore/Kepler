@@ -24,20 +24,38 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1afa9dc1-adab-467c-afda-52b72c3d10f3" name="默认的" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/StaticClasses/GameObjectPlus.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/StaticClasses/GameobjectPlus.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/XmlSaver/SceneSaver.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/XmlSaver/SceneSaver.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Kepler/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Kepler/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Kepler/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Kepler/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Planet/Earth.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Planet/Earth.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/LabMode.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/LabMode.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/LabModeUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/LabModeUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/Quiz/QuizLineUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/Quiz/QuizLineUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/Quiz/QuizListUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/Quiz/QuizListUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManagers/GlobalTransfer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManagers/GlobalTransfer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizBase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizBaseStruct.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizBaseStruct.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/PhysicScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/PhysicScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScenesData/21-04-03.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScenesData/21-04-03.xml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScenesData/估算太阳质量.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScenesData/估算太阳质量.xml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScenesData/双星.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScenesData/双星.xml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScenesData/四星.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScenesData/四星.xml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScenesData/地日.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScenesData/地日.xml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScenesData/地月.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScenesData/地月.xml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScenesData/求太阳密度.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScenesData/求太阳密度.xml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScenesData/求太阳质量.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScenesData/求太阳质量.xml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScenesData/计算太阳质量.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScenesData/计算太阳质量.xml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/AstralBodyEditor/AstralBodyPlacementUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/AstralBodyEditor/AstralBodyPlacementUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/PhysicSceneUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/PhysicSceneUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManagers/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManagers/GameManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizSaver.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizSaver.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/XmlSaver/SceneBaseStruct.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/XmlSaver/SceneBaseStruct.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SpacePhysic/AstralBody.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SpacePhysic/AstralBody.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/XmlSaver/SceneEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/XmlSaver/SceneEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/XmlSaver/SceneLoadBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/XmlSaver/SceneLoadBase.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/XmlSaver/XmlSaver.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/XmlSaver/XmlSaver.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -81,22 +99,28 @@
     <changedPaths>
       <option value="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizAstralBodyDict.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizAstralBody.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/SpacePhysic/AstralBody.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizEditor.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizSolver.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/SpacePhysic/GravityTracing.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/GameManagers/GameManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizSaver.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/XmlSaver/SceneEditor.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizBaseStruct.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/XmlSaver/SceneBaseStruct.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizBase.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/XmlSaver/XmlSaver.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/CustomUI/Lab/LabSceneListUI.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/GameManagers/GlobalTransfer.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/CustomUI/Lab/LabSceneLineUI.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/XmlSaver/SceneLoadBase.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/CustomUI/LabModeUI.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/XmlSaver/SceneSaver.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/GameManagers/GameManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/StaticClasses/GameobjectPlus.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/StaticClasses/GameObjectPlus.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/XmlSaver/SceneEditor.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/SpacePhysic/AstralBody.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/CustomUI/AstralBodyEditor/AstralBodyPlacementUI.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/CustomUI/PhysicSceneUI.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Quiz/AstralBodyDict.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/XmlSaver/XmlSaver.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizSaver.cs" />
     </changedPaths>
   </component>
   <component name="NamedScopeManager">
@@ -263,7 +287,8 @@
       <workItem from="1618991363427" duration="6048000" />
       <workItem from="1619005341762" duration="255000" />
       <workItem from="1619005626766" duration="11845000" />
-      <workItem from="1619092740726" duration="4316000" />
+      <workItem from="1619092740726" duration="5612000" />
+      <workItem from="1619145731220" duration="4528000" />
     </task>
     <servers />
   </component>

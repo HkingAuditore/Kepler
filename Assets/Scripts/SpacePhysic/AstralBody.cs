@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using GameManagers;
+using Quiz;
 using StaticClasses.MathPlus;
 using UnityEngine;
 using UnityEngine.Events;
@@ -78,7 +79,7 @@ namespace SpacePhysic
         private Vector3   _lastVelocity;
 
         private MeshFilter _mesh;
-        private int        _meshNum;
+        [SerializeField]private int        _meshNum;
         private Renderer   _renderer;
 
         /// <summary>
@@ -244,6 +245,8 @@ namespace SpacePhysic
         private void OnDestroy()
         {
             GameManager.getGameManager.orbit.RemoveAstralBody(this);
+            if (GameManager.getGameManager.sceneEditor != null)
+                GameManager.getGameManager.sceneEditor.RemoveAstralBodyDict(this);
         }
 
         public virtual void OnCollisionEnter(Collision other)

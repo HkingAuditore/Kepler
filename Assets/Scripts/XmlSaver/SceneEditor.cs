@@ -1,15 +1,17 @@
 ﻿using System;
 using System.Collections;
+using System.Linq;
 using Quiz;
 using SpacePhysic;
+using StaticClasses;
 using UnityEngine;
 
 namespace XmlSaver
 {
     public class SceneEditor : SceneLoadBase<AstralBody>
     {
-        public XmlSaver<AstralBody> saver;
-        public void SaveQuiz(string quizName)
+        public SceneSaver saver;
+        public void SaveScene(string quizName)
         {
             // orbitBase.Freeze(false);
             var xmlDoc = saver.ConvertOrbit2Xml(astralBodiesDict);
@@ -43,6 +45,20 @@ namespace XmlSaver
         {
             astralBodiesDict.Add(new AstralBodyDict<AstralBody>(astralBody.transform, astralBody, isTarget));
         }
+        
+        public void UpdateAstralBody()
+        {
+            Debug.Log("before update:" + astralBodiesDict.Count);
+            astralBodiesDict = astralBodiesDict.Where(a => a.astralBody.gameObject.CheckReference()).ToList();
+            Debug.Log("after update:" + astralBodiesDict.Count);
+        }
+
+        public void RemoveAstralBodyDict(AstralBody astralBody)
+        {
+            astralBodiesDict = astralBodiesDict.Where(a => a.astralBody!= astralBody ).ToList();
+        }
+
+
 
         /// <summary>
         ///     设置问题目标

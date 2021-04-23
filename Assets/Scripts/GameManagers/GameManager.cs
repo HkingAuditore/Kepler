@@ -8,6 +8,7 @@ using SpacePhysic;
 using StaticClasses.MathPlus;
 using UnityEngine;
 using UnityEngine.Serialization;
+using XmlSaver;
 
 namespace GameManagers
 {
@@ -57,6 +58,8 @@ namespace GameManagers
         ///     问题管理对象
         /// </summary>
         [FormerlySerializedAs("quizEditor")] public QuizBase quizBase;
+
+        public SceneEditor sceneEditor;
 
         /// <summary>
         ///     卫星挑战管理对象

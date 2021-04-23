@@ -339,6 +339,11 @@ namespace Quiz
                                                                               astStruct.isTarget =
                                                                                   bool.Parse(astralBodyElement
                                                                                      .GetAttribute("IsTarget"));
+                                                                              astStruct.period =
+                                                                                  float.Parse(astralBodyXmlNode.SelectSingleNode("Period").InnerText);
+                                                                              astStruct.radius =
+                                                                                  float.Parse(astralBodyXmlNode.SelectSingleNode("Radius").InnerText);
+
                                                                           }));
             quizBaseStruct.quizType =
                 (QuizType) Enum.Parse(typeof(QuizType), xmlDoc.SelectSingleNode("AstralBodyList").Attributes[0].Value);
