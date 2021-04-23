@@ -1,0 +1,107 @@
+<AstralBodyList>
+  <AstralBodyDict>
+    <Transform>
+      <Position>(0.0, 0.0, 0.0)</Position>
+    </Transform>
+    <AstralBody IsCore="True" Style="0">
+      <Mass>1.98000002979398E+30</Mass>
+      <Density>1402.00268554688</Density>
+      <Size>6.96</Size>
+      <Velocity>(0.0, 0.0, 0.0)</Velocity>
+      <EnableAffect>True</EnableAffect>
+      <EnableTracing>True</EnableTracing>
+      <AffectRadius>8</AffectRadius>
+      <Gravity>272.6293</Gravity>
+    </AstralBody>
+  </AstralBodyDict>
+  <AstralBodyDict>
+    <Transform>
+      <Position>(-137.8, 0.0, -64.1)</Position>
+    </Transform>
+    <AstralBody IsCore="False" Style="1">
+      <Mass>5.97000008267511E+24</Mass>
+      <Density>5514.0087890625</Density>
+      <Size>0.0637</Size>
+      <Velocity>(12.7, 0.0, -27.0)</Velocity>
+      <EnableAffect>True</EnableAffect>
+      <EnableTracing>True</EnableTracing>
+      <AffectRadius>8</AffectRadius>
+      <Gravity>9.813441</Gravity>
+    </AstralBody>
+  </AstralBodyDict>
+  <AstralBodyDict>
+    <Transform>
+      <Position>(6.3, 0.0, 45.6)</Position>
+    </Transform>
+    <AstralBody IsCore="False" Style="4">
+      <Mass>3.29999992680478E+23</Mass>
+      <Density>5423.203125</Density>
+      <Size>0.0244</Size>
+      <Velocity>(-48.1, 0.0, 7.3)</Velocity>
+      <EnableAffect>True</EnableAffect>
+      <EnableTracing>True</EnableTracing>
+      <AffectRadius>8</AffectRadius>
+      <Gravity>3.697091</Gravity>
+    </AstralBody>
+  </AstralBodyDict>
+  <AstralBodyDict>
+    <Transform>
+      <Position>(27.7, 0.0, -103.3)</Position>
+    </Transform>
+    <AstralBody IsCore="False" Style="4">
+      <Mass>4.86000006730336E+24</Mass>
+      <Density>5239.39990234375</Density>
+      <Size>0.0605</Size>
+      <Velocity>(33.9, 0.0, 8.7)</Velocity>
+      <EnableAffect>True</EnableAffect>
+      <EnableTracing>True</EnableTracing>
+      <AffectRadius>8</AffectRadius>
+      <Gravity>8.85628</Gravity>
+    </AstralBody>
+  </AstralBodyDict>
+  <AstralBodyDict>
+    <Transform>
+      <Position>(-153.1, 0.0, -138.7)</Position>
+    </Transform>
+    <AstralBody IsCore="False" Style="3">
+      <Mass>6.41999985760203E+23</Mass>
+      <Density>3937.60034179688</Density>
+      <Size>0.03389</Size>
+      <Velocity>(16.2, 0.0, -17.9)</Velocity>
+      <EnableAffect>True</EnableAffect>
+      <EnableTracing>True</EnableTracing>
+      <AffectRadius>8</AffectRadius>
+      <Gravity>3.728359</Gravity>
+    </AstralBody>
+  </AstralBodyDict>
+  <AstralBodyDict>
+    <Transform>
+      <Position>(-665.4, 0.0, -325.1)</Position>
+    </Transform>
+    <AstralBody IsCore="False" Style="2">
+      <Mass>1.89999997811989E+27</Mass>
+      <Density>1328.10815429688</Density>
+      <Size>0.699</Size>
+      <Velocity>(5.7, 0.0, -11.7)</Velocity>
+      <EnableAffect>True</EnableAffect>
+      <EnableTracing>True</EnableTracing>
+      <AffectRadius>8</AffectRadius>
+      <Gravity>25.93732</Gravity>
+    </AstralBody>
+  </AstralBodyDict>
+  <AstralBodyDict>
+    <Transform>
+      <Position>(-1323.6, 0.0, -549.2)</Position>
+    </Transform>
+    <AstralBody IsCore="False" Style="2">
+      <Mass>5.68000014414501E+26</Mass>
+      <Density>619.440124511719</Density>
+      <Size>0.60268</Size>
+      <Velocity>(3.8, 0.0, -9.1)</Velocity>
+      <EnableAffect>True</EnableAffect>
+      <EnableTracing>True</EnableTracing>
+      <AffectRadius>8</AffectRadius>
+      <Gravity>10.43039</Gravity>
+    </AstralBody>
+  </AstralBodyDict>
+</AstralBodyList>
