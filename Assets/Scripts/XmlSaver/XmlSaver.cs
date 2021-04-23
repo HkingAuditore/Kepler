@@ -266,6 +266,7 @@ namespace XmlSaver
         /// <returns></returns>
         public virtual XmlDocument ConvertOrbit2Xml(List<AstralBodyDict<T>> astOrbit)
         {
+            _xmlDoc = new XmlDocument();
             var astList = _xmlDoc.CreateElement("AstralBodyList");
             foreach (var astralBodyDict in astOrbit) astList.AppendChild(ConvertAstralBody2XmlElement(astralBodyDict));
             

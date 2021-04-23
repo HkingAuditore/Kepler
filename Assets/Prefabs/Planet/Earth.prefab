@@ -160,7 +160,7 @@ Transform:
   m_GameObject: {fileID: 4466750129858649191}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 9.2246065, y: 9.2246065, z: 9.2246065}
+  m_LocalScale: {x: 7.613738, y: 7.613738, z: 7.613738}
   m_Children:
   - {fileID: 4466750128673844705}
   m_Father: {fileID: 0}
@@ -228,9 +228,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _density: 0
-  _mass: 0.0597
-  _realMass: 5.97000008267511e+24
-  _size: 0.0637
+  _mass: 0.0033
+  _realMass: 3.29999992680478e+23
+  _size: 0.0244
   affectedPlanets: []
   affectRadius: 8
   angularVelocity: {x: 0.13, y: 0.18, z: 0}
@@ -238,7 +238,7 @@ MonoBehaviour:
   defaultCollider: {fileID: 4466750129858649187}
   enableAffect: 1
   enableTracing: 1
-  oriVelocity: {x: -1.9, y: 0, z: 25}
+  oriVelocity: {x: 41.7, y: 0, z: -11.5}
   triggerCollider: {fileID: 4466750129858649190}
   velocityChangedEvent:
     m_PersistentCalls:

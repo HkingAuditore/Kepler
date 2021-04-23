@@ -84,7 +84,12 @@ namespace CustomUI.Quiz
                     Debug.Log("radius log _isAdd:"       + _isAdd);
                     Debug.Log("radius log _isInputting:" + _isInputting);
                     if (!_isClicking && !_isAdd && !_isInputting)
-                        UpdateData(((QuizAstralBody) target).radius);
+                        if(isQuiz)
+                            UpdateData(((QuizAstralBody) target).radius);
+                        else
+                        {
+                            UpdateData(Vector3.Distance(target.GetPosition(),GameManager.getGameManager.sceneEditor.core.GetPosition()));
+                        }
                     // inputField.text = ((QuizAstralBody) target).radius.ToString("f2");
                     break;
                 case ShowPropertyType.omega:
@@ -198,19 +203,43 @@ namespace CustomUI.Quiz
                 switch (property)
                 {
                     case ShowPropertyType.m:
-                        inputField.text = target.Mass.ToString("f2");
+                        UpdateData((float) target.realMass);
+                        // inputField.text = target.mass.ToString("f2");
+                        // toggle.isOn = ((QuizAstralBody) target).isMassPublic;
                         break;
                     case ShowPropertyType.v:
-                        inputField.text = (.1f * target.GetVelocity().magnitude).ToString("f2");
+                        UpdateData(.1f * target.GetVelocity().magnitude);
+                        // inputField.text = (.1f * target.GetVelocity().magnitude).ToString("f2");
+                        // toggle.isOn = ((QuizAstralBody) target).isVelocityPublic;
                         break;
                     case ShowPropertyType.R:
-                        inputField.text = target.size.ToString("f2");
+                        UpdateData(target.size);
+                        // inputField.text = target.size.ToString("f2");
+                        // toggle.isOn = ((QuizAstralBody) target).isSizePublic;
+                        break;
+                    case ShowPropertyType.T:
+
+                        // inputField.text = ((QuizAstralBody) target).period.ToString("f2");
+                        // toggle.isOn = ((QuizAstralBody) target).isPeriodPublic;
+                        break;
+                    case ShowPropertyType.radius:
+                        UpdateData(Vector3.Distance(target.GetPosition(),GameManager.getGameManager.sceneEditor.core.GetPosition()));
+                        // toggle.isOn = ((QuizAstralBody) target).isRadiusPublic;
+                        break;
+                    case ShowPropertyType.omega:
+                        // inputField.text = ((QuizAstralBody) target).globalAngularVelocity.ToString("f2");
+                        // toggle.isOn = ((QuizAstralBody) target).isAngularVelocityPublic;
                         break;
                     case ShowPropertyType.g:
-                        inputField.text = target.gravity.ToString("f2");
+                        UpdateData( target.gravity);
+                        // inputField.text = (((QuizAstralBody) target).gravity * 0.01f).ToString("f2");
+                        // toggle.isOn = ((QuizAstralBody) target).isGravityPublic;
                         break;
                     case ShowPropertyType.density:
-                        inputField.text = target.density.ToString("f2");
+                        UpdateData((float) ((QuizAstralBody) target).density);
+                        // inputField.text = (((QuizAstralBody) target).gravity * 0.01f).ToString("f2");
+                        //TODO 
+                        // toggle.isOn = false;
                         break;
                     default:
                         throw new ArgumentOutOfRangeException();
@@ -272,9 +301,21 @@ namespace CustomUI.Quiz
                 case ShowPropertyType.radius:
                     // 1
                     var distance = (float) GetData() * Mathf.Pow(10, -GetK());
-                    target.GetTransform().position =
-                        (target.GetPosition() - GameManager.getGameManager.quizBase.target.GetPosition()).normalized *
-                        distance;
+                    if(isQuiz)
+                    {
+                        target.GetTransform().position =
+                            (target.GetPosition() - GameManager.getGameManager.quizBase.target.GetPosition())
+                           .normalized *
+                            distance;
+                    }
+                    else
+                    {
+                        target.GetTransform().position =
+                            (target.GetPosition() - GameManager.getGameManager.sceneEditor.core.GetPosition())
+                           .normalized *
+                            distance;
+
+                    }
                     UpdateData(distance);
                     break;
                 case ShowPropertyType.omega:

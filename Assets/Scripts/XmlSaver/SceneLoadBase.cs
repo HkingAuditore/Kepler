@@ -65,7 +65,14 @@ namespace XmlSaver
 
         protected virtual void Start()
         {
-            this.loadTarget = GlobalTransfer.getGlobalTransfer.sceneName;
+            try
+            {
+                this.loadTarget = GlobalTransfer.getGlobalTransfer.sceneName;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
             loadDoneEvent.AddListener(() => { GameManager.getGameManager.CalculateMassScales(); });
             // List<AstralBody> astralBodies = new List<AstralBody>();
             // 放置星球
