@@ -450,6 +450,8 @@
           <e p="太阳系.xml" t="Include" />
           <e p="真实地日.xml" t="Include" />
           <e p="真实地月.xml" t="Include" />
+          <e p="真实太阳系.xml" t="Include" />
+          <e p="空场景.xml" t="Include" />
         </e>
         <e p="Scripts" t="Include">
           <e p="Animation" t="Include">

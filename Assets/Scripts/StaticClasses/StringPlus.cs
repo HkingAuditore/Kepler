@@ -27,5 +27,14 @@ namespace StaticClasses
         {
             return d.GetMantissa().ToString("f" + fCount) + "x10" + d.GetExponent().ToString().ToSuperscript();
         }
+        
+        public static string ToSuperscript(this double d, int fCount,int plusExponent)
+        {
+            return d.GetMantissa().ToString("f" + fCount) + "x10" + (d.GetExponent() + plusExponent).ToString().ToSuperscript();
+        }
+        public static string ToSuperscript(this float d, int fCount,int plusExponent)
+        {
+            return d.GetMantissa().ToString("f" + fCount) + "x10" + (d.GetExponent() + plusExponent).ToString().ToSuperscript();
+        }
     }
 }

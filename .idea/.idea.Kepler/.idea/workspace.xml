@@ -25,20 +25,9 @@
   <component name="ChangeListManager">
     <list default="true" id="1afa9dc1-adab-467c-afda-52b72c3d10f3" name="默认的" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Kepler/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Kepler/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Kepler/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Kepler/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Kepler/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Kepler/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Le Tai's Asset/TranslucentImage/LWRP support (deprecated).unitypackage.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Le Tai's Asset/TranslucentImage/UniversalRP support.unitypackage.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/Examples.unitypackage.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Dreamteck/Splines/PlaymakerActions.unitypackage.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Le Tai's Asset/TranslucentImage/Material/Default-Translucent.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Le Tai's Asset/TranslucentImage/Material/Default-Translucent.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Planet/Earth.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Planet/Earth.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/PhysicScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/PhysicScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScenesData/Test.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScenesData/Test.xml.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/Quiz/VarLineUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/Quiz/VarLineUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/XmlSaver/SceneLoadBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/XmlSaver/SceneLoadBase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/XmlSaver/XmlSaver.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/XmlSaver/XmlSaver.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/AstralBodyEditor/OrbitPanelUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/AstralBodyEditor/OrbitPanelUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StaticClasses/StringPlus.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StaticClasses/StringPlus.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,6 +70,8 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/CustomUI/Quiz/VarLineUI.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/XmlSaver/XmlSaver.cs" />
         <option value="$PROJECT_DIR$/Assets/ScenesData/太阳系.xml" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/StaticClasses/StringPlus.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/CustomUI/AstralBodyEditor/OrbitPanelUI.cs" />
       </list>
     </option>
   </component>
@@ -250,7 +241,7 @@
       <workItem from="1619005626766" duration="11845000" />
       <workItem from="1619092740726" duration="5612000" />
       <workItem from="1619145731220" duration="4528000" />
-      <workItem from="1619158887510" duration="2306000" />
+      <workItem from="1619158887510" duration="4032000" />
     </task>
     <servers />
   </component>

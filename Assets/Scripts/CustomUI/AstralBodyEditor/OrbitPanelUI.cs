@@ -1,6 +1,7 @@
 ﻿using System;
 using GameManagers;
 using SpacePhysic;
+using StaticClasses;
 using StaticClasses.MathPlus;
 using UnityEngine;
 using UnityEngine.UI;
@@ -67,14 +68,14 @@ namespace CustomUI.AstralBodyEditor
             {
                 contentPanel.SetActive(true);
                 nullPanel.SetActive(false);
-                majorAxis.text = "长轴:" + _orbit.semiMajorAxis.ToString("f2") + " m";
-                minorAxis.text = "短轴:" + _orbit.semiMinorAxis.ToString("f2") + " m";
+                majorAxis.text = "长轴:" + _orbit.semiMajorAxis.GetMantissa().ToSuperscript(2,1 + GameManager.getGameManager.GetK(PropertyUnit.M)) + " m";
+                minorAxis.text = "短轴:" + _orbit.semiMinorAxis.GetMantissa().ToSuperscript(2,1 + GameManager.getGameManager.GetK(PropertyUnit.M)) + " m";
                 geoCenter.text = "几何中心: ("                         + _orbit.geoCenter.x.ToString("f2") + ", " +
                                  _orbit.geoCenter.y.ToString("f2") +
                                  " )";
                 eccentricity.text = "离心率: " + _orbit.eccentricity.ToString("f2");
-                focalLength.text  = "焦距: "  + _orbit.focalLength.ToString("f2")                              + " m";
-                period.text       = "周期: "  + _orbit.GetT(astralBody.affectedPlanets[0].Mass).ToString("f2") + " s";
+                focalLength.text  = "焦距: "  + _orbit.focalLength.GetMantissa().ToSuperscript(2,1 + GameManager.getGameManager.GetK(PropertyUnit.M))                              + " m";
+                period.text       = "周期: "  + _orbit.GetT(astralBody.affectedPlanets[0].Mass).GetMantissa().ToSuperscript(2,GameManager.getGameManager.GetK(PropertyUnit.S)) + " s";
                 angle.text        = "倾角: "  + _orbit.angle.ToString("f2")                                    + " °";
                 k.text = "T²/a³ :" + _orbit.GetT(astralBody.affectedPlanets[0].Mass) *
                     _orbit.GetT(astralBody.affectedPlanets[0].Mass) /
