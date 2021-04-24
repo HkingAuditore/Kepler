@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using GameManagers;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace CustomUI
@@ -9,12 +10,12 @@ namespace CustomUI
 
         public void LoadLabScene()
         {
-            SceneManager.LoadScene("LabMode");
+            GlobalTransfer.getGlobalTransfer.LoadSceneInLoadingScene("LabMode");
         }
 
         public void LoadTestMode()
         {
-            SceneManager.LoadScene("TestMode");
+            GlobalTransfer.getGlobalTransfer.LoadSceneInLoadingScene("TestMode");
         }
 
         public void Quit()

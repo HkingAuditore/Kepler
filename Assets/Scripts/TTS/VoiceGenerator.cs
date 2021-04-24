@@ -4,6 +4,8 @@ using System.IO;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
+using System.Threading.Tasks;
+using StaticClasses;
 using UnityEngine;
 using UnityEngine.Networking;
 
@@ -61,7 +63,7 @@ namespace TTS
         public void Speak(string content)
         {
             // Debug.Log(this.content);
-            StartCoroutine(WaitForTTS(content));
+            StartCoroutine(WaitForTTS(content.RichTextFilter()));
 
         }
 
@@ -71,11 +73,24 @@ namespace TTS
             Online_TTS(content);
             while (!_isDone)
             {
-                yield return null;
+                yield return new WaitForEndOfFrame();
             }
             
             // yield return new WaitUntil(() => _isDone);
         }
+        
+        private Task _operation;
+        IEnumerator WriteAsync(byte[] bytes, MemoryStream memoryStream, int length)
+        {
+            _operation = memoryStream.WriteAsync(bytes, 0, length);
+            while (!_operation.IsCompleted)
+            {
+                yield return new WaitForEndOfFrame();
+            }
+            
+            // yield return new WaitUntil(() => _isDone);
+        }
+        
         private void Online_TTS(string speekText)
         {
             _isDone = false;
@@ -107,7 +122,8 @@ namespace TTS
                 var array  = new byte[audio_len];
                 if (audio_len > 0) Marshal.Copy(source, array, 0, (int) audio_len);
                 memoryStream.Write(array, 0, array.Length);
-                Thread.Sleep(100);
+                // StartCoroutine(WriteAsync(array, memoryStream, array.Length));
+                Thread.Sleep(80);
                 if (synth_status == msc.SynthStatus.MSP_TTS_FLAG_DATA_END || err_code != (int) msc.Errors.MSP_SUCCESS)
                     break;
             }
@@ -132,6 +148,11 @@ namespace TTS
                 if (File.Exists(Application.streamingAssetsPath + "/" + name + ".wav"))
                     File.Delete(Application.streamingAssetsPath + "/" + name + ".wav");
                 File.WriteAllBytes(Application.streamingAssetsPath + "/" + name + ".wav", bytes);
+                AudioSource audio = this.gameObject.GetComponent<AudioSource>();
+                if (audio == null)
+                {
+                    audio = this.gameObject.AddComponent<AudioSource>();
+                }
                 StartCoroutine(OnAudioLoadAndPaly(Application.streamingAssetsPath + "/" + name + ".wav", AudioType.WAV,
                                                   gameObject.GetComponent<AudioSource>()));
             }
@@ -166,8 +187,8 @@ namespace TTS
             memoryStream.Write(new byte[44], 0, 44);
             while (true)
             {
-                var source = msc.MSCDLL.QTTSAudioGet(session_id, ref audio_len, ref synth_status, ref err_code);
-                var array  = new byte[audio_len];
+                var    source = msc.MSCDLL.QTTSAudioGet(session_id, ref audio_len, ref synth_status, ref err_code);
+                byte[] array  = new byte[audio_len];
                 if (audio_len > 0) Marshal.Copy(source, array, 0, (int) audio_len);
                 memoryStream.Write(array, 0, array.Length);
                 Thread.Sleep(100);

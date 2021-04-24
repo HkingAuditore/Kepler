@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Main Blur Config
   m_EditorClassIdentifier: 
   radius: 1.39
-  iteration: 4
+  iteration: 0
   maxDepth: 6
-  strength: 8.42
+  strength: 22.24

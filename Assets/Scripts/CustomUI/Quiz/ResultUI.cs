@@ -53,12 +53,12 @@ namespace CustomUI.Quiz
 
         public void Restart()
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            GlobalTransfer.getGlobalTransfer.LoadSceneInLoadingScene(SceneManager.GetActiveScene().name);
         }
 
         public void Back()
         {
-            SceneManager.LoadScene("TestMode");
+            GlobalTransfer.getGlobalTransfer.LoadSceneInLoadingScene("TestMode");
         }
     }
 }

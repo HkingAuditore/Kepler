@@ -2939,14 +2939,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mainCameraController: {fileID: 0}
-  quizBase: {fileID: 0}
+  bgmSource: {fileID: 848864811}
+  globalDistanceScaler: 0
+  globalTimer: {fileID: 0}
   isQuizEditMode: 0
   mainCamera: {fileID: 0}
-  globalTimer: {fileID: 0}
   meshList: []
   orbit: {fileID: 0}
+  quizBase: {fileID: 0}
+  sceneEditor: {fileID: 0}
   satelliteChallengeManger: {fileID: 0}
-  bgmSource: {fileID: 848864811}
+  _globalMassScaler: 0
 --- !u!4 &1551413078
 Transform:
   m_ObjectHideFlags: 0

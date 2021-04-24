@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using GameManagers;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace CustomUI
@@ -7,12 +8,12 @@ namespace CustomUI
     {
         public void Back()
         {
-            SceneManager.LoadScene("Main");
+            GlobalTransfer.getGlobalTransfer.LoadSceneInLoadingScene("Main");
         }
 
         public void ToEditMode()
         {
-            SceneManager.LoadScene("QuizEdit");
+            GlobalTransfer.getGlobalTransfer.LoadSceneInLoadingScene("QuizEdit");
         }
     }
 }

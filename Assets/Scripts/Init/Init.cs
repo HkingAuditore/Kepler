@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using GameManagers;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace Init
@@ -8,7 +9,7 @@ namespace Init
         // Start is called before the first frame update
         private void Start()
         {
-            SceneManager.LoadScene("Main");
+            GlobalTransfer.getGlobalTransfer.LoadSceneInLoadingScene("Main");
         }
     }
 }

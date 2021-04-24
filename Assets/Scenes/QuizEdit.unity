@@ -4987,6 +4987,7 @@ GameObject:
   m_Component:
   - component: {fileID: 445895689}
   - component: {fileID: 445895690}
+  - component: {fileID: 445895691}
   m_Layer: 0
   m_Name: TutorialManager
   m_TagString: Untagged
@@ -5025,12 +5026,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84df474fdfbdf1b41830104eca08cb62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  voiceGenerator: {fileID: 445895691}
   tutorialUiList:
   - {fileID: 707286980}
   - {fileID: 488794764}
   - {fileID: 301077164}
   - {fileID: 1214364077}
   - {fileID: 2106611395}
+--- !u!114 &445895691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 445895688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75544070d3f3d64418c6c6fd0988e2f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &453850106
 GameObject:
   m_ObjectHideFlags: 0
@@ -6572,7 +6586,7 @@ MonoBehaviour:
   autoOrient: 1
   updateFrameInterval: 0
   _slices: 1
-  vertexDirection: {x: -0.0604361, y: 0.9975369, z: -0.035604298}
+  vertexDirection: {x: 0.11272618, y: 0.08469921, z: -0.99000955}
 --- !u!23 &554862197
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -22869,7 +22883,9 @@ MonoBehaviour:
   - {fileID: 1968154814338336523, guid: 9cb2987897963394590cd290c6a3dafa, type: 3}
   orbit: {fileID: 1009603419}
   quizBase: {fileID: 1901827055}
+  sceneEditor: {fileID: 0}
   satelliteChallengeManger: {fileID: 0}
+  _globalMassScaler: 0
 --- !u!4 &1901827054
 Transform:
   m_ObjectHideFlags: 0
@@ -22898,6 +22914,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   astralBodiesDict: []
   astralBodyPrefab: {fileID: 3597075151426224686, guid: 1e13c1220f795504abff0bafb4776125, type: 3}
+  core: {fileID: 0}
   isLoadByPrefab: 0
   loadDoneEvent:
     m_PersistentCalls:

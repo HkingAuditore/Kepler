@@ -543,6 +543,9 @@
           <e p="Init" t="Include">
             <e p="Init.cs" t="Include" />
           </e>
+          <e p="Loading" t="Include">
+            <e p="LoadingManager.cs" t="Include" />
+          </e>
           <e p="Quiz" t="Include">
             <e p="AstralBodyDict.cs" t="Include" />
             <e p="QuizAstralBody.cs" t="Include" />

@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace GameManagers
 {
@@ -19,6 +20,8 @@ namespace GameManagers
         /// </summary>
         public string sceneName;
 
+        public string nextScene;
+
         public static GlobalTransfer getGlobalTransfer { get; private set; }
 
         /// <summary>
@@ -37,11 +40,19 @@ namespace GameManagers
         private void Awake()
         {
             getGlobalTransfer = this;
+            DontDestroyOnLoad(gameObject);
         }
 
-        private void Start()
+
+
+        /// <summary>
+        /// 在Loading场景中加载新场景
+        /// </summary>
+        /// <param name="nextLoadSceneName"></param>
+        public void LoadSceneInLoadingScene(string nextLoadSceneName)
         {
-            DontDestroyOnLoad(gameObject);
+            this.nextScene = nextLoadSceneName;
+            SceneManager.LoadSceneAsync("Loading");
         }
     }
 }

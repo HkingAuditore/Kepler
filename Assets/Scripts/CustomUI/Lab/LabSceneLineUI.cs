@@ -32,7 +32,7 @@ namespace CustomUI.Lab
         public void OnClick()
         {
             GlobalTransfer.getGlobalTransfer.sceneName = name;
-            SceneManager.LoadScene("PhysicScene");
+            GlobalTransfer.getGlobalTransfer.LoadSceneInLoadingScene("PhysicScene");
         }
         
 

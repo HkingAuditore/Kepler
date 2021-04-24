@@ -29,6 +29,10 @@ namespace CustomUI.Tutorial
 
         private void Start()
         {
+            if (this.tutorialManagerUI == null)
+            {
+                this.tutorialManagerUI = this.transform.parent.GetComponent<TutorialManagerUI>();
+            }
             _voiceGenerator = tutorialManagerUI.voiceGenerator;
         }
 

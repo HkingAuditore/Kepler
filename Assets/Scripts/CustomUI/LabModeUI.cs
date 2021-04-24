@@ -13,7 +13,7 @@ namespace CustomUI
 
         public void ToLab()
         {
-            SceneManager.LoadScene("PhysicScene");
+            GlobalTransfer.getGlobalTransfer.LoadSceneInLoadingScene("PhysicScene");
         }
 
         public void ToMoon(int difficulty)
@@ -22,10 +22,10 @@ namespace CustomUI
             switch (satelliteSceneIndex)
             {
                 case 0 :
-                    SceneManager.LoadScene("Satellite");
+                    GlobalTransfer.getGlobalTransfer.LoadSceneInLoadingScene("Satellite");
                     break;
                 case 1:
-                    SceneManager.LoadScene("Satellite 1");
+                    GlobalTransfer.getGlobalTransfer.LoadSceneInLoadingScene("Satellite 1");
                     break;
                 default:
                     break;
@@ -35,7 +35,7 @@ namespace CustomUI
 
         public void ToMain()
         {
-            SceneManager.LoadScene("Main");
+            GlobalTransfer.getGlobalTransfer.LoadSceneInLoadingScene("Main");
         }
 
         public void ShowDifficultyPanel()

@@ -13,7 +13,7 @@ namespace CustomUI
         public Toggle     pauseToggle;
         public void BackToMain()
         {
-            SceneManager.LoadScene("LabMode");
+            GlobalTransfer.getGlobalTransfer.LoadSceneInLoadingScene("LabMode");
         }
 
         public void SaveScene()

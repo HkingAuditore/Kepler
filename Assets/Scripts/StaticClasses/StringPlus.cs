@@ -1,4 +1,5 @@
-﻿using StaticClasses.MathPlus;
+﻿using System.Text;
+using StaticClasses.MathPlus;
 
 namespace StaticClasses
 {
@@ -35,6 +36,20 @@ namespace StaticClasses
         public static string ToSuperscript(this float d, int fCount,int plusExponent)
         {
             return d.GetMantissa().ToString("f" + fCount) + "x10" + (d.GetExponent() + plusExponent).ToString().ToSuperscript();
+        }
+
+        public static string RichTextFilter(this string text)
+        {
+            StringBuilder str          = new StringBuilder();
+            bool          isInRichText = false;
+            foreach (var t in text)
+            {
+                if (t == '<' && !isInRichText) isInRichText = true;
+                if (t == '>' && isInRichText) isInRichText  = false;
+                str.Append(isInRichText ? "" : t.ToString());
+            }
+
+            return str.ToString();
         }
     }
 }

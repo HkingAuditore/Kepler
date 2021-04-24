@@ -46,7 +46,8 @@ namespace Quiz
             get => _tmpAnswer;
             set
             {
-                _tmpAnswer = value;
+                _tmpAnswer            = value;
+                orbitBase.isShowOrbit = true;
                 FinishQuiz(_tmpAnswer.Equals(answer));
                 answerEvent.Invoke();
             }

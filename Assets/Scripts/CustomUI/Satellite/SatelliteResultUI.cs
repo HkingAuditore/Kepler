@@ -54,12 +54,12 @@ namespace CustomUI.Satellite
 
         public void BackToLabMode()
         {
-            SceneManager.LoadScene("LabMode");
+            GlobalTransfer.getGlobalTransfer.LoadSceneInLoadingScene("LabMode");
         }
 
         public void Reload()
         {
-            SceneManager.LoadScene("Satellite");
+            GlobalTransfer.getGlobalTransfer.LoadSceneInLoadingScene("Satellite");
         }
     }
 }

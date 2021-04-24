@@ -784,7 +784,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &165335930
 GameObject:
@@ -816,7 +816,7 @@ Transform:
   m_Children:
   - {fileID: 887677500}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &165335932
 Animator:
@@ -975,6 +975,7 @@ GameObject:
   m_Component:
   - component: {fileID: 290554471}
   - component: {fileID: 290554472}
+  - component: {fileID: 290554473}
   m_Layer: 0
   m_Name: TutorialManager
   m_TagString: Untagged
@@ -1009,9 +1010,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84df474fdfbdf1b41830104eca08cb62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  voiceGenerator: {fileID: 0}
+  voiceGenerator: {fileID: 290554473}
   tutorialUiList:
   - {fileID: 579298050}
+--- !u!114 &290554473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 290554470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75544070d3f3d64418c6c6fd0988e2f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &326077344
 GameObject:
   m_ObjectHideFlags: 0
@@ -1939,7 +1952,7 @@ MonoBehaviour:
   tutorialClips:
   - {fileID: 521895375}
   - {fileID: 10837491}
-  tutorialManagerUI: {fileID: 0}
+  tutorialManagerUI: {fileID: 290554472}
   tutorialName: LabModeDifficultyPanel
 --- !u!1 &590075115
 GameObject:
@@ -5016,7 +5029,7 @@ Transform:
   - {fileID: 2031122154}
   - {fileID: 1172553763}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1230159818
 GameObject:
@@ -5672,7 +5685,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 1.446, y: -77.519, z: 0.548}
 --- !u!1 &1317157213
 GameObject:
@@ -6800,49 +6813,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1523601951}
   m_CullTransparentMesh: 0
---- !u!1 &1573108692
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1573108694}
-  - component: {fileID: 1573108693}
-  m_Layer: 0
-  m_Name: QuizTransformer
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1573108693
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1573108692}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93e2535de2e489241adf6d2a71f47531, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &1573108694
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1573108692}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1492.4663, y: 524.50977, z: -13.430603}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1594988302
 GameObject:
   m_ObjectHideFlags: 0

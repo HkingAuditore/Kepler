@@ -45,7 +45,7 @@ namespace CustomUI.Quiz
 
         public void ReloadScene()
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            GlobalTransfer.getGlobalTransfer.LoadSceneInLoadingScene(SceneManager.GetActiveScene().name);
         }
 
         public void ChangeQuizType(int type)
@@ -84,7 +84,7 @@ namespace CustomUI.Quiz
 
         public void ToTestMode()
         {
-            SceneManager.LoadScene("TestMode");
+            GlobalTransfer.getGlobalTransfer.LoadSceneInLoadingScene("TestMode");
         }
     }
 }

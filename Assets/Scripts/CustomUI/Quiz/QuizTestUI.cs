@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using GameManagers;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace CustomUI.Quiz
@@ -7,7 +8,7 @@ namespace CustomUI.Quiz
     {
         public void BackToTestMode()
         {
-            SceneManager.LoadScene("TestMode");
+            GlobalTransfer.getGlobalTransfer.LoadSceneInLoadingScene("TestMode");
         }
     }
 }
