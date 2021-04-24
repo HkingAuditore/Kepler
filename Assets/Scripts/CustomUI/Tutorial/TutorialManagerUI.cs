@@ -1,12 +1,13 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using TTS;
 using UnityEngine;
 
 namespace CustomUI.Tutorial
 {
     public class TutorialManagerUI : MonoBehaviour
     {
-        // public VoiceGenerator   voiceGenerator;
+        public VoiceGenerator   voiceGenerator;
 
         protected static Dictionary<string, bool> hasBeenActivatedDict = new Dictionary<string, bool>();
         public           List<TutorialUI>         tutorialUiList       = new List<TutorialUI>();

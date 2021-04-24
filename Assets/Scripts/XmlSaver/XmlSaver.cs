@@ -38,11 +38,11 @@ namespace XmlSaver
             else
             {
                 doc.Save(path);
-                AssetDatabase.Refresh();
+                // AssetDatabase.Refresh();
                 throw new SaverException("文件已存在，进行覆盖！");
             }
 
-            AssetDatabase.Refresh();
+            // AssetDatabase.Refresh();
         }
 
         /// <summary>
@@ -60,7 +60,7 @@ namespace XmlSaver
             {
                 var xmlDoc = new XmlDocument();
                 xmlDoc.Load(path);
-                AssetDatabase.Refresh();
+                // AssetDatabase.Refresh();
                 return xmlDoc;
             }
 

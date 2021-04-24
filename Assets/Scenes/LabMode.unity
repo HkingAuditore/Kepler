@@ -769,6 +769,7 @@ MonoBehaviour:
   meshList: []
   orbit: {fileID: 0}
   quizBase: {fileID: 0}
+  sceneEditor: {fileID: 0}
   satelliteChallengeManger: {fileID: 0}
   _globalMassScaler: 0
 --- !u!4 &106809047
@@ -1008,6 +1009,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84df474fdfbdf1b41830104eca08cb62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  voiceGenerator: {fileID: 0}
   tutorialUiList:
   - {fileID: 579298050}
 --- !u!1 &326077344

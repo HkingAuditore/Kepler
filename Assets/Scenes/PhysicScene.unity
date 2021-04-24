@@ -7804,7 +7804,7 @@ MonoBehaviour:
   autoOrient: 1
   updateFrameInterval: 0
   _slices: 1
-  vertexDirection: {x: -0.14641768, y: 0.026996242, z: -0.9888544}
+  vertexDirection: {x: -0, y: 1.0000001, z: 0.00000011920929}
 --- !u!23 &554862197
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10017,7 +10017,7 @@ MonoBehaviour:
       colorBlindnessStrength: 1
   m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
   m_ShowToolkit: 0
-  m_ShowCustomSorter: 0
+  m_ShowCustomSorter: 1
   breakBeforeColorGrading: 0
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
@@ -17568,6 +17568,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84df474fdfbdf1b41830104eca08cb62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  voiceGenerator: {fileID: 1389360671}
   tutorialUiList:
   - {fileID: 1330425302}
   - {fileID: 981327801}
@@ -17677,7 +17678,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1389360667}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 75544070d3f3d64418c6c6fd0988e2f2, type: 3}
   m_Name: 

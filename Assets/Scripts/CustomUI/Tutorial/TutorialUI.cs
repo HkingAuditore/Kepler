@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TTS;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 namespace CustomUI.Tutorial
 {
@@ -26,27 +27,30 @@ namespace CustomUI.Tutorial
             }
         }
 
-        // private void Start()
-        // {
-        //     _voiceGenerator = tutorialManagerUI.voiceGenerator;
-        // }
+        private void Start()
+        {
+            _voiceGenerator = tutorialManagerUI.voiceGenerator;
+        }
 
         public void StartTutorial()
         {
             curStep = 0;
-            UpdateStep();
+            // UpdateStep();
         }
 
         private void UpdateStep()
         {
             tutorialClips.ForEach(t => t.SetActive(false));
-            if (curStep < tutorialClips.Count)
+            if (curStep < tutorialClips.Count)            {
                 tutorialClips[curStep].SetActive(true);
-            // tutorialManagerUI.voiceGenerator.content = ( tutorialClips[curStep].transform.Find("Translucent Image").Find("Text").GetComponent<Text>().text);
-            // tutorialManagerUI.voiceGenerator.Speak(( tutorialClips[curStep].transform.Find("Translucent Image").Find("Text").GetComponent<Text>().text));
-
+                tutorialManagerUI.voiceGenerator.content = (tutorialClips[curStep].transform.Find("Translucent Image").Find("Text").GetComponent<Text>().text);
+                tutorialManagerUI.voiceGenerator.Speak((tutorialClips[curStep].transform.Find("Translucent Image").Find("Text").GetComponent<Text>().text));
+            }
             else
+            {
                 gameObject.SetActive(false);
+            }
+            
         }
 
         [ContextMenu("GetTutorialCLipsList")]

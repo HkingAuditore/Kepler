@@ -47,11 +47,6 @@ namespace TTS
         }
 
 
-        public void SpeakContent()
-        {
-            voiceThread = new Thread(Speak);
-            voiceThread.Start();
-        }
 
         private void Speak()
         {
@@ -65,21 +60,25 @@ namespace TTS
         /// <param name="content"></param>
         public void Speak(string content)
         {
-            Debug.Log(this.content);
-            Online_TTS(content);
+            // Debug.Log(this.content);
+            StartCoroutine(WaitForTTS(content));
+
         }
 
-        // private void Update()
-        // {
-        //     if (Input.GetMouseButtonDown(0))
-        //     {
-        //         Online_TTS(speekText);
-        //         // Offline_TTS(speekText);
-        //     }
-        // }
-
+        private bool _isDone = false;
+        IEnumerator WaitForTTS(string content)
+        {
+            Online_TTS(content);
+            while (!_isDone)
+            {
+                yield return null;
+            }
+            
+            // yield return new WaitUntil(() => _isDone);
+        }
         private void Online_TTS(string speekText)
         {
+            _isDone = false;
             //语音合成开始
             session_id = msc.MSCDLL.QTTSSessionBegin(session_begin_params, ref err_code);
 
@@ -108,7 +107,7 @@ namespace TTS
                 var array  = new byte[audio_len];
                 if (audio_len > 0) Marshal.Copy(source, array, 0, (int) audio_len);
                 memoryStream.Write(array, 0, array.Length);
-                Thread.Sleep(150);
+                Thread.Sleep(100);
                 if (synth_status == msc.SynthStatus.MSP_TTS_FLAG_DATA_END || err_code != (int) msc.Errors.MSP_SUCCESS)
                     break;
             }
@@ -127,6 +126,7 @@ namespace TTS
             memoryStream.Write(headerByte, 0, headerByte.Length);            //写入文件头
             bytes = memoryStream.ToArray();
             memoryStream.Close();
+            var name = "TmpAudio";
             if (Application.streamingAssetsPath + "/" + name + ".wav" != null)
             {
                 if (File.Exists(Application.streamingAssetsPath + "/" + name + ".wav"))
@@ -137,6 +137,7 @@ namespace TTS
             }
 
             Debug.Log("合成结束成功");
+            _isDone = true;
         }
 
         private void Offline_TTS(string speekText)

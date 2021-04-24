@@ -564,10 +564,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bf2cfcffe85ca6419c6caf871d05f1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  orbit: {fileID: 1009603419}
   satelliteController: {fileID: 7046048710705007206}
   slider: {fileID: 1484021050}
   speedText: {fileID: 319235376}
-  orbit: {fileID: 1009603419}
 --- !u!1 &54895958
 GameObject:
   m_ObjectHideFlags: 0
@@ -1626,19 +1626,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f32d9cd72fe6c404eb35fd11c35eadc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contentPanel: {fileID: 0}
-  nullPanel: {fileID: 0}
-  isConicSection: 0
   _astralBody: {fileID: 0}
-  majorAxis: {fileID: 1466582877}
-  minorAxis: {fileID: 1299107269}
-  geoCenter: {fileID: 1508335416}
+  angle: {fileID: 0}
+  contentPanel: {fileID: 0}
   eccentricity: {fileID: 179379195}
   focalLength: {fileID: 450356928}
-  period: {fileID: 2002277177}
-  angle: {fileID: 0}
+  geoCenter: {fileID: 1508335416}
+  isConicSection: 0
   k: {fileID: 0}
+  majorAxis: {fileID: 1466582877}
+  minorAxis: {fileID: 1299107269}
+  nullPanel: {fileID: 0}
   orbitGraphUI: {fileID: 1980459840}
+  period: {fileID: 2002277177}
 --- !u!1 &222498579
 GameObject:
   m_ObjectHideFlags: 0
@@ -1892,20 +1892,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00df2f8e626310e45aa0c6051adcc424, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  editorPanel: {fileID: 1553351575}
+  forceUI: {fileID: 1248854065}
+  gravityTracing: {fileID: 1009603419}
   isEnableEdit: 0
   isEnableEditorPanel: 0
-  gravityTracing: {fileID: 1009603419}
-  positionEditorUI: {fileID: 1842356812}
-  velocityEditorUI: {fileID: 1924732253}
-  normalPanel: {fileID: 1771801768}
-  forceUI: {fileID: 1248854065}
-  velocityUI: {fileID: 1514731290}
   lengthUIList: []
-  orbitPanelUI: {fileID: 216456885}
-  editorPanel: {fileID: 1553351575}
-  varLineUis: []
   mainPanel: {fileID: 1771801768}
+  normalPanel: {fileID: 1771801768}
+  orbitPanelUI: {fileID: 216456885}
+  positionEditorUI: {fileID: 1842356812}
   styleSheetPanel: {fileID: 0}
+  varLineUis: []
+  velocityEditorUI: {fileID: 1924732253}
+  velocityUI: {fileID: 1514731290}
 --- !u!1 &254329531
 GameObject:
   m_ObjectHideFlags: 0
@@ -2349,11 +2349,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 598e68924c9f6324bbfd049d3bae754c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  editorPathColor: {r: 1, g: 1, b: 1, a: 1}
-  alwaysDraw: 1
-  drawThinckness: 0
-  billboardThickness: 1
-  isNewlyCreated: 0
   multithreaded: 0
   rebuildOnAwake: 1
   updateMode: 0
@@ -2591,6 +2586,11 @@ MonoBehaviour:
   - {fileID: 284363327}
   - {fileID: 284363326}
   nodes: []
+  editorPathColor: {r: 1, g: 1, b: 1, a: 1}
+  alwaysDraw: 1
+  drawThinckness: 0
+  billboardThickness: 1
+  isNewlyCreated: 0
 --- !u!1 &292640715
 GameObject:
   m_ObjectHideFlags: 0
@@ -4951,6 +4951,7 @@ MonoBehaviour:
   awakePanel: {fileID: 1013832252}
   tutorialClips:
   - {fileID: 615362620}
+  tutorialManagerUI: {fileID: 0}
   tutorialName: SatelliteCallCheckUINormal
 --- !u!1 &519534795
 GameObject:
@@ -6009,12 +6010,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2f823b40cd8e3a408d31e8a1a712435, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _starCount: 0
+  globalTimer: {fileID: 1901827056}
   quizStarUis:
   - {fileID: 1904391118}
   - {fileID: 1181588084}
   - {fileID: 1801141914}
-  _starCount: 0
-  globalTimer: {fileID: 1901827056}
 --- !u!222 &636801268
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6694,10 +6695,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5586a2743d2cc2d48824139edae736ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outlineCatcher: {fileID: 1780162743}
-  astralBodyEditorUI: {fileID: 236484340}
-  selectedGameObject: {fileID: 0}
   _isLocked: 0
+  astralBodyEditorUI: {fileID: 236484340}
+  outlineCatcher: {fileID: 1780162743}
+  selectedGameObject: {fileID: 0}
 --- !u!1 &752580793
 GameObject:
   m_ObjectHideFlags: 0
@@ -7431,6 +7432,7 @@ MonoBehaviour:
   - {fileID: 1182061127}
   - {fileID: 1629221492}
   - {fileID: 723960693}
+  tutorialManagerUI: {fileID: 0}
   tutorialName: SatelliteCallCheckUIEasy
 --- !u!1 &803880502
 GameObject:
@@ -7652,6 +7654,7 @@ MonoBehaviour:
   tutorialClips:
   - {fileID: 519534795}
   - {fileID: 222498579}
+  tutorialManagerUI: {fileID: 0}
   tutorialName: SatelliteCallCheckUIReal
 --- !u!1 &811422169
 GameObject:
@@ -8722,12 +8725,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 0}
+  mixMaterial: {fileID: 494833017}
+  renderResultRT: {fileID: 0}
+  edgeColor: {r: 1, g: 0.9424448, b: 0, a: 1}
+  mixShader: {fileID: 4800000, guid: 9d1e5ad067a5aee43bfa8e7f97782862, type: 3}
   renderTexOuter: {fileID: 1780162743}
   renderTexture: {fileID: 8400000, guid: 9051336c0a1f00e4f959253de161c1b6, type: 2}
-  mixShader: {fileID: 4800000, guid: 9d1e5ad067a5aee43bfa8e7f97782862, type: 3}
-  edgeColor: {r: 1, g: 0.9424448, b: 0, a: 1}
-  _mixMaterial: {fileID: 494833017}
-  _renderResultRT: {fileID: 0}
 --- !u!114 &894007024
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8740,14 +8743,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfff57381068cab4a9f4091b1c6a8cb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  virtualCamera: {fileID: 1749464136}
   correctiveSpeed: 100
-  mainSpeed: 150
-  scaleSize: 100
-  scaleMin: 10
-  scaleMax: 300
-  orthoZoomSpeed: 0.025
   focusOffset: 0.5
+  mainSpeed: 150
+  orthoZoomSpeed: 0.025
+  scaleMax: 300
+  scaleMin: 10
+  scaleSize: 100
+  virtualCamera: {fileID: 1749464136}
 --- !u!114 &894007025
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9116,6 +9119,7 @@ MonoBehaviour:
   awakePanel: {fileID: 1013832252}
   tutorialClips:
   - {fileID: 1700325074}
+  tutorialManagerUI: {fileID: 0}
   tutorialName: SatelliteCallCheckUIDifficult
 --- !u!1 &1009603418
 GameObject:
@@ -9638,9 +9642,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   astralBodyPlacementUI: {fileID: 305818147}
-  placePrefab: {fileID: 3607051221231995094, guid: 46128c62cd16e3a408b346895da68b45, type: 3}
-  orbits: {fileID: 1009603419}
   isQuizEditMode: 0
+  orbits: {fileID: 1009603419}
+  placePrefab: {fileID: 3607051221231995094, guid: 46128c62cd16e3a408b346895da68b45, type: 3}
   setActiveList: []
 --- !u!1 &1034486579
 GameObject:
@@ -9983,8 +9987,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panel: {fileID: 1264193333}
-  resultText: {fileID: 815500802}
   quizStarsGroupUI: {fileID: 636801267}
+  resultText: {fileID: 815500802}
 --- !u!222 &1117277149
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10623,7 +10627,7 @@ Mesh:
       format: 0
       dimension: 0
     m_DataSize: 1920
-    _typelessdata: a5c66ac4d20007c446a4d8c10000000096df7f3f40cd003d7c5b76bf05120c3c30218bbe0000803f0000803f0000803f0000803f0000803f00000033000080b308236bc4000007c413e7dbc10000000096df7f3f40cd003d595b76bffc120c3c25228bbe0000803f0000803f0000803f0000803f0000803f0100003f000000006a7f6bc42eff06c4e029dfc10000000096df7f3f40cd003d4d5b76bf52130c3c7a228bbe0000803f0000803f0000803f0000803f0000803f0000803f00000033fa506bc4d20007c477689bc10000000096df7f3f40cd003d595b76bffd120c3c26228bbe0000803f0000803f0000803f0000803f0000803f000080b39211ad3f5cad6bc4000007c444ab9ec10000000096df7f3f40cd003d415b76bfa0130c3cc9228bbe0000803f0000803f0000803f0000803f0000803ffeffff3e9311ad3fbe096cc42eff06c411eea1c10000000096df7f3f40cd003d595b76bff6120c3c1f228bbe0000803f0000803f0000803f0000803f0000803fffff7f3f9411ad3f4edb6bc4d20007c44f593cc10000000096df7f3f40cd003d495b76bf6f130c3c97228bbe0000803f0000803f0000803f0000803f0000803f000040b493112d40b0376cc4000007c4e9de42c10000000096df7f3f40cd003d565b76bf0c130c3c35228bbe0000803f0000803f0000803f0000803f0000803ffaffff3e93112d4013946cc42eff06c4826449c10000000096df7f3f40cd003d6d5b76bf74120c3c9e218bbe0000803f0000803f0000803f0000803f0000803ffdff7f3f93112d40a3656cc4d20007c462c383c00000000096df7f3f40cd003d4a5b76bf65130c3c8d228bbe0000803f0000803f0000803f0000803f0000803f0000a0b42fcd814005c26cc4000007c495ce90c00000000096df7f3f40cd003d565b76bf0b130c3c34228bbe0000803f0000803f0000803f0000803f0000803ff6ffff3e2fcd8140671e6dc42eff06c4c8d99dc00000000096df7f3f40cd003d4a5b76bf65130c3c8d228bbe0000803f0000803f0000803f0000803f0000803ffbff7f3f2fcd8140f7ef6cc4d20007c4b45762400000000096df7f3f40cd003d6c5b76bf76120c3c9f218bbe0000803f0000803f0000803f0000803f0000803f0000e0b49311ad405a4c6dc4000007c44e4148400000000096df7f3f40cd003d565b76bf0c130c3c35228bbe0000803f0000803f0000803f0000803f0000803ff2ffff3e9311ad40bca86dc42eff06c4e72a2e400000000096df7f3f40cd003d4c5b76bf65130c3c8d228bbe0000803f0000803f0000803f0000803f0000803ff9ff7f3f9311ad404c7a6dc4d20007c48c0d33410000000096df7f3f40cd003d5c5b76bfee120c3c17228bbe0000803f0000803f0000803f0000803f0000803f000010b5f855d840aed66dc4000007c4f2872c410000000096df7f3f40cd003d435b76bf9a130c3cc2228bbe0000803f0000803f0000803f0000803f0000803feeffff3ef855d84010336ec42eff06c4590226410000000096df7f3f40cd003d5c5b76bfec120c3c15228bbe0000803f0000803f0000803f0000803f0000803ff7ff7f3ff855d840a0046ec4d20007c496c296410000000096df7f3f40cd003d4a5b76bf66130c3c8e228bbe0000803f0000803f0000803f0000803f0000803f000030b52fcd014102616ec4000007c4c97f93410000000096df7f3f40cd003d575b76bf0b130c3c34228bbe0000803f0000803f0000803f0000803f0000803feaffff3e2fcd014165bd6ec42eff06c4fc3c90410000000096df7f3f40cd003d6c5b76bf76120c3ca0218bbe0000803f0000803f0000803f0000803f0000803ff5ff7f3f2fcd0141f58e6ec4d20007c464fed3410000000096df7f3f40cd003d4a5b76bf66130c3c8e228bbe0000803f0000803f0000803f0000803f0000803f000050b5616f174157eb6ec4000007c497bbd0410000000096df7f3f40cd003d575b76bf0b130c3c34228bbe0000803f0000803f0000803f0000803f0000803fe6ffff3e616f1741b9476fc42eff06c4ca78cd410000000096df7f3f40cd003d465b76bf84130c3cac228bbe0000803f0000803f0000803f0000803f0000803ff3ff7f3f616f174149196fc4d20007c41a9d08420000000096df7f3f40cd003d6d5b76bf72120c3c9c218bbe0000803f0000803f0000803f0000803f0000803f000070b594112d41ac756fc4000007c4b4fb06420000000096df7f3f40cd003d545b76bf17130c3c40228bbe0000803f0000803f0000803f0000803f0000803fe2ffff3e94112d410ed26fc42eff06c44d5a05420000000096df7f3f40cd003d405b76bfb3130c3cdb228bbe0000803f0000803f0000803f0000803f0000803ff1ff7f3f94112d419ea36fc4d20007c4003b27420000000096df7f3f40cd003d6a5b76bf7d120c3ca7218bbe0000803f0000803f0000803f0000803f0000803f000088b5c6b34241000070c4000007c49a9925420000000096df7f3f40cd003d465b76bf83130c3cab228bbe0000803f0000803f0000803f0000803f0000803fdeffff3ec6b34241625c70c42eff06c433f823420000000096df7f3f40cd003d465b76bf80130c3ca8228bbe0000803f0000803f0000803f0000803f0000803fefff7f3fc6b34241
+    _typelessdata: a5c66ac4d20007c446a4d8c10000000096df7f3f40cd003d7d5b76bff6110c3c20218bbe0000803f0000803f0000803f0000803f0000803f00000033000080b308236bc4000007c413e7dbc10000000096df7f3f40cd003d5a5b76bff0120c3c19228bbe0000803f0000803f0000803f0000803f0000803f0100003f000000006a7f6bc42eff06c4e029dfc10000000096df7f3f40cd003d4c5b76bf5d130c3c85228bbe0000803f0000803f0000803f0000803f0000803f0000803f00000033fa506bc4d20007c477689bc10000000096df7f3f40cd003d5a5b76bff3120c3c1c228bbe0000803f0000803f0000803f0000803f0000803f000080b39211ad3f5cad6bc4000007c444ab9ec10000000096df7f3f40cd003d4c5b76bf58130c3c80228bbe0000803f0000803f0000803f0000803f0000803ffeffff3e9311ad3fbe096cc42eff06c411eea1c10000000096df7f3f40cd003d5d5b76bfe3120c3c0c228bbe0000803f0000803f0000803f0000803f0000803fffff7f3f9411ad3f4edb6bc4d20007c44f593cc10000000096df7f3f40cd003d4c5b76bf5f130c3c87228bbe0000803f0000803f0000803f0000803f0000803f000040b493112d40b0376cc4000007c4e9de42c10000000096df7f3f40cd003d5f5b76bfcc120c3cf6218bbe0000803f0000803f0000803f0000803f0000803ffaffff3e93112d4013946cc42eff06c4826449c10000000096df7f3f40cd003d715b76bf54120c3c7e218bbe0000803f0000803f0000803f0000803f0000803ffdff7f3f93112d40a3656cc4d20007c462c383c00000000096df7f3f40cd003d4d5b76bf4b130c3c74228bbe0000803f0000803f0000803f0000803f0000803f0000a0b42fcd814005c26cc4000007c495ce90c00000000096df7f3f40cd003d605b76bfc6120c3cef218bbe0000803f0000803f0000803f0000803f0000803ff6ffff3e2fcd8140671e6dc42eff06c4c8d99dc00000000096df7f3f40cd003d4d5b76bf4b130c3c74228bbe0000803f0000803f0000803f0000803f0000803ffbff7f3f2fcd8140f7ef6cc4d20007c4b45762400000000096df7f3f40cd003d705b76bf5c120c3c86218bbe0000803f0000803f0000803f0000803f0000803f0000e0b49311ad405a4c6dc4000007c44e4148400000000096df7f3f40cd003d605b76bfc6120c3cf0218bbe0000803f0000803f0000803f0000803f0000803ff2ffff3e9311ad40bca86dc42eff06c4e72a2e400000000096df7f3f40cd003d4f5b76bf46130c3c6f228bbe0000803f0000803f0000803f0000803f0000803ff9ff7f3f9311ad404c7a6dc4d20007c48c0d33410000000096df7f3f40cd003d5f5b76bfd4120c3cfd218bbe0000803f0000803f0000803f0000803f0000803f000010b5f855d840aed66dc4000007c4f2872c410000000096df7f3f40cd003d505b76bf3c130c3c64228bbe0000803f0000803f0000803f0000803f0000803feeffff3ef855d84010336ec42eff06c4590226410000000096df7f3f40cd003d605b76bfcc120c3cf5218bbe0000803f0000803f0000803f0000803f0000803ff7ff7f3ff855d840a0046ec4d20007c496c296410000000096df7f3f40cd003d4d5b76bf4d130c3c75228bbe0000803f0000803f0000803f0000803f0000803f000030b52fcd014102616ec4000007c4c97f93410000000096df7f3f40cd003d605b76bfc6120c3cf0218bbe0000803f0000803f0000803f0000803f0000803feaffff3e2fcd014165bd6ec42eff06c4fc3c90410000000096df7f3f40cd003d705b76bf5e120c3c88218bbe0000803f0000803f0000803f0000803f0000803ff5ff7f3f2fcd0141f58e6ec4d20007c464fed3410000000096df7f3f40cd003d4d5b76bf4d130c3c75228bbe0000803f0000803f0000803f0000803f0000803f000050b5616f174157eb6ec4000007c497bbd0410000000096df7f3f40cd003d605b76bfc5120c3cee218bbe0000803f0000803f0000803f0000803f0000803fe6ffff3e616f1741b9476fc42eff06c4ca78cd410000000096df7f3f40cd003d4b5b76bf66130c3c8e228bbe0000803f0000803f0000803f0000803f0000803ff3ff7f3f616f174149196fc4d20007c41a9d08420000000096df7f3f40cd003d735b76bf4c120c3c76218bbe0000803f0000803f0000803f0000803f0000803f000070b594112d41ac756fc4000007c4b4fb06420000000096df7f3f40cd003d5d5b76bfde120c3c07228bbe0000803f0000803f0000803f0000803f0000803fe2ffff3e94112d410ed26fc42eff06c44d5a05420000000096df7f3f40cd003d465b76bf81130c3ca9228bbe0000803f0000803f0000803f0000803f0000803ff1ff7f3f94112d419ea36fc4d20007c4003b27420000000096df7f3f40cd003d6b5b76bf7d120c3ca7218bbe0000803f0000803f0000803f0000803f0000803f000088b5c6b34241000070c4000007c49a9925420000000096df7f3f40cd003d4b5b76bf67130c3c8f228bbe0000803f0000803f0000803f0000803f0000803fdeffff3ec6b34241625c70c42eff06c433f823420000000096df7f3f40cd003d465b76bf80130c3ca8228bbe0000803f0000803f0000803f0000803f0000803fefff7f3fc6b34241
   m_CompressedMesh:
     m_Vertices:
       m_NumItems: 0
@@ -11349,13 +11353,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cea70d530508a8647a9eb5ca39c16fa8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vectorArrow: {fileID: 1248854064}
   astralBody: {fileID: 0}
-  vectorText: {fileID: 1115932340}
-  thisType: 0
   header: "\u53D7\u529B"
-  unit: 10^17N
   showSize: 100
+  thisType: 0
+  unit: 10^17N
+  vectorArrow: {fileID: 1248854064}
+  vectorText: {fileID: 1115932340}
 --- !u!1 &1264193333
 GameObject:
   m_ObjectHideFlags: 0
@@ -13223,11 +13227,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 598e68924c9f6324bbfd049d3bae754c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  editorPathColor: {r: 1, g: 0.93016434, b: 0, a: 1}
-  alwaysDraw: 1
-  drawThinckness: 0
-  billboardThickness: 1
-  isNewlyCreated: 0
   multithreaded: 0
   rebuildOnAwake: 1
   updateMode: 0
@@ -13271,6 +13270,11 @@ MonoBehaviour:
   - {fileID: 1403925284}
   - {fileID: 1403925283}
   nodes: []
+  editorPathColor: {r: 1, g: 0.93016434, b: 0, a: 1}
+  alwaysDraw: 1
+  drawThinckness: 0
+  billboardThickness: 1
+  isNewlyCreated: 0
 --- !u!1 &1415473428
 GameObject:
   m_ObjectHideFlags: 0
@@ -14420,22 +14424,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65dc87998d120fe4b90a2991302fe566, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mass: 73.49
-  density: 1000
+  _density: 0
+  _mass: 73.49
+  _realMass: 73.49
   _size: 1.737
-  triggerCollider: {fileID: 1495038178}
-  defaultCollider: {fileID: 1495038177}
-  oriVelocity: {x: -0.0000006063933, y: 0, z: 10.173591}
-  angularVelocity: {x: 0.13, y: 0.18, z: 0}
-  enableAffect: 1
-  affectRadius: 8
-  enableTracing: 1
   affectedPlanets:
   - {fileID: 5435123410809085771}
+  affectRadius: 8
+  angularVelocity: {x: 0.13, y: 0.18, z: 0}
   banAffectedPlanets: []
+  defaultCollider: {fileID: 1495038177}
+  enableAffect: 1
+  enableTracing: 1
+  oriVelocity: {x: -0.0000006063933, y: 0, z: 10.173591}
+  triggerCollider: {fileID: 1495038178}
   velocityChangedEvent:
     m_PersistentCalls:
       m_Calls: []
+  _meshNum: 0
 --- !u!23 &1495038181
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14772,13 +14778,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cea70d530508a8647a9eb5ca39c16fa8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vectorArrow: {fileID: 1514731291}
   astralBody: {fileID: 0}
-  vectorText: {fileID: 1516169278}
-  thisType: 1
   header: "\u901F\u5EA6"
-  unit: km/s
   showSize: 10
+  thisType: 1
+  unit: km/s
+  vectorArrow: {fileID: 1514731291}
+  vectorText: {fileID: 1516169278}
 --- !u!120 &1514731291
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -16129,8 +16135,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1558b98859723c84dab3164cb12b4fbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputField: {fileID: 887499495}
   astralBodyEditorUI: {fileID: 236484340}
+  inputField: {fileID: 887499495}
 --- !u!1 &1771801768
 GameObject:
   m_ObjectHideFlags: 0
@@ -16212,12 +16218,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 894007019}
-  outlineCamera: {fileID: 1780162747}
-  outlineShader: {fileID: 4800000, guid: 9a4fbdeca491d6645968a83d68e3f9e2, type: 3}
+  backgroundColor: {r: 0, g: 0, b: 0, a: 0}
+  edgeColor: {r: 1, g: 1, b: 1, a: 1}
   edgeOnly: 1
   edgeSize: 0.391
-  edgeColor: {r: 1, g: 1, b: 1, a: 1}
-  backgroundColor: {r: 0, g: 0, b: 0, a: 0}
+  outlineCamera: {fileID: 1780162747}
+  outlineShader: {fileID: 4800000, guid: 9a4fbdeca491d6645968a83d68e3f9e2, type: 3}
 --- !u!20 &1780162747
 Camera:
   m_ObjectHideFlags: 0
@@ -16925,11 +16931,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8cc6eb195aaee44aa7e3a498e70ca15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  editingTarget: {fileID: 0}
+  isQuizEditor: 0
+  moveSpeed: 20
   xAxis: {fileID: 1927521031}
   zAxis: {fileID: 536275563}
-  editingTarget: {fileID: 0}
-  moveSpeed: 20
-  isQuizEditor: 0
 --- !u!1 &1872826943
 GameObject:
   m_ObjectHideFlags: 0
@@ -17202,18 +17208,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mainCameraController: {fileID: 894007024}
-  quizBase: {fileID: 0}
+  bgmSource: {fileID: 894007026}
+  globalDistanceScaler: 0
+  globalTimer: {fileID: 1901827056}
   isQuizEditMode: 0
   mainCamera: {fileID: 894007019}
-  globalTimer: {fileID: 1901827056}
   meshList:
   - {fileID: 4217154579734663652, guid: cbf1612a647f86d4c8a93ce7c81413a6, type: 3}
   - {fileID: 2050056023507449198, guid: 28df15101362a4a4989834b48cec506e, type: 3}
   - {fileID: 5435123411957063994, guid: c69ba24936ec1ef4fb5f02e5ec79eb7d, type: 3}
   - {fileID: 7574723434542536017, guid: 026cb483babf1d04f8a4db3c506251cc, type: 3}
   orbit: {fileID: 0}
+  quizBase: {fileID: 0}
+  sceneEditor: {fileID: 0}
   satelliteChallengeManger: {fileID: 1901827055}
-  bgmSource: {fileID: 894007026}
+  _globalMassScaler: 0
 --- !u!4 &1901827054
 Transform:
   m_ObjectHideFlags: 0
@@ -17240,10 +17249,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a896b02010e11f74a840388edfa4df22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  satellite: {fileID: 7046048710705007204}
   angleThreshold: 10
-  target: {fileID: 1495038180}
   checkTime: 5
+  satellite: {fileID: 7046048710705007204}
+  target: {fileID: 1495038180}
 --- !u!114 &1901827056
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17257,13 +17266,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   countDownTime: 300
-  startCountDownEvent:
+  countingDownEndEvent:
     m_PersistentCalls:
       m_Calls: []
   countingDownEvent:
     m_PersistentCalls:
       m_Calls: []
-  countingDownEndEvent:
+  startCountDownEvent:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1001 &1904391116
@@ -17561,10 +17570,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9631da20655d02418709655929458ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocityLine: {fileID: 1924732254}
   editingTarget: {fileID: 0}
-  speedUI: {fileID: 1898557190}
   showSize: 0.1
+  speedUI: {fileID: 1898557190}
+  velocityLine: {fileID: 1924732254}
   velocityUI: {fileID: 1514731290}
 --- !u!120 &1924732254
 LineRenderer:
@@ -17706,9 +17715,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   astronautsAnimator: {fileID: 1925928756}
-  boredTimeMin: 6
-  boredTimeMax: 12
   boredAnimationCount: 5
+  boredTimeMax: 12
+  boredTimeMin: 6
   pointAnimationCount: 3
   selectorUI: {fileID: 736456931}
 --- !u!1 &1927521029
@@ -17942,10 +17951,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6d59524e26ad1c40801e75b3fd817ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lengthSpline: {fileID: 1403925287}
-  lengthCalculator: {fileID: 1403925283}
-  lengthText: {fileID: 1872826945}
   astralBody: {fileID: 7046048711931098133}
+  lengthCalculator: {fileID: 1403925283}
+  lengthSpline: {fileID: 1403925287}
+  lengthText: {fileID: 1872826945}
   targetAstralBody: {fileID: 1495038180}
 --- !u!1 &1931849633
 GameObject:
@@ -17997,10 +18006,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6d59524e26ad1c40801e75b3fd817ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lengthSpline: {fileID: 284363330}
-  lengthCalculator: {fileID: 284363326}
-  lengthText: {fileID: 231007073}
   astralBody: {fileID: 7046048711931098133}
+  lengthCalculator: {fileID: 284363326}
+  lengthSpline: {fileID: 284363330}
+  lengthText: {fileID: 231007073}
   targetAstralBody: {fileID: 5435123410809085771}
 --- !u!1 &1932833412
 GameObject:
@@ -18275,18 +18284,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 710ff21aa686c6f4e8fd0612a3993df4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  angularVelocity: {fileID: 531814989}
+  area: {fileID: 0}
   astralBody: {fileID: 0}
   conHeight: 180
-  angularVelocity: {fileID: 531814989}
   distance: {fileID: 1196472855}
-  area: {fileID: 0}
   ellipseImage: {fileID: 1727621533}
-  oriImage: {fileID: 1654819154}
-  targetImage: {fileID: 1804846446}
-  leftFociImage: {fileID: 0}
-  rightFociImage: {fileID: 0}
-  fillMask: {fileID: 0}
   fillImage: {fileID: 0}
+  fillMask: {fileID: 0}
+  leftFociImage: {fileID: 0}
+  oriImage: {fileID: 1654819154}
+  rightFociImage: {fileID: 0}
+  targetImage: {fileID: 1804846446}
 --- !u!1 &1989199953
 GameObject:
   m_ObjectHideFlags: 0
@@ -19834,22 +19843,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65dc87998d120fe4b90a2991302fe566, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mass: 5965
-  density: 1000
+  _density: 0
+  _mass: 5965
+  _realMass: 5965
   _size: 6.371
-  triggerCollider: {fileID: 5435123410809085769}
-  defaultCollider: {fileID: 5435123410809085772}
-  oriVelocity: {x: 0, y: 0, z: 0}
-  angularVelocity: {x: 0.13, y: 0.18, z: 0}
-  enableAffect: 0
-  affectRadius: 8
-  enableTracing: 1
   affectedPlanets: []
+  affectRadius: 8
+  angularVelocity: {x: 0.13, y: 0.18, z: 0}
   banAffectedPlanets:
   - {fileID: 1495038180}
+  defaultCollider: {fileID: 5435123410809085772}
+  enableAffect: 0
+  enableTracing: 1
+  oriVelocity: {x: 0, y: 0, z: 0}
+  triggerCollider: {fileID: 5435123410809085769}
   velocityChangedEvent:
     m_PersistentCalls:
       m_Calls: []
+  _meshNum: 0
 --- !u!135 &5435123410809085772
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -20086,9 +20097,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad991e57c36e95e47a66c5a62689132e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  satelliteCore: {fileID: 7046048711931098133}
   satelliteParts:
   - {fileID: 7046048711931098133}
-  satelliteCore: {fileID: 7046048711931098133}
 --- !u!114 &7046048710705007206
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20101,9 +20112,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72d6f6a71914e0444a809bf0cec6df27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 100
   angularSpeed: 20
   satellite: {fileID: 7046048710705007204}
+  speed: 100
 --- !u!4 &7046048710705007207
 Transform:
   m_ObjectHideFlags: 0
@@ -20182,25 +20193,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 373509ba816a2c449a9debc04aa36121, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mass: 1
-  density: 0
+  _density: 0
+  _mass: 1
+  _realMass: 1
   _size: 1
-  triggerCollider: {fileID: 7046048711931098136}
-  defaultCollider: {fileID: 7046048711931098132}
-  oriVelocity: {x: 0.0000011778891, y: 0, z: -19.761698}
-  angularVelocity: {x: 0, y: 0, z: 0}
-  enableAffect: 0
-  affectRadius: 0
-  enableTracing: 1
   affectedPlanets:
   - {fileID: 5435123410809085771}
   - {fileID: 1495038180}
+  affectRadius: 0
+  angularVelocity: {x: 0, y: 0, z: 0}
   banAffectedPlanets: []
+  defaultCollider: {fileID: 7046048711931098132}
+  enableAffect: 0
+  enableTracing: 1
+  oriVelocity: {x: 0.0000011778891, y: 0, z: -19.761698}
+  triggerCollider: {fileID: 7046048711931098136}
   velocityChangedEvent:
     m_PersistentCalls:
       m_Calls: []
-  satelliteName: Core
+  _meshNum: 0
   connectedPartList: []
+  satelliteName: Core
   engineStage: 0
   satellite: {fileID: 7046048710705007204}
 --- !u!33 &7046048711931098134
