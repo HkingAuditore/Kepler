@@ -18,6 +18,8 @@ namespace XmlSaver
                                                              XmlElement            xmlElement);
         public delegate XmlElement  ConvertAstralBodyPropertyToXmlHandler(AstralBodyDict<T> astralBodyDict,
                                                                           XmlDocument xmlDoc);
+        public delegate void  ConvertAstralDictToXmlHandler(AstralBodyDict<T> astralBodyDict,
+                                                                          XmlElement xmlDoc);
         protected       XmlDocument _xmlDoc = new XmlDocument();
 
         private static string xmlPath => Application.dataPath + "/ScenesData/";
@@ -181,7 +183,8 @@ namespace XmlSaver
         /// <param name="convertAstralBodyPropertyToXmlHandler">属性处理委托</param>
         /// <returns></returns>
         protected virtual XmlElement ConvertAstralBody2XmlElement(AstralBodyDict<T> astralBodyDict,
-                                                                  ConvertAstralBodyPropertyToXmlHandler convertAstralBodyPropertyToXmlHandler = null)
+                                                                  ConvertAstralBodyPropertyToXmlHandler convertAstralBodyPropertyToXmlHandler = null,
+                                                                  ConvertAstralDictToXmlHandler convertAstralDictToXmlHandler = null)
         {
             if (convertAstralBodyPropertyToXmlHandler == null)
             {
@@ -245,6 +248,7 @@ namespace XmlSaver
                                                         };
             }
             var dict         = _xmlDoc.CreateElement("AstralBodyDict");
+            convertAstralDictToXmlHandler?.Invoke(astralBodyDict, dict);
             var astTransform = _xmlDoc.CreateElement("Transform");
 
             //写入坐标

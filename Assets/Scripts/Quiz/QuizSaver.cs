@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.IO;
 using System.Xml;
 using UnityEngine;
 using XmlSaver;
@@ -12,8 +13,9 @@ namespace Quiz
         private static string xmlPath => Application.dataPath + "/Quiz/";
 
 
-        protected override XmlElement ConvertAstralBody2XmlElement(AstralBodyDict<QuizAstralBody> astralBodyDict,
-                                                                   ConvertAstralBodyPropertyToXmlHandler convertAstralBodyPropertyToXmlHandler = null)
+        protected override XmlElement ConvertAstralBody2XmlElement(AstralBodyDict<QuizAstralBody>        astralBodyDict,
+                                                                   ConvertAstralBodyPropertyToXmlHandler convertAstralBodyPropertyToXmlHandler = null,
+                                                                   ConvertAstralDictToXmlHandler         convertAstralDictToXmlHandler         = null)
         {
 
             try
@@ -237,22 +239,31 @@ namespace Quiz
                                                                                                                .AppendChild(gravity);
 
 
-                                                                                                            astAstralBody
-                                                                                                               .SetAttribute("IsCore",
-                                                                                                                             quizDict
-                                                                                                                                .isTarget
-                                                                                                                                .ToString());
+
                                                                                                             astAstralBody
                                                                                                                .SetAttribute("Style",
                                                                                                                              quizDict
                                                                                                                                 .astralBody
                                                                                                                                 .meshNum
                                                                                                                                 .ToString());
-                                                                                                            astAstralBody.SetAttribute("IsTarget", quizDict.isTarget.ToString());
+                                                                                                            astAstralBody
+                                                                                                               .SetAttribute("IsCore",
+                                                                                                                             quizDict
+                                                                                                                                .isTarget
+                                                                                                                                .ToString());
+                                                                                                            
                                                                                                             return
                                                                                                                 astAstralBody;
 
-                                                                                                        }));
+                                                                                                        }),convertAstralDictToXmlHandler ?? ((dict, element) =>
+                                                                                                                                         {
+                                                                                                                                             QuizAstralBodyDict
+                                                                                                                                                 quizDict
+                                                                                                                                                     = (
+                                                                                                                                                         QuizAstralBodyDict
+                                                                                                                                                     ) dict;
+                                                                                                                                             element.SetAttribute("IsTarget", quizDict.isTarget.ToString());
+                                                                                                                                         }));
             
         }
 
@@ -381,6 +392,22 @@ namespace Quiz
         public new static XmlDocument LoadXml(string fileName, string pathDirectory = null)
         {
             return XmlSaver<QuizAstralBody>.LoadXml(fileName, pathDirectory ?? xmlPath);
+        }
+
+        public override void SaveXml(XmlDocument doc, string fileName)
+        {
+            var path = xmlPath + fileName + ".xml";
+            if (!File.Exists(path))
+            {
+                doc.Save(path);
+            }
+            else
+            {
+                doc.Save(path);
+                // AssetDatabase.Refresh();
+                throw new SaverException("文件已存在，进行覆盖！");
+            }
+
         }
     }
 }

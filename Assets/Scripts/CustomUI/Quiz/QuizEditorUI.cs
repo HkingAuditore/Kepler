@@ -45,7 +45,7 @@ namespace CustomUI.Quiz
 
         public void ReloadScene()
         {
-            GlobalTransfer.getGlobalTransfer.LoadSceneInLoadingScene(SceneManager.GetActiveScene().name);
+            GlobalTransfer.getGlobalTransfer.LoadSceneInLoadingScene("QuizEdit");
         }
 
         public void ChangeQuizType(int type)

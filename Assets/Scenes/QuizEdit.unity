@@ -6586,7 +6586,7 @@ MonoBehaviour:
   autoOrient: 1
   updateFrameInterval: 0
   _slices: 1
-  vertexDirection: {x: 0.11272618, y: 0.08469921, z: -0.99000955}
+  vertexDirection: {x: -0, y: 0.9995054, z: 0.03144574}
 --- !u!23 &554862197
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13297,7 +13297,7 @@ MonoBehaviour:
   astralBodyPlacementUI: {fileID: 305818147}
   isQuizEditMode: 1
   orbits: {fileID: 1009603419}
-  placePrefab: {fileID: 3597075151426224686, guid: 1e13c1220f795504abff0bafb4776125, type: 3}
+  placePrefab: {fileID: 4466750129858649188, guid: b628c2ad1ffb1c940a6529262f32d422, type: 3}
   setActiveList:
   - {fileID: 791609493}
   - {fileID: 2004965994}
@@ -19341,8 +19341,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: TutorialUI, Assembly-CSharp
+      - m_Target: {fileID: 488794764}
+        m_TargetAssemblyTypeName: CustomUI.Tutorial.TutorialUI, Assembly-CSharp
         m_MethodName: Quit
         m_Mode: 1
         m_Arguments:
