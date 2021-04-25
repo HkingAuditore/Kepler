@@ -238,7 +238,7 @@ MonoBehaviour:
   defaultCollider: {fileID: 4466750129858649187}
   enableAffect: 1
   enableTracing: 1
-  oriVelocity: {x: 3.8, y: 0, z: -9.1}
+  oriVelocity: {x: 3.5, y: 0, z: -9}
   triggerCollider: {fileID: 4466750129858649190}
   velocityChangedEvent:
     m_PersistentCalls:
