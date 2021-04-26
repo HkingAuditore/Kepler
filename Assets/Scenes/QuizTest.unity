@@ -9528,7 +9528,9 @@ MonoBehaviour:
   - {fileID: 1968154814338336523, guid: 9cb2987897963394590cd290c6a3dafa, type: 3}
   orbit: {fileID: 1009603419}
   quizBase: {fileID: 1901827057}
+  sceneEditor: {fileID: 0}
   satelliteChallengeManger: {fileID: 0}
+  _globalMassScaler: 0
 --- !u!4 &1901827054
 Transform:
   m_ObjectHideFlags: 0
@@ -9591,6 +9593,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   astralBodiesDict: []
   astralBodyPrefab: {fileID: 3597075151426224686, guid: 1e13c1220f795504abff0bafb4776125, type: 3}
+  core: {fileID: 0}
   isLoadByPrefab: 0
   loadDoneEvent:
     m_PersistentCalls:
@@ -10611,6 +10614,10 @@ PrefabInstance:
       propertyPath: source
       value: 
       objectReference: {fileID: 76118636}
+    - target: {fileID: 796548310405571253, guid: 7f0a8e2ccacea904d8d96e286baa0cb2, type: 3}
+      propertyPath: m_Text
+      value: "\u5F53\u524D\u8017\u65F6\uFF1A"
+      objectReference: {fileID: 0}
     - target: {fileID: 796548310801688193, guid: 7f0a8e2ccacea904d8d96e286baa0cb2, type: 3}
       propertyPath: m_Name
       value: TimerPanelUI

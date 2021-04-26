@@ -56,10 +56,10 @@ namespace CustomUI.Satellite
         {
             GlobalTransfer.getGlobalTransfer.LoadSceneInLoadingScene("LabMode");
         }
-
+ 
         public void Reload()
         {
-            GlobalTransfer.getGlobalTransfer.LoadSceneInLoadingScene("Satellite");
+            GlobalTransfer.getGlobalTransfer.LoadSceneInLoadingScene(SceneManager.GetActiveScene().name);
         }
     }
 }

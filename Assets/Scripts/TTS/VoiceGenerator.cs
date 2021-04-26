@@ -69,35 +69,81 @@ namespace TTS
         public void Speak(string content)
         {
             // Debug.Log(this.content);
-            StartCoroutine(WaitForTTS(content.RichTextFilter()));
+            // StartCoroutine(WaitForTTS(content.RichTextFilter()));
+            Online_TTS(content.RichTextFilter());
 
         }
 
         private bool _isDone = false;
-        IEnumerator WaitForTTS(string content)
+        IEnumerator WaitForTTS()
         {
-            Online_TTS(content);
-            while (!_isDone)
-            {
-                yield return new WaitForEndOfFrame();
-            }
-            
+            GetAudioFile();
+            yield return new WaitUntil(() => _isDone);
+
             // yield return new WaitUntil(() => _isDone);
         }
-        
-        private Task _operation;
-        IEnumerator WriteAsync(byte[] bytes, MemoryStream memoryStream, int length)
+
+        public async Task GetAudioAsync()
         {
-            _operation = memoryStream.WriteAsync(bytes, 0, length);
-            while (!_operation.IsCompleted)
+            uint audio_len    = 0;
+            var  synth_status = msc.SynthStatus.MSP_TTS_FLAG_STILL_HAVE_DATA;
+            var  memoryStream = new MemoryStream();
+            await memoryStream.WriteAsync(new byte[44], 0, 44);
+            while (true)
             {
-                yield return new WaitForEndOfFrame();
+                var source = msc.MSCDLL.QTTSAudioGet(session_id, ref audio_len, ref synth_status, ref err_code);
+                var array  = new byte[audio_len];
+                if (audio_len > 0) Marshal.Copy(source, array, 0, (int) audio_len);
+                // Debug.Log(array.Length);
+                await Task.Run(() =>
+                               {
+                                   Task t = memoryStream.WriteAsync(array, 0, array.Length);
+                                   Thread.Sleep((int)Mathf.SmoothStep(10f,80f,array.Length / 40000f));
+                               });                // StartCoroutine(WriteAsync(array, memoryStream, array.Length));
+
+                if (synth_status == msc.SynthStatus.MSP_TTS_FLAG_DATA_END || err_code != (int) msc.Errors.MSP_SUCCESS)
+                    break;
             }
-            
-            // yield return new WaitUntil(() => _isDone);
+
+            err_code = msc.MSCDLL.QTTSSessionEnd(session_id, "");
+            if (err_code != (int) msc.Errors.MSP_SUCCESS)
+            {
+                Debug.LogError("会话结束失败！错误信息: " + err_code);
+                return;
+            }
+
+
+            var header     = getWave_Header((int) memoryStream.Length - 44); //创建wav文件头
+            var headerByte = StructToBytes(header);                          //把文件头结构转化为字节数组
+            memoryStream.Position = 0;                                       //定位到文件头
+            memoryStream.Write(headerByte, 0, headerByte.Length);            //写入文件头
+            bytes = memoryStream.ToArray();
+            memoryStream.Close();
+            var name = "TmpAudio";
+            if (Application.streamingAssetsPath + "/" + name + ".wav" != null)
+            {
+                if (File.Exists(Application.streamingAssetsPath + "/" + name + ".wav"))
+                    File.Delete(Application.streamingAssetsPath + "/" + name + ".wav");
+                File.WriteAllBytes(Application.streamingAssetsPath + "/" + name + ".wav", bytes);
+                AudioSource audio = this.gameObject.GetComponent<AudioSource>();
+                if (audio == null)
+                {
+                    audio = this.gameObject.AddComponent<AudioSource>();
+                }
+
+                StartCoroutine(OnAudioLoadAndPaly(Application.streamingAssetsPath + "/" + name + ".wav", AudioType.WAV,
+                                                  gameObject.GetComponent<AudioSource>()));
+            }
+
+            Debug.Log("合成结束成功");
+            _isDone = true;
+
         }
         
-        private void Online_TTS(string speekText)
+        
+
+        
+        private async void Online_TTS(string speekText)
         {
             _isDone = false;
             //语音合成开始
@@ -118,6 +164,13 @@ namespace TTS
                 return;
             }
 
+            // StartCoroutine(WaitForTTS());
+            await GetAudioAsync();
+            // GetAudioFile();
+        }
+
+        private void GetAudioFile()
+        {
             uint audio_len    = 0;
             var  synth_status = msc.SynthStatus.MSP_TTS_FLAG_STILL_HAVE_DATA;
             var  memoryStream = new MemoryStream();
@@ -159,6 +212,7 @@ namespace TTS
                 {
                     audio = this.gameObject.AddComponent<AudioSource>();
                 }
+
                 StartCoroutine(OnAudioLoadAndPaly(Application.streamingAssetsPath + "/" + name + ".wav", AudioType.WAV,
                                                   gameObject.GetComponent<AudioSource>()));
             }

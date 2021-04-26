@@ -28,7 +28,7 @@ namespace CustomUI.Tutorial
 
         protected virtual void MonitorAwakePanel()
         {
-            foreach (var tutorial in tutorialUiList.Where(tutorial => tutorial.awakePanel.activeSelf &&
+            foreach (var tutorial in tutorialUiList.Where(tutorial => tutorial.CheckAwake() &&
                                                                       !hasBeenActivatedDict[tutorial.tutorialName]))
             {
                 tutorial.gameObject.SetActive(true);

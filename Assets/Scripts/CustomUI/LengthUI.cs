@@ -1,4 +1,5 @@
-﻿using Dreamteck.Splines;
+﻿using System;
+using Dreamteck.Splines;
 using GameManagers;
 using SpacePhysic;
 using UnityEngine;
@@ -20,6 +21,10 @@ namespace CustomUI
             ShowLength();
         }
 
+        private void Start()
+        {
+            _camera = GameManager.getGameManager.mainCamera;
+        }
 
         private void OnEnable()
         {

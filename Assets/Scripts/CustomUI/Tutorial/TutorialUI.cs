@@ -84,5 +84,7 @@ namespace CustomUI.Tutorial
         {
             curStep = tutorialClips.Count;
         }
+
+        public virtual bool CheckAwake() => this.awakePanel.activeSelf;
     }
 }

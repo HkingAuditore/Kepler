@@ -12,7 +12,7 @@ namespace CustomUI.Tutorial
             for (var i = 0; i < tutorialUiList.Count; i++)
             {
                 var tutorial = tutorialUiList[i];
-                if (tutorial.awakePanel.activeSelf &&
+                if (tutorial.CheckAwake() &&
                     !hasBeenActivatedDict[tutorial.tutorialName]
                  && GlobalTransfer.getGlobalTransfer.difficulty == difficulties[i])
                 {

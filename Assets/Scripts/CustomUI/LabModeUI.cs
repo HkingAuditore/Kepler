@@ -16,7 +16,7 @@ namespace CustomUI
             GlobalTransfer.getGlobalTransfer.LoadSceneInLoadingScene("PhysicScene");
         }
 
-        public void ToMoon(int difficulty)
+        public void ToSatelliteChallenge(int difficulty)
         {
             GlobalTransfer.getGlobalTransfer.difficulty = (Difficulty) difficulty;
             switch (satelliteSceneIndex)

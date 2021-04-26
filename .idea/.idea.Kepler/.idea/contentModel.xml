@@ -513,6 +513,7 @@
             <e p="TestModeUI.cs" t="Include" />
             <e p="Tutorial" t="Include">
               <e p="MultiTutorialManagerUI.cs" t="Include" />
+              <e p="SatelliteTutorialUI.cs" t="Include" />
               <e p="TutorialClipUI.cs" t="Include" />
               <e p="TutorialManagerUI.cs" t="Include" />
               <e p="TutorialUI.cs" t="Include" />
