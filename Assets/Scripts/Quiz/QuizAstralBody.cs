@@ -8,6 +8,9 @@ using UnityEngine;
 
 namespace Quiz
 {
+    /// <summary>
+    /// 问题中的星体
+    /// </summary>
     public class QuizAstralBody : AstralBody
     {
         /// <summary>

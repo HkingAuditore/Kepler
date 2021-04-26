@@ -6,6 +6,9 @@ using XmlSaver;
 
 namespace Quiz
 {
+    /// <summary>
+    /// 问题管理
+    /// </summary>
     public class QuizBase : SceneLoadBase<QuizAstralBody>
     {
         [SerializeField] private QuizAstralBody _target;

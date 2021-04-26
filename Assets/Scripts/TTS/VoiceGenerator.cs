@@ -11,6 +11,9 @@ using UnityEngine.Networking;
 
 namespace TTS
 {
+    /// <summary>
+    /// 语音合成
+    /// </summary>
     public class VoiceGenerator : MonoBehaviour
     {
         private const string session_begin_params =
@@ -23,6 +26,9 @@ namespace TTS
 
         private Thread voiceThread;
 
+        /// <summary>
+        /// 合成内容
+        /// </summary>
         public string content { get; set; }
 
         private void Awake()
@@ -59,7 +65,7 @@ namespace TTS
         /// <summary>
         ///     文字转语音
         /// </summary>
-        /// <param name="content"></param>
+        /// <param name="content">内容</param>
         public void Speak(string content)
         {
             // Debug.Log(this.content);

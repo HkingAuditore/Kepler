@@ -11,11 +11,25 @@ using UnityEngine;
 namespace XmlSaver
 {
 
-
+/// <summary>
+/// 存档保存
+/// </summary>
+/// <typeparam name="T"></typeparam>
     public abstract class XmlSaver<T> : MonoBehaviour where T : AstralBody
     {
+        /// <summary>
+        /// 星体转XML委托
+        /// </summary>
+        /// <param name="astralBodyDataDict">星体数据</param>
+        /// <param name="xmlElement"></param>
         public delegate void ConvertAstralBodyDictHandler(AstralBodyDataDict<T> astralBodyDataDict,
-                                                             XmlElement            xmlElement);
+                                          
+                                                          XmlElement            xmlElement);
+        /// <summary>
+        /// 星体属性转换委托
+        /// </summary>
+        /// <param name="astralBodyDict">星体数据</param>
+        /// <param name="xmlDoc"></param>
         public delegate XmlElement  ConvertAstralBodyPropertyToXmlHandler(AstralBodyDict<T> astralBodyDict,
                                                                           XmlDocument xmlDoc);
         public delegate void  ConvertAstralDictToXmlHandler(AstralBodyDict<T> astralBodyDict,

@@ -8,6 +8,9 @@ using XmlSaver;
 
 namespace Quiz
 {
+    /// <summary>
+    /// 问题保存
+    /// </summary>
     public class QuizSaver : XmlSaver<QuizAstralBody>
     {
         private static string xmlPath => Application.dataPath + "/Quiz/";

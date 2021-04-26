@@ -3,6 +3,9 @@ using UnityEngine;
 
 namespace Satellite
 {
+    /// <summary>
+    /// 卫星控制器
+    /// </summary>
     public class SatelliteController : MonoBehaviour
     {
         /// <summary>

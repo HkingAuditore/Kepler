@@ -9,8 +9,18 @@ using UnityEngine.Serialization;
 
 namespace XmlSaver
 {
+    /// <summary>
+    /// 存档加载管理
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public class SceneLoadBase<T> : MonoBehaviour where T : AstralBody
     {
+        /// <summary>
+        /// 星体数据处理委托
+        /// </summary>
+        /// <param name="prefab">星体引用</param>
+        /// <param name="astralBodyDataDict">星体数据</param>
+        /// <param name="astralBodyDictList">星体表</param>
         protected delegate void AstralBodyDataDictProcessHandler(T prefab,AstralBodyDataDict<T> astralBodyDataDict,List<AstralBodyDict<T>> astralBodyDictList);
 
         /// <summary>
@@ -22,6 +32,9 @@ namespace XmlSaver
         /// </summary>
         public T astralBodyPrefab;
 
+        /// <summary>
+        /// 核心
+        /// </summary>
         public T core;
         /// <summary>
         ///     是否由Prefab载入

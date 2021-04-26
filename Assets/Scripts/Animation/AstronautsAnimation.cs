@@ -6,6 +6,9 @@ using Random = UnityEngine.Random;
 
 namespace Animation
 {
+    /// <summary>
+    /// 宇航员动画机
+    /// </summary>
     public class AstronautsAnimation : MonoBehaviour
     {
         /// <summary>

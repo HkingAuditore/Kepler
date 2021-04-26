@@ -6,10 +6,22 @@ using UnityEngine.UI;
 
 namespace Loading
 {
+    /// <summary>
+    /// 加载管理
+    /// </summary>
     public class LoadingManager : MonoBehaviour
     {
+        /// <summary>
+        /// 下一加载场景
+        /// </summary>
         public string nextLoadSceneName;
+        /// <summary>
+        /// 加载进度条
+        /// </summary>
         public Image  loadingBar;
+        /// <summary>
+        /// 加载进度显示
+        /// </summary>
         public Text   loadingText;
 
         private float          _curProgressValue;

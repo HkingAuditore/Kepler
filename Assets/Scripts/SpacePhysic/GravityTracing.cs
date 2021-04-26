@@ -8,6 +8,9 @@ using UnityEngine;
 
 namespace SpacePhysic
 {
+    /// <summary>
+    /// 引力追踪
+    /// </summary>
     public class GravityTracing : MonoBehaviour
     {
         /// <summary>

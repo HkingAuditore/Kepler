@@ -434,7 +434,6 @@
           </e>
         </e>
         <e p="Quiz" t="Include">
-          <e p="新问题.xml" t="Include" />
           <e p="求太阳密度.xml" t="Include" />
           <e p="求太阳质量.xml" t="Include" />
           <e p="真实地日.xml" t="Include" />

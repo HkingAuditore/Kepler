@@ -3,6 +3,9 @@ using UnityEngine;
 
 namespace SpacePhysic
 {
+    /// <summary>
+    /// 可追踪接口
+    /// </summary>
     public interface ITraceable
     {
         Transform        GetTransform();

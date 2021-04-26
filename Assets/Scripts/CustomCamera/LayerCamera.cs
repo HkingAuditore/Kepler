@@ -4,6 +4,9 @@ using UnityEngine.Serialization;
 
 namespace CustomCamera
 {
+    /// <summary>
+    /// 层级相机管理
+    /// </summary>
     public class LayerCamera : MonoBehaviour, IRenderTexOuter
     {
         [FormerlySerializedAs("_renderResultRT")]

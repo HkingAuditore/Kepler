@@ -2,6 +2,9 @@
 
 namespace CustomPostProcessing
 {
+    /// <summary>
+    /// 描边抓取
+    /// </summary>
     public class OutlineCatcher : CustomPostProcessingBase, IRenderTexOuter
     {
         /// <summary>

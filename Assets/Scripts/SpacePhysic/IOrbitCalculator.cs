@@ -3,6 +3,9 @@ using UnityEngine;
 
 namespace SpacePhysic
 {
+    /// <summary>
+    /// 桂东计算接口
+    /// </summary>
     public interface IOrbitCalculator
     {
         List<Vector3> OrbitPoints { get; }

@@ -8,16 +8,23 @@ using UnityEngine;
 
 namespace XmlSaver
 {
+    /// <summary>
+    /// 场景编辑器
+    /// </summary>
     public class SceneEditor : SceneLoadBase<AstralBody>
     {
         public SceneSaver saver;
-        public void SaveScene(string quizName)
+        /// <summary>
+        /// 保存场景
+        /// </summary>
+        /// <param name="sceneName">场景名称</param>
+        public void SaveScene(string sceneName)
         {
             // orbitBase.Freeze(false);
             var xmlDoc = saver.ConvertOrbit2Xml(astralBodiesDict);
             try
             {
-                saver.SaveXml(xmlDoc, quizName);
+                saver.SaveXml(xmlDoc, sceneName);
             }
             catch (Exception e)
             {
@@ -46,6 +53,9 @@ namespace XmlSaver
             astralBodiesDict.Add(new AstralBodyDict<AstralBody>(astralBody.transform, astralBody, isTarget));
         }
         
+        /// <summary>
+        /// 更新星体组
+        /// </summary>
         public void UpdateAstralBody()
         {
             Debug.Log("before update:" + astralBodiesDict.Count);
@@ -53,6 +63,10 @@ namespace XmlSaver
             Debug.Log("after update:" + astralBodiesDict.Count);
         }
 
+        /// <summary>
+        /// 移除星体
+        /// </summary>
+        /// <param name="astralBody"></param>
         public void RemoveAstralBodyDict(AstralBody astralBody)
         {
             astralBodiesDict = astralBodiesDict.Where(a => a.astralBody!= astralBody ).ToList();
@@ -61,9 +75,9 @@ namespace XmlSaver
 
 
         /// <summary>
-        ///     设置问题目标
+        ///     设置场景核心
         /// </summary>
-        /// <param name="target"></param>
+        /// <param name="core">新核心</param>
         public void SetCore(AstralBody core)
         {
             var oriCore= this.core;

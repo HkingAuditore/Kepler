@@ -2,6 +2,9 @@
 
 namespace CustomPostProcessing
 {
+    /// <summary>
+    /// 自定义后处理
+    /// </summary>
     [ExecuteInEditMode]
     public class CustomPostProcessingBase : MonoBehaviour
     {

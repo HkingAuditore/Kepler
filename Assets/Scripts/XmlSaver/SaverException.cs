@@ -3,6 +3,9 @@ using System.Runtime.Serialization;
 
 namespace XmlSaver
 {
+    /// <summary>
+    /// 存档报错
+    /// </summary>
     [Serializable]
     public class SaverException : Exception
     {

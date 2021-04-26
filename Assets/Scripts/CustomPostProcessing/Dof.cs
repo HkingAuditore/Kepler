@@ -5,11 +5,12 @@ using UnityEngine.Rendering.PostProcessing;
 namespace PostProcessing
 {
     /// <summary>
-    ///     This class holds settings for the Depth of Field effect.
+    ///     景深效果
     /// </summary>
     [Serializable]
     [PostProcess(typeof(DofRenderer), PostProcessEvent.AfterStack,
                  "Custom/Dof Custom")]
+    
     public sealed class Dof : PostProcessEffectSettings
     {
         /// <summary>

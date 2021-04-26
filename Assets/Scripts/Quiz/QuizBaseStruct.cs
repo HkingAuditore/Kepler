@@ -3,6 +3,9 @@ using XmlSaver;
 
 namespace Quiz
 {
+    /// <summary>
+    /// 问题信息存储
+    /// </summary>
     public class QuizBaseStruct : SceneBaseStruct<QuizAstralBody>
     {
         public QuizType quizType;

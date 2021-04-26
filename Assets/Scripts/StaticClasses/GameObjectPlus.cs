@@ -3,6 +3,9 @@ using UnityEngine;
 
 namespace StaticClasses
 {
+    /// <summary>
+    /// Gameobject附加
+    /// </summary>
     public static class GameObjectPlus
     {
         public static bool CheckReference(this GameObject reference)

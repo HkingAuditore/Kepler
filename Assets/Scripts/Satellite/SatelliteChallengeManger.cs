@@ -5,6 +5,9 @@ using UnityEngine;
 
 namespace Satellite
 {
+    /// <summary>
+    /// 航天挑战管理
+    /// </summary>
     public class SatelliteChallengeManger : MonoBehaviour
     {
         /// <summary>

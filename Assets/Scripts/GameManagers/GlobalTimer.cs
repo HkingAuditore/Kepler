@@ -3,6 +3,9 @@ using UnityEngine.Events;
 
 namespace GameManagers
 {
+    /// <summary>
+    /// 全局计时器
+    /// </summary>
     public class GlobalTimer : MonoBehaviour
     {
         /// <summary>

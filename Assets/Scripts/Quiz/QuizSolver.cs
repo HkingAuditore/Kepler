@@ -9,6 +9,9 @@ using UnityEngine.Events;
 
 namespace Quiz
 {
+    /// <summary>
+    /// 解题管理
+    /// </summary>
     public class QuizSolver : QuizBase
     {
         /// <summary>

@@ -6,6 +6,9 @@ using UnityEngine.Scripting;
 
 namespace PostProcessing
 {
+    /// <summary>
+    /// 景深渲染器
+    /// </summary>
     [Preserve]
     // TODO: Doesn't play nice with alpha propagation, see if it can be fixed without killing performances
     internal sealed class DofRenderer : PostProcessEffectRenderer<Dof>

@@ -4,6 +4,9 @@ using UnityEngine;
 
 namespace Quiz
 {
+    /// <summary>
+    /// 问题编辑器
+    /// </summary>
     public class QuizEditor : QuizBase
     {
         public QuizSaver saver;

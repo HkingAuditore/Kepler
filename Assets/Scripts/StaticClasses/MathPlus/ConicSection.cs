@@ -3,6 +3,9 @@ using UnityEngine;
 
 namespace StaticClasses.MathPlus
 {
+    /// <summary>
+    /// 圆锥曲线
+    /// </summary>
     public class ConicSection
     {
         private static readonly float k = 10000;

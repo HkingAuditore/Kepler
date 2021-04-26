@@ -5,6 +5,10 @@ using UnityEngine.Serialization;
 
 namespace Quiz
 {
+    /// <summary>
+    /// 星体数据传递
+    /// </summary>
+    /// <typeparam name="T">存储类型</typeparam>
     [Serializable]
     public class AstralBodyDict<T> where T : AstralBody
     {

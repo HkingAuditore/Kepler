@@ -3,6 +3,9 @@ using UnityEngine.Serialization;
 
 namespace CustomPostProcessing
 {
+    /// <summary>
+    /// 相机输出混合
+    /// </summary>
     public class CameraMixer : CustomPostProcessingBase
     {
         [FormerlySerializedAs("_mixMaterial")] public Material mixMaterial;

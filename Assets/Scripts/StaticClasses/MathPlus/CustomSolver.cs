@@ -5,6 +5,9 @@ using UnityEngine;
 
 namespace StaticClasses.MathPlus
 {
+    /// <summary>
+    /// 数学问题求解
+    /// </summary>
     public static class CustomSolver
     {
         /// <summary>

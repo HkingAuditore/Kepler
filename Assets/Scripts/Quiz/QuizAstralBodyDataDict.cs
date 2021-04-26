@@ -4,7 +4,10 @@ using UnityEngine;
 using XmlSaver;
 
 namespace Quiz
-{
+{ 
+    /// <summary>
+    /// 问题星体数据存储
+    /// </summary>
     [SerializeField]
     public class QuizAstralBodyDataDict : XmlSaver.AstralBodyDataDict<QuizAstralBody>
     {

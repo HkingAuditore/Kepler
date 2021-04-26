@@ -3,6 +3,9 @@ using UnityEngine;
 
 namespace CustomCamera
 {
+    /// <summary>
+    /// 相机图像混合
+    /// </summary>
     public class CameraLayerMixer : CustomPostProcessingBase
     {
         public CameraMixer cameraMixer;

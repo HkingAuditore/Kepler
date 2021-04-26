@@ -4,6 +4,9 @@ using UnityEngine.EventSystems;
 
 namespace CustomCamera
 {
+    /// <summary>
+    /// 相机控制
+    /// </summary>
     public class CameraController : MonoBehaviour
     {
         /// <summary>

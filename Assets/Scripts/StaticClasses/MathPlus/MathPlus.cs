@@ -2,6 +2,9 @@
 
 namespace StaticClasses.MathPlus
 {
+    /// <summary>
+    /// 数字处理附加
+    /// </summary>
     public static class MathPlus
     {
         /// <summary>

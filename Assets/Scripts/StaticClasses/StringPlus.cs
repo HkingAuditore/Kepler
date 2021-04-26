@@ -3,6 +3,9 @@ using StaticClasses.MathPlus;
 
 namespace StaticClasses
 {
+    /// <summary>
+    /// 字符串附加
+    /// </summary>
     public static class StringPlus
     {
         /// <summary>

@@ -2,6 +2,9 @@
 
 namespace SpacePhysic
 {
+    /// <summary>
+    /// 物理基类
+    /// </summary>
     public static class PhysicBase
     {
         /// <summary>

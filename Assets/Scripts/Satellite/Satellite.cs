@@ -4,6 +4,9 @@ using UnityEngine;
 
 namespace Satellite
 {
+    /// <summary>
+    /// 卫星整体
+    /// </summary>
     public class Satellite : MonoBehaviour
     {
         /// <summary>

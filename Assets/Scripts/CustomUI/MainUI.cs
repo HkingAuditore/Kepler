@@ -8,6 +8,7 @@ namespace CustomUI
     public class MainUI : MonoBehaviour
     {
         public GameObject settingPanel;
+        public GameObject closePanel;
         public Dropdown   fullscreenSetting;
 
         public void LoadLabScene()
@@ -44,6 +45,15 @@ namespace CustomUI
                 default:
                     break;
             }
+        }
+
+        public void ShowClosePanel()
+        {
+            closePanel.SetActive(true);
+        }
+        public void CloseClosePanel()
+        {
+            closePanel.SetActive(false);
         }
     }
 }

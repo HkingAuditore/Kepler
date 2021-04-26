@@ -2,6 +2,9 @@
 
 namespace Quiz
 {
+    /// <summary>
+    /// 问题星体传递
+    /// </summary>
     public class QuizAstralBodyDict : AstralBodyDict<QuizAstralBody>
     {
         public bool isTarget;

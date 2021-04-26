@@ -3,10 +3,17 @@ using UnityEngine;
 
 namespace XmlSaver
 {
+    /// <summary>
+    /// 星体可序列化
+    /// </summary>
     public interface IAstralBodyDictale
     {
         
     }
+    /// <summary>
+    /// 星体数据存储
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public class AstralBodyDataDict<T> : IAstralBodyDictale where T : AstralBody
     {
         /// <summary>
