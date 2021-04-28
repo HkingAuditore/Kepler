@@ -2783,7 +2783,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u70B9\u51FB\u6211\u53F3\u4FA7\u7684\u201C\u6DFB\u52A0\u661F\u4F53\u201D\u6309\u94AE\uFF0C\u53EF\u4EE5\u4E3A\u5F53\u524D\u573A\u666F\u521B\u5EFA\u4E00\u4E2A\u65B0\u7684\u661F\u4F53\u3002"
+  m_Text: "\u70B9\u51FB\u5C4F\u5E55\u53F3\u4FA7\u7684\u201C\u6DFB\u52A0\u661F\u4F53\u201D\u6309\u94AE\uFF0C\u53EF\u4EE5\u4E3A\u5F53\u524D\u573A\u666F\u521B\u5EFA\u4E00\u4E2A\u65B0\u7684\u661F\u4F53\u3002"
 --- !u!222 &204253088
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9957,7 +9957,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sharedProfile: {fileID: 11400000, guid: 57f1e8e9017de2d469d55550bd0bc755, type: 2}
+  sharedProfile: {fileID: 11400000, guid: 6b492cff3802ef34fb5ced86af27ac70, type: 2}
   isGlobal: 1
   blendDistance: 0
   weight: 1
@@ -11211,8 +11211,6 @@ GameObject:
   m_Component:
   - component: {fileID: 894007020}
   - component: {fileID: 894007019}
-  - component: {fileID: 894007021}
-  - component: {fileID: 894007018}
   - component: {fileID: 894007022}
   - component: {fileID: 894007023}
   - component: {fileID: 894007024}
@@ -11225,23 +11223,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &894007018
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 894007017}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sharedProfile: {fileID: 0}
-  isGlobal: 1
-  blendDistance: 0
-  weight: 1
-  priority: 1
 --- !u!20 &894007019
 Camera:
   m_ObjectHideFlags: 0
@@ -11301,68 +11282,6 @@ Transform:
   m_Father: {fileID: 1239910688}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &894007021
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 894007017}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  volumeTrigger: {fileID: 894007020}
-  volumeLayer:
-    serializedVersion: 2
-    m_Bits: 4194304
-  stopNaNPropagation: 1
-  finalBlitToCameraTarget: 0
-  antialiasingMode: 1
-  temporalAntialiasing:
-    jitterSpread: 0.75
-    sharpness: 0.25
-    stationaryBlending: 0.95
-    motionBlending: 0.85
-  subpixelMorphologicalAntialiasing:
-    quality: 2
-  fastApproximateAntialiasing:
-    fastMode: 1
-    keepAlpha: 1
-  fog:
-    enabled: 1
-    excludeSkybox: 1
-  debugLayer:
-    lightMeter:
-      width: 512
-      height: 256
-      showCurves: 1
-    histogram:
-      width: 512
-      height: 256
-      channel: 3
-    waveform:
-      exposure: 0.12
-      height: 256
-    vectorscope:
-      size: 256
-      exposure: 0.12
-    overlaySettings:
-      linearDepth: 0
-      motionColorIntensity: 4
-      motionGridSize: 64
-      colorBlindnessType: 0
-      colorBlindnessStrength: 1
-  m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
-  m_ShowToolkit: 0
-  m_ShowCustomSorter: 0
-  breakBeforeColorGrading: 0
-  m_BeforeTransparentBundles: []
-  m_BeforeStackBundles: []
-  m_AfterStackBundles:
-  - assemblyQualifiedName: PostProcessing.Dof, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!81 &894007022
 AudioListener:
   m_ObjectHideFlags: 0
@@ -11454,7 +11373,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 408b87ae6efa67940a80600192fdc78d, type: 3}
+  m_audioClip: {fileID: 8300000, guid: f5ec99ede73058a40b931db7becc311f, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.05
   m_Pitch: 1
@@ -12634,7 +12553,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u6211\u5DE6\u8FB9\u8FD9\u4E2A\u7BAD\u5934\u662F\u8FD4\u56DE\u952E\uFF0C\u70B9\u51FB\u8FD9\u91CC\uFF0C\u53EF\u4EE5\u9000\u51FA\u81EA\u7531\u6A21\u5F0F\u3002"
+  m_Text: "\u5C4F\u5E55\u5DE6\u4FA7\u8FD9\u4E2A\u7BAD\u5934\u662F\u8FD4\u56DE\u952E\uFF0C\u70B9\u51FB\u8FD9\u91CC\uFF0C\u53EF\u4EE5\u9000\u51FA\u81EA\u7531\u6A21\u5F0F\u3002"
 --- !u!222 &987366701
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -98,7 +98,7 @@ namespace TTS
                 await Task.Run(() =>
                                {
                                    Task t = memoryStream.WriteAsync(array, 0, array.Length);
-                                   Thread.Sleep((int)Mathf.SmoothStep(10f,80f,array.Length / 40000f));
+                                   Thread.Sleep(100);
                                });                // StartCoroutine(WriteAsync(array, memoryStream, array.Length));
 
                 if (synth_status == msc.SynthStatus.MSP_TTS_FLAG_DATA_END || err_code != (int) msc.Errors.MSP_SUCCESS)

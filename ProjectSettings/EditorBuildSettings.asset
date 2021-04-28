@@ -35,4 +35,5 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Satellite 1.unity
     guid: 22326d8f35ba33147a6a54f34bae27c4
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.addressableassets: {fileID: 11400000, guid: 3abf4d660373bee48bdf552cd8b32202, type: 2}

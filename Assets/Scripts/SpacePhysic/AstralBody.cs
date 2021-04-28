@@ -384,10 +384,11 @@ namespace SpacePhysic
         /// <param name="realSpeed">新速度数值</param>
         public void ChangeVelocity(double realSpeed)
         {
-            var speed = (float) (realSpeed /
-                                 GameManager.getGameManager
-                                            .GetK(PropertyUnit.M)) * GameManager.getGameManager
-                                                                                .GetK(PropertyUnit.S);
+
+            var speed = (float) (realSpeed * Mathf.Pow(10, -(GameManager.getGameManager.GetK(PropertyUnit.M) - GameManager.getGameManager.GetK(PropertyUnit.S)) / 2));
+            Debug.Log("Velocity received:" + realSpeed + "; Velocity push:" + speed + "; Velocity now:" + this.GetVelocity().magnitude + "; Velocity Unit/m:" + GameManager.getGameManager
+                                                                                                                        .GetK(PropertyUnit.M) + "; Velocity Unit/s:" + GameManager.getGameManager
+                                                                                                                                                                                  .GetK(PropertyUnit.S));
             if (!astralBodyRigidbody.isKinematic)
             {
                 astralBodyRigidbody.velocity = astralBodyRigidbody.velocity.normalized * speed;

@@ -27,7 +27,7 @@ namespace CustomUI.Quiz
         public                   Toggle           toggle;
         public                   Text             unit;
         public                   string           unitString;
-        private                  Vector3          _dragPos;
+        private                  Vector3          _dragPos = new Vector3(0,0,0);
         private                  bool             _isAdd;
 
 
@@ -68,8 +68,11 @@ namespace CustomUI.Quiz
                     //     UpdateData((float)((QuizAstralBody) target).realMass);
                     break;
                 case ShowPropertyType.v:
-                    // if(!_isClicking && !_isAdd)
-                    //     UpdateData((float)((QuizAstralBody) target).GetVelocity().magnitude);
+                    if(!_isClicking && !_isAdd)
+                    {
+                        // Debug.Log("Updating");
+                        UpdateData((float) target.GetVelocity().magnitude);
+                    }
                     break;
                 case ShowPropertyType.R:
                     // if(!_isClicking && !_isAdd)
@@ -80,9 +83,9 @@ namespace CustomUI.Quiz
                     // inputField.text = ((QuizAstralBody) target).period.ToString("f2");
                     break;
                 case ShowPropertyType.radius:
-                    Debug.Log("radius log _isClicking:"  + _isClicking);
-                    Debug.Log("radius log _isAdd:"       + _isAdd);
-                    Debug.Log("radius log _isInputting:" + _isInputting);
+                    // Debug.Log("radius log _isClicking:"  + _isClicking);
+                    // Debug.Log("radius log _isAdd:"       + _isAdd);
+                    // Debug.Log("radius log _isInputting:" + _isInputting);
                     if (!_isClicking && !_isAdd && !_isInputting)
                         if(isQuiz)
                             UpdateData(((QuizAstralBody) target).radius);
@@ -158,7 +161,7 @@ namespace CustomUI.Quiz
                         toggle.isOn = ((QuizAstralBody) target).isMassPublic;
                         break;
                     case ShowPropertyType.v:
-                        UpdateData(.1f * target.GetVelocity().magnitude);
+                        UpdateData(target.GetVelocity().magnitude);
                         // inputField.text = (.1f * target.GetVelocity().magnitude).ToString("f2");
                         toggle.isOn = ((QuizAstralBody) target).isVelocityPublic;
                         break;
@@ -288,6 +291,7 @@ namespace CustomUI.Quiz
                     break;
                 case ShowPropertyType.v:
                     // 10
+
                     target.ChangeVelocity(GetData());
                     UpdateData(target.GetVelocity().magnitude);
                     break;
@@ -335,15 +339,24 @@ namespace CustomUI.Quiz
             inputField.text = velocity.magnitude.ToString("f2");
         }
 
+        private bool _isNowFreeze;
         public void OnInputFieldDrag()
         {
+            _isNowFreeze = GameManager.getGameManager.orbit.isFreezing;
+            // GameManager.getGameManager.orbit.Freeze(true);
             _dragPos = Input.mousePosition;
+            GameManager.getGameManager.orbit.Freeze(true);
         }
 
         public void WhileInputFieldDrag()
         {
             var cur  = float.Parse(inputField.text);
-            var step = 0.01f * cur;
+            // var step = Mathf.Clamp(.0001f * cur,.00001f,0.001f);
+            var step = 0.1f;
+            // Debug.Log("Edit V :" + step * 0.01 * Vector3.Distance(Input.mousePosition, _dragPos) *
+            //           Mathf.Sign(Input.mousePosition.y - _dragPos.y));
+            if (_dragPos.magnitude <= 0.001) _dragPos = Input.mousePosition;
+            Debug.Log("mouse dis:" + step * Vector3.Distance(Input.mousePosition, _dragPos));
             var tmp = cur + step * Vector3.Distance(Input.mousePosition, _dragPos) *
                 Mathf.Sign(Input.mousePosition.y - _dragPos.y);
             tmp = tmp > 0 ? tmp : 0;
@@ -357,6 +370,11 @@ namespace CustomUI.Quiz
         {
             _isAdd      = isAdd;
             _isClicking = true;
+        }
+
+        public void OnDragEnd()
+        {
+            GameManager.getGameManager.orbit.Freeze(_isNowFreeze);
         }
 
 
@@ -383,7 +401,7 @@ namespace CustomUI.Quiz
                     k = 0;
                     break;
                 case ShowPropertyType.v:
-                    k = 3;
+                    k = (GameManager.getGameManager.GetK(PropertyUnit.M) - GameManager.getGameManager.GetK(PropertyUnit.S)) / 2;
                     break;
                 case ShowPropertyType.R:
                     k = GameManager.getGameManager.GetK(PropertyUnit.M);

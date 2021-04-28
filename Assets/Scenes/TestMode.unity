@@ -690,9 +690,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   astronautsAnimator: {fileID: 327302703}
-  boredTimeMin: 6
-  boredTimeMax: 12
   boredAnimationCount: 5
+  boredTimeMax: 12
+  boredTimeMin: 6
   pointAnimationCount: 3
   selectorUI: {fileID: 0}
 --- !u!95 &327302703
@@ -1611,7 +1611,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
-  source: {fileID: 848864810}
+  source: {fileID: 901185867}
   vibrancy: 0.94
   brightness: 0.042
   flatten: 0.229
@@ -1671,13 +1671,10 @@ GameObject:
   - component: {fileID: 848864807}
   - component: {fileID: 848864806}
   - component: {fileID: 848864805}
-  - component: {fileID: 848864809}
-  - component: {fileID: 848864808}
-  - component: {fileID: 848864810}
   - component: {fileID: 848864811}
   m_Layer: 0
   m_Name: Main Camera
-  m_TagString: MainCamera
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1747,108 +1744,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &848864808
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 848864804}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sharedProfile: {fileID: 11400000, guid: c690e2c312bd3f347becba590ed1384a, type: 2}
-  isGlobal: 1
-  blendDistance: 0
-  weight: 1
-  priority: 0
---- !u!114 &848864809
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 848864804}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  volumeTrigger: {fileID: 848864807}
-  volumeLayer:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  stopNaNPropagation: 1
-  finalBlitToCameraTarget: 0
-  antialiasingMode: 3
-  temporalAntialiasing:
-    jitterSpread: 0.75
-    sharpness: 0.25
-    stationaryBlending: 0.95
-    motionBlending: 0.85
-  subpixelMorphologicalAntialiasing:
-    quality: 2
-  fastApproximateAntialiasing:
-    fastMode: 0
-    keepAlpha: 0
-  fog:
-    enabled: 1
-    excludeSkybox: 1
-  debugLayer:
-    lightMeter:
-      width: 512
-      height: 256
-      showCurves: 1
-    histogram:
-      width: 512
-      height: 256
-      channel: 3
-    waveform:
-      exposure: 0.12
-      height: 256
-    vectorscope:
-      size: 256
-      exposure: 0.12
-    overlaySettings:
-      linearDepth: 0
-      motionColorIntensity: 4
-      motionGridSize: 64
-      colorBlindnessType: 0
-      colorBlindnessStrength: 1
-  m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
-  m_ShowToolkit: 0
-  m_ShowCustomSorter: 0
-  breakBeforeColorGrading: 0
-  m_BeforeTransparentBundles: []
-  m_BeforeStackBundles: []
-  m_AfterStackBundles:
-  - assemblyQualifiedName: PostProcessing.Dof, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
---- !u!114 &848864810
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 848864804}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ee01e66702087b4798e633ca34c7956, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxUpdateRate: Infinity
-  preview: 0
-  blurAlgorithmSelection: 0
-  blurConfig: {fileID: 11400000, guid: 0c82ddef68a9d294a8b543db61f717dc, type: 2}
-  downsample: 4
-  blurRegion:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
 --- !u!82 &848864811
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1960,7 +1855,7 @@ GameObject:
   - component: {fileID: 901185867}
   m_Layer: 21
   m_Name: ForwardCamera
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2000,7 +1895,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sharedProfile: {fileID: 11400000, guid: 3d688c846d74f414ebd06cd759bd093a, type: 2}
+  sharedProfile: {fileID: 11400000, guid: c9a2c377c13376c43b52ab743d291931, type: 2}
   isGlobal: 1
   blendDistance: 0
   weight: 1
@@ -3546,10 +3441,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10846680639bc9c418dcd7a457cf17ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  quizLineUis: []
   content: {fileID: 2044418727}
   linePrefab: {fileID: 3086089685288491401, guid: 02ca6626b64da0b47834226b5af68e19, type: 3}
   offset: 100
+  quizLineUis: []
 --- !u!1 &1847810261
 GameObject:
   m_ObjectHideFlags: 0
@@ -3580,15 +3475,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mainCameraController: {fileID: 0}
-  quizBase: {fileID: 0}
-  isQuizEditMode: 0
-  mainCamera: {fileID: 0}
-  globalTimer: {fileID: 0}
-  meshList: []
-  orbit: {fileID: 0}
-  satelliteChallengeManger: {fileID: 0}
   bgmSource: {fileID: 848864811}
   globalDistanceScaler: 0
+  globalTimer: {fileID: 0}
+  isQuizEditMode: 0
+  mainCamera: {fileID: 0}
+  meshList: []
+  orbit: {fileID: 0}
+  quizBase: {fileID: 0}
+  sceneEditor: {fileID: 0}
+  satelliteChallengeManger: {fileID: 0}
+  _globalMassScaler: 0
 --- !u!4 &1847810263
 Transform:
   m_ObjectHideFlags: 0

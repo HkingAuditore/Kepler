@@ -1262,6 +1262,22 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+  - eventID: 14
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7956293801194740826}
+          m_TargetAssemblyTypeName: CustomUI.Quiz.VarLineUI, Assembly-CSharp
+          m_MethodName: OnDragEnd
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &7956293801168886802
 GameObject:
   m_ObjectHideFlags: 0
@@ -1413,21 +1429,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87029b1d56d5ddb41813deedc12ea86e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  property: 0
-  isQuiz: 0
+  _target: {fileID: 0}
+  add: {fileID: 7956293801322612990}
+  editableImage: {fileID: 21300000, guid: 9a5210af5ae029244a9e93afaa6d128a, type: 3}
+  enableInput: 1
   header: {fileID: 7956293800211478612}
+  headerString: m
+  inputField: {fileID: 7956293801141321424}
+  isQuiz: 0
+  minus: {fileID: 7956293801112580719}
+  property: 0
+  readOnlyImage: {fileID: 21300000, guid: 83c436a2a6702d64a90a18ba06e42a91, type: 3}
+  scientificCountingInputField: {fileID: 4845443701087737740}
   toggle: {fileID: 7956293801168886812}
   unit: {fileID: 7956293801039520284}
-  inputField: {fileID: 7956293801141321424}
-  scientificCountingInputField: {fileID: 4845443701087737740}
-  enableInput: 1
-  add: {fileID: 7956293801322612990}
-  minus: {fileID: 7956293801112580719}
-  headerString: m
   unitString: kg
-  editableImage: {fileID: 21300000, guid: 9a5210af5ae029244a9e93afaa6d128a, type: 3}
-  readOnlyImage: {fileID: 21300000, guid: 83c436a2a6702d64a90a18ba06e42a91, type: 3}
-  _target: {fileID: 0}
 --- !u!1 &7956293801322612990
 GameObject:
   m_ObjectHideFlags: 0

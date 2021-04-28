@@ -1,0 +1,133 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Default Local Group
+  m_EditorClassIdentifier: 
+  m_GroupName: Default Local Group
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 4d539e5bfe2720649aecb400c0e6cfe3
+  m_SerializeEntries:
+  - m_GUID: 6b492cff3802ef34fb5ced86af27ac70
+    m_Address: Assets/Scenes/PhysicScene_Profiles/InScene.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: c9a2c377c13376c43b52ab743d291931
+    m_Address: Assets/Scenes/PhysicScene_Profiles/MenuBase_Lab.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: c8b14cfb1edf87e4e8f06676e0082200
+    m_Address: Assets/Scenes/PhysicScene_Profiles/Main.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: c690e2c312bd3f347becba590ed1384a
+    m_Address: Assets/Scenes/PhysicScene_Profiles/MenuBase.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: f0496940259edfd42b89c80b5e05a45a
+    m_Address: Assets/Scenes/EffectTest.unity
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: b88e5e64d361e7f47b8140cf8572b295
+    m_Address: Assets/Scenes/Init.unity
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: b8cef211390060c48b6a0e34110c9c5b
+    m_Address: Assets/Scenes/LabMode.unity
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: a8da1e442bd869b4aa398ec2db60c7b5
+    m_Address: Assets/Scenes/Loading.unity
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 79ae7e830a80dd1419d58b25f68dea2d
+    m_Address: Assets/Scenes/Main.unity
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: b8a5a5deb22291846a9eb3405b99faf8
+    m_Address: Assets/Scenes/PhysicScene.unity
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: f976ef6176191284ba14acb843174969
+    m_Address: Assets/Scenes/QuizEdit.unity
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 2df2a6fc906f63148a372a2979c13095
+    m_Address: Assets/Scenes/QuizTest.unity
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 9fc0d4010bbf28b4594072e72b8655ab
+    m_Address: Assets/Scenes/SampleScene.unity
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 22326d8f35ba33147a6a54f34bae27c4
+    m_Address: Assets/Scenes/Satellite 1.unity
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 73c01fadb26fc1d49a8009eea52c8cc3
+    m_Address: Assets/Scenes/Satellite.unity
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 59ba247f177aaca49bb2970b3c7328f4
+    m_Address: Assets/Scenes/TestMode.unity
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 1287541eb90601a4aac1edaca9ee83a0
+    m_Address: Assets/Scenes/TestScene.unity
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 0c82ddef68a9d294a8b543db61f717dc
+    m_Address: Assets/PlugIns/Le Tai's Asset/Main Blur Config.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 4b8e72a4e424cfe4187fe37230974cd9, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: f38555b4a5e932e428ee884635f40ea2, type: 2}
+    - {fileID: 11400000, guid: 4081650f181e6ca4c848973cbd27dc64, type: 2}
