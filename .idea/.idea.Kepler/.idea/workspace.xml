@@ -24,44 +24,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1afa9dc1-adab-467c-afda-52b72c3d10f3" name="默认的" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Kepler/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Kepler/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Kepler/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Kepler/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Kepler/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Kepler/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Le Tai's Asset/TranslucentImage/Material/Default-Translucent.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Le Tai's Asset/TranslucentImage/Material/Default-Translucent.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/VarLine.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/VarLine.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/LabMode.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/LabMode.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/PhysicScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/PhysicScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/PhysicScene_Profiles/ForwardCamera Profile 1.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/PhysicScene_Profiles/ForwardCamera Profile 1.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/PhysicScene_Profiles/ForwardCamera Profile 2.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/PhysicScene_Profiles/ForwardCamera Profile 2.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/PhysicScene_Profiles/ForwardCamera Profile 3.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/PhysicScene_Profiles/ForwardCamera Profile 3.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/PhysicScene_Profiles/ForwardCamera Profile 4.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/PhysicScene_Profiles/ForwardCamera Profile 4.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/PhysicScene_Profiles/ForwardCamera Profile.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/PhysicScene_Profiles/ForwardCamera Profile.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/PhysicScene_Profiles/Main Camera Profile 1.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/PhysicScene_Profiles/Main Camera Profile 1.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/PhysicScene_Profiles/Main Camera Profile 2.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/PhysicScene_Profiles/Main Camera Profile 2.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/PhysicScene_Profiles/Main Camera Profile 3.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/PhysicScene_Profiles/Main Camera Profile 3.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/PhysicScene_Profiles/Main Camera Profile 4.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/PhysicScene_Profiles/Main Camera Profile 4.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/PhysicScene_Profiles/Main Camera Profile.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/PhysicScene_Profiles/Main Camera Profile.asset.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/QuizEdit.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/QuizEdit.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/QuizTest.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/QuizTest.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Satellite 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Satellite 1.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Satellite.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Satellite.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/TestMode.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/TestMode.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUI/Quiz/VarLineUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUI/Quiz/VarLineUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SpacePhysic/AstralBody.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SpacePhysic/AstralBody.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TTS/VoiceGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TTS/VoiceGenerator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomCamera/CameraController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomCamera/CameraController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/TmpAudio.wav" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/TmpAudio.wav" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/msc/18effb29f8b84f77e0a93d17e14d539b/urec.data" beforeDir="false" afterPath="$PROJECT_DIR$/msc/18effb29f8b84f77e0a93d17e14d539b/urec.data" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -105,8 +76,6 @@
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/Assets/Scripts/CustomPostProcessing/DofRenderer.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/CustomPostProcessing/OutlineCatcher.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/GameManagers/Difficulty.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/GameManagers/GlobalTimer.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/GameManagers/PropertyUnit.cs" />
@@ -156,6 +125,8 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/SpacePhysic/AstralBody.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/CustomUI/Quiz/VarLineUI.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/TTS/VoiceGenerator.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/CustomUI/Satellite/SatelliteUI.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/CustomCamera/CameraController.cs" />
     </changedPaths>
   </component>
   <component name="NamedScopeManager">
@@ -332,6 +303,8 @@
       <workItem from="1619349343256" duration="2713000" />
       <workItem from="1619406491340" duration="5469000" />
       <workItem from="1619428968107" duration="9750000" />
+      <workItem from="1619979551242" duration="818000" />
+      <workItem from="1620050326906" duration="7585000" />
     </task>
     <servers />
   </component>

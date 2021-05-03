@@ -44,7 +44,9 @@ namespace CustomCamera
         /// </summary>
         public float scaleSize;
 
-        public  CinemachineVirtualCamera     virtualCamera;
+        public CinemachineVirtualCamera virtualCamera;
+        public CinemachineFreeLook      freeLookCamera;
+
         private Camera                       _camera;
         private Transform                    _cameraBase;
         private CinemachineBrain             _cameraBrain;
@@ -54,14 +56,32 @@ namespace CustomCamera
         private CinemachineFramingTransposer _framingTransposer;
         private bool                         _isInDrag;
         private float                        _oriOrthoSize;
-        private float                        _orthoSize;
+        private float                        _virtualOrthoSize;
+        private float                        _freeLookOrthoSize;
+        private bool                         _isFollowing = false;
 
-        public bool IsFollowing { get; set; } = false;
-
-        private float OrthoSize
+        public bool IsFollowing
         {
-            get => _orthoSize;
-            set => _orthoSize = Mathf.Clamp(value, scaleMin, scaleMax);
+            get => _isFollowing;
+            set
+            {
+                _isFollowing = value;
+                if (!_isFollowing)
+                {
+                    freeLookCamera?.gameObject.SetActive(false);
+                }
+            }
+        }
+
+        private float VirtualOrthoSize
+        {
+            get => _virtualOrthoSize;
+            set => _virtualOrthoSize = Mathf.Clamp(value, scaleMin, scaleMax);
+        }
+        private float FreeLookOrthoSize
+        {
+            get => _freeLookOrthoSize;
+            set => _freeLookOrthoSize = Mathf.Clamp(value, scaleMin, scaleMax);
         }
 
         private void Awake()
@@ -69,14 +89,16 @@ namespace CustomCamera
             _cameraBase        = transform.parent;
             _camera            = GetComponent<Camera>();
             _cameraBrain       = GetComponent<CinemachineBrain>();
-            OrthoSize          = virtualCamera.m_Lens.OrthographicSize;
-            _oriOrthoSize      = OrthoSize;
+            VirtualOrthoSize   = virtualCamera.m_Lens.OrthographicSize;
+            if(freeLookCamera!=null)
+                FreeLookOrthoSize  = freeLookCamera.m_Lens.OrthographicSize;
+            _oriOrthoSize      = VirtualOrthoSize;
             _framingTransposer = virtualCamera.GetCinemachineComponent<CinemachineFramingTransposer>();
         }
 
         private void Update()
         {
-            if (Input.GetKey(KeyCode.Space))
+            if (Input.GetKey(KeyCode.Space) && (freeLookCamera == null || !freeLookCamera.gameObject.activeSelf))
                 // CameraMover();
                 CameraDrag();
             // if (Input.GetKey(KeyCode.LeftAlt))
@@ -87,6 +109,16 @@ namespace CustomCamera
             //         _camera.transform.localEulerAngles = new Vector3(0, 0, 0);
             //     }
             // }
+            if(freeLookCamera !=null)
+            {
+                if (Input.GetKeyDown(KeyCode.Z) && this.IsFollowing)
+                {
+                    freeLookCamera.gameObject.SetActive(!freeLookCamera.gameObject.activeSelf);
+                }
+                if (freeLookCamera.gameObject.activeSelf)
+                    CameraRotator();
+            }
+            
             if (EventSystem.current.IsPointerOverGameObject() == false && !Input.GetKey(KeyCode.LeftAlt))
                 CameraScaler();
             if (IsFollowing)
@@ -109,10 +141,10 @@ namespace CustomCamera
             // Debug.Log("Mouse [x:" + xSpeed + ", y:" + ySpeed + "]");
 
             _cameraBase.position += new Vector3(xSpeed, 0, ySpeed) *
-                                    (mainSpeed * Mathf.Pow(OrthoSize / _oriOrthoSize, 0.9f) * Time.deltaTime *
+                                    (mainSpeed * Mathf.Pow(VirtualOrthoSize / _oriOrthoSize, 0.9f) * Time.deltaTime *
                                      (IsFollowing ? 0 : 1)) +
                                     new Vector3(Input.GetAxis("Mouse X"), 0, Input.GetAxis("Mouse Y")) *
-                                    (correctiveSpeed * Mathf.Pow(OrthoSize / _oriOrthoSize, 1.3f) * Time.deltaTime);
+                                    (correctiveSpeed * Mathf.Pow(VirtualOrthoSize / _oriOrthoSize, 1.3f) * Time.deltaTime);
         }
 
         private void CameraDrag()
@@ -136,16 +168,31 @@ namespace CustomCamera
 
         public void CameraRotator()
         {
-            virtualCamera.transform.rotation =
-                Quaternion.Euler(Input.GetAxis("Mouse ScrollWheel") * 10,
-                                 0, 0);
+            if (Input.GetKey(KeyCode.LeftAlt))
+            {
+                freeLookCamera.m_YAxis.m_MaxSpeed = 2f;
+                freeLookCamera.m_XAxis.m_MaxSpeed = 300f;
+            }
+            else
+            {
+                freeLookCamera.m_YAxis.m_MaxSpeed = 0f;
+                freeLookCamera.m_XAxis.m_MaxSpeed = 0f;
+            }
         }
 
         private void CameraScaler()
         {
-            OrthoSize -= Input.GetAxis("Mouse ScrollWheel") * scaleSize;
+            VirtualOrthoSize  -= Input.GetAxis("Mouse ScrollWheel") * scaleSize;
             virtualCamera.m_Lens.OrthographicSize =
-                Mathf.Lerp(virtualCamera.m_Lens.OrthographicSize, OrthoSize, orthoZoomSpeed);
+                Mathf.Lerp(virtualCamera.m_Lens.OrthographicSize, VirtualOrthoSize, orthoZoomSpeed);
+            
+            if(freeLookCamera!=null && freeLookCamera.gameObject.activeSelf)
+            {
+                FreeLookOrthoSize -= Input.GetAxis("Mouse ScrollWheel") * scaleSize;
+                freeLookCamera.m_Lens.OrthographicSize =
+                    Mathf.Lerp(freeLookCamera.m_Lens.OrthographicSize, FreeLookOrthoSize, orthoZoomSpeed);
+            }
+            
         }
 
         /// <summary>
@@ -155,6 +202,7 @@ namespace CustomCamera
         public void FocusOn(Transform target)
         {
             virtualCamera.m_LookAt       = target;
+            // virtualCamera.m_Follow       = target;
             _framingTransposer.m_ScreenX = focusOffset;
             _followingTarget             = target;
         }
@@ -164,7 +212,10 @@ namespace CustomCamera
         /// </summary>
         public void ExitFocus()
         {
+            // virtualCamera.m_LookAt       = _cameraBase;
+            // virtualCamera.m_Follow       = _cameraBase;
             _framingTransposer.m_ScreenX = 0.5f;
+            virtualCamera.m_LookAt       = null;
         }
 
         private void Follow()

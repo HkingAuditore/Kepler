@@ -507,6 +507,7 @@
             <e p="Satellite" t="Include">
               <e p="SatelliteControllerUI.cs" t="Include" />
               <e p="SatelliteResultUI.cs" t="Include" />
+              <e p="SatelliteUI.cs" t="Include" />
             </e>
             <e p="SelectorUI.cs" t="Include" />
             <e p="SettingUI.cs" t="Include" />

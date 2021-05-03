@@ -6586,7 +6586,7 @@ MonoBehaviour:
   autoOrient: 1
   updateFrameInterval: 0
   _slices: 1
-  vertexDirection: {x: -0, y: 0.9995054, z: 0.03144574}
+  vertexDirection: {x: -655.75616, y: 88.53734, z: 150.73141}
 --- !u!23 &554862197
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6739,8 +6739,6 @@ GameObject:
   m_Component:
   - component: {fileID: 554928343}
   - component: {fileID: 554928344}
-  - component: {fileID: 554928351}
-  - component: {fileID: 554928350}
   - component: {fileID: 554928349}
   - component: {fileID: 554928348}
   - component: {fileID: 554928347}
@@ -6962,6 +6960,7 @@ MonoBehaviour:
   scaleMin: 20
   scaleSize: 100
   virtualCamera: {fileID: 1265611630}
+  freeLookCamera: {fileID: 0}
 --- !u!114 &554928348
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6989,85 +6988,6 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 554928342}
   m_Enabled: 1
---- !u!114 &554928350
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 554928342}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sharedProfile: {fileID: 0}
-  isGlobal: 1
-  blendDistance: 0
-  weight: 1
-  priority: 1
---- !u!114 &554928351
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 554928342}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  volumeTrigger: {fileID: 554928343}
-  volumeLayer:
-    serializedVersion: 2
-    m_Bits: 4194304
-  stopNaNPropagation: 1
-  finalBlitToCameraTarget: 0
-  antialiasingMode: 1
-  temporalAntialiasing:
-    jitterSpread: 0.75
-    sharpness: 0.25
-    stationaryBlending: 0.95
-    motionBlending: 0.85
-  subpixelMorphologicalAntialiasing:
-    quality: 2
-  fastApproximateAntialiasing:
-    fastMode: 1
-    keepAlpha: 1
-  fog:
-    enabled: 1
-    excludeSkybox: 1
-  debugLayer:
-    lightMeter:
-      width: 512
-      height: 256
-      showCurves: 1
-    histogram:
-      width: 512
-      height: 256
-      channel: 3
-    waveform:
-      exposure: 0.12
-      height: 256
-    vectorscope:
-      size: 256
-      exposure: 0.12
-    overlaySettings:
-      linearDepth: 0
-      motionColorIntensity: 4
-      motionGridSize: 64
-      colorBlindnessType: 0
-      colorBlindnessStrength: 1
-  m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
-  m_ShowToolkit: 0
-  m_ShowCustomSorter: 0
-  breakBeforeColorGrading: 0
-  m_BeforeTransparentBundles: []
-  m_BeforeStackBundles: []
-  m_AfterStackBundles:
-  - assemblyQualifiedName: PostProcessing.Dof, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!1 &556771572
 GameObject:
   m_ObjectHideFlags: 0
@@ -13297,7 +13217,7 @@ MonoBehaviour:
   astralBodyPlacementUI: {fileID: 305818147}
   isQuizEditMode: 1
   orbits: {fileID: 1009603419}
-  placePrefab: {fileID: 4466750129858649188, guid: b628c2ad1ffb1c940a6529262f32d422, type: 3}
+  placePrefab: {fileID: -7377089692940710368, guid: bc481af911a8ac0409f05c08df4e91ea, type: 3}
   setActiveList:
   - {fileID: 791609493}
   - {fileID: 2004965994}
