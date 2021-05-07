@@ -8078,7 +8078,7 @@ MonoBehaviour:
   autoOrient: 1
   updateFrameInterval: 0
   _slices: 1
-  vertexDirection: {x: -655.75616, y: 88.53734, z: 150.73141}
+  vertexDirection: {x: -0, y: 1.0000001, z: 0.00000011920929}
 --- !u!23 &554862197
 MeshRenderer:
   m_ObjectHideFlags: 0

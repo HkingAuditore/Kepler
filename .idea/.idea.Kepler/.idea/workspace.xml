@@ -24,15 +24,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1afa9dc1-adab-467c-afda-52b72c3d10f3" name="默认的" comment="">
+      <change beforePath="$PROJECT_DIR$/.VSCodeCounter/2021-04-05_22-47-04/details.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.VSCodeCounter/2021-04-05_22-47-04/results.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.VSCodeCounter/2021-04-05_22-47-04/results.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.VSCodeCounter/2021-04-05_22-47-04/results.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Kepler/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Kepler/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Kepler/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Kepler/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Kepler/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Kepler/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PlugIns/Le Tai's Asset/TranslucentImage/Material/Default-Translucent.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlugIns/Le Tai's Asset/TranslucentImage/Material/Default-Translucent.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/PhysicScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/PhysicScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/QuizEdit.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/QuizEdit.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Satellite 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Satellite 1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Satellite.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Satellite.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomCamera/CameraController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomCamera/CameraController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/PhysicScene_Profiles/Main.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/PhysicScene_Profiles/Main.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/TmpAudio.wav" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/TmpAudio.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/msc/18effb29f8b84f77e0a93d17e14d539b/urec.data" beforeDir="false" afterPath="$PROJECT_DIR$/msc/18effb29f8b84f77e0a93d17e14d539b/urec.data" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -71,14 +76,12 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Quiz/QuizSolver.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Arts/Shaders/CustomPostProcessing/TextureFormatUtilities.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CustomPostProcessing/OutlineCatcher.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Editor/ReadmeEditor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/183EA0E0-59EE-4107-865D-5753B201F130/e3/4b6242c2/SceneManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://C:/Program Files/Unity/Hub/Editor/2020.1.17f1c1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Slider.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/Assets/Scripts/GameManagers/Difficulty.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/GameManagers/GlobalTimer.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/GameManagers/PropertyUnit.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Init/Init.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Loading/LoadingManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizAstralBody.cs" />
@@ -127,6 +130,9 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/TTS/VoiceGenerator.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/CustomUI/Satellite/SatelliteUI.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/CustomCamera/CameraController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/VirtualReality/VirtualRealityTest.cs" />
+      <option value="$PROJECT_DIR$/Assets/Editor/ReadmeEditor.cs" />
+      <option value="$PROJECT_DIR$/Assets/Editor/Legacy/ScreenShotEditor.cs" />
     </changedPaths>
   </component>
   <component name="NamedScopeManager">
@@ -305,6 +311,9 @@
       <workItem from="1619428968107" duration="9750000" />
       <workItem from="1619979551242" duration="818000" />
       <workItem from="1620050326906" duration="7585000" />
+      <workItem from="1620314549607" duration="1309000" />
+      <workItem from="1620383621611" duration="1962000" />
+      <workItem from="1620391899420" duration="2656000" />
     </task>
     <servers />
   </component>

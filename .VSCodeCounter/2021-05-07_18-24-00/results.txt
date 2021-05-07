@@ -1,0 +1,678 @@
+Date : 2021-05-07 18:24:00
+Directory : g:\Kepler\Kepler
+Total : 511 files,  366810 codes, 4634 comments, 10177 blanks, all 381621 lines
+
+Languages
++------------+------------+------------+------------+------------+------------+
+| language   | files      | code       | comment    | blank      | total      |
++------------+------------+------------+------------+------------+------------+
+| XML        |         51 |    311,581 |          0 |        104 |    311,685 |
+| C#         |        364 |     43,373 |      3,388 |      7,260 |     54,021 |
+| ShaderLab  |         53 |      6,589 |        327 |      1,702 |      8,618 |
+| HLSL       |         38 |      4,694 |        919 |      1,104 |      6,717 |
+| JSON       |          3 |        572 |          0 |          4 |        576 |
+| Markdown   |          1 |          1 |          0 |          2 |          3 |
+| Properties |          1 |          0 |          0 |          1 |          1 |
++------------+------------+------------+------------+------------+------------+
+
+Directories
++--------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                                     | files      | code       | comment    | blank      | total      |
++--------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                                        |        511 |    366,810 |      4,634 |     10,177 |    381,621 |
+| .idea                                                                                                                    |         12 |      1,140 |          0 |          0 |      1,140 |
+| .idea\.idea.Kepler                                                                                                       |         12 |      1,140 |          0 |          0 |      1,140 |
+| .idea\.idea.Kepler\.idea                                                                                                 |         11 |      1,133 |          0 |          0 |      1,133 |
+| .idea\.idea.Kepler\.idea\codeStyles                                                                                      |          1 |          5 |          0 |          0 |          5 |
+| Assets                                                                                                                   |        469 |    119,056 |      4,634 |     10,090 |    133,780 |
+| Assets\Arts                                                                                                              |         31 |      3,992 |        971 |        975 |      5,938 |
+| Assets\Arts\Shaders                                                                                                      |         31 |      3,992 |        971 |        975 |      5,938 |
+| Assets\Arts\Shaders\CustomPostProcessing                                                                                 |         20 |      2,551 |        868 |        660 |      4,079 |
+| Assets\Arts\Shaders\CustomPostProcessing\API                                                                             |         10 |        376 |          5 |        138 |        519 |
+| Assets\PlugIns                                                                                                           |        236 |     99,285 |      1,142 |      5,392 |    105,819 |
+| Assets\PlugIns\BaseInfolibrary                                                                                           |          2 |     63,709 |          0 |         21 |     63,730 |
+| Assets\PlugIns\Dreamteck                                                                                                 |        161 |     27,951 |        713 |      3,881 |     32,545 |
+| Assets\PlugIns\Dreamteck\Splines                                                                                         |        141 |     25,526 |        664 |      3,514 |     29,704 |
+| Assets\PlugIns\Dreamteck\Splines\Components                                                                              |         58 |     12,393 |        360 |      1,812 |     14,565 |
+| Assets\PlugIns\Dreamteck\Splines\Components\Editor                                                                       |         22 |      2,881 |          5 |        374 |      3,260 |
+| Assets\PlugIns\Dreamteck\Splines\Components\Sample Modifiers                                                             |         14 |        933 |          0 |        134 |      1,067 |
+| Assets\PlugIns\Dreamteck\Splines\Components\Sample Modifiers\Editor                                                      |          7 |        437 |          0 |         52 |        489 |
+| Assets\PlugIns\Dreamteck\Splines\Core                                                                                    |         21 |      3,925 |        232 |        481 |      4,638 |
+| Assets\PlugIns\Dreamteck\Splines\Core\IO                                                                                 |          3 |      1,411 |         14 |        170 |      1,595 |
+| Assets\PlugIns\Dreamteck\Splines\Core\Primitives                                                                         |          9 |        359 |          0 |         43 |        402 |
+| Assets\PlugIns\Dreamteck\Splines\Editor                                                                                  |         49 |      8,538 |         27 |      1,124 |      9,689 |
+| Assets\PlugIns\Dreamteck\Splines\Editor\Primitives                                                                       |          9 |        257 |          0 |         32 |        289 |
+| Assets\PlugIns\Dreamteck\Splines\Editor\SplineEditor                                                                     |         21 |      4,572 |          5 |        593 |      5,170 |
+| Assets\PlugIns\Dreamteck\Splines\Editor\SplineEditor\DS Editor                                                           |          8 |      1,488 |          0 |        194 |      1,682 |
+| Assets\PlugIns\Dreamteck\Splines\Editor\SplineEditor\Point Modules                                                       |         10 |      2,041 |          0 |        252 |      2,293 |
+| Assets\PlugIns\Dreamteck\Splines\Editor\Tools                                                                            |          8 |      2,169 |         21 |        291 |      2,481 |
+| Assets\PlugIns\Dreamteck\Splines\Examples                                                                                |         13 |        670 |         45 |         97 |        812 |
+| Assets\PlugIns\Dreamteck\Splines\Examples\AudioVisualization                                                             |          1 |         55 |          2 |          9 |         66 |
+| Assets\PlugIns\Dreamteck\Splines\Examples\Following                                                                      |          2 |         34 |          5 |          6 |         45 |
+| Assets\PlugIns\Dreamteck\Splines\Examples\Following\Scripts                                                              |          2 |         34 |          5 |          6 |         45 |
+| Assets\PlugIns\Dreamteck\Splines\Examples\Junctions                                                                      |          4 |        317 |         33 |         45 |        395 |
+| Assets\PlugIns\Dreamteck\Splines\Examples\Junctions\Scripts                                                              |          4 |        317 |         33 |         45 |        395 |
+| Assets\PlugIns\Dreamteck\Splines\Examples\LengthEvents                                                                   |          1 |         18 |          0 |          3 |         21 |
+| Assets\PlugIns\Dreamteck\Splines\Examples\Projection                                                                     |          3 |         60 |          0 |          9 |         69 |
+| Assets\PlugIns\Dreamteck\Splines\Examples\Projection\Scripts                                                             |          3 |         60 |          0 |          9 |         69 |
+| Assets\PlugIns\Dreamteck\Splines\Examples\RollerCoaster                                                                  |          2 |        186 |          5 |         25 |        216 |
+| Assets\PlugIns\Dreamteck\Splines\Examples\RollerCoaster\Scripts                                                          |          2 |        186 |          5 |         25 |        216 |
+| Assets\PlugIns\Dreamteck\Utilities                                                                                       |         20 |      2,425 |         49 |        367 |      2,841 |
+| Assets\PlugIns\Dreamteck\Utilities\Editor                                                                                |          6 |        793 |          3 |        123 |        919 |
+| Assets\PlugIns\FlatKit                                                                                                   |         18 |      1,711 |         39 |        372 |      2,122 |
+| Assets\PlugIns\FlatKit\Demos                                                                                             |          3 |        271 |          3 |         55 |        329 |
+| Assets\PlugIns\FlatKit\Demos\Common                                                                                      |          3 |        271 |          3 |         55 |        329 |
+| Assets\PlugIns\FlatKit\Demos\Common\Scripts                                                                              |          3 |        271 |          3 |         55 |        329 |
+| Assets\PlugIns\FlatKit\Demos\Common\Scripts\Motion                                                                       |          3 |        271 |          3 |         55 |        329 |
+| Assets\PlugIns\FlatKit\Demos\Common\Scripts\Motion\Editor                                                                |          1 |         67 |          0 |         19 |         86 |
+| Assets\PlugIns\FlatKit\Scripts                                                                                           |          1 |         27 |          0 |          5 |         32 |
+| Assets\PlugIns\FlatKit\Shaders                                                                                           |         14 |      1,413 |         36 |        312 |      1,761 |
+| Assets\PlugIns\FlatKit\Shaders\GradientSkybox                                                                            |          2 |         80 |          0 |         24 |        104 |
+| Assets\PlugIns\FlatKit\Shaders\GradientSkybox\Editor                                                                     |          1 |         26 |          0 |          8 |         34 |
+| Assets\PlugIns\FlatKit\Shaders\ImageEffects                                                                              |          4 |        385 |          4 |         76 |        465 |
+| Assets\PlugIns\FlatKit\Shaders\ImageEffects\Resources                                                                    |          2 |        164 |          2 |         33 |        199 |
+| Assets\PlugIns\FlatKit\Shaders\ImageEffects\Scripts                                                                      |          2 |        221 |          2 |         43 |        266 |
+| Assets\PlugIns\FlatKit\Shaders\StylizedSurface                                                                           |          7 |        870 |         32 |        195 |      1,097 |
+| Assets\PlugIns\FlatKit\Shaders\StylizedSurface\Editor                                                                    |          1 |        238 |          2 |         39 |        279 |
+| Assets\PlugIns\Le Tai's Asset                                                                                            |         32 |      1,911 |        163 |        440 |      2,514 |
+| Assets\PlugIns\Le Tai's Asset\TranslucentImage                                                                           |         32 |      1,911 |        163 |        440 |      2,514 |
+| Assets\PlugIns\Le Tai's Asset\TranslucentImage\Demo                                                                      |         13 |        479 |         22 |         98 |        599 |
+| Assets\PlugIns\Le Tai's Asset\TranslucentImage\Demo\Scripts                                                              |         12 |        430 |         21 |         86 |        537 |
+| Assets\PlugIns\Le Tai's Asset\TranslucentImage\Demo\Shader                                                               |          1 |         49 |          1 |         12 |         62 |
+| Assets\PlugIns\Le Tai's Asset\TranslucentImage\Resources                                                                 |          3 |        236 |         24 |         64 |        324 |
+| Assets\PlugIns\Le Tai's Asset\TranslucentImage\Script                                                                    |         16 |      1,196 |        117 |        278 |      1,591 |
+| Assets\PlugIns\Le Tai's Asset\TranslucentImage\Script\BlurAlgorithm                                                      |          4 |        143 |         32 |         33 |        208 |
+| Assets\PlugIns\Le Tai's Asset\TranslucentImage\Script\Editor                                                             |          5 |        456 |         19 |        108 |        583 |
+| Assets\PlugIns\Le Tai's Asset\TranslucentImage\Script\Utilities                                                          |          3 |        218 |          8 |         40 |        266 |
+| Assets\PlugIns\Minimalist                                                                                                |         19 |      3,512 |        165 |        605 |      4,282 |
+| Assets\PlugIns\Minimalist\Editor                                                                                         |          5 |      1,603 |         26 |        202 |      1,831 |
+| Assets\PlugIns\Minimalist\Shaders                                                                                        |         14 |      1,909 |        139 |        403 |      2,451 |
+| Assets\PlugIns\Minimalist\Shaders\BRP                                                                                    |          3 |        556 |         29 |         87 |        672 |
+| Assets\PlugIns\Minimalist\Shaders\Common                                                                                 |          1 |         66 |          0 |          9 |         75 |
+| Assets\PlugIns\Minimalist\Shaders\URP                                                                                    |         10 |      1,287 |        110 |        307 |      1,704 |
+| Assets\PlugIns\Starfield Skybox                                                                                          |          1 |         25 |          1 |          6 |         32 |
+| Assets\PlugIns\Starfield Skybox\Demo                                                                                     |          1 |         25 |          1 |          6 |         32 |
+| Assets\PlugIns\Starfield Skybox\Demo\Script                                                                              |          1 |         25 |          1 |          6 |         32 |
+| Assets\PlugIns\TTS                                                                                                       |          3 |        466 |         61 |         67 |        594 |
+| Assets\Quiz                                                                                                              |          5 |        200 |          0 |          0 |        200 |
+| Assets\ScenesData                                                                                                        |          6 |        336 |          0 |          1 |        337 |
+| Assets\Scripts                                                                                                           |        122 |      7,659 |      1,666 |      1,351 |     10,676 |
+| Assets\Scripts\Animation                                                                                                 |          2 |         86 |         28 |         13 |        127 |
+| Assets\Scripts\CustomCamera                                                                                              |          3 |        251 |         63 |         45 |        359 |
+| Assets\Scripts\CustomPostProcessing                                                                                      |          8 |        341 |        119 |         78 |        538 |
+| Assets\Scripts\CustomUI                                                                                                  |         42 |      2,391 |        173 |        341 |      2,905 |
+| Assets\Scripts\CustomUI\AstralBodyEditor                                                                                 |          9 |        729 |         77 |        127 |        933 |
+| Assets\Scripts\CustomUI\Lab                                                                                              |          2 |         86 |          1 |         14 |        101 |
+| Assets\Scripts\CustomUI\Quiz                                                                                             |         12 |        850 |         75 |         99 |      1,024 |
+| Assets\Scripts\CustomUI\Satellite                                                                                        |          3 |        108 |          0 |         15 |        123 |
+| Assets\Scripts\CustomUI\Tutorial                                                                                         |          5 |        158 |          1 |         21 |        180 |
+| Assets\Scripts\Editor                                                                                                    |          1 |        370 |          0 |         43 |        413 |
+| Assets\Scripts\GameManagers                                                                                              |          5 |        235 |        146 |         65 |        446 |
+| Assets\Scripts\Init                                                                                                      |          1 |         13 |          4 |          1 |         18 |
+| Assets\Scripts\Loading                                                                                                   |          1 |         46 |         12 |          8 |         66 |
+| Assets\Scripts\Quiz                                                                                                      |         13 |      1,006 |        256 |        163 |      1,425 |
+| Assets\Scripts\Satellite                                                                                                 |          9 |        335 |        138 |         69 |        542 |
+| Assets\Scripts\SpacePhysic                                                                                               |          6 |        580 |        218 |        135 |        933 |
+| Assets\Scripts\StaticClasses                                                                                             |          7 |        402 |        186 |         66 |        654 |
+| Assets\Scripts\StaticClasses\MathPlus                                                                                    |          5 |        320 |        175 |         56 |        551 |
+| Assets\Scripts\TTS                                                                                                       |         11 |        892 |        137 |        171 |      1,200 |
+| Assets\Scripts\XmlSaver                                                                                                  |          7 |        468 |        184 |        102 |        754 |
+| Assets\Shaders                                                                                                           |         17 |      2,113 |         13 |        527 |      2,653 |
+| Assets\TextMesh Pro                                                                                                      |         52 |      5,471 |        842 |      1,844 |      8,157 |
+| Assets\TextMesh Pro\Examples & Extras                                                                                    |         34 |      2,982 |        760 |      1,196 |      4,938 |
+| Assets\TextMesh Pro\Examples & Extras\Scripts                                                                            |         34 |      2,982 |        760 |      1,196 |      4,938 |
+| Assets\TextMesh Pro\Shaders                                                                                              |         17 |      2,334 |         82 |        646 |      3,062 |
+| Assets\TextMesh Pro\Sprites                                                                                              |          1 |        155 |          0 |          2 |        157 |
+| Packages                                                                                                                 |         28 |    246,613 |          0 |         84 |    246,697 |
+| Packages\MathNet.Numerics.4.15.0                                                                                         |          4 |    227,240 |          0 |         80 |    227,320 |
+| Packages\MathNet.Numerics.4.15.0\lib                                                                                     |          4 |    227,240 |          0 |         80 |    227,320 |
+| Packages\MathNet.Numerics.4.15.0\lib\net40                                                                               |          1 |     57,653 |          0 |         20 |     57,673 |
+| Packages\MathNet.Numerics.4.15.0\lib\net461                                                                              |          1 |     57,653 |          0 |         20 |     57,673 |
+| Packages\MathNet.Numerics.4.15.0\lib\netstandard1.3                                                                      |          1 |     54,281 |          0 |         20 |     54,301 |
+| Packages\MathNet.Numerics.4.15.0\lib\netstandard2.0                                                                      |          1 |     57,653 |          0 |         20 |     57,673 |
+| Packages\MathNet.Spatial.0.6.0                                                                                           |          2 |     12,112 |          0 |          2 |     12,114 |
+| Packages\MathNet.Spatial.0.6.0\lib                                                                                       |          2 |     12,112 |          0 |          2 |     12,114 |
+| Packages\MathNet.Spatial.0.6.0\lib\net461                                                                                |          1 |      6,056 |          0 |          1 |      6,057 |
+| Packages\MathNet.Spatial.0.6.0\lib\netstandard2.0                                                                        |          1 |      6,056 |          0 |          1 |      6,057 |
+| Packages\System.Diagnostics.Contracts.4.3.0                                                                              |         20 |      6,844 |          0 |          0 |      6,844 |
+| Packages\System.Diagnostics.Contracts.4.3.0\ref                                                                          |         20 |      6,844 |          0 |          0 |      6,844 |
+| Packages\System.Diagnostics.Contracts.4.3.0\ref\netcore50                                                                |         10 |      3,422 |          0 |          0 |      3,422 |
+| Packages\System.Diagnostics.Contracts.4.3.0\ref\netcore50\de                                                             |          1 |        334 |          0 |          0 |        334 |
+| Packages\System.Diagnostics.Contracts.4.3.0\ref\netcore50\es                                                             |          1 |        334 |          0 |          0 |        334 |
+| Packages\System.Diagnostics.Contracts.4.3.0\ref\netcore50\fr                                                             |          1 |        334 |          0 |          0 |        334 |
+| Packages\System.Diagnostics.Contracts.4.3.0\ref\netcore50\it                                                             |          1 |        334 |          0 |          0 |        334 |
+| Packages\System.Diagnostics.Contracts.4.3.0\ref\netcore50\ja                                                             |          1 |        370 |          0 |          0 |        370 |
+| Packages\System.Diagnostics.Contracts.4.3.0\ref\netcore50\ko                                                             |          1 |        370 |          0 |          0 |        370 |
+| Packages\System.Diagnostics.Contracts.4.3.0\ref\netcore50\ru                                                             |          1 |        334 |          0 |          0 |        334 |
+| Packages\System.Diagnostics.Contracts.4.3.0\ref\netcore50\zh-hans                                                        |          1 |        338 |          0 |          0 |        338 |
+| Packages\System.Diagnostics.Contracts.4.3.0\ref\netcore50\zh-hant                                                        |          1 |        340 |          0 |          0 |        340 |
+| Packages\System.Diagnostics.Contracts.4.3.0\ref\netstandard1.0                                                           |         10 |      3,422 |          0 |          0 |      3,422 |
+| Packages\System.Diagnostics.Contracts.4.3.0\ref\netstandard1.0\de                                                        |          1 |        334 |          0 |          0 |        334 |
+| Packages\System.Diagnostics.Contracts.4.3.0\ref\netstandard1.0\es                                                        |          1 |        334 |          0 |          0 |        334 |
+| Packages\System.Diagnostics.Contracts.4.3.0\ref\netstandard1.0\fr                                                        |          1 |        334 |          0 |          0 |        334 |
+| Packages\System.Diagnostics.Contracts.4.3.0\ref\netstandard1.0\it                                                        |          1 |        334 |          0 |          0 |        334 |
+| Packages\System.Diagnostics.Contracts.4.3.0\ref\netstandard1.0\ja                                                        |          1 |        370 |          0 |          0 |        370 |
+| Packages\System.Diagnostics.Contracts.4.3.0\ref\netstandard1.0\ko                                                        |          1 |        370 |          0 |          0 |        370 |
+| Packages\System.Diagnostics.Contracts.4.3.0\ref\netstandard1.0\ru                                                        |          1 |        334 |          0 |          0 |        334 |
+| Packages\System.Diagnostics.Contracts.4.3.0\ref\netstandard1.0\zh-hans                                                   |          1 |        338 |          0 |          0 |        338 |
+| Packages\System.Diagnostics.Contracts.4.3.0\ref\netstandard1.0\zh-hant                                                   |          1 |        340 |          0 |          0 |        340 |
+| msc                                                                                                                      |          1 |          0 |          0 |          1 |          1 |
++--------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++--------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| filename                                                                                                                 | language   | code       | comment    | blank      | total      |
++--------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| g:\Kepler\Kepler\.idea\.idea.Kepler\.idea\code-comments-settings.xml                                                     | XML        |          6 |          0 |          0 |          6 |
+| g:\Kepler\Kepler\.idea\.idea.Kepler\.idea\code-comments.xml                                                              | XML        |          6 |          0 |          0 |          6 |
+| g:\Kepler\Kepler\.idea\.idea.Kepler\.idea\codeStyles\codeStyleConfig.xml                                                 | XML        |          5 |          0 |          0 |          5 |
+| g:\Kepler\Kepler\.idea\.idea.Kepler\.idea\contentModel.xml                                                               | XML        |        718 |          0 |          0 |        718 |
+| g:\Kepler\Kepler\.idea\.idea.Kepler\.idea\encodings.xml                                                                  | XML        |          4 |          0 |          0 |          4 |
+| g:\Kepler\Kepler\.idea\.idea.Kepler\.idea\indexLayout.xml                                                                | XML        |         39 |          0 |          0 |         39 |
+| g:\Kepler\Kepler\.idea\.idea.Kepler\.idea\modules.xml                                                                    | XML        |          8 |          0 |          0 |          8 |
+| g:\Kepler\Kepler\.idea\.idea.Kepler\.idea\projectSettingsUpdater.xml                                                     | XML        |          6 |          0 |          0 |          6 |
+| g:\Kepler\Kepler\.idea\.idea.Kepler\.idea\riderModule.iml                                                                | XML        |          7 |          0 |          0 |          7 |
+| g:\Kepler\Kepler\.idea\.idea.Kepler\.idea\vcs.xml                                                                        | XML        |          6 |          0 |          0 |          6 |
+| g:\Kepler\Kepler\.idea\.idea.Kepler\.idea\workspace.xml                                                                  | XML        |        328 |          0 |          0 |        328 |
+| g:\Kepler\Kepler\.idea\.idea.Kepler\riderModule.iml                                                                      | XML        |          7 |          0 |          0 |          7 |
+| g:\Kepler\Kepler\Assets\Arts\Shaders\AuroraSky.shader                                                                    | ShaderLab  |        264 |         31 |         79 |        374 |
+| g:\Kepler\Kepler\Assets\Arts\Shaders\Blur.shader                                                                         | ShaderLab  |        104 |          1 |         17 |        122 |
+| g:\Kepler\Kepler\Assets\Arts\Shaders\CustomPostProcessing\ACES.hlsl                                                      | HLSL       |        512 |        621 |        177 |      1,310 |
+| g:\Kepler\Kepler\Assets\Arts\Shaders\CustomPostProcessing\API\D3D11.hlsl                                                 | HLSL       |         39 |          0 |         14 |         53 |
+| g:\Kepler\Kepler\Assets\Arts\Shaders\CustomPostProcessing\API\D3D12.hlsl                                                 | HLSL       |         39 |          0 |         14 |         53 |
+| g:\Kepler\Kepler\Assets\Arts\Shaders\CustomPostProcessing\API\D3D9.hlsl                                                  | HLSL       |         30 |          1 |         13 |         44 |
+| g:\Kepler\Kepler\Assets\Arts\Shaders\CustomPostProcessing\API\Metal.hlsl                                                 | HLSL       |         34 |          0 |         14 |         48 |
+| g:\Kepler\Kepler\Assets\Arts\Shaders\CustomPostProcessing\API\OpenGL.hlsl                                                | HLSL       |         42 |          2 |         14 |         58 |
+| g:\Kepler\Kepler\Assets\Arts\Shaders\CustomPostProcessing\API\PSP2.hlsl                                                  | HLSL       |         34 |          2 |         13 |         49 |
+| g:\Kepler\Kepler\Assets\Arts\Shaders\CustomPostProcessing\API\PSSL.hlsl                                                  | HLSL       |         42 |          0 |         14 |         56 |
+| g:\Kepler\Kepler\Assets\Arts\Shaders\CustomPostProcessing\API\Switch.hlsl                                                | HLSL       |         38 |          0 |         14 |         52 |
+| g:\Kepler\Kepler\Assets\Arts\Shaders\CustomPostProcessing\API\Vulkan.hlsl                                                | HLSL       |         39 |          0 |         14 |         53 |
+| g:\Kepler\Kepler\Assets\Arts\Shaders\CustomPostProcessing\API\XboxOne.hlsl                                               | HLSL       |         39 |          0 |         14 |         53 |
+| g:\Kepler\Kepler\Assets\Arts\Shaders\CustomPostProcessing\Colors.hlsl                                                    | HLSL       |        440 |        124 |         87 |        651 |
+| g:\Kepler\Kepler\Assets\Arts\Shaders\CustomPostProcessing\DepthOfField.hlsl                                              | HLSL       |        171 |         43 |         63 |        277 |
+| g:\Kepler\Kepler\Assets\Arts\Shaders\CustomPostProcessing\DepthOfField.shader                                            | ShaderLab  |        219 |          5 |         42 |        266 |
+| g:\Kepler\Kepler\Assets\Arts\Shaders\CustomPostProcessing\DiskKernels.hlsl                                               | HLSL       |        180 |          8 |         17 |        205 |
+| g:\Kepler\Kepler\Assets\Arts\Shaders\CustomPostProcessing\Sampling.hlsl                                                  | HLSL       |         62 |         12 |         18 |         92 |
+| g:\Kepler\Kepler\Assets\Arts\Shaders\CustomPostProcessing\ShaderIds.cs                                                   | C#         |        137 |          3 |         22 |        162 |
+| g:\Kepler\Kepler\Assets\Arts\Shaders\CustomPostProcessing\StdLib.hlsl                                                    | HLSL       |        234 |         33 |         56 |        323 |
+| g:\Kepler\Kepler\Assets\Arts\Shaders\CustomPostProcessing\TextureFormatUtilities.cs                                      | C#         |        141 |         13 |         21 |        175 |
+| g:\Kepler\Kepler\Assets\Arts\Shaders\CustomPostProcessing\xRLib.hlsl                                                     | HLSL       |         79 |          1 |         19 |         99 |
+| g:\Kepler\Kepler\Assets\Arts\Shaders\Mix.shader                                                                          | ShaderLab  |         51 |          1 |         11 |         63 |
+| g:\Kepler\Kepler\Assets\Arts\Shaders\MixLayers.shader                                                                    | ShaderLab  |         49 |          4 |         11 |         64 |
+| g:\Kepler\Kepler\Assets\Arts\Shaders\OrbitLine.shader                                                                    | ShaderLab  |         52 |          6 |          7 |         65 |
+| g:\Kepler\Kepler\Assets\Arts\Shaders\Outline.shader                                                                      | ShaderLab  |         97 |          3 |         15 |        115 |
+| g:\Kepler\Kepler\Assets\Arts\Shaders\Space.shader                                                                        | ShaderLab  |        277 |         25 |         64 |        366 |
+| g:\Kepler\Kepler\Assets\Arts\Shaders\UIBlur.shader                                                                       | ShaderLab  |        112 |          4 |         23 |        139 |
+| g:\Kepler\Kepler\Assets\Arts\Shaders\UIBlurPostEffect.shader                                                             | ShaderLab  |        276 |         21 |         63 |        360 |
+| g:\Kepler\Kepler\Assets\Arts\Shaders\UIBlur_Shared.cginc                                                                 | HLSL       |        106 |          1 |         18 |        125 |
+| g:\Kepler\Kepler\Assets\Arts\Shaders\UiLine.shader                                                                       | ShaderLab  |         53 |          6 |          7 |         66 |
+| g:\Kepler\Kepler\Assets\PlugIns\BaseInfolibrary\MathNet.Numerics.xml                                                     | XML        |     57,653 |          0 |         20 |     57,673 |
+| g:\Kepler\Kepler\Assets\PlugIns\BaseInfolibrary\MathNet.Spatial.xml                                                      | XML        |      6,056 |          0 |          1 |      6,057 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\BlankUser.cs                                                | C#         |         27 |         10 |          3 |         40 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\EdgeColliderGenerator.cs                                    | C#         |         98 |          0 |         18 |        116 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\Editor\BakeMeshWindow.cs                                    | C#         |        189 |          0 |         20 |        209 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\Editor\LengthCalculatorEditor.cs                            | C#         |         60 |          0 |          7 |         67 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\Editor\MeshGenEditor.cs                                     | C#         |        200 |          0 |         23 |        223 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\Editor\NodeEditor.cs                                        | C#         |        279 |          0 |         39 |        318 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\Editor\ObjectBenderEditor.cs                                | C#         |        341 |          1 |         47 |        389 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\Editor\ObjectControllerEditor.cs                            | C#         |        164 |          0 |         20 |        184 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\Editor\ParticleControllerEditor.cs                          | C#         |         58 |          0 |          8 |         66 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\Editor\PathGeneratorEditor.cs                               | C#         |         43 |          0 |          5 |         48 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\Editor\PolygonColliderGenEditor.cs                          | C#         |         30 |          0 |          4 |         34 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\Editor\SetDistanceWindow.cs                                 | C#         |         34 |          0 |          5 |         39 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\Editor\SplineFollowerEditor.cs                              | C#         |        128 |          0 |         22 |        150 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\Editor\SplineMeshEditor.cs                                  | C#         |        435 |          4 |         53 |        492 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\Editor\SplineMorphEditor.cs                                 | C#         |        145 |          0 |         14 |        159 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\Editor\SplinePositionerEditor.cs                            | C#         |         53 |          0 |          6 |         59 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\Editor\SplineProjectorEditor.cs                             | C#         |         57 |          0 |         11 |         68 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\Editor\SplineRendererEditor.cs                              | C#         |         37 |          0 |          6 |         43 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\Editor\SplineTracerEditor.cs                                | C#         |        151 |          0 |         15 |        166 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\Editor\SplineUserEditor.cs                                  | C#         |        304 |          0 |         48 |        352 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\Editor\SplineUserSubEditor.cs                               | C#         |         25 |          0 |          5 |         30 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\Editor\SurfaceGeneratorEditor.cs                            | C#         |         69 |          0 |          7 |         76 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\Editor\TubeGeneratorEditor.cs                               | C#         |         40 |          0 |          4 |         44 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\Editor\WaveformGeneratorEditor.cs                           | C#         |         39 |          0 |          5 |         44 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\LengthCalculator.cs                                         | C#         |         80 |          0 |         13 |         93 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\MeshGenerator.cs                                            | C#         |        435 |          1 |         78 |        514 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\Node.cs                                                     | C#         |        315 |          2 |         49 |        366 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\ObjectBender.cs                                             | C#         |        754 |          2 |        101 |        857 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\ObjectController.cs                                         | C#         |        637 |          0 |         84 |        721 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\ParticleController.cs                                       | C#         |        228 |          0 |         44 |        272 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\PathGenerator.cs                                            | C#         |        186 |          0 |         25 |        211 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\PolygonColliderGenerator.cs                                 | C#         |        153 |          0 |         24 |        177 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\Sample Modifiers\ColorModifier.cs                           | C#         |         65 |          0 |         10 |         75 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\Sample Modifiers\Editor\ColorModifierEditor.cs              | C#         |         42 |          0 |          6 |         48 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\Sample Modifiers\Editor\FollowerSpeedModifierEditor.cs      | C#         |         36 |          0 |          5 |         41 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\Sample Modifiers\Editor\MeshScaleModifierEditor.cs          | C#         |         36 |          0 |          5 |         41 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\Sample Modifiers\Editor\OffsetModifierEditor.cs             | C#         |         72 |          0 |          9 |         81 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\Sample Modifiers\Editor\RotationModifierEditor.cs           | C#         |         75 |          0 |          8 |         83 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\Sample Modifiers\Editor\SizeModifierEditor.cs               | C#         |         36 |          0 |          5 |         41 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\Sample Modifiers\Editor\SplineSampleModifierEditor.cs       | C#         |        140 |          0 |         14 |        154 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\Sample Modifiers\FollowerSpeedModifier.cs                   | C#         |         54 |          0 |         10 |         64 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\Sample Modifiers\MeshScaleModifier.cs                       | C#         |         60 |          0 |         10 |         70 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\Sample Modifiers\OffsetModifier.cs                          | C#         |         54 |          0 |          9 |         63 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\Sample Modifiers\RotationModifier.cs                        | C#         |         63 |          0 |         10 |         73 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\Sample Modifiers\SizeModifier.cs                            | C#         |         47 |          0 |          8 |         55 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\Sample Modifiers\SplineSampleModifier.cs                    | C#         |        153 |          0 |         25 |        178 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\SplineComputer.cs                                           | C#         |      1,452 |        240 |        225 |      1,917 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\SplineFollower.cs                                           | C#         |        300 |         10 |         40 |        350 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\SplineMesh.cs                                               | C#         |      1,459 |          1 |        213 |      1,673 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\SplineMorph.cs                                              | C#         |        278 |          0 |         50 |        328 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\SplinePositioner.cs                                         | C#         |         93 |          0 |         16 |        109 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\SplineProjector.cs                                          | C#         |        199 |          0 |         35 |        234 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\SplineRenderer.cs                                           | C#         |        114 |          0 |         16 |        130 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\SplineTracer.cs                                             | C#         |        276 |          6 |         48 |        330 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\SplineUser.cs                                               | C#         |        549 |         71 |        102 |        722 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\SurfaceGenerator.cs                                         | C#         |        390 |          4 |         57 |        451 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\TubeGenerator.cs                                            | C#         |        372 |          8 |         41 |        421 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\WaveformGenerator.cs                                        | C#         |        184 |          0 |         22 |        206 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Core\IO\CSV.cs                                                         | C#         |        264 |          2 |         26 |        292 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Core\IO\SVG.cs                                                         | C#         |        866 |         12 |         95 |        973 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Core\IO\SplineParser.cs                                                | C#         |        281 |          0 |         49 |        330 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Core\ObjectSequence.cs                                                 | C#         |         58 |          0 |         11 |         69 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Core\Primitives\Capsule.cs                                             | C#         |         32 |          0 |          3 |         35 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Core\Primitives\Ellipse.cs                                             | C#         |         31 |          0 |          3 |         34 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Core\Primitives\Line.cs                                                | C#         |         24 |          0 |          3 |         27 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Core\Primitives\Ngon.cs                                                | C#         |         26 |          0 |          4 |         30 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Core\Primitives\Rectangle.cs                                           | C#         |         23 |          0 |          3 |         26 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Core\Primitives\RoundedRectangle.cs                                    | C#         |         40 |          0 |          6 |         46 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Core\Primitives\Spiral.cs                                              | C#         |         58 |          0 |          3 |         61 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Core\Primitives\SplinePrimitive.cs                                     | C#         |         96 |          0 |         14 |        110 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Core\Primitives\Star.cs                                                | C#         |         29 |          0 |          4 |         33 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Core\SampleCollection.cs                                               | C#         |        469 |         90 |         61 |        620 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Core\Spline.cs                                                         | C#         |        723 |        121 |         74 |        918 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Core\SplinePoint.cs                                                    | C#         |        187 |          1 |         19 |        207 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Core\SplinePrefs.cs                                                    | C#         |        145 |          0 |          9 |        154 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Core\SplineSample.cs                                                   | C#         |        109 |          0 |         16 |        125 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Core\SplineThreading.cs                                                | C#         |        164 |          0 |         23 |        187 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Core\SplineTrigger.cs                                                  | C#         |         93 |          4 |         21 |        118 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Core\TransformModule.cs                                                | C#         |        207 |          2 |         34 |        243 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Editor\ComputerSplitModule.cs                                          | C#         |        180 |          0 |         25 |        205 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Editor\DSSplineDrawer.cs                                               | C#         |        145 |          0 |         19 |        164 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Editor\Primitives\CapsuleEditor.cs                                     | C#         |         24 |          0 |          3 |         27 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Editor\Primitives\EllipseEditor.cs                                     | C#         |         25 |          0 |          3 |         28 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Editor\Primitives\LineEditor.cs                                        | C#         |         26 |          0 |          3 |         29 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Editor\Primitives\NgonEditor.cs                                        | C#         |         25 |          0 |          3 |         28 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Editor\Primitives\PrimitiveEditor.cs                                   | C#         |         53 |          0 |          8 |         61 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Editor\Primitives\RectangleEditor.cs                                   | C#         |         24 |          0 |          3 |         27 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Editor\Primitives\RoundedRectangleEditor.cs                            | C#         |         26 |          0 |          3 |         29 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Editor\Primitives\SpiralEditor.cs                                      | C#         |         28 |          0 |          3 |         31 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Editor\Primitives\StarEditor.cs                                        | C#         |         26 |          0 |          3 |         29 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Editor\SplineComputerEditor.cs                                         | C#         |        201 |          0 |         30 |        231 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Editor\SplineComputerEditorHandles.cs                                  | C#         |         88 |          0 |         11 |         99 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Editor\SplineDrawer.cs                                                 | C#         |         82 |          0 |          8 |         90 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Editor\SplineEditorGUI.cs                                              | C#         |        322 |          1 |         41 |        364 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Editor\SplineEditorHandles.cs                                          | C#         |         80 |          0 |         12 |         92 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Editor\SplineEditorWindow.cs                                           | C#         |         51 |          0 |          9 |         60 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Editor\SplineEditor\DS Editor\ComputerEditor.cs                        | C#         |        397 |          0 |         54 |        451 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Editor\SplineEditor\DS Editor\ComputerEditorModule.cs                  | C#         |         23 |          0 |          3 |         26 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Editor\SplineEditor\DS Editor\ComputerMergeModule.cs                   | C#         |        200 |          0 |         26 |        226 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Editor\SplineEditor\DS Editor\DSCreatePointModule.cs                   | C#         |        113 |          0 |         14 |        127 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Editor\SplineEditor\DS Editor\DreamteckSplinesEditor.cs                | C#         |        191 |          0 |         24 |        215 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Editor\SplineEditor\DS Editor\PrimitivesModule.cs                      | C#         |        220 |          0 |         30 |        250 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Editor\SplineEditor\DS Editor\SplineDebugEditor.cs                     | C#         |         49 |          0 |          9 |         58 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Editor\SplineEditor\DS Editor\SplineTriggersEditor.cs                  | C#         |        295 |          0 |         34 |        329 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Editor\SplineEditor\EditorModule.cs                                    | C#         |        101 |          0 |         23 |        124 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Editor\SplineEditor\Point Modules\CreatePointModule.cs                 | C#         |        444 |          0 |         43 |        487 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Editor\SplineEditor\Point Modules\DeletePointModule.cs                 | C#         |         74 |          0 |         11 |         85 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Editor\SplineEditor\Point Modules\MainPointModule.cs                   | C#         |        249 |          0 |         29 |        278 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Editor\SplineEditor\Point Modules\PointMirrorModule.cs                 | C#         |        357 |          0 |         41 |        398 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Editor\SplineEditor\Point Modules\PointModule.cs                       | C#         |        291 |          0 |         52 |        343 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Editor\SplineEditor\Point Modules\PointMoveModule.cs                   | C#         |        124 |          0 |         14 |        138 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Editor\SplineEditor\Point Modules\PointNormalModule.cs                 | C#         |        210 |          0 |         17 |        227 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Editor\SplineEditor\Point Modules\PointRotateModule.cs                 | C#         |         70 |          0 |         10 |         80 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Editor\SplineEditor\Point Modules\PointScaleModule.cs                  | C#         |         58 |          0 |         10 |         68 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Editor\SplineEditor\Point Modules\PointTransformModule.cs              | C#         |        164 |          0 |         25 |        189 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Editor\SplineEditor\SplineEditor.cs                                    | C#         |        849 |          5 |        100 |        954 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Editor\SplineEditor\SplineEditorBase.cs                                | C#         |         93 |          0 |         24 |        117 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Editor\SplinePreset.cs                                                 | C#         |        149 |          0 |         24 |        173 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Editor\Tools\BakeTool.cs                                               | C#         |        290 |          0 |         39 |        329 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Editor\Tools\Explorer.cs                                               | C#         |        171 |          0 |         14 |        185 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Editor\Tools\ImportTool.cs                                             | C#         |        384 |          0 |         46 |        430 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Editor\Tools\LevelTerrainTool.cs                                       | C#         |        594 |         17 |         82 |        693 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Editor\Tools\ObjectSpawnTool.cs                                        | C#         |        386 |          3 |         51 |        440 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Editor\Tools\SplineTool.cs                                             | C#         |        168 |          1 |         31 |        200 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Editor\Tools\SplineToolsWindow.cs                                      | C#         |         65 |          0 |         11 |         76 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Editor\Tools\UpdateTool.cs                                             | C#         |        111 |          0 |         17 |        128 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Editor\TransformModuleEditor.cs                                        | C#         |         69 |          0 |         10 |         79 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Editor\WelcomeScreen.cs                                                | C#         |        173 |          0 |         19 |        192 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Examples\AudioVisualization\SpectrumVisualizer.cs                      | C#         |         55 |          2 |          9 |         66 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Examples\Following\Scripts\CameraSmoothRotation.cs                     | C#         |         25 |          5 |          4 |         34 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Examples\Following\Scripts\URLButton.cs                                | C#         |          9 |          0 |          2 |         11 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Examples\Junctions\Scripts\JunctionSwitch.cs                           | C#         |         37 |          0 |          4 |         41 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Examples\Junctions\Scripts\TrainCamera.cs                              | C#         |         18 |          0 |          3 |         21 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Examples\Junctions\Scripts\TrainEngine.cs                              | C#         |         89 |         21 |         13 |        123 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Examples\Junctions\Scripts\Wagon.cs                                    | C#         |        173 |         12 |         25 |        210 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Examples\LengthEvents\SetMaterialColor.cs                              | C#         |         18 |          0 |          3 |         21 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Examples\Projection\Scripts\AddForceAlongPath.cs                       | C#         |         19 |          0 |          3 |         22 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Examples\Projection\Scripts\BallCamera.cs                              | C#         |         27 |          0 |          4 |         31 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Examples\Projection\Scripts\LapCounter.cs                              | C#         |         14 |          0 |          2 |         16 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Examples\RollerCoaster\Scripts\CameraLook.cs                           | C#         |         59 |          1 |          9 |         69 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Examples\RollerCoaster\Scripts\RollerCoaster.cs                        | C#         |        127 |          4 |         16 |        147 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Utilities\ArrayUtility.cs                                                      | C#         |         45 |          0 |          5 |         50 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Utilities\ColorUtility.cs                                                      | C#         |         14 |          0 |          1 |         15 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Utilities\DMath.cs                                                             | C#         |        106 |          0 |         20 |        126 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Utilities\DuplicateUtility.cs                                                  | C#         |         19 |          1 |          2 |         22 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Utilities\Editor\DreamteckEditorGUI.cs                                         | C#         |        153 |          0 |         33 |        186 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Utilities\Editor\EditorGUIEvents.cs                                            | C#         |         96 |          1 |         17 |        114 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Utilities\Editor\FindDerivedClasses.cs                                         | C#         |         50 |          0 |          4 |         54 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Utilities\Editor\ResourceUtility.cs                                            | C#         |        114 |          1 |         11 |        126 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Utilities\Editor\Toolbar.cs                                                    | C#         |         51 |          0 |          6 |         57 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Utilities\Editor\WelcomeWindow.cs                                              | C#         |        329 |          1 |         52 |        382 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Utilities\LinearAlgebraUtility.cs                                              | C#         |         37 |          0 |          6 |         43 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Utilities\MeshUtility.cs                                                       | C#         |        609 |          0 |         86 |        695 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Utilities\SceneUtility.cs                                                      | C#         |         13 |          0 |          1 |         14 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Utilities\ScriptableObjectUtility.cs                                           | C#         |         40 |          0 |          4 |         44 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Utilities\Singleton.cs                                                         | C#         |         47 |          0 |          8 |         55 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Utilities\TS_Bounds.cs                                                         | C#         |         58 |          0 |          7 |         65 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Utilities\TS_Mesh.cs                                                           | C#         |        327 |          1 |         43 |        371 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Utilities\TS_Transform.cs                                                      | C#         |        211 |         44 |         46 |        301 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Utilities\TransformUtility.cs                                                  | C#         |         41 |          0 |          7 |         48 |
+| g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Utilities\Utilities.cs                                                         | C#         |         65 |          0 |          8 |         73 |
+| g:\Kepler\Kepler\Assets\PlugIns\FlatKit\Demos\Common\Scripts\Motion\CameraMouseOrbit.cs                                  | C#         |        112 |          3 |         24 |        139 |
+| g:\Kepler\Kepler\Assets\PlugIns\FlatKit\Demos\Common\Scripts\Motion\Editor\LinearMotionEditor.cs                         | C#         |         67 |          0 |         19 |         86 |
+| g:\Kepler\Kepler\Assets\PlugIns\FlatKit\Demos\Common\Scripts\Motion\LinearMotion.cs                                      | C#         |         92 |          0 |         12 |        104 |
+| g:\Kepler\Kepler\Assets\PlugIns\FlatKit\Scripts\UvScroller.cs                                                            | C#         |         27 |          0 |          5 |         32 |
+| g:\Kepler\Kepler\Assets\PlugIns\FlatKit\Shaders\GradientSkybox\Editor\GradientSkyboxEditor.cs                            | C#         |         26 |          0 |          8 |         34 |
+| g:\Kepler\Kepler\Assets\PlugIns\FlatKit\Shaders\GradientSkybox\GradientSkybox.shader                                     | ShaderLab  |         54 |          0 |         16 |         70 |
+| g:\Kepler\Kepler\Assets\PlugIns\FlatKit\Shaders\ImageEffects\Resources\FogPlus.shader                                    | ShaderLab  |         76 |          0 |         17 |         93 |
+| g:\Kepler\Kepler\Assets\PlugIns\FlatKit\Shaders\ImageEffects\Resources\OutlinePlus.shader                                | ShaderLab  |         88 |          2 |         16 |        106 |
+| g:\Kepler\Kepler\Assets\PlugIns\FlatKit\Shaders\ImageEffects\Scripts\FogImageEffect.cs                                   | C#         |        137 |          2 |         26 |        165 |
+| g:\Kepler\Kepler\Assets\PlugIns\FlatKit\Shaders\ImageEffects\Scripts\OutlineImageEffect.cs                               | C#         |         84 |          0 |         17 |        101 |
+| g:\Kepler\Kepler\Assets\PlugIns\FlatKit\Shaders\LightPlane.shader                                                        | ShaderLab  |         78 |          0 |         17 |         95 |
+| g:\Kepler\Kepler\Assets\PlugIns\FlatKit\Shaders\StylizedSurface\DustyroomStylizedLighting.cginc                          | HLSL       |        190 |          4 |         47 |        241 |
+| g:\Kepler\Kepler\Assets\PlugIns\FlatKit\Shaders\StylizedSurface\DustyroomTerrainSplatmapCommon.cginc                     | HLSL       |         90 |          9 |         19 |        118 |
+| g:\Kepler\Kepler\Assets\PlugIns\FlatKit\Shaders\StylizedSurface\Editor\StylizedSurfaceEditor.cs                          | C#         |        238 |          2 |         39 |        279 |
+| g:\Kepler\Kepler\Assets\PlugIns\FlatKit\Shaders\StylizedSurface\StylizedSurface.shader                                   | ShaderLab  |         75 |          5 |         18 |         98 |
+| g:\Kepler\Kepler\Assets\PlugIns\FlatKit\Shaders\StylizedSurface\StylizedSurfaceCutout.shader                             | ShaderLab  |         78 |          1 |         18 |         97 |
+| g:\Kepler\Kepler\Assets\PlugIns\FlatKit\Shaders\StylizedSurface\StylizedSurfaceOutline.shader                            | ShaderLab  |        100 |          5 |         27 |        132 |
+| g:\Kepler\Kepler\Assets\PlugIns\FlatKit\Shaders\StylizedSurface\Terrain.shader                                           | ShaderLab  |         99 |          6 |         27 |        132 |
+| g:\Kepler\Kepler\Assets\PlugIns\Le Tai's Asset\TranslucentImage\Demo\Scripts\AutoMoveAndRotate.cs                        | C#         |         43 |          0 |          9 |         52 |
+| g:\Kepler\Kepler\Assets\PlugIns\Le Tai's Asset\TranslucentImage\Demo\Scripts\ChangeBlurConfig.cs                         | C#         |         42 |          4 |         10 |         56 |
+| g:\Kepler\Kepler\Assets\PlugIns\Le Tai's Asset\TranslucentImage\Demo\Scripts\ColorSchemeManager.cs                       | C#         |         53 |          0 |          9 |         62 |
+| g:\Kepler\Kepler\Assets\PlugIns\Le Tai's Asset\TranslucentImage\Demo\Scripts\ControlCenter.cs                            | C#         |         30 |          0 |          4 |         34 |
+| g:\Kepler\Kepler\Assets\PlugIns\Le Tai's Asset\TranslucentImage\Demo\Scripts\FPSCounter.cs                               | C#         |         32 |          1 |          5 |         38 |
+| g:\Kepler\Kepler\Assets\PlugIns\Le Tai's Asset\TranslucentImage\Demo\Scripts\PlatformPreset.cs                           | C#         |         34 |          1 |          4 |         39 |
+| g:\Kepler\Kepler\Assets\PlugIns\Le Tai's Asset\TranslucentImage\Demo\Scripts\SetText.cs                                  | C#         |         18 |          1 |          4 |         23 |
+| g:\Kepler\Kepler\Assets\PlugIns\Le Tai's Asset\TranslucentImage\Demo\Scripts\SimpleCameraController.cs                   | C#         |        110 |          9 |         29 |        148 |
+| g:\Kepler\Kepler\Assets\PlugIns\Le Tai's Asset\TranslucentImage\Demo\Scripts\SliderChangeOnStart.cs                      | C#         |         16 |          0 |          3 |         19 |
+| g:\Kepler\Kepler\Assets\PlugIns\Le Tai's Asset\TranslucentImage\Demo\Scripts\ToggleSecondBlurLayer.cs                    | C#         |         27 |          0 |          5 |         32 |
+| g:\Kepler\Kepler\Assets\PlugIns\Le Tai's Asset\TranslucentImage\Demo\Scripts\UnrestrictFramerate.cs                      | C#         |         11 |          2 |          1 |         14 |
+| g:\Kepler\Kepler\Assets\PlugIns\Le Tai's Asset\TranslucentImage\Demo\Scripts\WorldSpaceSetup.cs                          | C#         |         14 |          3 |          3 |         20 |
+| g:\Kepler\Kepler\Assets\PlugIns\Le Tai's Asset\TranslucentImage\Demo\Shader\MobileVertexLitColor.shader                  | ShaderLab  |         49 |          1 |         12 |         62 |
+| g:\Kepler\Kepler\Assets\PlugIns\Le Tai's Asset\TranslucentImage\Resources\EfficientBlur.shader                           | ShaderLab  |         69 |         13 |         22 |        104 |
+| g:\Kepler\Kepler\Assets\PlugIns\Le Tai's Asset\TranslucentImage\Resources\FillCrop.shader                                | ShaderLab  |         46 |          1 |          9 |         56 |
+| g:\Kepler\Kepler\Assets\PlugIns\Le Tai's Asset\TranslucentImage\Resources\TranslucentImage.shader                        | ShaderLab  |        121 |         10 |         33 |        164 |
+| g:\Kepler\Kepler\Assets\PlugIns\Le Tai's Asset\TranslucentImage\Script\BlurAlgorithm\BlurConfig.cs                       | C#         |          7 |          0 |          1 |          8 |
+| g:\Kepler\Kepler\Assets\PlugIns\Le Tai's Asset\TranslucentImage\Script\BlurAlgorithm\IBlurAlgorithm.cs                   | C#         |         13 |          0 |          2 |         15 |
+| g:\Kepler\Kepler\Assets\PlugIns\Le Tai's Asset\TranslucentImage\Script\BlurAlgorithm\ScalableBlur.cs                     | C#         |         72 |          7 |         22 |        101 |
+| g:\Kepler\Kepler\Assets\PlugIns\Le Tai's Asset\TranslucentImage\Script\BlurAlgorithm\ScalableBlurConfig.cs               | C#         |         51 |         25 |          8 |         84 |
+| g:\Kepler\Kepler\Assets\PlugIns\Le Tai's Asset\TranslucentImage\Script\Editor\MenuIntegration.cs                         | C#         |        130 |         12 |         28 |        170 |
+| g:\Kepler\Kepler\Assets\PlugIns\Le Tai's Asset\TranslucentImage\Script\Editor\ScalableBlurConfigEditor.cs                | C#         |        106 |          4 |         29 |        139 |
+| g:\Kepler\Kepler\Assets\PlugIns\Le Tai's Asset\TranslucentImage\Script\Editor\ScenceGizmoAutoDisable.cs                  | C#         |         50 |          2 |         11 |         63 |
+| g:\Kepler\Kepler\Assets\PlugIns\Le Tai's Asset\TranslucentImage\Script\Editor\TranslucentImageEditor.cs                  | C#         |         94 |          0 |         23 |        117 |
+| g:\Kepler\Kepler\Assets\PlugIns\Le Tai's Asset\TranslucentImage\Script\Editor\TranslucentImageSourceEditor.cs            | C#         |         76 |          1 |         17 |         94 |
+| g:\Kepler\Kepler\Assets\PlugIns\Le Tai's Asset\TranslucentImage\Script\TranslucentImage.cs                               | C#         |        101 |         21 |         26 |        148 |
+| g:\Kepler\Kepler\Assets\PlugIns\Le Tai's Asset\TranslucentImage\Script\TranslucentImageEditorEnhancement.cs              | C#         |         30 |          0 |          7 |         37 |
+| g:\Kepler\Kepler\Assets\PlugIns\Le Tai's Asset\TranslucentImage\Script\TranslucentImageMeshEffect.cs                     | C#         |         55 |          0 |          9 |         64 |
+| g:\Kepler\Kepler\Assets\PlugIns\Le Tai's Asset\TranslucentImage\Script\TranslucentImageSource.cs                         | C#         |        193 |         37 |         55 |        285 |
+| g:\Kepler\Kepler\Assets\PlugIns\Le Tai's Asset\TranslucentImage\Script\Utilities\Extensions.cs                           | C#         |         73 |          4 |         11 |         88 |
+| g:\Kepler\Kepler\Assets\PlugIns\Le Tai's Asset\TranslucentImage\Script\Utilities\ResizableScreenRect.cs                  | C#         |        136 |          4 |         28 |        168 |
+| g:\Kepler\Kepler\Assets\PlugIns\Le Tai's Asset\TranslucentImage\Script\Utilities\ShaderId.cs                             | C#         |          9 |          0 |          1 |         10 |
+| g:\Kepler\Kepler\Assets\PlugIns\Minimalist\Editor\EditorGUILayoutExtended.cs                                             | C#         |         42 |         17 |         12 |         71 |
+| g:\Kepler\Kepler\Assets\PlugIns\Minimalist\Editor\MinimalistClipboard.cs                                                 | C#         |         11 |          0 |          1 |         12 |
+| g:\Kepler\Kepler\Assets\PlugIns\Minimalist\Editor\MinimalistEditorHelper.cs                                              | C#         |         44 |          0 |          8 |         52 |
+| g:\Kepler\Kepler\Assets\PlugIns\Minimalist\Editor\MinimalistSkyEditor.cs                                                 | C#         |         43 |          0 |          7 |         50 |
+| g:\Kepler\Kepler\Assets\PlugIns\Minimalist\Editor\MinimalistStandardEditor.cs                                            | C#         |      1,463 |          9 |        174 |      1,646 |
+| g:\Kepler\Kepler\Assets\PlugIns\Minimalist\Shaders\BRP\Minimalist Standard (GlobalSpace).shader                          | ShaderLab  |        151 |          8 |         27 |        186 |
+| g:\Kepler\Kepler\Assets\PlugIns\Minimalist\Shaders\BRP\Minimalist Standard (LocalSpace).shader                           | ShaderLab  |        115 |          7 |         21 |        143 |
+| g:\Kepler\Kepler\Assets\PlugIns\Minimalist\Shaders\BRP\Minimalist.cginc                                                  | HLSL       |        290 |         14 |         39 |        343 |
+| g:\Kepler\Kepler\Assets\PlugIns\Minimalist\Shaders\Common\Minimalist Sky.shader                                          | ShaderLab  |         66 |          0 |          9 |         75 |
+| g:\Kepler\Kepler\Assets\PlugIns\Minimalist\Shaders\URP\Minimalist Standard LocalSpace.shader                             | ShaderLab  |        123 |          7 |         23 |        153 |
+| g:\Kepler\Kepler\Assets\PlugIns\Minimalist\Shaders\URP\Minimalist Standard SRP Batched LocalSpace.shader                 | ShaderLab  |        215 |         27 |         59 |        301 |
+| g:\Kepler\Kepler\Assets\PlugIns\Minimalist\Shaders\URP\Minimalist Standard SRP Batched.shader                            | ShaderLab  |        214 |         27 |         58 |        299 |
+| g:\Kepler\Kepler\Assets\PlugIns\Minimalist\Shaders\URP\Minimalist Standard.shader                                        | ShaderLab  |        216 |         29 |         58 |        303 |
+| g:\Kepler\Kepler\Assets\PlugIns\Minimalist\Shaders\URP\Minimalist.hlsl                                                   | HLSL       |        230 |         18 |         46 |        294 |
+| g:\Kepler\Kepler\Assets\PlugIns\Minimalist\Shaders\URP\MinimalistDepthOnlyPass.hlsl                                      | HLSL       |         41 |          0 |          8 |         49 |
+| g:\Kepler\Kepler\Assets\PlugIns\Minimalist\Shaders\URP\MinimalistInput.hlsl                                              | HLSL       |         94 |          0 |         16 |        110 |
+| g:\Kepler\Kepler\Assets\PlugIns\Minimalist\Shaders\URP\MinimalistInputSrpBatched.hlsl                                    | HLSL       |         60 |          0 |         19 |         79 |
+| g:\Kepler\Kepler\Assets\PlugIns\Minimalist\Shaders\URP\MinimalistMetaPass.hlsl                                           | HLSL       |         42 |          2 |          7 |         51 |
+| g:\Kepler\Kepler\Assets\PlugIns\Minimalist\Shaders\URP\MinimalistShadowCasterPass.hlsl                                   | HLSL       |         52 |          0 |         13 |         65 |
+| g:\Kepler\Kepler\Assets\PlugIns\Starfield Skybox\Demo\Script\LookCamera.cs                                               | C#         |         25 |          1 |          6 |         32 |
+| g:\Kepler\Kepler\Assets\PlugIns\TTS\Speaker.cs                                                                           | C#         |         34 |         15 |          7 |         56 |
+| g:\Kepler\Kepler\Assets\PlugIns\TTS\XunFeiOffline.cs                                                                     | C#         |        233 |         24 |         31 |        288 |
+| g:\Kepler\Kepler\Assets\PlugIns\TTS\XunFlyOffline.cs                                                                     | C#         |        199 |         22 |         29 |        250 |
+| g:\Kepler\Kepler\Assets\Quiz\求太阳密度.xml                                                                                   | XML        |         40 |          0 |          0 |         40 |
+| g:\Kepler\Kepler\Assets\Quiz\求太阳质量.xml                                                                                   | XML        |         40 |          0 |          0 |         40 |
+| g:\Kepler\Kepler\Assets\Quiz\真实地日.xml                                                                                    | XML        |         40 |          0 |          0 |         40 |
+| g:\Kepler\Kepler\Assets\Quiz\真实地月.xml                                                                                    | XML        |         40 |          0 |          0 |         40 |
+| g:\Kepler\Kepler\Assets\Quiz\计算太阳质量.xml                                                                                  | XML        |         40 |          0 |          0 |         40 |
+| g:\Kepler\Kepler\Assets\ScenesData\太阳系.xml                                                                               | XML        |        107 |          0 |          0 |        107 |
+| g:\Kepler\Kepler\Assets\ScenesData\测试.xml                                                                                | XML        |         40 |          0 |          0 |         40 |
+| g:\Kepler\Kepler\Assets\ScenesData\真实地日.xml                                                                              | XML        |         40 |          0 |          0 |         40 |
+| g:\Kepler\Kepler\Assets\ScenesData\真实地月.xml                                                                              | XML        |         40 |          0 |          0 |         40 |
+| g:\Kepler\Kepler\Assets\ScenesData\真实太阳系.xml                                                                             | XML        |        107 |          0 |          0 |        107 |
+| g:\Kepler\Kepler\Assets\ScenesData\空场景.xml                                                                               | XML        |          2 |          0 |          1 |          3 |
+| g:\Kepler\Kepler\Assets\Scripts\Animation\AnimationType.cs                                                               | C#         |          8 |          9 |          0 |         17 |
+| g:\Kepler\Kepler\Assets\Scripts\Animation\AstronautsAnimation.cs                                                         | C#         |         78 |         19 |         13 |        110 |
+| g:\Kepler\Kepler\Assets\Scripts\BloomEffect.cs                                                                           | C#         |         72 |          0 |         17 |         89 |
+| g:\Kepler\Kepler\Assets\Scripts\CustomCamera\CameraController.cs                                                         | C#         |        154 |         44 |         29 |        227 |
+| g:\Kepler\Kepler\Assets\Scripts\CustomCamera\CameraLayerMixer.cs                                                         | C#         |         67 |         16 |         11 |         94 |
+| g:\Kepler\Kepler\Assets\Scripts\CustomCamera\LayerCamera.cs                                                              | C#         |         30 |          3 |          5 |         38 |
+| g:\Kepler\Kepler\Assets\Scripts\CustomPostProcessing\CameraMixer.cs                                                      | C#         |         51 |         15 |         11 |         77 |
+| g:\Kepler\Kepler\Assets\Scripts\CustomPostProcessing\CustomPostProcessingBase.cs                                         | C#         |         20 |         10 |          4 |         34 |
+| g:\Kepler\Kepler\Assets\Scripts\CustomPostProcessing\Dof.cs                                                              | C#         |         31 |         24 |          6 |         61 |
+| g:\Kepler\Kepler\Assets\Scripts\CustomPostProcessing\DofRenderer.cs                                                      | C#         |        142 |         22 |         35 |        199 |
+| g:\Kepler\Kepler\Assets\Scripts\CustomPostProcessing\IRenderTexOuter.cs                                                  | C#         |          8 |          3 |          1 |         12 |
+| g:\Kepler\Kepler\Assets\Scripts\CustomPostProcessing\KernelSize.cs                                                       | C#         |         10 |         15 |          3 |         28 |
+| g:\Kepler\Kepler\Assets\Scripts\CustomPostProcessing\KernelSizeParameter.cs                                              | C#         |          9 |          3 |          1 |         13 |
+| g:\Kepler\Kepler\Assets\Scripts\CustomPostProcessing\OutlineCatcher.cs                                                   | C#         |         70 |         27 |         17 |        114 |
+| g:\Kepler\Kepler\Assets\Scripts\CustomUI\AstralBodyEditor\AstralBodyAddUI.cs                                             | C#         |         46 |          2 |          8 |         56 |
+| g:\Kepler\Kepler\Assets\Scripts\CustomUI\AstralBodyEditor\AstralBodyEditorUI.cs                                          | C#         |        136 |         19 |         24 |        179 |
+| g:\Kepler\Kepler\Assets\Scripts\CustomUI\AstralBodyEditor\AstralBodyPlacementUI.cs                                       | C#         |         87 |          2 |         15 |        104 |
+| g:\Kepler\Kepler\Assets\Scripts\CustomUI\AstralBodyEditor\MeshEditor.cs                                                  | C#         |         16 |          0 |          3 |         19 |
+| g:\Kepler\Kepler\Assets\Scripts\CustomUI\AstralBodyEditor\OrbitGraphUI.cs                                                | C#         |        220 |         48 |         39 |        307 |
+| g:\Kepler\Kepler\Assets\Scripts\CustomUI\AstralBodyEditor\OrbitPanelUI.cs                                                | C#         |         85 |          2 |         10 |         97 |
+| g:\Kepler\Kepler\Assets\Scripts\CustomUI\AstralBodyEditor\PositionEditorUI.cs                                            | C#         |         54 |          0 |         12 |         66 |
+| g:\Kepler\Kepler\Assets\Scripts\CustomUI\AstralBodyEditor\StarStyleSettingUI.cs                                          | C#         |         20 |          0 |          3 |         23 |
+| g:\Kepler\Kepler\Assets\Scripts\CustomUI\AstralBodyEditor\VelocityEditorUI.cs                                            | C#         |         65 |          4 |         13 |         82 |
+| g:\Kepler\Kepler\Assets\Scripts\CustomUI\GlobalTimerUI.cs                                                                | C#         |         19 |          2 |          3 |         24 |
+| g:\Kepler\Kepler\Assets\Scripts\CustomUI\LabModeUI.cs                                                                    | C#         |         64 |          0 |         11 |         75 |
+| g:\Kepler\Kepler\Assets\Scripts\CustomUI\Lab\LabSceneLineUI.cs                                                           | C#         |         38 |          0 |          8 |         46 |
+| g:\Kepler\Kepler\Assets\Scripts\CustomUI\Lab\LabSceneListUI.cs                                                           | C#         |         48 |          1 |          6 |         55 |
+| g:\Kepler\Kepler\Assets\Scripts\CustomUI\LengthUI.cs                                                                     | C#         |         71 |          2 |          9 |         82 |
+| g:\Kepler\Kepler\Assets\Scripts\CustomUI\MainUI.cs                                                                       | C#         |         51 |          0 |          8 |         59 |
+| g:\Kepler\Kepler\Assets\Scripts\CustomUI\PhysicSceneUI.cs                                                                | C#         |         36 |          0 |          5 |         41 |
+| g:\Kepler\Kepler\Assets\Scripts\CustomUI\Quiz\AstralBodyEditorQuizUI.cs                                                  | C#         |         39 |         16 |          6 |         61 |
+| g:\Kepler\Kepler\Assets\Scripts\CustomUI\Quiz\QuizEditUI.cs                                                              | C#         |         13 |          0 |          1 |         14 |
+| g:\Kepler\Kepler\Assets\Scripts\CustomUI\Quiz\QuizEditorUI.cs                                                            | C#         |         79 |          0 |         11 |         90 |
+| g:\Kepler\Kepler\Assets\Scripts\CustomUI\Quiz\QuizLineUI.cs                                                              | C#         |         51 |          0 |          8 |         59 |
+| g:\Kepler\Kepler\Assets\Scripts\CustomUI\Quiz\QuizListUI.cs                                                              | C#         |         53 |          1 |          6 |         60 |
+| g:\Kepler\Kepler\Assets\Scripts\CustomUI\Quiz\QuizStarUI.cs                                                              | C#         |         31 |          0 |          4 |         35 |
+| g:\Kepler\Kepler\Assets\Scripts\CustomUI\Quiz\QuizStarsGroupUI.cs                                                        | C#         |         31 |          4 |          6 |         41 |
+| g:\Kepler\Kepler\Assets\Scripts\CustomUI\Quiz\QuizTestUI.cs                                                              | C#         |         13 |          0 |          1 |         14 |
+| g:\Kepler\Kepler\Assets\Scripts\CustomUI\Quiz\QuizUI.cs                                                                  | C#         |        108 |          3 |         13 |        124 |
+| g:\Kepler\Kepler\Assets\Scripts\CustomUI\Quiz\ResultUI.cs                                                                | C#         |         57 |          0 |          7 |         64 |
+| g:\Kepler\Kepler\Assets\Scripts\CustomUI\Quiz\ShowPropertyType.cs                                                        | C#         |         14 |          0 |          0 |         14 |
+| g:\Kepler\Kepler\Assets\Scripts\CustomUI\Quiz\VarLineUI.cs                                                               | C#         |        361 |         51 |         36 |        448 |
+| g:\Kepler\Kepler\Assets\Scripts\CustomUI\Satellite\SatelliteControllerUI.cs                                              | C#         |         38 |          0 |          6 |         44 |
+| g:\Kepler\Kepler\Assets\Scripts\CustomUI\Satellite\SatelliteResultUI.cs                                                  | C#         |         58 |          0 |          7 |         65 |
+| g:\Kepler\Kepler\Assets\Scripts\CustomUI\Satellite\SatelliteUI.cs                                                        | C#         |         12 |          0 |          2 |         14 |
+| g:\Kepler\Kepler\Assets\Scripts\CustomUI\SelectorUI.cs                                                                   | C#         |         81 |         12 |         11 |        104 |
+| g:\Kepler\Kepler\Assets\Scripts\CustomUI\SettingUI.cs                                                                    | C#         |         23 |          0 |          4 |         27 |
+| g:\Kepler\Kepler\Assets\Scripts\CustomUI\TestModeUI.cs                                                                   | C#         |         17 |          0 |          2 |         19 |
+| g:\Kepler\Kepler\Assets\Scripts\CustomUI\Tutorial\MultiTutorialManagerUI.cs                                              | C#         |         24 |          0 |          2 |         26 |
+| g:\Kepler\Kepler\Assets\Scripts\CustomUI\Tutorial\SatelliteTutorialUI.cs                                                 | C#         |         12 |          0 |          1 |         13 |
+| g:\Kepler\Kepler\Assets\Scripts\CustomUI\Tutorial\TutorialClipUI.cs                                                      | C#         |         10 |          0 |          1 |         11 |
+| g:\Kepler\Kepler\Assets\Scripts\CustomUI\Tutorial\TutorialManagerUI.cs                                                   | C#         |         35 |          0 |          5 |         40 |
+| g:\Kepler\Kepler\Assets\Scripts\CustomUI\Tutorial\TutorialUI.cs                                                          | C#         |         77 |          1 |         12 |         90 |
+| g:\Kepler\Kepler\Assets\Scripts\CustomUI\UIManager.cs                                                                    | C#         |          7 |          0 |          1 |          8 |
+| g:\Kepler\Kepler\Assets\Scripts\CustomUI\VectorUI.cs                                                                     | C#         |         83 |          3 |         11 |         97 |
+| g:\Kepler\Kepler\Assets\Scripts\CustomUI\vectorType.cs                                                                   | C#         |          8 |          0 |          0 |          8 |
+| g:\Kepler\Kepler\Assets\Scripts\DeferredFogEffect.cs                                                                     | C#         |         34 |          0 |          8 |         42 |
+| g:\Kepler\Kepler\Assets\Scripts\DepthOfFieldEffect.cs                                                                    | C#         |         47 |          1 |         13 |         61 |
+| g:\Kepler\Kepler\Assets\Scripts\Editor\MyLightingShaderGUI.cs                                                            | C#         |        370 |          0 |         43 |        413 |
+| g:\Kepler\Kepler\Assets\Scripts\EmissiveOscillator.cs                                                                    | C#         |         20 |          1 |          4 |         25 |
+| g:\Kepler\Kepler\Assets\Scripts\GPUInstancingTest.cs                                                                     | C#         |         29 |          0 |          5 |         34 |
+| g:\Kepler\Kepler\Assets\Scripts\GameManagers\Difficulty.cs                                                               | C#         |         12 |         15 |          1 |         28 |
+| g:\Kepler\Kepler\Assets\Scripts\GameManagers\GameManager.cs                                                              | C#         |        132 |         76 |         40 |        248 |
+| g:\Kepler\Kepler\Assets\Scripts\GameManagers\GlobalTimer.cs                                                              | C#         |         50 |         27 |         14 |         91 |
+| g:\Kepler\Kepler\Assets\Scripts\GameManagers\GlobalTransfer.cs                                                           | C#         |         32 |         16 |         10 |         58 |
+| g:\Kepler\Kepler\Assets\Scripts\GameManagers\PropertyUnit.cs                                                             | C#         |          9 |         12 |          0 |         21 |
+| g:\Kepler\Kepler\Assets\Scripts\Init\Init.cs                                                                             | C#         |         13 |          4 |          1 |         18 |
+| g:\Kepler\Kepler\Assets\Scripts\Loading\LoadingManager.cs                                                                | C#         |         46 |         12 |          8 |         66 |
+| g:\Kepler\Kepler\Assets\Scripts\Quiz\AstralBodyDict.cs                                                                   | C#         |         20 |          4 |          3 |         27 |
+| g:\Kepler\Kepler\Assets\Scripts\Quiz\QuizAstralBody.cs                                                                   | C#         |        176 |         65 |         34 |        275 |
+| g:\Kepler\Kepler\Assets\Scripts\Quiz\QuizAstralBodyDataDict.cs                                                           | C#         |         70 |         32 |         26 |        128 |
+| g:\Kepler\Kepler\Assets\Scripts\Quiz\QuizAstralBodyDict.cs                                                               | C#         |         12 |          3 |          2 |         17 |
+| g:\Kepler\Kepler\Assets\Scripts\Quiz\QuizBase.cs                                                                         | C#         |        147 |         21 |         20 |        188 |
+| g:\Kepler\Kepler\Assets\Scripts\Quiz\QuizBaseStruct.cs                                                                   | C#         |          9 |         11 |          2 |         22 |
+| g:\Kepler\Kepler\Assets\Scripts\Quiz\QuizData.cs                                                                         | C#         |          9 |          3 |          1 |         13 |
+| g:\Kepler\Kepler\Assets\Scripts\Quiz\QuizEditor.cs                                                                       | C#         |         53 |         22 |          9 |         84 |
+| g:\Kepler\Kepler\Assets\Scripts\Quiz\QuizSaver.cs                                                                        | C#         |        353 |         34 |         29 |        416 |
+| g:\Kepler\Kepler\Assets\Scripts\Quiz\QuizSolver.cs                                                                       | C#         |        121 |         28 |         27 |        176 |
+| g:\Kepler\Kepler\Assets\Scripts\Quiz\QuizType.cs                                                                         | C#         |         10 |         15 |          3 |         28 |
+| g:\Kepler\Kepler\Assets\Scripts\Quiz\Reason.cs                                                                           | C#         |         10 |         15 |          3 |         28 |
+| g:\Kepler\Kepler\Assets\Scripts\Quiz\Transformer.cs                                                                      | C#         |         16 |          3 |          4 |         23 |
+| g:\Kepler\Kepler\Assets\Scripts\Satellite\Satellite.cs                                                                   | C#         |         31 |         21 |          7 |         59 |
+| g:\Kepler\Kepler\Assets\Scripts\Satellite\SatelliteChallengeManger.cs                                                    | C#         |        103 |         29 |         15 |        147 |
+| g:\Kepler\Kepler\Assets\Scripts\Satellite\SatelliteController.cs                                                         | C#         |         76 |         34 |         22 |        132 |
+| g:\Kepler\Kepler\Assets\Scripts\Satellite\SatelliteCore.cs                                                               | C#         |         22 |          3 |          4 |         29 |
+| g:\Kepler\Kepler\Assets\Scripts\Satellite\SatelliteEngine.cs                                                             | C#         |         19 |          3 |          3 |         25 |
+| g:\Kepler\Kepler\Assets\Scripts\Satellite\SatelliteParachute.cs                                                          | C#         |         10 |          3 |          1 |         14 |
+| g:\Kepler\Kepler\Assets\Scripts\Satellite\SatellitePart.cs                                                               | C#         |         55 |         18 |         12 |         85 |
+| g:\Kepler\Kepler\Assets\Scripts\Satellite\SatelliteResultType.cs                                                         | C#         |         10 |         15 |          3 |         28 |
+| g:\Kepler\Kepler\Assets\Scripts\Satellite\SatelliteType.cs                                                               | C#         |          9 |         12 |          2 |         23 |
+| g:\Kepler\Kepler\Assets\Scripts\SpacePhysic\ActionType.cs                                                                | C#         |          7 |          3 |          0 |         10 |
+| g:\Kepler\Kepler\Assets\Scripts\SpacePhysic\AstralBody.cs                                                                | C#         |        299 |        112 |         77 |        488 |
+| g:\Kepler\Kepler\Assets\Scripts\SpacePhysic\GravityTracing.cs                                                            | C#         |        229 |         91 |         52 |        372 |
+| g:\Kepler\Kepler\Assets\Scripts\SpacePhysic\IOrbitCalculator.cs                                                          | C#         |         12 |          3 |          1 |         16 |
+| g:\Kepler\Kepler\Assets\Scripts\SpacePhysic\ITraceable.cs                                                                | C#         |         17 |          3 |          2 |         22 |
+| g:\Kepler\Kepler\Assets\Scripts\SpacePhysic\PhysicBase.cs                                                                | C#         |         16 |          6 |          3 |         25 |
+| g:\Kepler\Kepler\Assets\Scripts\StaticClasses\GameObjectPlus.cs                                                          | C#         |         37 |          3 |          5 |         45 |
+| g:\Kepler\Kepler\Assets\Scripts\StaticClasses\MathPlus\ConicSection.cs                                                   | C#         |        154 |         71 |         31 |        256 |
+| g:\Kepler\Kepler\Assets\Scripts\StaticClasses\MathPlus\ConicSectionDelegate.cs                                           | C#         |          4 |          4 |          0 |          8 |
+| g:\Kepler\Kepler\Assets\Scripts\StaticClasses\MathPlus\CustomMatrix.cs                                                   | C#         |         13 |          3 |          1 |         17 |
+| g:\Kepler\Kepler\Assets\Scripts\StaticClasses\MathPlus\CustomSolver.cs                                                   | C#         |        108 |         73 |         16 |        197 |
+| g:\Kepler\Kepler\Assets\Scripts\StaticClasses\MathPlus\MathPlus.cs                                                       | C#         |         41 |         24 |          8 |         73 |
+| g:\Kepler\Kepler\Assets\Scripts\StaticClasses\StringPlus.cs                                                              | C#         |         45 |          8 |          5 |         58 |
+| g:\Kepler\Kepler\Assets\Scripts\TTS\AudioStatus.cs                                                                       | C#         |         10 |         15 |          0 |         25 |
+| g:\Kepler\Kepler\Assets\Scripts\TTS\EpStatus.cs                                                                          | C#         |         13 |          9 |          0 |         22 |
+| g:\Kepler\Kepler\Assets\Scripts\TTS\Errors.cs                                                                            | C#         |        446 |         48 |         74 |        568 |
+| g:\Kepler\Kepler\Assets\Scripts\TTS\HandwritingStatus.cs                                                                 | C#         |          9 |          0 |          0 |          9 |
+| g:\Kepler\Kepler\Assets\Scripts\TTS\IvwStatus.cs                                                                         | C#         |         13 |          0 |          0 |         13 |
+| g:\Kepler\Kepler\Assets\Scripts\TTS\MSCDLL.cs                                                                            | C#         |         66 |         24 |         49 |        139 |
+| g:\Kepler\Kepler\Assets\Scripts\TTS\RecogStatus.cs                                                                       | C#         |         18 |          0 |          0 |         18 |
+| g:\Kepler\Kepler\Assets\Scripts\TTS\SynthStatus.cs                                                                       | C#         |          9 |          0 |          0 |          9 |
+| g:\Kepler\Kepler\Assets\Scripts\TTS\SynthesizingStatus.cs                                                                | C#         |          9 |          0 |          0 |          9 |
+| g:\Kepler\Kepler\Assets\Scripts\TTS\UploadStatus.cs                                                                      | C#         |         10 |          0 |          0 |         10 |
+| g:\Kepler\Kepler\Assets\Scripts\TTS\VoiceGenerator.cs                                                                    | C#         |        289 |         41 |         48 |        378 |
+| g:\Kepler\Kepler\Assets\Scripts\TangentSpaceVisualizer.cs                                                                | C#         |         41 |          0 |          4 |         45 |
+| g:\Kepler\Kepler\Assets\Scripts\XmlSaver\AstralBodyDataDict.cs                                                           | C#         |         41 |         43 |         19 |        103 |
+| g:\Kepler\Kepler\Assets\Scripts\XmlSaver\SaverException.cs                                                               | C#         |         23 |          3 |          4 |         30 |
+| g:\Kepler\Kepler\Assets\Scripts\XmlSaver\SceneBaseStruct.cs                                                              | C#         |         11 |          4 |          2 |         17 |
+| g:\Kepler\Kepler\Assets\Scripts\XmlSaver\SceneEditor.cs                                                                  | C#         |         61 |         28 |         12 |        101 |
+| g:\Kepler\Kepler\Assets\Scripts\XmlSaver\SceneLoadBase.cs                                                                | C#         |        127 |         41 |         28 |        196 |
+| g:\Kepler\Kepler\Assets\Scripts\XmlSaver\SceneSaver.cs                                                                   | C#         |          7 |          3 |          2 |         12 |
+| g:\Kepler\Kepler\Assets\Scripts\XmlSaver\XmlSaver.cs                                                                     | C#         |        198 |         62 |         35 |        295 |
+| g:\Kepler\Kepler\Assets\Shaders\Bloom.shader                                                                             | ShaderLab  |         98 |          0 |         23 |        121 |
+| g:\Kepler\Kepler\Assets\Shaders\DeferredFog.shader                                                                       | ShaderLab  |         64 |          1 |         18 |         83 |
+| g:\Kepler\Kepler\Assets\Shaders\DeferredShading.shader                                                                   | ShaderLab  |         55 |          0 |         21 |         76 |
+| g:\Kepler\Kepler\Assets\Shaders\DepthOfFieldShader.shader                                                                | ShaderLab  |        186 |          2 |         33 |        221 |
+| g:\Kepler\Kepler\Assets\Shaders\Flat Wireframe Shader.shader                                                             | ShaderLab  |        157 |          2 |         62 |        221 |
+| g:\Kepler\Kepler\Assets\Shaders\My First Lighting Shader.shader                                                          | ShaderLab  |        151 |          2 |         61 |        214 |
+| g:\Kepler\Kepler\Assets\Shaders\My First Shader.shader                                                                   | ShaderLab  |         35 |          1 |         12 |         48 |
+| g:\Kepler\Kepler\Assets\Shaders\My Lighting Input.cginc                                                                  | HLSL       |        196 |          1 |         43 |        240 |
+| g:\Kepler\Kepler\Assets\Shaders\My Lighting.cginc                                                                        | HLSL       |        405 |          1 |         64 |        470 |
+| g:\Kepler\Kepler\Assets\Shaders\My Lightmapping.cginc                                                                    | HLSL       |         82 |          0 |         17 |         99 |
+| g:\Kepler\Kepler\Assets\Shaders\My Shadows.cginc                                                                         | HLSL       |        118 |          1 |         24 |        143 |
+| g:\Kepler\Kepler\Assets\Shaders\MyDeferredShading.cginc                                                                  | HLSL       |        144 |          0 |         31 |        175 |
+| g:\Kepler\Kepler\Assets\Shaders\MyFlatWireframe.cginc                                                                    | HLSL       |         50 |          0 |         13 |         63 |
+| g:\Kepler\Kepler\Assets\Shaders\MyTessellation.cginc                                                                     | HLSL       |        127 |          0 |         18 |        145 |
+| g:\Kepler\Kepler\Assets\Shaders\Tessellation Shader.shader                                                               | ShaderLab  |        160 |          0 |         62 |        222 |
+| g:\Kepler\Kepler\Assets\Shaders\Texture Splatting.shader                                                                 | ShaderLab  |         45 |          1 |         13 |         59 |
+| g:\Kepler\Kepler\Assets\Shaders\Textured With Detail.shader                                                              | ShaderLab  |         40 |          1 |         12 |         53 |
+| g:\Kepler\Kepler\Assets\TextMesh Pro\Examples & Extras\Scripts\Benchmark01.cs                                            | C#         |         63 |         29 |         37 |        129 |
+| g:\Kepler\Kepler\Assets\TextMesh Pro\Examples & Extras\Scripts\Benchmark01_UGUI.cs                                       | C#         |         59 |         37 |         40 |        136 |
+| g:\Kepler\Kepler\Assets\TextMesh Pro\Examples & Extras\Scripts\Benchmark02.cs                                            | C#         |         63 |          6 |         27 |         96 |
+| g:\Kepler\Kepler\Assets\TextMesh Pro\Examples & Extras\Scripts\Benchmark03.cs                                            | C#         |         73 |          1 |         19 |         93 |
+| g:\Kepler\Kepler\Assets\TextMesh Pro\Examples & Extras\Scripts\Benchmark04.cs                                            | C#         |         41 |         26 |         19 |         86 |
+| g:\Kepler\Kepler\Assets\TextMesh Pro\Examples & Extras\Scripts\CameraController.cs                                       | C#         |        198 |         25 |         69 |        292 |
+| g:\Kepler\Kepler\Assets\TextMesh Pro\Examples & Extras\Scripts\ChatController.cs                                         | C#         |         25 |          2 |         18 |         45 |
+| g:\Kepler\Kepler\Assets\TextMesh Pro\Examples & Extras\Scripts\DropdownSample.cs                                         | C#         |         15 |          0 |          5 |         20 |
+| g:\Kepler\Kepler\Assets\TextMesh Pro\Examples & Extras\Scripts\EnvMapAnimator.cs                                         | C#         |         23 |          4 |          9 |         36 |
+| g:\Kepler\Kepler\Assets\TextMesh Pro\Examples & Extras\Scripts\ObjectSpin.cs                                             | C#         |         50 |          4 |         15 |         69 |
+| g:\Kepler\Kepler\Assets\TextMesh Pro\Examples & Extras\Scripts\ShaderPropAnimator.cs                                     | C#         |         33 |          5 |         14 |         52 |
+| g:\Kepler\Kepler\Assets\TextMesh Pro\Examples & Extras\Scripts\SimpleScript.cs                                           | C#         |         24 |         17 |         21 |         62 |
+| g:\Kepler\Kepler\Assets\TextMesh Pro\Examples & Extras\Scripts\SkewTextExample.cs                                        | C#         |         95 |         18 |         46 |        159 |
+| g:\Kepler\Kepler\Assets\TextMesh Pro\Examples & Extras\Scripts\TMP_DigitValidator.cs                                     | C#         |         19 |          5 |          4 |         28 |
+| g:\Kepler\Kepler\Assets\TextMesh Pro\Examples & Extras\Scripts\TMP_ExampleScript_01.cs                                   | C#         |         37 |          9 |         19 |         65 |
+| g:\Kepler\Kepler\Assets\TextMesh Pro\Examples & Extras\Scripts\TMP_FrameRateCounter.cs                                   | C#         |         91 |         11 |         33 |        135 |
+| g:\Kepler\Kepler\Assets\TextMesh Pro\Examples & Extras\Scripts\TMP_PhoneNumberValidator.cs                               | C#         |         93 |          7 |          6 |        106 |
+| g:\Kepler\Kepler\Assets\TextMesh Pro\Examples & Extras\Scripts\TMP_TextEventCheck.cs                                     | C#         |         56 |          1 |         17 |         74 |
+| g:\Kepler\Kepler\Assets\TextMesh Pro\Examples & Extras\Scripts\TMP_TextEventHandler.cs                                   | C#         |        163 |         30 |         54 |        247 |
+| g:\Kepler\Kepler\Assets\TextMesh Pro\Examples & Extras\Scripts\TMP_TextInfoDebugTool.cs                                  | C#         |        406 |         97 |        146 |        649 |
+| g:\Kepler\Kepler\Assets\TextMesh Pro\Examples & Extras\Scripts\TMP_TextSelector_A.cs                                     | C#         |        100 |         17 |         41 |        158 |
+| g:\Kepler\Kepler\Assets\TextMesh Pro\Examples & Extras\Scripts\TMP_TextSelector_B.cs                                     | C#         |        250 |        191 |        107 |        548 |
+| g:\Kepler\Kepler\Assets\TextMesh Pro\Examples & Extras\Scripts\TMP_UiFrameRateCounter.cs                                 | C#         |         96 |          1 |         28 |        125 |
+| g:\Kepler\Kepler\Assets\TextMesh Pro\Examples & Extras\Scripts\TMPro_InstructionOverlay.cs                               | C#         |         55 |          6 |         24 |         85 |
+| g:\Kepler\Kepler\Assets\TextMesh Pro\Examples & Extras\Scripts\TeleType.cs                                               | C#         |         40 |         15 |         28 |         83 |
+| g:\Kepler\Kepler\Assets\TextMesh Pro\Examples & Extras\Scripts\TextConsoleSimulator.cs                                   | C#         |         79 |         13 |         29 |        121 |
+| g:\Kepler\Kepler\Assets\TextMesh Pro\Examples & Extras\Scripts\TextMeshProFloatingText.cs                                | C#         |        126 |         32 |         58 |        216 |
+| g:\Kepler\Kepler\Assets\TextMesh Pro\Examples & Extras\Scripts\TextMeshSpawner.cs                                        | C#         |         46 |         13 |         21 |         80 |
+| g:\Kepler\Kepler\Assets\TextMesh Pro\Examples & Extras\Scripts\VertexColorCycler.cs                                      | C#         |         48 |         13 |         24 |         85 |
+| g:\Kepler\Kepler\Assets\TextMesh Pro\Examples & Extras\Scripts\VertexJitter.cs                                           | C#         |        105 |         26 |         44 |        175 |
+| g:\Kepler\Kepler\Assets\TextMesh Pro\Examples & Extras\Scripts\VertexShakeA.cs                                           | C#         |         99 |         23 |         39 |        161 |
+| g:\Kepler\Kepler\Assets\TextMesh Pro\Examples & Extras\Scripts\VertexShakeB.cs                                           | C#         |        112 |         29 |         44 |        185 |
+| g:\Kepler\Kepler\Assets\TextMesh Pro\Examples & Extras\Scripts\VertexZoom.cs                                             | C#         |        112 |         32 |         48 |        192 |
+| g:\Kepler\Kepler\Assets\TextMesh Pro\Examples & Extras\Scripts\WarpTextExample.cs                                        | C#         |         87 |         15 |         43 |        145 |
+| g:\Kepler\Kepler\Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader                                              | ShaderLab  |        109 |          2 |         33 |        144 |
+| g:\Kepler\Kepler\Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader                                                    | ShaderLab  |        112 |          3 |         31 |        146 |
+| g:\Kepler\Kepler\Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader                                                           | ShaderLab  |        109 |          2 |         33 |        144 |
+| g:\Kepler\Kepler\Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader                                                      | ShaderLab  |        243 |          4 |         71 |        318 |
+| g:\Kepler\Kepler\Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader                                                          | ShaderLab  |        241 |          4 |         66 |        311 |
+| g:\Kepler\Kepler\Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader                                               | ShaderLab  |        188 |         10 |         50 |        248 |
+| g:\Kepler\Kepler\Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader                                               | ShaderLab  |        183 |          8 |         50 |        241 |
+| g:\Kepler\Kepler\Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader                                                   | ShaderLab  |         82 |          4 |         21 |        107 |
+| g:\Kepler\Kepler\Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader                                                       | ShaderLab  |        183 |          8 |         50 |        241 |
+| g:\Kepler\Kepler\Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader                                               | ShaderLab  |        103 |          8 |         28 |        139 |
+| g:\Kepler\Kepler\Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader                                                      | ShaderLab  |        122 |          4 |         33 |        159 |
+| g:\Kepler\Kepler\Assets\TextMesh Pro\Shaders\TMP_SDF.shader                                                              | ShaderLab  |        243 |          4 |         71 |        318 |
+| g:\Kepler\Kepler\Assets\TextMesh Pro\Shaders\TMP_Sprite.shader                                                           | ShaderLab  |         93 |          0 |         22 |        115 |
+| g:\Kepler\Kepler\Assets\TextMesh Pro\Shaders\TMPro.cginc                                                                 | HLSL       |         63 |          2 |         20 |         85 |
+| g:\Kepler\Kepler\Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc                                                          | HLSL       |        122 |          2 |         34 |        158 |
+| g:\Kepler\Kepler\Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc                                                      | HLSL       |         62 |         10 |         14 |         86 |
+| g:\Kepler\Kepler\Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc                                                         | HLSL       |         76 |          7 |         19 |        102 |
+| g:\Kepler\Kepler\Assets\TextMesh Pro\Sprites\EmojiOne.json                                                               | JSON       |        155 |          0 |          2 |        157 |
+| g:\Kepler\Kepler\Packages\MathNet.Numerics.4.15.0\lib\net40\MathNet.Numerics.xml                                         | XML        |     57,653 |          0 |         20 |     57,673 |
+| g:\Kepler\Kepler\Packages\MathNet.Numerics.4.15.0\lib\net461\MathNet.Numerics.xml                                        | XML        |     57,653 |          0 |         20 |     57,673 |
+| g:\Kepler\Kepler\Packages\MathNet.Numerics.4.15.0\lib\netstandard1.3\MathNet.Numerics.xml                                | XML        |     54,281 |          0 |         20 |     54,301 |
+| g:\Kepler\Kepler\Packages\MathNet.Numerics.4.15.0\lib\netstandard2.0\MathNet.Numerics.xml                                | XML        |     57,653 |          0 |         20 |     57,673 |
+| g:\Kepler\Kepler\Packages\MathNet.Spatial.0.6.0\lib\net461\MathNet.Spatial.xml                                           | XML        |      6,056 |          0 |          1 |      6,057 |
+| g:\Kepler\Kepler\Packages\MathNet.Spatial.0.6.0\lib\netstandard2.0\MathNet.Spatial.xml                                   | XML        |      6,056 |          0 |          1 |      6,057 |
+| g:\Kepler\Kepler\Packages\System.Diagnostics.Contracts.4.3.0\ref\netcore50\System.Diagnostics.Contracts.xml              | XML        |        334 |          0 |          0 |        334 |
+| g:\Kepler\Kepler\Packages\System.Diagnostics.Contracts.4.3.0\ref\netcore50\de\System.Diagnostics.Contracts.xml           | XML        |        334 |          0 |          0 |        334 |
+| g:\Kepler\Kepler\Packages\System.Diagnostics.Contracts.4.3.0\ref\netcore50\es\System.Diagnostics.Contracts.xml           | XML        |        334 |          0 |          0 |        334 |
+| g:\Kepler\Kepler\Packages\System.Diagnostics.Contracts.4.3.0\ref\netcore50\fr\System.Diagnostics.Contracts.xml           | XML        |        334 |          0 |          0 |        334 |
+| g:\Kepler\Kepler\Packages\System.Diagnostics.Contracts.4.3.0\ref\netcore50\it\System.Diagnostics.Contracts.xml           | XML        |        334 |          0 |          0 |        334 |
+| g:\Kepler\Kepler\Packages\System.Diagnostics.Contracts.4.3.0\ref\netcore50\ja\System.Diagnostics.Contracts.xml           | XML        |        370 |          0 |          0 |        370 |
+| g:\Kepler\Kepler\Packages\System.Diagnostics.Contracts.4.3.0\ref\netcore50\ko\System.Diagnostics.Contracts.xml           | XML        |        370 |          0 |          0 |        370 |
+| g:\Kepler\Kepler\Packages\System.Diagnostics.Contracts.4.3.0\ref\netcore50\ru\System.Diagnostics.Contracts.xml           | XML        |        334 |          0 |          0 |        334 |
+| g:\Kepler\Kepler\Packages\System.Diagnostics.Contracts.4.3.0\ref\netcore50\zh-hans\System.Diagnostics.Contracts.xml      | XML        |        338 |          0 |          0 |        338 |
+| g:\Kepler\Kepler\Packages\System.Diagnostics.Contracts.4.3.0\ref\netcore50\zh-hant\System.Diagnostics.Contracts.xml      | XML        |        340 |          0 |          0 |        340 |
+| g:\Kepler\Kepler\Packages\System.Diagnostics.Contracts.4.3.0\ref\netstandard1.0\System.Diagnostics.Contracts.xml         | XML        |        334 |          0 |          0 |        334 |
+| g:\Kepler\Kepler\Packages\System.Diagnostics.Contracts.4.3.0\ref\netstandard1.0\de\System.Diagnostics.Contracts.xml      | XML        |        334 |          0 |          0 |        334 |
+| g:\Kepler\Kepler\Packages\System.Diagnostics.Contracts.4.3.0\ref\netstandard1.0\es\System.Diagnostics.Contracts.xml      | XML        |        334 |          0 |          0 |        334 |
+| g:\Kepler\Kepler\Packages\System.Diagnostics.Contracts.4.3.0\ref\netstandard1.0\fr\System.Diagnostics.Contracts.xml      | XML        |        334 |          0 |          0 |        334 |
+| g:\Kepler\Kepler\Packages\System.Diagnostics.Contracts.4.3.0\ref\netstandard1.0\it\System.Diagnostics.Contracts.xml      | XML        |        334 |          0 |          0 |        334 |
+| g:\Kepler\Kepler\Packages\System.Diagnostics.Contracts.4.3.0\ref\netstandard1.0\ja\System.Diagnostics.Contracts.xml      | XML        |        370 |          0 |          0 |        370 |
+| g:\Kepler\Kepler\Packages\System.Diagnostics.Contracts.4.3.0\ref\netstandard1.0\ko\System.Diagnostics.Contracts.xml      | XML        |        370 |          0 |          0 |        370 |
+| g:\Kepler\Kepler\Packages\System.Diagnostics.Contracts.4.3.0\ref\netstandard1.0\ru\System.Diagnostics.Contracts.xml      | XML        |        334 |          0 |          0 |        334 |
+| g:\Kepler\Kepler\Packages\System.Diagnostics.Contracts.4.3.0\ref\netstandard1.0\zh-hans\System.Diagnostics.Contracts.xml | XML        |        338 |          0 |          0 |        338 |
+| g:\Kepler\Kepler\Packages\System.Diagnostics.Contracts.4.3.0\ref\netstandard1.0\zh-hant\System.Diagnostics.Contracts.xml | XML        |        340 |          0 |          0 |        340 |
+| g:\Kepler\Kepler\Packages\manifest.json                                                                                  | JSON       |         46 |          0 |          1 |         47 |
+| g:\Kepler\Kepler\Packages\packages-lock.json                                                                             | JSON       |        371 |          0 |          1 |        372 |
+| g:\Kepler\Kepler\README.md                                                                                               | Markdown   |          1 |          0 |          2 |          3 |
+| g:\Kepler\Kepler\msc\msc.cfg                                                                                             | Properties |          0 |          0 |          1 |          1 |
+| Total                                                                                                                    |            |    366,810 |      4,634 |     10,177 |    381,621 |
++--------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+

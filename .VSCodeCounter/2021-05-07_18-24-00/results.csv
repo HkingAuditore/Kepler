@@ -1,0 +1,513 @@
+"filename", "language", "Properties", "Markdown", "ShaderLab", "JSON", "HLSL", "C#", "XML", "comment", "blank", "total"
+"g:\Kepler\Kepler\.idea\.idea.Kepler\.idea\code-comments-settings.xml", "XML", 0, 0, 0, 0, 0, 0, 6, 0, 0, 6
+"g:\Kepler\Kepler\.idea\.idea.Kepler\.idea\code-comments.xml", "XML", 0, 0, 0, 0, 0, 0, 6, 0, 0, 6
+"g:\Kepler\Kepler\.idea\.idea.Kepler\.idea\codeStyles\codeStyleConfig.xml", "XML", 0, 0, 0, 0, 0, 0, 5, 0, 0, 5
+"g:\Kepler\Kepler\.idea\.idea.Kepler\.idea\contentModel.xml", "XML", 0, 0, 0, 0, 0, 0, 718, 0, 0, 718
+"g:\Kepler\Kepler\.idea\.idea.Kepler\.idea\encodings.xml", "XML", 0, 0, 0, 0, 0, 0, 4, 0, 0, 4
+"g:\Kepler\Kepler\.idea\.idea.Kepler\.idea\indexLayout.xml", "XML", 0, 0, 0, 0, 0, 0, 39, 0, 0, 39
+"g:\Kepler\Kepler\.idea\.idea.Kepler\.idea\modules.xml", "XML", 0, 0, 0, 0, 0, 0, 8, 0, 0, 8
+"g:\Kepler\Kepler\.idea\.idea.Kepler\.idea\projectSettingsUpdater.xml", "XML", 0, 0, 0, 0, 0, 0, 6, 0, 0, 6
+"g:\Kepler\Kepler\.idea\.idea.Kepler\.idea\riderModule.iml", "XML", 0, 0, 0, 0, 0, 0, 7, 0, 0, 7
+"g:\Kepler\Kepler\.idea\.idea.Kepler\.idea\vcs.xml", "XML", 0, 0, 0, 0, 0, 0, 6, 0, 0, 6
+"g:\Kepler\Kepler\.idea\.idea.Kepler\.idea\workspace.xml", "XML", 0, 0, 0, 0, 0, 0, 328, 0, 0, 328
+"g:\Kepler\Kepler\.idea\.idea.Kepler\riderModule.iml", "XML", 0, 0, 0, 0, 0, 0, 7, 0, 0, 7
+"g:\Kepler\Kepler\Assets\Arts\Shaders\AuroraSky.shader", "ShaderLab", 0, 0, 264, 0, 0, 0, 0, 31, 79, 374
+"g:\Kepler\Kepler\Assets\Arts\Shaders\Blur.shader", "ShaderLab", 0, 0, 104, 0, 0, 0, 0, 1, 17, 122
+"g:\Kepler\Kepler\Assets\Arts\Shaders\CustomPostProcessing\ACES.hlsl", "HLSL", 0, 0, 0, 0, 512, 0, 0, 621, 177, 1310
+"g:\Kepler\Kepler\Assets\Arts\Shaders\CustomPostProcessing\API\D3D11.hlsl", "HLSL", 0, 0, 0, 0, 39, 0, 0, 0, 14, 53
+"g:\Kepler\Kepler\Assets\Arts\Shaders\CustomPostProcessing\API\D3D12.hlsl", "HLSL", 0, 0, 0, 0, 39, 0, 0, 0, 14, 53
+"g:\Kepler\Kepler\Assets\Arts\Shaders\CustomPostProcessing\API\D3D9.hlsl", "HLSL", 0, 0, 0, 0, 30, 0, 0, 1, 13, 44
+"g:\Kepler\Kepler\Assets\Arts\Shaders\CustomPostProcessing\API\Metal.hlsl", "HLSL", 0, 0, 0, 0, 34, 0, 0, 0, 14, 48
+"g:\Kepler\Kepler\Assets\Arts\Shaders\CustomPostProcessing\API\OpenGL.hlsl", "HLSL", 0, 0, 0, 0, 42, 0, 0, 2, 14, 58
+"g:\Kepler\Kepler\Assets\Arts\Shaders\CustomPostProcessing\API\PSP2.hlsl", "HLSL", 0, 0, 0, 0, 34, 0, 0, 2, 13, 49
+"g:\Kepler\Kepler\Assets\Arts\Shaders\CustomPostProcessing\API\PSSL.hlsl", "HLSL", 0, 0, 0, 0, 42, 0, 0, 0, 14, 56
+"g:\Kepler\Kepler\Assets\Arts\Shaders\CustomPostProcessing\API\Switch.hlsl", "HLSL", 0, 0, 0, 0, 38, 0, 0, 0, 14, 52
+"g:\Kepler\Kepler\Assets\Arts\Shaders\CustomPostProcessing\API\Vulkan.hlsl", "HLSL", 0, 0, 0, 0, 39, 0, 0, 0, 14, 53
+"g:\Kepler\Kepler\Assets\Arts\Shaders\CustomPostProcessing\API\XboxOne.hlsl", "HLSL", 0, 0, 0, 0, 39, 0, 0, 0, 14, 53
+"g:\Kepler\Kepler\Assets\Arts\Shaders\CustomPostProcessing\Colors.hlsl", "HLSL", 0, 0, 0, 0, 440, 0, 0, 124, 87, 651
+"g:\Kepler\Kepler\Assets\Arts\Shaders\CustomPostProcessing\DepthOfField.hlsl", "HLSL", 0, 0, 0, 0, 171, 0, 0, 43, 63, 277
+"g:\Kepler\Kepler\Assets\Arts\Shaders\CustomPostProcessing\DepthOfField.shader", "ShaderLab", 0, 0, 219, 0, 0, 0, 0, 5, 42, 266
+"g:\Kepler\Kepler\Assets\Arts\Shaders\CustomPostProcessing\DiskKernels.hlsl", "HLSL", 0, 0, 0, 0, 180, 0, 0, 8, 17, 205
+"g:\Kepler\Kepler\Assets\Arts\Shaders\CustomPostProcessing\Sampling.hlsl", "HLSL", 0, 0, 0, 0, 62, 0, 0, 12, 18, 92
+"g:\Kepler\Kepler\Assets\Arts\Shaders\CustomPostProcessing\ShaderIds.cs", "C#", 0, 0, 0, 0, 0, 137, 0, 3, 22, 162
+"g:\Kepler\Kepler\Assets\Arts\Shaders\CustomPostProcessing\StdLib.hlsl", "HLSL", 0, 0, 0, 0, 234, 0, 0, 33, 56, 323
+"g:\Kepler\Kepler\Assets\Arts\Shaders\CustomPostProcessing\TextureFormatUtilities.cs", "C#", 0, 0, 0, 0, 0, 141, 0, 13, 21, 175
+"g:\Kepler\Kepler\Assets\Arts\Shaders\CustomPostProcessing\xRLib.hlsl", "HLSL", 0, 0, 0, 0, 79, 0, 0, 1, 19, 99
+"g:\Kepler\Kepler\Assets\Arts\Shaders\Mix.shader", "ShaderLab", 0, 0, 51, 0, 0, 0, 0, 1, 11, 63
+"g:\Kepler\Kepler\Assets\Arts\Shaders\MixLayers.shader", "ShaderLab", 0, 0, 49, 0, 0, 0, 0, 4, 11, 64
+"g:\Kepler\Kepler\Assets\Arts\Shaders\OrbitLine.shader", "ShaderLab", 0, 0, 52, 0, 0, 0, 0, 6, 7, 65
+"g:\Kepler\Kepler\Assets\Arts\Shaders\Outline.shader", "ShaderLab", 0, 0, 97, 0, 0, 0, 0, 3, 15, 115
+"g:\Kepler\Kepler\Assets\Arts\Shaders\Space.shader", "ShaderLab", 0, 0, 277, 0, 0, 0, 0, 25, 64, 366
+"g:\Kepler\Kepler\Assets\Arts\Shaders\UIBlur.shader", "ShaderLab", 0, 0, 112, 0, 0, 0, 0, 4, 23, 139
+"g:\Kepler\Kepler\Assets\Arts\Shaders\UIBlurPostEffect.shader", "ShaderLab", 0, 0, 276, 0, 0, 0, 0, 21, 63, 360
+"g:\Kepler\Kepler\Assets\Arts\Shaders\UIBlur_Shared.cginc", "HLSL", 0, 0, 0, 0, 106, 0, 0, 1, 18, 125
+"g:\Kepler\Kepler\Assets\Arts\Shaders\UiLine.shader", "ShaderLab", 0, 0, 53, 0, 0, 0, 0, 6, 7, 66
+"g:\Kepler\Kepler\Assets\PlugIns\BaseInfolibrary\MathNet.Numerics.xml", "XML", 0, 0, 0, 0, 0, 0, 57653, 0, 20, 57673
+"g:\Kepler\Kepler\Assets\PlugIns\BaseInfolibrary\MathNet.Spatial.xml", "XML", 0, 0, 0, 0, 0, 0, 6056, 0, 1, 6057
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\BlankUser.cs", "C#", 0, 0, 0, 0, 0, 27, 0, 10, 3, 40
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\EdgeColliderGenerator.cs", "C#", 0, 0, 0, 0, 0, 98, 0, 0, 18, 116
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\Editor\BakeMeshWindow.cs", "C#", 0, 0, 0, 0, 0, 189, 0, 0, 20, 209
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\Editor\LengthCalculatorEditor.cs", "C#", 0, 0, 0, 0, 0, 60, 0, 0, 7, 67
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\Editor\MeshGenEditor.cs", "C#", 0, 0, 0, 0, 0, 200, 0, 0, 23, 223
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\Editor\NodeEditor.cs", "C#", 0, 0, 0, 0, 0, 279, 0, 0, 39, 318
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\Editor\ObjectBenderEditor.cs", "C#", 0, 0, 0, 0, 0, 341, 0, 1, 47, 389
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\Editor\ObjectControllerEditor.cs", "C#", 0, 0, 0, 0, 0, 164, 0, 0, 20, 184
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\Editor\ParticleControllerEditor.cs", "C#", 0, 0, 0, 0, 0, 58, 0, 0, 8, 66
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\Editor\PathGeneratorEditor.cs", "C#", 0, 0, 0, 0, 0, 43, 0, 0, 5, 48
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\Editor\PolygonColliderGenEditor.cs", "C#", 0, 0, 0, 0, 0, 30, 0, 0, 4, 34
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\Editor\SetDistanceWindow.cs", "C#", 0, 0, 0, 0, 0, 34, 0, 0, 5, 39
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\Editor\SplineFollowerEditor.cs", "C#", 0, 0, 0, 0, 0, 128, 0, 0, 22, 150
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\Editor\SplineMeshEditor.cs", "C#", 0, 0, 0, 0, 0, 435, 0, 4, 53, 492
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\Editor\SplineMorphEditor.cs", "C#", 0, 0, 0, 0, 0, 145, 0, 0, 14, 159
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\Editor\SplinePositionerEditor.cs", "C#", 0, 0, 0, 0, 0, 53, 0, 0, 6, 59
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\Editor\SplineProjectorEditor.cs", "C#", 0, 0, 0, 0, 0, 57, 0, 0, 11, 68
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\Editor\SplineRendererEditor.cs", "C#", 0, 0, 0, 0, 0, 37, 0, 0, 6, 43
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\Editor\SplineTracerEditor.cs", "C#", 0, 0, 0, 0, 0, 151, 0, 0, 15, 166
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\Editor\SplineUserEditor.cs", "C#", 0, 0, 0, 0, 0, 304, 0, 0, 48, 352
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\Editor\SplineUserSubEditor.cs", "C#", 0, 0, 0, 0, 0, 25, 0, 0, 5, 30
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\Editor\SurfaceGeneratorEditor.cs", "C#", 0, 0, 0, 0, 0, 69, 0, 0, 7, 76
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\Editor\TubeGeneratorEditor.cs", "C#", 0, 0, 0, 0, 0, 40, 0, 0, 4, 44
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\Editor\WaveformGeneratorEditor.cs", "C#", 0, 0, 0, 0, 0, 39, 0, 0, 5, 44
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\LengthCalculator.cs", "C#", 0, 0, 0, 0, 0, 80, 0, 0, 13, 93
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\MeshGenerator.cs", "C#", 0, 0, 0, 0, 0, 435, 0, 1, 78, 514
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\Node.cs", "C#", 0, 0, 0, 0, 0, 315, 0, 2, 49, 366
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\ObjectBender.cs", "C#", 0, 0, 0, 0, 0, 754, 0, 2, 101, 857
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\ObjectController.cs", "C#", 0, 0, 0, 0, 0, 637, 0, 0, 84, 721
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\ParticleController.cs", "C#", 0, 0, 0, 0, 0, 228, 0, 0, 44, 272
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\PathGenerator.cs", "C#", 0, 0, 0, 0, 0, 186, 0, 0, 25, 211
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\PolygonColliderGenerator.cs", "C#", 0, 0, 0, 0, 0, 153, 0, 0, 24, 177
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\Sample Modifiers\ColorModifier.cs", "C#", 0, 0, 0, 0, 0, 65, 0, 0, 10, 75
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\Sample Modifiers\Editor\ColorModifierEditor.cs", "C#", 0, 0, 0, 0, 0, 42, 0, 0, 6, 48
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\Sample Modifiers\Editor\FollowerSpeedModifierEditor.cs", "C#", 0, 0, 0, 0, 0, 36, 0, 0, 5, 41
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\Sample Modifiers\Editor\MeshScaleModifierEditor.cs", "C#", 0, 0, 0, 0, 0, 36, 0, 0, 5, 41
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\Sample Modifiers\Editor\OffsetModifierEditor.cs", "C#", 0, 0, 0, 0, 0, 72, 0, 0, 9, 81
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\Sample Modifiers\Editor\RotationModifierEditor.cs", "C#", 0, 0, 0, 0, 0, 75, 0, 0, 8, 83
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\Sample Modifiers\Editor\SizeModifierEditor.cs", "C#", 0, 0, 0, 0, 0, 36, 0, 0, 5, 41
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\Sample Modifiers\Editor\SplineSampleModifierEditor.cs", "C#", 0, 0, 0, 0, 0, 140, 0, 0, 14, 154
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\Sample Modifiers\FollowerSpeedModifier.cs", "C#", 0, 0, 0, 0, 0, 54, 0, 0, 10, 64
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\Sample Modifiers\MeshScaleModifier.cs", "C#", 0, 0, 0, 0, 0, 60, 0, 0, 10, 70
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\Sample Modifiers\OffsetModifier.cs", "C#", 0, 0, 0, 0, 0, 54, 0, 0, 9, 63
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\Sample Modifiers\RotationModifier.cs", "C#", 0, 0, 0, 0, 0, 63, 0, 0, 10, 73
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\Sample Modifiers\SizeModifier.cs", "C#", 0, 0, 0, 0, 0, 47, 0, 0, 8, 55
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\Sample Modifiers\SplineSampleModifier.cs", "C#", 0, 0, 0, 0, 0, 153, 0, 0, 25, 178
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\SplineComputer.cs", "C#", 0, 0, 0, 0, 0, 1452, 0, 240, 225, 1917
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\SplineFollower.cs", "C#", 0, 0, 0, 0, 0, 300, 0, 10, 40, 350
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\SplineMesh.cs", "C#", 0, 0, 0, 0, 0, 1459, 0, 1, 213, 1673
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\SplineMorph.cs", "C#", 0, 0, 0, 0, 0, 278, 0, 0, 50, 328
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\SplinePositioner.cs", "C#", 0, 0, 0, 0, 0, 93, 0, 0, 16, 109
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\SplineProjector.cs", "C#", 0, 0, 0, 0, 0, 199, 0, 0, 35, 234
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\SplineRenderer.cs", "C#", 0, 0, 0, 0, 0, 114, 0, 0, 16, 130
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\SplineTracer.cs", "C#", 0, 0, 0, 0, 0, 276, 0, 6, 48, 330
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\SplineUser.cs", "C#", 0, 0, 0, 0, 0, 549, 0, 71, 102, 722
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\SurfaceGenerator.cs", "C#", 0, 0, 0, 0, 0, 390, 0, 4, 57, 451
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\TubeGenerator.cs", "C#", 0, 0, 0, 0, 0, 372, 0, 8, 41, 421
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Components\WaveformGenerator.cs", "C#", 0, 0, 0, 0, 0, 184, 0, 0, 22, 206
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Core\IO\CSV.cs", "C#", 0, 0, 0, 0, 0, 264, 0, 2, 26, 292
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Core\IO\SVG.cs", "C#", 0, 0, 0, 0, 0, 866, 0, 12, 95, 973
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Core\IO\SplineParser.cs", "C#", 0, 0, 0, 0, 0, 281, 0, 0, 49, 330
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Core\ObjectSequence.cs", "C#", 0, 0, 0, 0, 0, 58, 0, 0, 11, 69
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Core\Primitives\Capsule.cs", "C#", 0, 0, 0, 0, 0, 32, 0, 0, 3, 35
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Core\Primitives\Ellipse.cs", "C#", 0, 0, 0, 0, 0, 31, 0, 0, 3, 34
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Core\Primitives\Line.cs", "C#", 0, 0, 0, 0, 0, 24, 0, 0, 3, 27
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Core\Primitives\Ngon.cs", "C#", 0, 0, 0, 0, 0, 26, 0, 0, 4, 30
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Core\Primitives\Rectangle.cs", "C#", 0, 0, 0, 0, 0, 23, 0, 0, 3, 26
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Core\Primitives\RoundedRectangle.cs", "C#", 0, 0, 0, 0, 0, 40, 0, 0, 6, 46
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Core\Primitives\Spiral.cs", "C#", 0, 0, 0, 0, 0, 58, 0, 0, 3, 61
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Core\Primitives\SplinePrimitive.cs", "C#", 0, 0, 0, 0, 0, 96, 0, 0, 14, 110
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Core\Primitives\Star.cs", "C#", 0, 0, 0, 0, 0, 29, 0, 0, 4, 33
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Core\SampleCollection.cs", "C#", 0, 0, 0, 0, 0, 469, 0, 90, 61, 620
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Core\Spline.cs", "C#", 0, 0, 0, 0, 0, 723, 0, 121, 74, 918
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Core\SplinePoint.cs", "C#", 0, 0, 0, 0, 0, 187, 0, 1, 19, 207
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Core\SplinePrefs.cs", "C#", 0, 0, 0, 0, 0, 145, 0, 0, 9, 154
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Core\SplineSample.cs", "C#", 0, 0, 0, 0, 0, 109, 0, 0, 16, 125
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Core\SplineThreading.cs", "C#", 0, 0, 0, 0, 0, 164, 0, 0, 23, 187
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Core\SplineTrigger.cs", "C#", 0, 0, 0, 0, 0, 93, 0, 4, 21, 118
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Core\TransformModule.cs", "C#", 0, 0, 0, 0, 0, 207, 0, 2, 34, 243
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Editor\ComputerSplitModule.cs", "C#", 0, 0, 0, 0, 0, 180, 0, 0, 25, 205
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Editor\DSSplineDrawer.cs", "C#", 0, 0, 0, 0, 0, 145, 0, 0, 19, 164
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Editor\Primitives\CapsuleEditor.cs", "C#", 0, 0, 0, 0, 0, 24, 0, 0, 3, 27
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Editor\Primitives\EllipseEditor.cs", "C#", 0, 0, 0, 0, 0, 25, 0, 0, 3, 28
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Editor\Primitives\LineEditor.cs", "C#", 0, 0, 0, 0, 0, 26, 0, 0, 3, 29
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Editor\Primitives\NgonEditor.cs", "C#", 0, 0, 0, 0, 0, 25, 0, 0, 3, 28
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Editor\Primitives\PrimitiveEditor.cs", "C#", 0, 0, 0, 0, 0, 53, 0, 0, 8, 61
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Editor\Primitives\RectangleEditor.cs", "C#", 0, 0, 0, 0, 0, 24, 0, 0, 3, 27
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Editor\Primitives\RoundedRectangleEditor.cs", "C#", 0, 0, 0, 0, 0, 26, 0, 0, 3, 29
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Editor\Primitives\SpiralEditor.cs", "C#", 0, 0, 0, 0, 0, 28, 0, 0, 3, 31
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Editor\Primitives\StarEditor.cs", "C#", 0, 0, 0, 0, 0, 26, 0, 0, 3, 29
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Editor\SplineComputerEditor.cs", "C#", 0, 0, 0, 0, 0, 201, 0, 0, 30, 231
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Editor\SplineComputerEditorHandles.cs", "C#", 0, 0, 0, 0, 0, 88, 0, 0, 11, 99
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Editor\SplineDrawer.cs", "C#", 0, 0, 0, 0, 0, 82, 0, 0, 8, 90
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Editor\SplineEditorGUI.cs", "C#", 0, 0, 0, 0, 0, 322, 0, 1, 41, 364
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Editor\SplineEditorHandles.cs", "C#", 0, 0, 0, 0, 0, 80, 0, 0, 12, 92
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Editor\SplineEditorWindow.cs", "C#", 0, 0, 0, 0, 0, 51, 0, 0, 9, 60
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Editor\SplineEditor\DS Editor\ComputerEditor.cs", "C#", 0, 0, 0, 0, 0, 397, 0, 0, 54, 451
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Editor\SplineEditor\DS Editor\ComputerEditorModule.cs", "C#", 0, 0, 0, 0, 0, 23, 0, 0, 3, 26
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Editor\SplineEditor\DS Editor\ComputerMergeModule.cs", "C#", 0, 0, 0, 0, 0, 200, 0, 0, 26, 226
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Editor\SplineEditor\DS Editor\DSCreatePointModule.cs", "C#", 0, 0, 0, 0, 0, 113, 0, 0, 14, 127
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Editor\SplineEditor\DS Editor\DreamteckSplinesEditor.cs", "C#", 0, 0, 0, 0, 0, 191, 0, 0, 24, 215
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Editor\SplineEditor\DS Editor\PrimitivesModule.cs", "C#", 0, 0, 0, 0, 0, 220, 0, 0, 30, 250
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Editor\SplineEditor\DS Editor\SplineDebugEditor.cs", "C#", 0, 0, 0, 0, 0, 49, 0, 0, 9, 58
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Editor\SplineEditor\DS Editor\SplineTriggersEditor.cs", "C#", 0, 0, 0, 0, 0, 295, 0, 0, 34, 329
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Editor\SplineEditor\EditorModule.cs", "C#", 0, 0, 0, 0, 0, 101, 0, 0, 23, 124
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Editor\SplineEditor\Point Modules\CreatePointModule.cs", "C#", 0, 0, 0, 0, 0, 444, 0, 0, 43, 487
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Editor\SplineEditor\Point Modules\DeletePointModule.cs", "C#", 0, 0, 0, 0, 0, 74, 0, 0, 11, 85
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Editor\SplineEditor\Point Modules\MainPointModule.cs", "C#", 0, 0, 0, 0, 0, 249, 0, 0, 29, 278
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Editor\SplineEditor\Point Modules\PointMirrorModule.cs", "C#", 0, 0, 0, 0, 0, 357, 0, 0, 41, 398
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Editor\SplineEditor\Point Modules\PointModule.cs", "C#", 0, 0, 0, 0, 0, 291, 0, 0, 52, 343
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Editor\SplineEditor\Point Modules\PointMoveModule.cs", "C#", 0, 0, 0, 0, 0, 124, 0, 0, 14, 138
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Editor\SplineEditor\Point Modules\PointNormalModule.cs", "C#", 0, 0, 0, 0, 0, 210, 0, 0, 17, 227
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Editor\SplineEditor\Point Modules\PointRotateModule.cs", "C#", 0, 0, 0, 0, 0, 70, 0, 0, 10, 80
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Editor\SplineEditor\Point Modules\PointScaleModule.cs", "C#", 0, 0, 0, 0, 0, 58, 0, 0, 10, 68
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Editor\SplineEditor\Point Modules\PointTransformModule.cs", "C#", 0, 0, 0, 0, 0, 164, 0, 0, 25, 189
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Editor\SplineEditor\SplineEditor.cs", "C#", 0, 0, 0, 0, 0, 849, 0, 5, 100, 954
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Editor\SplineEditor\SplineEditorBase.cs", "C#", 0, 0, 0, 0, 0, 93, 0, 0, 24, 117
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Editor\SplinePreset.cs", "C#", 0, 0, 0, 0, 0, 149, 0, 0, 24, 173
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Editor\Tools\BakeTool.cs", "C#", 0, 0, 0, 0, 0, 290, 0, 0, 39, 329
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Editor\Tools\Explorer.cs", "C#", 0, 0, 0, 0, 0, 171, 0, 0, 14, 185
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Editor\Tools\ImportTool.cs", "C#", 0, 0, 0, 0, 0, 384, 0, 0, 46, 430
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Editor\Tools\LevelTerrainTool.cs", "C#", 0, 0, 0, 0, 0, 594, 0, 17, 82, 693
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Editor\Tools\ObjectSpawnTool.cs", "C#", 0, 0, 0, 0, 0, 386, 0, 3, 51, 440
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Editor\Tools\SplineTool.cs", "C#", 0, 0, 0, 0, 0, 168, 0, 1, 31, 200
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Editor\Tools\SplineToolsWindow.cs", "C#", 0, 0, 0, 0, 0, 65, 0, 0, 11, 76
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Editor\Tools\UpdateTool.cs", "C#", 0, 0, 0, 0, 0, 111, 0, 0, 17, 128
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Editor\TransformModuleEditor.cs", "C#", 0, 0, 0, 0, 0, 69, 0, 0, 10, 79
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Editor\WelcomeScreen.cs", "C#", 0, 0, 0, 0, 0, 173, 0, 0, 19, 192
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Examples\AudioVisualization\SpectrumVisualizer.cs", "C#", 0, 0, 0, 0, 0, 55, 0, 2, 9, 66
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Examples\Following\Scripts\CameraSmoothRotation.cs", "C#", 0, 0, 0, 0, 0, 25, 0, 5, 4, 34
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Examples\Following\Scripts\URLButton.cs", "C#", 0, 0, 0, 0, 0, 9, 0, 0, 2, 11
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Examples\Junctions\Scripts\JunctionSwitch.cs", "C#", 0, 0, 0, 0, 0, 37, 0, 0, 4, 41
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Examples\Junctions\Scripts\TrainCamera.cs", "C#", 0, 0, 0, 0, 0, 18, 0, 0, 3, 21
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Examples\Junctions\Scripts\TrainEngine.cs", "C#", 0, 0, 0, 0, 0, 89, 0, 21, 13, 123
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Examples\Junctions\Scripts\Wagon.cs", "C#", 0, 0, 0, 0, 0, 173, 0, 12, 25, 210
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Examples\LengthEvents\SetMaterialColor.cs", "C#", 0, 0, 0, 0, 0, 18, 0, 0, 3, 21
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Examples\Projection\Scripts\AddForceAlongPath.cs", "C#", 0, 0, 0, 0, 0, 19, 0, 0, 3, 22
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Examples\Projection\Scripts\BallCamera.cs", "C#", 0, 0, 0, 0, 0, 27, 0, 0, 4, 31
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Examples\Projection\Scripts\LapCounter.cs", "C#", 0, 0, 0, 0, 0, 14, 0, 0, 2, 16
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Examples\RollerCoaster\Scripts\CameraLook.cs", "C#", 0, 0, 0, 0, 0, 59, 0, 1, 9, 69
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Splines\Examples\RollerCoaster\Scripts\RollerCoaster.cs", "C#", 0, 0, 0, 0, 0, 127, 0, 4, 16, 147
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Utilities\ArrayUtility.cs", "C#", 0, 0, 0, 0, 0, 45, 0, 0, 5, 50
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Utilities\ColorUtility.cs", "C#", 0, 0, 0, 0, 0, 14, 0, 0, 1, 15
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Utilities\DMath.cs", "C#", 0, 0, 0, 0, 0, 106, 0, 0, 20, 126
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Utilities\DuplicateUtility.cs", "C#", 0, 0, 0, 0, 0, 19, 0, 1, 2, 22
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Utilities\Editor\DreamteckEditorGUI.cs", "C#", 0, 0, 0, 0, 0, 153, 0, 0, 33, 186
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Utilities\Editor\EditorGUIEvents.cs", "C#", 0, 0, 0, 0, 0, 96, 0, 1, 17, 114
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Utilities\Editor\FindDerivedClasses.cs", "C#", 0, 0, 0, 0, 0, 50, 0, 0, 4, 54
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Utilities\Editor\ResourceUtility.cs", "C#", 0, 0, 0, 0, 0, 114, 0, 1, 11, 126
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Utilities\Editor\Toolbar.cs", "C#", 0, 0, 0, 0, 0, 51, 0, 0, 6, 57
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Utilities\Editor\WelcomeWindow.cs", "C#", 0, 0, 0, 0, 0, 329, 0, 1, 52, 382
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Utilities\LinearAlgebraUtility.cs", "C#", 0, 0, 0, 0, 0, 37, 0, 0, 6, 43
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Utilities\MeshUtility.cs", "C#", 0, 0, 0, 0, 0, 609, 0, 0, 86, 695
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Utilities\SceneUtility.cs", "C#", 0, 0, 0, 0, 0, 13, 0, 0, 1, 14
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Utilities\ScriptableObjectUtility.cs", "C#", 0, 0, 0, 0, 0, 40, 0, 0, 4, 44
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Utilities\Singleton.cs", "C#", 0, 0, 0, 0, 0, 47, 0, 0, 8, 55
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Utilities\TS_Bounds.cs", "C#", 0, 0, 0, 0, 0, 58, 0, 0, 7, 65
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Utilities\TS_Mesh.cs", "C#", 0, 0, 0, 0, 0, 327, 0, 1, 43, 371
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Utilities\TS_Transform.cs", "C#", 0, 0, 0, 0, 0, 211, 0, 44, 46, 301
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Utilities\TransformUtility.cs", "C#", 0, 0, 0, 0, 0, 41, 0, 0, 7, 48
+"g:\Kepler\Kepler\Assets\PlugIns\Dreamteck\Utilities\Utilities.cs", "C#", 0, 0, 0, 0, 0, 65, 0, 0, 8, 73
+"g:\Kepler\Kepler\Assets\PlugIns\FlatKit\Demos\Common\Scripts\Motion\CameraMouseOrbit.cs", "C#", 0, 0, 0, 0, 0, 112, 0, 3, 24, 139
+"g:\Kepler\Kepler\Assets\PlugIns\FlatKit\Demos\Common\Scripts\Motion\Editor\LinearMotionEditor.cs", "C#", 0, 0, 0, 0, 0, 67, 0, 0, 19, 86
+"g:\Kepler\Kepler\Assets\PlugIns\FlatKit\Demos\Common\Scripts\Motion\LinearMotion.cs", "C#", 0, 0, 0, 0, 0, 92, 0, 0, 12, 104
+"g:\Kepler\Kepler\Assets\PlugIns\FlatKit\Scripts\UvScroller.cs", "C#", 0, 0, 0, 0, 0, 27, 0, 0, 5, 32
+"g:\Kepler\Kepler\Assets\PlugIns\FlatKit\Shaders\GradientSkybox\Editor\GradientSkyboxEditor.cs", "C#", 0, 0, 0, 0, 0, 26, 0, 0, 8, 34
+"g:\Kepler\Kepler\Assets\PlugIns\FlatKit\Shaders\GradientSkybox\GradientSkybox.shader", "ShaderLab", 0, 0, 54, 0, 0, 0, 0, 0, 16, 70
+"g:\Kepler\Kepler\Assets\PlugIns\FlatKit\Shaders\ImageEffects\Resources\FogPlus.shader", "ShaderLab", 0, 0, 76, 0, 0, 0, 0, 0, 17, 93
+"g:\Kepler\Kepler\Assets\PlugIns\FlatKit\Shaders\ImageEffects\Resources\OutlinePlus.shader", "ShaderLab", 0, 0, 88, 0, 0, 0, 0, 2, 16, 106
+"g:\Kepler\Kepler\Assets\PlugIns\FlatKit\Shaders\ImageEffects\Scripts\FogImageEffect.cs", "C#", 0, 0, 0, 0, 0, 137, 0, 2, 26, 165
+"g:\Kepler\Kepler\Assets\PlugIns\FlatKit\Shaders\ImageEffects\Scripts\OutlineImageEffect.cs", "C#", 0, 0, 0, 0, 0, 84, 0, 0, 17, 101
+"g:\Kepler\Kepler\Assets\PlugIns\FlatKit\Shaders\LightPlane.shader", "ShaderLab", 0, 0, 78, 0, 0, 0, 0, 0, 17, 95
+"g:\Kepler\Kepler\Assets\PlugIns\FlatKit\Shaders\StylizedSurface\DustyroomStylizedLighting.cginc", "HLSL", 0, 0, 0, 0, 190, 0, 0, 4, 47, 241
+"g:\Kepler\Kepler\Assets\PlugIns\FlatKit\Shaders\StylizedSurface\DustyroomTerrainSplatmapCommon.cginc", "HLSL", 0, 0, 0, 0, 90, 0, 0, 9, 19, 118
+"g:\Kepler\Kepler\Assets\PlugIns\FlatKit\Shaders\StylizedSurface\Editor\StylizedSurfaceEditor.cs", "C#", 0, 0, 0, 0, 0, 238, 0, 2, 39, 279
+"g:\Kepler\Kepler\Assets\PlugIns\FlatKit\Shaders\StylizedSurface\StylizedSurface.shader", "ShaderLab", 0, 0, 75, 0, 0, 0, 0, 5, 18, 98
+"g:\Kepler\Kepler\Assets\PlugIns\FlatKit\Shaders\StylizedSurface\StylizedSurfaceCutout.shader", "ShaderLab", 0, 0, 78, 0, 0, 0, 0, 1, 18, 97
+"g:\Kepler\Kepler\Assets\PlugIns\FlatKit\Shaders\StylizedSurface\StylizedSurfaceOutline.shader", "ShaderLab", 0, 0, 100, 0, 0, 0, 0, 5, 27, 132
+"g:\Kepler\Kepler\Assets\PlugIns\FlatKit\Shaders\StylizedSurface\Terrain.shader", "ShaderLab", 0, 0, 99, 0, 0, 0, 0, 6, 27, 132
+"g:\Kepler\Kepler\Assets\PlugIns\Le Tai's Asset\TranslucentImage\Demo\Scripts\AutoMoveAndRotate.cs", "C#", 0, 0, 0, 0, 0, 43, 0, 0, 9, 52
+"g:\Kepler\Kepler\Assets\PlugIns\Le Tai's Asset\TranslucentImage\Demo\Scripts\ChangeBlurConfig.cs", "C#", 0, 0, 0, 0, 0, 42, 0, 4, 10, 56
+"g:\Kepler\Kepler\Assets\PlugIns\Le Tai's Asset\TranslucentImage\Demo\Scripts\ColorSchemeManager.cs", "C#", 0, 0, 0, 0, 0, 53, 0, 0, 9, 62
+"g:\Kepler\Kepler\Assets\PlugIns\Le Tai's Asset\TranslucentImage\Demo\Scripts\ControlCenter.cs", "C#", 0, 0, 0, 0, 0, 30, 0, 0, 4, 34
+"g:\Kepler\Kepler\Assets\PlugIns\Le Tai's Asset\TranslucentImage\Demo\Scripts\FPSCounter.cs", "C#", 0, 0, 0, 0, 0, 32, 0, 1, 5, 38
+"g:\Kepler\Kepler\Assets\PlugIns\Le Tai's Asset\TranslucentImage\Demo\Scripts\PlatformPreset.cs", "C#", 0, 0, 0, 0, 0, 34, 0, 1, 4, 39
+"g:\Kepler\Kepler\Assets\PlugIns\Le Tai's Asset\TranslucentImage\Demo\Scripts\SetText.cs", "C#", 0, 0, 0, 0, 0, 18, 0, 1, 4, 23
+"g:\Kepler\Kepler\Assets\PlugIns\Le Tai's Asset\TranslucentImage\Demo\Scripts\SimpleCameraController.cs", "C#", 0, 0, 0, 0, 0, 110, 0, 9, 29, 148
+"g:\Kepler\Kepler\Assets\PlugIns\Le Tai's Asset\TranslucentImage\Demo\Scripts\SliderChangeOnStart.cs", "C#", 0, 0, 0, 0, 0, 16, 0, 0, 3, 19
+"g:\Kepler\Kepler\Assets\PlugIns\Le Tai's Asset\TranslucentImage\Demo\Scripts\ToggleSecondBlurLayer.cs", "C#", 0, 0, 0, 0, 0, 27, 0, 0, 5, 32
+"g:\Kepler\Kepler\Assets\PlugIns\Le Tai's Asset\TranslucentImage\Demo\Scripts\UnrestrictFramerate.cs", "C#", 0, 0, 0, 0, 0, 11, 0, 2, 1, 14
+"g:\Kepler\Kepler\Assets\PlugIns\Le Tai's Asset\TranslucentImage\Demo\Scripts\WorldSpaceSetup.cs", "C#", 0, 0, 0, 0, 0, 14, 0, 3, 3, 20
+"g:\Kepler\Kepler\Assets\PlugIns\Le Tai's Asset\TranslucentImage\Demo\Shader\MobileVertexLitColor.shader", "ShaderLab", 0, 0, 49, 0, 0, 0, 0, 1, 12, 62
+"g:\Kepler\Kepler\Assets\PlugIns\Le Tai's Asset\TranslucentImage\Resources\EfficientBlur.shader", "ShaderLab", 0, 0, 69, 0, 0, 0, 0, 13, 22, 104
+"g:\Kepler\Kepler\Assets\PlugIns\Le Tai's Asset\TranslucentImage\Resources\FillCrop.shader", "ShaderLab", 0, 0, 46, 0, 0, 0, 0, 1, 9, 56
+"g:\Kepler\Kepler\Assets\PlugIns\Le Tai's Asset\TranslucentImage\Resources\TranslucentImage.shader", "ShaderLab", 0, 0, 121, 0, 0, 0, 0, 10, 33, 164
+"g:\Kepler\Kepler\Assets\PlugIns\Le Tai's Asset\TranslucentImage\Script\BlurAlgorithm\BlurConfig.cs", "C#", 0, 0, 0, 0, 0, 7, 0, 0, 1, 8
+"g:\Kepler\Kepler\Assets\PlugIns\Le Tai's Asset\TranslucentImage\Script\BlurAlgorithm\IBlurAlgorithm.cs", "C#", 0, 0, 0, 0, 0, 13, 0, 0, 2, 15
+"g:\Kepler\Kepler\Assets\PlugIns\Le Tai's Asset\TranslucentImage\Script\BlurAlgorithm\ScalableBlur.cs", "C#", 0, 0, 0, 0, 0, 72, 0, 7, 22, 101
+"g:\Kepler\Kepler\Assets\PlugIns\Le Tai's Asset\TranslucentImage\Script\BlurAlgorithm\ScalableBlurConfig.cs", "C#", 0, 0, 0, 0, 0, 51, 0, 25, 8, 84
+"g:\Kepler\Kepler\Assets\PlugIns\Le Tai's Asset\TranslucentImage\Script\Editor\MenuIntegration.cs", "C#", 0, 0, 0, 0, 0, 130, 0, 12, 28, 170
+"g:\Kepler\Kepler\Assets\PlugIns\Le Tai's Asset\TranslucentImage\Script\Editor\ScalableBlurConfigEditor.cs", "C#", 0, 0, 0, 0, 0, 106, 0, 4, 29, 139
+"g:\Kepler\Kepler\Assets\PlugIns\Le Tai's Asset\TranslucentImage\Script\Editor\ScenceGizmoAutoDisable.cs", "C#", 0, 0, 0, 0, 0, 50, 0, 2, 11, 63
+"g:\Kepler\Kepler\Assets\PlugIns\Le Tai's Asset\TranslucentImage\Script\Editor\TranslucentImageEditor.cs", "C#", 0, 0, 0, 0, 0, 94, 0, 0, 23, 117
+"g:\Kepler\Kepler\Assets\PlugIns\Le Tai's Asset\TranslucentImage\Script\Editor\TranslucentImageSourceEditor.cs", "C#", 0, 0, 0, 0, 0, 76, 0, 1, 17, 94
+"g:\Kepler\Kepler\Assets\PlugIns\Le Tai's Asset\TranslucentImage\Script\TranslucentImage.cs", "C#", 0, 0, 0, 0, 0, 101, 0, 21, 26, 148
+"g:\Kepler\Kepler\Assets\PlugIns\Le Tai's Asset\TranslucentImage\Script\TranslucentImageEditorEnhancement.cs", "C#", 0, 0, 0, 0, 0, 30, 0, 0, 7, 37
+"g:\Kepler\Kepler\Assets\PlugIns\Le Tai's Asset\TranslucentImage\Script\TranslucentImageMeshEffect.cs", "C#", 0, 0, 0, 0, 0, 55, 0, 0, 9, 64
+"g:\Kepler\Kepler\Assets\PlugIns\Le Tai's Asset\TranslucentImage\Script\TranslucentImageSource.cs", "C#", 0, 0, 0, 0, 0, 193, 0, 37, 55, 285
+"g:\Kepler\Kepler\Assets\PlugIns\Le Tai's Asset\TranslucentImage\Script\Utilities\Extensions.cs", "C#", 0, 0, 0, 0, 0, 73, 0, 4, 11, 88
+"g:\Kepler\Kepler\Assets\PlugIns\Le Tai's Asset\TranslucentImage\Script\Utilities\ResizableScreenRect.cs", "C#", 0, 0, 0, 0, 0, 136, 0, 4, 28, 168
+"g:\Kepler\Kepler\Assets\PlugIns\Le Tai's Asset\TranslucentImage\Script\Utilities\ShaderId.cs", "C#", 0, 0, 0, 0, 0, 9, 0, 0, 1, 10
+"g:\Kepler\Kepler\Assets\PlugIns\Minimalist\Editor\EditorGUILayoutExtended.cs", "C#", 0, 0, 0, 0, 0, 42, 0, 17, 12, 71
+"g:\Kepler\Kepler\Assets\PlugIns\Minimalist\Editor\MinimalistClipboard.cs", "C#", 0, 0, 0, 0, 0, 11, 0, 0, 1, 12
+"g:\Kepler\Kepler\Assets\PlugIns\Minimalist\Editor\MinimalistEditorHelper.cs", "C#", 0, 0, 0, 0, 0, 44, 0, 0, 8, 52
+"g:\Kepler\Kepler\Assets\PlugIns\Minimalist\Editor\MinimalistSkyEditor.cs", "C#", 0, 0, 0, 0, 0, 43, 0, 0, 7, 50
+"g:\Kepler\Kepler\Assets\PlugIns\Minimalist\Editor\MinimalistStandardEditor.cs", "C#", 0, 0, 0, 0, 0, 1463, 0, 9, 174, 1646
+"g:\Kepler\Kepler\Assets\PlugIns\Minimalist\Shaders\BRP\Minimalist Standard (GlobalSpace).shader", "ShaderLab", 0, 0, 151, 0, 0, 0, 0, 8, 27, 186
+"g:\Kepler\Kepler\Assets\PlugIns\Minimalist\Shaders\BRP\Minimalist Standard (LocalSpace).shader", "ShaderLab", 0, 0, 115, 0, 0, 0, 0, 7, 21, 143
+"g:\Kepler\Kepler\Assets\PlugIns\Minimalist\Shaders\BRP\Minimalist.cginc", "HLSL", 0, 0, 0, 0, 290, 0, 0, 14, 39, 343
+"g:\Kepler\Kepler\Assets\PlugIns\Minimalist\Shaders\Common\Minimalist Sky.shader", "ShaderLab", 0, 0, 66, 0, 0, 0, 0, 0, 9, 75
+"g:\Kepler\Kepler\Assets\PlugIns\Minimalist\Shaders\URP\Minimalist Standard LocalSpace.shader", "ShaderLab", 0, 0, 123, 0, 0, 0, 0, 7, 23, 153
+"g:\Kepler\Kepler\Assets\PlugIns\Minimalist\Shaders\URP\Minimalist Standard SRP Batched LocalSpace.shader", "ShaderLab", 0, 0, 215, 0, 0, 0, 0, 27, 59, 301
+"g:\Kepler\Kepler\Assets\PlugIns\Minimalist\Shaders\URP\Minimalist Standard SRP Batched.shader", "ShaderLab", 0, 0, 214, 0, 0, 0, 0, 27, 58, 299
+"g:\Kepler\Kepler\Assets\PlugIns\Minimalist\Shaders\URP\Minimalist Standard.shader", "ShaderLab", 0, 0, 216, 0, 0, 0, 0, 29, 58, 303
+"g:\Kepler\Kepler\Assets\PlugIns\Minimalist\Shaders\URP\Minimalist.hlsl", "HLSL", 0, 0, 0, 0, 230, 0, 0, 18, 46, 294
+"g:\Kepler\Kepler\Assets\PlugIns\Minimalist\Shaders\URP\MinimalistDepthOnlyPass.hlsl", "HLSL", 0, 0, 0, 0, 41, 0, 0, 0, 8, 49
+"g:\Kepler\Kepler\Assets\PlugIns\Minimalist\Shaders\URP\MinimalistInput.hlsl", "HLSL", 0, 0, 0, 0, 94, 0, 0, 0, 16, 110
+"g:\Kepler\Kepler\Assets\PlugIns\Minimalist\Shaders\URP\MinimalistInputSrpBatched.hlsl", "HLSL", 0, 0, 0, 0, 60, 0, 0, 0, 19, 79
+"g:\Kepler\Kepler\Assets\PlugIns\Minimalist\Shaders\URP\MinimalistMetaPass.hlsl", "HLSL", 0, 0, 0, 0, 42, 0, 0, 2, 7, 51
+"g:\Kepler\Kepler\Assets\PlugIns\Minimalist\Shaders\URP\MinimalistShadowCasterPass.hlsl", "HLSL", 0, 0, 0, 0, 52, 0, 0, 0, 13, 65
+"g:\Kepler\Kepler\Assets\PlugIns\Starfield Skybox\Demo\Script\LookCamera.cs", "C#", 0, 0, 0, 0, 0, 25, 0, 1, 6, 32
+"g:\Kepler\Kepler\Assets\PlugIns\TTS\Speaker.cs", "C#", 0, 0, 0, 0, 0, 34, 0, 15, 7, 56
+"g:\Kepler\Kepler\Assets\PlugIns\TTS\XunFeiOffline.cs", "C#", 0, 0, 0, 0, 0, 233, 0, 24, 31, 288
+"g:\Kepler\Kepler\Assets\PlugIns\TTS\XunFlyOffline.cs", "C#", 0, 0, 0, 0, 0, 199, 0, 22, 29, 250
+"g:\Kepler\Kepler\Assets\Quiz\求太阳密度.xml", "XML", 0, 0, 0, 0, 0, 0, 40, 0, 0, 40
+"g:\Kepler\Kepler\Assets\Quiz\求太阳质量.xml", "XML", 0, 0, 0, 0, 0, 0, 40, 0, 0, 40
+"g:\Kepler\Kepler\Assets\Quiz\真实地日.xml", "XML", 0, 0, 0, 0, 0, 0, 40, 0, 0, 40
+"g:\Kepler\Kepler\Assets\Quiz\真实地月.xml", "XML", 0, 0, 0, 0, 0, 0, 40, 0, 0, 40
+"g:\Kepler\Kepler\Assets\Quiz\计算太阳质量.xml", "XML", 0, 0, 0, 0, 0, 0, 40, 0, 0, 40
+"g:\Kepler\Kepler\Assets\ScenesData\太阳系.xml", "XML", 0, 0, 0, 0, 0, 0, 107, 0, 0, 107
+"g:\Kepler\Kepler\Assets\ScenesData\测试.xml", "XML", 0, 0, 0, 0, 0, 0, 40, 0, 0, 40
+"g:\Kepler\Kepler\Assets\ScenesData\真实地日.xml", "XML", 0, 0, 0, 0, 0, 0, 40, 0, 0, 40
+"g:\Kepler\Kepler\Assets\ScenesData\真实地月.xml", "XML", 0, 0, 0, 0, 0, 0, 40, 0, 0, 40
+"g:\Kepler\Kepler\Assets\ScenesData\真实太阳系.xml", "XML", 0, 0, 0, 0, 0, 0, 107, 0, 0, 107
+"g:\Kepler\Kepler\Assets\ScenesData\空场景.xml", "XML", 0, 0, 0, 0, 0, 0, 2, 0, 1, 3
+"g:\Kepler\Kepler\Assets\Scripts\Animation\AnimationType.cs", "C#", 0, 0, 0, 0, 0, 8, 0, 9, 0, 17
+"g:\Kepler\Kepler\Assets\Scripts\Animation\AstronautsAnimation.cs", "C#", 0, 0, 0, 0, 0, 78, 0, 19, 13, 110
+"g:\Kepler\Kepler\Assets\Scripts\BloomEffect.cs", "C#", 0, 0, 0, 0, 0, 72, 0, 0, 17, 89
+"g:\Kepler\Kepler\Assets\Scripts\CustomCamera\CameraController.cs", "C#", 0, 0, 0, 0, 0, 154, 0, 44, 29, 227
+"g:\Kepler\Kepler\Assets\Scripts\CustomCamera\CameraLayerMixer.cs", "C#", 0, 0, 0, 0, 0, 67, 0, 16, 11, 94
+"g:\Kepler\Kepler\Assets\Scripts\CustomCamera\LayerCamera.cs", "C#", 0, 0, 0, 0, 0, 30, 0, 3, 5, 38
+"g:\Kepler\Kepler\Assets\Scripts\CustomPostProcessing\CameraMixer.cs", "C#", 0, 0, 0, 0, 0, 51, 0, 15, 11, 77
+"g:\Kepler\Kepler\Assets\Scripts\CustomPostProcessing\CustomPostProcessingBase.cs", "C#", 0, 0, 0, 0, 0, 20, 0, 10, 4, 34
+"g:\Kepler\Kepler\Assets\Scripts\CustomPostProcessing\Dof.cs", "C#", 0, 0, 0, 0, 0, 31, 0, 24, 6, 61
+"g:\Kepler\Kepler\Assets\Scripts\CustomPostProcessing\DofRenderer.cs", "C#", 0, 0, 0, 0, 0, 142, 0, 22, 35, 199
+"g:\Kepler\Kepler\Assets\Scripts\CustomPostProcessing\IRenderTexOuter.cs", "C#", 0, 0, 0, 0, 0, 8, 0, 3, 1, 12
+"g:\Kepler\Kepler\Assets\Scripts\CustomPostProcessing\KernelSize.cs", "C#", 0, 0, 0, 0, 0, 10, 0, 15, 3, 28
+"g:\Kepler\Kepler\Assets\Scripts\CustomPostProcessing\KernelSizeParameter.cs", "C#", 0, 0, 0, 0, 0, 9, 0, 3, 1, 13
+"g:\Kepler\Kepler\Assets\Scripts\CustomPostProcessing\OutlineCatcher.cs", "C#", 0, 0, 0, 0, 0, 70, 0, 27, 17, 114
+"g:\Kepler\Kepler\Assets\Scripts\CustomUI\AstralBodyEditor\AstralBodyAddUI.cs", "C#", 0, 0, 0, 0, 0, 46, 0, 2, 8, 56
+"g:\Kepler\Kepler\Assets\Scripts\CustomUI\AstralBodyEditor\AstralBodyEditorUI.cs", "C#", 0, 0, 0, 0, 0, 136, 0, 19, 24, 179
+"g:\Kepler\Kepler\Assets\Scripts\CustomUI\AstralBodyEditor\AstralBodyPlacementUI.cs", "C#", 0, 0, 0, 0, 0, 87, 0, 2, 15, 104
+"g:\Kepler\Kepler\Assets\Scripts\CustomUI\AstralBodyEditor\MeshEditor.cs", "C#", 0, 0, 0, 0, 0, 16, 0, 0, 3, 19
+"g:\Kepler\Kepler\Assets\Scripts\CustomUI\AstralBodyEditor\OrbitGraphUI.cs", "C#", 0, 0, 0, 0, 0, 220, 0, 48, 39, 307
+"g:\Kepler\Kepler\Assets\Scripts\CustomUI\AstralBodyEditor\OrbitPanelUI.cs", "C#", 0, 0, 0, 0, 0, 85, 0, 2, 10, 97
+"g:\Kepler\Kepler\Assets\Scripts\CustomUI\AstralBodyEditor\PositionEditorUI.cs", "C#", 0, 0, 0, 0, 0, 54, 0, 0, 12, 66
+"g:\Kepler\Kepler\Assets\Scripts\CustomUI\AstralBodyEditor\StarStyleSettingUI.cs", "C#", 0, 0, 0, 0, 0, 20, 0, 0, 3, 23
+"g:\Kepler\Kepler\Assets\Scripts\CustomUI\AstralBodyEditor\VelocityEditorUI.cs", "C#", 0, 0, 0, 0, 0, 65, 0, 4, 13, 82
+"g:\Kepler\Kepler\Assets\Scripts\CustomUI\GlobalTimerUI.cs", "C#", 0, 0, 0, 0, 0, 19, 0, 2, 3, 24
+"g:\Kepler\Kepler\Assets\Scripts\CustomUI\LabModeUI.cs", "C#", 0, 0, 0, 0, 0, 64, 0, 0, 11, 75
+"g:\Kepler\Kepler\Assets\Scripts\CustomUI\Lab\LabSceneLineUI.cs", "C#", 0, 0, 0, 0, 0, 38, 0, 0, 8, 46
+"g:\Kepler\Kepler\Assets\Scripts\CustomUI\Lab\LabSceneListUI.cs", "C#", 0, 0, 0, 0, 0, 48, 0, 1, 6, 55
+"g:\Kepler\Kepler\Assets\Scripts\CustomUI\LengthUI.cs", "C#", 0, 0, 0, 0, 0, 71, 0, 2, 9, 82
+"g:\Kepler\Kepler\Assets\Scripts\CustomUI\MainUI.cs", "C#", 0, 0, 0, 0, 0, 51, 0, 0, 8, 59
+"g:\Kepler\Kepler\Assets\Scripts\CustomUI\PhysicSceneUI.cs", "C#", 0, 0, 0, 0, 0, 36, 0, 0, 5, 41
+"g:\Kepler\Kepler\Assets\Scripts\CustomUI\Quiz\AstralBodyEditorQuizUI.cs", "C#", 0, 0, 0, 0, 0, 39, 0, 16, 6, 61
+"g:\Kepler\Kepler\Assets\Scripts\CustomUI\Quiz\QuizEditUI.cs", "C#", 0, 0, 0, 0, 0, 13, 0, 0, 1, 14
+"g:\Kepler\Kepler\Assets\Scripts\CustomUI\Quiz\QuizEditorUI.cs", "C#", 0, 0, 0, 0, 0, 79, 0, 0, 11, 90
+"g:\Kepler\Kepler\Assets\Scripts\CustomUI\Quiz\QuizLineUI.cs", "C#", 0, 0, 0, 0, 0, 51, 0, 0, 8, 59
+"g:\Kepler\Kepler\Assets\Scripts\CustomUI\Quiz\QuizListUI.cs", "C#", 0, 0, 0, 0, 0, 53, 0, 1, 6, 60
+"g:\Kepler\Kepler\Assets\Scripts\CustomUI\Quiz\QuizStarUI.cs", "C#", 0, 0, 0, 0, 0, 31, 0, 0, 4, 35
+"g:\Kepler\Kepler\Assets\Scripts\CustomUI\Quiz\QuizStarsGroupUI.cs", "C#", 0, 0, 0, 0, 0, 31, 0, 4, 6, 41
+"g:\Kepler\Kepler\Assets\Scripts\CustomUI\Quiz\QuizTestUI.cs", "C#", 0, 0, 0, 0, 0, 13, 0, 0, 1, 14
+"g:\Kepler\Kepler\Assets\Scripts\CustomUI\Quiz\QuizUI.cs", "C#", 0, 0, 0, 0, 0, 108, 0, 3, 13, 124
+"g:\Kepler\Kepler\Assets\Scripts\CustomUI\Quiz\ResultUI.cs", "C#", 0, 0, 0, 0, 0, 57, 0, 0, 7, 64
+"g:\Kepler\Kepler\Assets\Scripts\CustomUI\Quiz\ShowPropertyType.cs", "C#", 0, 0, 0, 0, 0, 14, 0, 0, 0, 14
+"g:\Kepler\Kepler\Assets\Scripts\CustomUI\Quiz\VarLineUI.cs", "C#", 0, 0, 0, 0, 0, 361, 0, 51, 36, 448
+"g:\Kepler\Kepler\Assets\Scripts\CustomUI\Satellite\SatelliteControllerUI.cs", "C#", 0, 0, 0, 0, 0, 38, 0, 0, 6, 44
+"g:\Kepler\Kepler\Assets\Scripts\CustomUI\Satellite\SatelliteResultUI.cs", "C#", 0, 0, 0, 0, 0, 58, 0, 0, 7, 65
+"g:\Kepler\Kepler\Assets\Scripts\CustomUI\Satellite\SatelliteUI.cs", "C#", 0, 0, 0, 0, 0, 12, 0, 0, 2, 14
+"g:\Kepler\Kepler\Assets\Scripts\CustomUI\SelectorUI.cs", "C#", 0, 0, 0, 0, 0, 81, 0, 12, 11, 104
+"g:\Kepler\Kepler\Assets\Scripts\CustomUI\SettingUI.cs", "C#", 0, 0, 0, 0, 0, 23, 0, 0, 4, 27
+"g:\Kepler\Kepler\Assets\Scripts\CustomUI\TestModeUI.cs", "C#", 0, 0, 0, 0, 0, 17, 0, 0, 2, 19
+"g:\Kepler\Kepler\Assets\Scripts\CustomUI\Tutorial\MultiTutorialManagerUI.cs", "C#", 0, 0, 0, 0, 0, 24, 0, 0, 2, 26
+"g:\Kepler\Kepler\Assets\Scripts\CustomUI\Tutorial\SatelliteTutorialUI.cs", "C#", 0, 0, 0, 0, 0, 12, 0, 0, 1, 13
+"g:\Kepler\Kepler\Assets\Scripts\CustomUI\Tutorial\TutorialClipUI.cs", "C#", 0, 0, 0, 0, 0, 10, 0, 0, 1, 11
+"g:\Kepler\Kepler\Assets\Scripts\CustomUI\Tutorial\TutorialManagerUI.cs", "C#", 0, 0, 0, 0, 0, 35, 0, 0, 5, 40
+"g:\Kepler\Kepler\Assets\Scripts\CustomUI\Tutorial\TutorialUI.cs", "C#", 0, 0, 0, 0, 0, 77, 0, 1, 12, 90
+"g:\Kepler\Kepler\Assets\Scripts\CustomUI\UIManager.cs", "C#", 0, 0, 0, 0, 0, 7, 0, 0, 1, 8
+"g:\Kepler\Kepler\Assets\Scripts\CustomUI\VectorUI.cs", "C#", 0, 0, 0, 0, 0, 83, 0, 3, 11, 97
+"g:\Kepler\Kepler\Assets\Scripts\CustomUI\vectorType.cs", "C#", 0, 0, 0, 0, 0, 8, 0, 0, 0, 8
+"g:\Kepler\Kepler\Assets\Scripts\DeferredFogEffect.cs", "C#", 0, 0, 0, 0, 0, 34, 0, 0, 8, 42
+"g:\Kepler\Kepler\Assets\Scripts\DepthOfFieldEffect.cs", "C#", 0, 0, 0, 0, 0, 47, 0, 1, 13, 61
+"g:\Kepler\Kepler\Assets\Scripts\Editor\MyLightingShaderGUI.cs", "C#", 0, 0, 0, 0, 0, 370, 0, 0, 43, 413
+"g:\Kepler\Kepler\Assets\Scripts\EmissiveOscillator.cs", "C#", 0, 0, 0, 0, 0, 20, 0, 1, 4, 25
+"g:\Kepler\Kepler\Assets\Scripts\GPUInstancingTest.cs", "C#", 0, 0, 0, 0, 0, 29, 0, 0, 5, 34
+"g:\Kepler\Kepler\Assets\Scripts\GameManagers\Difficulty.cs", "C#", 0, 0, 0, 0, 0, 12, 0, 15, 1, 28
+"g:\Kepler\Kepler\Assets\Scripts\GameManagers\GameManager.cs", "C#", 0, 0, 0, 0, 0, 132, 0, 76, 40, 248
+"g:\Kepler\Kepler\Assets\Scripts\GameManagers\GlobalTimer.cs", "C#", 0, 0, 0, 0, 0, 50, 0, 27, 14, 91
+"g:\Kepler\Kepler\Assets\Scripts\GameManagers\GlobalTransfer.cs", "C#", 0, 0, 0, 0, 0, 32, 0, 16, 10, 58
+"g:\Kepler\Kepler\Assets\Scripts\GameManagers\PropertyUnit.cs", "C#", 0, 0, 0, 0, 0, 9, 0, 12, 0, 21
+"g:\Kepler\Kepler\Assets\Scripts\Init\Init.cs", "C#", 0, 0, 0, 0, 0, 13, 0, 4, 1, 18
+"g:\Kepler\Kepler\Assets\Scripts\Loading\LoadingManager.cs", "C#", 0, 0, 0, 0, 0, 46, 0, 12, 8, 66
+"g:\Kepler\Kepler\Assets\Scripts\Quiz\AstralBodyDict.cs", "C#", 0, 0, 0, 0, 0, 20, 0, 4, 3, 27
+"g:\Kepler\Kepler\Assets\Scripts\Quiz\QuizAstralBody.cs", "C#", 0, 0, 0, 0, 0, 176, 0, 65, 34, 275
+"g:\Kepler\Kepler\Assets\Scripts\Quiz\QuizAstralBodyDataDict.cs", "C#", 0, 0, 0, 0, 0, 70, 0, 32, 26, 128
+"g:\Kepler\Kepler\Assets\Scripts\Quiz\QuizAstralBodyDict.cs", "C#", 0, 0, 0, 0, 0, 12, 0, 3, 2, 17
+"g:\Kepler\Kepler\Assets\Scripts\Quiz\QuizBase.cs", "C#", 0, 0, 0, 0, 0, 147, 0, 21, 20, 188
+"g:\Kepler\Kepler\Assets\Scripts\Quiz\QuizBaseStruct.cs", "C#", 0, 0, 0, 0, 0, 9, 0, 11, 2, 22
+"g:\Kepler\Kepler\Assets\Scripts\Quiz\QuizData.cs", "C#", 0, 0, 0, 0, 0, 9, 0, 3, 1, 13
+"g:\Kepler\Kepler\Assets\Scripts\Quiz\QuizEditor.cs", "C#", 0, 0, 0, 0, 0, 53, 0, 22, 9, 84
+"g:\Kepler\Kepler\Assets\Scripts\Quiz\QuizSaver.cs", "C#", 0, 0, 0, 0, 0, 353, 0, 34, 29, 416
+"g:\Kepler\Kepler\Assets\Scripts\Quiz\QuizSolver.cs", "C#", 0, 0, 0, 0, 0, 121, 0, 28, 27, 176
+"g:\Kepler\Kepler\Assets\Scripts\Quiz\QuizType.cs", "C#", 0, 0, 0, 0, 0, 10, 0, 15, 3, 28
+"g:\Kepler\Kepler\Assets\Scripts\Quiz\Reason.cs", "C#", 0, 0, 0, 0, 0, 10, 0, 15, 3, 28
+"g:\Kepler\Kepler\Assets\Scripts\Quiz\Transformer.cs", "C#", 0, 0, 0, 0, 0, 16, 0, 3, 4, 23
+"g:\Kepler\Kepler\Assets\Scripts\Satellite\Satellite.cs", "C#", 0, 0, 0, 0, 0, 31, 0, 21, 7, 59
+"g:\Kepler\Kepler\Assets\Scripts\Satellite\SatelliteChallengeManger.cs", "C#", 0, 0, 0, 0, 0, 103, 0, 29, 15, 147
+"g:\Kepler\Kepler\Assets\Scripts\Satellite\SatelliteController.cs", "C#", 0, 0, 0, 0, 0, 76, 0, 34, 22, 132
+"g:\Kepler\Kepler\Assets\Scripts\Satellite\SatelliteCore.cs", "C#", 0, 0, 0, 0, 0, 22, 0, 3, 4, 29
+"g:\Kepler\Kepler\Assets\Scripts\Satellite\SatelliteEngine.cs", "C#", 0, 0, 0, 0, 0, 19, 0, 3, 3, 25
+"g:\Kepler\Kepler\Assets\Scripts\Satellite\SatelliteParachute.cs", "C#", 0, 0, 0, 0, 0, 10, 0, 3, 1, 14
+"g:\Kepler\Kepler\Assets\Scripts\Satellite\SatellitePart.cs", "C#", 0, 0, 0, 0, 0, 55, 0, 18, 12, 85
+"g:\Kepler\Kepler\Assets\Scripts\Satellite\SatelliteResultType.cs", "C#", 0, 0, 0, 0, 0, 10, 0, 15, 3, 28
+"g:\Kepler\Kepler\Assets\Scripts\Satellite\SatelliteType.cs", "C#", 0, 0, 0, 0, 0, 9, 0, 12, 2, 23
+"g:\Kepler\Kepler\Assets\Scripts\SpacePhysic\ActionType.cs", "C#", 0, 0, 0, 0, 0, 7, 0, 3, 0, 10
+"g:\Kepler\Kepler\Assets\Scripts\SpacePhysic\AstralBody.cs", "C#", 0, 0, 0, 0, 0, 299, 0, 112, 77, 488
+"g:\Kepler\Kepler\Assets\Scripts\SpacePhysic\GravityTracing.cs", "C#", 0, 0, 0, 0, 0, 229, 0, 91, 52, 372
+"g:\Kepler\Kepler\Assets\Scripts\SpacePhysic\IOrbitCalculator.cs", "C#", 0, 0, 0, 0, 0, 12, 0, 3, 1, 16
+"g:\Kepler\Kepler\Assets\Scripts\SpacePhysic\ITraceable.cs", "C#", 0, 0, 0, 0, 0, 17, 0, 3, 2, 22
+"g:\Kepler\Kepler\Assets\Scripts\SpacePhysic\PhysicBase.cs", "C#", 0, 0, 0, 0, 0, 16, 0, 6, 3, 25
+"g:\Kepler\Kepler\Assets\Scripts\StaticClasses\GameObjectPlus.cs", "C#", 0, 0, 0, 0, 0, 37, 0, 3, 5, 45
+"g:\Kepler\Kepler\Assets\Scripts\StaticClasses\MathPlus\ConicSection.cs", "C#", 0, 0, 0, 0, 0, 154, 0, 71, 31, 256
+"g:\Kepler\Kepler\Assets\Scripts\StaticClasses\MathPlus\ConicSectionDelegate.cs", "C#", 0, 0, 0, 0, 0, 4, 0, 4, 0, 8
+"g:\Kepler\Kepler\Assets\Scripts\StaticClasses\MathPlus\CustomMatrix.cs", "C#", 0, 0, 0, 0, 0, 13, 0, 3, 1, 17
+"g:\Kepler\Kepler\Assets\Scripts\StaticClasses\MathPlus\CustomSolver.cs", "C#", 0, 0, 0, 0, 0, 108, 0, 73, 16, 197
+"g:\Kepler\Kepler\Assets\Scripts\StaticClasses\MathPlus\MathPlus.cs", "C#", 0, 0, 0, 0, 0, 41, 0, 24, 8, 73
+"g:\Kepler\Kepler\Assets\Scripts\StaticClasses\StringPlus.cs", "C#", 0, 0, 0, 0, 0, 45, 0, 8, 5, 58
+"g:\Kepler\Kepler\Assets\Scripts\TTS\AudioStatus.cs", "C#", 0, 0, 0, 0, 0, 10, 0, 15, 0, 25
+"g:\Kepler\Kepler\Assets\Scripts\TTS\EpStatus.cs", "C#", 0, 0, 0, 0, 0, 13, 0, 9, 0, 22
+"g:\Kepler\Kepler\Assets\Scripts\TTS\Errors.cs", "C#", 0, 0, 0, 0, 0, 446, 0, 48, 74, 568
+"g:\Kepler\Kepler\Assets\Scripts\TTS\HandwritingStatus.cs", "C#", 0, 0, 0, 0, 0, 9, 0, 0, 0, 9
+"g:\Kepler\Kepler\Assets\Scripts\TTS\IvwStatus.cs", "C#", 0, 0, 0, 0, 0, 13, 0, 0, 0, 13
+"g:\Kepler\Kepler\Assets\Scripts\TTS\MSCDLL.cs", "C#", 0, 0, 0, 0, 0, 66, 0, 24, 49, 139
+"g:\Kepler\Kepler\Assets\Scripts\TTS\RecogStatus.cs", "C#", 0, 0, 0, 0, 0, 18, 0, 0, 0, 18
+"g:\Kepler\Kepler\Assets\Scripts\TTS\SynthStatus.cs", "C#", 0, 0, 0, 0, 0, 9, 0, 0, 0, 9
+"g:\Kepler\Kepler\Assets\Scripts\TTS\SynthesizingStatus.cs", "C#", 0, 0, 0, 0, 0, 9, 0, 0, 0, 9
+"g:\Kepler\Kepler\Assets\Scripts\TTS\UploadStatus.cs", "C#", 0, 0, 0, 0, 0, 10, 0, 0, 0, 10
+"g:\Kepler\Kepler\Assets\Scripts\TTS\VoiceGenerator.cs", "C#", 0, 0, 0, 0, 0, 289, 0, 41, 48, 378
+"g:\Kepler\Kepler\Assets\Scripts\TangentSpaceVisualizer.cs", "C#", 0, 0, 0, 0, 0, 41, 0, 0, 4, 45
+"g:\Kepler\Kepler\Assets\Scripts\XmlSaver\AstralBodyDataDict.cs", "C#", 0, 0, 0, 0, 0, 41, 0, 43, 19, 103
+"g:\Kepler\Kepler\Assets\Scripts\XmlSaver\SaverException.cs", "C#", 0, 0, 0, 0, 0, 23, 0, 3, 4, 30
+"g:\Kepler\Kepler\Assets\Scripts\XmlSaver\SceneBaseStruct.cs", "C#", 0, 0, 0, 0, 0, 11, 0, 4, 2, 17
+"g:\Kepler\Kepler\Assets\Scripts\XmlSaver\SceneEditor.cs", "C#", 0, 0, 0, 0, 0, 61, 0, 28, 12, 101
+"g:\Kepler\Kepler\Assets\Scripts\XmlSaver\SceneLoadBase.cs", "C#", 0, 0, 0, 0, 0, 127, 0, 41, 28, 196
+"g:\Kepler\Kepler\Assets\Scripts\XmlSaver\SceneSaver.cs", "C#", 0, 0, 0, 0, 0, 7, 0, 3, 2, 12
+"g:\Kepler\Kepler\Assets\Scripts\XmlSaver\XmlSaver.cs", "C#", 0, 0, 0, 0, 0, 198, 0, 62, 35, 295
+"g:\Kepler\Kepler\Assets\Shaders\Bloom.shader", "ShaderLab", 0, 0, 98, 0, 0, 0, 0, 0, 23, 121
+"g:\Kepler\Kepler\Assets\Shaders\DeferredFog.shader", "ShaderLab", 0, 0, 64, 0, 0, 0, 0, 1, 18, 83
+"g:\Kepler\Kepler\Assets\Shaders\DeferredShading.shader", "ShaderLab", 0, 0, 55, 0, 0, 0, 0, 0, 21, 76
+"g:\Kepler\Kepler\Assets\Shaders\DepthOfFieldShader.shader", "ShaderLab", 0, 0, 186, 0, 0, 0, 0, 2, 33, 221
+"g:\Kepler\Kepler\Assets\Shaders\Flat Wireframe Shader.shader", "ShaderLab", 0, 0, 157, 0, 0, 0, 0, 2, 62, 221
+"g:\Kepler\Kepler\Assets\Shaders\My First Lighting Shader.shader", "ShaderLab", 0, 0, 151, 0, 0, 0, 0, 2, 61, 214
+"g:\Kepler\Kepler\Assets\Shaders\My First Shader.shader", "ShaderLab", 0, 0, 35, 0, 0, 0, 0, 1, 12, 48
+"g:\Kepler\Kepler\Assets\Shaders\My Lighting Input.cginc", "HLSL", 0, 0, 0, 0, 196, 0, 0, 1, 43, 240
+"g:\Kepler\Kepler\Assets\Shaders\My Lighting.cginc", "HLSL", 0, 0, 0, 0, 405, 0, 0, 1, 64, 470
+"g:\Kepler\Kepler\Assets\Shaders\My Lightmapping.cginc", "HLSL", 0, 0, 0, 0, 82, 0, 0, 0, 17, 99
+"g:\Kepler\Kepler\Assets\Shaders\My Shadows.cginc", "HLSL", 0, 0, 0, 0, 118, 0, 0, 1, 24, 143
+"g:\Kepler\Kepler\Assets\Shaders\MyDeferredShading.cginc", "HLSL", 0, 0, 0, 0, 144, 0, 0, 0, 31, 175
+"g:\Kepler\Kepler\Assets\Shaders\MyFlatWireframe.cginc", "HLSL", 0, 0, 0, 0, 50, 0, 0, 0, 13, 63
+"g:\Kepler\Kepler\Assets\Shaders\MyTessellation.cginc", "HLSL", 0, 0, 0, 0, 127, 0, 0, 0, 18, 145
+"g:\Kepler\Kepler\Assets\Shaders\Tessellation Shader.shader", "ShaderLab", 0, 0, 160, 0, 0, 0, 0, 0, 62, 222
+"g:\Kepler\Kepler\Assets\Shaders\Texture Splatting.shader", "ShaderLab", 0, 0, 45, 0, 0, 0, 0, 1, 13, 59
+"g:\Kepler\Kepler\Assets\Shaders\Textured With Detail.shader", "ShaderLab", 0, 0, 40, 0, 0, 0, 0, 1, 12, 53
+"g:\Kepler\Kepler\Assets\TextMesh Pro\Examples & Extras\Scripts\Benchmark01.cs", "C#", 0, 0, 0, 0, 0, 63, 0, 29, 37, 129
+"g:\Kepler\Kepler\Assets\TextMesh Pro\Examples & Extras\Scripts\Benchmark01_UGUI.cs", "C#", 0, 0, 0, 0, 0, 59, 0, 37, 40, 136
+"g:\Kepler\Kepler\Assets\TextMesh Pro\Examples & Extras\Scripts\Benchmark02.cs", "C#", 0, 0, 0, 0, 0, 63, 0, 6, 27, 96
+"g:\Kepler\Kepler\Assets\TextMesh Pro\Examples & Extras\Scripts\Benchmark03.cs", "C#", 0, 0, 0, 0, 0, 73, 0, 1, 19, 93
+"g:\Kepler\Kepler\Assets\TextMesh Pro\Examples & Extras\Scripts\Benchmark04.cs", "C#", 0, 0, 0, 0, 0, 41, 0, 26, 19, 86
+"g:\Kepler\Kepler\Assets\TextMesh Pro\Examples & Extras\Scripts\CameraController.cs", "C#", 0, 0, 0, 0, 0, 198, 0, 25, 69, 292
+"g:\Kepler\Kepler\Assets\TextMesh Pro\Examples & Extras\Scripts\ChatController.cs", "C#", 0, 0, 0, 0, 0, 25, 0, 2, 18, 45
+"g:\Kepler\Kepler\Assets\TextMesh Pro\Examples & Extras\Scripts\DropdownSample.cs", "C#", 0, 0, 0, 0, 0, 15, 0, 0, 5, 20
+"g:\Kepler\Kepler\Assets\TextMesh Pro\Examples & Extras\Scripts\EnvMapAnimator.cs", "C#", 0, 0, 0, 0, 0, 23, 0, 4, 9, 36
+"g:\Kepler\Kepler\Assets\TextMesh Pro\Examples & Extras\Scripts\ObjectSpin.cs", "C#", 0, 0, 0, 0, 0, 50, 0, 4, 15, 69
+"g:\Kepler\Kepler\Assets\TextMesh Pro\Examples & Extras\Scripts\ShaderPropAnimator.cs", "C#", 0, 0, 0, 0, 0, 33, 0, 5, 14, 52
+"g:\Kepler\Kepler\Assets\TextMesh Pro\Examples & Extras\Scripts\SimpleScript.cs", "C#", 0, 0, 0, 0, 0, 24, 0, 17, 21, 62
+"g:\Kepler\Kepler\Assets\TextMesh Pro\Examples & Extras\Scripts\SkewTextExample.cs", "C#", 0, 0, 0, 0, 0, 95, 0, 18, 46, 159
+"g:\Kepler\Kepler\Assets\TextMesh Pro\Examples & Extras\Scripts\TMP_DigitValidator.cs", "C#", 0, 0, 0, 0, 0, 19, 0, 5, 4, 28
+"g:\Kepler\Kepler\Assets\TextMesh Pro\Examples & Extras\Scripts\TMP_ExampleScript_01.cs", "C#", 0, 0, 0, 0, 0, 37, 0, 9, 19, 65
+"g:\Kepler\Kepler\Assets\TextMesh Pro\Examples & Extras\Scripts\TMP_FrameRateCounter.cs", "C#", 0, 0, 0, 0, 0, 91, 0, 11, 33, 135
+"g:\Kepler\Kepler\Assets\TextMesh Pro\Examples & Extras\Scripts\TMP_PhoneNumberValidator.cs", "C#", 0, 0, 0, 0, 0, 93, 0, 7, 6, 106
+"g:\Kepler\Kepler\Assets\TextMesh Pro\Examples & Extras\Scripts\TMP_TextEventCheck.cs", "C#", 0, 0, 0, 0, 0, 56, 0, 1, 17, 74
+"g:\Kepler\Kepler\Assets\TextMesh Pro\Examples & Extras\Scripts\TMP_TextEventHandler.cs", "C#", 0, 0, 0, 0, 0, 163, 0, 30, 54, 247
+"g:\Kepler\Kepler\Assets\TextMesh Pro\Examples & Extras\Scripts\TMP_TextInfoDebugTool.cs", "C#", 0, 0, 0, 0, 0, 406, 0, 97, 146, 649
+"g:\Kepler\Kepler\Assets\TextMesh Pro\Examples & Extras\Scripts\TMP_TextSelector_A.cs", "C#", 0, 0, 0, 0, 0, 100, 0, 17, 41, 158
+"g:\Kepler\Kepler\Assets\TextMesh Pro\Examples & Extras\Scripts\TMP_TextSelector_B.cs", "C#", 0, 0, 0, 0, 0, 250, 0, 191, 107, 548
+"g:\Kepler\Kepler\Assets\TextMesh Pro\Examples & Extras\Scripts\TMP_UiFrameRateCounter.cs", "C#", 0, 0, 0, 0, 0, 96, 0, 1, 28, 125
+"g:\Kepler\Kepler\Assets\TextMesh Pro\Examples & Extras\Scripts\TMPro_InstructionOverlay.cs", "C#", 0, 0, 0, 0, 0, 55, 0, 6, 24, 85
+"g:\Kepler\Kepler\Assets\TextMesh Pro\Examples & Extras\Scripts\TeleType.cs", "C#", 0, 0, 0, 0, 0, 40, 0, 15, 28, 83
+"g:\Kepler\Kepler\Assets\TextMesh Pro\Examples & Extras\Scripts\TextConsoleSimulator.cs", "C#", 0, 0, 0, 0, 0, 79, 0, 13, 29, 121
+"g:\Kepler\Kepler\Assets\TextMesh Pro\Examples & Extras\Scripts\TextMeshProFloatingText.cs", "C#", 0, 0, 0, 0, 0, 126, 0, 32, 58, 216
+"g:\Kepler\Kepler\Assets\TextMesh Pro\Examples & Extras\Scripts\TextMeshSpawner.cs", "C#", 0, 0, 0, 0, 0, 46, 0, 13, 21, 80
+"g:\Kepler\Kepler\Assets\TextMesh Pro\Examples & Extras\Scripts\VertexColorCycler.cs", "C#", 0, 0, 0, 0, 0, 48, 0, 13, 24, 85
+"g:\Kepler\Kepler\Assets\TextMesh Pro\Examples & Extras\Scripts\VertexJitter.cs", "C#", 0, 0, 0, 0, 0, 105, 0, 26, 44, 175
+"g:\Kepler\Kepler\Assets\TextMesh Pro\Examples & Extras\Scripts\VertexShakeA.cs", "C#", 0, 0, 0, 0, 0, 99, 0, 23, 39, 161
+"g:\Kepler\Kepler\Assets\TextMesh Pro\Examples & Extras\Scripts\VertexShakeB.cs", "C#", 0, 0, 0, 0, 0, 112, 0, 29, 44, 185
+"g:\Kepler\Kepler\Assets\TextMesh Pro\Examples & Extras\Scripts\VertexZoom.cs", "C#", 0, 0, 0, 0, 0, 112, 0, 32, 48, 192
+"g:\Kepler\Kepler\Assets\TextMesh Pro\Examples & Extras\Scripts\WarpTextExample.cs", "C#", 0, 0, 0, 0, 0, 87, 0, 15, 43, 145
+"g:\Kepler\Kepler\Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader", "ShaderLab", 0, 0, 109, 0, 0, 0, 0, 2, 33, 144
+"g:\Kepler\Kepler\Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader", "ShaderLab", 0, 0, 112, 0, 0, 0, 0, 3, 31, 146
+"g:\Kepler\Kepler\Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader", "ShaderLab", 0, 0, 109, 0, 0, 0, 0, 2, 33, 144
+"g:\Kepler\Kepler\Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader", "ShaderLab", 0, 0, 243, 0, 0, 0, 0, 4, 71, 318
+"g:\Kepler\Kepler\Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader", "ShaderLab", 0, 0, 241, 0, 0, 0, 0, 4, 66, 311
+"g:\Kepler\Kepler\Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader", "ShaderLab", 0, 0, 188, 0, 0, 0, 0, 10, 50, 248
+"g:\Kepler\Kepler\Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader", "ShaderLab", 0, 0, 183, 0, 0, 0, 0, 8, 50, 241
+"g:\Kepler\Kepler\Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader", "ShaderLab", 0, 0, 82, 0, 0, 0, 0, 4, 21, 107
+"g:\Kepler\Kepler\Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader", "ShaderLab", 0, 0, 183, 0, 0, 0, 0, 8, 50, 241
+"g:\Kepler\Kepler\Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader", "ShaderLab", 0, 0, 103, 0, 0, 0, 0, 8, 28, 139
+"g:\Kepler\Kepler\Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader", "ShaderLab", 0, 0, 122, 0, 0, 0, 0, 4, 33, 159
+"g:\Kepler\Kepler\Assets\TextMesh Pro\Shaders\TMP_SDF.shader", "ShaderLab", 0, 0, 243, 0, 0, 0, 0, 4, 71, 318
+"g:\Kepler\Kepler\Assets\TextMesh Pro\Shaders\TMP_Sprite.shader", "ShaderLab", 0, 0, 93, 0, 0, 0, 0, 0, 22, 115
+"g:\Kepler\Kepler\Assets\TextMesh Pro\Shaders\TMPro.cginc", "HLSL", 0, 0, 0, 0, 63, 0, 0, 2, 20, 85
+"g:\Kepler\Kepler\Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc", "HLSL", 0, 0, 0, 0, 122, 0, 0, 2, 34, 158
+"g:\Kepler\Kepler\Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc", "HLSL", 0, 0, 0, 0, 62, 0, 0, 10, 14, 86
+"g:\Kepler\Kepler\Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc", "HLSL", 0, 0, 0, 0, 76, 0, 0, 7, 19, 102
+"g:\Kepler\Kepler\Assets\TextMesh Pro\Sprites\EmojiOne.json", "JSON", 0, 0, 0, 155, 0, 0, 0, 0, 2, 157
+"g:\Kepler\Kepler\Packages\MathNet.Numerics.4.15.0\lib\net40\MathNet.Numerics.xml", "XML", 0, 0, 0, 0, 0, 0, 57653, 0, 20, 57673
+"g:\Kepler\Kepler\Packages\MathNet.Numerics.4.15.0\lib\net461\MathNet.Numerics.xml", "XML", 0, 0, 0, 0, 0, 0, 57653, 0, 20, 57673
+"g:\Kepler\Kepler\Packages\MathNet.Numerics.4.15.0\lib\netstandard1.3\MathNet.Numerics.xml", "XML", 0, 0, 0, 0, 0, 0, 54281, 0, 20, 54301
+"g:\Kepler\Kepler\Packages\MathNet.Numerics.4.15.0\lib\netstandard2.0\MathNet.Numerics.xml", "XML", 0, 0, 0, 0, 0, 0, 57653, 0, 20, 57673
+"g:\Kepler\Kepler\Packages\MathNet.Spatial.0.6.0\lib\net461\MathNet.Spatial.xml", "XML", 0, 0, 0, 0, 0, 0, 6056, 0, 1, 6057
+"g:\Kepler\Kepler\Packages\MathNet.Spatial.0.6.0\lib\netstandard2.0\MathNet.Spatial.xml", "XML", 0, 0, 0, 0, 0, 0, 6056, 0, 1, 6057
+"g:\Kepler\Kepler\Packages\System.Diagnostics.Contracts.4.3.0\ref\netcore50\System.Diagnostics.Contracts.xml", "XML", 0, 0, 0, 0, 0, 0, 334, 0, 0, 334
+"g:\Kepler\Kepler\Packages\System.Diagnostics.Contracts.4.3.0\ref\netcore50\de\System.Diagnostics.Contracts.xml", "XML", 0, 0, 0, 0, 0, 0, 334, 0, 0, 334
+"g:\Kepler\Kepler\Packages\System.Diagnostics.Contracts.4.3.0\ref\netcore50\es\System.Diagnostics.Contracts.xml", "XML", 0, 0, 0, 0, 0, 0, 334, 0, 0, 334
+"g:\Kepler\Kepler\Packages\System.Diagnostics.Contracts.4.3.0\ref\netcore50\fr\System.Diagnostics.Contracts.xml", "XML", 0, 0, 0, 0, 0, 0, 334, 0, 0, 334
+"g:\Kepler\Kepler\Packages\System.Diagnostics.Contracts.4.3.0\ref\netcore50\it\System.Diagnostics.Contracts.xml", "XML", 0, 0, 0, 0, 0, 0, 334, 0, 0, 334
+"g:\Kepler\Kepler\Packages\System.Diagnostics.Contracts.4.3.0\ref\netcore50\ja\System.Diagnostics.Contracts.xml", "XML", 0, 0, 0, 0, 0, 0, 370, 0, 0, 370
+"g:\Kepler\Kepler\Packages\System.Diagnostics.Contracts.4.3.0\ref\netcore50\ko\System.Diagnostics.Contracts.xml", "XML", 0, 0, 0, 0, 0, 0, 370, 0, 0, 370
+"g:\Kepler\Kepler\Packages\System.Diagnostics.Contracts.4.3.0\ref\netcore50\ru\System.Diagnostics.Contracts.xml", "XML", 0, 0, 0, 0, 0, 0, 334, 0, 0, 334
+"g:\Kepler\Kepler\Packages\System.Diagnostics.Contracts.4.3.0\ref\netcore50\zh-hans\System.Diagnostics.Contracts.xml", "XML", 0, 0, 0, 0, 0, 0, 338, 0, 0, 338
+"g:\Kepler\Kepler\Packages\System.Diagnostics.Contracts.4.3.0\ref\netcore50\zh-hant\System.Diagnostics.Contracts.xml", "XML", 0, 0, 0, 0, 0, 0, 340, 0, 0, 340
+"g:\Kepler\Kepler\Packages\System.Diagnostics.Contracts.4.3.0\ref\netstandard1.0\System.Diagnostics.Contracts.xml", "XML", 0, 0, 0, 0, 0, 0, 334, 0, 0, 334
+"g:\Kepler\Kepler\Packages\System.Diagnostics.Contracts.4.3.0\ref\netstandard1.0\de\System.Diagnostics.Contracts.xml", "XML", 0, 0, 0, 0, 0, 0, 334, 0, 0, 334
+"g:\Kepler\Kepler\Packages\System.Diagnostics.Contracts.4.3.0\ref\netstandard1.0\es\System.Diagnostics.Contracts.xml", "XML", 0, 0, 0, 0, 0, 0, 334, 0, 0, 334
+"g:\Kepler\Kepler\Packages\System.Diagnostics.Contracts.4.3.0\ref\netstandard1.0\fr\System.Diagnostics.Contracts.xml", "XML", 0, 0, 0, 0, 0, 0, 334, 0, 0, 334
+"g:\Kepler\Kepler\Packages\System.Diagnostics.Contracts.4.3.0\ref\netstandard1.0\it\System.Diagnostics.Contracts.xml", "XML", 0, 0, 0, 0, 0, 0, 334, 0, 0, 334
+"g:\Kepler\Kepler\Packages\System.Diagnostics.Contracts.4.3.0\ref\netstandard1.0\ja\System.Diagnostics.Contracts.xml", "XML", 0, 0, 0, 0, 0, 0, 370, 0, 0, 370
+"g:\Kepler\Kepler\Packages\System.Diagnostics.Contracts.4.3.0\ref\netstandard1.0\ko\System.Diagnostics.Contracts.xml", "XML", 0, 0, 0, 0, 0, 0, 370, 0, 0, 370
+"g:\Kepler\Kepler\Packages\System.Diagnostics.Contracts.4.3.0\ref\netstandard1.0\ru\System.Diagnostics.Contracts.xml", "XML", 0, 0, 0, 0, 0, 0, 334, 0, 0, 334
+"g:\Kepler\Kepler\Packages\System.Diagnostics.Contracts.4.3.0\ref\netstandard1.0\zh-hans\System.Diagnostics.Contracts.xml", "XML", 0, 0, 0, 0, 0, 0, 338, 0, 0, 338
+"g:\Kepler\Kepler\Packages\System.Diagnostics.Contracts.4.3.0\ref\netstandard1.0\zh-hant\System.Diagnostics.Contracts.xml", "XML", 0, 0, 0, 0, 0, 0, 340, 0, 0, 340
+"g:\Kepler\Kepler\Packages\manifest.json", "JSON", 0, 0, 0, 46, 0, 0, 0, 0, 1, 47
+"g:\Kepler\Kepler\Packages\packages-lock.json", "JSON", 0, 0, 0, 371, 0, 0, 0, 0, 1, 372
+"g:\Kepler\Kepler\README.md", "Markdown", 0, 1, 0, 0, 0, 0, 0, 0, 2, 3
+"g:\Kepler\Kepler\msc\msc.cfg", "Properties", 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"Total", "-", 0, 1, 6589, 572, 4694, 43373, 311581, 4634, 10177, 381621

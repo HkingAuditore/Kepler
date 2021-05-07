@@ -48,6 +48,128 @@
             <e p="UiLine.shader" t="Include" />
           </e>
         </e>
+        <e p="csc.rsp" t="Include" />
+        <e p="Editor" t="Include">
+          <e p="AudioCaptureEditor.cs" t="Include" />
+          <e p="ImageCaptureEditor.cs" t="Include" />
+          <e p="Legacy" t="Include">
+            <e p="ScreenShotEditor.cs" t="Include" />
+          </e>
+          <e p="MenuEditor.cs" t="Include" />
+          <e p="ReadmeEditor.cs" t="Include" />
+          <e p="SequenceCaptureEditor.cs" t="Include" />
+          <e p="VideoCaptureEditor.cs" t="Include" />
+          <e p="VideoCaptureManagerEditor.cs" t="Include" />
+        </e>
+        <e p="Evereal" t="Include">
+          <e p="VideoCapture" t="Include">
+            <e p="Demos" t="Include">
+              <e p="Scripts" t="Include">
+                <e p="DisplayTime.cs" t="Include" />
+                <e p="DragCube.cs" t="Include" />
+                <e p="MicDevices.cs" t="Include" />
+                <e p="RotateCube.cs" t="Include" />
+                <e p="TextureListToVideo.cs" t="Include" />
+              </e>
+            </e>
+            <e p="License.txt" t="Include" />
+            <e p="README.txt" t="Include" />
+            <e p="Resources" t="Include">
+              <e p="Shaders" t="Include">
+                <e p="Blitter.shader" t="Include" />
+                <e p="CopyReverse.shader" t="Include" />
+                <e p="CubemapDisplay.shader" t="Include" />
+                <e p="CubemapToCylinder.shader" t="Include" />
+                <e p="CubemapToEquirect.shader" t="Include" />
+                <e p="CubemapToEquirect2.shader" t="Include" />
+                <e p="Downsample.shader" t="Include" />
+                <e p="Preprocess.shader" t="Include" />
+                <e p="StereoPack.shader" t="Include" />
+              </e>
+            </e>
+            <e p="Scripts" t="Include">
+              <e p="AudioCapture.cs" t="Include" />
+              <e p="Events" t="Include">
+                <e p="CaptureCompleteEvent.cs" t="Include" />
+                <e p="CaptureErrorEvent.cs" t="Include" />
+              </e>
+              <e p="FFmpegOut" t="Include">
+                <e p="FFmpegPreset.cs" t="Include" />
+                <e p="FFmpegSession.cs" t="Include" />
+                <e p="Internal" t="Include">
+                  <e p="Blitter.cs" t="Include" />
+                  <e p="FFmpegPipe.cs" t="Include" />
+                </e>
+              </e>
+              <e p="GUI" t="Include">
+                <e p="AudioCaptureGUI.cs" t="Include" />
+                <e p="ImageCaptureGUI.cs" t="Include" />
+                <e p="Legacy" t="Include">
+                  <e p="ScreenShotGUI.cs" t="Include" />
+                </e>
+                <e p="SequenceCaptureGUI.cs" t="Include" />
+                <e p="VideoCaptureGUI.cs" t="Include" />
+                <e p="VideoCaptureManagerGUI.cs" t="Include" />
+              </e>
+              <e p="Hotkey" t="Include">
+                <e p="AudioCaptureHotkey.cs" t="Include" />
+                <e p="ImageCaptureHotkey.cs" t="Include" />
+                <e p="Legacy" t="Include">
+                  <e p="ScreenShotHotkey.cs" t="Include" />
+                </e>
+                <e p="SequenceCaptureHotkey.cs" t="Include" />
+                <e p="VideoCaptureHotkey.cs" t="Include" />
+                <e p="VideoCaptureManagerHotkey.cs" t="Include" />
+              </e>
+              <e p="ImageCapture.cs" t="Include" />
+              <e p="Internal" t="Include">
+                <e p="Base" t="Include">
+                  <e p="CaptureBase.cs" t="Include" />
+                  <e p="EncoderBase.cs" t="Include" />
+                </e>
+                <e p="Blitter.cs" t="Include" />
+                <e p="Command.cs" t="Include" />
+                <e p="Constants.cs" t="Include" />
+                <e p="DontDestroy.cs" t="Include" />
+                <e p="Encoder" t="Include">
+                  <e p="AudioRecorder.cs" t="Include" />
+                  <e p="FFmpegEncoder.cs" t="Include" />
+                  <e p="FFmpegMuxer.cs" t="Include" />
+                  <e p="FFmpegStreamer.cs" t="Include" />
+                  <e p="FFmpegTranscoder.cs" t="Include" />
+                  <e p="GPUEncoder.cs" t="Include" />
+                  <e p="MicrophoneRecorder.cs" t="Include" />
+                  <e p="NvidiaEncoder.cs" t="Include" />
+                  <e p="WavEncoder.cs" t="Include" />
+                </e>
+                <e p="Enums.cs" t="Include" />
+                <e p="FFmpegConfig.cs" t="Include" />
+                <e p="FreeTrial.cs" t="Include" />
+                <e p="Interfaces" t="Include">
+                  <e p="ICapture.cs" t="Include" />
+                  <e p="IRecorder.cs" t="Include" />
+                  <e p="IVideoCapture.cs" t="Include" />
+                </e>
+                <e p="Utils.cs" t="Include" />
+                <e p="VideoCache.cs" t="Include" />
+              </e>
+              <e p="Legacy" t="Include">
+                <e p="ScreenShot.cs" t="Include" />
+              </e>
+              <e p="Readme.cs" t="Include" />
+              <e p="SequenceCapture.cs" t="Include" />
+              <e p="uNvEncoder" t="Include">
+                <e p="Encoder.cs" t="Include" />
+                <e p="Lib.cs" t="Include" />
+                <e p="License.txt" t="Include" />
+              </e>
+              <e p="VideoCapture.cs" t="Include" />
+              <e p="VideoCaptureManager.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="gmcs.rsp" t="Include" />
+        <e p="mcs.rsp" t="Include" />
         <e p="PlugIns" t="Include">
           <e p="BaseInfolibrary" t="Include">
             <e p="MathNet.Numerics.xml" t="Include" />
@@ -420,6 +542,13 @@
               </e>
             </e>
           </e>
+          <e p="Simple360Render" t="Include">
+            <e p="I360Render.cs" t="Include" />
+            <e p="README.txt" t="Include" />
+            <e p="Resources" t="Include">
+              <e p="EquirectangularConverter.shader" t="Include" />
+            </e>
+          </e>
           <e p="Starfield Skybox" t="Include">
             <e p="Demo" t="Include">
               <e p="Script" t="Include">
@@ -602,6 +731,9 @@
             <e p="UploadStatus.cs" t="Include" />
             <e p="VoiceGenerator.cs" t="Include" />
           </e>
+          <e p="VirtualReality" t="Include">
+            <e p="VirtualRealityTest.cs" t="Include" />
+          </e>
           <e p="XmlSaver" t="Include">
             <e p="AstralBodyDataDict.cs" t="Include" />
             <e p="SaverException.cs" t="Include" />
@@ -630,6 +762,12 @@
           <e p="Tessellation Shader.shader" t="Include" />
           <e p="Texture Splatting.shader" t="Include" />
           <e p="Textured With Detail.shader" t="Include" />
+        </e>
+        <e p="smcs.rsp" t="Include" />
+        <e p="StreamingAssets" t="Include">
+          <e p="FFmpeg" t="Include">
+            <e p="README.txt" t="Include" />
+          </e>
         </e>
         <e p="TextMesh Pro" t="Include">
           <e p="Examples &amp; Extras" t="Include">

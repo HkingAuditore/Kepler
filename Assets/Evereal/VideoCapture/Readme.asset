@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcf7219bab7fe46a1ad266029b2fee19, type: 3}
+  m_Name: Readme
+  m_EditorClassIdentifier: 
+  icon: {fileID: 2800000, guid: ba11d7632866d4a0e88726538ac03582, type: 3}
+  iconMaxWidth: 256
+  title: Video Capture Pro
+  sections:
+  - heading: 
+    text: Video Capture Pro unity plugin is based on FFmpeg project, please read the
+      license file and follow the document to install ffmpeg builds before use.
+    links:
+    - linkText: 
+      url: 
+  - heading: Document
+    text: Please read or download the document
+    links:
+    - linkText: Read Document
+      url: https://evereal.com/docs/video-capture-pro-unity-plugin/
+  - heading: Support
+    text: If you have any issue or question, please email me at
+    links:
+    - linkText: dev@evereal.com
+      url: mailto:dev@evereal.com
+  - heading: Tutorials
+    text: Getting started quickly by checking tutorials
+    links:
+    - linkText: How to Capture Video in Unity 2D Game
+      url: https://evereal.com/tutorials/how-to-capture-video-in-unity-2d
+    - linkText: How to Capture Video in Unity 3D Game
+      url: https://evereal.com/tutorials/how-to-capture-video-in-unity-3d
+    - linkText: How to Capture Video in Unity Cinemachine
+      url: https://evereal.com/tutorials/how-to-capture-video-in-unity-cinemachine
+  - heading: Facebook
+    text: 
+    links:
+    - linkText: Like us on Facebook Page
+      url: https://www.facebook.com/everealgame
+  loadedLayout: 1
