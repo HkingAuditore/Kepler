@@ -42,7 +42,7 @@ Material:
     - _RotationAxis: {r: -4.67, g: 3.97, b: -2.16, a: 1}
     - _RotationSpeed: {r: 1.04, g: 2.49, b: 0.54, a: 1}
     - _StarColor: {r: 0, g: 0.4454025, b: 3.3261406, a: 1}
-    - _StarColor0: {r: 4.926163, g: 4.636389, b: 3.0012338, a: 1}
-    - _StarColor1: {r: 0.95589864, g: 3.4548907, b: 3.3183336, a: 1}
-    - _StarColor2: {r: 2.5044777, g: 5.029654, b: 1.5937587, a: 1}
+    - _StarColor0: {r: 2.9710698, g: 2.6929893, b: 1.1415933, a: 1}
+    - _StarColor1: {r: 0.31408098, g: 3.1544654, b: 3.0179086, a: 1}
+    - _StarColor2: {r: 2.4865944, g: 9.189588, b: 0, a: 1}
   m_BuildTextureStacks: []
