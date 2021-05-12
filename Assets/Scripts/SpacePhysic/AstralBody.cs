@@ -148,6 +148,8 @@ namespace SpacePhysic
             }
         }
 
+        public bool isUseScaler = true;
+
         /// <summary>
         ///     星球半径
         /// </summary>
@@ -223,7 +225,8 @@ namespace SpacePhysic
 
         protected void Generate()
         {
-            triggerCollider.radius =  affectRadius;
+            if(enableAffect)
+                triggerCollider.radius =  affectRadius;
             defaultCollider.radius *= 1.2f;
             SetMass();
             ChangeSize();
@@ -345,11 +348,18 @@ namespace SpacePhysic
         ///调整星球体积
         private void ChangeSize()
         {
-            var localScale = GameManager.getGameManager.globalDistanceScaler <= 0
-                ? 1
-                : GameManager.getGameManager.globalDistanceScaler;
-            var showSize = Mathf.Pow(size, .2f) * localScale * localScale;
-            transform.localScale = new Vector3(showSize, showSize, showSize);
+            if(isUseScaler)
+            {
+                var localScale = GameManager.getGameManager.globalDistanceScaler <= 0
+                                     ? 1
+                                     : GameManager.getGameManager.globalDistanceScaler;
+                var showSize = Mathf.Pow(size, .2f) * localScale * localScale;
+                transform.localScale = new Vector3(showSize, showSize, showSize);
+            }
+            else
+            {
+                transform.localScale = new Vector3(size,size,size);
+            }
             // defaultCollider.radius *= size;
             // if(enableAffect)
             //     triggerCollider.radius = affectRadius * size;
