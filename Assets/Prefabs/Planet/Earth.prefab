@@ -244,6 +244,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _meshNum: 1
+  isUseScaler: 1
 --- !u!54 &4466750129858649189
 Rigidbody:
   m_ObjectHideFlags: 0

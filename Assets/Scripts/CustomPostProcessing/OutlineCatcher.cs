@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace CustomPostProcessing
 {
@@ -45,6 +46,12 @@ namespace CustomPostProcessing
                 _outlineMaterial = GenerateMaterial(outlineShader, ref _outlineMaterial);
                 return _outlineMaterial;
             }
+        }
+
+        private void Start()
+        {
+            this.outlineCamera.fieldOfView = mainCamera.fieldOfView;
+            this.outlineCamera.orthographicSize= mainCamera.orthographicSize;
         }
 
         private void Update()

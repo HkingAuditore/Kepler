@@ -1,6 +1,10 @@
-﻿using GameManagers;
+﻿using System.Collections;
+using System.Collections.Generic;
+using GameManagers;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.XR;
+using UnityEngine.XR.Management;
 
 namespace CustomUI
 {
@@ -9,6 +13,7 @@ namespace CustomUI
         public GameObject difficultyPanel;
         public GameObject sceneListPanel;
         public GameObject satellitePanel;
+        public GameObject modePanel;
         public int        satelliteSceneIndex;
 
         public void ToLab()
@@ -71,5 +76,33 @@ namespace CustomUI
         {
             this.satelliteSceneIndex = index;
         }
+
+        public void ShowModePanel()
+        {
+            modePanel.SetActive(true);
+        }
+        
+        public void CloseModePanel()
+        {
+            modePanel.SetActive(false);
+        }
+
+        public void ToFreeTravel()
+        {
+
+            if (GlobalTransfer.getGlobalTransfer.hasXrInput)
+            {
+                GlobalTransfer.getGlobalTransfer.LoadSceneInLoadingScene("SpaceTraveller VR",true);
+            }
+            else
+            {
+                // GlobalTransfer.getGlobalTransfer.LoadSceneInLoadingScene("SpaceTraveller VR", true);
+
+                GlobalTransfer.getGlobalTransfer.LoadSceneInLoadingScene("SpaceTraveller");
+            }
+        }
+        
+        
+
     }
 }

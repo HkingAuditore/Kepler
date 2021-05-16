@@ -227,7 +227,7 @@ namespace SpacePhysic
         {
             if(enableAffect)
                 triggerCollider.radius =  affectRadius;
-            defaultCollider.radius *= 1.2f;
+            defaultCollider.radius *= 0.95f;
             SetMass();
             ChangeSize();
 

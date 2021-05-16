@@ -51,7 +51,7 @@ namespace CustomUI
             // Debug.DrawRay(ray.origin,ray.direction,Color.green);
             if (Physics.Raycast(ray, out hitInfo, 1000, (1 << 20) | (1 << 23)))
             {
-                // Debug.Log("Hit!");
+                Debug.Log("Hit!");
                 // Debug.DrawLine(ray.origin, hitInfo.point);
                 // if (hitInfo.collider.gameObject.CompareTag("AstralBody"))
                 // {

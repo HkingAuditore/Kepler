@@ -1,13 +1,15 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 namespace Spaceship
 {
     public class SpaceshipMover : MonoBehaviour
     {
-        public Transform avatar;                //船体
-        public float     maxForwardSpeed = 10f; //最大前进速度
-        public float     forwoardAcc     = 5f;  //前进加速度
-        public float     forwardDamp     = 5f;  //前进阻尼
+        public Transform            avatar;
+        public List<ParticleSystem> particleSystems;       //船体
+        public float                maxForwardSpeed = 10f; //最大前进速度
+        public float                forwardAcc     = 5f;  //前进加速度
+        public float                forwardDamp     = 5f;  //前进阻尼
 
         public float maxUpSpeed = 10f; //最大上升速度
         public float upAcc      = 5f;  //最大上升加速度
@@ -31,16 +33,27 @@ namespace Spaceship
 
         private Rigidbody m_rigidbody;
 
+        public Rigidbody mRigidbody
+        {
+            get => m_rigidbody;
+            private set => m_rigidbody = value;
+        }
+
         // Start is called before the first frame update
         private void Start()
         {
-            m_rigidbody    = GetComponent<Rigidbody>();
+            mRigidbody    = GetComponent<Rigidbody>();
             nowRotateAngle = transform.rotation.eulerAngles.y;
         }
 
         // Update is called once per frame
         private void Update()
         {
+            particleSystems.ForEach(p =>
+                                    {
+                                        ParticleSystem.EmissionModule emissionModule = p.emission;
+                                        emissionModule.rateOverTime = new ParticleSystem.MinMaxCurve(1000 * inputVector.x);
+                                    });
         }
 
         private void FixedUpdate()
@@ -70,7 +83,7 @@ namespace Spaceship
         private void FaceToVelocity()
         {
             transform.rotation = Quaternion.Slerp(transform.rotation,
-                                                      Quaternion.LookRotation(m_rigidbody.velocity),
+                                                      Quaternion.LookRotation(mRigidbody.velocity),
                                                        .5f * Time.fixedDeltaTime);
             nowRotateAngle = this.transform.localEulerAngles.y;
 
@@ -85,21 +98,45 @@ namespace Spaceship
                 nowRotateSpeed = Mathf.Lerp(nowRotateSpeed, 0, rotateDamp * Time.fixedDeltaTime);
             nowRotateSpeed = Mathf.Clamp(nowRotateSpeed, -maxRotateSpeed, maxRotateSpeed);
             nowRotateAngle = nowRotateAngle + nowRotateSpeed;
-            m_rigidbody.MoveRotation(Quaternion.Lerp(
+            mRigidbody.MoveRotation(Quaternion.Lerp(
                                                      transform.rotation,
                                                      Quaternion.Euler(0, nowRotateAngle, 0),
                                                      rotateDamp * Time.fixedDeltaTime)
                                     );
 
             //移动计算
-            if (inputVector.x > float.Epsilon || inputVector.x < -float.Epsilon)
-                //nowForwardSpeed += forwoardAcc * Time.fixedDeltaTime * input.z;
-                nowForwardSpeed = Mathf.Lerp(nowForwardSpeed, nowForwardSpeed + forwoardAcc * inputVector.x,
+            Vector3 forceDir = transform.forward;
+            float     k        = 1;
+            if (inputVector.x > float.Epsilon )
+                //nowForwardSpeed += forwardAcc * Time.fixedDeltaTime * input.z;
+            {
+                nowForwardSpeed = Mathf.Lerp(nowForwardSpeed, nowForwardSpeed + forwardAcc * inputVector.x,
                                              Time.fixedDeltaTime);
+
+            }            
+            else if(inputVector.x < -float.Epsilon)
+            {
+                if(mRigidbody.velocity.magnitude > float.Epsilon)
+                {
+                    k        = Mathf.Lerp(1f, 100f, mRigidbody.velocity.magnitude / 30f);
+                    forceDir = mRigidbody.velocity.normalized;
+                    nowForwardSpeed = Mathf.Lerp(nowForwardSpeed, nowForwardSpeed + forwardAcc * k * inputVector.x,
+                                                 Time.fixedDeltaTime);
+                }
+                else
+                {
+                    return;
+                }
+
+
+            }           
             else
+            {
                 nowForwardSpeed = Mathf.Lerp(nowForwardSpeed, 0, forwardDamp * Time.fixedDeltaTime);
+            }            
+            
             nowForwardSpeed = Mathf.Clamp(nowForwardSpeed, -maxForwardSpeed, maxForwardSpeed);
-            m_rigidbody.AddForce(transform.forward * nowForwardSpeed);
+            mRigidbody.AddForce(forceDir * k * (5 * inputVector.x));
 
 
             if (inputVector.z > float.Epsilon || inputVector.z < -float.Epsilon)

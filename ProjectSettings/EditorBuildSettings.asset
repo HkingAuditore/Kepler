@@ -35,6 +35,14 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Satellite 1.unity
     guid: 22326d8f35ba33147a6a54f34bae27c4
+  - enabled: 1
+    path: Assets/Scenes/SpaceTraveller.unity
+    guid: c43616da3e6aa4d48b06369abbb241a6
+  - enabled: 1
+    path: Assets/Scenes/SpaceTraveller VR.unity
+    guid: 168ea3f1ce3794747b85d6bb00c2187c
   m_configObjects:
+    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: afa7bffc176612a48ad96be65ec0ee75, type: 2}
+    Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: 904fd6cd520261f49b9413ee426b90b6, type: 2}
     com.unity.addressableassets: {fileID: 11400000, guid: 3abf4d660373bee48bdf552cd8b32202, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: fc9996e41b1cf624cb4b2d436fb7c9e8, type: 2}

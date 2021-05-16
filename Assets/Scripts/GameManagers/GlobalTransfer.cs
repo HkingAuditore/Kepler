@@ -1,5 +1,8 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Collections;
+using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.XR.Management;
 
 namespace GameManagers
 {
@@ -40,19 +43,81 @@ namespace GameManagers
         private void Awake()
         {
             getGlobalTransfer = this;
+            
             DontDestroyOnLoad(gameObject);
         }
 
+        private void Start()
+        {
+            StartCoroutine(GetXRInputSituation());
+        }
 
 
+        private bool _enableVr = false;
         /// <summary>
         /// 在Loading场景中加载新场景
         /// </summary>
         /// <param name="nextLoadSceneName"></param>
-        public void LoadSceneInLoadingScene(string nextLoadSceneName)
+        /// <param name="isVr">是否为VR模式</param>
+        public void LoadSceneInLoadingScene(string nextLoadSceneName,bool isVr = false)
         {
+            if(!isVr && _enableVr)
+            {
+                StopXR();
+                _enableVr = false;
+            }
+            else if(isVr)
+            {
+                StartCoroutine(StartXR());
+                _enableVr = true;
+            }
+            
             this.nextScene = nextLoadSceneName;
             SceneManager.LoadSceneAsync("Loading");
+
+            
+        }
+        
+        
+        public IEnumerator StartXR() {
+            yield return XRGeneralSettings.Instance.Manager.InitializeLoader();
+ 
+            if (XRGeneralSettings.Instance.Manager.activeLoader == null || XRGeneralSettings.Instance.Manager.activeLoaders[0].name != "Oculus Loader") {
+                this.nextScene = this.nextScene.Split(new char[] {' '})[0];
+                Debug.LogError("Initializing XR Failed. Check Editor or Player log for details.");
+            } else {
+                Debug.Log("Starting XR...");
+                XRGeneralSettings.Instance.Manager.StartSubsystems();
+                yield return null;
+            }
+        }
+
+
+        public bool hasXrInput = false;
+        
+        public IEnumerator GetXRInputSituation() {
+            yield return XRGeneralSettings.Instance.Manager.InitializeLoader();
+            Debug.Log(XRGeneralSettings.Instance.Manager.activeLoader);
+            if (XRGeneralSettings.Instance.Manager.activeLoader == null || XRGeneralSettings.Instance.Manager.activeLoaders[0].name != "Oculus Loader")
+            {
+                hasXrInput = false;
+                throw new Exception("Initializing XR Failed. Check Editor or Player log for details.");
+            } else {
+                Debug.Log("Starting XR...");
+                XRGeneralSettings.Instance.Manager.StartSubsystems();
+                hasXrInput = true;
+                yield return null;
+            }
+
+            StopXR();
+        }
+        
+ 
+        void StopXR() {
+            Debug.Log("Stopping XR...");
+            XRGeneralSettings.Instance.Manager.StopSubsystems();
+            XRGeneralSettings.Instance.Manager.DeinitializeLoader();
+            Debug.Log("XR stopped completely.");
         }
     }
 }
