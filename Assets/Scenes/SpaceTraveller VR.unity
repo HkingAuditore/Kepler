@@ -18487,7 +18487,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1030038214}
   m_LocalRotation: {x: 0, y: 0.25848177, z: 0, w: 0.9660161}
-  m_LocalPosition: {x: 0, y: 0, z: -3.95}
+  m_LocalPosition: {x: 0, y: 0, z: -7.52}
   m_LocalScale: {x: 0.04267889, y: 0.04267889, z: 0.04267889}
   m_Children: []
   m_Father: {fileID: 1066009134}
@@ -18495,7 +18495,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 29.96, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 8.46, y: -0.12969708}
+  m_AnchoredPosition: {x: 14.71, y: -0.12969708}
   m_SizeDelta: {x: 310.8, y: 35.43}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1030038216
@@ -18525,7 +18525,7 @@ MonoBehaviour:
     m_BestFit: 1
     m_MinSize: 20
     m_MaxSize: 40
-    m_Alignment: 2
+    m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -18883,7 +18883,7 @@ MonoBehaviour:
   followTransform: {fileID: 1314625953}
   spaceshipMover: {fileID: 1421202476}
   spaceShipAstralBody: {fileID: 1421202479}
-  faceCamera: {fileID: 20000011143907602}
+  faceTransform: {fileID: 1231267462}
   speedText: {fileID: 1018171320}
   forceText: {fileID: 1030038216}
 --- !u!1 &1067991431 stripped

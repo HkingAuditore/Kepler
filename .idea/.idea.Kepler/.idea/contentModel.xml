@@ -1399,6 +1399,7 @@
               <e p="VelocityEditorUI.cs" t="Include" />
             </e>
             <e p="ConstandOrbit.cs" t="Include" />
+            <e p="FreeSelectorUI.cs" t="Include" />
             <e p="GlobalTimerUI.cs" t="Include" />
             <e p="Lab" t="Include">
               <e p="LabSceneLineUI.cs" t="Include" />
